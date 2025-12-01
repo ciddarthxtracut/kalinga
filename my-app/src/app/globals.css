@@ -163,6 +163,8 @@ body {
 .career-swiper .swiper-slide > div {
   width: 100%;
   display: flex;
+}
+
 /* Header Animations */
 @keyframes fadeIn {
   from {
