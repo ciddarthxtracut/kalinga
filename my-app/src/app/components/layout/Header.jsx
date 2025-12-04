@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import MegaMenu from './MegaMenu';
 import MobileMenu from './MobileMenu';
 import FlatIcon from '../general/flat-icon';
@@ -14,6 +15,8 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -272,12 +275,8 @@ const Header = () => {
               <div className="w-36 h-12">
                 <Image
                   src={
-                    typeof window !== 'undefined'
-                      ? (
-                          window.location.pathname === '/'
-                            ? (isScrolled ? getLogoSrc('secondary') : getLogoSrc('primary'))
-                            : getLogoSrc('secondary') 
-                        )
+                    isHomePage
+                      ? (isScrolled ? getLogoSrc('secondary') : getLogoSrc('primary'))
                       : getLogoSrc('secondary')
                   }
                   alt={getLogoAlt('primary')}
@@ -299,7 +298,11 @@ const Header = () => {
                 
                     <Link
                       href={item.href}
-                      className={`px-3 text-base font-medium ${isScrolled ? 'text-[var(--dark-gray)]' : 'text-white'}`}
+                      className={`px-3 text-base font-medium ${
+                        isHomePage 
+                          ? (isScrolled ? 'text-[var(--dark-gray)]' : 'text-white')
+                          : 'text-black'
+                      }`}
                     >
                       {item.label}
                     </Link>
