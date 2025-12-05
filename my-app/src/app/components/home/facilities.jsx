@@ -1,17 +1,48 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function Facilities() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const facilities = [
-    { id: 1, title: 'Library', image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/library.webp' },
-    { id: 2, title: 'study room', image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg' },
-    { id: 3, title: 'Sports', image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg' },
-    { id: 4, title: 'Classroom', image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg' },
-    { id: 5, title: 'Laboratories', image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/library.webp' },
+    { 
+      id: 1, 
+      title: 'Library', 
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/library.webp',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    },
+    { 
+      id: 2, 
+      title: 'study room', 
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo'
+    },
+    { 
+      id: 3, 
+      title: 'Sports', 
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    },
+    { 
+      id: 4, 
+      title: 'Classroom', 
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    },
+    { 
+      id: 5, 
+      title: 'Laboratories', 
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/library.webp',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    },
+    { 
+      id: 6, 
+      title: 'Laboratories', 
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/library.webp',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    },
   ]
 
   const nextSlide = () => {
@@ -24,20 +55,73 @@ export default function Facilities() {
 
   const getVisibleSlides = () => {
     const slides = []
-    for (let i = 0; i < 5; i++) {
-      slides.push(facilities[(currentSlide + i) % facilities.length])
+    for (let i = 0; i < facilities.length; i++) {
+      slides.push(facilities[i])
     }
     return slides
   }
 
+  // Autoplay functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % facilities.length)
+    }, 4000) // Change slide every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [facilities.length])
+
   return (
-    <section
-      className="relative w-full py-16"
-      aria-label="Facilities section"
-    >
-      <div className="container mx-auto px-4 lg:px-6">
+    <>
+      <style dangerouslySetInnerHTML={{__html: `
+        .facilities-title-text {
+          font-size: 30px !important;
+        }
+        @media (min-width: 640px) {
+          .facilities-title-text {
+            font-size: 40px !important;
+          }
+        }
+        @media (min-width: 768px) {
+          .facilities-title-text {
+            font-size: 50px !important;
+          }
+        }
+        @media (min-width: 1024px) {
+          .facilities-title-text {
+            font-size: 100px !important;
+          }
+        }
+        @media (min-width: 1280px) {
+          .facilities-title-text {
+            font-size: 100px !important;
+          }
+        }
+        .facilities-image-slider::-webkit-scrollbar {
+          display: none;
+        }
+        .facilities-image-slider {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .facility-thumbnail {
+          width: calc((100% - 8px) / 3);
+          min-width: calc((100% - 8px) / 3);
+        }
+        @media (min-width: 640px) {
+          .facility-thumbnail {
+            width: calc((100% - 16px) / 5);
+            min-width: calc((100% - 16px) / 5);
+          }
+        }
+      `}} />
+      <section
+        className="relative w-full py-8 sm:py-12 md:py-16"
+        aria-label="Facilities section"
+      >
+      <div className="container mx-auto px-3 sm:px-4 lg:px-6">
+        {/* Main content area with selected facility */}
         <div
-          className="relative w-full rounded-2xl overflow-hidden shadow-lg h-[500px] sm:h-[580px] md:h-[648px]"
+          className="relative w-full rounded-xl sm:rounded-2xl overflow-visible shadow-lg h-[600px] sm:h-[500px] md:h-[580px] lg:h-[648px]"
         style={{
           backgroundImage: `url(${facilities[currentSlide].image})`,
           backgroundSize: 'cover',
@@ -51,61 +135,43 @@ export default function Facilities() {
         }}
       >
         {/* dark overlay */}
-        <div className="absolute inset-0 bg-black/45 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-black/60 rounded-2xl transition-opacity duration-300"></div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start h-full py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-start h-full py-4 sm:py-6 md:py-8 lg:py-12 xl:py-20">
           {/* Left content */}
-          <div className="text-white px-4 sm:px-6 md:px-8 lg:px-12 pt-4 sm:pt-6 md:pt-8 space-y-4 sm:space-y-6 relative">
-            <div style={{ marginTop: '-50px' }}>
+          <div className="text-white px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 pt-2 sm:pt-4 md:pt-6 lg:pt-8 space-y-3 sm:space-y-4 md:space-y-6 relative flex flex-col h-full">
+            <div className="sm:-mt-6 md:-mt-8 lg:-mt-10 xl:-mt-12">
               {/* <div className="w-12 h-1 bg-orange-500 mb-4"></div> */}
-              <p className="text-white mb-7 text-lg sm:text-xl md:text-[25px] font-plus-jakarta-sans font-medium leading-[25px]">Facilities</p>
-              <h2 className="font-stix text-2xl sm:text-3xl md:text-4xl lg:text-[50px] leading-tight">Lorem ipsum dolor sit amet, consectetur</h2>
+              <h6 className="text-white mb-3 sm:mb-5 md:mb-7 !text-lg sm:!text-xl md:!text-[25px] font-plus-jakarta-sans">Facilities</h6>
+              <h2 className="font-stix text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[50px] leading-tight">Lorem ipsum dolor sit amet, consectetur</h2>
             </div>
 
-            <div className="relative">
-              <p className="transition-all duration-300 text-2xl sm:text-3xl md:text-[40px] font-plus-jakarta-sans font-normal leading-[47px] text-left absolute -top-[60px] left-0">
-                0{currentSlide + 1}
-                <span className="text-white/70 text-lg sm:text-xl md:text-[22px] font-plus-jakarta-sans font-normal leading-[47px] text-left">
-                  /0{facilities.length}
+            <div className="flex flex-col justify-around flex-grow pb-4 sm:pb-6 md:pb-8 lg:pb-12">
+              <div className="relative">
+                <span className="transition-all duration-300 text-lg sm:text-xl md:text-2xl lg:!text-3xl xl:md:text-[30px] font-plus-jakarta-sans font-normal leading-tight sm:leading-[47px] text-left mb-4 sm:mb-6 md:mb-8 lg:mb-10 block -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-10">
+                  0{currentSlide + 1}
+                  <span className="text-white/70 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px] font-plus-jakarta-sans font-normal leading-tight sm:leading-[47px] text-left">
+                    /0{facilities.length}
+                  </span>
                 </span>
-              </p>
-              <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-[100px] xl:text-[150px] font-light font-stix leading-none tracking-tight capitalize transition-all duration-500 ease-in-out mt-16 sm:mt-20 md:mt-[100px]" style={{ willChange: 'contents' }}>{facilities[currentSlide].title}</h3>
+                <h3 className="facilities-title-text font-light font-stix leading-none tracking-tight capitalize transition-all duration-500 ease-in-out" style={{ willChange: 'contents' }}>{facilities[currentSlide].title}</h3>
+              </div>
             </div>
-
-            {/* Navigation buttons */}
-            {/* <div className="flex items-center gap-4 pt-2">
-              <button
-                onClick={prevSlide}
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm"
-                aria-label="Previous"
-              >
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-              </button>
-              <button
-                onClick={nextSlide}
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm"
-                aria-label="Next"
-              >
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
-            </div> */}
           </div>
 
           {/* Right column with description text */}
-          <div className="px-4 sm:px-6 md:px-8 lg:px-12 text-white flex flex-col justify-end h-full pb-6 sm:pb-8 md:pb-12">
-            <p className="max-w-md text-xs font-extralight sm:text-sm md:text-[14px] font-plus-jakarta-sans leading-[25px] mb-[50px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          <div className="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 text-white flex flex-col justify-end h-full pb-4 sm:pb-6 md:pb-8 lg:pb-12">
+            <p className="max-w-full lg:max-w-md text-[11px] sm:text-xs md:text-sm lg:text-[14px] font-extralight font-plus-jakarta-sans leading-relaxed sm:leading-[25px] mb-4 sm:mb-6 md:mb-8 lg:mb-10 transition-opacity duration-300">
+              {facilities[currentSlide].description}
             </p>
           </div>
         </div>
 
-        {/* Overlapping thumbnail strip centered at bottom */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-12 sm:-translate-y-16 md:-translate-y-20 -bottom-8 sm:-bottom-12 md:-bottom-16 z-20 w-[96%] sm:w-[94%] md:w-[90%] lg:w-[88%]">
-          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2"
+        {/* Horizontal scrollable image slider - shows 3 on mobile, 5 on tablet+ */}
+        {/* On mobile: positioned below, on desktop: overlapping inside image */}
+        <div className="static lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 mt-4 lg:mt-0 lg:-translate-y-16 xl:-translate-y-20 lg:-bottom-12 xl:-bottom-16 z-20 w-full lg:w-[90%]">
+          <div 
+            className="flex gap-1 sm:gap-1.5 md:gap-2 overflow-x-auto pb-2 facilities-image-slider"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -113,31 +179,36 @@ export default function Facilities() {
             }}
           >
             {getVisibleSlides().map((facility, idx) => {
-              const actualIndex = (currentSlide + idx) % facilities.length
-              const barColors = ['bg-orange-500', 'bg-yellow-500', 'bg-gray-400', 'bg-green-500', 'bg-gray-400']
-              const barColor = barColors[idx] || 'bg-gray-400'
-              const isActive = actualIndex === currentSlide
+              const isActive = idx === currentSlide
+              // All bars up to and including the active one should be yellow
+              const barColor = idx <= currentSlide ? 'bg-yellow-500' : 'bg-gray-400'
               return (
-                <div key={`${facility.id}-${currentSlide}-${idx}`} className="flex flex-col gap-1 flex-shrink-0">
+                <div 
+                  key={facility.id}
+                  className="flex flex-col gap-0.5 sm:gap-1 flex-shrink-0 facility-thumbnail"
+                >
                   {/* colored accent bar above each thumbnail */}
-                  <div className={`w-full h-1 sm:h-2 mb-1 ${barColor} transition-all duration-300`} />
+                  <div className={`w-full h-0.5 sm:h-1 md:h-2 mb-0.5 sm:mb-1 ${barColor} transition-all duration-300`} />
                   <button 
-                    onClick={() => setCurrentSlide(actualIndex)}
-                    className={`relative flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300 w-20 h-14 sm:w-28 sm:h-18 md:w-40 md:h-24 lg:w-48 lg:h-28 hover:opacity-90 hover:scale-105 shadow-lg ${isActive ? 'ring-2 ring-white scale-105' : ''}`}
+                    onClick={() => setCurrentSlide(idx)}
+                    className={`relative flex-shrink-0 rounded-md sm:rounded-lg overflow-hidden transition-all duration-300 w-full h-12 sm:h-14 md:h-18 lg:h-24 xl:h-28 hover:opacity-90 hover:scale-105 shadow-md sm:shadow-lg ${
+                      isActive ? 'ring-1 sm:ring-2 ring-white scale-105' : ''
+                    }`}
                     aria-label={facility.title}
                   >
                     <div className="relative w-full h-full">
-                      <Image 
-                        src={facility.image} 
-                        alt={facility.title} 
+                      <Image
+                        src={facility.image}
+                        alt={facility.title}
                         fill
                         className="object-cover"
                         loading="eager"
                       />
+                      <div className="absolute inset-0 bg-black/40"></div>
                     </div>
                     {isActive && (
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-1.5 sm:p-2 transition-opacity duration-300">
-                        <div className="text-white text-[10px] sm:text-xs font-medium text-center capitalize">{facility.title}</div>
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-1 sm:p-1.5 md:p-2 transition-opacity duration-300">
+                        <div className="text-white text-[9px] sm:text-[10px] md:text-xs font-medium text-center capitalize leading-tight">{facility.title}</div>
                       </div>
                     )}
                   </button>
@@ -149,5 +220,6 @@ export default function Facilities() {
       </div>
       </div>
     </section>
+    </>
   )
 }

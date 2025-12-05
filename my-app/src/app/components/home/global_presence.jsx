@@ -8,8 +8,8 @@ const GlobalPresence = () => {
     <section className="py-16">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="max-w-6xl mx-auto bg-[var(--dark-blue)] rounded-xl p-4 sm:p-6 md:p-8 text-center text-white relative w-full h-auto min-h-[500px] sm:min-h-[550px] md:h-[571px]">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-base font-plus-jakarta-sans sm:text-lg md:text-xl lg:text-[25px] text-white/90 mb-2 sm:mb-3 font-medium leading-[25px] text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-base font-plus-jakarta-sans sm:text-lg md:text-xl lg:text-[25px] text-white mb-2 sm:mb-3 font-medium leading-[25px] text-center">
             Global Presence
           </div>
           <h2 className="font-stix text-2xl sm:text-3xl md:text-4xl lg:text-[50px] my-3 sm:my-4 leading-tight px-2 text-white">
@@ -34,9 +34,10 @@ const GlobalPresence = () => {
           </div>
         </div>
 
+        {/* Logos inside background */}
         <div className="pb-6 sm:pb-8 md:pb-12 lg:pb-10 -mt-4 sm:-mt-6 md:-mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full z-10 relative px-4">
           {logos.map((l) => (
-            <div key={l} className="bg-white text-gray-700 rounded-md px-4 sm:px-6 py-2 sm:py-3 shadow text-xs sm:text-sm font-medium w-full sm:w-[180px] md:w-[198px] h-auto min-h-[70px] sm:h-[90px] border-[4px] sm:border-[6px] border-white flex items-center justify-center">
+            <div key={l} className="bg-white text-gray-700 rounded-md px-4 sm:px-6 py-2 sm:py-3 shadow text-xs sm:text-sm font-medium w-full sm:w-[150px] md:w-[150px] h-auto min-h-[70px] sm:h-[70px] border-[4px] sm:border-[6px] border-white flex items-center justify-center">
               {l}
             </div>
           ))}

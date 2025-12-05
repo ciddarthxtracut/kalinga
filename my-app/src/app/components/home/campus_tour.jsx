@@ -13,13 +13,13 @@ export default function CampusTour() {
           backgroundSize: 'cover'
         }}>
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
 
           {/* Center Image */}
           <div className="absolute inset-0 z-5 flex items-center justify-center">
             <div className="relative w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[173px] md:h-[173px]">
               <Image
-                src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/globe-skin-color.png"
+                src="https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/360-degrees+2.png"
                 alt="Campus Tour 360"
                 fill
                 className="object-contain"
@@ -45,25 +45,21 @@ export default function CampusTour() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 sm:gap-6">
               {/* Left: Title and Description */}
               <div className="flex-1 space-y-2 sm:space-y-3">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-stix font-medium text-white leading-tight">
+                <h2 className="font-stix font-medium text-white leading-tight">
                   Campus Tour
                 </h2>
-                <p className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed max-w-md">
+                <p className="text-white leading-relaxed max-w-md">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                 </p>
               </div>
 
               {/* Right: CTA Button */}
               <div className="flex items-center gap-3">
-                <GlobalArrowButton
-                  className="!bg-white !text-black !w-full sm:!w-[191px] !h-[40px] sm:!h-[44px] mt-2 sm:mt-3"
-                  textClassName="!text-black !px-0"
-                  arrowClassName="!bg-[var(--button-red)]"
-                  arrowIconClassName="!text-white"
-                  arrowSize={14}
-                >
-                  Explore Now
-                </GlobalArrowButton>
+              <GlobalArrowButton className="!bg-white !text-black"
+                arrowClassName="!bg-[var(--button-red)]"
+                arrowIconClassName="!text-white"
+                textClassName="!text-black"
+                >Explore Now</GlobalArrowButton>
               </div>
             </div>
           </div>
