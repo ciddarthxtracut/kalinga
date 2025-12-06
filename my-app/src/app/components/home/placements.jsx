@@ -46,7 +46,7 @@ const Placements = () => {
           animation-play-state: paused;
         }
       `}} />
-    <section className="py-8 sm:py-12 md:py-16 bg-white overflow-x-hidden">
+    <section className="pt-20 sm:py-20 md:py-16 md:pt-0 bg-white overflow-x-hidden">
       <div className="container mx-auto px-3 sm:px-4 lg:px-6">
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center md:items-center">
           {/* Left: title + stats */}
