@@ -49,7 +49,7 @@ export default function ResearchInnovation() {
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="rounded-xl p-6 sm:p-6 flex flex-col justify-between transition-colors duration-300 bg-[var(--light-gray)] hover:bg-[var(--card-skin)]"
+                className="rounded-xl p-4 sm:p-4 flex flex-col justify-between transition-colors duration-300 bg-[var(--light-gray)] hover:bg-[var(--card-skin)]"
               >
                 <div>
                   <h3 className="text-lg sm:text-xl font-stix font-semibold text-[var(--foreground)] mb-4">
@@ -58,9 +58,9 @@ export default function ResearchInnovation() {
                   <div className="w-full h-px bg-[var(--foreground)] mb-4"></div>
                 </div>
                 <div>
-                  <h3 className="font-stix font-bold text-[var(--foreground)] mb-4">
+                  <h2 className="font-stix font-bold text-[var(--foreground)]">
                     {stat.value}
-                  </h3>
+                  </h2>
                 </div>
               </div>
             ))}

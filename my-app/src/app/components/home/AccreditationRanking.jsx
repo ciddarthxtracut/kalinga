@@ -31,7 +31,7 @@ const AccreditationRanking = () => {
           {/* Left title pill */}
           <div className="flex-none relative w-full md:w-auto md:left-[-130px] z-1">
             <div className="bg-[var(--button-red)] text-white rounded-[80px] sm:rounded-[100px] md:rounded-[120px] flex items-center justify-center shadow-lg w-full md:w-[574px] h-auto min-h-[100px] sm:min-h-[140px] md:h-[172px] px-4 sm:px-6 md:px-0">
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-stix leading-tight text-center md:ml-25 py-2 sm:py-0">
+              <h2 className="!text-[35px] font-stix leading-tight text-center md:ml-25 py-2 sm:py-0">
                 Accreditation<br />&amp; Ranking
               </h2>
             </div>

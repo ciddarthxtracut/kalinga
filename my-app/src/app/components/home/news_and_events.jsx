@@ -168,7 +168,7 @@ export default function NewsEvents() {
                 <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mt-[-30px] pt-3 border-b border-white pb-3">
                   <button
                     onClick={handlePrevDay}
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[var(--dark-blue)] flex items-center justify-center transition-colors flex-shrink-0 hover:bg-orange-500"
+                    className="w-8 h-8 sm:w-10 sm:h-10  bg-[var(--dark-blue)] flex items-center justify-center transition-colors flex-shrink-0"
                     aria-label="Previous day"
                   >
                     <img
@@ -208,7 +208,7 @@ export default function NewsEvents() {
 
                   <button
                     onClick={handleNextDay}
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[var(--dark-blue)] flex items-center justify-center shadow-sm hover:bg-orange-500 transition-colors flex-shrink-0"
+                    className="w-8 h-8 sm:w-10 sm:h-10  bg-[var(--dark-blue)] flex items-center justify-center shadow-sm  transition-colors flex-shrink-0"
                     aria-label="Next day"
                   >
                     <img

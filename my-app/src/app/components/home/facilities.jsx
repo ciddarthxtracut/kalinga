@@ -205,8 +205,13 @@ export default function Facilities() {
                   {/* progress accent bar synced with slide timing */}
                   <div className="w-full h-0.5 sm:h-1 md:h-2 mb-0.5 sm:mb-1 bg-white/20 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-yellow-500 transition-[width] duration-100 ease-linear"
-                      style={{ width: `${progressForBar}%` }}
+                      className="h-full bg-yellow-500"
+                      style={{ 
+                        width: `${progressForBar}%`,
+                        willChange: 'width',
+                        transform: 'translateZ(0)',
+                        transition: progressForBar === 0 ? 'width 0ms' : 'none'
+                      }}
                     />
                   </div>
                   <button 
@@ -216,7 +221,7 @@ export default function Facilities() {
                       setProgress(0)
                     }}
                     className={`relative flex-shrink-0 rounded-md sm:rounded-lg overflow-hidden transition-all duration-500 ease-out w-full h-12 sm:h-14 md:h-18 lg:h-24 xl:h-28 hover:opacity-90 hover:scale-105 shadow-md sm:shadow-lg ${
-                      isActive ? 'ring-1 sm:ring-2 ring-white scale-105' : ''
+                      isActive ? 'ring-1 sm:ring-2 ring-white scale-90' : ''
                     }`}
                     aria-label={facility.title}
                   >
@@ -262,8 +267,13 @@ export default function Facilities() {
                   {/* progress accent bar synced with slide timing */}
                   <div className="w-full h-0.5 sm:h-1 md:h-2 mb-0.5 sm:mb-1 bg-white/20 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-yellow-500 transition-[width] duration-100 ease-linear"
-                      style={{ width: `${progressForBar}%` }}
+                      className="h-full bg-yellow-500"
+                      style={{ 
+                        width: `${progressForBar}%`,
+                        willChange: 'width',
+                        transform: 'translateZ(0)',
+                        transition: progressForBar === 0 ? 'width 0ms' : 'none'
+                      }}
                     />
                   </div>
                   <button 

@@ -213,7 +213,7 @@ export default function Testimonials() {
                                     >
                                         {/* Image */}
                                         <div className="w-full md:w-5/12 flex-shrink-0 relative">
-                                            <div className="aspect-[4/5] w-full bg-slate-200 rounded-xl sm:rounded-2xl border-2 sm:border-4 md:border-[6px] border-white relative overflow-hidden">
+                                            <div className="aspect-[3/4] sm:aspect-[4/5] w-full bg-slate-200 rounded-xl sm:rounded-2xl border-2 sm:border-4 md:border-[6px] border-white relative overflow-hidden">
                                                 <img 
                                                     src={item.image} 
                                                     className="w-full h-full object-cover" 

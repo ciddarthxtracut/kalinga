@@ -219,9 +219,9 @@ export default function Achievements() {
                         <div className="w-full h-px bg-[var(--foreground)] mb-4"></div>
                       </div>
                       <div>
-                        <h3 className="font-stix font-bold text-[var(--foreground)] mb-4">
+                        <h2 className="font-stix font-bold text-[var(--foreground)] mb-4">
                           {achievement.number}
-                        </h3>
+                        </h2>
                         <p className="text-[var(--light-text-gray)] leading-relaxed font-plus-jakarta-sans">
                           {achievement.description}
                         </p>

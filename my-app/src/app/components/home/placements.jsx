@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Stack from '../gsap/Stack'
 import LogoLoop from '../gsap/LogoLoop'
 
@@ -26,6 +26,11 @@ const logos = [
 
 const Placements = () => {
   const stackRef = useRef(null)
+  const sectionRef = useRef(null)
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const [studentsPlaced, setStudentsPlaced] = useState(0)
+  const [recruiters, setRecruiters] = useState(0)
+  const [internships, setInternships] = useState(0)
   const placementImages = [
     'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placements-silder-1.webp',
     'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/about-kalinga.webp',
@@ -46,10 +51,53 @@ const Placements = () => {
     ),
     title: `Company logo ${index + 1}`
   }))
+
+  // Count-up animation function
+  const animateValue = (start, end, duration, setter) => {
+    const startTime = performance.now()
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const current = Math.floor(start + (end - start) * progress)
+      setter(current)
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
+    }
+    requestAnimationFrame(animate)
+  }
+
+  // Intersection Observer to trigger animation when section is in view
+  useEffect(() => {
+    if (hasAnimated || !sectionRef.current) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true)
+            animateValue(0, 3300, 2000, setStudentsPlaced)
+            animateValue(0, 500, 2000, setRecruiters)
+            animateValue(0, 1300, 2000, setInternships)
+          }
+        })
+      },
+      { threshold: 0.3 }
+    )
+
+    observer.observe(sectionRef.current)
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [hasAnimated])
   
   return (
     <>
-    <section className="pt-20 sm:py-20 md:py-16 bg-white overflow-x-hidden">
+    <section ref={sectionRef} className="pt-20 sm:py-20 md:py-16 bg-white overflow-x-hidden">
       <div className="container mx-auto px-4 md:px-5 ">
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center md:items-center">
           {/* Left: title + stats */}
@@ -66,21 +114,21 @@ const Placements = () => {
 
             <div className="grid grid-cols-2 sm:flex sm:flex-row items-start gap-4 sm:gap-3 lg:gap-5 text-gray-800">
               <div className="w-full sm:w-auto sm:flex-1">
-                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">3300 +</h3>
+                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{studentsPlaced.toLocaleString()} +</h3>
                 <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Students Placed</h6>
               </div>
 
               <div className="hidden sm:block self-stretch border-r border-gray-500" />
 
               <div className="w-full sm:w-auto sm:flex-1">
-                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">500 +</h3>
+                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{recruiters.toLocaleString()} +</h3>
                 <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Corporate Recruiters</h6>
               </div>
 
               <div className="hidden sm:block self-stretch border-r border-gray-500" />
 
               <div className="w-full sm:w-auto sm:flex-1 col-span-2 sm:col-span-1">
-                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">1300 +</h3>
+                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{internships.toLocaleString()} +</h3>
                 <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Internships Offered</h6>
               </div>
             </div>
@@ -147,7 +195,7 @@ const Placements = () => {
               <div className="w-full overflow-hidden relative px-4 sm:px-6 lg:px-8">
                 <LogoLoop
                   logos={logoLoopItems}
-                  speed={120}
+                  speed={30}
                   direction="left"
                   logoHeight={70}
                   gap={16}

@@ -28,7 +28,7 @@ export default function CampusTour() {
           </div>
 
           {/* Content */}
-          <div className="container mx-auto relative z-10 h-full flex flex-col justify-center md:justify-end p-4 sm:p- md:p-5">
+          <div className="container mx-auto relative z-10 h-full flex flex-col justify-center md:justify-end p-4 md:p-5 !pb-16">
             {/* Top: 360 Badge */}
             <div className="flex items-center gap-2 w-fit">
               {/* <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur border-2 border-white flex items-center justify-center">

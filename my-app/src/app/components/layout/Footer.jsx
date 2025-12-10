@@ -7,25 +7,25 @@ export default function Footer() {
     <>
       <style dangerouslySetInnerHTML={{__html: `
         .footer-decorative-text {
-          font-size: clamp(60px, 8vw, 60px);
+          font-size: 6vh;
           max-width: 100%;
           line-height: 1.1;
         }
         @media (min-width: 640px) {
           .footer-decorative-text {
-            font-size: clamp(40px, 10vw, 80px);
+            font-size: 8vh;
           }
         }
         @media (min-width: 768px) {
           .footer-decorative-text {
-            font-size: clamp(80px, 12vw, 160px);
+            font-size: 25vh;
             white-space: nowrap;
           }
         }
       `}} />
     <footer className="text-white mt-5 px-4 sm:px-5">
       <div className="relative bg-[var(--dark-blue)] rounded-[10px] sm:rounded-[15px]">
-          <div className="px-4 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-6 md:py-8 lg:py-10 relative z-10">
+          <div className="px-4 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-6 md:py-8 lg:py-10 !pb-0 relative z-10">
         {/* Top Row: Logo and Follow Us */}
         <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4 sm:gap-4 md:gap-0 mb-6 sm:mb-6 md:mb-8 lg:mb-10">
           {/* Logo Section - Left */}
@@ -46,47 +46,49 @@ export default function Footer() {
           {/* Quick Link - 2 columns */}
           <div className="sm:col-span-1 md:col-span-4 mb-6 sm:mb-0">
             <h4 className="text-sm sm:text-base lg:text-lg font-stix mb-4 sm:mb-4 lg:mb-6 flex items-end gap-2">
-              <span className="text-white font-stix">Quick link</span>
+              <span className="text-white font-stix">Quick Links</span>
               <span className="flex-1 border-t border-thick border-white/40"></span>
             </h4>
             <div className="grid grid-cols-2 gap-x-4 sm:gap-x-12 gap-y-2.5 sm:gap-y-3 font-plus-jakarta-sans text-xs sm:text-[14px] leading-relaxed sm:leading-[25px] font-normal">
               <ul className="text-white/80 space-y-2 sm:space-y-3">
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
+                <li><a className="hover:text-white transition-colors" href="/admissions">About</a></li>
+                <li><a className="hover:text-white transition-colors" href="/academics">Academics</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Admissions</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">News & Events</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Research</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Placements</a></li>
               </ul>
               <ul className="text-white/80 space-y-2 sm:space-y-3">
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Departments</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Campus Life</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Facilities</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Libraries</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Labs</a></li>
+                <li><a className="hover:text-white transition-colors" href="/students/campus-life">Events</a></li>
               </ul>
             </div>
           </div>
 
-          {/* Academics - 2 columns */}
+          {/* Important Links - 2 columns */}
           <div className="sm:col-span-1 md:col-span-4 mb-6 sm:mb-0">
             <h4 className="text-sm sm:text-base lg:text-lg font-normal mb-4 sm:mb-6 flex items-end gap-2">
-              <span className="text-white font-stix">Academics</span>
+              <span className="text-white font-stix">Important Links</span>
               <span className="flex-1 border-t border-white/40"></span>
             </h4>
             <div className="grid grid-cols-2 gap-x-4 sm:gap-x-12 gap-y-2.5 sm:gap-y-3 font-plus-jakarta-sans text-xs sm:text-[14px] leading-relaxed sm:leading-[25px] font-normal">
               <ul className="text-white/80 space-y-2 sm:space-y-3">
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
+                <li><a className="hover:text-white transition-colors" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a className="hover:text-white transition-colors" href="/terms-conditions">Terms & Conditions</a></li>
+                <li><a className="hover:text-white transition-colors" href="/refund-policy">Refund Policy</a></li>
+                <li><a className="hover:text-white transition-colors" href="/accessibility">Accessibility</a></li>
+                <li><a className="hover:text-white transition-colors" href="/downloads">Downloads</a></li>
               </ul>
               <ul className="text-white/80 space-y-2 sm:space-y-3">
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
-                <li><a className="hover:text-white transition-colors" href="#">Lorem ipsum</a></li>
+                <li><a className="hover:text-white transition-colors" href="/grievance">Grievance</a></li>
+                <li><a className="hover:text-white transition-colors" href="/rti">RTI</a></li>
+                <li><a className="hover:text-white transition-colors" href="/nirf-ranking">NIRF Ranking</a></li>
+                <li><a className="hover:text-white transition-colors" href="/iqac-documents">IQAC Documents</a></li>
+                <li><a className="hover:text-white transition-colors" href="/mandatory-disclosures">Mandatory Disclosures</a></li>
               </ul>
             </div>
           </div>
@@ -116,7 +118,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-xs sm:text-xs lg:text-sm text-white/80">
               <div>
                 <div className="flex items-start gap-2.5 sm:gap-3">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 text-yellow-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path></svg>
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 text-[var(--dark-orange-red)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path></svg>
                   <div>
                     <p className="font-medium text-white text-xs sm:text-sm">Kalinga University</p>
                     <p className="text-[10px] sm:text-xs leading-relaxed">Kotni, Near Mantralaya,<br/>Naya Raipur - 492101, Chhattisgarh, India</p>
@@ -124,11 +126,14 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-center gap-2.5 sm:gap-3">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--dark-orange-red)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 <a href="tel:+91-9907252100" className="text-[10px] sm:text-xs break-all">+91-9907252100</a>
               </div>
               <div className="flex items-center gap-2.5 sm:gap-3">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--dark-orange-red)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
                 <a href="mailto:registrar@kalingauniversity.ac.in" className="text-[10px] sm:text-xs break-all">registrar@kalingauniversity.ac.in</a>
               </div>
               <div className="flex justify-start sm:justify-end">
@@ -155,7 +160,7 @@ export default function Footer() {
           </div>
           <div
             aria-hidden="true"
-            className="pointer-events-none pt-6 sm:pt-6 pb-4 sm:pb-8 lg:pb-0 overflow-x-hidden px-4 sm:px-0"
+            className="pointer-events-none pb-4 sm:pb-8 lg:pb-0 overflow-x-hidden px-4 sm:px-0"
           >   
             <h2
               className="footer-decorative-text leading-none pb-4 sm:pb-8 lg:pb-0 text-center max-w-full"

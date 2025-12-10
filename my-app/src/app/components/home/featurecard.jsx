@@ -228,12 +228,12 @@ export default function FeatureCards({
                 onSwiper={(swiper) => {
                   swiperRef.current = swiper
                 }}
-                className="feature-cards-swiper container mx-auto"
+                className="feature-cards-swiper container mx-auto !px-5"
               >
                 {cards.map((c) => (
                   <SwiperSlide key={c.id} className="h-auto">
                     <div className="h-full">
-                      <div className={`relative rounded-lg p-4 sm:p-5 md:p-5 lg:p-5 shadow-xl h-full flex ${c.variant === 'amber' ? 'bg-[var(--card-sandal)] text-black' : 'bg-[var(--card-gray)] text-gray-800'}`} style={{ minHeight: '260px' }}>
+                      <div className={`relative rounded-lg p-4 sm:p-5 md:p-5 lg:p-5 shadow-xl h-full flex items-center ${c.variant === 'amber' ? 'bg-[var(--card-sandal)] text-black' : 'bg-[var(--card-gray)] text-gray-800'}`} style={{ minHeight: '260px' }}>
                         <div className="flex flex-col gap-3 sm:gap-4 w-full h-full">
                           <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/60 flex-shrink-0" />
                           <div className="flex-1 flex flex-col">
@@ -261,7 +261,7 @@ export default function FeatureCards({
               </Swiper>
               
               {/* Navigation buttons - bottom right */}
-              <div className="flex justify-end items-center gap-3 mt-6 sm:mt-8">
+              <div className="container mx-auto flex justify-end items-center gap-3 mt-6 sm:mt-8">
                 <button
                   className="feature-cards-swiper-button-prev w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-md"
                   aria-label="Previous cards"
