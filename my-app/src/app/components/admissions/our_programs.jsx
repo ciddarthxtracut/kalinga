@@ -48,7 +48,7 @@ export default function OurPrograms() {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-4 lg:px-5">
         {/* Title and Subtitle */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-stix text-[var(--foreground)] text-4xl md:text-5xl lg:text-6xl mb-4">

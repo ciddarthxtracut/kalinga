@@ -24,7 +24,7 @@ const achievements = [
   {
     id: 3,
     title: 'Scholarships Distributed',
-    number: 'INR 3 Cr+',
+    number: 'INR 3Cr+',
     description: 'Enabling access and excellence.',
   },
   {
@@ -145,7 +145,7 @@ export default function Achievements() {
         }
       `}} />
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="container mx-auto px-4 lg:px-5">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Side - Heading and Button */}
             <div className="flex flex-col justify-center">
@@ -211,7 +211,7 @@ export default function Achievements() {
               >
                 {achievements.map((achievement) => (
                   <SwiperSlide key={achievement.id} className="!h-auto">
-                    <div className="bg-[var(--light-gray)] rounded-xl p-6 sm:p-6 flex flex-col justify-between">
+                    <div className="bg-[var(--light-gray)] rounded-xl p-10 md:p-6 flex flex-col justify-between">
                       <div>
                         <h3 className="text-lg sm:text-xl font-stix font-semibold text-[var(--foreground)] mb-4">
                           {achievement.title}
@@ -219,7 +219,7 @@ export default function Achievements() {
                         <div className="w-full h-px bg-[var(--foreground)] mb-4"></div>
                       </div>
                       <div>
-                        <h3 className="!text-6xl !sm:text-4xl font-stix font-bold text-[var(--foreground)] mb-4">
+                        <h3 className="font-stix font-bold text-[var(--foreground)] mb-4">
                           {achievement.number}
                         </h3>
                         <p className="text-[var(--light-text-gray)] leading-relaxed font-plus-jakarta-sans">

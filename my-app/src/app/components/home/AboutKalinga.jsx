@@ -24,21 +24,24 @@ const AboutKalinga = () => {
         }
         @media (min-width: 1024px) {
           .about-kalinga-text {
-            font-size: 110px !important;
+            font-size: 130px !important;
           }
         }
       `}} />
-      <section className="py-16 ">
-        <div className="container mx-auto px-5 flex justify-center relative">
+      <section className={`py-10 ${isExpanded ? 'pb-16 md:pb-10' : 'pb-10'}`}>
+        <div className="px-5 flex justify-center relative">
           {/* Single dark blue panel with overlapping image */}
-          <div className={`relative bg-[var(--dark-blue)] rounded-2xl p-8 md:p-12 lg:p-16 text-white overflow-visible shadow-2xl w-full max-w-[1254px] transition-all duration-300 ${isExpanded ? 'min-h-[700px] md:min-h-[800px] pb-40 md:pb-48' : 'min-h-[500px] md:min-h-[600px] pb-28 md:pb-36'}`}>
-            <div className={`grid md:grid-cols-2 gap-8 items-start relative z-1 transition-all duration-300 ${isExpanded ? 'mb-16 md:mb-20' : 'mb-12 md:mb-16'}`}>
-              {/* Left: Title and button */}
+          <div
+            className={`relative bg-[var(--dark-blue)] rounded-2xl py-5 md:py-16 text-white overflow-visible shadow-2xl w-full transition-all duration-300 ${isExpanded ? 'pb-8 md:pb-16' : 'pb-5 md:pb-16'} ${isExpanded ? 'md:h-[650px]' : 'md:h-[550px]'}`}
+            style={{ height: isExpanded ? 'auto' : undefined, minHeight: isExpanded ? undefined : '550px' }}
+          >
+            <div className="container mx-auto" >
+            <div className={`grid md:grid-cols-2 gap-6 items-start relative z-1 transition-all duration-300`}>                {/* Left: Title and button */}
               <div className="space-y-6">
                 <h2 className="font-stix text-3xl md:text-4xl lg:text-5xl leading-tight">
                 Kalinga University — The Pride of Central India
                 </h2>
-                <div className="mt-6">
+                <div className="mt-4">
                 <Link href="/about-us" passHref legacyBehavior>
                 <a className="inline-flex">
                 <GlobalArrowButton className="!bg-white !text-black"
@@ -71,9 +74,9 @@ const AboutKalinga = () => {
             </div>
 
             {/* Decorative large outlined "About Kalinga" text (panel-relative and visible) */}
-            <div className="pointer-events-none absolute left-6 md:left-10 bottom-6 md:bottom-15   opacity-100 select-none z-2">
+            <div className="pointer-events-none absolute bottom-6 md:bottom-15   opacity-100 select-none z-2">
               <h2
-                className="font-stix about-kalinga-text leading-none whitespace-nowrap"
+                className="font-stix about-kalinga-text leading-none whitespace-nowrap md:opacity-100 opacity-0"
                 style={{
                   color: 'transparent',
                   WebkitTextStroke: '1.57px #FFFFFF',
@@ -85,9 +88,27 @@ const AboutKalinga = () => {
               </h2>
             </div>
 
-          {/* Overlapping student image on the right side */}
-          <div className={`absolute right-8 md:right-16 lg:right-15 z-1 hidden md:block transition-all duration-300 ${isExpanded ? 'top-[70%] -translate-y-[40%]' : 'top-1/2 -translate-y-[15%]'}`}>
-            <div className="relative w-[555px] h-[452px] rounded-[10px] overflow-hidden shadow-2xl">
+          {/* Desktop image aligned via normal grid flow */}
+          <div className="hidden md:grid grid-cols-2 gap-6 items-start">
+            <div />
+            <div className="flex justify-end">
+              <div
+                className="relative w-[555px] h-[452px] rounded-[10px] overflow-hidden shadow-2xl"
+                style={{ transform: `translateY(${isExpanded ? '10px' : '-70px'})` }}
+              >
+                <Image
+                  src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/about-kalinga.webp"
+                  alt="Students"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile: show image below on small screens */}
+          <div className={`mt-8 md:hidden flex justify-center ${isExpanded ? 'mb-8' : 'mb-0'}`}>
+            <div className="relative w-full max-w-[320px] h-[230px] rounded-lg overflow-hidden shadow-2xl">
               <Image
                 src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/about-kalinga.webp"
                 alt="Students"
@@ -96,17 +117,6 @@ const AboutKalinga = () => {
               />
             </div>
           </div>
-
-          {/* Mobile: show image below on small screens */}
-          <div className="mt-8 md:hidden flex justify-center">
-            <div className="relative w-full max-w-[320px] h-[280px] rounded-lg overflow-hidden shadow-2xl">
-              <Image
-                src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/about-kalinga.webp"
-                alt="Students"
-                fill
-                className="object-cover"
-              />
-            </div>
           </div>
         </div>
       </div>

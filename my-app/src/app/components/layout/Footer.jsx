@@ -7,7 +7,7 @@ export default function Footer() {
     <>
       <style dangerouslySetInnerHTML={{__html: `
         .footer-decorative-text {
-          font-size: clamp(30px, 8vw, 40px);
+          font-size: clamp(60px, 8vw, 60px);
           max-width: 100%;
           line-height: 1.1;
         }
@@ -18,12 +18,12 @@ export default function Footer() {
         }
         @media (min-width: 768px) {
           .footer-decorative-text {
-            font-size: clamp(80px, 12vw, 120px);
+            font-size: clamp(80px, 12vw, 160px);
             white-space: nowrap;
           }
         }
       `}} />
-    <footer className="container mx-auto text-white mt-5">
+    <footer className="text-white mt-5 px-4 sm:px-5">
       <div className="relative bg-[var(--dark-blue)] rounded-[10px] sm:rounded-[15px]">
           <div className="px-4 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-6 md:py-8 lg:py-10 relative z-10">
         {/* Top Row: Logo and Follow Us */}
@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 sm:gap-6 md:gap-8 lg:gap-10">
           {/* Quick Link - 2 columns */}
           <div className="sm:col-span-1 md:col-span-4 mb-6 sm:mb-0">
-            <h4 className="text-sm sm:text-base lg:text-lg font-stix mb-4 sm:mb-4 lg:mb-6 flex items-center gap-2">
+            <h4 className="text-sm sm:text-base lg:text-lg font-stix mb-4 sm:mb-4 lg:mb-6 flex items-end gap-2">
               <span className="text-white font-stix">Quick link</span>
               <span className="flex-1 border-t border-thick border-white/40"></span>
             </h4>
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* Academics - 2 columns */}
           <div className="sm:col-span-1 md:col-span-4 mb-6 sm:mb-0">
-            <h4 className="text-sm sm:text-base lg:text-lg font-normal mb-4 sm:mb-6 flex items-center gap-2">
+            <h4 className="text-sm sm:text-base lg:text-lg font-normal mb-4 sm:mb-6 flex items-end gap-2">
               <span className="text-white font-stix">Academics</span>
               <span className="flex-1 border-t border-white/40"></span>
             </h4>
@@ -92,14 +92,14 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-            <div className="sm:col-span-2 md:col-span-4 mt-0 md:mt-[-100px]">
+            <div className="sm:col-span-2 md:col-span-4 mt-0 md:mt-[-75px]">
             <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
               {/* Follow Us Section */}
               <div className="text-left">
                 <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-8">
-                  <span className="text-sm sm:text-base font-normal font-stix">
+                  <h4 className="text-sm sm:text-base lg:text-lg font-normal text-white font-stix">
                     Follow Us
-                  </span>
+                  </h4>
                   <div className="flex items-center justify-start gap-2.5 sm:gap-2.5 lg:gap-3">
                     <a href="#" aria-label="facebook" className="text-white hover:text-orange-400 transition-colors"><svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z"/></svg></a>
                     <a href="#" aria-label="twitter" className="text-white hover:text-orange-400 transition-colors"><svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 005.001-1.721 4.036 4.036 0 01-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 01-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 01-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 008.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 016.968-2.756 7.936 7.936 0 002.556-.973 4.02 4.02 0 01-1.771 2.22 8.073 8.073 0 002.319-.624 8.645 8.645 0 01-2.019 2.083z"/></svg></a>

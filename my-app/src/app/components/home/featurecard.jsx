@@ -140,8 +140,13 @@ export default function FeatureCards({
   const [cardExpanded, setCardExpanded] = useState({})
   const swiperRef = useRef(null)
   
-  const truncate = (text, limit = 80) => (text?.length > limit ? text.slice(0, limit) + '...' : text)
   const toggleCard = (id) => setCardExpanded((prev) => ({ ...prev, [id]: !prev[id] }))
+  const collapsedTextStyle = {
+    display: '-webkit-box',
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+  }
 
   // Dynamically calculate truncated and hidden text from fullText
   const truncateLimit = 200
@@ -151,14 +156,14 @@ export default function FeatureCards({
  
   return (
     <section className="py-16 px-4">
-      <div className="container mx-auto relative">
+      <div className="relative">
         {/* Main rounded dark panel */}
         <div className="relative rounded-2xl sm:rounded-3xl bg-[var(--dark-blue)] overflow-visible text-white shadow-2xl p-4 sm:p-6 md:p-8 lg:p-12 pt-10">
           
           {/* Top section: Image left, Text right */}
-          <div className="grid grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 md:mb-10">
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 md:mb-10">
             {/* Image on left - extending outside on top */}
-            <div className="relative w-full h-[400px] -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 xl:-mt-24 p-8">
+            <div className="relative w-full h-[450px] -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 xl:-mt-24 p-8">
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transform-3d-slant-mirror">
                 <Image
                   src={imageUrl}
@@ -173,7 +178,7 @@ export default function FeatureCards({
             {/* Text content on right */}
             <div className="flex flex-col justify-center">
               <h2 className="font-stix text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight mb-3 sm:mb-4 text-white">{title}</h2>
-              <p className="text-white/90 text-sm sm:text-base md:text-[15px] leading-relaxed">
+              <p className="text-white leading-relaxed">
                 {displayText}
                 {!isExpanded && hiddenText && (
                   <>
@@ -223,20 +228,23 @@ export default function FeatureCards({
                 onSwiper={(swiper) => {
                   swiperRef.current = swiper
                 }}
-                className="feature-cards-swiper"
+                className="feature-cards-swiper container mx-auto"
               >
                 {cards.map((c) => (
                   <SwiperSlide key={c.id} className="h-auto">
-                    <div className="px-2 sm:px-3 h-full">
-                      <div className={`relative rounded-lg p-4 sm:p-5 md:p-5 lg:p-6 shadow-xl h-full flex ${c.variant === 'amber' ? 'bg-[var(--card-sandal)] text-black' : 'bg-[var(--card-gray)] text-gray-800'}`} style={{ minHeight: cardExpanded[c.id] ? 'auto' : '200px' }}>
+                    <div className="h-full">
+                      <div className={`relative rounded-lg p-4 sm:p-5 md:p-5 lg:p-5 shadow-xl h-full flex ${c.variant === 'amber' ? 'bg-[var(--card-sandal)] text-black' : 'bg-[var(--card-gray)] text-gray-800'}`} style={{ minHeight: '260px' }}>
                         <div className="flex flex-col gap-3 sm:gap-4 w-full h-full">
                           <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/60 flex-shrink-0" />
                           <div className="flex-1 flex flex-col">
                             <h4 className="font-semibold !text-base mb-1.5 sm:mb-2">{c.title}</h4>
-                            <p className="text-xs sm:text-sm leading-relaxed text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] flex-1">
-                              {cardExpanded[c.id] ? c.body : truncate(c.body, 60)}
+                            <p
+                              className="text-xs sm:text-sm leading-relaxed text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] flex-1"
+                              style={cardExpanded[c.id] ? undefined : collapsedTextStyle}
+                            >
+                              {c.body}
                             </p>
-                            {c.body && c.body.length > 50 && (
+                            {c.body && (
                               <button
                                 onClick={() => toggleCard(c.id)}
                                 className="mt-2 text-[var(--button-red)] text-xs sm:text-sm font-semibold hover:opacity-80 transition-opacity self-start"
@@ -278,15 +286,18 @@ export default function FeatureCards({
               {cards.map((c) => (
                 <div
                   key={c.id}
-                  className={`relative rounded-lg p-4 sm:p-5 md:p-5 lg:p-6 shadow-xl flex ${c.variant === 'amber' ? 'bg-[var(--card-sandal)] text-black' : 'bg-[var(--card-gray)] text-gray-800'}`} style={{ minHeight: cardExpanded[c.id] ? 'auto' : '200px' }}>
+                  className={`relative rounded-lg p-4 sm:p-5 md:p-5 lg:p-6 shadow-xl flex ${c.variant === 'amber' ? 'bg-[var(--card-sandal)] text-black' : 'bg-[var(--card-gray)] text-gray-800'}`} style={{ minHeight: '260px' }}>
                   <div className="flex flex-col gap-3 sm:gap-4 w-full h-full">
                     <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/60 flex-shrink-0" />
                     <div className="flex-1 flex flex-col">
                       <h4 className="font-semibold !text-base mb-1.5 sm:mb-2">{c.title}</h4>
-                      <p className="text-xs sm:text-sm leading-relaxed text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] flex-1">
-                        {cardExpanded[c.id] ? c.body : truncate(c.body, 50)}
+                      <p
+                        className="text-xs sm:text-sm leading-relaxed text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] flex-1"
+                        style={cardExpanded[c.id] ? undefined : collapsedTextStyle}
+                      >
+                        {c.body}
                       </p>
-                      {c.body && c.body.length > 50 && (
+                      {c.body && (
                         <button
                           onClick={() => toggleCard(c.id)}
                           className="mt-2 text-[var(--button-red)] text-xs sm:text-sm font-semibold hover:opacity-80 transition-opacity self-start"

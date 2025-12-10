@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 
@@ -15,13 +16,13 @@ const GlobalPresence = ({
 }) => {
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 lg:px-6">
-        <div className={`mx-auto ${backgroundColor} rounded-xl px-4 py-8 sm:p-6 md:p-12 text-center text-white relative w-full h-auto min-h-[500px] sm:min-h-[550px] md:h-[571px]`}>
+      <div className="px-4 lg:px-6">
+        <div className={`mx-auto ${backgroundColor} rounded-xl px-4 py-8 sm:p-6 md:p-16 text-center text-white relative w-full h-auto min-h-[500px] sm:min-h-[550px] md:h-[571px]`}>
         <div className="max-w-4xl mx-auto">
-          <h5 className={`text-base font-plus-jakarta-sans !sm:text-lg md:text-xl !lg:text-[25px] ${subtitleColor} mb-2 sm:mb-3 font-medium leading-[25px] text-left md:text-center`}>
+          <h5 className={`text-base font-plus-jakarta-sans !sm:text-lg md:text-xl !lg:text-[25px] px-2 ${subtitleColor} mb-2 sm:mb-3 font-medium leading-[25px] text-left md:text-center`}>
             {subtitle}
           </h5>
-          <h2 className={`font-stix text-2xl sm:text-3xl md:text-4xl lg:text-[50px] my-3 sm:my-4 leading-tight px-2 ${titleColor}`}>
+          <h2 className={`font-stix text-2xl sm:text-3xl md:text-4xl lg:text-[50px] my-3 sm:my-4 leading-tight px-2 text-left md:text-center ${titleColor}`}>
             {title}
           </h2>
           <p className={`text-xs sm:text-sm md:text-[16px] ${descriptionColor} leading-relaxed px-2 sm:px-4 font-plus-jakarta-sans text-left md:text-center text-center`}>
@@ -44,13 +45,41 @@ const GlobalPresence = ({
         </div>
 
         {/* Logos inside background */}
-        <div className="pb-6 sm:pb-8 md:pb-12 lg:pb-10 -mt-4 sm:-mt-6 md:-mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full z-4 relative px-4">
-          {logos.map((l) => (
-            <div key={l} className="bg-white text-gray-700 rounded-md px-4 sm:px-6 py-2 sm:py-3 shadow text-xs sm:text-sm font-medium w-full sm:w-[150px] md:w-[150px] h-auto min-h-[70px] sm:h-[70px] border-[4px] sm:border-[6px] border-white flex items-center justify-center">
-              {l}
+        <div className="pb-6 sm:pb-8 md:pb-12 lg:pb-10 -mt-4 sm:-mt-6 md:-mt-8 w-full z-4 relative px-4">
+          {/* Mobile: Marquee */}
+          <div className="sm:hidden overflow-hidden w-full">
+            <div className="flex animate-marquee gap-3">
+              {[...logos, ...logos].map((l, idx) => (
+                <div key={`${l}-${idx}`} className="bg-white text-gray-700 rounded-md px-4 py-2 shadow text-xs font-medium w-[160px] flex-shrink-0 h-[75px] border-[4px] border-white flex items-center justify-center">
+                  {l}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          
+          {/* Desktop: Flex wrap */}
+          <div className="hidden sm:flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            {logos.map((l) => (
+              <div key={l} className="bg-white text-gray-700 rounded-md px-4 sm:px-6 py-2 sm:py-3 shadow text-xs sm:text-sm font-medium w-[160px] md:w-[160px] h-[75px] border-[4px] sm:border-[6px] border-white flex items-center justify-center">
+                {l}
+              </div>
+            ))}
+          </div>
         </div>
+        
+        <style jsx>{`
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .animate-marquee {
+            animation: marquee 20s linear infinite;
+          }
+        `}</style>
         </div>
       </div>
     </section>

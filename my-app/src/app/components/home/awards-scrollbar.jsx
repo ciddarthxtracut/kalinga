@@ -61,7 +61,7 @@ export default function AwardsScrollbar({
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 }) {
   return (
-    <section className="py-10 sm:py-14 bg-white">
+    <section className="py-10 sm:py-14 bg-white px-4 lg:px-5">
       <div className="">
         {/* Header */}
          <div className="text-left md:text-center mb-6 sm:mb-8">
@@ -74,7 +74,7 @@ export default function AwardsScrollbar({
         </div>
 
         {/* Scrollable timeline */}
-          <div className="relative overflow-hidden container mx-auto">
+          <div className="relative overflow-hidden">
           {/* dashed connector line */}
             <div className="absolute top-[62px] sm:top-[138px] left-[260px] right-[260px] border-b border-dashed border-gray-500 pointer-events-none z-0" />
 

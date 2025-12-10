@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -34,11 +34,13 @@ const Programs = () => {
   ]
 
   const visiblePrograms = programs.filter(p => p.type === activeTab)
+  const prevRef = useRef(null)
+  const nextRef = useRef(null)
 
 
   return (
     <section className="py-12 sm:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
+      <div className="container mx-auto px-4 sm:px-5 lg:px-5 md:pt-16">
         {/* Two column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-6 sm:mb-8 lg:mb-10">
           {/* Left column: Text and Tabs */}
@@ -58,25 +60,25 @@ const Programs = () => {
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 lg:gap-2 pt-4 sm:pt-6 md:pt-8 lg:pt-10">
               <button
                 onClick={() => setActiveTab('Diploma')}
-                className={`font-stix px-3 sm:px-4 md:px-6 lg:px-8 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg transition-all text-[clamp(20px,4vw,37px)] leading-tight ${activeTab === 'Diploma' ? 'bg-[var(--button-red)] text-white shadow-md' : 'text-[var(--dark-blue)] hover:bg-gray-100'}`}
+                className={`font-stix px-3 sm:px-4 md:px-6 lg:px-8 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg transition-all text-[clamp(20px,4vw,30px)] leading-tight ${activeTab === 'Diploma' ? 'bg-[var(--button-red)] text-white shadow-md' : 'text-[var(--dark-blue)] hover:bg-gray-100'}`}
               >
                 Diploma
               </button>
               <button
                 onClick={() => setActiveTab('UG')}
-                className={`font-stix px-3 sm:px-4 md:px-6 lg:px-8 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg transition-all text-[clamp(20px,4vw,37px)] leading-tight ${activeTab === 'UG' ? 'bg-[var(--button-red)] text-white shadow-md' : 'text-[var(--dark-blue)] hover:bg-gray-100'}`}
+                className={`font-stix px-3 sm:px-4 md:px-6 lg:px-8 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg transition-all text-[clamp(20px,4vw,30px)] leading-tight ${activeTab === 'UG' ? 'bg-[var(--button-red)] text-white shadow-md' : 'text-[var(--dark-blue)] hover:bg-gray-100'}`}
               >
                 UG
               </button>
               <button
                 onClick={() => setActiveTab('PG')}
-                className={`font-stix px-3 sm:px-4 md:px-6 lg:px-8 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg transition-all text-[clamp(20px,4vw,37px)] leading-tight ${activeTab === 'PG' ? 'bg-[var(--button-red)] text-white shadow-md' : 'text-[var(--dark-blue)] hover:bg-gray-100'}`}
+                className={`font-stix px-3 sm:px-4 md:px-6 lg:px-8 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg transition-all text-[clamp(20px,4vw,30px)] leading-tight ${activeTab === 'PG' ? 'bg-[var(--button-red)] text-white shadow-md' : 'text-[var(--dark-blue)] hover:bg-gray-100'}`}
               >
                 PG
               </button>
               <button
                 onClick={() => setActiveTab('Ph.D')}
-                className={`font-stix px-3 sm:px-4 md:px-6 lg:px-8 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg transition-all text-[clamp(20px,4vw,37px)] leading-tight ${activeTab === 'Ph.D' ? 'bg-[var(--button-red)] text-white shadow-md' : 'text-[var(--dark-blue)] hover:bg-gray-100'}`}
+                className={`font-stix px-3 sm:px-4 md:px-6 lg:px-8 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg transition-all text-[clamp(20px,4vw,30px)] leading-tight ${activeTab === 'Ph.D' ? 'bg-[var(--button-red)] text-white shadow-md' : 'text-[var(--dark-blue)] hover:bg-gray-100'}`}
               >
                 Ph.D
               </button>
@@ -123,9 +125,17 @@ const Programs = () => {
           <Swiper
             modules={[Navigation]}
             navigation={{
-              prevEl: '.programs-btn-prev',
-              nextEl: '.programs-btn-next',
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
               enabled: true,
+            }}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current
+              swiper.params.navigation.nextEl = nextRef.current
+            }}
+            onInit={(swiper) => {
+              swiper.navigation.init()
+              swiper.navigation.update()
             }}
             slidesPerView={1.05}
             spaceBetween={16}
@@ -217,43 +227,62 @@ const Programs = () => {
           </Swiper>
 
           {/* Navigation Buttons (matching leadership style) */}
-          <div className="flex justify-end items-center gap-3 mt-4 pr-2 sm:pr-0">
-            <button className="programs-btn-prev w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] flex items-center justify-center hover:opacity-90 transition-opacity shadow-md">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-white hover:text-[var(--button-red)] transition-colors"
+          <div className="flex items-center gap-2 sm:gap-4 mt-4 px-2 sm:px-0">
+            <div className="flex-1 flex justify-center min-w-0">
+              <GlobalArrowButton
+                className="!bg-white !text-black shadow-none"
+                arrowClassName="!bg-[var(--button-red)]"
+                arrowIconClassName="!text-white"
+                textClassName="!text-black text-xs sm:text-base"
               >
-                <path
-                  d="M10 12L6 8L10 4"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <button className="programs-btn-next w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] flex items-center justify-center hover:opacity-90 transition-opacity shadow-md">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-white hover:text-[var(--button-red)] transition-colors"
+                Explore Programs
+              </GlobalArrowButton>
+            </div>
+
+            <div className="flex justify-end gap-2 sm:gap-3 relative z-20 flex-shrink-0">
+              <button
+                ref={prevRef}
+                className="programs-btn-prev w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] flex items-center justify-center hover:opacity-90 transition-opacity shadow-md"
               >
-                <path
-                  d="M6 4L10 8L6 12"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-white hover:text-[var(--button-red)] transition-colors"
+                >
+                  <path
+                    d="M10 12L6 8L10 4"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              <button
+                ref={nextRef}
+                className="programs-btn-next w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] flex items-center justify-center hover:opacity-90 transition-opacity shadow-md"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-white hover:text-[var(--button-red)] transition-colors"
+                >
+                  <path
+                    d="M6 4L10 8L6 12"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -264,16 +293,6 @@ const Programs = () => {
             display: none !important;
           }
         `}</style>
-
-
-        {/* Explore Programs button - centered */}
-        <div className="flex justify-center">
-        <GlobalArrowButton className="!bg-white !text-black shadow-none"
-                arrowClassName="!bg-[var(--button-red)]"
-                arrowIconClassName="!text-white"
-                textClassName="!text-black"
-                >Explore Programs</GlobalArrowButton>
-        </div>
       </div>
     </section>
   )

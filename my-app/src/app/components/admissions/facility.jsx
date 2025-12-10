@@ -41,7 +41,7 @@ const facilities = [
 export default function Facility() {
   return (
     <section className="py-16 bg-white relative">
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-4 lg:px-5">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
           <h3 className="font-stix text-[var(--button-red)] text-3xl md:text-4xl lg:text-5xl mb-4">

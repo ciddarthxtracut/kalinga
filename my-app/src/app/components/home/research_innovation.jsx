@@ -12,9 +12,9 @@ export default function ResearchInnovation() {
 
   return (
     <section className="py-16 bg-white overflow-x-hidden">
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-4 lg:px-5">
         {/* Top section: Text and Image */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-start mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center mb-5">
           {/* Left content */}
           <div className="pt-4 sm:pt-6 md:pt-12">
             <h5 className="text-sm sm:text-base md:!text-[25px] text-[var(--button-red)] mb-2 sm:mb-2.5 lg:mb-3 font-plus-jakarta-sans font-medium leading-tight sm:leading-[25px]">
@@ -44,12 +44,12 @@ export default function ResearchInnovation() {
         </div>
 
         {/* Bottom section: Statistics Cards in Dark Blue Container */}
-        <div className="bg-[var(--dark-blue)] rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
+        <div className="bg-[var(--dark-blue)] rounded-2xl p-6 sm:p-8 md:p-10 lg:p-7">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="rounded-xl p-6 sm:p-6 flex flex-col justify-between transition-colors duration-300 bg-[var(--light-gray)] hover:bg-[var(--card-sandal)]"
+                className="rounded-xl p-6 sm:p-6 flex flex-col justify-between transition-colors duration-300 bg-[var(--light-gray)] hover:bg-[var(--card-skin)]"
               >
                 <div>
                   <h3 className="text-lg sm:text-xl font-stix font-semibold text-[var(--foreground)] mb-4">
@@ -58,7 +58,7 @@ export default function ResearchInnovation() {
                   <div className="w-full h-px bg-[var(--foreground)] mb-4"></div>
                 </div>
                 <div>
-                  <h3 className="!text-6xl !sm:text-4xl font-stix font-bold text-[var(--foreground)] mb-4">
+                  <h3 className="font-stix font-bold text-[var(--foreground)] mb-4">
                     {stat.value}
                   </h3>
                 </div>

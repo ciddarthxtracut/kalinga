@@ -26,7 +26,7 @@ const Placements = () => {
   return (
     <>
     <section className="pt-20 sm:py-20 md:py-16 bg-white overflow-x-hidden">
-      <div className="container mx-auto px-3 md:px-16 ">
+      <div className="container mx-auto px-4 md:px-5 ">
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center md:items-center">
           {/* Left: title + stats */}
           <div className="w-full">
@@ -40,22 +40,22 @@ const Placements = () => {
             Kalinga University has a strong placement ecosystem that bridges academic excellence with real-world opportunities. With over 400+ corporate recruiters, 8000+ students placed, and 1300+ internships offered, our graduates are shaping successful careers across industries worldwide.Our dedicated Training & Placement Cell ensures every student is career-ready through resume-building sessions, mock interviews, aptitude training, and industry exposure.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-start gap-4 sm:gap-3 lg:gap-6 text-gray-800">
-              <div className="flex-1 w-full sm:w-auto">
+            <div className="grid grid-cols-2 sm:flex sm:flex-row items-start gap-4 sm:gap-3 lg:gap-5 text-gray-800">
+              <div className="w-full sm:w-auto sm:flex-1">
                 <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">3300 +</h3>
                 <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Students Placed</h6>
               </div>
 
               <div className="hidden sm:block self-stretch border-r border-gray-500" />
 
-              <div className="flex-1 w-full sm:w-auto">
+              <div className="w-full sm:w-auto sm:flex-1">
                 <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">500 +</h3>
                 <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Corporate Recruiters</h6>
               </div>
 
               <div className="hidden sm:block self-stretch border-r border-gray-500" />
 
-              <div className="flex-1 w-full sm:w-auto">
+              <div className="w-full sm:w-auto sm:flex-1 col-span-2 sm:col-span-1">
                 <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">1300 +</h3>
                 <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Internships Offered</h6>
               </div>
@@ -63,7 +63,7 @@ const Placements = () => {
           </div>
 
           {/* Right: Stack card component */}
-          <div className="flex justify-center md:justify-end md:mr-20 mt-6 md:mt-0 -mb-28 z-2">
+          <div className="flex justify-center md:justify-end mt-6 md:mt-0 -mb-28 z-2">
             <div className="w-full max-w-[420px]">
               <div style={{ width: '100%', height: '480px' }}>
                 <Stack
@@ -111,11 +111,11 @@ const Placements = () => {
 
         {/* Logos strip */}
         <div className="mt-20 lg:mt-8 px-3 sm:px-4 lg:px-6 ">
-          <div className="bg-[var(--dark-blue)] py-4 sm:py-5 md:py-6 lg:py-8 items-center justify-center overflow-hidden relative w-full h-auto min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:h-[200px] rounded-xl">
+          <div className="bg-[var(--dark-blue)] py-4 sm:py-5 md:py-6 lg:py-8 items-center justify-center overflow-hidden relative w-full h-auto min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:h-[200px] rounded-xl flex">
             {/* Text stacked above logos */}
             <div className="flex flex-col items-center text-left gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full">
               <h5
-                className="font-plus-jakarta-sans text-sm sm:text-base md:text-lg leading-tight sm:leading-[25px] text-white text-left w-full px-4 sm:px-6 lg:px-8"
+                className="font-plus-jakarta-sans text-sm sm:text-base md:text-lg leading-tight sm:leading-[25px] text-white text-left w-full px-4 sm:px-6 lg:px-12"
               >
                 Trusted by 500+ Global Recruiters
               </h5>

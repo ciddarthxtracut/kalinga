@@ -6,18 +6,18 @@ import GlobalArrowButton from '../general/global-arrow_button'
 export default function CampusTour() {
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 lg:px-6">
-        <div className="relative bg-cover bg-center rounded-2xl overflow-hidden shadow-xl mx-auto w-full max-w-[1243px] h-[500px] sm:h-[500px] md:h-[600px] lg:h-[653px]" style={{
+      <div className="px-4 lg:px-6">
+        <div className="relative bg-cover bg-center rounded-2xl overflow-hidden shadow-xl mx-auto w-full h-[500px] sm:h-[500px] md:h-[600px] lg:h-[653px]" style={{
           backgroundImage: `url('https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/college-ful-image.png')`,
           backgroundPosition: 'center',
           backgroundSize: 'cover'
         }}>
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
 
           {/* Center Image */}
           <div className="absolute inset-0 z-5 flex items-center justify-center">
-            <div className="relative w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[173px] md:h-[173px]">
+            <div className="relative w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[173px] md:h-[173px] md:opacity-100 opacity-30">
               <Image
                 src="https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/360-degrees+2.png"
                 alt="Campus Tour 360"
@@ -28,7 +28,7 @@ export default function CampusTour() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 h-full flex flex-col justify-between p-4 sm:p-6 md:p-10">
+          <div className="container mx-auto relative z-10 h-full flex flex-col justify-center md:justify-end p-4 sm:p- md:p-5">
             {/* Top: 360 Badge */}
             <div className="flex items-center gap-2 w-fit">
               {/* <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur border-2 border-white flex items-center justify-center">
@@ -42,13 +42,13 @@ export default function CampusTour() {
             </div>
 
             {/* Bottom: Content and CTA */}
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 sm:gap-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 sm:gap-6">
               {/* Left: Title and Description */}
               <div className="flex-1 space-y-2 sm:space-y-3">
                 <h2 className="font-stix font-medium text-white leading-tight">
                 Step Into the Heart of Our Campus
                 </h2>
-                <p className="text-white leading-relaxed max-w-md">
+                <p className="text-white leading-relaxed max-w-3xl">
                 Take a 360° virtual tour of Kalinga University’s lush 50-acre green campus — explore our world-class infrastructure, academic blocks, research labs, hostels, and vibrant student spaces from anywhere in the world.
                 </p>
               </div>

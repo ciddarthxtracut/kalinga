@@ -162,7 +162,7 @@ export default function Testimonials() {
     };
 
     return (
-        <div className="md:min-h-screen flex flex-col items-center justify-center p-4 md:p-12 overflow-x-hidden selection:bg-orange-100 selection:text-orange-900">
+        <div className="md:min-h-screen flex flex-col items-center justify-center overflow-x-hidden selection:bg-orange-100 selection:text-orange-900 py-16 md:py-0">
             <style jsx>{`
                 ::-webkit-scrollbar { display: none; }
             `}</style>
@@ -170,14 +170,14 @@ export default function Testimonials() {
             {/* Main Container */}
             <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center">
                 {/* Section Heading */}
-                <div className="w-full pt-8">
+                <h5 className="text-gray-600 text-center leading-tight text-xs sm:text-sm md:text-base">
                     <SectionHeading 
                         subtitleClassName="text-center"
                         titleClassName="text-center"
                         subtitle="What Our Students Say"
                         title="Lorem ipsum dolor sit amet, consectetur"
                     />
-                </div>
+                </h5>
                 {/* Slider Track */}
                 <div 
                     className="relative w-full flex items-center justify-center" 
@@ -216,7 +216,7 @@ export default function Testimonials() {
                                     }}
                                 >
                                     <div
-                                        className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-12 p-4 sm:p-6 md:p-10 pb-12 sm:pb-16 md:pb-10 transition-opacity  rounded-xl sm:rounded-2xl duration-500 border-2 border-gray-300"
+                                        className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-12 p-4 sm:p-6 md:p-10 pb-4 transition-opacity  rounded-xl sm:rounded-2xl duration-500 border-2 border-gray-300"
                                         style={{ opacity: styles.contentOpacity }}
                                     >
                                         {/* Image */}
@@ -246,7 +246,7 @@ export default function Testimonials() {
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <p className="text-slate-800 text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose font-normal">
+                                            <p className="text-slate-800 leading-relaxed md:leading-loose font-normal">
                                                 {item.quote}
                                             </p>
                                             <div className="mt-6 sm:mt-8 md:mt-auto pt-4 sm:pt-6">
@@ -270,7 +270,7 @@ export default function Testimonials() {
         </div>
 
                 {/* Navigation Controls (Bottom) */}
-                <div className="md:-mt-6 mt-8 sm:mt-12 flex items-center justify-center gap-3 sm:gap-4 z-50">
+                <div className="md:-mt-6 flex items-center justify-center gap-3 sm:gap-4 z-50">
                 <button
                   type="button"
                   onClick={prevSlide}

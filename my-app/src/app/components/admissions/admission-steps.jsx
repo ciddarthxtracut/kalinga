@@ -86,7 +86,7 @@ export default function AdmissionSteps() {
           stroke: white;
         }
       `}} />
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-4 lg:px-5">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 md:mb-12 gap-4">
           <div>
@@ -213,7 +213,7 @@ export default function AdmissionSteps() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="container mx-auto px-4 lg:px-5">
           <div className="flex justify-end items-center gap-3 mt-4">
             <button className="admission-steps-button-prev w-12 h-12 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] flex items-center justify-center hover:opacity-90 transition-opacity shadow-md">
               <svg

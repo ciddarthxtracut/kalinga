@@ -77,7 +77,7 @@ export default function Home() {
                 />
               </div>
               {/* Label */}
-              <p className="text-gray-600 text-center leading-tight text-xs sm:text-sm md:text-base">
+              <p className="text-[var(--light-text-gray)] text-center leading-tight">
                 {link.title}
               </p>
             </Link>

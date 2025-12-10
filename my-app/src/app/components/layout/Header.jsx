@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import MegaMenu from './MegaMenu';
 import MobileMenu from './MobileMenu';
 import FlatIcon from '../general/flat-icon';
@@ -15,14 +16,72 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredCourses, setFilteredCourses] = useState([]);
+  const searchRef = useRef(null);
   const pathname = usePathname();
+  const router = useRouter();
   const isHomePage = pathname === '/';
+
+  const courses = useMemo(
+    () => [
+      { name: 'Bachelor of Technology (B.Tech)', href: '/about' },
+      { name: 'Bachelor of Business Administration (BBA)', href: '/academics/undergraduate/bba' },
+      { name: 'Bachelor of Computer Applications (BCA)', href: '/academics/undergraduate/bca' },
+      { name: 'Master of Business Administration (MBA)', href: '/academics/postgraduate/mba' },
+      { name: 'Master of Computer Applications (MCA)', href: '/academics/postgraduate/mca' },
+      { name: 'Bachelor of Arts (BA)', href: '/academics/undergraduate/ba' },
+      { name: 'Bachelor of Science (BSc)', href: '/academics/undergraduate/bsc' },
+      { name: 'Bachelor of Commerce (B.Com)', href: '/academics/undergraduate/bcom' },
+      { name: 'Law (LLB)', href: '/academics/undergraduate/llb' },
+      { name: 'Pharmacy (B.Pharm)', href: '/academics/undergraduate/bpharm' },
+    ],
+    []
+  );
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setIsSearchOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (!isSearchOpen) {
+      setFilteredCourses([]);
+      return;
+    }
+    const query = searchTerm.trim().toLowerCase();
+    if (!query) {
+      setFilteredCourses(courses.slice(0, 6));
+      return;
+    }
+    const matches = courses.filter((c) => c.name.toLowerCase().includes(query));
+    setFilteredCourses(matches.slice(0, 8));
+  }, [searchTerm, isSearchOpen, courses]);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const query = searchTerm.trim();
+    if (!query) return;
+    const exactMatch = courses.find((c) => c.name.toLowerCase() === query.toLowerCase());
+    if (exactMatch) {
+      router.push(exactMatch.href);
+    } else {
+      router.push(`/search?q=${encodeURIComponent(query)}`);
+    }
+    setIsSearchOpen(false);
+  };
 
   const navItems = [
     {
@@ -242,8 +301,8 @@ const Header = () => {
     <header className="relative z-[10040] w-full overflow-visible">
       {/* Top Bar */}
       <div className="text-xs py-5 w-full">
-        <div className="container mx-auto px-4 lg:px-6">
-            <div className="flex justify-between font-medium gap-4 text-[var(--dark-gray)] flex-wrap">
+        <div className="container mx-auto px-4 lg:px-5">
+            <div className="flex justify-between font-medium gap-4 text-[var(--dark-gray)] flex-wrap pb-2">
             <a href={getEmail('admissions').href} className="flex items-center gap-1.5 text-[var(--red)]">
                 <FlatIcon name="email" />
                 <span>{getEmail('admissions').display}</span>
@@ -262,7 +321,59 @@ const Header = () => {
                 <span>{item.label}</span>
               </Link>
             ))} 
-            <FlatIcon name="search" className="w-6 " />
+            <div className="relative" ref={searchRef}>
+              <button
+                type="button"
+                onClick={() => setIsSearchOpen((prev) => !prev)}
+                className="p-1 rounded hover:text-[var(--red)] focus:outline-none focus:ring-2 focus:ring-[var(--red)]"
+                aria-label="Search"
+              >
+                <FlatIcon name="search" className="w-6" />
+              </button>
+              {isSearchOpen && (
+                <form
+                  onSubmit={handleSearchSubmit}
+                  className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg flex flex-col gap-2 px-3 py-2 min-w-[260px] z-[10070]"
+                >
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="text"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      placeholder="Search courses..."
+                      className="flex-1 border border-gray-200 rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--red)] focus:border-[var(--red)]"
+                    />
+                    <button
+                      type="submit"
+                      className="p-2 rounded bg-[var(--red)] text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--red)]"
+                    >
+                      <FlatIcon name="search" className="w-4 h-4" />
+                    </button>
+                  </div>
+                  {filteredCourses.length > 0 ? (
+                    <div className="max-h-64 overflow-y-auto border border-gray-100 rounded-md">
+                      {filteredCourses.map((course) => (
+                        <Link
+                          key={course.href}
+                          href={course.href}
+                          className="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
+                          onClick={() => {
+                            setIsSearchOpen(false)
+                            setSearchTerm('')
+                          }}
+                        >
+                          {course.name}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="px-1 py-1 text-xs text-gray-500">
+                      No courses found
+                    </div>
+                  )}
+                </form>
+              )}
+            </div>
             </div>
         </div>
       </div>
@@ -272,7 +383,7 @@ const Header = () => {
           <div className="flex items-center justify-between container mx-auto px-4 lg:px-8 py-4 w-full max-w-full !z-[10050] overflow-visible">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 relative">
-              <div className="w-36 h-12">
+              <div className="w-42 h-12">
                 <Image
                   src={
                     isHomePage
@@ -298,7 +409,7 @@ const Header = () => {
                 
                     <Link
                       href={item.href}
-                      className={`px-2 !text-[14px] ${
+                      className={`px-2 !text-[15px] ${
                         isHomePage 
                           ? (isScrolled ? 'text-[var(--dark-gray)]' : 'text-white')
                           : 'text-black'

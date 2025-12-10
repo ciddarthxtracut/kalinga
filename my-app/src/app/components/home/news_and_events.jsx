@@ -101,13 +101,13 @@ export default function NewsEvents() {
         }
       `}} />
     <section className="relative w-full py-16">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 lg:px-5">
         {/* Main Layout: News section with title + Event Calendar */}
         <div className="grid grid-cols-1 md:grid-cols-[1.8fr_2.0fr_0.8fr] gap-6 sm:gap-6 mt-10 sm:mt-14 items-start">
           {/* Left section: News & Events title and two cards */}
           <div className="md:col-span-2 flex flex-col">
             {/* Section title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-stix text-black mb-6 sm:mb-8">News & Events</h2>
+            <h2 className=" font-stix text-black mb-6 sm:mb-8">News & Events</h2>
             
             {/* Two column grid for news cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-6">
@@ -135,7 +135,7 @@ export default function NewsEvents() {
                     </div>
                     <div className="flex-1 pt-1">
                       <p className="text-xs text-gray-600 font-semibold !text-[12px]">{news.date}</p>
-                      <p className="text-sm text-gray-800 leading-relaxed">{news.title}</p>
+                      <p className="text-sm text-gray-800 !font-medium leading-relaxed">{news.title}</p>
                     </div>
                   </div>
                 ))}
@@ -144,7 +144,7 @@ export default function NewsEvents() {
               <div className="mt-2 flex justify-center flex-shrink-0">
               <GlobalArrowButton
                         className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
-                        textClassName="!text-[#000] !font-semibold !ml-0 !px-0"
+                        textClassName="!text-[#000] !ml-0 !px-0"
                         arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
                         arrowIconClassName="!text-white"
                         arrowSize={18}
@@ -161,11 +161,11 @@ export default function NewsEvents() {
           <div className="w-full max-w-[380px] md:max-w-[420px]">
             <div className="bg-[var(--dark-blue)] text-white overflow-hidden shadow-lg h-auto md:h-[470px] w-full rounded-[9px] p-5 sm:p-6 md:p-7">
                 <div className="pt-2 pb-6 flex justify-center">
-                  <h2 className="text-2xl font-stix text-center font-semibold ">Event Calendar</h2>
+                  <h3 className="!text-[30px] font-stix text-center font-semibold ">Event Calendar</h3>
                 </div>
 
                 {/* Day selector */}
-                <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mt-[-30px] pt-3">
+                <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mt-[-30px] pt-3 border-b border-white pb-3">
                   <button
                     onClick={handlePrevDay}
                     className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[var(--dark-blue)] flex items-center justify-center transition-colors flex-shrink-0 hover:bg-orange-500"
@@ -231,12 +231,12 @@ export default function NewsEvents() {
                     return (
                       <div key={idx} className="flex items-start justify-between gap-2 sm:gap-4 pt-4 sm:pt-5 pb-2 sm:pb-4 border-t border-white/10 first:pt-0 first:border-t-0 hover:bg-white/5 transition-colors rounded-lg px-1 sm:px-2 -mx-1 sm:-mx-2">
                         <div className="flex-1 pr-2 sm:pr-4 min-w-0">
-                          <h4 className="font-plus-jakarta-sans font-light text-sm sm:text-base md:text-lg mb-1.5 sm:mb-2.5 text-white leading-tight">{event.title}</h4>
+                          <h4 className="font-stix font-light text-sm sm:text-base md:text-lg mb-1.5 sm:mb-2.5 text-white leading-tight">{event.title}</h4>
                           <p className="text-xs sm:text-sm text-white/75 leading-relaxed line-clamp-2">{event.description}</p>
                         </div>
 
                         <div className="flex flex-col items-end gap-2 sm:gap-3 flex-shrink-0">
-                          <span className="text-[10px] sm:text-xs text-white/70 font-medium px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/10 rounded whitespace-nowrap">{category.name}</span>
+                          <span className="text-[10px] sm:text-xs text-whitefont-medium px-1.5 sm:px-2 py-0.5 sm:py-1 whitespace-nowrap">{category.name}</span>
                           <button className="w-7 h-7 sm:w-8 sm:h-8 rounded bg-white flex items-center justify-center shadow-sm hover:bg-gray-100 transition-colors">
                             <svg
                               className="w-3 h-3 sm:w-4 sm:h-4 text-[var(--button-red)]"
