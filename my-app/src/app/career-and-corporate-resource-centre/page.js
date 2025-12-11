@@ -98,9 +98,34 @@ const sliderItems = [
 ]
 const Items = [
   {
-  
-    text: "Hear from our students about their experience at Kalinga University"
-  }]
+    id: 1,
+    text: "Improved performance and output"
+  },
+  {
+    id: 2,
+    text: "Better decision-making"
+  },
+  {
+    id: 3,
+    text: "Enhanced employee engagement rate"
+  },
+  {
+    id: 4,
+    text: "Increased competitiveness"
+  },
+  {
+    id: 5,
+    text: "Improved leadership and team collaboration"
+  },
+  {
+    id: 6,
+    text: "Improved client/customer satisfaction"
+  },
+  {
+    id: 7,
+    text: "Stronger work culture and long-term profitability"
+  }
+]
 const blueItems = [
   {
     imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrclogo.webp",
@@ -165,11 +190,21 @@ const videoItems = [
     thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg",
   },
 ]
+
+const CCRCHeadIntro = [
+  {
+    name: "Name",
+    designation: "Designation",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrclogo.webp",
+    imageAlt: "CCRC Logo",
+  }
+]
 export default function CCRCPage() {
   return <>
     <ImageContent imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrclogo.webp" />
     <ImageListItem items={Items} imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrc.webp" title="Benefits for Organisations"  />
-    <DeptHeadIntro />
+    <DeptHeadIntro items={CCRCHeadIntro} />
 
     <Cards cards={cards} />
     <Hearfrom items={sliderItems  } title="Hear From Our Clients" />
