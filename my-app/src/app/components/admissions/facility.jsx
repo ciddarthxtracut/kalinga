@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import SectionHeading from "../general/SectionHeading";
-const facilities = [
+const defaultFacilities = [
   {
     id: 1,
     name: "Hostel",
@@ -38,16 +38,22 @@ const facilities = [
   },
 ];
 
-export default function Facility() {
+export default function Facility({
+  title = "Stories that define our Kalinga spirit.",
+  subtitle = "Real Stories. Real Success.",
+  titleClassName = "text-center",
+  subtitleClassName = "text-center !text-[var(--button-red)]",
+  facilities = defaultFacilities,
+}) {
   return (
     <section className="py-16 bg-white relative">
       <div className="container mx-auto px-4 lg:px-5">
         {/* Header Section */}
         <SectionHeading 
-                        subtitleClassName="text-center"
-                        titleClassName="text-center"
-                        subtitle="Real Stories. Real Success."
-                        title="Stories that define our Kalinga spirit."
+                        subtitleClassName={subtitleClassName}
+                        titleClassName={titleClassName}
+                        subtitle={subtitle}
+                        title={title}
                     />
         {/* Slider Section */}
         <div className="relative overflow-visible">
@@ -97,8 +103,8 @@ export default function Facility() {
                         />
                       </div>
                       {/* Label - Overlaid on image */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-white px-4 py-3 m-3 rounded-lg z-10">
-                        <p className="text-[var(--foreground)] font-semibold text-center">
+                      <div className="absolute bottom-0 left-0 right-0 bg-white px-4 py-3 m-3 rounded-lg z-10 group-hover:bg-[var(--button-red)] transition-all duration-300">
+                        <p className="text-[var(--foreground)] font-semibold text-center group-hover:text-white transition-all duration-300">
                           {facility.name}
                         </p>
                       </div>

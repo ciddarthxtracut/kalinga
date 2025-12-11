@@ -50,13 +50,14 @@ const QuickLinks = ({
   cardBackgroundColor = "bg-[var(--lite-sand)]",
   textColorClassName = "text-white/80",
   showReadMore = true,
+  titleClassName = "",
 }) => {
   return (
     <section className={`${backgroundColor} py-16`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
-       <SectionHeading title={title}  />
+       <SectionHeading title={title} titleClassName={titleClassName} />
           <p className={`text-sm  max-w-4xl mx-auto font-plus-jakarta-sans ${textColorClassName}`}>
             {description}
           </p>

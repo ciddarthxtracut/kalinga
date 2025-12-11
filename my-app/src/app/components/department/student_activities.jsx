@@ -41,17 +41,14 @@ export default function StudentActivities({
   activities = defaultActivities,
 }) {
   return (
-    <section className="bg-white py-16 container mx-auto ">
-      <div className="px-6">
-        <SectionHeading
-          title={title}
-          subtitle={subtitle}
-          titleClassName="text-center mb-10"
-          subtitleClassName="text-center"
-
-        />
-      </div>
-      <div className="px-6">
+    <section className="bg-white py-16">
+      <SectionHeading
+        title={title}
+        subtitle={subtitle}
+        subtitleClassName="text-center"
+        titleClassName="text-center"
+      />
+      <div className="container mx-auto px-6 mt-5">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {activities.map((activity) => (
             <div key={activity.id} className="bg-[var(--light-gray)] rounded-lg p-5">

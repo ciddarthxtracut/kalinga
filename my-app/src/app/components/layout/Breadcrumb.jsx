@@ -11,6 +11,15 @@ const routeHeroImages = [
     match: /^\/about/,
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
   },
+  {
+    match: /^\/departments\/faculty-of-information-technology/,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/student-gathered.webp",
+  },
+  {
+    match: /^\/departments\/courses/,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/course/student-computer.webp",
+  }
+
 ];
 
 const Breadcrumb = ({ customBreadcrumbs, heroImage, pageTitle }) => {

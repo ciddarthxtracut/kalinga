@@ -180,7 +180,7 @@ export default function About() {
       />
       <AccreditationRanking 
         heading="Accreditations & Rankings"
-        secondHeading="Recognized Nationally & Globally"
+        secondHeading=""
         accreditations={aboutAccreditations}
       />
       <VisionMission />

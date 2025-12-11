@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react'
+import SectionHeading from './SectionHeading'
 
 const defaultFAQItems = [
   {
@@ -55,15 +56,15 @@ const FAQ = ({
   return (
     <section className={`${backgroundColor} py-16`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title */}
-        {title && (
-          <h2 className="font-stix text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-12 text-[var(--foreground)] text-center">
-            {title}
-          </h2>
-        )}
+       <SectionHeading 
+       title={title} 
+       subtitle="FAQ"
+       titleClassName="text-center"
+       subtitleClassName="text-center"
+       />
 
         {/* FAQ Items */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-4 mt-5">
           {items.map((item) => {
             const isOpen = openItems.has(item.id)
             return (
