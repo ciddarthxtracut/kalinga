@@ -167,6 +167,7 @@ const videoItems = [
 ]
 export default function CCRCPage() {
   return <>
+   
     <ImageContent imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrclogo.webp" />
     <ImageListItem items={Items} imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrc.webp" title="Benefits for Organisations"  />
     <DeptHeadIntro />
