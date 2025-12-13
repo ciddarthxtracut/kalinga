@@ -157,14 +157,19 @@ const aboutFeatureCards = [
 ];
 
 const aboutAccreditations = [
-  { id: 1, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/nirf.webp" },
-  { id: 2, name: "NAAC B+", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/naac.webp" },
   { id: 3, name: "UGC Grant", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/ugc.webp" },
   { id: 4, name: "Outlook", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/outlook.webp" },
-  { id: 5, name: "India Today", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/india-today.webp" },
+  { id: 5, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002974.png" },
+  { id: 6, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002953.png" },
+  { id: 7, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002975.png" },
+  { id: 8, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002976.png" },
+  { id: 10, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002978.png" },
+  { id: 11, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002979.png" },
+  { id: 12, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002980.png" },
+  { id: 13, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002981.png" }
 ];
 
-export default function About() {
+export default function About() {                     
   return (
     <div>
       <MainIntro 

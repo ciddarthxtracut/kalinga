@@ -16,19 +16,19 @@ const centresOfExcellence = [
     id: 2,
     name: "IIoT Training Centre",
     title: "Technoviz Auto",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/godawari.png",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002977.png",
   },
   {
     id: 3,
     name: "BRIDGE Courses Training Centre",
     title: "In collaboration with BOSCH",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/godawari.png",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002989.png",
   },
   {
     id: 4,
     name: "Robotics, Coding, & Drone",
     title: "BDS Education",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/godawari.png",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002988.png",
   },
 ];
 

@@ -16,7 +16,7 @@ export default function VisionMission({
   missionTitle = "Mission",
   visionText = defaultVision,
   missionText = defaultMission,
-  imageSrc = "https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/student-img-2.png",
+  imageSrc = "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/person-standing-1.png",
   imageAlt = "Vision and Mission",
   showImage = true,
   className = "",
