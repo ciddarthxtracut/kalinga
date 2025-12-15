@@ -35,7 +35,15 @@ const Programs = () => {
     { id: 13, title: 'Ph.D in Biotechnology', type: 'Ph.D', img: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/program/phd-biotechnology-n.webp', summary: 'Genomics, proteomics, and bioinformatics research with advanced lab work.', scholarships: 'Check eligibility', qualification: 'Pass in Higher Secondary Examinations of (10+2)' },
   ]
 
-  const visiblePrograms = programs.filter(p => p.type === activeTab)
+  const normalizedQuery = query.trim().toLowerCase()
+  const visiblePrograms = programs.filter((p) => {
+    const matchesTab = p.type === activeTab
+    if (!normalizedQuery) return matchesTab
+    const matchesQuery =
+      p.title.toLowerCase().includes(normalizedQuery) ||
+      p.summary.toLowerCase().includes(normalizedQuery)
+    return matchesTab && matchesQuery
+  })
 
 
   return (
@@ -120,36 +128,42 @@ const Programs = () => {
 
         {/* Cards row using Stack inside Swiper */}
         <div className="relative">
-          <Swiper
-            modules={[Navigation]}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-              enabled: true,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current
-              swiper.params.navigation.nextEl = nextRef.current
-            }}
-            onInit={(swiper) => {
-              swiper.navigation.init()
-              swiper.navigation.update()
-            }}
-            slidesPerView={1.05}
-            spaceBetween={16}
-            breakpoints={{
-              640: { slidesPerView: 1.2, spaceBetween: 18 },
-              768: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 24 },
-            }}
-            className="programs-swiper"
-          >
-            {visiblePrograms.map((p, idx) => (
-              <SwiperSlide key={p.id || idx} className="py-2 sm:py-3">
-                {renderProgramCard(p)}
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {visiblePrograms.length > 0 ? (
+            <Swiper
+              modules={[Navigation]}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+                enabled: true,
+              }}
+              onBeforeInit={(swiper) => {
+                swiper.params.navigation.prevEl = prevRef.current
+                swiper.params.navigation.nextEl = nextRef.current
+              }}
+              onInit={(swiper) => {
+                swiper.navigation.init()
+                swiper.navigation.update()
+              }}
+              slidesPerView={1.05}
+              spaceBetween={16}
+              breakpoints={{
+                640: { slidesPerView: 1.2, spaceBetween: 18 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 24 },
+              }}
+              className="programs-swiper"
+            >
+              {visiblePrograms.map((p, idx) => (
+                <SwiperSlide key={p.id || idx} className="py-2 sm:py-3">
+                  {renderProgramCard(p)}
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div className="w-full bg-[var(--lite-sand)] border border-gray-200 rounded-lg p-6 text-center text-[var(--light-text-gray)]">
+              No programs found for this search.
+            </div>
+          )}
 
           {/* Navigation Buttons - Bottom Right Corner */}
           <div className="absolute bottom-[14px] right-0 flex gap-2 sm:gap-3 z-20">

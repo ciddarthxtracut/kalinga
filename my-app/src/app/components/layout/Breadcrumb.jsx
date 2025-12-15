@@ -27,6 +27,14 @@ const routeHeroImages = [
     match: /^\/academics/,
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/student-gathered.webp",
   },  
+  {
+    match: /^\/contact_us/,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  {
+    match: /^\/central-instrumentation-facility/,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+  },
 
 ];
 const imageposition = "object-center";

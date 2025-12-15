@@ -14,6 +14,8 @@ export default function ImageListItem({
   items = [],
   boxItems = [],
   className = "",
+  textClassName = "text-white",
+  headingClassName = "text-white",
 }) {
   return (
     <section
@@ -61,7 +63,10 @@ export default function ImageListItem({
 
           <div className="col-span-6 gap-5 items-center items-start min-h-[500px] flex flex-col">
             {/* Heading not scrollable */}
-            <SectionHeading title={title} titleClassName="!py-2 text-white" />
+            <SectionHeading
+              title={title}
+              titleClassName={`!py-2 ${headingClassName}`}
+            />
 
             {/* Scrollable items only */}
             {items && Array.isArray(items) && items.length > 0 && (
@@ -82,7 +87,7 @@ export default function ImageListItem({
                     >
                       <path d="m19 5.50049v10.99951c0 .2761-.2239.5-.5.5s-.5-.2239-.5-.5v-9.79289l-12.14645 12.14649c-.19526.1952-.51184.1952-.7071 0-.19527-.1953-.19527-.5119 0-.7072l12.14645-12.1464h-9.7929c-.27614 0-.5-.22386-.5-.5s.22386-.5.5-.5h11c.1316 0 .2578.05186.3514.14426l.0022.00219c.0879.0879.1397.20518.1458.32876.0004.00824.0006.01699.0006.02528z"></path>
                     </svg>
-                    <span className="text-sm text-white">{item.text}</span>
+                    <span className={`text-sm ${textClassName}`}>{item.text}</span>
                   </li>
                 ))}
               </ul>
@@ -117,7 +122,7 @@ export default function ImageListItem({
                           {item.title}
                         </h4>
                       )}
-                      <p className="">
+                      <p className={textClassName}>
                         {item.text || item.description}
                       </p>
                     </div>

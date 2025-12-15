@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.7",
     "flaticon": "^0.1.0",
     "gsap": "^3.13.0",
     "motion": "^12.23.25",
