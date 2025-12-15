@@ -7,7 +7,7 @@ export default function Footer() {
     <>
       <style dangerouslySetInnerHTML={{__html: `
         .footer-decorative-text {
-          font-size: 6vw;
+          font-size: 10vw;
           max-width: 100%;
           line-height: 1.1;
         }
@@ -164,12 +164,8 @@ export default function Footer() {
               className="footer-decorative-text leading-none lg:pb-0 text-center max-w-full"
                style={{
                     color: 'transparent',
-                    WebkitTextStroke: '1.57px #FFFFFF',
-                    fontFamily: 'STIX Two Math, serif',
+                    WebkitTextStroke: '1px #FFFFFF',
                     fontWeight: 400,
-                    fontStyle: 'normal',
-                    transform: 'scale(1)',
-                    transformOrigin: 'center',
                     wordBreak: 'break-word',
                     overflowWrap: 'break-word'
                   }}
