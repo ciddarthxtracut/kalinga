@@ -102,7 +102,7 @@ export default function NewsEvents() {
         }
       `}} />
     <section className="relative w-full py-16">
-      <div className="container mx-auto px-4 lg:px-5">
+      <div className="container mx-auto px-2">
         {/* Main Layout: News section with title + Event Calendar */}
         <div className="grid grid-cols-1 md:grid-cols-[1.8fr_2.0fr_0.8fr] gap-6 sm:gap-6 mt-10 sm:mt-14 items-start">
           {/* Left section: News & Events title and two cards */}

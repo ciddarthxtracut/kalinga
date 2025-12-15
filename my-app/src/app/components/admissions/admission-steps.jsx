@@ -122,7 +122,7 @@ export default function AdmissionSteps({
           transform: rotateY(180deg);
         }
       `}} />
-      <div className="container mx-auto px-4 lg:px-5">
+      <div className="container mx-auto px-2">
         {/* Header Section */}
         <div className={`flex flex-col md:flex-row md:items-center ${showHeaderButton ? "justify-between" : "justify-center"} mb-8 md:mb-12 gap-4`}>
           <div >
@@ -284,7 +284,7 @@ export default function AdmissionSteps({
         </div>
 
         {/* Navigation Buttons */}
-        <div className="container mx-auto px-4 lg:px-5">
+        <div className="container mx-auto px-2">
           <div className={`flex  justify-end gap-3 mt-4`}>
             <button
               ref={prevRef}

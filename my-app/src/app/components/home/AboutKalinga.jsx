@@ -29,7 +29,7 @@ const AboutKalinga = () => {
         }
       `}} />
       <section className={`py-10 ${isExpanded ? 'pb-16 md:pb-10' : 'pb-10'}`}>
-        <div className="px-5 flex justify-center relative">
+        <div className="px-2 flex justify-center relative">
           {/* Single dark blue panel with overlapping image */}
           <div
             className={`relative bg-[var(--dark-blue)] rounded-2xl py-5 md:py-16 text-white overflow-visible shadow-2xl w-full transition-all duration-300 ${isExpanded ? 'pb-8 md:pb-16' : 'pb-5 md:pb-16'} ${isExpanded ? 'md:h-[650px]' : 'md:h-[550px]'}`}

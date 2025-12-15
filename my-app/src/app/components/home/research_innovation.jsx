@@ -80,7 +80,7 @@ export default function ResearchInnovation() {
 
   return (
     <section ref={sectionRef} className="py-16 bg-white overflow-x-hidden">
-      <div className="container mx-auto px-4 lg:px-5">
+      <div className="container mx-auto px-2">
         {/* Top section: Text and Image */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center mb-5">
           {/* Left content */}

@@ -179,10 +179,10 @@ export default function FeatureCards({
   const displayText = isExpanded ? effectiveFullText : truncatedText
  
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-2">
       <div className="relative">
         {/* Main rounded dark panel */}
-        <div className="relative rounded-2xl sm:rounded-3xl bg-[var(--dark-blue)] overflow-visible text-white shadow-md p-4 sm:p-6 md:p-8 lg:p-12 pt-10">
+        <div className="relative rounded-2xl sm:rounded-3xl bg-[var(--dark-blue)] overflow-visible text-white shadow-md p-4 px-0 sm:p-6 md:p-8 lg:p-12 pt-10">
           
           {/* Top section: Image left, Text right */}
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 md:mb-10">

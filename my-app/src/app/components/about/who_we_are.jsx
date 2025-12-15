@@ -32,7 +32,7 @@ export default function WhoWeAre() {
           />
         </div>
         {/* Text Overlay */}
-        <div className="relative container mx-auto px-4 lg:px-5 h-full flex items-center sm:items-center justify-center">
+        <div className="relative container mx-auto px-2 h-full flex items-center sm:items-center justify-center">
           <div className="text-center max-w-5xl pt-12 sm:pt-16 md:pt-24 lg:pt-[200px] pb-20 sm:pb-24 md:pb-16">
             <h2
               className="font-stix text-white text-[40px] sm:text-[50px] md:text-[70px] lg:!text-[100px] mb-4 sm:mb-6 md:mb-8 font-bold"

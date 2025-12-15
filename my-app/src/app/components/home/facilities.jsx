@@ -143,7 +143,7 @@ export default function Facilities() {
         className="relative w-full py-8 sm:py-12 md:py-16"
         aria-label="Facilities section"
       >
-      <div className="px-3 sm:px-4 lg:px-6">
+      <div className="px-2">
         {/* Main content area with selected facility */}
         <div
           className="relative w-full rounded-xl sm:rounded-2xl overflow-visible shadow-lg h-[375px] sm:h-[375px] md:h-[580px] lg:h-[648px]"

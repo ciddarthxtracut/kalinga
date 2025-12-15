@@ -145,7 +145,7 @@ export default function Achievements() {
         }
       `}} />
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 lg:px-5">
+        <div className="container mx-auto px-2">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Side - Heading and Button */}
             <div className="flex flex-col justify-center">

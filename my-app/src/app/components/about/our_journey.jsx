@@ -201,7 +201,7 @@ export default function OurJourney() {
           }
         }
       `}} />
-      <div className="container mx-auto px-4 lg:px-5">
+      <div className="container mx-auto px-2">
         {/* Title */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-stix text-white text-4xl md:text-5xl lg:text-6xl">

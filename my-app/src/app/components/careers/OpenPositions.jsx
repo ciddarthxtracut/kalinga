@@ -21,7 +21,7 @@ export default function OpenPositions() {
   ];
 
   return (
-    <section className="w-full max-w-[1249px] mx-auto bg-[var(--dark-blue)] py-16 px-4 rounded-2xl sm:px-6 lg:px-8">
+    <section className="w-full max-w-[1249px] mx-auto bg-[var(--dark-blue)] py-16 px-2 rounded-2xl sm:px-6 lg:px-8">
 
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h3 className="text-[var(--dark-orange-red-light)] text-xl sm:text-[25px] font-light mb-4">Open Positions</h3>

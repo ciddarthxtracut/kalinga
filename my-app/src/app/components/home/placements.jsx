@@ -109,7 +109,7 @@ const Placements = () => {
   return (
     <>
     <section ref={sectionRef} className="py-16 bg-white overflow-x-hidden">
-      <div className="container mx-auto px-4 md:px-5 ">
+      <div className="container mx-auto px-2">
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center md:items-center">
           {/* Left: title + stats */}
           <div className="w-full">
@@ -193,7 +193,7 @@ const Placements = () => {
       </div>
 
         {/* Logos strip */}
-        <div className="mt-20 lg:mt-8 px-3 sm:px-4 lg:px-6 ">
+        <div className="mt-20 lg:mt-8 px-2">
           <div className="bg-[var(--dark-blue)] py-4 sm:py-5 md:py-6 lg:py-8 items-center justify-center overflow-hidden relative w-full h-auto min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:h-[200px] rounded-xl flex">
             {/* Text stacked above logos */}
             <div className="flex flex-col items-center text-left gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full">

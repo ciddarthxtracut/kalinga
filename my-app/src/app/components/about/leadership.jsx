@@ -48,7 +48,7 @@ const leadership = [
 export default function Leadership() {
   return (
     <section className="py-16 bg-white relative">
-      <div className="container mx-auto px-4 lg:px-5">
+      <div className="container mx-auto px-2">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
           
