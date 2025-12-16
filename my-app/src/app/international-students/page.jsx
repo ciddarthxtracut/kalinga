@@ -94,142 +94,72 @@ export default function InternationalStudents() {
   const internationalStudentsFeatureCards = [
     {
       id: 1,
-      title: 'Global Exposure',
-      body: 'Our students are from 29+ nationalities, which opens doors to experiencing a diverse student community. Here you’ll not just study but collaborate, make new connections, learn new languages, participate in multi-cultural programs, and grow together',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Global.svg',
-      variant: 'gray',
-    },
-    {
-      id: 2,
-      title: 'Vibrant Campus Life',
-      body: 'Luscious gardens, lively events, and a dynamic student community will make your college life experience truly unforgettable.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/campus+life.svg',
-      variant: 'amber',
-    },
-    {
-      id: 3,
-      title: 'Career Counseling',
-      body: 'Our primary aim is to navigate your journey towards the right direction by providing career guidance and support at every step until you land your dream job.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Career+Counseling.svg',
-      variant: 'gray',
-    },
-    {
-      id: 4,
-      title: 'Choose From a Wide Range Of Programs',
-      body: 'Our 130 + Programs are designed to provide industry-relevant knowledge and make you job-ready. From Computer Science to Pharmacy, choose from unlimited career opportunities.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Wide+Range+of+Programs.svg',
-      variant: 'amber',
-    },
-    {
-      id: 5,
-      title: 'Abundant Scholarships',
-      body: 'We offer up to 100% merit-based scholarships, social scholarships, entrance exam scholarships, sports scholarships, culture & achievers scholarships, and much more.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Abundant+Scholarships.svg',
-      variant: 'gray',
-    },
-    {
-      id: 6,
-      title: 'Industry-Relevant Curriculum',
-      body: 'Our curriculum is aligned with the New Education Policy 2020. All our educational programs match industry standards that equip our students with essential practical skills and updated industrial knowledge.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Industry-Relevant+Curriculum.svg',
-      variant: 'amber',
-    },
-    {
-      id: 7,
-      title: 'Holistic Development',
-      body: 'Our primary goal is to make our students well-rounded in their academic journey. By nurturing their minds, they become confident to make the best decisions in life.',
+      title: 'Holistic Development And Explorative Learning',
+      body: 'With our 360-degree learning approach, your learning will not be limited to just classroom-based studies, but you will also learn practical skills through interactive workshops, hands-on training programs, industrial visits, project work, and case studies.',
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Holistic+Development.svg',
       variant: 'gray',
     },
     {
-      id: 8,
+      id: 2,
+      title: 'Choose From Diverse Programs',
+      body: 'Our programs are designed to provide updated industry-relevant knowledge to our students. From Fashion Designing to Biotechnology, choose from unlimited career options.',
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Wide+Range+of+Programs.svg',
+      variant: 'amber',
+    },
+    {
+      id: 3,
+      title: 'English Is Our Primary Language',
+      body: 'English is one of the widely spoken languages in the world, and at Kalinga, you will not face any language barrier. All our programs are taught in English by highly qualified professors, and your friends from all around the Globe will even communicate with you in English.',
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Global.svg',
+      variant: 'gray',
+    },
+    {
+      id: 4,
+      title: 'Co-curricular And Extracurricular Activities',
+      body: 'Participate in competitions, workshops, events, seminars, National and International conferences, training programs, tribal fests, and more. The University also offers indoor and outdoor sports facilities and even conducts sports competitions.',
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Cultural+Celebrations.svg',
+      variant: 'amber',
+    },
+    {
+      id: 5,
       title: 'Extensive Research Facilities',
-      body: 'With 90 + Labs, including IT Labs and CIF labs, we’re Chhattisgarh’s No. 1 institute, committed to innovation and groundbreaking research facilities.',
+      body: "With 90 + Labs, including IT Labs and CIF labs, we're Chhattisgarh's No. 1 institute, committed to innovation and groundbreaking research facilities.",
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Extensive+Research+Facilities.svg',
-      variant: 'amber',
-    },
-    {
-      id: 9,
-      title: 'Experienced Faculties',
-      body: 'Learn from highly experienced professors of KU who are from across India and abroad. Their expertise helps students become future leaders.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Experienced+Faculties.svg',
       variant: 'gray',
     },
     {
-      id: 10,
-      title: 'Our Flagship Events',
-      body: 'Every year, we organise memorable events and competitions where students showcase their creativity and talent and win amazing prizes.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Flagship+Events.svg',
-      variant: 'amber',
-    },
-    {
-      id: 11,
-      title: 'Internships & Industrial Visits',
-      body: 'All Kalinga University students are provided with internship opportunities and are encouraged to work on practical projects and visit industrial sites.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/international.svg',
-      variant: 'gray',
-    },
-    {
-      id: 12,
-      title: 'Improve Employability',
-      body: 'Employers these days are not just looking for your graduation degrees, but they hire you based on your overall presentation. Beyond textbook knowledge, KU teaches communication skills, leadership qualities, problem-solving abilities, time management, critical thinking, emotional intelligence, teamwork, and much more. ',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/100%25+Automation.svg',
-      variant: 'amber',
-    },
-    {
-      id: 13,
-      title: 'Campus Placement Drives',
-      body: 'With 400+ recruitment partners, we offer placement opportunities to students in our campus drives from different backgrounds so that they can secure their dream job',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Campus+Placement+Drives.svg',
-      variant: 'gray',
-    },
-    {
-      id: 14,
-      title: 'Networking Opportunities',
-      body: 'Connect with industry leaders, alumni, and working professionals through our workshops, seminars, National and International conferences, and future-proof your career. ',
+      id: 6,
+      title: 'Build Networks And Lifelong Connections',
+      body: "Here, you'll not just study but collaborate, meet industry leaders, make new connections, learn new languages, participate in multi-cultural programs, and grow together.",
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Networking+Opportunities.svg',
       variant: 'amber',
     },
     {
-      id: 15,
-      title: 'Cultural Celebrations',
-      body: 'Become a part of a campus that celebrates both National and International events. Cultural fests, concerts, talent shows, sports day, Kalinga Utsav, and open mic competitions are some of our lively events that unite our students.',
+      id: 7,
+      title: 'Multicultural Environment',
+      body: 'With students from different countries, our campus buzzes with high energy, new cultures, ideas, friendships, and celebrations.',
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Cultural+Celebrations.svg',
       variant: 'gray',
     },
     {
-      id: 16,
-      title: 'Community Services',
-      body: 'You will not just graduate from Kalinga with a degree, but you’ll become a socially responsible citizen too. Join our NCC and NSS team and become a part of a community that serves the Nation.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Community+Services.svg',
-      variant: 'amber',
-    },
-    {
-      id: 17,
-      title: 'Educational Tours',
-      body: 'Our educational tours are all about a fun learning experience. From visiting top industries across India to exploring mega-infrastructure in Dubai, we’ve planned more exciting tours in the coming years.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Educational+Tours.svg',
-      variant: 'gray',
-    },
-    {
-      id: 18,
-      title: 'Mentor-Mentee System',
-      body: 'We establish one-on-one connections with every student so that their issues can be identified and solved early. With our personalised guidance and supportive environment, our students excel both personally and academically.',
+      id: 8,
+      title: 'Unmatched Support and Guidance',
+      body: 'We let our students enjoy their academic journey without any obstacles, as our international student cell guides them at every step. From enrollment in a program till the convocation ceremony, we ensure that they get a seamless experience.',
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Mentor-Mentee+System.svg',
       variant: 'amber',
     },
     {
-      id: 19,
-      title: 'Emotional Well-Being',
-      body: 'To cope with academic stress, mental health issues, or social anxiety, we organise well-being programs tailored to student needs so their voices are heard and acted upon.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Emotional+Well-Being.svg',
+      id: 9,
+      title: 'Residential Facilities',
+      body: 'We have well-furnished separate hostels for both boys and girls for our international students where all their needs are properly taken care of and they can live comfortably in a supportive environment.',
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/campus+life.svg',
       variant: 'gray',
     },
     {
-      id: 20,
-      title: '100% Automation',
-      body: 'Right from your admission till graduation, get a seamless digital experience through our student ERP system. We generate an ERP account for every student, which contains all the necessary information like academic curriculum, time tables, notices, exam date sheets, transportation details, event details, results, holiday calendar, forms, and other important updates.',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/100%25+Automation.svg',
+      id: 10,
+      title: 'Enjoy an Economical Lifestyle',
+      body: 'Enjoy a vibrant lifestyle at a feasible rate in Raipur, Chhattisgarh. From affordable shopping markets to transportation systems, enjoy a rich culture and diversity.',
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Community+Services.svg',
       variant: 'amber',
     },
   ];
@@ -237,28 +167,113 @@ export default function InternationalStudents() {
   const publicationStats = [
     {
       id: 1,
-      title: "International Students",
-      value: 100,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "Students",
+      value: 8000,
+      description: "Students",
     },
     {
       id: 2,
-      title: "International Students",
-      value: 100,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "International students from",
+      value: 600,
+      description: "International students from",
     },
     {
       id: 3,
-      title: "International Students",
-      value: 100,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "Countries",
+      value: 29,
+      description: "Countries",
     },
     {
       id: 4,
-      title: "International Students",
-      value: 100,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    }
+      title: "Scholarships Distributed",
+      value: 3,
+      description: "3 Cr. + Scholarships Distributed",
+    },
+    {
+      id: 5,
+      title: "Programs",
+      value: 130,
+      description: "Programs",
+    },
+    {
+      id: 6,
+      title: "Recruitment Partners",
+      value: 250,
+      description: "Recruitment Partners",
+    },
+    {
+      id: 7,
+      title: "Research Publications",
+      value: 3360,
+      description: "Research Publications",
+    },
+    {
+      id: 8,
+      title: "Patents",
+      value: 510,
+      description: "Patents",
+    },
+    {
+      id: 9,
+      title: "Sponsored Research Projects",
+      value: 160,
+      description: "Sponsored Research Projects",
+    },
+    {
+      id: 10,
+      title: "Consultancy Projects",
+      value: 130,
+      description: "Consultancy Projects",
+    },
+    {
+      id: 11,
+      title: "MoUs Signed",
+      value: 200,
+      description: "MoUs Signed",
+    },
+    {
+      id: 12,
+      title: "Centres of Excellence",
+      value: 7,
+      description: "Centres of Excellence",
+    },
+    {
+      id: 13,
+      title: "Laboratories",
+      value: 90,
+      description: "Laboratories",
+    },
+  ]
+
+  const internationalAdmissionSteps = [
+    {
+      id: 1,
+      stepNumber: "01",
+      title: "Step 1",
+      description: "Document Verification",
+      backDescription: "Document Verification",
+    },
+    {
+      id: 2,
+      stepNumber: "02",
+      title: "Step 2",
+      description: "Offer letter will be issued after checking the eligibility",
+      backDescription: "Offer letter will be issued after checking the eligibility",
+    },
+    {
+      id: 3,
+      stepNumber: "03",
+      title: "Step 3",
+      description: "Registration fee of USD 300 is to be paid to the University, and share the proof of payment with us over email",
+      backDescription: "Registration fee of USD 300 is to be paid to the University, and share the proof of payment with us over email",
+    },
+    {
+      id: 4,
+      stepNumber: "04",
+      title: "Step 4",
+      description: "Admission Letter and Visa Letter will be issued by the University. You need to contact the nearest Indian Embassy / High Commission to initiate the Student Visa Process",
+      backDescription: "Admission Letter and Visa Letter will be issued by the University. You need to contact the nearest Indian Embassy / High Commission to initiate the Student Visa Process",
+    },
   ]
   return (
     <>
@@ -276,7 +291,7 @@ export default function InternationalStudents() {
       <FeatureCards 
         title="Why is Kalinga University the Right Choice?"
         subtitle=""
-        description="Spread across 50+ Acres of Land, the University offers fully equipped infrastructure with the most advanced curriculum that prepares students to compete in global opportunities. Every space on our campus generates curiosity and encourages motivation among young minds. We just don't focus on classroom-based learning, but our primary focus is to provide a holistic learning experience to our students so that they can become all-rounders in their personal and professional lives. With a supportive and inclusive learning environment, our students have achieved remarkable success and transformed their DREAMS into REALITY.pus generates curiosity and encourages motivation among young minds. We just don't focus on classroom-based learning, but our primary focus is to provide a holistic learning experience to our students so that they can become all-rounders in their personal and professional lives. With a supportive and inclusive learning environment, our students have achieved remarkable success and transformed their DREAMS into REALITY."
+        description="At Kalinga University, our international students benefit from complete support and guidance, world-class infrastructure, and unmatched campus facilities. With our quality education system, our global students will be well-prepared for the professional world. Here, we just don't value your academic journey, but care about your emotional well-being too."
         imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg"
         imageAlt="International Students"
         cards={internationalStudentsFeatureCards}
@@ -286,7 +301,7 @@ export default function InternationalStudents() {
          boxItems={boxItems} 
          title="Why Study At India" 
          subtitle="" 
-         description="Kalinga Incubation Foundation (KIF) is a platform for students to incubate their ideas and turn them into reality."
+         description="The number of international students choosing India for higher education is increasing due to its high-quality and affordable education system. India is one of the fastest-developing countries in the world, providing young aspirants with the opportunity to research, innovate, and contribute to global progress. The country’s education system is becoming globally competitive with the implementation of the New Education Policy 2020. The rise in international students choosing Indian institutes shows their desire to study and grow in a leading economy. "
          className="bg-white"
          textClassName="text-white"
          headingClassName="" 
@@ -295,6 +310,7 @@ export default function InternationalStudents() {
        /> 
       <StudentCell />
       <AdmissionSteps   
+        steps={internationalAdmissionSteps}
         bgColor="bg-[var(--background)]"
       />
       <AppreciationLetterLayout />

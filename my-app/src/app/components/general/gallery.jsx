@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 
 const defaultGalleryImages = [
@@ -60,15 +61,18 @@ const defaultGalleryImages = [
 const Gallery = ({ 
   images = defaultGalleryImages,
   title = "Gallery",
-  backgroundColor = "bg-white"
+  backgroundColor = "bg-white",
+  paddingClassName = "py-16",
+  titleClassName = ""
 }) => {
   const useSlider = images.length > 4
+  const defaultTitleClass = "font-stix text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 sm:mb-8 md:mb-10 text-[var(--foreground)] text-center"
 
   return (
-    <section className={`${backgroundColor} py-16`}>
+    <section className={`${backgroundColor} ${paddingClassName}`}>
       <div className="px-4 sm:px-6 lg:px-8">
         {/* Title */}
-        <h2 className="font-stix text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 sm:mb-8 md:mb-10 text-[var(--foreground)] text-center">
+        <h2 className={titleClassName || defaultTitleClass}>
           {title}
         </h2>
 
@@ -76,6 +80,12 @@ const Gallery = ({
           /* Slider Layout - when more than 4 images */
           <div className="relative">
             <Swiper
+              modules={[Autoplay]}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
               spaceBetween={16}
               slidesPerView={2}
               breakpoints={{

@@ -42,11 +42,14 @@ export default function PublicationGrid({
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const desktopPrevRef = useRef(null);
+  const desktopNextRef = useRef(null);
+  const useSwiper = stats.length > 4;
 
   const StatCard = ({ stat, index }) => (
     <div
       key={index}
-      className="bg-[var(--light-gray)] hover:bg-[var(--dark-skin)] rounded-lg p-6 text-left transition-colors flex flex-col gap-15 h-full"
+      className="bg-[var(--light-gray)] h-[300px] hover:bg-[var(--dark-skin)] rounded-lg p-4 text-left transition-colors flex flex-col gap-15 justify-between"
     >
       <div>
         <h3 className="mb-2">{stat.title}</h3>
@@ -60,12 +63,12 @@ export default function PublicationGrid({
   );
 
   return (
-    <div className="container mx-auto p-6 py-16">
+    <div className="container mx-auto p-2 py-16">
       {/* Mobile Swiper */}
       <div className="md:hidden relative">
         <Swiper
           modules={[Navigation]}
-          spaceBetween={24}
+          spaceBetween={15}
           slidesPerView={1.2}
           navigation={{
             prevEl: prevRef.current,
@@ -135,12 +138,97 @@ export default function PublicationGrid({
         </div>
       </div>
 
-      {/* Desktop Grid */}
-      <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat, index) => (
-          <StatCard key={index} stat={stat} index={index} />
-        ))}
-      </div>
+      {/* Desktop - Swiper if more than 4, Grid if 4 or less */}
+      {useSwiper ? (
+        <div className="hidden md:block relative">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={15}
+            slidesPerView={4}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 15,
+              },
+            }}
+            navigation={{
+              prevEl: desktopPrevRef.current,
+              nextEl: desktopNextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = desktopPrevRef.current;
+              swiper.params.navigation.nextEl = desktopNextRef.current;
+            }}
+            onInit={(swiper) => {
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }}
+            className="publication-swiper-desktop"
+          >
+            {stats.map((stat, index) => (
+              <SwiperSlide key={index}>
+                <StatCard stat={stat} index={index} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Navigation Buttons */}
+          <div className="flex justify-end items-center gap-3 mt-4">
+            <button
+              ref={desktopPrevRef}
+              className="publication-swiper-desktop-button-prev w-10 h-10 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] flex items-center justify-center hover:opacity-90 transition-opacity shadow-md"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-white"
+              >
+                <path
+                  d="M10 12L6 8L10 4"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              ref={desktopNextRef}
+              className="publication-swiper-desktop-button-next w-10 h-10 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] flex items-center justify-center hover:opacity-90 transition-opacity shadow-md"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-white"
+              >
+                <path
+                  d="M6 4L10 8L6 12"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat, index) => (
+            <StatCard key={index} stat={stat} index={index} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

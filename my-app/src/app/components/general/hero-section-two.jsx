@@ -20,8 +20,8 @@ const HeroSectionTwo = () => {
         {/* Left Side - Text Content */}-1
         <div className="flex flex-col items-start justify-center text-left text-white gap-4 md:w-1/2 w-full">
         <Image src="https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd-1.png" alt="CTCD" width={100} height={100} />
-          <h1>Corporate Training And Consultancy Division (CTCD)</h1>
-          <p className="md:text-base text-xs"> Due to increasing competition in the domestic and international markets, political influence, and technological advancements, organisations find it difficult to compete in the marketplace.</p>
+          <h2>Corporate Training And Consultancy Division (CTCD)</h2>
+          <p className="md:text-base text-xs"> Due to increasing competition in the domestic and international markets, political influence, and technological advancements, organisations find it difficult to compete in the marketplace. Corporate Training and Consultancy Division (CTCD) at Kalinga helps businesses effectively utilise their most valuable asset, i.e., THEIR PEOPLE.</p>
           <Link href="/about-us" passHref legacyBehavior>
             <a className="inline-flex">
               <GlobalArrowButton

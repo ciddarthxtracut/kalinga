@@ -7,12 +7,10 @@ import Gallery from '../general/gallery';
 export default function MasterClassTab({
   tab1Activities = null,
   tab1Gallery = null,
-  tab1ActivitiesTitle = "Masterclasses",
   tab1GalleryTitle = "Annual Masterclass 2025-24 Glimpse",
   tab2Activities = null,
   tab2Gallery = null,
-  tab2ActivitiesTitle = "Masterclasses",
-  tab2GalleryTitle = "Annual Masterclass 2025-24 Glimpse",
+  tab2GalleryTitle = "Annual Masterclass 2025-26 Glimpse",
 }) {
   const [activeTab, setActiveTab] = useState('tab1');
 
@@ -25,22 +23,20 @@ export default function MasterClassTab({
     <section className="bg-white py-16">
       <div className="px-4 lg:px-6">
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-8 md:mb-12">
-          <div className="bg-[var(--lite-sand)] rounded-full px-4 py-3 md:px-4 md:py-4 flex items-center justify-center gap-3 md:gap-4">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`font-plus-jakarta-sans text-sm md:text-base lg:text-lg px-3 md:px-4 py-1.5 md:py-2 transition-colors duration-200 whitespace-nowrap ${
-                  activeTab === tab.id
-                    ? 'text-[var(--button-red)] font-semibold'
-                    : 'text-[var(--foreground)] font-normal hover:text-[var(--button-red)]'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+        <div className="flex justify-center mb-8 md:mb-12 gap-4 md:gap-6">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`font-plus-jakarta-sans text-sm md:text-base lg:text-lg px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-lg transition-all duration-200 whitespace-nowrap ${
+                activeTab === tab.id
+                  ? 'bg-[var(--button-red)] text-white font-semibold shadow-md'
+                  : 'bg-[var(--lite-sand)] text-gray-800 font-normal hover:opacity-90'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
         {/* Tab Content */}
@@ -48,28 +44,34 @@ export default function MasterClassTab({
           {activeTab === 'tab1' && (
             <>
               <StudentActivities
-                title={tab1ActivitiesTitle}
+                title=""
                 subtitle=""
                 activities={tab1Activities}
+                paddingClassName="py-0"
               />
               <Gallery
                 title={tab1GalleryTitle}
                 images={tab1Gallery}
                 backgroundColor="bg-white"
+                paddingClassName="py-0"
+                titleClassName="font-plus-jakarta-sans text-lg font-bold sm:text-xl md:text-2xl mb-6 sm:mb-8 md:mb-10 text-[var(--foreground)] text-center"
               />
             </>
           )}
           {activeTab === 'tab2' && (
             <>
               <StudentActivities
-                title={tab2ActivitiesTitle}
+                title=""
                 subtitle=""
                 activities={tab2Activities}
+                paddingClassName="py-0"
               />
               <Gallery
                 title={tab2GalleryTitle}
                 images={tab2Gallery}
                 backgroundColor="bg-white"
+                paddingClassName="py-0"
+                titleClassName="font-plus-jakarta-sans text-lg font-bold sm:text-xl md:text-2xl mb-6 sm:mb-8 md:mb-10 text-[var(--foreground)] text-center"
               />
             </>
           )}

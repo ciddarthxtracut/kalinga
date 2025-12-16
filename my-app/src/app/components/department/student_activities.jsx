@@ -45,12 +45,13 @@ export default function StudentActivities({
   title = "Student Activities",
   subtitle = "Lorem ipsum dolor sit amet, consectetur",
   activities = defaultActivities,
+  paddingClassName = "py-16",
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   return (
-    <section className="bg-white py-16">
+    <section className={`bg-white ${paddingClassName}`}>
       <SectionHeading
         title={title}
         subtitle={subtitle}
