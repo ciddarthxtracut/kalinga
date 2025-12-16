@@ -74,6 +74,7 @@ const CentralInstrumentationFacilityPage = () => {
       image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/CIF/chart+(4).webp",
       theme: "orange"
     },
+    
     {
       id: 2,
       name: "Priya Jyoti",
