@@ -55,6 +55,7 @@ export default function AdmissionSteps({
   showReadMore = true,
   showIcon = true,
   showImage = true,
+  bgColor = "bg-[var(--light-gray)]",
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -77,7 +78,7 @@ export default function AdmissionSteps({
   }, [steps]);
 
   return (
-    <section className="py-16 bg-[var(--light-gray)]">
+    <section className={`py-16 ${bgColor}`}>
       <style dangerouslySetInnerHTML={{__html: `
         .admission-steps-swiper .swiper-slide .step-card-inner {
           color: white;

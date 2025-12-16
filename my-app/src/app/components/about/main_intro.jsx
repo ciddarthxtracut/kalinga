@@ -31,6 +31,8 @@ export default function MainIntro({
   knowMoreLabel = "Know More",
   knowMoreHref = null,
   onKnowMore = null,
+  reverseLayout = false,
+  applyTransform3dSlant = true,
 }) {
   const descriptionArray = Array.isArray(description) ? description : [description];
   const [showAll, setShowAll] = useState(false);
@@ -43,7 +45,7 @@ export default function MainIntro({
       <div className="container mx-auto pl-4 lg:pl-4 pr-4 lg:pr-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Section - Text Content */}
-          <div className="flex flex-col gap-6 order-2 lg:order-1 lg:pl-0 lg:pr-4">
+          <div className={`flex flex-col gap-6 order-2 ${reverseLayout ? 'lg:order-2' : 'lg:order-1'} lg:pl-0 lg:pr-4`}>
             <SectionHeading 
               title={title}
               subtitle={subtitle}
@@ -100,14 +102,14 @@ export default function MainIntro({
 
           {/* Right Section - Image */}
           {showImage && (
-            <div className="order-1 lg:order-2 lg:pl-4 lg:pr-8">
+            <div className={`order-1 ${reverseLayout ? 'lg:order-1' : 'lg:order-2'} lg:pl-4 lg:pr-8`}>
             <div className="relative w-full overflow-visible">
               <Image
                 src={imageUrl}
                 alt={imageAlt}
                 width={500}
                 height={500}
-                className="w-full h-full object-cover rounded-2xl shadow-lg transform-3d-slant"
+                className={`w-full h-full object-cover rounded-2xl ${applyTransform3dSlant ? 'transform-3d-slant' : 'transform-3d-slant-mirror'}`}
                 priority
               />
             </div>

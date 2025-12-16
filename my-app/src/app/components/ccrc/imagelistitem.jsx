@@ -16,10 +16,12 @@ export default function ImageListItem({
   className = "",
   textClassName = "text-white",
   headingClassName = "text-white",
+  cardBackgroundColor = "bg-[var(--card-sandal)]",
+  cardTitleClassName = "text-[var(--red)]",
 }) {
   return (
     <section
-      className={`bg-[var(--dark-blue)] my-16 rounded-xl md:mx-5 mx-0 md:p-12 mb-0 px-2 py-10 ${className}`}
+      className={`bg-[var(--dark-blue)] rounded-xl py-16 mx-2 ${className}`}
     >
       {/* Custom CSS for scrollbar */}
       <style>
@@ -99,7 +101,7 @@ export default function ImageListItem({
                 {boxItems.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center space-x-3 rounded-lg bg-[var(--card-sandal)] p-3"
+                    className={`flex items-center space-x-3 rounded-lg  p-3 ${cardBackgroundColor}`}
                   >
                     <div className="mt-1 flex h-16 w-16 items-center justify-center rounded text-[var(--dark-blue)]">
                       {item.icon ? (
@@ -118,7 +120,7 @@ export default function ImageListItem({
                     </div>
                     <div className="flex-1 space-y-1">
                       {item.title && (
-                        <h4 className="text-xl text-[var(--red)]">
+                        <h4 className={`text-xl ${cardTitleClassName}`}>
                           {item.title}
                         </h4>
                       )}
