@@ -1,4 +1,5 @@
 'use client'
+import { useEffect } from 'react';
 import MainIntro from "../components/about/main_intro";
 import OpenPositions from "../components/careers/OpenPositions"
 import EmployeeBenefits from "../components/careers/EmployeeBenefits"
@@ -7,6 +8,47 @@ import FaqSection from "../components/general/faq"
 
 
 export default function Careers() {
+  useEffect(() => {
+    // Enable scrolling but hide scrollbar - works on all devices including mobile
+    const body = document.body;
+    const html = document.documentElement;
+    
+    // Store original styles
+    const originalBodyOverflow = body.style.overflowY;
+    const originalHtmlOverflow = html.style.overflowY;
+    const originalBodyScrollbarWidth = body.style.scrollbarWidth;
+    const originalHtmlScrollbarWidth = html.style.scrollbarWidth;
+    const originalBodyMsOverflow = body.style.msOverflowStyle;
+    const originalHtmlMsOverflow = html.style.msOverflowStyle;
+    
+    // Enable scrolling (auto allows scrolling when needed)
+    body.style.overflowY = 'auto';
+    html.style.overflowY = 'auto';
+    
+    // Hide scrollbar - Firefox
+    body.style.scrollbarWidth = 'none';
+    html.style.scrollbarWidth = 'none';
+    
+    // Hide scrollbar - IE/Edge
+    body.style.msOverflowStyle = 'none';
+    html.style.msOverflowStyle = 'none';
+    
+    // Add class for webkit browsers (Chrome, Safari, Edge)
+    body.classList.add('scrollbar-hide');
+    html.classList.add('scrollbar-hide');
+    
+    // Cleanup: restore original styles when component unmounts
+    return () => {
+      body.style.overflowY = originalBodyOverflow;
+      html.style.overflowY = originalHtmlOverflow;
+      body.style.scrollbarWidth = originalBodyScrollbarWidth;
+      html.style.scrollbarWidth = originalHtmlScrollbarWidth;
+      body.style.msOverflowStyle = originalBodyMsOverflow;
+      html.style.msOverflowStyle = originalHtmlMsOverflow;
+      body.classList.remove('scrollbar-hide');
+      html.classList.remove('scrollbar-hide');
+    };
+  }, []);
 
   const careerFAQs = [
     {
