@@ -349,7 +349,7 @@ export default function CCRCPage() {
         videoItems={videoItems}
         cardBgClass="bg-white"
         nameTextClass="text-[var(--button-red)]"
-        descriptionTextClass="text-gray-600"
+        descriptionTextClass=""
         swiperClassName="ccrc-video-slider"
       />
     <Partner 

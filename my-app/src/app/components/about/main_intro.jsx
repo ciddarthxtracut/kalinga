@@ -34,6 +34,7 @@ export default function MainIntro({
   onKnowMore = null,
   reverseLayout = false,
   applyTransform3dSlant = true,
+  descriptionClassName = "text-[var(--light-text-gray)]",
 }) {
   const descriptionArray = Array.isArray(description) ? description : [description];
   const [showAll, setShowAll] = useState(false);
@@ -42,28 +43,29 @@ export default function MainIntro({
     : descriptionArray.slice(0, initialVisibleParagraphs);
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto pl-4 lg:pl-4 pr-4 lg:pr-4">
+    <section className="md:py-16 bg-white pt-20 pb-16 ">
+      <div className="container mx-auto px-2">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Section - Text Content */}
           <div className={`flex flex-col gap-6 order-2 ${reverseLayout ? 'lg:order-2' : 'lg:order-1'} lg:pl-0 lg:pr-4`}>
             <SectionHeading 
               title={title}
               subtitle={subtitle}
-              titleClassName="leading-tight"
+              titleClassName="leading-tight !text-left"
+              subtitleClassName="!text-left"
             />
             
             <div className="space-y-4">
               {visibleParagraphs.map((paragraph, idx) => {
                 const isLastVisible = idx === visibleParagraphs.length - 1;
                 return (
-                  <p key={idx} className="text-[var(--light-text-gray)] leading-relaxed">
+                  <p key={idx} className={`${descriptionClassName} leading-relaxed break-words overflow-visible`}>
                     {paragraph}
                     {isLastVisible && showButton && buttonLabel && descriptionArray.length > initialVisibleParagraphs && (
                       <button
                         type="button"
                         onClick={() => setShowAll(!showAll)}
-                        className="ml-2 text-[var(--foreground)] font-semibold hover:text-[var(--button-red)] transition-colors inline-flex items-center"
+                        className="ml-2 text-[var(--foreground)] font-semibold hover:text-[var(--button-red)] transition-colors inline-flex items-center whitespace-nowrap"
                       >
                         {showAll ? "Show Less" : buttonLabel}
                       </button>

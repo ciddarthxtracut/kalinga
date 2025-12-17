@@ -332,7 +332,7 @@ The Kalinga University’s alumni network is an open platform where our students
         videoItems={videoItems}
         cardBgClass="bg-white"
         nameTextClass="text-[var(--button-red)]"
-        descriptionTextClass="text-gray-600"
+        descriptionTextClass=""
         swiperClassName="ccrc-video-slider"
       />
     

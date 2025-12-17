@@ -139,7 +139,7 @@ export default function Academics() {
   return (
     <>
     <section className="py-12 sm:py-16 bg-white">
-      <div className="container mx-auto px-4 sm:px-5 lg:px-5">
+      <div className="container mx-auto px-2">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <SectionHeading

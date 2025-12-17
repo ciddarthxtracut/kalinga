@@ -18,7 +18,7 @@ const stats = [
 
 export default function WhoWeAre() {
   return (
-    <section className="relative px-5">
+    <section className="relative px-2">
       {/* Top Section - Image with Overlay */}
       <div className="relative w-full rounded-2xl overflow-visible h-[450px] sm:h-[500px] md:h-[550px] lg:h-[700px]">
         {/* Background Image */}

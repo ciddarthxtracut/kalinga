@@ -574,8 +574,10 @@ const FAQ = ({
                         onClick={() => toggleItem(item.id)}
                         className="flex-shrink-0"
                       >
-                        <div className={`bg-white rounded-lg p-1.5 sm:p-2 transition-transform duration-300 ${
-                          isOpen ? 'rotate-180' : ''
+                        <div className={`rounded-lg p-1.5 sm:p-2 transition-all duration-300 ${
+                          isOpen 
+                            ? 'bg-white' 
+                            : 'bg-[var(--button-red)]'
                         }`}>
                           <svg
                             className="w-4 h-4 sm:w-5 sm:h-5"
@@ -583,9 +585,9 @@ const FAQ = ({
                             fill="none"
                           >
                             <path
-                              d="M12 4L6 12M12 4L18 12M12 4L12 20"
+                              d={isOpen ? "M12 4L6 12M12 4L18 12M12 4L12 20" : "M6 10L12 16L18 10"}
                               fill="none"
-                              stroke="var(--button-red)"
+                              stroke={isOpen ? "var(--button-red)" : "white"}
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -617,19 +619,21 @@ const FAQ = ({
                       {item.question}
                     </h3>
                     <div className="flex-shrink-0">
-                      <div className={`bg-white rounded-lg p-1.5 sm:p-2 transition-transform duration-300 ${
-                        isOpen ? 'rotate-180' : ''
+                      <div className={`rounded-lg p-1.5 sm:p-2 transition-all duration-300 ${
+                        isOpen 
+                          ? 'bg-white' 
+                          : 'bg-[var(--button-red)]'
                       }`}>
                         <svg
-                          className="w-4 h-4 sm:w-5 sm:h-5"
+                          className="w-4 h-4 sm:w-6 sm:h-6"
                           viewBox="0 0 24 24"
                           fill="none"
                         >
                           <path
-                            d="M12 4L6 12M12 4L18 12M12 4L12 20"
+                            d={isOpen ? "M12 4L6 12M12 4L18 12M12 4L12 20" : "M6 10L12 16L18 10"}
                             fill="none"
-                            stroke="var(--button-red)"
-                            strokeWidth="2"
+                            stroke={isOpen ? "var(--button-red)" : "white"}
+                            strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           />

@@ -71,13 +71,15 @@ body {
   }
   
   h2 {
-     @apply md:text-[40px] text-3xl;
-    line-height: 40px;
+     @apply md:text-[40px] text-3xl ;
+    font-size: 1.875rem !important;
+    line-height: 40px !important;
     font-family: 'STIX Two Math', serif;
   }
   
   @media (min-width: 768px) {
     h2 {
+      font-size: 40px !important;
       line-height: 55px;
     }
   }
@@ -213,6 +215,14 @@ body {
 
 .transform-3d-slant-mirror {
   transform: perspective(500px) rotateY(10deg) skew(0deg) !important;
+}
+
+/* Remove transform on mobile */
+@media (max-width: 767px) {
+  .transform-3d-slant,
+  .transform-3d-slant-mirror {
+    transform: none !important;
+  }
 }
 
 .gradient-background {

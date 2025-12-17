@@ -182,6 +182,10 @@ export default function About() {
     ]}
       imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg"
       imageAlt="Kalinga University campus"
+      showKnowMore={false}
+      initialVisibleParagraphs={1}
+      showButton={true}
+      buttonLabel="Read More"
       />
       <AccreditationRanking 
         heading="Accreditations & Rankings"
@@ -201,8 +205,7 @@ export default function About() {
     <OrganogramOfKalinga 
     title="Organogram of Kalinga University" 
     description={[
-      "Kalinga University follows a well-defined governance structure that ensures smooth administration, transparency, and institutional excellence.",
-      "The framework begins with the Chancellor, followed by the Vice-Chancellor and Director General, who oversee the academic, administrative, and strategic functions of the University.",
+      "Kalinga University follows a well-defined governance structure that ensures smooth administration, transparency, and institutional excellence.The framework begins with the Chancellor, followed by the Vice-Chancellor and Director General, who oversee the academic, administrative, and strategic functions of the University.",
       "Each department operates under clearly defined roles and responsibilities, enabling effective coordination, accountability, and efficient decision-making across all levels of the institution."
     ]}
     buttonLabel="Explore Now"
@@ -220,6 +223,8 @@ export default function About() {
     description="From building a solid academic foundation to experiencing a diverse campus life, Kalinga University offers the best of both worlds and stands as one of the top private university. With students from all across the world, our campus gives a global vibe through cultural exchange, collaborations, fresh ideas, and lifelong connections."
     cards={aboutFeatureCards}
     imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg"
+    titleClassName="!text-left"
+    subtitleClassName="!text-left"
     />
     <Facility />
     <GlobalPresence

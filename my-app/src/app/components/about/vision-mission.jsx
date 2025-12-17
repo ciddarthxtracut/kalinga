@@ -1,4 +1,40 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+
+// ReadMoreParagraphs component
+function ReadMoreParagraphs({ paragraphs }) {
+  const [showAll, setShowAll] = useState(false);
+  
+  return (
+    <div className="space-y-3">
+      <p className="text-[var(--foreground)] leading-relaxed text-sm">
+        {paragraphs[0]}
+        {!showAll && paragraphs.length > 1 && (
+          <button
+            type="button"
+            className="text-[var(--foreground)] !text-sm font-semibold underline underline-offset-4 hover:text-[var(--button-red)] transition-colors ml-1"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {" Read More"}
+          </button>
+        )}
+      </p>
+      {showAll && paragraphs.length > 1 && (
+        <p className="text-[var(--foreground)] leading-relaxed text-sm">
+          {paragraphs[1]}
+          <button
+            type="button"
+            className="text-[var(--foreground)] !text-sm font-semibold underline underline-offset-4 hover:text-[var(--button-red)] transition-colors ml-1"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {" Show Less"}
+          </button>
+        </p>
+      )}
+    </div>
+  );
+}
 
 const defaultVision = `
   Kalinga University aims to be an outstanding institution for Talent Development and Knowledge Creation for a vibrant and inclusive society.
@@ -55,38 +91,37 @@ export default function VisionMission({
           : "order-1 lg:order-1";
         const missionCol = showImg
           ? "order-2 lg:order-3 lg:col-span-5"
-          : "order-2 lg:order-2";
+          : "order-2 lg:order-2 pb-5";
 
-        // Helper function to render text - supports both string and array
+        // Helper function to render text as paragraphs with Read More
         const renderText = (text) => {
-          if (Array.isArray(text)) {
-            return (
-              <ul className="space-y-2">
-                {text.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 rounded">
-                   <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-black bg-white p-1 flex-shrink-0 group-hover:text-white rounded-md "><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"></path></svg>
-
-                    <span className="text-[var(--foreground)] leading-relaxed text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            );
+          // Convert to array if it's a string
+          const textArray = Array.isArray(text) ? text : [text];
+          
+          // If only one paragraph, show it directly
+          if (textArray.length === 1) {
+            return <p className="text-[var(--foreground)] leading-relaxed text-sm">{textArray[0]}</p>;
           }
-          return <p className="text-[var(--foreground)] leading-relaxed">{text}</p>;
+          
+          // For multiple paragraphs, use Read More functionality
+          return <ReadMoreParagraphs paragraphs={textArray} />;
         };
 
         return (
-          <section key={idx} className={`pt-16 lg:pt-24 bg-white ${cls}`}>
-            <div className="container mx-auto px-2">
-              <div className={`grid grid-cols-1 ${gridCols} gap-8 lg:gap-6 items-stretch`}>
+          <section key={idx} className={`pt-16 bg-white px-2 ${cls}`}>
+            <div className="container mx-auto">
+              <div className={`grid grid-cols-1 ${gridCols} gap-8 lg:gap-6 items-center`}>
                 {/* Left - Vision Box */}
                 <div className={`${visionCol} flex`}>
-                  <div className="bg-[var(--dark-skin)] p-[25px] flex justify-center self-center rounded-2xl shadow-lg transform-3d-slant-mirror w-full flex flex-col md:mb-10">
+                  <div className="bg-[var(--dark-skin)] p-[25px] flex justify-center items-center self-center rounded-2xl shadow-lg transform-3d-slant-mirror w-full min-h-[280px] flex flex-col md:mb-10">
+                    
+                    <div className="flex-1 flex flex-col items-center justify-center w-full">
                     <h3 className="font-stix text-[var(--foreground)] mb-4 text-center !text-[35px]">
                       {vt}
                     </h3>
-                    <div className="flex-1">
-                      {renderText(vtxt)}
+                      <div className="w-full">
+                        {renderText(vtxt)}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -109,12 +144,14 @@ export default function VisionMission({
 
                 {/* Right - Mission Box */}
                 <div className={`${missionCol} flex`}>
-                  <div className="bg-[var(--dark-skin)] p-[25px] flex justify-center self-center rounded-2xl shadow-lg transform-3d-slant w-full flex flex-col md:mb-10">
-                    <h3 className="font-stix text-[var(--foreground)] mb-4 text-center !text-[35px]">
-                      {mt}
-                    </h3>
-                    <div className="flex-1">
-                      {renderText(mtxt)}
+                  <div className="bg-[var(--dark-skin)] p-[25px] flex justify-center items-center self-center rounded-2xl shadow-lg transform-3d-slant w-full min-h-[280px] flex flex-col md:mb-10">
+                    <div className="flex-1 flex flex-col items-center justify-center w-full">
+                      <h3 className="font-stix text-[var(--foreground)] mb-4 text-center !text-[35px]">
+                        {mt}
+                      </h3>
+                      <div className="w-full">
+                        {renderText(mtxt)}
+                      </div>
                     </div>
                   </div>
                 </div>

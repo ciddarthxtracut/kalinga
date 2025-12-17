@@ -102,9 +102,7 @@ export default function CenterOfExcellence({
               color: var(--foreground);
               margin-bottom: 16px;
             }
-            .swiper-wrapper{
-            justify-content: center;
-            }
+
           `}} />
           <Swiper
             modules={[Navigation]}

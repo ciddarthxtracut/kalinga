@@ -216,17 +216,12 @@ function Courses() {
 
   // Course Navigation Tabs
   const navigationTabs = [
-    { id: 'about', label: 'About The Program' },
-    { id: 'specialization', label: 'Specialisations' },
-    { id: 'career', label: 'Career Pathways' },
-    { id: 'eligibility', label: 'Eligibility Criteria' },
-    { id: 'duration', label: 'Duration' },
+    { id: 'about', label: 'Program details' },
+    { id: 'specialization', label: 'Specialization' },
+    { id: 'career', label: 'Career Pathway' },
+    { id: 'eligibility', label: 'Eligibility' },
     { id: 'fees', label: 'Fees' },
     { id: 'syllabus', label: 'Syllabus' },
-    { id: 'learning-outcomes', label: 'Learning Outcomes' },
-    { id: 'hiring-partners', label: 'Hiring Partners' },
-    { id: 'beyond-curriculum', label: 'Beyond The Curriculum' },
-    { id: 'activities', label: 'Activities & Events' },
   ];
 
   return (
@@ -239,6 +234,7 @@ function Courses() {
           description={mainIntroContent.description}
           imageUrl={mainIntroContent.imageUrl}
           imageAlt={mainIntroContent.imageAlt}
+          showKnowMore={false}
         />
       </div>
       <PublicationGrid stats={publicationStats} />
@@ -286,8 +282,8 @@ function Courses() {
         {/* Beyond the Curriculum section - content to be added */}
       </div>
       <OrganogramOfKalinga
-        title="Organogram of Kalinga University"
-        description="Kalinga University follows a well-defined governance structure that ensures smooth administration, transparency, and institutional excellence."
+        title="Scheme & Syllabus 2024-2025"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ."
         buttonLabel="Explore Now"
         href="/about-us"
         buttonClassName="!bg-white !text-black"

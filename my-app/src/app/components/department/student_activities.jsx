@@ -82,7 +82,7 @@ export default function StudentActivities({
               swiper.navigation.init();
               swiper.navigation.update();
             }}
-            className="student-activities-swiper !pb-12 [&_.swiper-wrapper]:!flex [&_.swiper-wrapper]:items-stretch [&_.swiper-slide]:!h-auto [&_.swiper-slide]:!flex"
+            className={`student-activities-swiper ${activities && activities.length > 3 ? '!pb-12' : '!pb-0'} [&_.swiper-wrapper]:!flex [&_.swiper-wrapper]:items-stretch [&_.swiper-slide]:!h-auto [&_.swiper-slide]:!flex`}
           >
             {activities.map((activity) => (
               <SwiperSlide key={activity.id}>

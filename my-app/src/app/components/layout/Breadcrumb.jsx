@@ -36,7 +36,7 @@ const routeHeroImages = [
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
   },
   {
-    match: /^\/iqac/,
+    match: /^\/internal-quality-assurance-cell/,
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
   },
   {
@@ -192,7 +192,7 @@ const Breadcrumb = ({ customBreadcrumbs, heroImage, pageTitle }) => {
       {currentPageTitle  && (
         <div className="container mx-auto">
         <div className="absolute z-[100] flex md:flex-row flex-col md:items-end items-start gap-4 md:gap-6 bottom-[40px] md:bottom-[50px] lg:bottom-[50px] translate-y-1/2 mb-8 md:mb-16">
-          <div className="bg-[var(--dark-blue)]/80 backdrop-blur-md rounded-2xl min-h-[200px] flex justify-center items-center min-w-[330px] max-w-3/5 wraptext-center">
+          <div className="bg-[var(--dark-blue)]/80 backdrop-blur-md rounded-2xl min-h-[200px] flex justify-center items-center min-w-[330px] max-w-3/5 wraptext-center md:p-0 p-5">
             <h1 className="font-stix text-center text-white text-2xl md:text-4xl lg:text-5xl font-normal ">
               {currentPageTitle}
             </h1>

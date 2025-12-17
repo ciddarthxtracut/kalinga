@@ -115,11 +115,12 @@ export default function OurJourney() {
         @media (min-width: 1024px) {
           .journey-swiper .swiper-slide {
             width: 66.666% !important;
+            overflow: visible !important;
           }
           .journey-swiper .swiper-wrapper {
             align-items: stretch;
-            overflow: visible !important;
             gap: 120px !important;
+            overflow: visible !important;
           }
           .journey-swiper {
             overflow: visible !important;
@@ -172,6 +173,11 @@ export default function OurJourney() {
           padding: 0;
           overflow: hidden;
         }
+        @media (min-width: 768px) {
+          .journey-card-reveal {
+            overflow: visible !important;
+          }
+        }
         .journey-card-reveal.animate {
           clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
           animation: rollFromLeft 2s ease-in-out forwards;
@@ -184,10 +190,29 @@ export default function OurJourney() {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
           }
         }
+        @media (min-width: 768px) {
+          .journey-card-reveal.animate {
+            clip-path: polygon(-20% 0, 0 0, 0 100%, -20% 100%);
+            animation: rollFromLeftDesktop 2s ease-in-out forwards;
+          }
+          @keyframes rollFromLeftDesktop {
+            from {
+              clip-path: polygon(-20% 0, -20% 0, -20% 100%, -20% 100%);
+            }
+            to {
+              clip-path: polygon(-20% 0, 100% 0, 100% 100%, -20% 100%);
+            }
+          }
+        }
         .journey-card-content {
           overflow: hidden;
           width: 100%;
           height: 100%;
+        }
+        @media (min-width: 768px) {
+          .journey-card-content {
+            overflow: visible !important;
+          }
         }
         .journey-card-content img {
           animation: scaleDown 2s ease-in-out forwards;
@@ -201,7 +226,7 @@ export default function OurJourney() {
           }
         }
       `}} />
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto px-2 md:px-4">
         {/* Title */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-stix text-white text-4xl md:text-5xl lg:text-6xl">
@@ -210,7 +235,7 @@ export default function OurJourney() {
         </div>
 
         {/* Content Cards Swiper */}
-        <div className="mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-4 md:pl-12 lg:pl-16">
+        <div className="mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 overflow-x-visible">
           <Swiper
             modules={[Navigation]}
             spaceBetween={16}
@@ -231,12 +256,12 @@ export default function OurJourney() {
               },
               768: {
                 slidesPerView: 1,
-                spaceBetween: 24,
+                spaceBetween: 60,
                 centeredSlides: true,
               },
               1024: {
                 slidesPerView: "auto",
-                spaceBetween: 24,
+                spaceBetween: 60,
                 centeredSlides: true,
               },
             }}
@@ -259,21 +284,21 @@ export default function OurJourney() {
             className="journey-swiper"
           >
             {journeyData.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div className={`journey-card-reveal relative rounded-2xl overflow-hidden shadow-lg h-full min-h-[280px] md:overflow-visible md:min-h-[400px] ${activeIndex === index ? 'animate' : ''}`}>
-                  <div className="journey-card-content relative flex flex-col md:flex-row items-stretch h-full bg-[var(--lite-sand)] rounded-2xl overflow-hidden md:overflow-visible">
+              <SwiperSlide key={index} className="md:overflow-visible">
+                <div className={`journey-card-reveal relative rounded-2xl overflow-hidden shadow-lg h-full min-h-[280px] md:min-h-[400px] md:overflow-visible ${activeIndex === index ? 'animate' : ''}`}>
+                  <div className="journey-card-content relative flex flex-col md:flex-row items-stretch h-full bg-[var(--background)] rounded-2xl overflow-hidden md:overflow-visible">
                     {/* Image - On Top (Mobile) / On Left (Desktop) */}
-                    <div className="relative h-[180px] md:h-full min-h-[180px] md:min-h-[400px] w-full md:w-[50%] md:-ml-12 lg:-ml-25 z-20">
+                    <div className="relative h-[180px] md:h-full min-h-[180px] md:min-h-[400px] w-full md:w-[50%] md:-ml-[20%] md:z-50">
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
-                        className="object-cover rounded-t-2xl md:rounded-2xl md:mt-5 md:!h-[360px]"
+                        className="object-cover rounded-t-2xl md:rounded-2xl md:mt-5 md:!h-[360px] md:relative md:z-50"
                       />
                     </div>
 
                     {/* Text Content - Below Image (Mobile) / On Right (Desktop) */}
-                    <div className="rounded-b-2xl md:rounded-r-2xl p-3 md:p-5 lg:p-4 flex flex-col justify-center flex-1">
+                    <div className="rounded-b-2xl md:rounded-r-2xl p-3 md:p-5 lg:p-4 flex flex-col justify-center flex-1 md:z-10">
                       <div 
                         className="text-[var(--button-red)] font-stix text-3xl md:text-6xl font-bold mb-2 md:mb-4"
                         style={{
