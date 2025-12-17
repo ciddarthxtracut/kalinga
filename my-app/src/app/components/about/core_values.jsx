@@ -136,7 +136,8 @@ export default function CoreValues() {
         <div className="mb-5">
           <SectionHeading 
             title="Core Values of Kalinga University" 
-            titleClassName="!text-white"
+            titleClassName="!text-white text-center"
+
           />
         </div>
 
