@@ -39,11 +39,11 @@ export default function MainIntro({
     : descriptionArray.slice(0, initialVisibleParagraphs);
 
   return (
-    <section className="md:py-16 bg-white pt-20 pb-16 ">
+    <section className="md:py-16 bg-white pt-20 md:pb-16 pb-10 ">
       <div className="container mx-auto px-2">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Section - Text Content */}
-          <div className={`flex flex-col gap-6 order-2 ${reverseLayout ? 'lg:order-2' : 'lg:order-1'} lg:pl-0 lg:pr-4`}>
+          <div className={`flex flex-col order-2 ${reverseLayout ? 'lg:order-2' : 'lg:order-1'} lg:pl-0 lg:pr-4`}>
             <SectionHeading 
               title={title}
               subtitle={subtitle}

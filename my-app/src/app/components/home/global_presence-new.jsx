@@ -7,76 +7,177 @@ import SectionHeading from "../general/SectionHeading";
 const locations = [ 
   {
     id: 1,
-    name: "THAILAND",
-    flag: "https://flagcdn.com/w40/th.png",
-    coordinates: { top: "42%", left: "75%" }
+    name: "AFGHANISTAN",
+    flag: "https://flagcdn.com/w40/af.png",
+    coordinates: { top: "35%", left: "69%" }
   },
-
   {
     id: 2,
-    name: "NEPAL",
-    flag: "https://flagcdn.com/w40/np.png",
-    coordinates: { top: "38%", left: "71%" }
+    name: "ANGOLA",
+    flag: "https://flagcdn.com/w40/ao.png",
+    coordinates: { top: "40%", left: "50%" }
   },
   {
     id: 3,
-    name: "SRI LANKA",
-    flag: "https://flagcdn.com/w40/lk.png",
-    coordinates: { top: "48%", left: "72%" }
+    name: "BANGLADESH",
+    flag: "https://flagcdn.com/w40/bd.png",
+    coordinates: { top: "45%", left: "73%" }
   },
   {
     id: 4,
-    name: "USA",
-    flag: "https://flagcdn.com/w40/us.png",
-    coordinates: { top: "35%", left: "23%" }
+    name: "BURUNDI",
+    flag: "https://flagcdn.com/w40/bi.png",
+    coordinates: { top: "40%", left: "55%" }
   },
   {
     id: 5,
-    name: "ITALY",
-    flag: "https://flagcdn.com/w40/it.png",
-    coordinates: { top: "33%", left: "52%" }
+    name: "CAMEROON",
+    flag: "https://flagcdn.com/w40/cm.png",
+    coordinates: { top: "39%", left: "49%" }
   },
   {
     id: 6,
-    name: "CHINA",
-    flag: "https://flagcdn.com/w40/cn.png",
-    coordinates: { top: "35%", left: "77%" }
+    name: "CONGO",
+    flag: "https://flagcdn.com/w40/cd.png",
+    coordinates: { top: "42%", left: "51%" }
   },
   {
     id: 7,
-    name: "SLOVENIA",
-    flag: "https://flagcdn.com/w40/si.png",
-    coordinates: { top: "32%", left: "53%" }
+    name: "GAMBIA",
+    flag: "https://flagcdn.com/w40/gm.png",
+    coordinates: { top: "34%", left: "42%" }
   },
   {
     id: 8,
-    name: "BANGLADESH",
-    flag: "https://flagcdn.com/w40/bd.png",
-    coordinates: { top: "40%", left: "74%" }
+    name: "GHANA",
+    flag: "https://flagcdn.com/w40/gh.png",
+    coordinates: { top: "36%", left: "43%" }
   },
   {
     id: 9,
-    name: "AFRICA",
-    flag: "https://flagcdn.com/w40/za.png",
-    coordinates: { top: "40%", left: "52%" }
+    name: "IVORY COAST",
+    flag: "https://flagcdn.com/w40/ci.png",
+    coordinates: { top: "36%", left: "42%" }
   },
   {
     id: 10,
-    name: "TURKEY",
-    flag: "https://flagcdn.com/w40/tr.png",
-    coordinates: { top: "34%", left: "66%" }
+    name: "LESOTHO",
+    flag: "https://flagcdn.com/w40/ls.png",
+    coordinates: { top: "45%", left: "55%" }
   },
   {
     id: 11,
-    name: "VIETNAM",
-    flag: "https://flagcdn.com/w40/vn.png",
-    coordinates: { top: "43%", left: "80%" }
+    name: "LIBERIA",
+    flag: "https://flagcdn.com/w40/lr.png",
+    coordinates: { top: "33%", left: "42%" }
   },
   {
     id: 12,
-    name: "JAPAN",
-    flag: "https://flagcdn.com/w40/jp.png",
-    coordinates: { top: "35%", left: "82%" }
+    name: "MALAWI",
+    flag: "https://flagcdn.com/w40/mw.png",
+    coordinates: { top: "44%", left: "55%" }
+  },
+  {
+    id: 13,
+    name: "MOZAMBIQUE",
+    flag: "https://flagcdn.com/w40/mz.png",
+    coordinates: { top: "44%", left: "57%" }
+  },
+  {
+    id: 14,
+    name: "NAMIBIA",
+    flag: "https://flagcdn.com/w40/na.png",
+    coordinates: { top: "45%", left: "50%" }
+  },
+  {
+    id: 15,
+    name: "NEPAL",
+    flag: "https://flagcdn.com/w40/np.png",
+    coordinates: { top: "43%", left: "73%" }
+  },
+  {
+    id: 16,
+    name: "NIGERIA",
+    flag: "https://flagcdn.com/w40/ng.png",
+    coordinates: { top: "37%", left: "45%" }
+  },
+  {
+    id: 17,
+    name: "PAPUA NEW GUINEA",
+    flag: "https://flagcdn.com/w40/pg.png",
+    coordinates: { top: "81%", left: "83%" }
+  },
+  {
+    id: 18,
+    name: "RWANDA",
+    flag: "https://flagcdn.com/w40/rw.png",
+    coordinates: { top: "41%", left: "54%" }
+  },
+  {
+    id: 19,
+    name: "SINGAPORE",
+    flag: "https://flagcdn.com/w40/sg.png",
+    coordinates: { top: "60%", left: "75%" }
+  },
+  {
+    id: 20,
+    name: "SOMALIA",
+    flag: "https://flagcdn.com/w40/so.png",
+    coordinates: { top: "39%", left: "60%" }
+  },
+  {
+    id: 21,
+    name: "SOUTH AFRICA",
+    flag: "https://flagcdn.com/w40/za.png",
+    coordinates: { top: "48%", left: "52%" }
+  },
+  {
+    id: 22,
+    name: "SOUTH KOREA",
+    flag: "https://flagcdn.com/w40/kr.png",
+    coordinates: { top: "59%", left: "85%" }
+  },
+  {
+    id: 23,
+    name: "SOUTH SUDAN",
+    flag: "https://flagcdn.com/w40/ss.png",
+    coordinates: { top: "40%", left: "54%" }
+  },
+  {
+    id: 24,
+    name: "SUDAN",
+    flag: "https://flagcdn.com/w40/sd.png",
+    coordinates: { top: "35%", left: "53%" }
+  },
+  {
+    id: 25,
+    name: "SWAZILAND",
+    flag: "https://flagcdn.com/w40/sz.png",
+    coordinates: { top: "45%", left: "54%" }
+  },
+  {
+    id: 26,
+    name: "SYRIA",
+    flag: "https://flagcdn.com/w40/sy.png",
+    coordinates: { top: "30%", left: "58%" }
+  },
+  {
+    id: 27,
+    name: "TANZANIA",
+    flag: "https://flagcdn.com/w40/tz.png",
+    coordinates: { top: "44%", left: "54%" }
+  },
+  {
+    id: 28,
+    name: "ZAMBIA",
+    flag: "https://flagcdn.com/w40/zm.png",
+    coordinates: { top: "46%", left: "54%" }
+  },
+  {
+    id: 29,
+    name: "ZIMBABWE",
+    flag: "https://flagcdn.com/w40/zw.png",
+    coordinates: { top: "43%", left: "54%" }
   }
 ];
 
@@ -163,20 +264,20 @@ function GlowingBox({ children, borderColor = "var(--dark-blue)", style = {}, cl
   );
 }
 
-export default function Map() {
+export default function Map({ backgroundColor = "", textColor = "" }) {
   const [activeLocation, setActiveLocation] = useState(null);
 
   return (
-    <section className="py-16">
+    <section className={`py-16 ${backgroundColor}`}>
       <div className="container mx-auto px-4 relative">
         <SectionHeading 
           subtitle="Global Scale"
           title="Expanding Horizons Through Global Partnerships"
           subtitleClassName="mb-2 text-center"
-          titleClassName="mb-8 text-center"
+          titleClassName={`mb-8 text-center ${textColor}`}
           subtitleTextColor="!text-[var(--button-red)]"
         />
-        <p className="text-center">Kalinga University is home to students from 29+ countries, fostering a truly international learning environment. Through academic exchange programs, research collaborations, and strategic global alliances, the University prepares students to become globally competent professionals and leaders.</p>
+        <p className={`text-center ${textColor}`}>Kalinga University is home to students from 29+ countries, fostering a truly international learning environment. Through academic exchange programs, research collaborations, and strategic global alliances, the University prepares students to become globally competent professionals and leaders.</p>
         <div className="relative">
           <Image 
             src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/globe-skin-color.png"
@@ -219,7 +320,7 @@ export default function Map() {
         {/* Legend - Horizontal under image */}
         <div className="w-full rounded-[20px] bg-[#D9D9D975] backdrop-blur-md">
           <GlowingBox borderColor="var(--button-red)" className="p-6 rounded-[20px]">
-            <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-6 z-20 relative text-sm">
+            <ul className={`flex flex-wrap items-center justify-center gap-4 md:gap-6 z-20 relative text-sm ${textColor}`}>
               {locations.map((location) => (
                 <li 
                   key={location.id} 

@@ -52,8 +52,8 @@ export default function UpcomingConference({
   imageContainerClass = "w-full md:w-2/5 pl-4"
 }) {
   return (
-    <section className={`${backgroundColor} pt-16 pb-16`}>
-      <div className="container mx-auto px-6">
+    <section className={`${backgroundColor} pt-16 pb-16 mx-2 rounded-xl`}>
+      <div className="container mx-auto">
         <h2 className="text-center mb-10">{title}</h2>
 
         <Swiper
@@ -75,7 +75,7 @@ export default function UpcomingConference({
         >
           {conferences.map((conf) => (
             <SwiperSlide key={conf.id}>
-              <div className={`${backgroundColorcard} rounded-2xl shadow-sm  flex flex-col md:flex-row gap-4 md:gap-8 items-center py-10`}>
+              <div className={`${backgroundColorcard} rounded-2xl shadow-sm  flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center`}>
                 <div className={imageContainerClass}>
                   <Image
                     src={conf.image}
@@ -83,7 +83,7 @@ export default function UpcomingConference({
                     width={imageWidth}
                     height={imageHeight}
                     className="rounded-xl object-cover w-full h-full"
-                    style={{ maxWidth: `${imageWidth}px`, maxHeight: `${imageHeight}px` }}
+                    style={{ Width: `${imageWidth}px`, Height: `${imageHeight}px` }}
                   />
                 </div>
 

@@ -93,7 +93,7 @@ export default function CoreValues() {
             />
           </div>
           <div className="flex flex-col text-black core-value-title">
-            <h2 className=" mb-2 transition-all duration-500 ease-out">
+            <h2 className=" mb-2 md:text-4xl text-2xl transition-all duration-500 ease-out">
               {value.title}
             </h2>
             <p className="text-base opacity-100 transition-all duration-500 ease-out delay-100">
