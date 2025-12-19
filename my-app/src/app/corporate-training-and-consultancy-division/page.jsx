@@ -97,159 +97,166 @@ export default function CorporateTrainingAndConsultancyDivision() {
       backDescription: "Follow-Up and Refresher Sessions",
     },
   ];
-  // Sample data for Student Activities (Masterclasses)
+  // Masterclass Activities for Tab 1 (2024-25) - 10 items
   const masterclassActivities = [
     {
       id: 1,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
-      imageAlt: "Our Successful Masterclasses 2024-25",
-      title: "Our Successful Masterclasses 2024-25",
-      description: "",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/master-class.webp",
+      imageAlt: "Grow As a Leader: A Program For First-Time Managers",
+      title: "",
+      description: "Resource Person: Mr. Amar Pathak",
       buttonText: "Read More",
-      date: "2024-25",
+      date: "17.08.2024",
     },
     {
       id: 2,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/master-class-2.webp",
       imageAlt: "Maximising Fund-Raising Resource For CSR",
-      title: "Maximising Fund-Raising Resource For CSR",
-      description: "",
+      title: "",
+      description: "Resource Person: Prof. Sanjay Vanani",
       buttonText: "Read More",
-      date: "2024-25",
+      date: "19.10.2024",
     },
     {
       id: 3,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-3.webp",
       imageAlt: "Crack The Code: Gen Z Connection Guide For Teachers and Parents",
-      title: "Crack The Code: Gen Z Connection Guide For Teachers and Parents",
-      description: "",
+      title: "",
+      description: "Resource Person: Dr. Sunayna Shukla",
       buttonText: "Read More",
-      date: "2024-25",
+      date: "21.12.2024",
     },
     {
       id: 4,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-4.webp",
       imageAlt: "AI-Driven Benefits for Manufacturing & Operations",
-      title: "AI-Driven Benefits for Manufacturing & Operations",
-      description: "",
+      title: "",
+      description: "Resource Person: Ms. Rajashree Rajadhya",
       buttonText: "Read More",
-      date: "2024-25",
+      date: "08.03.2025",
     },
     {
       id: 5,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-5.webp",
       imageAlt: "HR Analytics: Leveraging AI & Data for Strategic HR",
-      title: "HR Analytics: Leveraging AI & Data for Strategic HR",
-      description: "",
+      title: "",
+      description: "Resource Person: Saurabh Saxena",
       buttonText: "Read More",
-      date: "2024-25",
+      date: "03.05.2025",
     },
     {
       id: 6,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-6.webp",
       imageAlt: "Master Your Market: Sales, Marketing & Negotiating Strategies",
-      title: "Master Your Market: Sales, Marketing & Negotiating Strategies",
+      title: "",
       description: "",
       buttonText: "Read More",
-      date: "2024-25",
+      date: "26.07.2025",
     },
   ];
 
+  // Masterclass Activities for Tab 2 (2025-26) - 4 items
   const masterclassActivities2 = [
     {
       id: 1,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-5.webp",
       imageAlt: "Operational Excellence with Six Sigma: Driving Productivity & Cost Efficiency",
       title: "Operational Excellence with Six Sigma: Driving Productivity & Cost Efficiency",
       description: "",
       buttonText: "Read More",
-      date: "2025-26",
+      date: "November 2025",
     },
     {
       id: 2,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-6.webp",
       imageAlt: "HR in the Age of AI: Reimagining People, Performance & Potential",
       title: "HR in the Age of AI: Reimagining People, Performance & Potential",
       description: "",
       buttonText: "Read More",
-      date: "2025-26",
+      date: "January 2026",
     },
     {
       id: 3,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-7.webp",
       imageAlt: "Sustainable Industry Practices: Green Technologies & Compliance",
       title: "Sustainable Industry Practices: Green Technologies & Compliance",
       description: "",
       buttonText: "Read More",
-      date: "2025-26",
+      date: "March 2026",
     },
     {
       id: 4,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-8.webp",
       imageAlt: "Future-Ready Classrooms: AI & Digital Tools in Education and Beyond",
       title: "Future-Ready Classrooms: AI & Digital Tools in Education and Beyond",
       description: "",
       buttonText: "Read More",
-      date: "2025-26",
+      date: "April 2026",
     },
     {
       id: 5,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-9.webp",
       imageAlt: "AI & Data for Industrial Efficiency: From Buzzword to Business Value",
       title: "AI & Data for Industrial Efficiency: From Buzzword to Business Value",
       description: "",
       buttonText: "Read More",
-      date: "2025-26",
+      date: "June 2026",
     },
     {
       id: 6,
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
+      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-10.webp",
       imageAlt: "Life Skills & Emotional Intelligence for the 21st Century Professional",
       title: "Life Skills & Emotional Intelligence for the 21st Century Professional",
       description: "",
       buttonText: "Read More",
-      date: "2025-26",
+      date: "August 2026",
     },
   ];
-  const galleryImages2 = [
-    {
-      id: 1,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
-      alt: "Masterclass Event 1"
-    },
-  ];
-
-  // Sample data for Gallery
+  // Gallery Images for Tab 1 (2024-25) - 3 images
   const galleryImages = [
     {
-      id: 1,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
-      alt: "Masterclass Event 1"
-    },
-    {
       id: 2,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
-      alt: "Masterclass Event 2"
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-7.webp",
+      alt: "Masterclass 2024-25 Glimpse 4"
     },
     {
       id: 3,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
-      alt: "Masterclass Event 3"
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-8.webp",
+      alt: "Masterclass 2024-25 Glimpse 5"
     },
     {
       id: 4,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
-      alt: "Masterclass Event 4"
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-9.webp",
+      alt: "Masterclass 2024-25 Glimpse 6"
     },
     {
       id: 5,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
-      alt: "Masterclass Event 5"
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-10.webp",
+      alt: "Masterclass 2024-25 Glimpse 7"
+    },
+  ];
+
+  // Gallery Images for Tab 2 (2025-26) - 4 images
+  const galleryImages2 = [
+    {
+      id: 1,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-1.png",
+      alt: "Masterclass 2025-26 Glimpse 1"
     },
     {
-      id: 6,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd.png",
-      alt: "Masterclass Event 6"
+      id: 2,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-2.webp",
+      alt: "Masterclass 2025-26 Glimpse 2"
+    },
+    {
+      id: 3,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-3.webp",
+      alt: "Masterclass 2025-26 Glimpse 3"
+    },
+    {
+      id: 4,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-4.webp",
+      alt: "Masterclass 2025-26 Glimpse 4"
     },
   ];
 
@@ -273,27 +280,27 @@ export default function CorporateTrainingAndConsultancyDivision() {
       <MasterClassTab
         tab1Activities={masterclassActivities}
         tab1Gallery={galleryImages}
-        tab1ActivitiesTitle="Masterclasses"
-        tab1GalleryTitle="Annual Masterclass 2025-24 Glimpse"
+        tab1GalleryTitle="Annual Masterclass 2024-25 Glimpse"
         tab2Activities={masterclassActivities2}
         tab2Gallery={galleryImages2}
-        tab2ActivitiesTitle="Masterclasses"
-        tab2GalleryTitle="Annual Masterclass 2025-24 Glimpse"
+        tab2GalleryTitle="Annual Masterclass Calendar 2025-26 Glimpse"
       />
       <OrganogramOfKalinga 
         title="Organogram of CTCD"
-        description="The Organogram of CTCD is a visual representation of the structure and hierarchy of the CTCD. It is a diagram that shows the different roles and responsibilities of the different departments and units within the CTCD."
+        description="Our consultancy services are designed to transform organisations to reach their maximum potential. Our experts conduct one-on-one discussions with team members of companies and develop strategies that improve their organisations’ workflows, HR processes, and performance management systems. More specifically, we assist them in talent management, digital integration, and workforce planning; every approach ensures improved productivity and employee engagement. We help them make SMARTER decisions with proper resource planning and integration, enabling them to grow with a clear roadmap"
         buttonLabel="Explore Now"
         href="/ctcd-organogram"
         cardBackgroundColor="bg-[var(--dark-blue)]"
         useContainer = {true}
       />
       <AdmissionSteps 
-        title="Admission Steps"
+        title="Our Training Cycle"
+        subtitle=""
         steps={admissionSteps}
         bgColor="bg-[var(--background)]"
         showReadMore={false}
         showIcon={false}
+        showHeaderButton={false}
       />
       <ImageListItem items={Items} imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/course/course_page.webp" title="Benefits for Organisations"  />
       <MainIntro 
@@ -311,10 +318,10 @@ export default function CorporateTrainingAndConsultancyDivision() {
       />
       <OrganogramOfKalinga 
       
-        title="Organogram of CTCD"
-        description="The Organogram of CTCD is a visual representation of the structure and hierarchy of the CTCD. It is a diagram that shows the different roles and responsibilities of the different departments and units within the CTCD."
+        title="Download Brochure 2025-26"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         buttonLabel="Explore Now"
-        href="/ctcd-organogram"
+        href="https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/CTCD+-+Corporate+Training+and+Consultancy+Division_compressed+(1).pdf"
         cardBackgroundColor="bg-[var(--button-red)]"
         useContainer = {true}
       />
@@ -326,7 +333,7 @@ export default function CorporateTrainingAndConsultancyDivision() {
           submitLabel="Submit Alumni Details"
           useArrowSubmitButton={true}
           arrowSubmitVariant="white"
-        />
+        />  
         <Gallery />
       <AdmissionCareer />
     </>

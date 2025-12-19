@@ -5,7 +5,7 @@ import GlobalArrowButton from '../general/global-arrow_button';
 import Image from 'next/image';
 const HeroSectionTwo = () => {
   return (
-    <section className="-mt-[80px] relative h-[500px] md:h-[600px] lg:h-[700px] md:mx-2 mx-0">
+    <section className="-mt-[80px] relative min-h-[500px] md:h-[600px] lg:h-[700px] md:mx-2 mx-0 mb-8 md:mb-0 pb-8 md:pb-0">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat  rounded-xl sm:rounded-4xl h-full w-full"
@@ -16,7 +16,7 @@ const HeroSectionTwo = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent  rounded-4xl"></div>
       </div>
-      <div className="container relative z-1 mx-auto h-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 w-full px-4 pt-10">
+      <div className="container relative z-1 mx-auto h-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 w-full px-4 pt-20 pb-8 md:pb-10">
         {/* Left Side - Text Content */}
         <div className="flex flex-col items-start justify-center text-left text-white gap-4 md:w-1/2 w-full">
         <Image src="https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/ctcd-1.png" alt="CTCD" width={100} height={100} />
@@ -37,7 +37,7 @@ const HeroSectionTwo = () => {
         </div>
         
         {/* Right Side - Form */}
-        <div className="flex flex-col items-end justify-center md:w-1/2 w-full">
+        <div className="flex flex-col items-center md:items-end justify-center md:w-1/2 w-full mt-4 md:mt-0">
           <form className="bg-white/95 backdrop-blur-sm rounded-lg p-6 md:p-8 w-full max-w-md shadow-xl">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Get in Touch</h2>
             <div className="space-y-4">

@@ -43,6 +43,33 @@ const GALLERY_TITLE = "Training Glimpse";
 const GALLERY_TITLE_CLASSNAME = "font-stix text-[34px] leading-[44px] text-[var(--foreground)] mb-[14px] text-left";
 const GALLERY_IMAGES = transformToGalleryImages(trainingGlimpse);
 
+// Training Projects Gallery Images
+const trainingProjectsImages = [
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-projects.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-projects-2.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-projects-3.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-projects-4.webp",
+];
+const TRAINING_PROJECTS_GALLERY_IMAGES = transformToGalleryImages(trainingProjectsImages);
+
+// Training Domain Gallery Images
+const trainingDomainImages = [
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-domain-1.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-domain-2.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-domain-3.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-domain-4.webp",
+];
+const TRAINING_DOMAIN_GALLERY_IMAGES = transformToGalleryImages(trainingDomainImages);
+
+// Training Details Gallery Images
+const trainingDetailsImages = [
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-domain-5.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-domain-6.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-domain-7.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/training-domain-8.webp",
+];
+const TRAINING_DETAILS_GALLERY_IMAGES = transformToGalleryImages(trainingDetailsImages);
+
 // Common classNames
 const CARD_CLASSNAME = "rounded-[16px] bg-[var(--card-sandal)] p-[22px] md:p-[26px]";
 const CARD_TITLE_CLASSNAME = "font-plus-jakarta-sans text-[24px] leading-[30px] text-[var(--button-red)]";
@@ -69,23 +96,23 @@ export default function CtcdTrainingTabs() {
     return (
         <section className="w-full">
             {/* Outer dark-blue container */}
-            <div className="rounded-[28px] bg-[var(--dark-blue)] p-[18px] md:p-[22px] mx-2">
+            <div className="rounded-[28px] bg-[var(--dark-blue)] p-[18px] md:p-[22px] mx-2 my-16">
                 {/* Top tabs row (4 buttons) */}
                 <Tabs defaultValue="domains">
-                    <TabsList className="px-[10px] pt-[6px] md:px-[18px] md:pt-[10px]">
-                        <TabsTrigger value="domains" className="min-w-[170px]">
+                    <TabsList className="px-[10px] pt-[6px] md:px-[18px] md:pt-[10px] flex-wrap">
+                        <TabsTrigger value="domains" className="flex-1 min-w-[calc(50%-7px)] md:min-w-[170px] md:flex-1 break-words">
                             Training Domains
                         </TabsTrigger>
 
-                        <TabsTrigger value="details" className="min-w-[160px]">
+                        <TabsTrigger value="details" className="flex-1 min-w-[calc(50%-7px)] md:min-w-[160px] md:flex-1 break-words">
                             Training Details
                         </TabsTrigger>
 
-                        <TabsTrigger value="assessments" className="min-w-[360px]">
+                        <TabsTrigger value="assessments" className="flex-1 min-w-full md:min-w-[360px] md:flex-1 break-words">
                             Our Behavioural and Psychometric Assessments
                         </TabsTrigger>
 
-                        <TabsTrigger value="projects" className="min-w-[280px]">
+                        <TabsTrigger value="projects" className="flex-1 min-w-full md:min-w-[280px] md:flex-1 break-words">
                             Our Corporate Training Projects
                         </TabsTrigger>
                     </TabsList>
@@ -131,8 +158,16 @@ export default function CtcdTrainingTabs() {
                                 </div>
                             </div>
 
-                            {/* Training Glimpse */}
-                            <TrainingGlimpseGallery />
+                            {/* Training Domain Gallery */}
+                            <div className="mt-[28px]">
+                                <Gallery
+                                    images={TRAINING_DOMAIN_GALLERY_IMAGES}
+                                    title={GALLERY_TITLE}
+                                    backgroundColor="bg-transparent"
+                                    paddingClassName="py-0"
+                                    titleClassName={GALLERY_TITLE_CLASSNAME}
+                                />
+                            </div>
                         </TabsContent>
 
                         {/* TAB 2 */}
@@ -251,11 +286,31 @@ export default function CtcdTrainingTabs() {
                                     </p>
                                 </AccordionItem>
 
+                                {/* Government Trainings */}
+                                <AccordionItem title="Government Trainings" defaultOpen titleClassName={ACCORDION_TITLE_CLASSNAME}>
+                                    <h3 className="mt-[10px] font-plus-jakarta-sans text-[20px] leading-[26px] text-[var(--foreground)] font-semibold mb-3">
+                                        Police Training Initiatives:
+                                    </h3>
+                                    <p className="text-[var(--foreground)]/80">
+                                        It is a matter of immense pride and honour to contribute to the strengthening of our nation's law enforcement system and State Administration Body. We have collaborated with the Police Training School, Mana and the Police Training Academy, Chaudkhuri. In our inspiring sessions with officers, including Deputy Superintendents of Police (DSPs), Platoon Commandants, Subedars, Sub Inspectors, and newly recruited constables, we witness not just uniforms but their stories of sacrifice and responsibility.
+                                    </p>
+                                    <p className="mt-4 text-[var(--foreground)]/80">
+                                        Our government training modules are based on leadership, conflict resolution, stress management, team building, and police-society relations. With interactive sessions and experiential activities, we help officers develop emotional balance and calm in chaos, making them an emotionally intelligent police workforce.
+                                    </p>
+                                </AccordionItem>
 
                             </div>
 
-                            {/* Training Glimpse */}
-                            <TrainingGlimpseGallery />
+                            {/* Training Details Gallery */}
+                            <div className="mt-[28px]">
+                                <Gallery
+                                    images={TRAINING_DETAILS_GALLERY_IMAGES}
+                                    title={GALLERY_TITLE}
+                                    backgroundColor="bg-transparent"
+                                    paddingClassName="py-0"
+                                    titleClassName={GALLERY_TITLE_CLASSNAME}
+                                />
+                            </div>
                         </TabsContent>
 
                         {/* TAB 3 */}
@@ -288,8 +343,16 @@ export default function CtcdTrainingTabs() {
                                 </div>
                             </div>
 
-                            {/* Training Glimpse */}
-                            <TrainingGlimpseGallery />
+                            {/* Training Domain Gallery */}
+                            <div className="mt-[28px]">
+                                <Gallery
+                                    images={TRAINING_DOMAIN_GALLERY_IMAGES}
+                                    title={GALLERY_TITLE}
+                                    backgroundColor="bg-transparent"
+                                    paddingClassName="py-0"
+                                    titleClassName={GALLERY_TITLE_CLASSNAME}
+                                />
+                            </div>
                         </TabsContent>
 
                         {/* TAB 4 */}
@@ -297,9 +360,193 @@ export default function CtcdTrainingTabs() {
                             <h2 className={SECTION_TITLE_CLASSNAME}>
                                 Our Corporate Training Projects
                             </h2>
-                            <p className="mt-[12px] text-[var(--foreground)]/80">
-                                (Add Projects content exactly as per Figma.)
-                            </p>
+                            
+                            {/* Projects Table */}
+                            <div className="mt-[26px] overflow-x-auto overflow-y-auto max-h-[600px] border border-gray-200 rounded-lg">
+                                <table className="w-full border-collapse min-w-[800px]">
+                                    <thead className="sticky top-0 z-10">
+                                        <tr className="bg-[var(--dark-blue)] text-white">
+                                            <th className="px-4 py-3 text-left font-plus-jakarta-sans text-sm md:text-base font-semibold whitespace-nowrap">
+                                                S.No.
+                                            </th>
+                                            <th className="px-4 py-3 text-left font-plus-jakarta-sans text-sm md:text-base font-semibold whitespace-nowrap">
+                                                Client Name
+                                            </th>
+                                            <th className="px-4 py-3 text-left font-plus-jakarta-sans text-sm md:text-base font-semibold whitespace-nowrap">
+                                                Project Title
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">1</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Entrepreneurship Development Institute of India (EDII)</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Trainers Training Program</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">2</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Robot India</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Training on Google Apps for the Employees of Robot India</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">3</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">ADORE WELDING</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Team Productivity, Self-Management, and Problem-Solving Training</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">4</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Real Ispat and Power Ltd</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Soft Skills and Workplace Behaviour, Communication and Team Collaboration, Leadership Development, and Process Improvement & Productivity Enhancement.</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">5</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Utkarsh Small Finance Bank</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Sales Training for the Employees of Utkarsh Bank</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">6</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Singhal Enterprises Pvt Ltd</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Training on Employee Wellness, Communication & Change Management</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">7</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Techno Blast Mining</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">HR Star Program</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">8</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Kalpataru Projects International Ltd</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Training Report on Supervisor Skills Training</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">9</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Sarda Energy & Minerals Ltd</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Management Development Program (Sarda Outbound Training)at Sarda Energy & Minerals Ltd</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">10</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Sarda Energy & Minerals Ltd</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Psychometric, Functional Assessment & Post Assessment for the Employees of Sarda (Talent Xibit-2)</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">11</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Sarda Energy & Minerals Ltd</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Psychometric, Functional Assessment & Post Assessment for the Employees of Sarda (Talent Xibit-1)</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">12</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Rajkiya Engineering College, Sonbhadra</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">3P Power Placement Process at Rajkiya Engineering College, Sonbhadra</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">13</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">WANFENG Aluminium Wheel (INDIA) Pvt. Ltd.</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Employability Enhancement Training Program (Communication Skill & Team Building Workshop)</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">14</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Adarsh Vidyalaya Group of Schools</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Capacity Building Programme for Adarsh Vidyalaya Teachers</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">15</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Jayaswal Neco</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Utilising AI to enhance team productivity</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">16</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Robertshaw Controls Pvt Ltd</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Training on Problem Solving and Advanced Communication Skills</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">17</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Suryodaya Bank</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Training on Customer Centricity for Credit Officers & Business Excellence.</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">18</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Goeld Frozen Foods</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Developing Managerial Skills and Capabilities</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">19</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">SIMBA Group</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Management Development Program</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">20</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Ramkrishna Care Hospitals</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Patient-Centred Communication, Conflict Resolution among Staff, Emotional Well-Being, and Stress Management</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">21</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Sai Baba Hospital</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">To Reinforce Existing Skills and Competencies so that Employees become more Productive.</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">22</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Central Bank Of India</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Probationary Officers Training Program</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">23</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">GIET Ghangapatna Bhubaneswar</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Aptitude Trainer</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">24</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Kusum Smelters Pvt. Ltd.</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Leadership & Skills Development Training Program</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">25</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Godawari Power & Ispat</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Employee Development Training</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">26</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Police Training Academy Chandkhuri</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">SI & DSP Training</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">27</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Real Group</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Training for Security & Housekeeping Staff</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">28</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Shree Shankara Senior Sec. School Raipur</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Faculty Development Program</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">29</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Thakur Pyarelal State Institute of Panchayat & Rural Development (TPIPRD) in Nimora</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Time & Stress Management Training</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">30</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Police Training School Mana</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">SI & Constable Training</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-white">
+                                            <td className="px-4 py-3 text-[var(--foreground)] whitespace-nowrap">31</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Rajasthan Global Security Pvt. Ltd.</td>
+                                            <td className="px-4 py-3 text-[var(--foreground)]">Skill Development and Industry-Aligned Training Initiative</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            {/* Training Projects Gallery */}
+                            <div className="mt-[28px]">
+                                <Gallery
+                                    images={TRAINING_PROJECTS_GALLERY_IMAGES}
+                                    title={GALLERY_TITLE}
+                                    backgroundColor="bg-transparent"
+                                    paddingClassName="py-0"
+                                    titleClassName={GALLERY_TITLE_CLASSNAME}
+                                />
+                            </div>
                         </TabsContent>
                     </div>
                 </Tabs>

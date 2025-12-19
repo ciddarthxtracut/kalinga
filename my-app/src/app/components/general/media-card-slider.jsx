@@ -131,11 +131,41 @@ export default function MediaCardSlider({
                         <>
                           {/* Video Thumbnail */}
                           {item.thumbnail ? (
-                            <Image
-                              src={item.thumbnail}
-                              alt={item.name || "Video thumbnail"}
-                              fill
-                              className="object-cover object-top"
+                            // Check if thumbnail is a video URL or image URL
+                            isDirectVideoUrl(item.thumbnail) || isDirectVideoUrl(item.videoUrl) ? (
+                              // Use video element to show first frame
+                              <video
+                                src={item.videoUrl || item.thumbnail}
+                                className="absolute inset-0 w-full h-full object-cover object-top"
+                                preload="metadata"
+                                muted
+                                playsInline
+                                onMouseEnter={(e) => {
+                                  // Optionally play a short preview on hover
+                                  e.target.currentTime = 0.1;
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.target.pause();
+                                  e.target.currentTime = 0;
+                                }}
+                              />
+                            ) : (
+                              // Use Image component for actual image thumbnails
+                              <Image
+                                src={item.thumbnail}
+                                alt={item.name || "Video thumbnail"}
+                                fill
+                                className="object-cover object-top"
+                              />
+                            )
+                          ) : item.videoUrl ? (
+                            // Fallback: use video element if no thumbnail but videoUrl exists
+                            <video
+                              src={item.videoUrl}
+                              className="absolute inset-0 w-full h-full object-cover object-top"
+                              preload="metadata"
+                              muted
+                              playsInline
                             />
                           ) : (
                             <div className="w-full h-full bg-gray-300" />

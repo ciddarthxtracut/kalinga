@@ -62,22 +62,39 @@ export default function InternationalStudents() {
   const videoItems = [
     {
       id: 1,
-      name: "Name",
-      description: "Lorem ipsum",
-      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg",
+      name: "David Giir Riiny",
+      description: "B.tech Student",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_AIML_TESTOMONIAL_02.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_AIML_TESTOMONIAL_02.mp4",
     },
     {
       id: 2,
-      name: "Name",
-      description: "Lorem ipsum",
-      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg",
+      name: "Salima Naguago",
+      description: "Pharmacy Student",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_PHARMA_TESTIMONIALS_01.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_PHARMA_TESTIMONIALS_01.mp4",
     },
     {
       id: 3,
-      name: "Name",
-      description: "Lorem ipsum",
-      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg",
+      name: "Khazi lupiya",
+      description: "Pharmacy Student",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_PHARMA_TESTIMONIALS_04.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_PHARMA_TESTIMONIALS_04.mp4",
     },  
+    {
+      id: 4,
+      name: "Palchin Upadhyay",
+      description: "BA Gen Student",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_TESTIMONIAL_BJMC_01.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_TESTIMONIAL_BJMC_01.mp4",
+    },
+    {
+      id: 5,
+      name: "Issac",
+      description: "BSW Student",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_TESTIMONIAL_BJMC_02.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/REEL_TESTIMONIAL_BJMC_02.mp4",
+    },
   ]
   const boxItems = [
     {
@@ -391,7 +408,7 @@ export default function InternationalStudents() {
         title="Download Brochure 2025-26"
         description="Kalinga University follows a well-defined governance structure that ensures smooth administration, transparency, and institutional excellence."
         buttonLabel="Download PDF"
-        href="/about-us"
+        href="https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/International+Student_compressed.pdf"
         useContainer={true}
       />
       <MainIntro
