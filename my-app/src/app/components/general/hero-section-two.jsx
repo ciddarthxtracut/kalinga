@@ -14,6 +14,8 @@ const HeroSectionTwo = () => {
           backgroundColor: '#e6e9f2', // fallback color
         }} 
       >
+        {/* Background overlay layer with 80% opacity */}
+        <div className="absolute inset-0 bg-[var(--foreground)]/40 rounded-xl sm:rounded-4xl"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent  rounded-4xl"></div>
       </div>
       <div className="container relative z-1 mx-auto h-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 w-full px-4 pt-20 pb-8 md:pb-10">
