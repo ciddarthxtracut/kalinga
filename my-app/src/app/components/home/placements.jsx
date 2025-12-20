@@ -37,7 +37,7 @@ const logos = [
   'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ultratech.webp'
 ]
 
-const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg-[var(--light-gray)]", marginClassName = "-mb-28" }{ placementData }) => {
+const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg-[var(--light-gray)]", marginClassName = "-mb-28", placementData }) => {
   const stackRef = useRef(null)
   const sectionRef = useRef(null)
   const [hasAnimated, setHasAnimated] = useState(false)
