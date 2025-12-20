@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import SectionHeading from './SectionHeading'
 import DataTable from './data-table'
 import GlobalArrowButton from './global-arrow_button'
@@ -71,6 +71,13 @@ const FAQ = ({
     }
     return new Set()
   })
+
+  // Update faqItems state when items prop changes (only for editable variant)
+  useEffect(() => {
+    if (variant === "editable") {
+      setFaqItems(items)
+    }
+  }, [items, variant])
   const [editableTableData, setEditableTableData] = useState(
     variant === "table" 
       ? items.map((item, index) => ({
@@ -84,16 +91,21 @@ const FAQ = ({
   )
 
   const toggleItem = (id) => {
+    console.log('FAQ toggle clicked for id:', id)
     setOpenItems(prev => {
+      console.log('Previous openItems:', Array.from(prev))
       const newSet = new Set(prev)
       if (newSet.has(id)) {
         newSet.delete(id)
+        console.log('Closing item:', id)
       } else {
         if (!allowMultipleOpen) {
           newSet.clear()
         }
         newSet.add(id)
+        console.log('Opening item:', id)
       }
+      console.log('New openItems:', Array.from(newSet))
       return newSet
     })
   }
