@@ -37,7 +37,7 @@ const logos = [
   'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ultratech.webp'
 ]
 
-const Placements = () => {
+const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg-[var(--light-gray)]", marginClassName = "-mb-28" }) => {
   const stackRef = useRef(null)
   const sectionRef = useRef(null)
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -108,7 +108,7 @@ const Placements = () => {
   
   return (
     <>
-    <section ref={sectionRef} className="py-16 bg-white overflow-x-hidden">
+    <section ref={sectionRef} className={`py-16 ${bgColor}`}>
       <div className="container mx-auto px-2">
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center md:items-center">
           {/* Left: title + stats */}
@@ -123,30 +123,32 @@ const Placements = () => {
             Kalinga University has a strong placement ecosystem that bridges academic excellence with real-world opportunities. With over 400+ corporate recruiters, 8000+ students placed, and 1300+ internships offered, our graduates are shaping successful careers across industries worldwide.
             </p>
 
-            <div className="grid grid-cols-2 sm:flex sm:flex-row items-start gap-4 sm:gap-3 lg:gap-5 text-gray-800">
-              <div className="w-full sm:w-auto sm:flex-1">
-                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{studentsPlaced.toLocaleString()} +</h3>
-                <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Students Placed</h6>
+            {!hideMilestones && (
+              <div className="grid grid-cols-2 sm:flex sm:flex-row items-start gap-4 sm:gap-3 lg:gap-5 text-gray-800">
+                <div className="w-full sm:w-auto sm:flex-1">
+                  <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{studentsPlaced.toLocaleString()} +</h3>
+                  <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Students Placed</h6>
+                </div>
+
+                <div className="hidden sm:block self-stretch border-r border-gray-500" />
+
+                <div className="w-full sm:w-auto sm:flex-1">
+                  <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{recruiters.toLocaleString()} +</h3>
+                  <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Corporate Recruiters</h6>
+                </div>
+
+                <div className="hidden sm:block self-stretch border-r border-gray-500" />
+
+                <div className="w-full sm:w-auto sm:flex-1 col-span-2 sm:col-span-1">
+                  <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{internships.toLocaleString()} +</h3>
+                  <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Internships Offered</h6>
+                </div>
               </div>
-
-              <div className="hidden sm:block self-stretch border-r border-gray-500" />
-
-              <div className="w-full sm:w-auto sm:flex-1">
-                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{recruiters.toLocaleString()} +</h3>
-                <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Corporate Recruiters</h6>
-              </div>
-
-              <div className="hidden sm:block self-stretch border-r border-gray-500" />
-
-              <div className="w-full sm:w-auto sm:flex-1 col-span-2 sm:col-span-1">
-                <h3 className="!text-3xl sm:!text-[35px] md:!text-[40px] text-[var(--button-red)] mb-1 sm:mb-2">{internships.toLocaleString()} +</h3>
-                <h6 className="text-sm sm:text-base text-[var(--foreground)] font-stix">Internships Offered</h6>
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Right: Stack card component */}
-          <div className="flex justify-center md:justify-end mt-6 md:mt-0 -mb-28 z-2">
+          <div className={`flex justify-center md:justify-end mt-6 md:mt-0 z-2 ${marginClassName}`}>
             <div className="w-full max-w-[420px]">
               <div style={{ width: '100%', height: '480px' }}>
                 <Stack
@@ -193,39 +195,41 @@ const Placements = () => {
       </div>
 
         {/* Logos strip */}
-        <div className="mt-20 lg:mt-8 px-2">
-          <div className="bg-[var(--dark-blue)] py-4 sm:py-5 md:py-6 lg:py-8 items-center justify-center overflow-hidden relative w-full h-auto min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:h-[200px] rounded-xl flex">
-            {/* Text stacked above logos */}
-            <div className="flex flex-col items-center text-left gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full">
-              <h5
-                className="font-plus-jakarta-sans text-sm sm:text-base md:text-lg leading-tight sm:leading-[25px] text-white text-left w-full px-4 sm:px-6 lg:px-12"
-              >
-                Trusted by 500+ Global Recruiters
-              </h5>
+        {!hideMarquee && (
+          <div className="mt-20 lg:mt-8 px-2">
+            <div className="bg-[var(--dark-blue)] py-4 sm:py-5 md:py-6 lg:py-8 items-center justify-center overflow-hidden relative w-full h-auto min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:h-[200px] rounded-xl flex">
+              {/* Text stacked above logos */}
+              <div className="flex flex-col items-center text-left gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full">
+                <h5
+                  className="font-plus-jakarta-sans text-sm sm:text-base md:text-lg leading-tight sm:leading-[25px] text-white text-left w-full px-4 sm:px-6 lg:px-12"
+                >
+                  Trusted by 500+ Global Recruiters
+                </h5>
 
-              <div className="w-full overflow-hidden relative px-2">
-                <LogoLoop
-                  logos={logoLoopItems}
-                  speed={30}
-                  direction="left"
-                  logoHeight={70}
-                  gap={16}
-                  pauseOnHover={true}
-                  ariaLabel="Company recruiters logos"
-                  renderItem={(item, key) => (
-                    <div className="flex-shrink-0 bg-white rounded-lg px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 shadow-sm text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium text-gray-700 flex items-center justify-center w-[60px] h-[45px] sm:w-[70px] sm:h-[50px] md:w-[80px] md:h-[55px] lg:w-[90px] lg:h-[60px] xl:w-[110px] xl:h-[70px]"
-                      style={{
-                        borderRadius: '10px'
-                      }}
-                    >
-                      {item.node}
-                    </div>
-                  )}
-                />
+                <div className="w-full overflow-hidden relative px-2">
+                  <LogoLoop
+                    logos={logoLoopItems}
+                    speed={30}
+                    direction="left"
+                    logoHeight={70}
+                    gap={16}
+                    pauseOnHover={true}
+                    ariaLabel="Company recruiters logos"
+                    renderItem={(item, key) => (
+                      <div className="flex-shrink-0 bg-white rounded-lg px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 shadow-sm text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium text-gray-700 flex items-center justify-center w-[60px] h-[45px] sm:w-[70px] sm:h-[50px] md:w-[80px] md:h-[55px] lg:w-[90px] lg:h-[60px] xl:w-[110px] xl:h-[70px]"
+                        style={{
+                          borderRadius: '10px'
+                        }}
+                      >
+                        {item.node}
+                      </div>
+                    )}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
     </section>
     </>
   )

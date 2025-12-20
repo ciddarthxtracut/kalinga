@@ -50,8 +50,14 @@ export default function MediaCardSlider({
   const isDirectVideoUrl = (url) => {
     if (!url) return false;
     const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi', '.mkv'];
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
     const lowerUrl = url.toLowerCase();
-    return videoExtensions.some(ext => lowerUrl.includes(ext)) || lowerUrl.includes('s3.amazonaws.com');
+    // Check if it's an image first - if so, it's not a video
+    if (imageExtensions.some(ext => lowerUrl.includes(ext))) {
+      return false;
+    }
+    // Check for video extensions
+    return videoExtensions.some(ext => lowerUrl.includes(ext));
   };
 
   // Handle ESC key to close modal
@@ -129,37 +135,18 @@ export default function MediaCardSlider({
                     >
                       {isVideo ? (
                         <>
-                          {/* Video Thumbnail */}
-                          {item.thumbnail ? (
-                            // Check if thumbnail is a video URL or image URL
-                            isDirectVideoUrl(item.thumbnail) || isDirectVideoUrl(item.videoUrl) ? (
-                              // Use video element to show first frame
-                              <video
-                                src={item.videoUrl || item.thumbnail}
-                                className="absolute inset-0 w-full h-full object-cover object-top"
-                                preload="metadata"
-                                muted
-                                playsInline
-                                onMouseEnter={(e) => {
-                                  // Optionally play a short preview on hover
-                                  e.target.currentTime = 0.1;
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.target.pause();
-                                  e.target.currentTime = 0;
-                                }}
-                              />
-                            ) : (
-                              // Use Image component for actual image thumbnails
-                              <Image
-                                src={item.thumbnail}
-                                alt={item.name || "Video thumbnail"}
-                                fill
-                                className="object-cover object-top"
-                              />
-                            )
+                          {/* Video Thumbnail - Always show thumbnail image if available */}
+                          {item.thumbnail && !isDirectVideoUrl(item.thumbnail) ? (
+                            // Use Image component for actual image thumbnails
+                            <Image
+                              src={item.thumbnail}
+                              alt={item.name || "Video thumbnail"}
+                              fill
+                              className="object-cover object-top brightness-100"
+                              priority
+                            />
                           ) : item.videoUrl ? (
-                            // Fallback: use video element if no thumbnail but videoUrl exists
+                            // Fallback: use video element if no thumbnail image but videoUrl exists
                             <video
                               src={item.videoUrl}
                               className="absolute inset-0 w-full h-full object-cover object-top"
@@ -171,8 +158,8 @@ export default function MediaCardSlider({
                             <div className="w-full h-full bg-gray-300" />
                           )}
                           {/* Play Button Overlay */}
-                          <div className={`absolute inset-0 flex items-center justify-center ${item.videoUrl ? 'hover:bg-black/10 transition-colors' : ''}`}>
-                            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/80 flex items-center justify-center hover:bg-white/90 transition-all hover:scale-110">
+                          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-all hover:scale-110 pointer-events-auto shadow-lg">
                               <svg
                                 width="24"
                                 height="24"
