@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import OurPrograms from "../components/admissions/our_programs";
 import ScholarshipsSlider from "../components/admissions/scholarships_slider";
 import AdmissionSteps from "../components/admissions/admission-steps";
@@ -229,7 +230,17 @@ export default function Admissions() {
 
   return (
     <div>
-      <OurPrograms />
+      <Suspense fallback={
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-2">
+            <div className="text-center">
+              <p className="text-gray-600">Loading programs...</p>
+            </div>
+          </div>
+        </section>
+      }>
+        <OurPrograms />
+      </Suspense>
       <OrganogramOfKalinga
         title={entranceExamContent.title}
         description={entranceExamContent.description}
