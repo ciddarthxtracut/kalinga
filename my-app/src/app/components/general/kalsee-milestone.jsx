@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import SectionHeading from './SectionHeading';
 
-export default function KalseeMilestone() {
-  const milestones = [
+export default function KalseeMilestone({ imageSrc, milestones: customMilestones }) {
+  const defaultMilestones = [
     {
       value: '4 LPA',
       label: 'Average Package',
@@ -18,6 +18,10 @@ export default function KalseeMilestone() {
       label: 'Recruitment Partners',
     },
   ];
+
+  const milestones = customMilestones || defaultMilestones;
+  const defaultImageSrc = "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-cta-img.png";
+  const finalImageSrc = imageSrc || defaultImageSrc;
 
   return (
     <section className="relative px-2 py-2">
@@ -55,7 +59,7 @@ export default function KalseeMilestone() {
             <div className="relative flex-shrink-0 z-20 -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16 order-last md:order-none">
               <div className="relative w-32 h-40 sm:w-36 sm:h-48 md:w-48 md:h-64 lg:w-56 lg:h-72">
                 <Image
-                  src="https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-cta-img.png"
+                  src={finalImageSrc}
                   alt="Student"
                   fill
                   className="object-contain object-bottom"

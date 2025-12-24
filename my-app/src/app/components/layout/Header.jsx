@@ -111,18 +111,19 @@ const Header = () => {
             title: 'Overview',
             links: [
               { label: 'About University', href: '/about' },
-              { label: 'Vision & Mission', href: '/about/vision-mission' },
-              { label: 'Chancellor Message', href: '/about/chancellor' },
-              { label: 'Vice Chancellor', href: '/about/vice-chancellor' },
+              { label: 'Vision & Mission', href: '/about#vision-mission' },
+              { label: 'Chancellor Message', href: '/chancellor' },
+              { label: 'Vice Chancellor', href: '/vice-chancellor' },
+              { label: 'Leadership', href: '/leadership' },
             ]
           },
           {
             title: 'Infrastructure',
             links: [
-              { label: 'Campus', href: '/about/campus' },
-              { label: 'Facilities', href: '/about/facilities' },
-              { label: 'Libraries', href: '/about/libraries' },
-              { label: 'Labs', href: '/about/labs' },
+              { label: 'Campus Facilities', href: '/campus-facilities' },
+              { label: 'Academic Facilities', href: '/academic-facilities' },
+              { label: 'Library', href: '/library' },
+              { label: 'Laboratories', href: '/laboratories' },
             ]
           }
         ]
@@ -190,10 +191,9 @@ const Header = () => {
             title: 'Admissions',
             links: [
               { label: 'Admission Overview', href: '/admissions' },
-              { label: 'How to Apply', href: '/admissions/how-to-apply' },
-              { label: 'Programs', href: '/admissions/programs' },
-              { label: 'Eligibility', href: '/admissions/eligibility' },
-              { label: 'Fee Structure', href: '/admissions/fees' },
+              { label: 'Entrance Exams', href: '/entrance-exam' },
+              { label: 'KALSEE', href: '/kalsee' },
+              { label: 'KAL-MAT', href: '/kalmat' },
             ]
           }
         ]
@@ -202,25 +202,25 @@ const Header = () => {
     {
       id: 'students',
       label: 'Students',
-      href: '/students',
+      href: '#',
       megaMenu: {
         sections: [
           {
             title: 'Student Life',
             links: [
-              { label: 'Campus Life', href: '/students/campus-life' },
-              { label: 'Clubs & Societies', href: '/students/clubs' },
-              { label: 'Sports', href: '/students/sports' },
-              { label: 'Events', href: '/students/events' },
+              { label: 'Campus Life', href: '/campuslife' },
+              { label: 'Student Clubs', href: '/student-clubs' },
+              { label: 'Sports & Wellness', href: '/sports-and-wellness-centre' },
+              { label: 'News & Events', href: '/news-and-events' },
             ]
           },
           {
             title: 'Resources',
             links: [
-              { label: 'Student Portal', href: '/students/portal' },
-              { label: 'Time Table', href: '/students/timetable' },
-              { label: 'Results', href: '/students/results' },
-              { label: 'Scholarships', href: '/students/scholarships' },
+              { label: 'Student Support', href: '/student-support' },
+              { label: 'Student Welfare', href: '/student-welfare' },
+              { label: 'Student Counselling', href: '/students-counselling-cell' },
+              { label: 'Downloads', href: '/downloads' },
             ]
           }
         ]
@@ -236,18 +236,18 @@ const Header = () => {
             title: 'Research',
             links: [
               { label: 'Research Overview', href: '/research' },
-              { label: 'Publications', href: '/research/publications' },
-              { label: 'Conferences', href: '/research/conferences' },
-              { label: 'Patents', href: '/research/patents' },
+              { label: 'Research Facilities', href: '/research-facilities' },
+              { label: 'Research Resources', href: '/research-resources' },
+              { label: 'Publications', href: '/research-papers-and-books-published' },
             ]
           },
           {
             title: 'Centers',
             links: [
-              { label: 'Research Centers', href: '/research/centers' },
-              { label: 'Innovation Lab', href: '/research/innovation' },
-              { label: 'Incubation', href: '/research/incubation' },
-              { label: 'Projects', href: '/research/projects' },
+              { label: 'Centres of Excellence', href: '/centresofexcellence' },
+              { label: 'Central Instrumentation Facility', href: '/central-instrumentation-facility' },
+              { label: 'IPR Cell', href: '/ipr-cell' },
+              { label: 'Conferences & Events', href: '/conferences-and-events' },
             ]
           }
         ]
@@ -263,9 +263,8 @@ const Header = () => {
             title: 'Placements',
             links: [
               { label: 'Placement Overview', href: '/placements' },
-              { label: 'Recruiters', href: '/placements/recruiters' },
-              { label: 'Statistics', href: '/placements/statistics' },
-              { label: 'Training', href: '/placements/training' },
+              { label: 'Training & Placement Cell', href: '/training-and-placement-cell' },
+              { label: 'Career & Corporate Resource Centre', href: '/career-and-corporate-resource-centre' },
             ]
           }
         ]
@@ -280,10 +279,8 @@ const Header = () => {
           {
             title: 'News & Events',
             links: [
-              { label: 'Events Calendar', href: '/news-and-events' },
-              { label: 'Latest News', href: '/news-and-events/news' },
-              { label: 'Upcoming Events', href: '/news-and-events/upcoming' },
-              { label: 'Past Events', href: '/news-and-events/past' },
+              { label: 'News & Events', href: '/news-and-events' },
+              { label: 'Conferences & Events', href: '/conferences-and-events' },
             ]
           }
         ]
@@ -298,8 +295,7 @@ const Header = () => {
     },
     {
       label: 'IQAC',
-      href: '/iqac',
-
+      href: '/internal-quality-assurance-cell',
     },
     {
       label: 'CCRC',
@@ -315,7 +311,7 @@ const Header = () => {
     },
     {
       label: 'ERP Login',
-      href: '/erp-login',
+      href: '#',
     },
     {
       label: 'Contact Us',

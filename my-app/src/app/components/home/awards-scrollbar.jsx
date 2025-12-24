@@ -178,7 +178,7 @@ export default function AwardsScrollbar({
         {hideTitle ? (
           <></>
         ) : (
-          <div className="text-left md:text-center mb-6 sm:mb-8">
+          <div className="text-center mb-6 sm:mb-8">
             <SectionHeading title={title} subtitle={subtitle} titleClassName="!py-2" />
           </div>
         )}
@@ -186,7 +186,7 @@ export default function AwardsScrollbar({
         {/* Scrollable timeline */}
         <div className="relative overflow-hidden">
           {/* dashed connector line */}
-          <div className={`absolute ${dottedLineTop !== null ? dottedLineTop : (hideTitle ? 'top-[60px] ' : 'top-[62px] sm:top-[138px]')} ${dottedLineTop !== null ? 'left-0 right-0' : 'left-[260px] right-[260px]'} border-b-2 border-dashed border-gray-600 pointer-events-none z-10`} />
+          <div className={`hidden md:block absolute ${dottedLineTop !== null ? dottedLineTop : (hideTitle ? 'top-[60px] ' : 'top-[62px] sm:top-[138px]')} left-0 right-0 border-b-2 border-dashed border-gray-600 pointer-events-none z-0`} />
 
           <Swiper
             ref={swiperRef}
@@ -209,8 +209,8 @@ export default function AwardsScrollbar({
             }}
           >
             {awards.map((award) => award.active && (
-              <SwiperSlide key={award.id} className="!w-auto">
-                <div className="flex flex-col items-center flex-shrink-0 min-w-[200px] sm:min-w-[220px]">
+              <SwiperSlide key={award.id} className="!w-auto relative z-10">
+                <div className="flex flex-col items-center flex-shrink-0 min-w-[200px] sm:min-w-[220px] relative z-10">
                   {/* Icon + texts/button with leaf images */}
                 {hideTitle ? ( 
                  <>

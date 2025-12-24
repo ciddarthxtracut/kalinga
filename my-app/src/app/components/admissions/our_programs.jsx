@@ -59,7 +59,15 @@ const getStudyLevel = (programType) => {
   return "UG";
 };
 
-export default function OurPrograms() {
+export default function OurPrograms({
+  customPrograms = null,
+  hideSearchFilter = false,
+  customTitle = null,
+  customSubtitle = null,
+  maxPrograms = null,
+  backgroundColor = "bg-white",
+  mobileMaxWidth = null
+}) {
   const searchParams = useSearchParams();
   
   // Initialize state from URL query parameters
@@ -88,8 +96,16 @@ export default function OurPrograms() {
     }
   }, [searchParams]);
 
+  // Skip data fetching if custom programs are provided
+  const shouldFetchData = !customPrograms;
+
   // Fetch all departments and courses (optimized approach)
   useEffect(() => {
+    if (!shouldFetchData) {
+      setLoading(false);
+      return;
+    }
+    
     const loadData = async () => {
       try {
         setLoading(true);
@@ -163,7 +179,7 @@ export default function OurPrograms() {
     };
 
     loadData();
-  }, []);
+  }, [shouldFetchData]);
 
   // Get unique study levels from courses
   const studyLevels = useMemo(() => {
@@ -177,6 +193,12 @@ export default function OurPrograms() {
 
   // Filter and format courses
   const filteredPrograms = useMemo(() => {
+    // If custom programs are provided, use them instead
+    if (customPrograms && Array.isArray(customPrograms)) {
+      const limited = maxPrograms ? customPrograms.slice(0, maxPrograms) : customPrograms;
+      return limited;
+    }
+    
     let filtered = allCourses;
 
     // Filter by study level
@@ -281,23 +303,29 @@ export default function OurPrograms() {
     );
   }
 
+  // Determine if we should use dark blue background (when custom programs are provided)
+  const sectionBg = customPrograms ? "bg-[var(--dark-blue)]" : backgroundColor;
+  const textColor = customPrograms ? "text-white" : "";
+  const mobileWidthClass = mobileMaxWidth ? `max-w-[${mobileMaxWidth}px] md:max-w-none` : '';
+  
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-2">
+    <section className={`py-16 ${sectionBg} ${customPrograms ? 'mx-2 rounded-xl' : 'mx-2'} ${mobileWidthClass}`}>
+      <div className={`container mx-auto ${customPrograms ? 'px-2 md:px-4' : 'px-2'}`}>
         {/* Title and Subtitle */}
         <div className="text-center mb-5">
           <SectionHeading
-            subtitle="Explore Our Programs"
-            title="Discover a World of Learning Opportunities"
-            subtitleClassName="text-center text-[var(--button-red)]"
-            titleClassName="text-center"
-            subtitleTextColor="text-center"
+            subtitle={customSubtitle || "Explore Our Programs"}
+            title={customTitle || "Discover a World of Learning Opportunities"}
+            subtitleClassName={`text-center ${customPrograms ? "text-white" : "text-[var(--button-red)]"}`}
+            titleClassName={`text-center ${textColor}`}
+            subtitleTextColor={customPrograms ? "text-white" : "text-center"}
           />
         </div>
 
         {/* Programs Container */}
-        <div className="bg-[var(--dark-blue)] rounded-2xl md:p-5 p-2 relative overflow-hidden">
+        <div className={`${customPrograms ? 'bg-transparent' : 'bg-[var(--dark-blue)]'} rounded-2xl md:p-5 p-4 relative overflow-hidden`}>
           {/* Search and Filter Section - Single White Bar */}
+          {!hideSearchFilter && (
           <div className="bg-[var(--light-gray)] border border-white rounded-lg flex flex-col md:flex-row items-stretch mb-8 relative z-20 overflow-hidden">
             {/* Study Level Dropdown - Left Section */}
             <div className="relative flex-shrink-0 md:w-32 lg:w-36 border-r border-gray-200">
@@ -388,9 +416,10 @@ export default function OurPrograms() {
               </div>
             </div>
           </div>
+          )}
 
           {/* Programs Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5">
+          <div className={`grid grid-cols-1 ${customPrograms && customPrograms.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-2'} gap-4 md:gap-5 relative z-10`}>
             {filteredPrograms.length === 0 && (
               <div className="col-span-full text-center text-white/80 py-8">
                 No programs match your search criteria.
@@ -404,6 +433,9 @@ export default function OurPrograms() {
                 onApplyNow={handleApplyNow}
                 onScholarshipsClick={handleScholarshipsClick}
                 onExploreProgramClick={handleExploreProgram}
+                showSpecializationDropdown={program.showSpecializationDropdown}
+                specializationOptions={program.specializationOptions}
+                specializationPlaceholder={program.specializationPlaceholder}
               />
             ))}
           </div>

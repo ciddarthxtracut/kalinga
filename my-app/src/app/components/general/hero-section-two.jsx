@@ -37,9 +37,8 @@ const HeroSectionTwo = ({
           )}
           <h2>{title}</h2>
           <p className="md:text-base text-xs">{description}</p>
-          <Link href={buttonLink} passHref legacyBehavior>
-            <a className="inline-flex">
-              <GlobalArrowButton
+          <Link href={buttonLink} className="inline-flex">
+            <GlobalArrowButton
                 className="!bg-white !text-black"
                 arrowClassName="!bg-[var(--button-red)]"
                 arrowIconClassName="!text-white"
@@ -47,7 +46,6 @@ const HeroSectionTwo = ({
               >
                 {buttonText}
               </GlobalArrowButton>
-            </a>
           </Link>
         </div>
         

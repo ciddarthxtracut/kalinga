@@ -21,6 +21,9 @@ const Breadcrumb = ({ customBreadcrumbs, heroImage, pageTitle }) => {
   
   // Don't show breadcrumb on kalsee page
   if (pathname === '/kalsee') return null;
+  
+  // Don't show breadcrumb on kalmat page
+  if (pathname === '/kalmat') return null;
 
   // Track previous pathname to detect route changes
   const prevPathnameRef = useRef(pathname);

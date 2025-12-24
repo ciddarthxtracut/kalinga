@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import GlobalArrowButton from "./global-arrow_button";
 
 export default function ProgramCard({
@@ -8,8 +8,12 @@ export default function ProgramCard({
   onCheckEligibility,
   onApplyNow,
   onScholarshipsClick,
-  onExploreProgramClick
+  onExploreProgramClick,
+  showSpecializationDropdown = false,
+  specializationOptions = [],
+  specializationPlaceholder = "Select Specialisation"
 }) {
+  const [selectedSpecialization, setSelectedSpecialization] = useState("");
   return (
     <div className="bg-white flex items-center justify-between rounded-xl p-4 md:p-4 relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
       {/* Background UG Text - Top Right */}
@@ -24,69 +28,114 @@ export default function ProgramCard({
           {program.title}
         </h3>
 
-        {/* Specialization - Dark Gray */}
-        <p className="text-[var(--button-red)] text-xs md:text-sm lg:text-base mb-3 md:mb-4 leading-relaxed font-plus-jakarta-sans">
-          {program.specialization}
-        </p>
+        {/* Full Program Name - Display under title */}
+        {program.specialization && (
+          <p className="text-[var(--button-red)] text-xs md:text-sm lg:text-base mb-3 md:mb-4 leading-relaxed font-plus-jakarta-sans">
+            {program.specialization}
+          </p>
+        )}
+
+        {/* Specialization Dropdown - Show if enabled */}
+        {showSpecializationDropdown && (
+          <div className="mb-3 md:mb-4 relative">
+            <select
+              value={selectedSpecialization}
+              onChange={(e) => setSelectedSpecialization(e.target.value)}
+              className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-[var(--light-text-gray)] text-xs md:text-sm appearance-none pr-8 focus:outline-none focus:border-[var(--button-red)] cursor-pointer"
+            >
+              <option value="">{specializationPlaceholder}</option>
+              {specializationOptions.map((option, idx) => (
+                <option key={idx} value={option.value || option}>
+                  {option.label || option}
+                </option>
+              ))}
+            </select>
+            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="var(--light-text-gray)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        )}
 
         {/* Program Details Section */}
-        <div className="mb-4 md:mb-6 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+        <div className="mb-4 md:mb-6 flex gap-5">
           {/* Duration */}
-          <p className="text-[var(--light-text-gray)] !text-[11px] md:!text-[12px] whitespace-nowrap">
+          <p className="whitespace-nowrap">
             Duration : {program.duration}
           </p>
+          {/* Eligibility */}
+          {program.eligibility && (
+            <p className=" whitespace-nowrap">
+              Eligibility: {program.eligibility}
+            </p>
+          )}
 
-          {/* Links Row */}
-          <div className="flex items-center gap-3 md:gap-4 justify-start flex-wrap md:flex-nowrap">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                if (onScholarshipsClick) onScholarshipsClick(program);
-              }}
-              className="text-[var(--button-red)] text-xs md:text-sm font-medium hover:underline flex items-center gap-1 whitespace-nowrap !text-[11px] md:!text-[12px]"
-            >
-              Scholarships
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="md:w-[14px] md:h-[14px]"
+          {/* Links Row - Hide if specialization dropdown is shown */}
+          {!showSpecializationDropdown && (
+            <div className="flex items-center gap-3 md:gap-4 justify-start flex-wrap md:flex-nowrap">
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onScholarshipsClick) onScholarshipsClick(program);
+                }}
+                className="text-[var(--button-red)] text-xs md:text-sm font-medium hover:underline flex items-center gap-1 whitespace-nowrap !text-[11px] md:!text-[12px]"
               >
-                <path d="M7 17L17 7" />
-                <path d="M7 7h10v10" />
-              </svg>
-            </a>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                if (onExploreProgramClick) onExploreProgramClick(program);
-              }}
-              className="text-[var(--button-red)] text-xs md:text-sm font-medium hover:underline flex items-center gap-1 whitespace-nowrap !text-[11px] md:!text-[12px]"
-            >
-              Explore Program
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="md:w-[14px] md:h-[14px]"
+                Scholarships
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="md:w-[14px] md:h-[14px]"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+              <a
+                href="/admissions"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onExploreProgramClick) onExploreProgramClick(program);
+                }}
+                className="text-[var(--button-red)] text-xs md:text-sm font-medium hover:underline flex items-center gap-1 whitespace-nowrap !text-[11px] md:!text-[12px]"
               >
-                <path d="M7 17L17 7" />
-                <path d="M7 7h10v10" />
-              </svg>
-            </a>
-          </div>
+                Explore Program
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="md:w-[14px] md:h-[14px]"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Action Buttons */}
