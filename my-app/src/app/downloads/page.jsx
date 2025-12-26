@@ -1,23 +1,18 @@
 "use client";
 
-
+import { useEffect } from "react";
 import ResearchSixGridButtons from "../components/research/research_six_grid-buttons";
 import GlobalArrowButton from "../components/general/global-arrow_button";
 
 
 const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/infra.webp",
+  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
   pageTitle: "Downloads",
   customBreadcrumbs: [
     { label: 'Home', href: '/' },
     { label: 'Downloads', href: '/downloads' }
   ]
 };
-
-// Register it globally (no import needed - this pattern works automatically)
-if (typeof window !== 'undefined') {
-  window.__breadcrumbData = breadcrumbData;
-}
 
 const downloadsreport = [
   {
@@ -28,6 +23,11 @@ const downloadsreport = [
 ];
 
 export default function Page() {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.__breadcrumbData = breadcrumbData;
+    }
+  }, []);
   return (
     <>
     
