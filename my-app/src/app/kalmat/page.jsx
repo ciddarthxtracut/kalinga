@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import DeptSyllabus from "../components/department/dept_syllabus";
 import HeroSectionTwo from "../components/general/hero-section-two";
 import KalseeApplicationForm from "../components/kalsee/kalsee-application-form";
@@ -254,63 +255,65 @@ export default function KalseePage() {
           }
         ]}
       />
-      <OurPrograms 
-        customPrograms={[
-          {
-            id: 1,
-            title: "BBA",
-            specialization: "Bachelor of Business Administration",
-            duration: "4 Year",
-            eligibility: "10+12",
-            type: "UG",
-            showSpecializationDropdown: true,
-            specializationOptions: [
-              "Airlines & Airport Operations Management",
-              "Digital Marketing & E-Commerce",
-              "Event Management & Public Relations",
-              "Family Business & Startups",
-              "Finance",
-              "Fintech",
-              "Hospital Administration",
-              "Human Resource Management",
-              "Marketing Management",
-              "Aviation"
-            ],
-            specializationPlaceholder: "- Select Single Specialisation -",
-            coursePageUrl: "/courses/bba"
-          },
-          {
-            id: 2,
-            title: "MBA",
-            specialization: "Master of Business Administration",
-            duration: "2 Year",
-            eligibility: "Graduation",
-            type: "PG",
-            showSpecializationDropdown: true,
-            specializationOptions: [
-              "Banking & Insurance",
-              "Business Analytics",
-              "Digital Marketing & E-Commerce",
-              "Finance",
-              "Healthcare & Hospital Management",
-              "Hotel & Hospitality Management",
-              "Human Resource Management",
-              "Information Technology",
-              "NGO Management",
-              "International Business",
-              "Logistics & Supply Chain Management",
-              "Marketing Management"
-            ],
-            specializationPlaceholder: "- Select Dual Specialisation -",
-            coursePageUrl: "/courses/mba"
-          }
-        ]}
-        hideSearchFilter={true}
-        customTitle="Lorem ipsum dolor sit amet, consectetur"
-        customSubtitle="Explore Our Programs"
-        maxPrograms={2}
-        mobileMaxWidth={700}
-      />
+      <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center">Loading programs...</div>}>
+        <OurPrograms 
+          customPrograms={[
+            {
+              id: 1,
+              title: "BBA",
+              specialization: "Bachelor of Business Administration",
+              duration: "4 Year",
+              eligibility: "10+12",
+              type: "UG",
+              showSpecializationDropdown: true,
+              specializationOptions: [
+                "Airlines & Airport Operations Management",
+                "Digital Marketing & E-Commerce",
+                "Event Management & Public Relations",
+                "Family Business & Startups",
+                "Finance",
+                "Fintech",
+                "Hospital Administration",
+                "Human Resource Management",
+                "Marketing Management",
+                "Aviation"
+              ],
+              specializationPlaceholder: "- Select Single Specialisation -",
+              coursePageUrl: "/courses/bba"
+            },
+            {
+              id: 2,
+              title: "MBA",
+              specialization: "Master of Business Administration",
+              duration: "2 Year",
+              eligibility: "Graduation",
+              type: "PG",
+              showSpecializationDropdown: true,
+              specializationOptions: [
+                "Banking & Insurance",
+                "Business Analytics",
+                "Digital Marketing & E-Commerce",
+                "Finance",
+                "Healthcare & Hospital Management",
+                "Hotel & Hospitality Management",
+                "Human Resource Management",
+                "Information Technology",
+                "NGO Management",
+                "International Business",
+                "Logistics & Supply Chain Management",
+                "Marketing Management"
+              ],
+              specializationPlaceholder: "- Select Dual Specialisation -",
+              coursePageUrl: "/courses/mba"
+            }
+          ]}
+          hideSearchFilter={true}
+          customTitle="Lorem ipsum dolor sit amet, consectetur"
+          customSubtitle="Explore Our Programs"
+          maxPrograms={2}
+          mobileMaxWidth={700}
+        />
+      </Suspense>
       <AdmissionSteps
         steps={kifSteps}
         subtitleClassName="hidden"
