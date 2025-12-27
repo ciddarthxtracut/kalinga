@@ -30,6 +30,17 @@ const page = () => {
   }, []);
   return (
     <>
+    <style jsx global>{`
+  .absolute.inset-0 > img {
+    object-position: center 60% !important;
+  }
+
+  @media (max-width: 768px) {
+    .absolute.inset-0 > img {
+      object-position: center 5% !important;
+    }
+  }
+`}</style>
       <LibraryIntro />
       <LibraryGrid />
       <LibraryHeadMessage />

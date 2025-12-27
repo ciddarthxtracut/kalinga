@@ -13,7 +13,7 @@ import DataTable from "@/app/components/general/data-table";
 
 const page = () => {
   const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/std-welfare.webp",
+  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
   pageTitle: "Student Welfare",
   customBreadcrumbs: [
     { label: 'Home', href: '/' },

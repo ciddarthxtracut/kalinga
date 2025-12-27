@@ -5,7 +5,7 @@ import AdmissionCareer from '../components/general/admission_cta'
 
 const breadcrumbData = {
         heroImage:
-            "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/placeholder-img.png",
+            "https://kalinga-university.s3.ap-south-1.amazonaws.com/mini-market/mini-market-banner-image-1.webp",
         pageTitle: "Mini Market",
         customBreadcrumbs: [
             { label: "Home", href: "/" },
@@ -22,6 +22,17 @@ const page = () => {
       }, []); 
   return (
     <>
+    <style jsx global>{`
+  .absolute.inset-0 > img {
+    object-position: center 70% !important;
+  }
+
+  @media (max-width: 768px) {
+    .absolute.inset-0 > img {
+      object-position: center 5% !important;
+    }
+  }
+`}</style>
     <MiniMarketFacility/>
     <AdmissionCareer/>
     </>
