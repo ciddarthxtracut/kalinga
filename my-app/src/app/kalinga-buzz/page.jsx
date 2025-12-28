@@ -4,6 +4,9 @@ import React from "react";
 import MainIntro from "@/app/components/about/main_intro";
 import ResearchSixGridButtons from "@/app/components/research/research_six_grid-buttons";
 
+// Disable static generation to prevent SSR issues
+export const dynamic = 'force-dynamic';
+
 const breadcrumbData = {
   heroImage:
     "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",

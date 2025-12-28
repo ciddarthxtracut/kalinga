@@ -71,7 +71,7 @@ const defaultButtons = [
   },
 ];
 
-export default function ResearchSixGridButtons() {
+export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPdf, setSelectedPdf] = useState(null);
   const [selectedTitle, setSelectedTitle] = useState("");
