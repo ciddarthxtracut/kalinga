@@ -1,4 +1,5 @@
 "use client"
+import dynamicImport from 'next/dynamic';
 import PublicationGrid from "../components/research/publication-grid";
 import UGCLogo from "../components/research/ugc_logo";
 import UpcomingConference from "../components/research/upcoming_conference";
@@ -14,16 +15,19 @@ import MentorIntro from "../components/department/dept_head_intro";
 import CenterOfExcellence from "../components/about/center_of_excellence";
 import AwardsScrollbar from "../components/home/awards-scrollbar";  
 import ImageContent from "../components/ccrc/imagecontent";
-import Testimonials from "../components/home/Testimonials";
-import Gallery from "@/app/components/general/gallery";
-import MediaCardSlider from "@/app/components/general/media-card-slider";
 import DataTable from "@/app/components/general/data-table";
 import SectionHeading from "@/app/components/general/SectionHeading";
 import CareerApplicationForm from "../components/careers/CareerApplicationForm";
 import ContactSection from "../components/cif/contact_section";
 
+// Dynamically import components that might use motion/react to prevent SSR issues
+const Testimonials = dynamicImport(() => import("../components/home/Testimonials"), { ssr: false });
+const Gallery = dynamicImport(() => import("@/app/components/general/gallery"), { ssr: false });
+const MediaCardSlider = dynamicImport(() => import("@/app/components/general/media-card-slider"), { ssr: false });
+
 // Disable static generation to prevent SSR issues with DOMMatrix
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 // Breadcrumb configuration
 const breadcrumbData = {
