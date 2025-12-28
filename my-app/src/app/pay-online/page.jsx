@@ -12,6 +12,11 @@ const breadcrumbData = {
   ]
 };
 
+// Register breadcrumb data globally
+if (typeof window !== "undefined") {
+  window.__breadcrumbData = breadcrumbData;
+}
+
 const buttons = [
   {
     id: 1,
