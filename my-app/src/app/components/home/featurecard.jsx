@@ -191,7 +191,7 @@ export default function FeatureCards({
           {/* Top section: Image left, Text right */}
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 md:mb-10">
             {/* Image on left - extending outside on top */}
-            <div className="relative w-full h-[350px] md:h-[450px] -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-25 xl:-mt-24 p-8">
+            <div className="relative w-full h-[350px] md:h-[450px] -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-25 xl:-mt-24 lg:p-8 p-0 py-5 md:py-0">
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transform-3d-slant-mirror">
                 <Image
                   src={imageUrl}
