@@ -198,6 +198,84 @@ export async function fetchDepartmentCourses(slugOrId) {
 }
 
 /**
+ * Helper function to decode HTML entities (works in both server and client contexts)
+ * @param {string} text - Text with HTML entities
+ * @returns {string} Decoded text
+ */
+function decodeHtmlEntities(text) {
+  if (!text) return '';
+  
+  // Comprehensive entity map for common HTML entities
+  const entityMap = {
+    // Named entities
+    '&ldquo;': '"',   // Left double quotation mark
+    '&rdquo;': '"',   // Right double quotation mark
+    '&lsquo;': "'",   // Left single quotation mark
+    '&rsquo;': "'",   // Right single quotation mark
+    '&mdash;': '—',   // Em dash
+    '&ndash;': '–',   // En dash
+    '&hellip;': '…',  // Horizontal ellipsis
+    '&nbsp;': ' ',
+    '&amp;': '&',
+    '&lt;': '<',
+    '&gt;': '>',
+    '&quot;': '"',
+    '&apos;': "'",
+    '&copy;': '©',
+    '&reg;': '®',
+    '&trade;': '™',
+    '&euro;': '€',
+    '&pound;': '£',
+    '&yen;': '¥',
+    '&cent;': '¢',
+    // Numeric entities (common ones)
+    '&#39;': "'",
+    '&#8217;': "'",   // Right single quotation mark
+    '&#8216;': "'",   // Left single quotation mark
+    '&#8220;': '"',   // Left double quotation mark
+    '&#8221;': '"',   // Right double quotation mark
+    '&#8211;': '–',   // En dash
+    '&#8212;': '—',   // Em dash
+    '&#8230;': '…',   // Horizontal ellipsis
+    '&#160;': ' ',    // Non-breaking space
+    '&#32;': ' ',     // Space
+  };
+  
+  let decoded = text;
+  
+  // Replace entities (order matters - &amp; should be first to decode encoded entities)
+  const sortedEntities = Object.keys(entityMap).sort((a, b) => {
+    // Process &amp; first, then longer entities
+    if (a === '&amp;') return -1;
+    if (b === '&amp;') return 1;
+    return b.length - a.length;
+  });
+  
+  sortedEntities.forEach(entity => {
+    decoded = decoded.replace(new RegExp(entity.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), entityMap[entity]);
+  });
+  
+  // Also handle numeric entities in format &#123; or &#x1F;
+  decoded = decoded.replace(/&#(\d+);/g, (match, dec) => {
+    try {
+      return String.fromCharCode(parseInt(dec, 10));
+    } catch (e) {
+      return match;
+    }
+  });
+  
+  decoded = decoded.replace(/&#x([0-9a-fA-F]+);/g, (match, hex) => {
+    try {
+      return String.fromCharCode(parseInt(hex, 16));
+    } catch (e) {
+      return match;
+    }
+  });
+  
+  return decoded;
+}
+
+/**
  * Helper function to parse HTML content to plain text paragraphs
  * @param {string} htmlContent - HTML string from API
  * @returns {string[]} Array of paragraph strings
@@ -205,16 +283,15 @@ export async function fetchDepartmentCourses(slugOrId) {
 export function parseHtmlToParagraphs(htmlContent) {
   if (!htmlContent) return [];
   
+  // First decode HTML entities
+  let text = decodeHtmlEntities(htmlContent);
+  
   // Remove HTML tags and split by paragraph breaks
-  const text = htmlContent
-    .replace(/<p>/g, '')
-    .replace(/<\/p>/g, '\n')
+  text = text
+    .replace(/<p[^>]*>/gi, '')
+    .replace(/<\/p>/gi, '\n')
     .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
+    .replace(/<[^>]+>/g, '') // Remove any remaining HTML tags
     .trim();
   
   // Split by newlines and filter out empty strings
@@ -232,15 +309,12 @@ export function parseHtmlToParagraphs(htmlContent) {
 export function parseHtmlToText(htmlContent) {
   if (!htmlContent) return '';
   
-  // Remove HTML tags and decode entities
-  const text = htmlContent
+  // First decode HTML entities
+  let text = decodeHtmlEntities(htmlContent);
+  
+  // Remove HTML tags and clean up whitespace
+  text = text
     .replace(/<[^>]*>/g, '') // Remove all HTML tags
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
     .replace(/\s+/g, ' ') // Replace multiple spaces with single space
     .trim();
   

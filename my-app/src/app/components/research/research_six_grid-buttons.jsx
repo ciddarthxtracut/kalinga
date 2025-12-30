@@ -77,7 +77,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
   const [selectedTitle, setSelectedTitle] = useState("");
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   // Set up PDF.js worker - use jsdelivr CDN with version that matches react-pdf
@@ -97,7 +97,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
       setSelectedTitle(button.text);
       setPageNumber(1);
       setNumPages(null);
-      setLoading(true);
+      setLoading(false);
       setError(null);
       setIsModalOpen(true);
     }
@@ -116,7 +116,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
     setSelectedTitle("");
     setPageNumber(1);
     setNumPages(null);
-    setLoading(true);
+    setLoading(false);
     setError(null);
   };
 
@@ -180,7 +180,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
         </div>
       </section>
 
-      {/* PDF Flipbook Modal */}
+      {/* PDF Modal */}
       {isModalOpen && selectedPdf && (
         <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
@@ -232,7 +232,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
               </div>
             </div>
 
-            {/* PDF Flipbook Viewer */}
+            {/* PDF Viewer */}
             <div className="w-full h-[calc(90vh-100px)] bg-gray-100 flex flex-col overflow-hidden">
               {/* Navigation Controls */}
               <div className="flex items-center justify-between p-4 bg-white border-b border-gray-200 flex-shrink-0">
@@ -268,14 +268,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
               {/* PDF Document Viewer */}
               <div className="flex-1 overflow-y-auto overflow-x-auto w-full">
                 <div className="min-h-full flex items-start justify-center p-4 md:p-6">
-                  {loading && (
-                    <div className="text-center py-20">
-                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--button-red)] mx-auto mb-4"></div>
-                      <p className="text-gray-600">Loading PDF...</p>
-                    </div>
-                  )}
-                  
-                  {error && (
+                  {error ? (
                     <div className="text-center p-8">
                       <p className="text-red-600 mb-4">{error}</p>
                       <button
@@ -285,9 +278,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
                         Open in New Tab
                       </button>
                     </div>
-                  )}
-
-                  {!error && !loading && (
+                  ) : (
                     <Document
                       file={selectedPdf}
                       onLoadSuccess={onDocumentLoadSuccess}
@@ -307,7 +298,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
                           renderAnnotationLayer={true}
                           className="max-w-full h-auto"
                           width={Math.min(900, typeof window !== 'undefined' ? window.innerWidth - 80 : 900)}
-      />
+                        />
                       </div>
                     </Document>
                   )}

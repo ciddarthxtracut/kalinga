@@ -27,6 +27,37 @@ export default function Admissions() {
       window.__breadcrumbData = breadcrumbData;
     }
   }, []);
+
+  // Handle scrolling to program search section when hash is present
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Check if hash is present in URL
+      if (window.location.hash === '#program-search-section') {
+        // Wait for component to render
+        setTimeout(() => {
+          const searchSection = document.getElementById('program-search-section');
+          if (searchSection) {
+            // Calculate header offset (100px on mobile, less on desktop)
+            const headerOffset = window.innerWidth < 768 ? 100 : 80;
+            const elementPosition = searchSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            // Focus on the search input after scrolling
+            setTimeout(() => {
+              const searchInput = searchSection.querySelector('input[type="text"]');
+              if (searchInput) {
+                searchInput.focus();
+              }
+            }, 500);
+          }
+        }, 300);
+      }
+    }
+  }, []);
   // AdmissionSteps content
   const admissionStepsContent = {
     steps: [
@@ -268,7 +299,7 @@ export default function Admissions() {
   };
 
   return (
-    <div>
+    <div className="pt-[100px] md:pt-0">
       <Suspense fallback={
         <section className="py-16 bg-white">
           <div className="container mx-auto px-2">

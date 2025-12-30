@@ -391,7 +391,7 @@ export default function OurPrograms({
   const mobileWidthClass = mobileMaxWidth ? `max-w-[${mobileMaxWidth}px] md:max-w-none` : '';
   
   return (
-    <section className={`py-16 ${sectionBg} ${customPrograms ? 'mx-2 rounded-xl' : 'mx-2'} ${mobileWidthClass}`}>
+    <section className={`pt-0 md:pt-16 pb-16 ${sectionBg} ${customPrograms ? 'mx-2 rounded-xl' : 'mx-2'} ${mobileWidthClass}`}>
       <div className={`container mx-auto ${customPrograms ? 'px-2 md:px-4' : 'px-2'}`}>
         {/* Title and Subtitle */}
         <div className="text-center mb-5">
@@ -408,7 +408,7 @@ export default function OurPrograms({
         <div className={`${customPrograms ? 'bg-transparent' : 'bg-[var(--dark-blue)]'} rounded-2xl md:p-5 p-4 relative overflow-hidden`}>
           {/* Search and Filter Section - Single White Bar */}
           {!hideSearchFilter && (
-          <div className="bg-[var(--light-gray)] border border-white rounded-lg flex flex-col md:flex-row items-stretch mb-8 relative z-20 overflow-hidden">
+          <div id="program-search-section" className="bg-[var(--light-gray)] border border-white rounded-lg flex flex-col md:flex-row items-stretch mb-8 relative z-20 overflow-hidden scroll-mt-[100px] md:scroll-mt-20">
             {/* Study Level Dropdown - Left Section */}
             <div className="relative flex-shrink-0 md:w-32 lg:w-36 border-r border-gray-200">
               <select

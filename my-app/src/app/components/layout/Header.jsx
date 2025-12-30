@@ -346,7 +346,37 @@ const Header = () => {
             <div className="relative" ref={searchRef}>
               <button
                 type="button"
-                onClick={() => setIsSearchOpen((prev) => !prev)}
+                onClick={() => {
+                  // If on admissions page, scroll to search section
+                  if (pathname === '/admissions') {
+                    setIsSearchOpen(false);
+                    setTimeout(() => {
+                      const searchSection = document.getElementById('program-search-section');
+                      if (searchSection) {
+                        // Calculate header offset (100px on mobile, less on desktop)
+                        const headerOffset = window.innerWidth < 768 ? 100 : 80;
+                        const elementPosition = searchSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth'
+                        });
+                        // Focus on the search input
+                        setTimeout(() => {
+                          const searchInput = searchSection.querySelector('input[type="text"]');
+                          if (searchInput) {
+                            searchInput.focus();
+                          }
+                        }, 500);
+                      }
+                    }, 100);
+                  } else {
+                    // Navigate to admissions page with hash
+                    router.push('/admissions#program-search-section');
+                    setIsSearchOpen(false);
+                  }
+                }}
                 className="p-1 rounded hover:text-[var(--red)] focus:outline-none focus:ring-2 focus:ring-[var(--red)]"
                 aria-label="Search"
               >
