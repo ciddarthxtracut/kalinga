@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import ProgramCard from "../general/program-card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../general/tab";
 
 export default function ProgramsTabs() {
   const [activeTab, setActiveTab] = useState("45Days");
+  const router = useRouter();
 
   const programs45Days = [
     { id: 1, title: "Biotech Tools & Techniques", specialization: "Start Date: May | End Date: July", duration: "45 Days", checkEligibilityLink: "/contact-us", applyNowLink: "#careerform" },
@@ -58,7 +60,11 @@ export default function ProgramsTabs() {
                     program={program}
                     href={program.checkEligibilityLink || "/admissions"}
                     applyNowLink={program.applyNowLink || "#cif-application-form"}
-                    onCheckEligibility={(program) => console.log('Check Eligibility', program)}
+                    onCheckEligibility={(program) => {
+                      if (program.checkEligibilityLink) {
+                        router.push(program.checkEligibilityLink);
+                      }
+                    }}
                     onApplyNow={(program) => console.log('Apply Now', program)}
                     onScholarshipsClick={(program) => console.log('Scholarships', program)}
                     onExploreProgramClick={(program) => console.log('Explore Program', program)}
@@ -75,7 +81,11 @@ export default function ProgramsTabs() {
                     program={program}
                     href={program.checkEligibilityLink || "/admissions"}
                     applyNowLink={program.applyNowLink || "#cif-application-form"}
-                    onCheckEligibility={(program) => console.log('Check Eligibility', program)}
+                    onCheckEligibility={(program) => {
+                      if (program.checkEligibilityLink) {
+                        router.push(program.checkEligibilityLink);
+                      }
+                    }}
                     onApplyNow={(program) => console.log('Apply Now', program)}
                     onScholarshipsClick={(program) => console.log('Scholarships', program)}
                     onExploreProgramClick={(program) => console.log('Explore Program', program)}

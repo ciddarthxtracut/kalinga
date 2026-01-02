@@ -487,11 +487,11 @@ const CentralInstrumentationFacilityPage = () => {
     <ProgramsTabs />
     <ContactSection />
       <CareerApplicationForm
-            heading="Application Form"
-            description="Share your details to stay connected with Kalinga University, receive updates, and participate in alumni activities and events."
+            heading="Registration Form"
+            description="Apply for our hands-on training programs, certification courses, sample testing services, or express your interest in accessing our advanced instrumentation facilities. Fill out the form below and our team will get back to you with details about enrollment, scheduling, and available services."
             backgroundClass="bg-[var(--button-red)]"
             hideTabs={true}
-            submitLabel="Submit Alumni Details"
+            submitLabel="Submit"
             useArrowSubmitButton={true}
             arrowSubmitVariant="white"
           />
