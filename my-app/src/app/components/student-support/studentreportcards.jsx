@@ -24,10 +24,7 @@ export default function Studentreportcards() {
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ctcd.png",
             logoSrc: "",
             subtitle: "INDUSTRY EXPOSURE",
-<<<<<<< Updated upstream
             link: "/corporate-training-and-consultancy-division",
-=======
->>>>>>> Stashed changes
         },
         {
             title: "Academic Clubs & Non-Academic Clubs",
@@ -154,10 +151,7 @@ export default function Studentreportcards() {
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrc.webp",
             logoSrc: "",
             subtitle: "ACADEMIC SUPPORT",
-<<<<<<< Updated upstream
             link: "/international-students#bridge-course"
-=======
->>>>>>> Stashed changes
         },
         {
             title: "Competitive Exams Coaching",
