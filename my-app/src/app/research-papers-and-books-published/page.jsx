@@ -3,6 +3,7 @@ import MainIntro from "../components/about/main_intro";
 import ResearchIntro from "@/app/components/research-resources/research_intro";
 import BoardOfStudiesTable from "@/app/components/general/board_of_studies_table";
 import AccreditationRanking from "@/app/components/home/AccreditationRanking";
+import AdmissionCareer from "../components/general/admission_cta";
 
 export default function ResearchPapersAndBooksPublished() {
   return (
@@ -12,6 +13,8 @@ export default function ResearchPapersAndBooksPublished() {
         description="Kalinga University actively supports its researchers by providing them with resources, guidance, and support in their publication journey. From expert mentorship to providing access to publication tools and final printing, we’re with them at every step. We also help them present their work in front of a wider audience on both physical and digital platforms. "
         imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/common/placeholder-img.png"
         imageAlt="Kalinga University Research"
+        showKnowMore={true}
+        
       />
 
       <BoardOfStudiesTable className="text-center"
@@ -35,6 +38,7 @@ export default function ResearchPapersAndBooksPublished() {
       />
       
       <AccreditationRanking />
+      <AdmissionCareer />
     </>
   );
 }

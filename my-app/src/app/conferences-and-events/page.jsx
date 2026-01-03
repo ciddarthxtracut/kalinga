@@ -8,7 +8,7 @@ import AdmissionCareer from "@/app/components/general/admission_cta";
 
 const breadcrumbData = {
   heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/conferences/conferences-banner.webp",
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/conferences/conferences-objective.webp",
   pageTitle: "Conferences & Events",
   customBreadcrumbs: [
     { label: "Home", href: "/" },
@@ -136,14 +136,14 @@ export default function ConferencesAndEventsPage() {
       <section className="pt-10 pb-6">
         <ImageListItem
           items={whyAttendItems}
-          imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/conferences/conferences-objective.webp"
+          imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/conferences/conferences-banner.webp"
           title="Why Attend Our Conferences and Events?"
         />
       </section>
 
       <section className="pb-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl mt-15 font-semibold text-[var(--title-color)]">
+          <h2 className="text-2xl md:text-4xl mt-15  text-[var(--title-color)] font-stix">
             Conferences Held At KU
           </h2>
 
@@ -164,6 +164,17 @@ export default function ConferencesAndEventsPage() {
           </div>
         </div>
       </section>
+      <style jsx global>{`
+  .absolute.inset-0 > img {
+    object-position: center 20% !important;
+  }
+
+  @media (max-width: 768px) {
+    .absolute.inset-0 > img {
+      object-position: center 5% !important;
+    }
+  }
+`}</style>
       <AdmissionCareer />
     </>
   );
