@@ -99,6 +99,7 @@ export default function ResearchResources() {
         items={Items}
         imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/research-resources/research-toolkit.webp"
         title="Your Research Toolkit"
+        description=""
       />
 
       <ResearchResourceFaqClient />

@@ -9,12 +9,12 @@ import Gallery from "@/app/components/general/gallery";
 const breadcrumbData = {
   heroImage:
     "https://kalinga-university.s3.ap-south-1.amazonaws.com/iiot/iiot-banner.webp",
-  pageTitle: "IIoT Training Centre",
+  pageTitle: "IIOT Training Centre",
   customBreadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Centres of Excellence", href: "/centresofexcellence" },
     {
-      label: "IIoT Training Centre",
+      label: "IIOT Training Centre",
       href: "/centresofexcellence/iiot",
     },
   ],
