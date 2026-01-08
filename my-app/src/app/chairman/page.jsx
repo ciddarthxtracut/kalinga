@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') {
 export default function Leadership() {
   return (
     <>
-      <ChairmanMessage 
+      <ChairmanMessage
         imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/about/Leadership/Rajeev+Kumar.png"
         imageAlt="Dr. Rajeev Kumar"
         name="Dr. Rajeev Kumar"

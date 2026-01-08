@@ -345,6 +345,44 @@ export default function Research() {
       description: "Pharmachy department",
     },
   ]
+  const videoItems2 = [
+    {
+      id: 1,
+      name: "SGS Technical Services Pvt Ltd ",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-1.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-1.png",
+      description: "Abhijeet Lal - IndusInd Bank Ltd",
+    },
+    {
+      id: 2,
+      name: "9M India Limited",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-2.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-2.png",
+      description: "Abhinav Khandelwal - B Plan Advisors",
+    },
+    {
+      id: 3,
+      name: "Hirojet Campus Drive",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-3.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-3.png",
+      description: "Abhishek Doijode - TCS",
+    },
+    {
+      id: 4,
+      name: "Airtel Campus Drive",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-4.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-4.png",
+      description: "Nikhil Rao - Shelar",
+    },
+    {
+      id: 5,
+      name: "Airtel Campus Drive",
+      videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-5.mp4",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/rec-5.png",
+      description: "Sneha Shinde - Justdial",
+    },
+  ];
+
   const videoItems1 = [
     {
       id: 1,
@@ -365,14 +403,14 @@ export default function Research() {
       name: "Hirojet Campus Drive",
       videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/Hirojet+Campus+Drive.mp4",
       thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/campus-3.png",
-      description: "Pharmachy department",
+      description: "Hirojet",
     },
     {
       id: 4,
       name: "Airtel Campus Drive",
       videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/Airtel+Campus+Drive.mp4",
       thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/campus-4.png",
-      description: "Pharmachy department",
+      description: "Airtel",
     },
   ];
 
@@ -458,9 +496,9 @@ export default function Research() {
         descriptionTextClass=""
         swiperClassName="ccrc-video-slider"
       />
-      <QuickLinks 
-        links={links} 
-        title="Training Initiatives Of Kalinga’s TnP Cell" 
+      <QuickLinks
+        links={links}
+        title="Training Initiatives Of Kalinga’s TnP Cell"
         description="Kalinga University's placement program bridges academia and industry with 400+ recruitment partners, comprehensive training, and dedicated support to prepare students for successful careers in top companies."
         backgroundColor="bg-white"
         textColorClassName="text-black"
@@ -477,6 +515,16 @@ export default function Research() {
         swiperClassName="ccrc-video-slider"
       />
       <QuickLinks title="Entrepreneurship & Startup Support" titleClassName="text-white" links={links2} description="We're here to put your entrepreneurial ideas into action. Here, you will not just dream but build something real that solves people's problems." showReadMore={false} />
+      <MediaCardSlider
+        categoryTitle=""
+        title="Recruiters Testimonials"
+        videoItems={videoItems2}
+        cardBgClass="bg-white"
+        nameTextClass="text-[var(--button-red)]"
+        descriptionTextClass=""
+        swiperClassName="ccrc-video-slider"
+        imageObjectPosition="object-bottom"
+      />
       <FAQ
         title="Placement Records"
         variant="button"

@@ -28,7 +28,7 @@ export default function Footer() {
           }
         }
       `}} />
-      <footer className="text-white mt-5 px-2 sm:px-4">
+      <footer className="text-white mt-5 px-2">
         <div className="relative bg-[var(--dark-blue)] rounded-[10px] sm:rounded-[15px]">
           <div className="px-4 sm:px-6 md:px-6 lg:px-12 py-6 sm:py-8 md:py-8 lg:py-10 !pb-0 relative z-10">
             {/* Top Row: Logo and Follow Us */}

@@ -362,6 +362,10 @@ export default function ScholarshipsPage() {
         <WhyStudy
           items={whyStudyItems}
           sectionTitle="How KU Scholarships Are a Game-Changer"
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1280: { slidesPerView: 3 },
+          }}
         />
       </div>
 

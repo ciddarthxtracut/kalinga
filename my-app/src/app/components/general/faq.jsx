@@ -709,9 +709,9 @@ const FAQ = ({
                     }`}
                 >
                   <div className="bg-[var(--lite-sand)] p-6">
-                    <p className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans mb-4">
+                    <div className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans mb-4">
                       {item.description}
-                    </p>
+                    </div>
                     <div className="flex flex-wrap gap-3">
                       {item.buttons.map((btn, btnIdx) => (
                         <GlobalArrowButton

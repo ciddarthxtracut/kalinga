@@ -98,7 +98,7 @@ export default function GrievanceRedressalPage() {
             <center>Grievance Redressal Committee</center>
           </h2>
 
-          <div className="mt-10">
+          <div className="mt-10 max-w-4xl mx-auto">
             <DataTable columns={columns} data={data} overflowX={true} />
           </div>
         </div>
