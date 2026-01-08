@@ -179,7 +179,16 @@ export default function MediaCardSlider({
                       {isVideo ? (
                         <>
                           {/* Show thumbnail if available */}
-                          {item.thumbnail && !isDirectVideoUrl(item.thumbnail) ? (
+                          {item.thumbnail && (isDirectVideoUrl(item.thumbnail) || item.thumbnail.includes('#t=')) ? (
+                            // Use video element for video thumbnails (including those with #t= time fragments)
+                            <video
+                              src={item.thumbnail}
+                              className="absolute inset-0 w-full h-full object-cover object-top"
+                              preload="metadata"
+                              muted
+                              playsInline
+                            />
+                          ) : item.thumbnail && !isDirectVideoUrl(item.thumbnail) ? (
                             // Check if it's a YouTube thumbnail (img.youtube.com) - use regular img tag
                             isYouTubeUrl(item.thumbnail) || item.thumbnail.includes('img.youtube.com') ? (
                               <img
@@ -198,7 +207,7 @@ export default function MediaCardSlider({
                               />
                             )
                           ) : !isYouTubeUrl(item.videoUrl) && item.videoUrl && isDirectVideoUrl(item.videoUrl) ? (
-                            // Fallback: use video element if no thumbnail image but videoUrl exists (non-YouTube)
+                            // Fallback: use video element if no thumbnail but videoUrl exists (non-YouTube)
                             <video
                               src={item.videoUrl}
                               className="absolute inset-0 w-full h-full object-cover object-top"
