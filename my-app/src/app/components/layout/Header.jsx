@@ -173,10 +173,13 @@ const Header = () => {
           {
             title: 'Departments',
             links: departments.length > 0
-              ? departments.slice(0, 10).map(dept => ({
-                label: dept.name || 'Department',
-                href: `/admissions?department=${encodeURIComponent(dept.slug || dept.id)}`
-              }))
+              ? departments
+                .sort((a, b) => (a.name || '').localeCompare(b.name || ''))
+                .slice(0, 10)
+                .map(dept => ({
+                  label: dept.name || 'Department',
+                  href: `/departments/${dept.slug || dept.id}`
+                }))
               : [
                 { label: 'Loading...', href: '/academics' }
               ]

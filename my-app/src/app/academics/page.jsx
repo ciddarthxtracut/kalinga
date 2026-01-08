@@ -160,7 +160,12 @@ export default function AcademicsApi() {
           })
         );
 
-        setDepartments(departmentsWithDetails);
+        // Sort departments alphabetically by title
+        const sortedDepartments = departmentsWithDetails.sort((a, b) =>
+          (a.title || '').localeCompare(b.title || '')
+        );
+
+        setDepartments(sortedDepartments);
       } catch (err) {
         console.error('Failed to load departments:', err);
         setError(err.message || 'Failed to load departments');

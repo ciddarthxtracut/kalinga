@@ -154,7 +154,7 @@ export default function Alumini() {
   },
   {
     id: 6,
-    name: "Shreya Mallikr",
+    name: "Shreya Mallick ",
     role: "First Prize Winner – International Dance Competition, Dubai (2017)",
     quote: "Apart from her engineering studies, Shreya has always followed her passion for Indian classical dance. With grace, expressions, and confidence, she won First Prize in the 2017 International Dance Competition held in Dubai. She has set a shining example for young artists, proving that passion for your hobby can take you to a global stage.",
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/Shreya+Mallik.webp",
@@ -357,7 +357,7 @@ export default function Alumini() {
         subtitleTextColor="!text-white"
       />
       <OrganogramOfKalinga
-        title="Download Alumni Handbook"
+        title="Become a Member Now"
         description="Kalinga University, established in 2013, stands out as one of the leading private universities
 strategically located in the Smart City of New Raipur, Chhattisgarh. The University has
 consistently ranked among the top 101–150 universities in India under the NIRF Rankings
@@ -368,10 +368,10 @@ shining on the horizons of high-quality education."
         useContainer={true}
 
       />
-      <Gallery title="Alumni Meet Glimpse" images={galleryImages} />
+      <Gallery title="Glimpses" images={galleryImages} />
 
       <MediaCardSlider
-        categoryTitle="Video Interviews"
+        categoryTitle=""
         title="Hear From Our Alumni"
         videoItems={videoItems}
         cardBgClass="bg-white"
@@ -384,7 +384,7 @@ shining on the horizons of high-quality education."
 
       <UpcomingConferences
         conferences={newsConferences}
-        title="Alumni Meet"
+        title="ALumni Talks"
         href="/contact-us"
       />
       <CenterOfExcellence
