@@ -309,7 +309,7 @@ export default function Admissions() {
           </div>
         </section>
       }>
-        <OurPrograms programCardTitleClassName="uppercase !text-base md:!text-lg lg:!text-xl" />
+        <OurPrograms programCardTitleClassName=" !text-base md:!text-lg lg:!text-xl" />
       </Suspense>
       <OrganogramOfKalinga
         title={entranceExamContent.title}
