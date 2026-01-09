@@ -38,11 +38,11 @@ const CardRotate = forwardRef(({ children, onSendToBack, sensitivity, disableDra
   return (
     <motion.div
       className="card-rotate"
-      style={{ 
-        x, 
-        y, 
-        rotateX: isTopCard ? 0 : rotateX, 
-        rotateY: isTopCard ? 0 : rotateY 
+      style={{
+        x,
+        y,
+        rotateX: isTopCard ? 0 : rotateX,
+        rotateY: isTopCard ? 0 : rotateY
       }}
       drag
       dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
@@ -73,12 +73,12 @@ const Stack = forwardRef(({
   const [isPaused, setIsPaused] = useState(false);
   const topCardRef = useRef(null);
   const isAnimatingRef = useRef(false);
-  
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < mobileBreakpoint);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -142,7 +142,7 @@ const Stack = forwardRef(({
     if (cards.length) {
       setStack(cards.map((content, index) => ({ id: index + 1, content })));
     }
-  }, [cards]);
+  }, [cards.length]);
 
   const sendToBack = (id) => {
     setStack((prev) => {
@@ -188,7 +188,7 @@ const Stack = forwardRef(({
         const randomRotate = randomRotation ? Math.random() * 10 - 5 : 0;
         const isTopCard = index === stack.length - 1;
         const stackIndex = stack.length - index - 1;
-        
+
         // Distribute cards left and right, with active card centered
         // Cards alternate: left, right, left, right...
         let horizontalOffset = 0;
@@ -201,14 +201,14 @@ const Stack = forwardRef(({
           const increment = isMobile ? 4 : 8;
           horizontalOffset = direction * (baseOffset + stackIndex * increment);
         }
-        
+
         const verticalOffset = isTopCard ? 0 : (isMobile ? stackIndex * 3 : stackIndex * 6);
-        
+
         return (
-          <CardRotate 
+          <CardRotate
             key={card.id}
             ref={isTopCard ? topCardRef : null}
-            onSendToBack={() => sendToBack(card.id)} 
+            onSendToBack={() => sendToBack(card.id)}
             sensitivity={isMobile ? sensitivity * 0.6 : sensitivity}
             disableDrag={shouldDisableDrag}
             isTopCard={isTopCard}

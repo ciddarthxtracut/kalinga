@@ -212,7 +212,7 @@ const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg
                 <div style={{ width: '100%', height: '480px' }}>
                   <Stack
                     ref={stackRef}
-                    randomRotation={true}
+                    randomRotation={false}
                     sensitivity={180}
                     sendToBackOnClick={false}
                     autoplay={true}
