@@ -78,8 +78,36 @@ const defaultButtons = [
     text: "Seed Money",
     href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-resources/Seed+Money+Policy.pdf",
   },
-
-
+  {
+    id: 14,
+    text: "Research Paper",
+    href: "/research-papers-and-books-published",
+  },
+  {
+    id: 15,
+    text: "Book Chapters",
+    href: "/book-chapters",
+  },
+  {
+    id: 16,
+    text: "Patents",
+    href: "/patents",
+  },
+  {
+    id: 17,
+    text: "Chairs and their Activities",
+    href: "/chairs-and-their-activities",
+  },
+  {
+    id: 18,
+    text: "IPR Cell",
+    href: "/ipr-cell",
+  },
+  {
+    id: 19,
+    text: "Conferences",
+    href: "/research-conferences",
+  },
 
 ];
 
@@ -240,7 +268,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
           aria-modal="true"
         >
           <div
-            className="bg-white rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden relative shadow-2xl"
+            className="bg-white rounded-2xl w-full max-w-6xl max-h-[70vh] overflow-hidden relative shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
