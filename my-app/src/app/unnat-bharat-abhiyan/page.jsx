@@ -168,7 +168,7 @@ export default function UnnatBharatAbhiyanPage() {
         subtitle=""
         showHeaderButton={false}
       />
-      <div className="container mx-auto px-4 mt-16">
+      <div className="container mx-auto px-4 mt-5">
         <div className="grid grid-cols-1  lg:grid-cols-12 items-center gap-8">
 
           {/* IMAGE */}

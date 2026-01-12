@@ -11,6 +11,7 @@ import GlobalArrowButton from "../components/general/global-arrow_button";
 import FlipbookTrigger from "../components/general/FlipbookTrigger";
 import MasterClassTab from "../components/ctcd/master_class_tab";
 import Gallery from "@/app/components/general/gallery";
+import PdfThumbnail from "../components/general/PdfThumbnail";
 
 /* ---------------- Breadcrumb ---------------- */
 const breadcrumbData = {
@@ -318,23 +319,38 @@ export default function InstitutionInnovationCouncil() {
           </div>
 
           {/* ✅ BUTTON GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {annualReportButtons.map((item) => (
-              <FlipbookTrigger key={item.id} pdfUrl={item.href} title={`Appreciation Letter ${item.text}`}>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <GlobalArrowButton
-                    className="!w-full h-[60px] justify-between"
-                    arrowClassName="p-[3px] !px-2 mr-2 !py-1"
-                    arrowSize={29}
-                  >
-                    {item.text}
-                  </GlobalArrowButton>
-                </a>
+              <FlipbookTrigger
+                key={item.id}
+                pdfUrl={item.href}
+                title={`Appreciation Letter ${item.text}`}
+                className="group relative w-full aspect-[3/4] overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-lg focus:outline-none block"
+              >
+                {/* Image Area (PDF Thumbnail) */}
+                <div className="absolute inset-0 w-full h-full">
+                  <PdfThumbnail url={item.href} alt={item.text} />
+                </div>
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity duration-300" />
+
+                {/* Content Overlay */}
+                <div className="absolute inset-0 flex flex-col justify-end p-5">
+                  <div className="flex items-end justify-between gap-4">
+                    {/* Title */}
+                    <p className="font-plus-jakarta-sans text-white leading-tight text-left line-clamp-2 mb-1 drop-shadow-md font-bold text-lg">
+                      {item.text}
+                    </p>
+
+                    {/* Arrow Button */}
+                    <div className="shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--button-red)] text-white transition-transform duration-300 group-hover:scale-110 group-hover:bg-[var(--dark-orange-red)] shadow-lg">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform -rotate-45">
+                        <path d="M7 0L5.76625 1.23375L10.6538 6.125H0V7.875H10.6538L5.76625 12.7663L7 14L14 7L7 0Z" fill="currentColor" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </FlipbookTrigger>
             ))}
           </div>

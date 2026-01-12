@@ -33,7 +33,8 @@ export default function UpcomingConference({
   categoryId,
   categoryIds,
   fallback = 'all', // 'all' (show all/static if fail) or 'hide' (return null)
-  limit
+  limit,
+  description  // Added description prop
 }) {
   const [displayConferences, setDisplayConferences] = useState(conferences);
   const [loading, setLoading] = useState(true);
@@ -129,7 +130,12 @@ export default function UpcomingConference({
   return (
     <section className={`${backgroundColor} pt-16 pb-16 mx-2 rounded-xl`}>
       <div className="container mx-auto">
-        <h2 className="text-center mb-10">{finalTitle}</h2>
+        <h2 className="text-center mb-6">{finalTitle}</h2>
+        {description && (
+          <p className="text-center text-black max-w-3xl mx-auto mb-10 leading-relaxed">
+            {description}
+          </p>
+        )}
 
         {displayConferences && displayConferences.length > 0 ? (
           <>

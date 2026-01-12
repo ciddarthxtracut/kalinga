@@ -52,6 +52,7 @@ const defaultButtons = [
     id: 8,
     text: "Plagiarism Policy",
     href: "/research-resources",
+    isContent: true,
   },
   // {
   //   id: 9,
@@ -187,6 +188,7 @@ const ethicsCommitteeColumns = [
 export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
   const { openFlipbook } = useFlipbook();
   const [isTableModalOpen, setIsTableModalOpen] = useState(false);
+  const [isContentModalOpen, setIsContentModalOpen] = useState(false);
   const [selectedTitle, setSelectedTitle] = useState("");
   const [selectedTableType, setSelectedTableType] = useState(null);
 
@@ -195,6 +197,13 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
   };
 
   const handleButtonClick = (e, button) => {
+    // Check if this button is a content modal trigger
+    if (button.isContent) {
+      e.preventDefault();
+      setIsContentModalOpen(true);
+      return;
+    }
+
     // Check if this button should show a table modal
     if (button.isTable) {
       e.preventDefault();
@@ -217,6 +226,10 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
     setSelectedTitle("");
     setSelectedTableType(null);
   };
+
+  const handleCloseContentModal = () => {
+    setIsContentModalOpen(false);
+  };
   return (
     <>
       <section className="pt-16 pb-16 bg-white">
@@ -225,9 +238,10 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
             {buttons.map((button) => {
               const isPdf = isPdfLink(button.href);
               const isTable = button.isTable;
+              const isContent = button.isContent;
               return (
                 <div key={button.id} className="block">
-                  {isPdf || isTable ? (
+                  {isPdf || isTable || isContent ? (
                     <GlobalArrowButton
                       onClick={(e) => handleButtonClick(e, button)}
                       className="!w-full h-[60px] justify-between"
@@ -258,6 +272,58 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
           </div>
         </div>
       </section>
+
+      {/* Content Modal for Plagiarism Policy */}
+      {isContentModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
+          onClick={handleCloseContentModal}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden relative shadow-2xl p-6 md:p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-stix text-2xl font-bold text-[var(--foreground)]">
+                Plagiarism Policy
+              </h3>
+              <button
+                onClick={handleCloseContentModal}
+                className="rounded-full border border-black/10 w-8 h-8 flex items-center justify-center hover:bg-black/5 transition-colors"
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Content Body */}
+            <div className="space-y-4 text-gray-700 leading-relaxed font-lora">
+              <p>
+                We strictly follow our anti-plagiarism rules, and copying someone else’s work is not allowed in our University. We believe that our research scholars produce original work and do not copy it from somewhere else. They are required to give references for each topic and must follow ethical writing practices. We maintain high standards in research practices and appreciate their unique ideas.
+              </p>
+
+              <div className="pt-4 flex justify-end">
+                <button
+                  onClick={() => {
+                    openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/research/PLAGIARISM-FILE-POLICY.pdf", "Plagiarism Policy");
+                    handleCloseContentModal();
+                  }}
+                  className="bg-[#3A3B7B] hover:bg-[#4B4C9D] text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2 group"
+                >
+                  Click here for Policy
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Table Modal */}
       {isTableModalOpen && (

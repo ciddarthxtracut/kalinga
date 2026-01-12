@@ -445,7 +445,8 @@ export default function Alumini() {
       <UpcomingConferences
         conferences={newsConferences}
         title="Alumni Talks"
-        href=""
+        href="/contact-us"
+        description="Their Powerful Session Inspired Every Student to Achieve Their Dreams."
       />
       <OrganogramOfKalinga
         title="Alumni Members"

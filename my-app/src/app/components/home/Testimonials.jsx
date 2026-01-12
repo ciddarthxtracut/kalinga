@@ -366,8 +366,8 @@ export default function Testimonials({ testimonials = [], className = "", subtit
                                                         if (el) quoteRefs.current[`quote-${item.id}`] = el;
                                                     }}
                                                     className={`text-slate-800 leading-relaxed md:leading-loose font-normal ${!expandedQuotes[item.id] && needsReadMore[item.id]
-                                                        ? 'line-clamp-4'
-                                                        : ''
+                                                            ? 'line-clamp-4'
+                                                            : ''
                                                         }`}
                                                 >
                                                     {item.quote}
@@ -385,10 +385,7 @@ export default function Testimonials({ testimonials = [], className = "", subtit
                                                 )}
                                             </div>
                                             <div className="mt-6 sm:mt-8 md:mt-auto pt-4 sm:pt-6">
-                                                <h4 className="text-[var(--red)] text-xl sm:text-2xl font-medium">
-                                                    {item.name}
-                                                </h4>
-                                                {item.year && <p className="text-sm font-normal text-gray-600 mt-1">{item.year}</p>}
+                                                <h4 className="text-[var(--red)] text-xl sm:text-2xl font-medium">{item.name}</h4>
                                                 <p className="text-xs sm:text-sm mt-1 max-w-[80%]">{item.role}</p>
                                             </div>
                                             <div className="flex justify-end gap-1 mt-4 sm:mt-0 relative top-[-40px]">
