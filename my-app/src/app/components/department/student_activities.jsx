@@ -180,18 +180,20 @@ export default function StudentActivities({
           </p>
         </div>
 
-        <div className="mt-2">
-          <Link href={activity.slug ? `/news-and-events/${activity.slug}` : "#"} passHref className="inline-block">
-            <GlobalArrowButton
-              className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
-              textClassName="!text-[var(--button-red)] !px-0"
-              arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
-              arrowIconClassName="!text-white"
-            >
-              {activity.buttonText || "Read More"}
-            </GlobalArrowButton>
-          </Link>
-        </div>
+        {(activity.buttonText !== "" && activity.buttonText !== false) && (
+          <div className="mt-2">
+            <Link href={activity.slug ? `/news-and-events/${activity.slug}` : "#"} passHref className="inline-block">
+              <GlobalArrowButton
+                className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
+                textClassName="!text-[var(--button-red)] !px-0"
+                arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
+                arrowIconClassName="!text-white"
+              >
+                {activity.buttonText || "Read More"}
+              </GlobalArrowButton>
+            </Link>
+          </div>
+        )}
       </div>
     );
   };

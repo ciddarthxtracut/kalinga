@@ -204,26 +204,26 @@ export default function KIFPage({
   },];
   const testimonials = testimonialsProp ?? [{
     id: 1,
-    name: "",
-    role: "",
+    name: "Nitish Jha",
+    role: "Master G Academy NIIRA Educom",
     quote: "Kalinga Incubation Centre gave me a perfect platform where I turned my business idea into a successful startup, apart from my course curriculum. I have received an outstanding mentorship from them until I execute my plan. I am extremely grateful for their guidance and support. ",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/program/diploma.webp",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/testimonial-1.webp",
     theme: "red"
   },
   {
     id: 2,
-    name: "",
-    role: "",
+    name: "Shubham Bhartiya",
+    role: "Graeon.ai",
     quote: "I am running a successful startup business just because of the guidance of experts at Kalinga University. From idea generation to its execution, I have received great support from them. They also conducted workshops, seminars, and guest lectures from time to time, which gave me a broader perspective and detailed knowledge about my business. Their personalised mentorship was truly a game-changer for me.",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/students-say-2.webp",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/testimonial-2.webp",
     theme: "red"
   },
   {
     id: 3,
-    name: "",
-    role: "",
+    name: "Shrey Singh",
+    role: "Graeon.ai",
     quote: "I sincerely thank KIF team members, as they have helped me in establishing my startup business by working with me in planning and providing me with valuable industry insights. Their resources were extremely helpful for me in refining my business strategies.",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/student-say-3.webp",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/testimonial-3.webp",
     theme: "red"
   }
 
@@ -371,13 +371,13 @@ export default function KIFPage({
     {
       id: 6,
       name: "Master G Academy NIIRA Educom",
-      title: "Nitesh Jha",
+      title: "",
       image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/Master+G+Academy+NIIRA+Educom.webp",
     },
     {
       id: 7,
       name: "Graeon.ai",
-      title: "Shubham Bhartiya",
+      title: "",
       image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/Graeon.ai.webp",
     }
   ];

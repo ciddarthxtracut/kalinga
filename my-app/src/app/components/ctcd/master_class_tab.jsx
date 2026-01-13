@@ -188,6 +188,7 @@ export default function MasterClassTab({
   tab2Activities = defaultTab2Activities,
   tab2Gallery = defaultTab2Gallery,
   tab2GalleryTitle = "Annual Masterclass Calendar 2025-26 Glimpse",
+  tab2GalleryclassName = "",
 }) {
   const [activeTab, setActiveTab] = useState('tab1');
 
@@ -212,11 +213,10 @@ export default function MasterClassTab({
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`font-plus-jakarta-sans text-sm md:text-base lg:text-lg px-4 md:px-8 lg:px-10 py-3 md:py-4 rounded-lg transition-all duration-200 whitespace-normal md:whitespace-nowrap ${
-                activeTab === tab.id
+              className={`font-plus-jakarta-sans text-sm md:text-base lg:text-lg px-4 md:px-8 lg:px-10 py-3 md:py-4 rounded-lg transition-all duration-200 whitespace-normal md:whitespace-nowrap ${activeTab === tab.id
                   ? 'bg-[var(--button-red)] text-white font-semibold shadow-md'
                   : 'bg-[var(--lite-sand)] text-gray-800 font-normal hover:opacity-90'
-              }`}
+                }`}
             >
               {tab.label}
             </button>
@@ -257,7 +257,7 @@ export default function MasterClassTab({
                 title={tab2GalleryTitle}
                 images={gallery2}
                 backgroundColor="bg-white"
-                paddingClassName="py-0"
+                paddingClassName={`py-0 ${tab2GalleryclassName}`}
                 titleClassName="font-plus-jakarta-sans text-lg font-medium sm:text-xl md:text-2xl mb-6 sm:mb-8 md:mb-10 text-[var(--foreground)] text-center mt-10"
                 forceSliderOnMobile={true}
               />

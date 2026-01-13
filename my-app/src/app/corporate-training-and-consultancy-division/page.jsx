@@ -104,54 +104,66 @@ export default function CorporateTrainingAndConsultancyDivision() {
       id: 1,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/master-class.webp",
       imageAlt: "Grow As a Leader: A Program For First-Time Managers",
-      title: "Resource Person: Mr. Amar Pathak",
+      title: "Topic of Training: Mr. Amar Pathak",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "17.08.2024",
     },
     {
       id: 2,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/master-class-2.webp",
       imageAlt: "Maximising Fund-Raising Resource For CSR",
-      title: "Resource Person: Prof. Sanjay Vanani",
+      title: "Topic of Training: Prof. Sanjay Vanani",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "19.10.2024",
     },
     {
       id: 3,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-3.webp",
       imageAlt: "Crack The Code: Gen Z Connection Guide For Teachers and Parents",
-      title: "Resource Person: Dr. Sunayna Shukla",
+      title: "Topic of Training: Dr. Sunayna Shukla",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "21.12.2024",
     },
     {
       id: 4,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-4.webp",
       imageAlt: "AI-Driven Benefits for Manufacturing & Operations",
-      title: "Resource Person: Ms. Rajashree Rajadhya",
+      title: "Topic of Training: Ms. Rajashree Rajadhya",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "08.03.2025",
     },
     {
       id: 5,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-5.webp",
       imageAlt: "HR Analytics: Leveraging AI & Data for Strategic HR",
-      title: "Resource Person: Saurabh Saxena",
+      title: "Topic of Training: Saurabh Saxena",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "03.05.2025",
     },
     {
       id: 6,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-6.webp",
       imageAlt: "Master Your Market: Sales, Marketing & Negotiating Strategies",
-      title: "Resource Person: Ms. Rajashree Rajadhya",
+      title: "Topic of Training: Ms. Rajashree Rajadhya",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "26.07.2025",
     },
   ];
@@ -164,7 +176,9 @@ export default function CorporateTrainingAndConsultancyDivision() {
       imageAlt: "Operational Excellence with Six Sigma: Driving Productivity & Cost Efficiency",
       title: "Operational Excellence with Six Sigma: Driving Productivity & Cost Efficiency",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "November 2025",
     },
     {
@@ -173,7 +187,9 @@ export default function CorporateTrainingAndConsultancyDivision() {
       imageAlt: "HR in the Age of AI: Reimagining People, Performance & Potential",
       title: "HR in the Age of AI: Reimagining People, Performance & Potential",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "January 2026",
     },
     {
@@ -182,7 +198,9 @@ export default function CorporateTrainingAndConsultancyDivision() {
       imageAlt: "Sustainable Industry Practices: Green Technologies & Compliance",
       title: "Sustainable Industry Practices: Green Technologies & Compliance",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "March 2026",
     },
     {
@@ -191,7 +209,9 @@ export default function CorporateTrainingAndConsultancyDivision() {
       imageAlt: "Future-Ready Classrooms: AI & Digital Tools in Education and Beyond",
       title: "Future-Ready Classrooms: AI & Digital Tools in Education and Beyond",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "April 2026",
     },
     {
@@ -200,7 +220,9 @@ export default function CorporateTrainingAndConsultancyDivision() {
       imageAlt: "AI & Data for Industrial Efficiency: From Buzzword to Business Value",
       title: "AI & Data for Industrial Efficiency: From Buzzword to Business Value",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "June 2026",
     },
     {
@@ -209,7 +231,9 @@ export default function CorporateTrainingAndConsultancyDivision() {
       imageAlt: "Life Skills & Emotional Intelligence for the 21st Century Professional",
       title: "Life Skills & Emotional Intelligence for the 21st Century Professional",
       description: "",
-      buttonText: "Read More",
+      buttonText: "",
+      buttonLink: "",
+      button: "false",
       date: "August 2026",
     },
   ];
@@ -303,7 +327,7 @@ export default function CorporateTrainingAndConsultancyDivision() {
         subtitleImageAlt="CTCD Logo"
         customForm={<CTCDApplicationForm />}
         buttonText="Know More"
-        buttonLink="/corporate-training-and-consultancy-division"
+        buttonLink=""
 
       />
       <MainIntro
@@ -333,9 +357,10 @@ export default function CorporateTrainingAndConsultancyDivision() {
         tab2Activities={masterclassActivities2}
         tab2Gallery={galleryImages2}
         tab2GalleryTitle="Annual Masterclass Calendar 2025-26 Glimpse"
+        tab2GalleryclassName="mt-10"
       />
       <OrganogramOfKalinga
-        title="Organogram of CTCD"
+        title="Consultancy Services"
         description={[
           "Our consultancy services are designed to transform organisations to reach their maximum potential. Our experts conduct one-on-one discussions with team members of companies and develop strategies that improve their organisations' workflows, HR processes, and performance management systems. ",
           "More specifically, we assist them in talent management, digital integration, and workforce planning; every approach ensures improved productivity and employee engagement. We help them make SMARTER decisions with proper resource planning and integration, enabling them to grow with a clear roadmap"

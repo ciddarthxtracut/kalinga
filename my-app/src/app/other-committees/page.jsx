@@ -8,7 +8,7 @@ import { useBreadcrumbData } from "../components/layout/BreadcrumbContext";
 const breadcrumbData = {
   heroImage:
     "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
-  pageTitle: "Other Committees",
+  pageTitle: "Committees",
   customBreadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Other Committees", href: "/other-committees" },
@@ -169,7 +169,7 @@ export default function OtherCommittees() {
   const faqItems = [
     {
       id: 8,
-      question: "Women Cell / Prevention of Sexual Harassment (POSH) Committee - Information",
+      question: "Women Cell / Prevention of Sexual Harassment (POSH) Committee",
       answer: [
         "The Women's Cell or Sexual Harassment Prevention Committee has been constituted at Kalinga University under the guidelines issued by the UGC, NAAC, and the Supreme Court to consider complaints related to any sexual discrimination or harassment of girls or women within the University.",
         "Contact Details:",
@@ -178,7 +178,7 @@ export default function OtherCommittees() {
         "Email: lincy.roy@kalingauniversity.ac.in",
         "Regulation 2013 of Prevention, Prohibition and Redressal of Sexual Harassment of Women and Students in HEIs: https://kalinga-university.s3.ap-south-1.amazonaws.com/other-committees/Regulation+2013+of+Prevention%2C+Prohibition+and+Redressal+of+Sexual+Harassment+of+Women+and+Student+in+HEI's.pdf",
         "Regulation 2015 of Prevention, Prohibition and Redressal of Sexual Harassment of Women and Students in HEIs: https://kalinga-university.s3.ap-south-1.amazonaws.com/other-committees/Regulation+2015+of+Prevention%2C+Prohibition+and+Redressal+of+Sexual+Harassment+of+Women+and+Student+in+HEI's.pdf",
-        "Functions and Responsibilities of the Women's Cell & Prevention of Sexual Harassment (POSH) Committee:",
+        "<b>Functions and Responsibilities of the Women's Cell & Prevention of Sexual Harassment (POSH) Committee:</b>",
         "Promote measures aimed at achieving gender equality, removal of gender bias or discrimination, sexual harassment and other acts of gender based violence.",
         "Organise awareness programmes and campaigns for the benefit of all members of the University on sexual harassment and gender based discrimination.",
         "Fulfil the directives of and guidelines issued by the Supreme Court to create an academic and work environment that is free of sexual harassment or gender-based discrimination.",
@@ -192,14 +192,8 @@ export default function OtherCommittees() {
     {
       id: 9,
       question: "Fraud Awareness",
-      answer: [
-        "Fraud Awareness Guidelines",
-        "Kalinga goes to great lengths to protect our students from fraud. If you suspect having received fraudulent emails, SMS, or found a website or social media account that tries to pass off as official Kalinga University, we encourage you to let us know at your earliest convenience, so that we can quickly take action to stop the fraud. Please report all suspicious activity to our dedicated Anti-Abuse Mailbox at report@kalingauniversity.ac.in.",
-        "We thoroughly investigate every report of suspected fraud, but generally, we do not respond to personal inquiries. Thank you for joining our effort to combat online fraud.",
-        "Fraudulent Use of Our Brand",
-        "Attempts have been made to defraud students online by the unauthorised use of the Kalinga University name and brand via email communications and graphics that appear, on the surface, to have originated from Kalinga University.",
-        "Kalinga accepts no responsibility for any costs, charges, or payments made that were improperly incurred as a result of fraudulent activity.",
-      ],
+      answer:
+        "<b>Fraud Awareness Guidelines</b> Kalinga goes to great lengths to protect our students from fraud. If you suspect having received fraudulent emails, SMS, or found a website or social media account that tries to pass off as official Kalinga University, we encourage you to let us know at your earliest convenience, so that we can quickly take action to stop the fraud. Please report all suspicious activity to our dedicated Anti-Abuse Mailbox at report@kalingauniversity.ac.in. We thoroughly investigate every report of suspected fraud, but generally, we do not respond to personal inquiries. Thank you for joining our effort to combat online fraud. <b>Fraudulent Use of Our Brand</b> Attempts have been made to defraud students online by the unauthorised use of the Kalinga University name and brand via email communications and graphics that appear, on the surface, to have originated from Kalinga University. Kalinga accepts no responsibility for any costs, charges, or payments made that were improperly incurred as a result of fraudulent activity.",
     },
   ];
 
