@@ -993,6 +993,10 @@ const FAQ = ({
                           headerBgColor={headerBgColor}
                         />
                       </div>
+                    ) : item.answer && typeof item.answer === 'object' && item.answer.type === 'component' ? (
+                      <div className="w-full">
+                        {item.answer.component}
+                      </div>
                     ) : Array.isArray(item.answer) ? (
                       <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans">
                         {item.answer.map((listItem, idx) => (

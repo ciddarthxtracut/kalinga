@@ -11,6 +11,7 @@ import DataTable from "@/app/components/general/data-table";
 import ContactSection from '../components/cif/contact_section';
 import AdmissionSteps from "../components/admissions/admission-steps";
 import SectionHeading from "../components/general/SectionHeading";
+import Gallery from "../components/general/gallery";
 const ubaSteps = [
   {
     id: 1,
@@ -18,6 +19,7 @@ const ubaSteps = [
     title: "Palaud",
     description: "",
     backDescription: "",
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/check-box.png",
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const ubaSteps = [
     title: "Kotni",
     description: "",
     backDescription: "",
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/check-box.png",
   },
   {
     id: 3,
@@ -32,6 +35,7 @@ const ubaSteps = [
     title: "Tandul",
     description: "",
     backDescription: "",
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/check-box.png",
   },
   {
     id: 4,
@@ -39,6 +43,7 @@ const ubaSteps = [
     title: "Kuhera",
     description: "",
     backDescription: "",
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/check-box.png",
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ const ubaSteps = [
     title: "Parsada",
     description: "",
     backDescription: "",
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/check-box.png",
   },
   {
     id: 6,
@@ -53,6 +59,7 @@ const ubaSteps = [
     title: "Kotara Bhantha",
     description: "",
     backDescription: "",
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/check-box.png",
   },
 ];
 /* ---------------- Breadcrumb ---------------- */
@@ -127,6 +134,21 @@ const ubaTeamTable = [
 const CARD_TEXT_CLASSNAME = "mt-[10px] text-[var(--foreground)]";
 const SECTION_TITLE_CLASSNAME = "font-stix text-1xl md:text-[30px] text-[var(--foreground)]";
 
+/* ---------------- UBA Slider Images ---------------- */
+const ubaImages = [
+  { id: 1, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/1.jpg", alt: "UBA Activity 1" },
+  { id: 2, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/2.jpg", alt: "UBA Activity 2" },
+  { id: 3, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/3.jpg", alt: "UBA Activity 3" },
+  { id: 4, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/4.jpg", alt: "UBA Activity 4" },
+  { id: 5, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/5.jpg", alt: "UBA Activity 5" },
+  { id: 6, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/6.jpg", alt: "UBA Activity 6" },
+  { id: 7, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/7.jpg", alt: "UBA Activity 7" },
+  { id: 8, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/8.jpg", alt: "UBA Activity 8" },
+  { id: 9, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/9.jpg", alt: "UBA Activity 9" },
+  { id: 10, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/10.jpg", alt: "UBA Activity 10" },
+  { id: 11, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/11.jpg", alt: "UBA Activity 11" },
+];
+
 /* ---------------- Page ---------------- */
 export default function UnnatBharatAbhiyanPage() {
 
@@ -164,7 +186,7 @@ export default function UnnatBharatAbhiyanPage() {
         bgColor="bg-white"
         title="Villages We Adopted Under the UBA Scheme"
         showReadMore={false}
-        showIcon={false}
+        showIcon={true}
         subtitle=""
         showHeaderButton={false}
       />
@@ -332,6 +354,14 @@ export default function UnnatBharatAbhiyanPage() {
                     Master/Mistress appreciated this initiative of Kalinga University by
                     providing an appreciation certificate.
                   </p>
+
+                  <div className="mt-8">
+                    <Gallery
+                      title="Glimpse"
+                      images={ubaImages}
+                      backgroundColor="bg-white"
+                    />
+                  </div>
 
                 </div>
 

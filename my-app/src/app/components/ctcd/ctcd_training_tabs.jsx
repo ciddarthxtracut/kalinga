@@ -5,6 +5,7 @@ import { AccordionItem } from "../general/accordion";
 import Gallery from "../general/gallery";
 import SectionHeading from "../general/SectionHeading";
 import FAQ from "../general/faq";
+import Image from 'next/image';
 
 
 function BulletList({ items }) {
@@ -346,17 +347,56 @@ export default function CtcdTrainingTabs({ customTabs }) {
                                             Topics Covered:
                                         </p>
 
-                                        <BulletList
-                                            items={[
-                                                "System Orientation",
-                                                "People Orientation",
-                                                "Adaptability",
-                                                "Readiness to Change",
-                                                "Knowledge",
-                                                "Learning Styles",
-                                                "Emotional Quotient",
-                                            ]}
-                                        />
+                                        <div className="flex flex-col gap-4 mt-6">
+                                            {/* Row 1: 4 items */}
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                                                {[
+                                                    { title: "System Orientation", icon: "Global.svg" },
+                                                    { title: "People Orientation", icon: "Community+Services.svg" },
+                                                    { title: "Adaptability", icon: "Holistic+Development.svg" },
+                                                    { title: "Readiness to Change", icon: "Improve+Employability.svg" },
+                                                ].map((item, idx) => (
+                                                    <div key={idx} className="bg-[var(--card-skin)] p-4 rounded-xl flex flex-col items-center text-center gap-3 hover:shadow-lg transition-all duration-300 group cursor-pointer border border-transparent hover:border-[var(--button-red)]/20">
+                                                        <div className="h-14 w-14 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+                                                            <Image
+                                                                src={`https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/${item.icon}`}
+                                                                alt={item.title}
+                                                                width={32}
+                                                                height={32}
+                                                                className="w-8 h-8 object-contain"
+                                                            />
+                                                        </div>
+                                                        <span className="font-semibold text-[var(--foreground)] text-sm md:text-base leading-tight">
+                                                            {item.title}
+                                                        </span>
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            {/* Row 2: 3 items */}
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:w-3/4">
+                                                {[
+                                                    { title: "Knowledge", icon: "Wide+Range+of+Programs.svg" },
+                                                    { title: "Learning Styles", icon: "Industry-Relevant+Curriculum.svg" },
+                                                    { title: "Emotional Quotient", icon: "Emotional+Well-Being.svg" },
+                                                ].map((item, idx) => (
+                                                    <div key={idx} className="bg-[var(--card-skin)] p-4 rounded-xl flex flex-col items-center text-center gap-3 hover:shadow-lg transition-all duration-300 group cursor-pointer border border-transparent hover:border-[var(--button-red)]/20">
+                                                        <div className="h-14 w-14 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+                                                            <Image
+                                                                src={`https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/${item.icon}`}
+                                                                alt={item.title}
+                                                                width={32}
+                                                                height={32}
+                                                                className="w-8 h-8 object-contain"
+                                                            />
+                                                        </div>
+                                                        <span className="font-semibold text-[var(--foreground)] text-sm md:text-base leading-tight">
+                                                            {item.title}
+                                                        </span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

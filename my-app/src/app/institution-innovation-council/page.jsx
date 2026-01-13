@@ -193,6 +193,17 @@ const annualReportButtons2 = [
   },
 ];
 
+const iicfound = [
+  { id: 1, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/found-1.png", alt: "Foundation 1", overlayText: "Foundation level" },
+  { id: 2, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/found-2.png", alt: "Foundation 2", overlayText: "Foundation level" },
+  { id: 3, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/found-3.png", alt: "Foundation 3", overlayText: "Foundation level" },
+];
+const iicfounds = [
+  { id: 4, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/found-4.png", alt: "Foundation 4", overlayText: "Advanced level" },
+  { id: 5, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/found-5.png", alt: "Foundation 5", overlayText: "Advanced level" },
+  { id: 6, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/found-6.png", alt: "Foundation 6", overlayText: "Advanced level" },
+];
+
 
 export default function InstitutionInnovationCouncil() {
   return (
@@ -385,6 +396,45 @@ export default function InstitutionInnovationCouncil() {
           />
         </div>
       </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <SectionHeading
+            title="Foundation level"
+            titleClassName="text-center mb-10"
+            subtitle={false}
+
+          />
+
+          <Gallery
+            images={iicfound}
+            backgroundColor="bg-white [&_.swiper-wrapper]:justify-center"
+            paddingClassName="py-0"
+            forceSliderOnMobile={true}
+            title={false}
+          />
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <SectionHeading
+            title="Advanced level"
+            titleClassName="text-center mb-10"
+            subtitle={false}
+
+          />
+
+          <Gallery
+            images={iicfounds}
+            backgroundColor="bg-white [&_.swiper-wrapper]:justify-center"
+            paddingClassName="py-0"
+            forceSliderOnMobile={true}
+            title={false}
+          />
+        </div>
+      </section>
+
       <ImageContent
         hasImage={false}
         readmore={false}
