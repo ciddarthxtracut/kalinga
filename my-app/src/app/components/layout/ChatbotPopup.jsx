@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useChatbot } from "./ChatbotContext";
 
 export default function ChatbotPopup() {
-    const [isOpen, setIsOpen] = useState(false);
+    const { isOpen, toggleChat } = useChatbot();
     const [isExpanded, setIsExpanded] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
 
@@ -15,11 +16,6 @@ export default function ChatbotPopup() {
         }, 3000);
         return () => clearTimeout(timer);
     }, [isOpen]);
-
-    const toggleChat = () => {
-        setIsOpen(!isOpen);
-        if (!isOpen) setShowTooltip(false);
-    };
 
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
@@ -35,8 +31,8 @@ export default function ChatbotPopup() {
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                         className={`fixed z-[99999] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 flex flex-col font-plus-jakarta-sans ${isExpanded
-                                ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] h-[95vh] md:w-[850px] md:h-[850px] max-w-[95vw] max-h-[95vh]"
-                                : "bottom-24 right-4 md:right-8 w-[380px] md:w-[450px] h-[720px] md:h-[780px] max-h-[90vh] max-w-[calc(100vw-2rem)]"
+                            ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] h-[95vh] md:w-[850px] md:h-[850px] max-w-[95vw] max-h-[95vh]"
+                            : "bottom-24 right-4 md:right-8 w-[380px] md:w-[450px] h-[720px] md:h-[780px] max-h-[90vh] max-w-[calc(100vw-2rem)]"
                             } transition-all duration-300`}
                     >
                         {/* Header */}
