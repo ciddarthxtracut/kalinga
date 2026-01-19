@@ -28,7 +28,7 @@ function Safetyandsecuritycards() {
             title: "Fire Extinguishers",
             description:
                 "Fire extinguishers are installed at key locations in every building, which will keep everyone safe in case of emergencies.",
-            imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/placeholder-img.png",
+            imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/fire+extinguisher.jpg",
             logoSrc: "",
             subtitle: "CAMPUS SAFETY & SECURITY",
         },
@@ -36,7 +36,7 @@ function Safetyandsecuritycards() {
             title: "Emergency Helplines",
             description:
                 "In case any student faces any issue, they can immediately contact us at _______, and they will get quick support from the security team.",
-            imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/placeholder-img.png",
+            imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/helpline.jpg",
             logoSrc: "",
             subtitle: "CAMPUS SAFETY & SECURITY",
         },
@@ -52,7 +52,7 @@ function Safetyandsecuritycards() {
             title: "Drug-Free Campus",
             description:
                 "Our professional security guards are on duty all the time to ensure that no drug is entered into our campus and take strict action against students who get involved in such activities.",
-            imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/placeholder-img.png",
+            imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/drug-free.jpg",
             logoSrc: "",
             subtitle: "CAMPUS SAFETY & SECURITY",
         },
