@@ -18,8 +18,12 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'flagcdn.com',
       },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+      },
     ],
-     qualities: [75, 100],
+    qualities: [75, 100],
   },
   async redirects() {
     return [
@@ -38,12 +42,12 @@ const nextConfig = {
       config.entry = async () => {
         const entries = await originalEntry();
         const polyfillPath = require('path').resolve(__dirname, 'polyfills/dommatrix.js');
-        
+
         // Add polyfill to all entry points
         if (entries['main.js'] && !entries['main.js'].includes(polyfillPath)) {
           entries['main.js'].unshift(polyfillPath);
         }
-        
+
         return entries;
       };
     }

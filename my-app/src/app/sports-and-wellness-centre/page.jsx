@@ -6,6 +6,8 @@ import SportsFacilitiesTabs from '@/app/components/sports-and-wellness-centre/sp
 import NewsEvents from '@/app/components/home/news_and_events'
 import AdmissionCareer from '@/app/components/general/admission_cta'
 import Gallery from '@/app/components/general/gallery'
+import Sportsandwellnesshighlightvideo from '../components/sports-and-wellness-centre/sportsandwellnesshighlightvideo'
+import Sportsandwellnessvideo from '../components/sports-and-wellness-centre/sportsandwellnessvideo'
 
 
 const galleryItems = [
@@ -176,7 +178,9 @@ function Sportsandwellnesscentre() {
   }
 `}</style>
       <SportsandwellnessMainIntro />
+      <Sportsandwellnesshighlightvideo />
       <SportsWellnessOverview />
+      <Sportsandwellnessvideo />
       <div className="container py-10">
         <SportsFacilitiesTabs />
       </div>
