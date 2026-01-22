@@ -12,7 +12,7 @@ import IQACTabSection from '../components/iqac/iqac_tab_section'
 // Breadcrumb configuration
 const breadcrumbData = {
   heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
-  pageTitle: "Internal Quality Assurance Cell",
+  pageTitle: "IQAC",
   customBreadcrumbs: [
     { label: 'Home', href: '/' },
     { label: 'IQAC', href: '/internal-quality-assurance-cell' }

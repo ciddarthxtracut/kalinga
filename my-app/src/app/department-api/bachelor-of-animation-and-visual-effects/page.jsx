@@ -252,7 +252,7 @@ function Courses() {
   // QuickLinks content - Map from API curriculum_btc - Use mock data as fallback
   const quickLinksContent = courseData?.curriculum_btc && courseData.curriculum_btc.length > 0 ? {
     title: "Beyond The Curriculum ",
-    description: "",
+    description: "At KU, you will get to explore more than just academics. Here, we don’t just teach subjects, but help our students in launching their own startups and performing groundbreaking research work. ",
     links: courseData.curriculum_btc
       .sort((a, b) => (a.display_order || 0) - (b.display_order || 0))
       .filter((item, index, self) =>
@@ -269,7 +269,7 @@ function Courses() {
   } : {
     // Mock/fallback data for Beyond The Curriculum section
     title: "Beyond The Curriculum ",
-    description: "",
+    description: "At KU, you will get to explore more than just academics. Here, we don’t just teach subjects, but help our students in launching their own startups and performing groundbreaking research work. ",
     links: [
       {
         id: 1,

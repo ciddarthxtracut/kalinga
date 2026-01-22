@@ -336,6 +336,10 @@ export default function DynamicCoursePage() {
 
     admissionButtonLabel: "Admission Open",
     href: courseData.eligibility_criteria[0].cta_link || "https://admissions.kalingauniversity.ac.in/",
+    additionalButtons: [
+      { label: "Fees", href: "/ku-fees" },
+      { label: "Scheme & Syllabus", href: "#syllabus" }
+    ]
   } : null;
 
   const breadcrumbData = (courseData?.name && !loading && metadataLoaded) ? {
@@ -367,7 +371,8 @@ export default function DynamicCoursePage() {
   } : null;
 
   const whyStudyContent = courseData?.specializations && courseData.specializations.length > 0 ? {
-    sectionTitle: " Course Specialization",
+    sectionTitle: "Specialisations",
+    sectionDescription: "Choose one of your favourite specialisations and master what’s trending.",
     backgroundImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/why-this-course-1.webp",
     items: courseData.specializations
       .sort((a, b) => (a.display_order || 0) - (b.display_order || 0))
@@ -420,7 +425,7 @@ export default function DynamicCoursePage() {
       .map(faq => ({
         id: faq.id,
         question: faq.question || "",
-        answer: parseHtmlToText(faq.answer) || "",
+        answer: faq.answer || "", // Keep HTML intact for links and formatting
       }))
   } : null;
 
@@ -429,7 +434,7 @@ export default function DynamicCoursePage() {
     if (courseData?.clubs && courseData.clubs.length > 0) {
       return {
         title: "Beyond The Curriculum ",
-        description: "Beyond the classroom, Kalinga provides platforms for students to develop useful skills, explore concepts, and get ready for opportunities in the real world. Through industry-focused training, career counseling, and entrepreneurship support, students are encouraged to develop both personally and professionally.",
+        description: "At KU, you will get to explore more than just academics. Here, we don’t just teach subjects, but help our students in launching their own startups and performing groundbreaking research work.",
         links: courseData.clubs
           .sort((a, b) => (a.id || 0) - (b.id || 0)) // Optional sorting
           .map(item => ({
@@ -446,7 +451,7 @@ export default function DynamicCoursePage() {
     if (courseData?.curriculum_btc && courseData.curriculum_btc.length > 0) {
       return {
         title: "Beyond The Curriculum ",
-        description: "",
+        description: "At KU, you will get to explore more than just academics. Here, we don’t just teach subjects, but help our students in launching their own startups and performing groundbreaking research work. ",
         links: courseData.curriculum_btc
           .sort((a, b) => (a.display_order || 0) - (b.display_order || 0))
           .filter((item, index, self) =>
@@ -467,7 +472,7 @@ export default function DynamicCoursePage() {
     // 3. Fallback (Static Data)
     return {
       title: "Beyond The Curriculum ",
-      description: "Beyond the classroom, Kalinga provides platforms for students to develop useful skills, explore concepts, and get ready for opportunities in the real world. Through industry-focused training, career counseling, and entrepreneurship support, students are encouraged to develop both personally and professionally.",
+      description: "At KU, you will get to explore more than just academics. Here, we don’t just teach subjects, but help our students in launching their own startups and performing groundbreaking research work. ",
       links: [
         {
           id: 2,
@@ -645,6 +650,7 @@ export default function DynamicCoursePage() {
             admissionTitle={eligibilityContent.admissionTitle}
             admissionButtonLabel={eligibilityContent.admissionButtonLabel}
             href={eligibilityContent.href}
+            additionalButtons={eligibilityContent.additionalButtons}
           />
         </div>
       )}
@@ -661,32 +667,37 @@ export default function DynamicCoursePage() {
         <div id="specialization" className="scroll-mt-24 md:scroll-mt-28">
           <WhyStudy
             sectionTitle={whyStudyContent.sectionTitle}
+            sectionDescription={whyStudyContent.sectionDescription}
             backgroundImage={whyStudyContent.backgroundImage}
             items={whyStudyContent.items}
           />
         </div>
       )}
       {syllabusContent && (
-        <OrganogramOfKalinga
-          title={syllabusContent.title}
-          description={syllabusContent.description}
-          buttonLabel={syllabusContent.buttonLabel}
-          href={syllabusContent.href}
-          buttons={syllabusContent.buttons}
-          buttonClassName="!bg-white !text-black"
-          arrowClassName="!bg-[var(--dark-orange-red)]"
-          arrowIconClassName="!text-white"
-          textClassName="!text-black"
-          cardBackgroundColor="bg-[var(--button-red)]"
-          useContainer={false}
-          showImage={false}
-          imageUrl={syllabusContent.imageUrl}
-          imageAlt={syllabusContent.title}
-        />
+        <div id="syllabus" className="scroll-mt-24 md:scroll-mt-28">
+          <OrganogramOfKalinga
+            title={syllabusContent.title}
+            description={syllabusContent.description}
+            buttonLabel={syllabusContent.buttonLabel}
+            href={syllabusContent.href}
+            buttons={syllabusContent.buttons}
+            buttonClassName="!bg-white !text-black"
+            arrowClassName="!bg-[var(--dark-orange-red)]"
+            arrowIconClassName="!text-white"
+            textClassName="!text-black"
+            cardBackgroundColor="bg-[var(--button-red)]"
+            useContainer={false}
+            showImage={false}
+            imageUrl={syllabusContent.imageUrl}
+            imageAlt={syllabusContent.title}
+          />
+        </div>
       )}
       <div id="facilities" className="scroll-mt-24 md:scroll-mt-28">
         <Facility
           subtitle="An Environment That Empowers Students"
+          title="Step into a World-Class Infrastructure"
+          description="Every space of our campus is designed to support learning, innovation, and comfort. Our eco-friendly campus and state-of-the-art facilities are designed to create an environment where students can focus, collaborate, and make life-long memories."
         />
       </div>
       <QuickLinks

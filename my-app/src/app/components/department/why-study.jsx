@@ -36,6 +36,7 @@ const whyStudyItems = [
 export default function WhyStudy({
   items = whyStudyItems,
   sectionTitle = 'Why Study Information Technology?',
+  sectionDescription = 'Choose one of your favourite specialisations and master what’s trending.',
   backgroundImage = 'https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/why-this-course-1.webp',
   breakpoints = {
     768: { slidesPerView: 2 },
@@ -109,7 +110,8 @@ export default function WhyStudy({
           {/* Slider Cards Overlaying the Image at Bottom */}
           <div className="absolute bottom-0 left-0 right-0 px-4 md:px-6 lg:px-10 pb-4 md:pb-6">
             <div className="text-center">
-              <h2 className="mb-8  text-white text-left md:text-center">{sectionTitle}</h2>
+              <h2 className="mb-4  text-white text-left md:text-center">{sectionTitle}</h2>
+              <p className="mb-8  text-white text-left md:text-center">{sectionDescription}</p>
             </div>
             <div className="relative">
               <Swiper

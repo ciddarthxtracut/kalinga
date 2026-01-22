@@ -25,6 +25,7 @@ export default function EligibilityCriteria({
   admissionTitle = defaultContent.admissionTitle,
   admissionButtonLabel = defaultContent.admissionButtonLabel,
   href = "https://admissions.kalingauniversity.ac.in/",
+  additionalButtons = [], // Array of { label, href } objects
 }) {
   return (
     <section className="bg-[var(--dark-blue)] py-16 rounded-2xl mx-2">
@@ -59,14 +60,14 @@ export default function EligibilityCriteria({
               <ul className="space-y-4">
                 {criteria.map((criterion, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <div className="bg-[var(--dark-orange-red)] rounded-md p-1.5 flex-shrink-0">
+                    <div className="bg-[var(--card-skin)]   rounded-md p-1.5 flex-shrink-0">
                       <svg
                         width="20"
                         height="20"
                         viewBox="0 0 16 16"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="text-white transition-transform duration-300 group-hover:rotate-45"
+                        className="text-black transition-transform duration-300 group-hover:rotate-45"
                       >
                         <path
                           d="M4 12L12 4M12 4H6M12 4V10"
@@ -88,10 +89,12 @@ export default function EligibilityCriteria({
               <h3 className="text-white mb-6 text-2xl md:text-3xl lg:text-[30px] leading-tight">
                 {admissionTitle}
               </h3>
+
+              {/* Main Admission Button - Full Width */}
               {href ? (
-                <Link href={href} className="inline-flex">
+                <Link href={href} className="flex">
                   <GlobalArrowButton
-                    className="!bg-white !text-[var(--foreground)] hover:!bg-gray-100 !shadow-none hover:!shadow-none"
+                    className="!bg-white !text-[var(--foreground)] hover:!bg-gray-100 !shadow-none hover:!shadow-none "
                     arrowClassName="!bg-[var(--button-red)]"
                     arrowIconClassName="!text-white"
                     textClassName="!font-semibold"
@@ -101,13 +104,50 @@ export default function EligibilityCriteria({
                 </Link>
               ) : (
                 <GlobalArrowButton
-                  className="!bg-white !text-[var(--foreground)] hover:!bg-gray-100 !shadow-none hover:!shadow-none"
+                  className="!bg-white !text-[var(--foreground)] hover:!bg-gray-100 !shadow-none hover:!shadow-none w-full"
                   arrowClassName="!bg-[var(--button-red)]"
                   arrowIconClassName="!text-white"
                   textClassName="!font-semibold"
                 >
                   {admissionButtonLabel}
                 </GlobalArrowButton>
+              )}
+
+              {/* Divider and Additional Buttons */}
+              {additionalButtons.length > 0 && (
+                <>
+                  {/* Horizontal Divider */}
+                  <div className="w-full h-[1px] bg-white/30 my-6"></div>
+
+                  {/* Additional Buttons as Text Links */}
+                  <div className="flex flex-wrap gap-6 md:gap-8">
+                    {additionalButtons.map((button, index) => (
+                      <Link
+                        key={index}
+                        href={button.href}
+                        className="group flex items-center gap-2 text-white hover:text-white/80 transition-colors"
+                      >
+                        <span className="text-lg md:text-xl font-medium">{button.label}</span>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                        >
+                          <path
+                            d="M4 12L12 4M12 4H6M12 4V10"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </Link>
+                    ))}
+                  </div>
+                </>
               )}
             </div>
           </div>

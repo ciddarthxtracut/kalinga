@@ -111,6 +111,7 @@ export default function CareerPath({
                   stroke="currentColor"
                   strokeWidth="1"
                   strokeLinecap="round"
+
                   strokeLinejoin="round"
                 />
               </svg>

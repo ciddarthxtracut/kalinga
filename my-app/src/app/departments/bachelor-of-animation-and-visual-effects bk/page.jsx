@@ -213,7 +213,7 @@ function Courses() {
   // QuickLinks content
   const quickLinksContent = {
     title: "Beyond The Curriculum ",
-    description: " Beyond The Curriculum is a platform that provides students with the opportunity to explore the world of animation and visual effects. It is a platform that provides students with the opportunity to explore the world of animation and visual effects.",
+    description: "At KU, you will get to explore more than just academics. Here, we don’t just teach subjects, but help our students in launching their own startups and performing groundbreaking research work. ",
     links: [
       {
         id: 1,

@@ -220,12 +220,8 @@ const Breadcrumb = ({ customBreadcrumbs, heroImage, pageTitle }) => {
   // Apply lowercase restrictions only for department or course pages
   const applyLowercaseRestrictions = isDynamicRoute;
 
-  // Preserve exact casing if pageTitle comes from contextData (useBreadcrumbData)
-  // Otherwise apply toTitleCase transformation
-  const pageTitleFromContext = contextData?.pageTitle && !pageTitle;
-  const currentPageTitle = pageTitleFromContext 
-    ? contextData.pageTitle 
-    : toTitleCase(finalPageTitle || breadcrumbs[breadcrumbs.length - 1]?.label || '', applyLowercaseRestrictions);
+  // Use finalPageTitle (which includes props, static data, or context)
+  const currentPageTitle = finalPageTitle || breadcrumbs[breadcrumbs.length - 1]?.label || '';
 
   // Use pathname as key to force re-render when route changes
   return (

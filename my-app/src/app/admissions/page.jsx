@@ -14,10 +14,10 @@ import OrganogramOfKalinga from "../components/about/organogram_of_kalinga";
 // Breadcrumb configuration
 const breadcrumbData = {
   heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/student-gathered.webp",
-  pageTitle: "Discover Programs",
+  pageTitle: "Admissions",
   customBreadcrumbs: [
     { label: 'Home', href: '/' },
-    { label: 'Discover Programs', href: '/admissions' }
+    { label: 'Admissions', href: '/admissions' }
   ]
 };
 
