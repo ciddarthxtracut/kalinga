@@ -56,7 +56,7 @@ export default function EnquiryForm() {
 
     return (
         <FormWrapper
-            title="CIF / Enquiry Form"
+            title="CIF Enquiry Form"
             description="Tell us about your interests and we'll get back to you with more details about our programs."
             theme="blue"
         >

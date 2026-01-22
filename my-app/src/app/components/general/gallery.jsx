@@ -57,7 +57,27 @@ const defaultGalleryImages = [
      id: 10,
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/glimpse/glimpse-1.jpeg",
     alt: "Gallery-10"
-  }
+  },
+  {
+    id: 11,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/CIF/IMG-20250409-WA0112.jpg",
+    alt: "Gallery-11"
+  },
+  {
+    id: 12,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/CIF/IMG-20250409-WA0119.jpg",
+    alt: "Gallery-12"
+  },
+  {
+    id: 13,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/CIF/IMG-20250409-WA0135.jpg",
+    alt: "Gallery-13"
+  },
+  {
+    id: 14,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/CIF/IMG-20250409-WA0143.jpg",
+    alt: "Gallery-14"
+  },
 ]
 
 const Gallery = ({ 

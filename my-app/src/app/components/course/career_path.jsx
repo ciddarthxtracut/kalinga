@@ -88,7 +88,7 @@ export default function CareerPath({
                   <CareerCard
                     title={career.title}
                     description={career.description}
-                    imageUrl={career.imageUrl}
+                    imageUrl={career.imageUrl || career.imageSrc}
                   />
                 </div>
               </SwiperSlide>

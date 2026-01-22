@@ -8,6 +8,7 @@ import AdmissionCareer from '../components/general/admission_cta';
 import HostelFeeTabs from '../components/hostel/hosteltabs';
 import Hostelrules from '../components/hostel/hostelrules';
 import Hostelvideo from '../components/hostel/hostelvideo';
+import Specialization from '../components/department/specialization';
 
 const breadcrumbData = {
   heroImage:
@@ -24,6 +25,37 @@ if (typeof window !== "undefined") {
 }
 
 function Hostel() {
+  const specializationItems = [
+    {
+      id: 1,
+      title: "B.Com. Hons. in Banking & Finance (Includes Taxation & GST)",
+      duration: "3 Year (6 Semesters)",
+      fees: "NR 35,000/- (Per Semester)",
+      careerOpportunities: [
+        "Accounts Assistant",
+        "Bank Clerk",
+        "Tax Assistant",
+        "MIS Executive",
+        "Accounts Payable Executive",
+        "KYC Executive",
+        "Financial Helpdesk Executive",
+        "Income Tax Assistant",
+        "GST Reconciliation Executive",
+        "GST Practitioner",
+        "Statutory Filing Coordinator",
+        "GST Helpline Support Executive",
+        "E-Way Bill Generation Executive",
+        "Advance Tax Assistant",
+        "GST Filing Support Officer",
+        "Digital Tax Consultant"
+      ],
+    },
+    {
+      id: 2,
+      title: "Cybersecurity",
+      description: "Protect digital assets and secure information systems in an increasingly connected world. Learn ethical hacking, network security, cryptography, and risk management to defend against cyber threats and become a cybersecurity expert.",
+    },
+  ]
   return (
     <div>
       <style jsx global>{`
@@ -44,6 +76,12 @@ function Hostel() {
       <Hostelwarden />
       <HostelFeeTabs />
       <Hostelrules />
+      {/* <Specialization
+        items={specializationItems}
+        title="Specializations"
+        description=""
+        useWindowScroll={true}
+      /> */}
       <AdmissionCareer />
     </div>
   )

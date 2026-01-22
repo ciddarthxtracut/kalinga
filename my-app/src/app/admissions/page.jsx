@@ -278,7 +278,7 @@ export default function Admissions() {
       {
         id: 5,
         question: "Will I get the hostel facility or accommodation?",
-        answer: "Yes, we have separate boys' and girls' hostels at our campus, which offer all the basic amenities, a separate mess facility, and ensure the safety and privacy of all students with CCTV cameras and security.",
+        answer: "Yes, we have separate boy's and girl's hostels at our campus, which offer all the basic amenities, a separate mess facility, and ensure the safety and privacy of all students with CCTV cameras and security.",
       },
       {
         id: 6,

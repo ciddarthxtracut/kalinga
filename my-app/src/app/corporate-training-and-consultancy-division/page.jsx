@@ -8,36 +8,36 @@ import AdmissionCareer from '../components/general/admission_cta';
 import CTCDApplicationForm from '../components/forms/CTCDApplicationForm';
 import Gallery from '../components/general/gallery';
 import CtcdTrainingTabs from '../components/ctcd/ctcd_training_tabs';
-
+import CTCDConsultancyTabSection from '../components/ctcd/ctcd_consultancy_tab_section'
 export default function CorporateTrainingAndConsultancyDivision() {
   const Items = [
     {
       id: 1,
-      text: "Improved performance and output"
+      text: "Improved workflow across different departments"
     },
     {
       id: 2,
-      text: "Better decision-making"
+      text: "Better employee management with optimised HR processes"
     },
     {
       id: 3,
-      text: "Enhanced employee engagement rate"
+      text: "Improved performance management systems"
     },
     {
       id: 4,
-      text: "Increased competitiveness"
+      text: "Cost-cutting and reduced wastage of resources"
     },
     {
       id: 5,
-      text: "Improved leadership and team collaboration"
+      text: "Improved efficiency in day-to-day processes"
     },
     {
       id: 6,
-      text: "Improved client/customer satisfaction"
+      text: "Seamless integration of digital tools"
     },
     {
       id: 7,
-      text: "Stronger work culture and long-term profitability"
+      text: "Long-term growth and profitability"
     },
   ];
   const admissionSteps = [
@@ -98,72 +98,72 @@ export default function CorporateTrainingAndConsultancyDivision() {
       backDescription: "Follow-Up and Refresher Sessions",
     },
   ];
-  // Masterclass Activities for Tab 1 (2024-25) - 10 items
+  // Masterclass Activities for Tab 1 (2024-25) - 6 items
   const masterclassActivities = [
     {
       id: 1,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/master-class.webp",
       imageAlt: "Grow As a Leader: A Program For First-Time Managers",
-      title: "Topic of Training: Mr. Amar Pathak",
-      description: "",
-      buttonText: "",
+      title: "Grow As a Leader: A Program For First-Time Managers",
+      description: "Resource Person: Mr. Amar Pathak",
+      buttonText: "Read More",
       buttonLink: "",
-      button: "false",
+      button: "true",
       date: "17.08.2024",
     },
     {
       id: 2,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/master-class-2.webp",
       imageAlt: "Maximising Fund-Raising Resource For CSR",
-      title: "Topic of Training: Prof. Sanjay Vanani",
-      description: "",
-      buttonText: "",
+      title: "Maximising Fund-Raising Resource For CSR",
+      description: "Resource Person: Prof. Sanjay Vanani",
+      buttonText: "Read More",
       buttonLink: "",
-      button: "false",
+      button: "true",
       date: "19.10.2024",
     },
     {
       id: 3,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-3.webp",
       imageAlt: "Crack The Code: Gen Z Connection Guide For Teachers and Parents",
-      title: "Topic of Training: Dr. Sunayna Shukla",
-      description: "",
-      buttonText: "",
+      title: "Crack The Code: Gen Z Connection Guide For Teachers and Parents",
+      description: "Resource Person: Dr. Sunayna Shukla",
+      buttonText: "Read More",
       buttonLink: "",
-      button: "false",
+      button: "true",
       date: "21.12.2024",
     },
     {
       id: 4,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-4.webp",
       imageAlt: "AI-Driven Benefits for Manufacturing & Operations",
-      title: "Topic of Training: Ms. Rajashree Rajadhya",
-      description: "",
-      buttonText: "",
+      title: "AI-Driven Benefits for Manufacturing & Operations",
+      description: "Resource Person: Ms. Rajashree Rajadhya",
+      buttonText: "Read More",
       buttonLink: "",
-      button: "false",
+      button: "true",
       date: "08.03.2025",
     },
     {
       id: 5,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-5.webp",
       imageAlt: "HR Analytics: Leveraging AI & Data for Strategic HR",
-      title: "Topic of Training: Saurabh Saxena",
-      description: "",
-      buttonText: "",
+      title: "HR Analytics: Leveraging AI & Data for Strategic HR",
+      description: "Resource Person: Saurabh Saxena",
+      buttonText: "Read More",
       buttonLink: "",
-      button: "false",
+      button: "true",
       date: "03.05.2025",
     },
     {
       id: 6,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/masterclass-6.webp",
       imageAlt: "Master Your Market: Sales, Marketing & Negotiating Strategies",
-      title: "Topic of Training: Ms. Rajashree Rajadhya",
-      description: "",
-      buttonText: "",
+      title: "Master Your Market: Sales, Marketing & Negotiating Strategies",
+      description: "Resource Person: Meenakshi Ravi Shankar",
+      buttonText: "Read More",
       buttonLink: "",
-      button: "false",
+      button: "true",
       date: "26.07.2025",
     },
   ];
@@ -326,10 +326,11 @@ export default function CorporateTrainingAndConsultancyDivision() {
         subtitleImage="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/logo-ctcd.svg"
         subtitleImageAlt="CTCD Logo"
         customForm={<CTCDApplicationForm />}
-        buttonText="Know More"
-        buttonLink=""
+        buttonText="Enquire Now"
+        buttonLink="#ctcd-main-intro"
 
       />
+      <div id="ctcd-main-intro">
       <MainIntro
         title="Corporate Training and Consultancy Division (CTCD)"
         description={[
@@ -349,6 +350,7 @@ export default function CorporateTrainingAndConsultancyDivision() {
         hidePointsUntilExpanded={true}
 
       />
+      </div>
       <CtcdTrainingTabs />
       <MasterClassTab
         tab1Activities={masterclassActivities}
@@ -366,10 +368,11 @@ export default function CorporateTrainingAndConsultancyDivision() {
           "More specifically, we assist them in talent management, digital integration, and workforce planning; every approach ensures improved productivity and employee engagement. We help them make SMARTER decisions with proper resource planning and integration, enabling them to grow with a clear roadmap"
         ]}
         buttonLabel="Explore Now"
-        href="/organogram"
+        href="#ctcd-consultancy-tab-section"
         cardBackgroundColor="bg-[var(--dark-blue)]"
         useContainer={true}
       />
+            <CTCDConsultancyTabSection />
       <AdmissionSteps
         title="Our Training Cycle"
         subtitle=""

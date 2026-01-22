@@ -46,7 +46,7 @@ const cards = [
   {
     title: "Kalinga Incubation Foundation (KIF)",
     description: "KIF was established in 2023, where students' bold and unique ideas are supported so that their entrepreneurial ambitions can be turned into ACTION.",
-    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/IMG-20250409-WA0055.jpg",
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/IMG-20250409-WA0026-Picsart-AiImageEnhancer.webp",
     logoSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/logo-kif.svg",
     subtitle: "CORPORATE TRAINING & CONSULTANCY DIVISION",
     href: "/kif",
@@ -112,7 +112,18 @@ const sliderItems = [
     id: 10,
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/from-clients-12.webp",
     text: "छत्तीसगढ़ पर्यावरण संरक्षण मंडल"
-  }
+  },
+  {
+    id: 11,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/sing.webp",
+    text: "Singhal Steel and Power Pvt. Ltd."
+  },
+  {
+    id: 12,
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/simba.webp",
+    text: "Simba Brewery" 
+  },
+
 ]
 const Items = [
   {
@@ -194,8 +205,56 @@ const blueItems = [
     imageAlt: "techonviz",
   },
   {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/industry/abbott.png",
+    imageAlt: "abbott",
+  },
+  {
     imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/industry/veterans.png",
     imageAlt: "veterans",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-1.webp",
+    imageAlt: "clients-1",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-2.webp",
+    imageAlt: "clients-2",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-3.webp",
+    imageAlt: "clients-3",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-4.webp",
+    imageAlt: "clients-4",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-5.webp",
+    imageAlt: "clients-5",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-6.webp",
+    imageAlt: "clients-6",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-7.webp",
+    imageAlt: "clients-7",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-8.webp",
+    imageAlt: "Clients-8",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-9.webp",
+    imageAlt: "Clients-9",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-10.webp",
+    imageAlt: "Clients-10",
+  },
+  {
+    imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/clients-we/clients-11.webp",
+    imageAlt: "Clients-11",
   }
 ]
 const redItems = [
@@ -364,10 +423,10 @@ export default function CCRCPage() {
       redItems={redItems}
       ccrcLogo="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrclogo.webp"
     />
-    <AccreditationRanking
+    {/* <AccreditationRanking
       heading="Clients We Served"
       accreditations={accreditations}
-    />
+    /> */}
     <UpcomingConferences
       categoryIds={['']}
       title="Conferences & Events"
@@ -377,7 +436,7 @@ export default function CCRCPage() {
       backgroundColorcard="bg-white"
       href="/contact-us"
     />
-    <Gallery title=" CCRC  Glimpse" paddingClassName="py-20" />
+    <Gallery title="Glimpses" paddingClassName="py-20" />
 
     <AdmissionCareer />
 

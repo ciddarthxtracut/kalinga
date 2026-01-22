@@ -65,6 +65,7 @@ const Podcast = () => {
         showKnowMore={false}
         showButton={false}
         initialVisibleParagraphs={5}
+        disableClipPath={false}
       />
 
       <MediaCardSlider

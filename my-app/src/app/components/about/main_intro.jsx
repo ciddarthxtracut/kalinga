@@ -33,6 +33,7 @@ export default function MainIntro({
   onKnowMore = null,
   reverseLayout = false,
   applyTransform3dSlant = true,
+  disableClipPath = true,
   descriptionClassName = "text-[var(--light-text-gray)]",
   hidePointsUntilExpanded = false,
 }) {
@@ -186,10 +187,10 @@ export default function MainIntro({
                   width={500}
                   height={500}
                   className={`w-full h-[450px] object-cover rounded-2xl max-h-[500px]`}
-                  style={isDesktop ? {
+                  style={!disableClipPath ? { borderRadius: '20px' } : (isDesktop ? {
                     clipPath: applyTransform3dSlant ? 'url(#rounded-polygon-main)' : 'url(#rounded-polygon-main-inverted)',
                     WebkitClipPath: applyTransform3dSlant ? 'url(#rounded-polygon-main)' : 'url(#rounded-polygon-main-inverted)'
-                  } : { borderRadius: '20px' }}
+                  } : { borderRadius: '20px' })}
                   priority
                 />
               </div>

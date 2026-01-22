@@ -77,7 +77,8 @@ export default function Radio() {
         showKnowMore={true}
         knowMoreHref="https://play.google.com/store/apps/details?id=kalingradio.online.radions&pli=1"
         knowMoreLabel="Download Now"
-        initialVisibleParagraphs={2}   
+        initialVisibleParagraphs={2}
+        disableClipPath={false}
         />
       <Gallery images={RadioGallery} title="Kalinga Radio Highlights" paddingClassName="py-20" forceSlider={true} />
     </div>

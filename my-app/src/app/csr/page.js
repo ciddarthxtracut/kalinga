@@ -55,28 +55,24 @@ export default function KIFPage({
   const Items = [
     {
       id: 1,
-      text: "To provide training in technical and vocational education"
+      text: "To provide skill development and industry-aligned trainings"
     },
     {
       id: 2,
-      text: "To plant trees for environmental improvement"
+      text: "To provide training in technical and vocational education"
     },
     {
       id: 3,
-      text: "To organise social, cultural, and religious programs"
+      text: "To plant trees for environmental improvement"
     },
     {
       id: 4,
-      text: "To develop rural areas "
+      text: "To organise social, cultural, and religious programs "
     },
     {
       id: 5,
-      text: "To provide training in industries related to the Khadi Village Industry"
+      text: "To develop rural areas"
     },
-    {
-      id: 6,
-      text: "Promote advanced agricultural techniques and provide their training in rural areas "
-    }
   ]
 
   const centres = centresProp ?? [
@@ -476,7 +472,7 @@ export default function KIFPage({
         showImage={true}
       />
       {/* <VisionMission data={visionMissionData} showImg={false} /> */}
-      <ImageListItem items={Items} description="" imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrc.webp" title="Objectives of the Organisation" />
+      <ImageListItem items={Items} description="" imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/chart-3.webp" title="Objectives of the Organisation" />
 
       <ImageContent hasImage={true} imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrclogo.webp" className="items-center justify-center" title="Career and Corporate Resource Centre" subtitleclassName="hidden" description="It is a philanthropic organisation that is primarily involved in education and social welfare activities. The society works towards uplifting the underprivileged communities by offering them inclusive educational opportunities, healthcare facilities, and engaging in charitable activities. The society operates educational institutions, healthcare camps, scholarship programs, and other social welfare initiatives." buttonLink="/career-and-corporate-resource-centre" />
       <WhyStudy

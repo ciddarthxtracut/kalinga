@@ -32,6 +32,17 @@ const OrganogramOfKalinga = ({
 }) => {
   const descriptionArray = Array.isArray(description) ? description : [description];
 
+  // Handle anchor link clicks with smooth scrolling
+  const handleAnchorClick = (e, linkHref) => {
+    if (linkHref && linkHref.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(linkHref);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   const ButtonContent = (
     <GlobalArrowButton
       className={buttonClassName}
@@ -113,6 +124,14 @@ const OrganogramOfKalinga = ({
                         {ButtonContent}
                       </a>
                     </FlipbookTrigger>
+                  ) : href.startsWith("#") ? (
+                    <a 
+                      href={href} 
+                      className="inline-flex" 
+                      onClick={(e) => handleAnchorClick(e, href)}
+                    >
+                      {ButtonContent}
+                    </a>
                   ) : (
                     <a href={href} className="inline-flex" target="_blank" rel="noopener noreferrer">
                       {ButtonContent}

@@ -224,7 +224,8 @@ export default function OpenPositions({
   initialVisibleCount = null,
   hideCheckEligibility = false,
   titleClassName = "text-white",
-  cardTitleClassName = ""
+  cardTitleClassName = "",
+  skillsLabel = "Key Skills And Learning Outcome"
 }) {
   const itemsPerPage = initialVisibleCount || positions.length;
   const totalPages = Math.ceil(positions.length / itemsPerPage);
@@ -271,26 +272,33 @@ export default function OpenPositions({
             <div key={index} className={`bg-[var(--background)] rounded-[15px] shadow-lg ${useCourseCardLayout ? 'p-0 overflow-hidden' : 'p-6 sm:p-8'}`}>
               {useCourseCardLayout ? (
                 // Course Promotion Card Layout
-                <div className="flex flex-col lg:flex-row items-center p-8">
+                <div className={`p-8 ${(position.imageUrl || position.knowMoreButton || position.registrationButton) ? 'flex flex-col lg:flex-row items-center' : 'w-full'}`}>
                   {/* Left Section - Text Content */}
-                  <div className="flex-1">
+                  <div className={position.imageUrl || position.knowMoreButton || position.registrationButton ? "flex-1" : "w-full"}>
                     {/* Title - Training Program */}
                     <h3 className={`text-lg sm:text-xl lg:text-2xl font-plus-jakarta-sans text-[var(--button-red)] mb-4 ${cardTitleClassName}`}>
                       {position.title}
                     </h3>
 
-                    {/* Date */}
+                    {/* Date/Duration */}
                     {position.startDate && (
                       <div className="text-gray-600 text-sm sm:text-base mb-6">
-                        <p>Date: {position.startDate}{position.endDate ? ` End Date : ${position.endDate}` : ''}</p>
+                        <p>{position.showDateLabel !== false ? `Date: ${position.startDate}` : position.startDate}{position.endDate ? ` End Date : ${position.endDate}` : ''}</p>
                       </div>
                     )}
 
                     {/* Price - Registration Fee */}
                     {position.price && (
                       <div className="mb-6">
-                        <p className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black">
-                          {position.price}
+                        <p className="text-2xl sm:text-3xl lg:text-2xl text-black">
+                          {position.price.includes('(Per Semester)') ? (
+                            <>
+                              {position.price.replace(' (Per Semester)', '')}
+                              <span className="text-base sm:text-lg lg:text-base"> (Per Semester)</span>
+                            </>
+                          ) : (
+                            position.price
+                          )}
                         </p>
                       </div>
                     )}
@@ -299,7 +307,7 @@ export default function OpenPositions({
                     {position.skills && position.skills.length > 0 && (
                       <div className="mb-6">
                         <h4 className="text-lg sm:text-xl font-plus-jakarta-sans text-[var(--button-red)] mb-2">
-                          Key Skills And Learning Outcome
+                          {position.skillsLabel || skillsLabel}
                         </h4>
                         <p className="text-sm sm:text-base text-black leading-relaxed">
                           {position.skills.join(", ")}
@@ -309,61 +317,65 @@ export default function OpenPositions({
                   </div>
 
                   {/* Right Section - Image and Buttons */}
-                  <div className="flex-1 flex flex-col items-end justify-center w-full lg:w-auto">
-                    {/* Image */}
-                    {position.imageUrl && (
-                      <div className="relative w-full max-w-[450px] h-48 sm:h-56 lg:h-64 mb-4">
-                        <Image
-                          src={position.imageUrl}
-                          alt={position.imageAlt || position.title}
-                          fill
-                          className="object-cover rounded-xl"
-                        />
-                      </div>
-                    )}
-
-                    {/* Buttons - Full width to match image */}
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-[450px]">
-                      {position.knowMoreButton && (
-                        <GlobalArrowButton
-                          className="!bg-[var(--dark-orange-red)] !text-white hover:!bg-[var(--dark-orange-red)]/90 flex-1 justify-between w-full"
-                          arrowClassName="!bg-white"
-                          arrowIconClassName="!text-[var(--button-red)]"
-                          onClick={() => handleKnowMore(position)}
-                        >
-                          {position.knowMoreButton}
-                        </GlobalArrowButton>
+                  {(position.imageUrl || position.knowMoreButton || position.registrationButton) && (
+                    <div className="flex-1 flex flex-col items-end justify-center w-full lg:w-auto">
+                      {/* Image */}
+                      {position.imageUrl && (
+                        <div className="relative w-full max-w-[450px] h-48 sm:h-56 lg:h-64 mb-4">
+                          <Image
+                            src={position.imageUrl}
+                            alt={position.imageAlt || position.title}
+                            fill
+                            className="object-cover rounded-xl"
+                          />
+                        </div>
                       )}
-                      {position.registrationButton && (
-                        position.registrationLink ? (
-                          <a
-                            href={position.registrationLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 w-full"
-                          >
+
+                      {/* Buttons - Full width to match image */}
+                      {(position.knowMoreButton || position.registrationButton) && (
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-[450px]">
+                          {position.knowMoreButton && (
                             <GlobalArrowButton
-                              className="!bg-[var(--button-red)] !text-white hover:!bg-[var(--button-red)]/90 flex-1 justify-between w-full"
+                              className="!bg-[var(--dark-orange-red)] !text-white hover:!bg-[var(--dark-orange-red)]/90 flex-1 justify-between w-full"
                               arrowClassName="!bg-white"
                               arrowIconClassName="!text-[var(--button-red)]"
-                              onClick={position.onRegistrationClick}
+                              onClick={() => handleKnowMore(position)}
                             >
-                              {position.registrationButton}
+                              {position.knowMoreButton}
                             </GlobalArrowButton>
-                          </a>
-                        ) : (
-                          <GlobalArrowButton
-                            className="!bg-[var(--button-red)] !text-white hover:!bg-[var(--button-red)]/90 flex-1 justify-between w-full"
-                            arrowClassName="!bg-white"
-                            arrowIconClassName="!text-[var(--button-red)]"
-                            onClick={position.onRegistrationClick}
-                          >
-                            {position.registrationButton}
-                          </GlobalArrowButton>
-                        )
+                          )}
+                          {position.registrationButton && (
+                            position.registrationLink ? (
+                              <a
+                                href={position.registrationLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 w-full"
+                              >
+                                {/* <GlobalArrowButton
+                                  className="!bg-[var(--button-red)] !text-white hover:!bg-[var(--button-red)]/90 flex-1 justify-between w-full"
+                                  arrowClassName="!bg-white"
+                                  arrowIconClassName="!text-[var(--button-red)]"
+                                  onClick={position.onRegistrationClick}
+                                >
+                                  {position.registrationButton}
+                                </GlobalArrowButton> */}
+                              </a>
+                            ) : (
+                              <GlobalArrowButton
+                                className="!bg-[var(--button-red)] !text-white hover:!bg-[var(--button-red)]/90 flex-1 justify-between w-full"
+                                arrowClassName="!bg-white"
+                                arrowIconClassName="!text-[var(--button-red)]"
+                                onClick={position.onRegistrationClick}
+                              >
+                                {position.registrationButton}
+                              </GlobalArrowButton>
+                            )
+                          )}
+                        </div>
                       )}
                     </div>
-                  </div>
+                  )}
                 </div>
               ) : (
                 // Original Layout

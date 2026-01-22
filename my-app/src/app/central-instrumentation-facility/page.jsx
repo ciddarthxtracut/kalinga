@@ -16,6 +16,7 @@ import Testimonials from '../components/home/Testimonials'
 import OpenPositions from '../components/careers/OpenPositions';
 import SampleTesting from '../components/cif/sample_testing';
 import ProgramsTabs from '../components/cif/programs_tabs';
+import MediaCardSlider from "@/app/components/general/media-card-slider";
 // Breadcrumb configuration
 const breadcrumbData = {
   heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
@@ -32,7 +33,50 @@ if (typeof window !== 'undefined') {
 }
 
 const CentralInstrumentationFacilityPage = () => {
-
+  const videoItems2 = [
+    {
+      id: 1,
+      name: "SGS Technical Services Pvt Ltd ",
+      videoUrl: "https://www.youtube.com/watch?v=-j_ul0UUj1E",
+      thumbnail: "https://img.youtube.com/vi/-j_ul0UUj1E/maxresdefault.jpg",
+      description: "Sohini Bhattacharya - Assistant Professor",
+    },
+    {
+      id: 2,
+      name: "9M India Limited",
+      videoUrl: "https://www.youtube.com/watch?v=qnV_wuXlbCc",
+      thumbnail: "https://img.youtube.com/vi/qnV_wuXlbCc/maxresdefault.jpg",
+      description: "Advanced Surveying Techniques Total Station",
+    },
+    {
+      id: 3,
+      name: "Hirojet Campus Drive",
+      videoUrl: "https://www.youtube.com/watch?v=uX-P1WLZWfE",
+      thumbnail: "https://img.youtube.com/vi/uX-P1WLZWfE/maxresdefault.jpg",
+      description: "Protien estimation & Biochemistry Analyser",
+    },
+    {
+      id: 4,
+      name: "Airtel Campus Drive",
+      videoUrl: "https://www.youtube.com/watch?v=52vkXJDg22Q",
+      thumbnail: "https://img.youtube.com/vi/52vkXJDg22Q/maxresdefault.jpg",
+      description: "Xray Diffractometer (XRD)",
+    },
+    {
+      id: 5,
+      name: "Airtel Campus Drive",
+      videoUrl: "https://www.youtube.com/watch?v=mJXzd43KriE",
+      thumbnail: "https://img.youtube.com/vi/mJXzd43KriE/maxresdefault.jpg",
+      description: "Protien estimation & Biochemistry Analyser",
+    },
+    {
+      id: 6,
+      name: "Recruiter Testimonial",
+      videoUrl: "https://www.youtube.com/watch?v=I1CyXT1Y09k",
+      thumbnail: "https://img.youtube.com/vi/I1CyXT1Y09k/maxresdefault.jpg",
+      description: "3D Printer",
+    },
+  ];
   const quickLinks = [
     {
       id: 1,
@@ -143,12 +187,12 @@ const CentralInstrumentationFacilityPage = () => {
   return (
     <>
       <MainIntro
-        title="About the Central Instrumentation Facility"
+        title="About Our Central Instrumentation Facility"
         description={[
           "To fulfil the research needs in science and technology at a higher level, Central Instrumentation Facility labs are established at Kalinga University for students, faculty members, and research scholars. A wide range of advanced instruments, including an X-Ray Diffractometer (XRD), 3D Printer, Bio-Chemistry Analyser, and many more, are available for in-depth experimentation work under one roof. We also welcome researchers from other universities, organisations, and NGOs, promoting collaboration across different departments.",
           "Managed by a team of technical experts, KU ensures that researchers are well-supported through hands-on training programs and workshops, which not only teach them how to operate an instrument but also ways to analyse and manage data effectively. We aim to expand our sophisticated list of machines to become a National Leader in research excellence."
         ]}
-        imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/cif-+intro.webp"
+        imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/CIF/DSC07396.jpg"
         imageAlt="Central Instrumentation Facility"
         showKnowMore={true}
         initialVisibleParagraphs={1}
@@ -166,12 +210,31 @@ const CentralInstrumentationFacilityPage = () => {
       <ImageListItem
         items={items}
         imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/CIF/cif-objectives+(1).webp"
-        title="Objectives Of Our CIF"
+        title="Objectives of Our CIF"
         description="Explore state-of-the-art instruments that support advanced research across disciplines."
         buttonText="Read More"
-        className="!bg-[var(--light-gray)]"
+        className="!bg-[var(--background)]"
         textClassName="text-[var(--foreground)]"
         headingClassName="text-[var(--foreground)]"
+      />
+       <QuickLinks
+        title="What Do We Offer?"
+        description="The Central Instrumentation Facility at Kalinga University provides state-of-the-art research infrastructure and comprehensive support services. From providing access to advanced instruments to conducting skill development programs, we support researchers at every step and promote industry-academia collaboration. Whether you're a student, faculty member, research scholar, or industry professional, our tools and expertise will support your research and innovation goals."
+        links={quickLinks}
+        titleClassName="text-white"
+        showReadMore={false}
+      />
+      <OurEquipmentSlider />
+      <CifYoutubeCallSection videoUrl="https://youtu.be/XgABA9V5Zd0?si=uExSNqFKT6g_sHp2" />
+      <MediaCardSlider
+        categoryTitle=""
+        title="CIF Trainings in Action"
+        videoItems={videoItems2}
+        cardBgClass="bg-white"
+        nameTextClass="text-[var(--button-red)]"
+        descriptionTextClass=""
+        swiperClassName="ccrc-video-slider"
+        imageObjectPosition="object-bottom"
       />
       <OpenPositions
         title="Hands-On Training Programs 2025-26"
@@ -179,7 +242,29 @@ const CentralInstrumentationFacilityPage = () => {
         description=""
         useCourseCardLayout={true}
         initialVisibleCount={3}
-        positions={[
+        positions={(() => {
+          // Helper function to parse date string and return Date object
+          const parseDate = (dateStr) => {
+            // Remove spaces and normalize format (handle both "20 - 09 - 2025" and "04-10-2025")
+            const normalized = dateStr.replace(/\s+/g, '').replace(/-/g, '-');
+            const parts = normalized.split('-');
+            if (parts.length === 3) {
+              const day = parseInt(parts[0], 10);
+              const month = parseInt(parts[1], 10) - 1; // Month is 0-indexed
+              const year = parseInt(parts[2], 10);
+              return new Date(year, month, day);
+            }
+            return new Date(0); // Return epoch date if parsing fails
+          };
+
+          // Helper function to extract year from date string
+          const getYear = (dateStr) => {
+            const normalized = dateStr.replace(/\s+/g, '').replace(/-/g, '-');
+            const parts = normalized.split('-');
+            return parts.length === 3 ? parseInt(parts[2], 10) : null;
+          };
+
+          const allPositions = [
           {
             title: "Google SketchUp for 3D Developments",
             startDate: "20 - 09 - 2025",
@@ -473,33 +558,52 @@ const CentralInstrumentationFacilityPage = () => {
             registrationButton: "Registration Now",
             registrationLink: "https://forms.gle/gCgSQEyedH43aiBt7"
           }
-        ]}
+          ];
+
+          // Process positions: conditionally set buttons based on year and sort by date
+          const processedPositions = allPositions.map(position => {
+            const year = getYear(position.startDate);
+            const processed = { ...position };
+            
+            // If year is 2025, hide registration button (set to undefined)
+            if (year === 2025) {
+              delete processed.registrationButton;
+              delete processed.registrationLink;
+            }
+            // If year is 2026, keep both buttons (already set)
+            
+            return processed;
+          });
+
+          // Sort by date (most recent first)
+          processedPositions.sort((a, b) => {
+            const dateA = parseDate(a.startDate);
+            const dateB = parseDate(b.startDate);
+            return dateB - dateA; // Descending order (most recent first)
+          });
+
+          return processedPositions;
+        })()}
       />
-      <OurEquipmentSlider />
-      <CifYoutubeCallSection videoUrl="https://youtu.be/BrpxFN8iZeQ?si=_lm5M6SYKZjxVRvV" />
-      <QuickLinks
-        title="What Do We Offer?"
-        description="The Central Instrumentation Facility at Kalinga University provides state-of-the-art research infrastructure and comprehensive support services. We offer access to advanced instruments like X-Ray Diffractometer (XRD), 3D Printers, Bio-Chemistry Analysers, SEM, HPLC, and more. Our facility delivers hands-on training programs, certification courses, and workshops across multiple disciplines. We support researchers with sample testing, data analysis, and technical guidance, while fostering industry-academia collaborations. Whether you're a student, faculty member, research scholar, or industry professional, CIF provides the tools and expertise needed to advance your research and innovation goals."
-        links={quickLinks}
-        titleClassName="text-white"
-        showReadMore={false}
-      />
+
+
       <SampleTesting />
       <ProgramsTabs />
-      <ContactSection />
-      <div id="cif-form" className="scroll-mt-24">
-        <EnquiryForm />
-      </div>
+
       <Testimonials
         testimonials={cifTestimonials}
-        className="bg-[var(--light-gray)] mt-16"
+        className="bg-[var(--background)] mt-16"
         subtitle="CIF Testimonials"
-        title="Proudly Presenting the Remarkable Achievements of Kalinga University Alumni"
+        title="Hear From Our Participants"
         titleClassName="!text-[var(--foreground)]"
         subtitleClassName="!text-[var(--button-red)]"
         subtitleTextColor="!text-[var(--button-red)]"
       />
-      <Gallery title="Glimpse" />
+       <Gallery title="Glimpses" />
+      <div id="cif-form" className="scroll-mt-24">
+        <EnquiryForm />
+      </div>
+      <ContactSection />
     </>
   )
 }

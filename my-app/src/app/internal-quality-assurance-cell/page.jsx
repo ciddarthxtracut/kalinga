@@ -8,6 +8,7 @@ import ISOCertificateSection from '../components/iqac/iso_certificate_section'
 import ContactSection from '../components/cif/contact_section'
 import AdmissionCareer from '../components/general/admission_cta'
 import IQACTabSection from '../components/iqac/iqac_tab_section'
+import QuickLinks from "../components/general/quick_links";
 
 // Breadcrumb configuration
 const breadcrumbData = {
@@ -137,6 +138,30 @@ const IQACPage = () => {
       value: "510+",
     },
   ]
+
+  const relatedInitiativesLinks = [
+    {
+      id: 1,
+      icon: "",
+      title: "UBA",
+      description: "Unnat Bharat Abhiyan (UBA) was launched by the Ministry of Education in 2014, which aims to address pressing challenges of rural India and connect them with higher education institutions for their holistic growth and development. Inspired by Gandhiji’s vision in Hind Swaraj, UBA supports the growth of self-sustained villages using eco-friendly and community-based technologies. The conceptualisation of Unnat Bharat Abhiyan started with the initiative of a group of dedicated faculty members of the Indian Institute of Technology (IIT) Delhi, working for a long time in the area of rural development and appropriate technology. India’s 70% of the population lives in rural areas, and this initiative will meet their needs of life, like food, energy, sanitation, education, health, and livelihood, reducing their migration towards their cities and improving growth and job opportunities in their areas.",
+      href: "/unnat-bharat-abhiyan"
+    },
+    {
+      id: 2,
+      icon: "",
+      title: "IIC",
+      description: "In 2018, the Ministry of Education (MoE), through the MoE’s Innovation Cell (MIC), launched the Institution’s Innovation Council (IIC) in collaboration with AICTE for Higher Educational Institutions (HEIs) to promote the culture of innovation and start-up ecosystem in educational institutions. The main objective of IIC is to engage a large number of faculty members and students in various entrepreneurship and innovation-related activities. It includes IPR, Ideathon, Proof of Concept Development, Design Thinking, and project handling and management at the pre-incubation level. The IIC model enables HEIs to address key challenges such as limited people’s involvement, occasional or unplanned Innovation and Entrepreneurship (I&E) activities, limited engagement of top leaders, poor coordination, weak resource planning, and underutilization of students’ creative potential.",
+      href: "/institution-innovation-council"
+    },
+    {
+      id: 3,
+      icon: "",
+      title: "Kalinga Journal",
+      description: "Kalinga Journal is a peer-reviewed academic publication that showcases research, scholarly articles, and academic contributions from faculty members and researchers, promoting academic excellence and knowledge dissemination.",
+      href: "/research"
+    }
+  ]
   return (
     <>
       <MainIntro
@@ -152,6 +177,15 @@ const IQACPage = () => {
       <DeptHeadIntro items={MentorIntroProps} />
       <IQACTabSection />
       <ISOCertificateSection description="Kalinga University is committed to maintaining the highest standards of quality in all its academic and administrative processes. Our ISO 9001:2015 certification demonstrates our dedication to continuous improvement and excellence in education, ensuring that we meet international quality benchmarks and provide the best possible learning experience to our students" />
+      <QuickLinks
+        slider={true}
+        links={relatedInitiativesLinks}
+        title="Related Initiatives"
+        titleClassName="!text-white"
+        showReadMore={true}
+        showDescriptionReadMore={true}
+        description=""
+      />
       <ContactSection />
       <AdmissionCareer />
     </>

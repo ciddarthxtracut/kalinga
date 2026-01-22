@@ -101,7 +101,7 @@ export default function OurEquipmentSlider() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-8 sm:mb-10">
           <SectionHeading
-            title="Explore Our Equipment"
+            title="Equipments"
             subtitle=""
             titleClassName="text-center"
             subtitleClassName="text-center text-sm sm:text-base text-[var(--light-text-gray)] max-w-3xl mx-auto"

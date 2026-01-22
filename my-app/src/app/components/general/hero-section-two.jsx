@@ -72,7 +72,19 @@ const HeroSectionTwo = ({
           )}
           {/* <p className="md:text-base text-xs text-[var(--foreground)] ">{description}</p> */}
           {showButton && (
-            <Link href={buttonLink} className="inline-flex">
+            <Link 
+              href={buttonLink} 
+              className="inline-flex"
+              onClick={(e) => {
+                if (buttonLink.startsWith('#')) {
+                  e.preventDefault();
+                  const element = document.querySelector(buttonLink);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }
+              }}
+            >
               <GlobalArrowButton
                 className="!bg-white !text-black"
                 arrowClassName="!bg-[var(--button-red)]"
