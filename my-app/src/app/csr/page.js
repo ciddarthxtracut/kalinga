@@ -13,7 +13,6 @@ import AdmissionCareer from "@/app/components/general/admission_cta";
 import MainIntro from "@/app/components/about/main_intro";
 import FAQ from "@/app/components/general/faq";
 import DataTable from "@/app/components/general/data-table";
-import { useLayoutEffect } from "react";
 import Image from "next/image";
 import SectionHeading from "@/app/components/general/SectionHeading";
 import WhyStudy from "@/app/components/department/why-study";

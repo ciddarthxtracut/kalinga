@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import MainIntro from "@/app/components/about/main_intro";
 import ImageListItem from "@/app/components/ccrc/imagelistitem";
 import DataTable from "@/app/components/general/data-table";
@@ -55,7 +55,7 @@ const committeeMembers = [
 
 
 export default function GrievanceRedressalPage() {
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
     return () => {
       if (typeof window !== "undefined") delete window.__breadcrumbData;

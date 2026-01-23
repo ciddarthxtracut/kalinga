@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -76,7 +76,7 @@ export default function CenterOfExcellenceMain({
   breadcrumbData = null,
   headerTextMaxWidthClass = "max-w-screen-xl",
 }) {
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!breadcrumbData) return;
 
     if (typeof window !== "undefined") {

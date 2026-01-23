@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import APITable from "../components/general/api-table";
 import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
 
@@ -14,7 +14,7 @@ const breadcrumbData = {
 };
 
 export default function PatentsPage() {
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
         return () => {
             if (typeof window !== "undefined") delete window.__breadcrumbData;

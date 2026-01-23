@@ -226,12 +226,6 @@ export default function LaboratoriesPage() {
       }
     };
   }, [pathname]);
-  useLayoutEffect(() => {
-    if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
-    return () => {
-      if (typeof window !== "undefined") delete window.__breadcrumbData;
-    };
-  }, []);
 
   return (
     <main className="bg-white">

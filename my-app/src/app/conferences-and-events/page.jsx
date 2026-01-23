@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import ImageListItem from "@/app/components/ccrc/imagelistitem";
 import DataTable from "@/app/components/general/data-table";
 import StudentActivities from "@/app/components/department/student_activities";
@@ -124,7 +124,7 @@ const upcomingEvents = [
 ];
 
 export default function ConferencesAndEventsPage() {
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
       window.__breadcrumbData = breadcrumbData;
     }
