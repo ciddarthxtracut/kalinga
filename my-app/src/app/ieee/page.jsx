@@ -19,7 +19,7 @@ import VisaFroFrroGuidelines from "../components/international/visa_frofrro_guid
 
 const breadcrumbData = {
   heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/ieee-banner.webp",
-  pageTitle: "IEEE",
+  pageTitle: "IEEE KU Student Branch",
   objectPosition: "center",
   customBreadcrumbs: [
     { label: "Home", href: "/" },
@@ -40,7 +40,7 @@ const SECTION_TITLE_LASSNAME = "text-white";
 const admissionOrganogramContent = {
   cardBackgroundColor: "bg-[var(--button-red)]",
   title: "IEEE Student Branch Magazine",
-  description: "Explore the extensive activities and technical endeavors of the Kalinga University IEEE Student Branch. This magazine captures our journey, events, and the collaborative spirit of our members in fostering technological innovation.",
+  description: "MINDROID is a reflection of IEEE KU Student Branch’s journey into technology, innovation, and research. It highlights student articles, futuristic tech topics, and hands-on learning experiences.",
   buttonLabel: "Download Pdf",
   onClick: null,
   href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IEEE/IEEE-KU-SB-Magazine_Apr-Sept-2022.pdf",
@@ -106,7 +106,7 @@ const objectives = [
     text: "Membership - IEEE membership is open to individuals who have shown professional competency in IEEE-related fields. IEEE members have access to a wide range of resources, including publications, conferences, networking opportunities, and professional development programs."
   },
   {
-    text: "Publications - Publishes high-quality research papers, journals, conference proceedings, standards, magazines, and articles in electrical and electronics engineering and computer science fields."
+    text: "Publications - Publish high-quality research papers, journals, conference proceedings, standards, magazines, and articles in electrical and electronics engineering and computer science fields."
   },
   {
     text: "Conferences - Sponsors various events and conferences worldwide where tech professionals and practitioners present their work and exchange ideas on new technologies."
@@ -172,8 +172,12 @@ export default function Page() {
           {
             id: 1,
             title: "About IEEE Kalinga University Student Branch (IEEE KU SB)",
-            description:
-              "The IEEE student branch of Kalinga University is part of the IEEE Madhya Pradesh Section and was established on 4th April, 2022. The main objective of IEEE KU SB is to improve the learning experience of its students in the field of computer science and engineering and to develop a research environment. The branch conducts various technical activities for students, including workshops, seminars, and conferences that promote new learning. It also encourages members to take full advantage of their IEEE membership, which includes scholarships, competitions, and conference grants. The branch also encourages students to actively interact with other institutes, academicians, professionals, engineers, and scientists.\n\nStudent Branch Code: STB60204569",
+            description: (
+              <div className="space-y-3">
+                <p>The IEEE student branch of Kalinga University is part of the IEEE Madhya Pradesh Section and was established on 4th April, 2022. The main objective of IEEE KU SB is to improve the learning experience of its students in the field of computer science and engineering and to develop a research environment. The branch conducts various technical activities for students, including workshops, seminars, and conferences that promote new learning. It also encourages members to take full advantage of their IEEE membership, which includes scholarships, competitions, and conference grants. The branch also encourages students to actively interact with other institutes, academicians, professionals, engineers, and scientists.</p>
+                <p className="font-semibold">Student Branch Code: STB60204569</p>
+              </div>
+            ),
             columns: [
               { key: "slNo", label: "S. No.", width: "w-20" },
               { key: "name", label: "Name of Member", width: "w-[360px]" },
@@ -193,8 +197,12 @@ export default function Page() {
           , {
             id: 2,
             title: "About Kalinga University IEEE Women-in-Engineering Affinity Group (WIE AG)",
-            description:
-              "The IEEE Women-in-Engineering Affinity Group (WIE AG) at Kalinga University was established on 18th May 2022 under the IEEE Student Branch. It aims to empower women in the field of engineering and technology. The group actively promotes innovation through networking events, workshops, conferences, mentorship, and outreach programs. Female students from STEM get a supportive platform to collaborate and connect with the global WIE community and make a significant contribution.\n\nStudent Branch Affinity Group Code: SBA60204569",
+            description: (
+              <div className="space-y-3">
+                <p>The IEEE Women-in-Engineering Affinity Group (WIE AG) at Kalinga University was established on 18th May 2022 under the IEEE Student Branch. It aims to empower women in the field of engineering and technology. The group actively promotes innovation through networking events, workshops, conferences, mentorship, and outreach programs. Female students from STEM get a supportive platform to collaborate and connect with the global WIE community and make a significant contribution.</p>
+                <p className="font-semibold">Student Branch Affinity Group Code: SBA60204569</p>
+              </div>
+            ),
             columns: [
               { key: "slNo", label: "S. No.", width: "w-20" },
               { key: "name", label: "Name", width: "w-[320px]" },
@@ -226,8 +234,12 @@ export default function Page() {
           {
             id: 3,
             title: "About Kalinga University IEEE Aerospace Electronics Systems Society (AESS)",
-            description:
-              "The mission is to provide a responsive and relevant professional society that attracts, engages, aids, and retains a diverse set of members (age, culture, community - theoretical, managerial, and applications) worldwide in the areas of our fields of interest as defined in our constitution. AESS at KU will accomplish this through technical, chapter, and society activities through conferences, publications, education, technical operations, industry relations, and member services.\n\nStudent Branch Chapter Code: SBC60204569",
+            description: (
+              <div className="space-y-3">
+                <p>The mission is to provide a responsive and relevant professional society that attracts, engages, aids, and retains a diverse set of members (age, culture, community - theoretical, managerial, and applications) worldwide in the areas of our fields of interest as defined in our constitution. AESS at KU will accomplish this through technical, chapter, and society activities through conferences, publications, education, technical operations, industry relations, and member services.</p>
+                <p className="font-semibold">Student Branch Chapter Code: SBC60204569</p>
+              </div>
+            ),
             columns: [
               { key: "slNo", label: "S. No.", width: "w-20" },
               { key: "name", label: "Name", width: "w-[320px]" },
@@ -258,8 +270,12 @@ export default function Page() {
           , {
             id: 4,
             title: "About IEEE Kalinga University Computer Society Chapter (CS)",
-            description:
-              "Established on 13th June under the IEEE Student Branch, the IEEE Computer Society Chapter at Kalinga University promotes excellence in computing, software, and emerging technologies. It engages students through workshops, coding events, and technical activities, fostering innovation, collaboration, and professional growth. Dedicated to IEEE’s mission of “Advancing Technology for Humanity”, the society empowers members to contribute to impactful solutions in the field of computer science.\n\nStudent Branch Chapter Code: SBC60204569A",
+            description: (
+              <div className="space-y-3">
+                <p>Established on 13th June under the IEEE Student Branch, the IEEE Computer Society Chapter at Kalinga University promotes excellence in computing, software, and emerging technologies. It engages students through workshops, coding events, and technical activities, fostering innovation, collaboration, and professional growth. Dedicated to IEEE’s mission of “Advancing Technology for Humanity”, the society empowers members to contribute to impactful solutions in the field of computer science.</p>
+                <p className="font-semibold">Student Branch Chapter Code: SBC60204569A</p>
+              </div>
+            ),
             columns: [
               { key: "slNo", label: "S. No.", width: "w-20" },
               { key: "name", label: "Name", width: "w-[320px]" },
@@ -827,7 +843,7 @@ export default function Page() {
                 <div className="text-sm text-[var(--foreground)] leading-relaxed">
                   <p className="text-white">
                     <strong>Master of Ceremony: Dr. Anu G. Pillai</strong><br />
-                    Date: 2/11/2024 to 23/11/2024<br />
+                    Date: 22/11/2024 to 23/11/2024<br />
                     Timing: 12:15 PM to 1:30 PM
                   </p>
                 </div>
@@ -958,7 +974,7 @@ export default function Page() {
 
 
 
-      <Gallery title="Gallery" images={galleryImages} />
+      <Gallery title="Glimpses" images={galleryImages} />
     </>
   );
 }

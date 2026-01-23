@@ -560,6 +560,15 @@ const FAQ = ({
                       }`}
                   >
                     <div className="p-4 sm:p-5 md:p-6 bg-[var(--lite-sand)]">
+                      {section.description && (
+                        <div className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans mb-4">
+                          {typeof section.description === 'string' ? (
+                            <div dangerouslySetInnerHTML={{ __html: section.description }} />
+                          ) : (
+                            section.description
+                          )}
+                        </div>
+                      )}
                       {section.data ? (
                         <div className="overflow-x-auto">
                           <DataTable

@@ -157,7 +157,7 @@ const page = () => {
       <SwCards />
 
       {/* Image Content Section */}
-      <ImageContent
+      {/* <ImageContent
         title="Young Indians"
         subtitle={false}
         imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/young-indian.webp"
@@ -169,7 +169,7 @@ const page = () => {
         certificateLink={false}
         certificateLinkText={false}
         selectionCriteria={selectionCriteria}
-      />
+      /> */}
       <SectionHeading title="Sports & Cultural Activities"
         titleClassName="text-center" />
       <SportsFacilitiesTabs />

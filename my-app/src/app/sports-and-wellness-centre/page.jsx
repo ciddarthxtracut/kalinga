@@ -1,5 +1,6 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
+import { usePathname } from "next/navigation"
 import SportsWellnessOverview from '@/app/components/sports-and-wellness-centre/sportsandwellnesshero'
 import SportsandwellnessMainIntro from '@/app/components/sports-and-wellness-centre/sportsandwellness_main_intro'
 import SportsFacilitiesTabs from '@/app/components/sports-and-wellness-centre/sportsfacilitiestabs'
@@ -147,10 +148,6 @@ const galleryItems = [
     description: "Fitness Centre",
   },
 ]
-
-"use client";
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 function Sportsandwellnesscentre() {
   const pathname = usePathname();

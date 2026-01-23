@@ -193,14 +193,39 @@ const swCardsData = [
     logoSrc: "",
     href: "/scholarships",
   },
+  {
+    title: "Young Indians",
+    description:
+      "Young Indians (Yi) is an integral part of the Confederation of Indian Industry (CII), India’s premier business association, formed in the year 2002, with an objective of creating a platform for young Indians to realise the dream of a developed nation. YI has over 1300 direct members in 40 city chapters. Yi has 160 members in 3 corporate chapters and engages another 12,000 members through its district chapter, Farmer Nets, and Student Nets.",
+    imageSrc:
+      "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/young-indian.webp",
+    logoSrc: "",
+    href: "",
+    showModal: true, // Flag to indicate this card should open a modal
+    modalContent: {
+      detailedDescription: "The Yi membership includes young progressive Indians between the ages of 25 & 40 years. The members comprise entrepreneurs, professionals, and progressive achievers from different walks of life. \"To become the voice of young Indians globally\" is the vision of Yi, which provides a platform for young Indians to participate in and contribute by becoming an integral part of the Indian growth story.",
+      benefits: [
+        "Get a Chance to interact with other successful Young Indians.",
+        "An opportunity to start thinking and working for India.",
+        "An experience in leadership and team building.",
+        "Invaluable motivations for young minds to see how other Young achievers are making a difference.",
+        "A unique networking opportunity with peers across the country.",
+        "An opportunity to participate & get actively involved in the programmes organised by Yi at the Regional, National, and International levels."
+      ]
+    }
+  },
 ];
 
 export default function SwCards() {
   const wrapperRef = useRef(null);
 
-  // kept (reference structure) – no modal/routing logic needed
   const [open, setOpen] = useState(false);
-  const [modalData, setModalData] = useState({ title: "", description: "" });
+  const [modalData, setModalData] = useState({ 
+    title: "", 
+    description: "",
+    detailedDescription: "",
+    benefits: []
+  });
 
   useEffect(() => {
     const onKeyDown = (e) => e.key === "Escape" && setOpen(false);
@@ -212,7 +237,8 @@ export default function SwCards() {
     };
   }, [open]);
 
-  // ✅ Show "Know More" button ONLY for cards that have href
+  // ✅ Show "Know More" button ONLY for cards that have href or showModal
+  // ✅ Add click handler for modal cards
   useEffect(() => {
     const root = wrapperRef.current;
     if (!root) return;
@@ -229,22 +255,90 @@ export default function SwCards() {
 
       cardEls.forEach((cardEl) => {
         const title = getTitleFromCard(cardEl);
-        const btnWrap = cardEl.querySelector(".absolute.left-5.bottom-4");
-        if (!btnWrap) return;
-
         const data = swCardsData.find((c) => c.title === title);
+        
+        // Find button wrapper - try multiple approaches
+        let btnWrap = cardEl.querySelector(".absolute.left-5.bottom-4");
+        
+        // If not found, try finding by position classes
+        if (!btnWrap) {
+          const allDivs = cardEl.querySelectorAll("div");
+          btnWrap = Array.from(allDivs).find(div => {
+            const classes = div.className || "";
+            return classes.includes("absolute") && 
+                   classes.includes("left-5") && 
+                   classes.includes("bottom-4") &&
+                   div.querySelector("button");
+          });
+        }
+        
+        if (!btnWrap) {
+          // Last resort: find any div with absolute positioning that contains a button
+          const absoluteDivs = cardEl.querySelectorAll("div[class*='absolute']");
+          btnWrap = Array.from(absoluteDivs).find(div => div.querySelector("button"));
+        }
+        
+        if (!btnWrap) {
+          return;
+        }
 
-        // ✅ only show if href exists
-        btnWrap.style.display = data?.href ? "inline-flex" : "none";
+        // ✅ Show button if href exists or if it's a modal card
+        if (data?.href || data?.showModal) {
+          // Force visibility
+          btnWrap.style.display = "inline-flex";
+          btnWrap.style.visibility = "visible";
+          btnWrap.style.opacity = "1";
+          btnWrap.style.removeProperty("display"); // Remove any inline display:none
+          btnWrap.style.display = "inline-flex"; // Set it again
+          btnWrap.classList.add("sw-modal-button-visible");
+          
+          // Add click handler for modal cards
+          if (data?.showModal && data?.modalContent) {
+            const button = btnWrap.querySelector("button");
+            if (button && !button.dataset.modalHandlerAdded) {
+              // Mark as handled to avoid duplicate listeners
+              button.dataset.modalHandlerAdded = "true";
+              
+              // Add modal click handler (use capture phase to run before React's handler)
+              button.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setModalData({
+                  title: data.title,
+                  description: data.description,
+                  detailedDescription: data.modalContent.detailedDescription,
+                  benefits: data.modalContent.benefits
+                });
+                setOpen(true);
+              }, true); // Use capture phase
+            }
+          }
+        } else {
+          btnWrap.style.display = "none";
+          btnWrap.classList.remove("sw-modal-button-visible");
+        }
       });
     };
 
+    // Run immediately and also after a short delay to ensure DOM is ready
     apply();
+    
+    // Use setTimeout to ensure DOM is fully rendered
+    const timeoutId = setTimeout(() => {
+      apply();
+    }, 100);
 
-    const obs = new MutationObserver(() => apply());
+    const obs = new MutationObserver(() => {
+      // Debounce to avoid too many calls
+      clearTimeout(timeoutId);
+      setTimeout(apply, 50);
+    });
     obs.observe(root, { childList: true, subtree: true });
 
-    return () => obs.disconnect();
+    return () => {
+      clearTimeout(timeoutId);
+      obs.disconnect();
+    };
   }, []);
 
   return (
@@ -274,6 +368,20 @@ export default function SwCards() {
           .sw-cards-wrapper img[src*="Nss.jpeg"] {
             transform: translateY(12px) !important;
           }
+
+          /* ✅ Ensure button wrapper is visible for modal cards */
+          .sw-cards-wrapper .sw-modal-button-visible,
+          .sw-cards-wrapper .absolute.left-5.bottom-4.sw-modal-button-visible {
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            z-index: 10 !important;
+          }
+          
+          /* ✅ Ensure all button wrappers are visible by default, we'll hide the ones without href/modal */
+          .sw-cards-wrapper .absolute.left-5.bottom-4 {
+            display: inline-flex;
+          }
         `}</style>
 
         <div className="container mx-auto px-4 pt-16">
@@ -285,7 +393,7 @@ export default function SwCards() {
         </div>
       </section>
 
-      {/* (kept for reference structure; not triggered) */}
+      {/* Modal Popup */}
       {open && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center px-4"
@@ -296,10 +404,10 @@ export default function SwCards() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
 
           <div
-            className="relative w-full max-w-2xl rounded-2xl bg-white p-6 md:p-8 shadow-2xl"
+            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 md:p-8 shadow-2xl"
             onMouseDown={(e) => e.stopPropagation()}
           >
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start justify-between gap-4 mb-4">
               <h3 className="font-stix text-2xl md:text-3xl text-[var(--foreground)]">
                 {modalData.title}
               </h3>
@@ -307,22 +415,42 @@ export default function SwCards() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="rounded-full border border-black/10 px-3 py-1 text-sm hover:bg-black/5"
+                className="rounded-full border border-black/10 px-3 py-1 text-sm hover:bg-black/5 flex-shrink-0"
                 aria-label="Close"
               >
                 ✕
               </button>
             </div>
 
-            <p className="mt-4 text-[var(--light-text-gray)] leading-relaxed">
-              {modalData.description}
-            </p>
+            <div className="space-y-4 text-[var(--light-text-gray)] leading-relaxed font-plus-jakarta-sans">
+              {/* Initial Description */}
+              <p>{modalData.description}</p>
+
+              {/* Detailed Description */}
+              {modalData.detailedDescription && (
+                <p className="mt-4">{modalData.detailedDescription}</p>
+              )}
+
+              {/* Benefits List */}
+              {modalData.benefits && modalData.benefits.length > 0 && (
+                <div className="mt-6">
+                  <h4 className="font-semibold text-lg text-[var(--foreground)] mb-3">
+                    The following are the benefits of being a member of the Young Indians:
+                  </h4>
+                  <ul className="list-disc list-inside space-y-2 ml-2">
+                    {modalData.benefits.map((benefit, index) => (
+                      <li key={index}>{benefit}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
 
             <div className="mt-6 flex justify-end">
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="rounded-lg bg-[var(--button-red)] px-5 py-2 text-sm font-medium text-white"
+                className="rounded-lg bg-[var(--button-red)] px-5 py-2 text-sm font-medium text-white hover:bg-[var(--button-red)]/90 transition-colors"
               >
                 Close
               </button>

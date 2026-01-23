@@ -395,6 +395,41 @@ export default function Research() {
       description: "Pharmachy department",
     },
   ]
+  const videoItems3 = [
+    {
+      id: 1,
+      name: "Anant Jha",
+      videoUrl: "",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Aditi+singh.jpeg",
+      description: "Aditya Birla Fashion Retail Ltd.",
+      title: "Aditi Singh - BBA",
+    },
+    {
+      id: 2,
+      name: "Ashley Christina Thomas",
+      videoUrl: "",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Maryam+Nasiru.jpeg",
+      description: "Artemis Hospital, Gurugram",
+      title: "Maryam Nasiru - BPHARMA",
+
+    },
+    {
+      id: 3,
+      name: "David Kisku",
+      videoUrl: "",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Nayna.jpeg",
+      description: "Tata Steel Ltd.",
+      title: "Nayna Chakhiyar - BCOM B&F",
+    },
+    {
+      id: 4,
+      name: "Hrithik Kumar Sharma",
+      videoUrl: "",
+      thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Trupti+Ranjan+Sahu.jpeg",
+      description: "Aditya Birla Group",
+      title: "Trupti Ranjan Sahu - MBA",
+    },
+  ]
   const videoItems2 = [
     {
       id: 1,
@@ -867,6 +902,15 @@ export default function Research() {
             ]
           }
         ]}
+      />
+      <MediaCardSlider
+        categoryTitle=""
+        title="Internship Details"
+        videoItems={videoItems3}
+        cardBgClass="bg-white"
+        nameTextClass="text-[var(--button-red)]"
+        descriptionTextClass=""
+        swiperClassName="ccrc-video-slider"
       />
       <Gallery
         title="Industrial Visit"
