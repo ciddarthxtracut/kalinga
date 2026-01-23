@@ -48,16 +48,16 @@ export default function TestPage() {
                 return (
                     <div
                         key={index}
-                        className={`mx-5 box-border min-h-[330px] rounded-[32px] sticky flex items-center justify-center font-sans p-8 border-3 border-gray-300 ${backgroundColor}`}
+                        className={`mx-5 box-border min-h-[330px] rounded-[32px] sticky flex items-center justify-center font-sans md:p-8 p-4 border-3 border-gray-300 ${backgroundColor}`}
                         style={{
                             top: `${calculateTopPosition(index)}px`,
                             width: calculateWidth(index)
                         }}
                     >
-                        <div className={`${backgroundColor} rounded-2xl p-6 md:p-8 w-full flex items-center gap-6 md:gap-12`}>
+                        <div className={`${backgroundColor} rounded-2xl p-2 md:p-8 w-full flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12`}>
                             {/* Left Side - Icon */}
                             <div className="flex-shrink-0">
-                                <div className="w-24 h-24 md:w-32 md:h-32 relative">
+                                <div className="w-16 h-16 md:w-32 md:h-32 relative">
                                     <Image
                                         src={card.icon}
                                         alt={card.title}
@@ -68,8 +68,8 @@ export default function TestPage() {
                             </div>
                             
                             {/* Right Side - Title and Description */}
-                            <div className="flex-1">
-                                <h2 className=" mb-3 md:mb-4  text-[var(--foreground)]">
+                            <div className="flex-1 min-w-0 w-full md:w-auto">
+                                <h2 className="mb-3 text-2xl md:text-4xl md:mb-4 text-[var(--foreground)]">
                                     {card.title}
                                 </h2>
                                 <p className="leading-relaxed font-plus-jakarta-sans">

@@ -281,7 +281,7 @@ export default function SDGCell() {
         disableClipPath={false}
       />
       <SdgTabSection />
-      <SpecializationCard />
+      {/* <SpecializationCard /> */}
       <FAQ
         title=""
         subtitle=""
