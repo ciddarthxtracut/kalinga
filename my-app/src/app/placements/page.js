@@ -39,11 +39,11 @@ export default function Research() {
         { label: 'Placements', href: '/placements' }
       ]
     };
-    
+
     if (typeof window !== 'undefined') {
       window.__breadcrumbData = breadcrumbData;
     }
-    
+
     return () => {
       if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
         delete window.__breadcrumbData;
@@ -751,6 +751,19 @@ export default function Research() {
         title={skillsContent.title}
         description={skillsContent.description}
         careers={skillsContent.careers}
+      />
+      <ImageContent
+        hasImage={false}
+        buttonText={false}
+        buttonLink=""
+        className="items-center justify-center"
+        title="Internship Opportunities At KU"
+        subtitleclassName="hidden"
+        description={
+          <>
+            At KU, you don’t have to wait till graduation, but we’ll help you get a sneak peek into the practical world with our internship programs, which will also make your CV stand out during your job interviews.
+          </>
+        }
       />
       <Placements hideMarquee={true} hideMilestones={true} bgColor="bg-[var(--light-gray)] mx-2 rounded-xl" marginClassName="mb-0" />
       <MediaCardSlider

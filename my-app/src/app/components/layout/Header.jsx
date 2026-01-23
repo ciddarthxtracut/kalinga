@@ -138,7 +138,7 @@ const Header = () => {
               { label: 'Finance Committee', href: '#' },
               { label: 'Library Committee', href: '#' },
               { label: 'Anti Ragging', href: '/anti-ragging-cell' },
-              { label: 'ICC', href: '/institution-innovation-council' },
+              { label: 'IIC', href: '/institution-innovation-council' },
               { label: 'IQAC', href: '/iqac' },
               { label: 'Planning Board', href: '#' },
             ]
@@ -159,6 +159,7 @@ const Header = () => {
             links: [
               { label: 'Academics', href: '/academics' },
               { label: 'Academic Calendar', href: '/academic-calendar' },
+              { label: 'Academic Planner', href: '/academic-planner' },
             ]
           },
           {
@@ -218,9 +219,8 @@ const Header = () => {
               { label: 'Discover Programs', href: '/admissions' },
               { label: 'Entrance Exam – KALSEE/KALMAT', href: '/entrance-exam' },
               { label: 'Scholarships', href: '/scholarships' },
-              { label: 'Kalinga Plus', href: 'https://kalingaplus.kalingauniversity.ac.in/' },
-              { label: 'B.Voc Admission', href: 'https://bvoc.kalingauniversity.ac.in/' },
-              { label: 'Apply Now', href: 'https://admissions.kalingauniversity.ac.in/' },
+              { label: 'B.Voc admission', href: 'https://bvoc.kalingauniversity.ac.in/' },
+              { label: 'Apply now', href: 'https://admissions.kalingauniversity.ac.in/' },
 
 
             ],
@@ -230,8 +230,9 @@ const Header = () => {
             links: [
               { label: 'Value Additions', href: '/value-additions' },
               { label: 'Download Admission Form', href: '#' },
+              { label: 'Fees structure of ku', href: '/ku-fees' },
               { label: 'Document verification', href: '/document-verification' },
-              { label: 'Pay your Fees', href: '/pay-your-fees' },
+              { label: 'Pay your fees', href: '/pay-your-fees' },
             ]
           }
         ]
@@ -282,9 +283,9 @@ const Header = () => {
             links: [
               { label: 'Research Overview', href: '/research' },
               { label: 'IPR (Intellectual Property Rights Cell)', href: '/ipr-cell' },
-              { label: 'Books / Book Chapters', href: '#' },
+              { label: 'Books Publications by Ku', href: '/book-publications' },
               { label: 'Ph. D', href: '/phd' },
-              { label: 'Research Resources', href: '/research-resources' },
+              // { label: 'Research Resources', href: '/research-resources' },
               // { label: 'Research Facilities', href: '/research-facilities' },
               { label: 'Laboratories', href: '/laboratories' },
             ]
