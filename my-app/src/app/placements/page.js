@@ -23,6 +23,7 @@ import Partner from "../components/ccrc/partner";
 import ImageListItem from '@/app/components/ccrc/imagelistitem'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/app/components/general/tab'
 import CareerPath from '@/app/components/course/career_path'
+import ImageContent from '@/app/components/ccrc/imagecontent'
 
 export default function Research() {
   const { openFlipbook } = useFlipbook();
