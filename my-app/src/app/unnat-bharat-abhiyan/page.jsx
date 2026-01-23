@@ -264,9 +264,6 @@ export default function UnnatBharatAbhiyanPage() {
         </div>
       </div>
 
-
-
-
       <div className="container mx-auto mt-16">
         {/* Title */}
         <h2 className="font-stix text-2xl md:text-[36px] text-center text-[var(--foreground)] mb-6">

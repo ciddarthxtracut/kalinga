@@ -44,7 +44,7 @@ const FAQ = ({
   showHeading = true, // Optional prop to enable/disable heading
   titleClassName = "text-center", // Optional prop for title styling
   noSection = false, // Optional prop to render without section wrapper
-  variant = "default", // "default" | "editable" | "table" | "table-display" | "button"
+  variant = "default", // "default" | "editable" | "table" | "table-display" | "button" | "card-display" | "card-display"
   // For table-display variant
   tableColumns = [
     { key: "slNo", label: "Sl. No", width: "w-20" },
@@ -575,6 +575,236 @@ const FAQ = ({
                           className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans"
                           dangerouslySetInnerHTML={{ __html: section.answer }}
                         />
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+
+            {/* Regular FAQ Items */}
+            {regularItems.map((item) => {
+              const fullId = `regular-${item.id}`
+              const isOpen = unifiedOpenId === fullId
+
+              return (
+                <div
+                  key={item.id}
+                  className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+                >
+                  <button
+                    onClick={() => toggleUnified(item.id, 'regular')}
+                    className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
+                  >
+                    <h3 className="text-left text-lg font-plus-jakarta-sans font-semibold text-gray-800">
+                      {item.question}
+                    </h3>
+                    <svg
+                      className={`w-8 h-8 flex-shrink-0 text-gray-600 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''
+                        }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                  >
+                    <div className="p-4 sm:p-5 md:p-6 bg-[var(--lite-sand)]">
+                      {Array.isArray(item.answer) ? (
+                        <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans">
+                          {item.answer.map((listItem, idx) => (
+                            <li key={idx}>
+                              {containsHTML(listItem) ? (
+                                <span dangerouslySetInnerHTML={{ __html: listItem }} />
+                              ) : (
+                                renderTextWithLinks(listItem)
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      ) : containsHTML(item.answer) ? (
+                        <div
+                          className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans"
+                          dangerouslySetInnerHTML={{ __html: item.answer }}
+                        />
+                      ) : (
+                        <p className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans">
+                          {renderTextWithLinks(item.answer)}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </Wrapper>
+    )
+  }
+
+  // Render Card Display Variant
+  if (variant === "card-display") {
+    const tableSectionsList = tableSections.length > 0
+      ? tableSections
+      : items
+        .filter(item => item.answer && typeof item.answer === 'object' && item.answer.type === 'table')
+        .map(item => ({
+          id: item.id,
+          title: item.question,
+          data: item.answer.rows,
+          columns: item.answer.headers ? [
+            { key: "id", label: item.answer.headers[0] || "S.No", width: "w-20" },
+            { key: "name", label: item.answer.headers[1] || "Name", width: "flex-1" }
+          ] : undefined
+        }))
+
+    const regularItems = items
+      .filter(item =>
+        !(item.answer && typeof item.answer === 'object' && item.answer.type === 'table')
+      )
+      .map((item, index) => ({
+        ...item,
+        id: item.id !== undefined ? item.id : index + 1
+      }))
+
+    const [unifiedOpenId, setUnifiedOpenId] = useState(() => {
+      if (tableSectionsList.length > 0) {
+        return `card-${tableSectionsList[0].id || 0}`
+      } else if (regularItems.length > 0) {
+        return `regular-${regularItems[0].id}`
+      }
+      return null
+    })
+
+    const toggleUnified = (id, type) => {
+      const fullId = `${type}-${id}`
+      setUnifiedOpenId(prev => prev === fullId ? null : fullId)
+    }
+
+    return (
+      <Wrapper className={`${backgroundColor} ${pyClassName}`}>
+        <div className="container mx-auto px-2">
+          {showHeading && (
+            <div className="mb-5">
+              <SectionHeading
+                title={title}
+                subtitle={subtitle}
+                titleClassName={titleClassName}
+                subtitleClassName={`text-center ${subtitleClassName}`}
+              />
+            </div>
+          )}
+
+          <div className="w-full max-w-6xl mx-auto space-y-4">
+            {/* Card Sections */}
+            {tableSectionsList.map((section, index) => {
+              const sectionId = section.id || index
+              const fullId = `card-${sectionId}`
+              const isOpen = unifiedOpenId === fullId
+
+              return (
+                <div key={section.id || index} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                  <button
+                    onClick={() => toggleUnified(sectionId, 'card')}
+                    className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
+                  >
+                    <h3 className="text-left text-lg font-plus-jakarta-sans font-semibold text-gray-800">
+                      {section.title}
+                    </h3>
+                    <svg
+                      className={`w-8 h-8 flex-shrink-0 text-gray-600 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''
+                        }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[10000px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                  >
+                    <div className="p-4 sm:p-5 md:p-6 bg-[var(--lite-sand)]">
+                      {section.data && section.data.length > 0 ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
+                          {section.data.map((member, memberIndex) => {
+                            // Find name field for prominent display
+                            const nameField = section.columns?.find(col => col.key === 'name' || col.key === 'nameOfMember' || col.key === 'nameOfElectedCandidate')
+                            const nameValue = nameField ? member[nameField.key] : null
+                            
+                            // Get other fields (excluding slNo and name)
+                            const otherFields = section.columns?.filter(col => col.key !== 'slNo' && col.key !== nameField?.key) || []
+                            
+                            return (
+                              <div
+                                key={memberIndex}
+                                className="bg-[var(--card-skin)] p-6 rounded-xl flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all duration-300 group cursor-pointer border border-transparent hover:border-[var(--button-red)]/20"
+                              >
+                                {/* Name - Prominently displayed like title in CSR cards */}
+                                {nameValue && (
+                                  <span className="font-semibold text-[var(--foreground)] text-lg leading-tight">
+                                    {nameValue}
+                                  </span>
+                                )}
+                                
+                                {/* Other fields displayed below */}
+                                {otherFields.length > 0 && (
+                                  <div className="w-full space-y-2">
+                                    {otherFields.map((column) => {
+                                      const value = member[column.key]
+                                      if (!value) return null
+                                      
+                                      return (
+                                        <div key={column.key} className="w-full">
+                                          <p className="text-xs font-semibold text-gray-500 uppercase mb-1">
+                                            {column.label}
+                                          </p>
+                                          <p className="text-sm text-[var(--foreground)] leading-relaxed font-plus-jakarta-sans">
+                                            {value}
+                                          </p>
+                                        </div>
+                                      )
+                                    })}
+                                  </div>
+                                )}
+                                
+                                {/* Fallback if no columns defined */}
+                                {!section.columns && (
+                                  <div className="w-full space-y-2">
+                                    {Object.entries(member).map(([key, value], idx) => {
+                                      if (key === 'slNo' || !value) return null
+                                      // Show first field as title
+                                      if (idx === 1) {
+                                        return (
+                                          <span key={key} className="font-semibold text-[var(--foreground)] text-lg leading-tight block">
+                                            {value}
+                                          </span>
+                                        )
+                                      }
+                                      return (
+                                        <div key={key} className="w-full">
+                                          <p className="text-xs font-semibold text-gray-500 uppercase mb-1">
+                                            {key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
+                                          </p>
+                                          <p className="text-sm text-[var(--foreground)] leading-relaxed font-plus-jakarta-sans">
+                                            {value}
+                                          </p>
+                                        </div>
+                                      )
+                                    })}
+                                  </div>
+                                )}
+                              </div>
+                            )
+                          })}
+                        </div>
                       ) : null}
                     </div>
                   </div>

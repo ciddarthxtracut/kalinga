@@ -385,7 +385,7 @@ const TrainingAndPlacementCell = () => {
               </div>
 
               <div>
-                <h4 className="font-stix text-xl  text-[var(--foreground)] mb-3">
+                <h4 className="font-stix text-xl text-[var(--foreground)] mb-3">
                   Learning Methodology
                 </h4>
                 <p className="text-[var(--light-text-gray)] mb-3">
@@ -407,7 +407,7 @@ const TrainingAndPlacementCell = () => {
                 <p className="text-[var(--light-text-gray)] leading-relaxed">
                   Want to know if you are ready for interviews or if your skills match recruiters' requirements?
                 </p>
-                <p className="text-[var(--light-text-gray)] leading-relaxed text-justifymt-3">
+                <p className="text-[var(--light-text-gray)] leading-relaxed text-justify mt-3">
                   Introducing Corporate Employability Assessment Test (CEAT)! A test that is designed to evaluate students' job-readiness by measuring their aptitude, technical skills, and communication skills as per industry standards. This test further helps our experts pinpoint the student skill gaps, enabling us to design tailored training programs and make them ready to ace job interviews.
                 </p>
               </div>
@@ -426,15 +426,15 @@ const TrainingAndPlacementCell = () => {
               </div>
 
               <div>
-                <h4 className="font-stix text-xl  text-[var(--foreground)] mb-3">
+                <h4 className="font-stix text-xl text-[var(--foreground)] mb-3">
                   Meta Skills Training
                 </h4>
-                <p className="text-[var(--light-text-gray)] leading-relaxed text-justifymb-4">
+                <p className="text-[var(--light-text-gray)] leading-relaxed text-justify mb-4">
                   Built on the principle that employability is not taught but developed, this program covers 350+ hours of structured training on job-ready skills and maximises students' career potential. Through behavioural training, experiential learning, and corporate simulations, this Empowerment for Employability and Entrepreneurship (EEE) model bridges the gap between theoretical knowledge and corporate expectations.
                 </p>
 
-                <div className="mb-4">
-                  <h5 className="font-stix text-lg  text-[var(--foreground)] mb-2">
+                <div className="mb-4 pt-4">
+                  <h5 className="font-stix text-lg text-[var(--foreground)] mb-2">
                     Core Objectives:
                   </h5>
                   <ul className="list-disc list-inside text-[var(--light-text-gray)] space-y-2 ml-4">
@@ -447,7 +447,7 @@ const TrainingAndPlacementCell = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h5 className="font-stix text-lg  text-[var(--foreground)] mb-2">
+                  <h5 className="font-stix text-lg text-[var(--foreground)] mb-2">
                     Methodology:
                   </h5>
                   <p className="text-[var(--light-text-gray)] mb-3">
@@ -455,7 +455,7 @@ const TrainingAndPlacementCell = () => {
                   </p>
                   <div className="space-y-3">
                     <div>
-                      <p className=" text-[var(--foreground)] mb-1">Industry-Focused Approach -</p>
+                      <h5 className="font-stix text-lg text-[var(--foreground)] mb-2">Industry-Focused Approach -</h5>
                       <ul className="list-disc list-inside text-[var(--light-text-gray)] space-y-1 ml-4">
                         <li>Experiential activities, role-plays, and group discussions</li>
                         <li>Mentorship from industry experts</li>
@@ -463,7 +463,7 @@ const TrainingAndPlacementCell = () => {
                       </ul>
                     </div>
                     <div>
-                      <p className=" text-[var(--foreground)] mb-1">Individual-Focused Approach -</p>
+                      <h5 className="font-stix text-lg text-[var(--foreground)] mb-2">Individual-Focused Approach -</h5>
                       <ul className="list-disc list-inside text-[var(--light-text-gray)] space-y-1 ml-4">
                         <li>Identifying their strengths, challenges, and interests</li>
                         <li>Setting personalised career paths and actionable goals</li>
@@ -475,7 +475,7 @@ const TrainingAndPlacementCell = () => {
                 </div>
 
                 <div>
-                  <h5 className="font-stix text-lg  text-[var(--foreground)] mb-2">
+                  <h5 className="font-stix text-lg text-[var(--foreground)] mb-2">
                     Year-Wise Development Modules:
                   </h5>
                   <ul className="list-disc list-inside text-[var(--light-text-gray)] space-y-2 ml-4">
@@ -487,7 +487,7 @@ const TrainingAndPlacementCell = () => {
               </div>
 
               <div>
-                <h4 className="font-stix text-xl  text-[var(--foreground)] mb-3">
+                <h4 className="font-stix text-xl text-[var(--foreground)] mb-3">
                   Apti Mitra Module
                 </h4>
                 <p className="text-[var(--light-text-gray)] leading-relaxed">
@@ -496,7 +496,7 @@ const TrainingAndPlacementCell = () => {
               </div>
 
               <div>
-                <h4 className="font-stix text-xl  text-[var(--foreground)] mb-3">
+                <h4 className="font-stix text-xl text-[var(--foreground)] mb-3">
                   Outbound Training
                 </h4>
                 <p className="text-[var(--light-text-gray)] leading-relaxed">

@@ -64,13 +64,12 @@ export default function CampusLife() {
         {/* Text Content */}
         <div className="absolute bottom-6 md:bottom-10 w-full text-center px-4 md:px-6">
           <div className="mb-2 md:mb-3">
-            <SectionHeading title="Campus Life" titleClassName="text-white !text-2xl md:!text-[40px]" />
+            <SectionHeading title="Experience the KU Vibe" titleClassName="text-white !text-2xl md:!text-[40px]" />
           </div>
           <div className="max-w-5xl mx-auto">
             <p className={`text-white text-xs sm:text-sm md:text-base leading-relaxed ${!isExpanded ? 'line-clamp-2 md:line-clamp-none' : ''
               }`}>
-              At Kalinga University, experience a campus life that's vibrant, inspiring, and feels like home. Here, every day is a new opportunity to learn, explore, and grow — both personally and professionally.
-              From academic excellence and cultural festivals to sports, innovation hubs, and student clubs, the University offers an environment that encourages creativity, collaboration, and leadership. Our 50-acre green campus provides the perfect setting for students to discover their potential and create lifelong memories.
+              Our students don’t just attend college they experience a whole new and exiting college life. Each day brings opportunities to explore, connect, and create memories that last a lifetime.
             </p>
             <button
               onClick={() => setIsExpanded(!isExpanded)}

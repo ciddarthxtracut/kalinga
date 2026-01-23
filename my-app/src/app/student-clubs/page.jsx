@@ -199,6 +199,8 @@ export default function Page() {
         imageAlt="Student Clubs"
         showButton={false}
         showKnowMore={false}
+        sectionClassName="py-8"
+        disableClipPath={false}
       />
 
       {/* Universal Title + Subheading */}

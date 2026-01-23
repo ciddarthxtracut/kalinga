@@ -18,12 +18,10 @@ import Image from "next/image";
 import SectionHeading from "@/app/components/general/SectionHeading";
 import WhyStudy from "@/app/components/department/why-study";
 import Gallery from "@/app/components/general/gallery";
-'use client';
-
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
-export default function KIFPage({
+export default function CSRPage({
   visionMissionData: visionMissionDataProp,
   boxItems: boxItemsProp,
 
@@ -451,20 +449,6 @@ export default function KIFPage({
     // },
 
   ]
-
-  // Set breadcrumb data when component mounts, clear when it unmounts
-  // Use useLayoutEffect to ensure it's set before Breadcrumb component checks
-  useLayoutEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    // Cleanup: clear breadcrumb data when component unmounts
-    return () => {
-      if (typeof window !== 'undefined') {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, []);
 
   return (
     <div>

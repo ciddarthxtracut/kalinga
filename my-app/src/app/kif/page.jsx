@@ -26,7 +26,10 @@ export default function KIFPage({
   boxItems: boxItemsProp,
   testimonials: testimonialsProp,
   links: linksProp,
-}) {
+  kifSteps: kifStepsProp,
+  organogram: organogramProp,
+  centres: centresProp,
+} = {}) {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -51,11 +54,6 @@ export default function KIFPage({
       }
     };
   }, [pathname]);
-
-  kifSteps: kifStepsProp,
-  organogram: organogramProp,
-  centres: centresProp,
-} = {}) {
 
   const visionMissionData = visionMissionDataProp ?? [{
     visionTitle: "Vision",

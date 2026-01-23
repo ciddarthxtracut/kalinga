@@ -6,6 +6,7 @@ import { useBreadcrumbData } from "../components/layout/BreadcrumbContext";
 import ImageContent from "../components/ccrc/imagecontent";
 import MainIntro from "../components/about/main_intro";
 import SdgTabSection from "../components/sdg-cell/sdg-tab-section";
+import Image from "next/image";
 
 // Breadcrumb configuration
 const breadcrumbData = {
@@ -21,32 +22,57 @@ const breadcrumbData = {
 // FAQ items for different sections
 const faqItems = [
   {
+    id: 18,
+    title: "SDG Cell Establishment and Mission - Year of Establishment: 12/04/2022",
+    description: (
+      <div className="space-y-4">
+        <p>The University has established a Sustainable Development Goals (SDGs) cell to promote, implement, and monitor initiatives related to the SDGs. The cell serves as a dynamic hub dedicated to advancing the principles and objectives outlined in the United Nations 2030 Agenda for Sustainable Development. This specialised unit operates at the intersection of education, research, and community engagement, embodying the Universitys commitment to providing a more sustainable and equitable world.</p>
+        <p>One of the primary functions of this cell is to cultivate awareness and advocacy for the SDGs within the university community. Through targeted campaigns, educational programs, and outreach initiatives, the cell endeavours to instil a deep understanding of the global challenges addressed by the SDGs and the imperative for collective action.</p>
+        <p>Integral to its mission is the integration of sustainable development principles into the universitys academic landscape. The SDGs cell collaborates with faculty to infuse relevant content into diverse courses, ensuring that students from various disciplines are equipped with the knowledge and skills needed to contribute meaningfully to sustainable development.</p>
+      </div>
+    ),
+    buttons: [],
+  },
+  {
     id: 1,
     title: "17 Sustainable Development Goals",
     description: (
-      <ul className="list-disc pl-5 space-y-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
         {[
-          "No Poverty",
-          "Zero Hunger",
-          "Good Health and Well-being",
-          "Quality Education",
-          "Gender Equality",
-          "Clean Water and Sanitation",
-          "Affordable and Clean Energy",
-          "Decent Work and Economic Growth",
-          "Industry, Innovation and Infrastructure",
-          "Reduced Inequality",
-          "Sustainable Cities and Communities",
-          "Responsible Consumption and Production",
-          "Climate Action",
-          "Life Below Water",
-          "Life on Land",
-          "Peace, Justice and Strong Institutions",
-          "Partnership for the Goals",
+          { title: "No Poverty", icon: "Community+Services.svg" },
+          { title: "Zero Hunger", icon: "Holistic+Development.svg" },
+          { title: "Good Health and Well-being", icon: "Emotional+Well-Being.svg" },
+          { title: "Quality Education", icon: "Career+Counseling.svg" },
+          { title: "Gender Equality", icon: "Mental+Health+Support.svg" },
+          { title: "Clean Water and Sanitation", icon: "facility-management.svg" },
+          { title: "Affordable and Clean Energy", icon: "Extensive+Research+Facilities.svg" },
+          { title: "Decent Work and Economic Growth", icon: "Networking+Opportunities.svg" },
+          { title: "Industry, Innovation and Infrastructure", icon: "Industrial+Visits.svg" },
+          { title: "Reduced Inequality", icon: "Global.svg" },
+          { title: "Sustainable Cities and Communities", icon: "campus+life.svg" },
+          { title: "Responsible Consumption and Production", icon: "Educational+Tours.svg" },
+          { title: "Climate Action", icon: "Flagship+Events.svg" },
+          { title: "Life Below Water", icon: "international.svg" },
+          { title: "Life on Land", icon: "Cultural+Celebrations.svg" },
+          { title: "Peace, Justice and Strong Institutions", icon: "Mentor-Mentee+System.svg" },
+          { title: "Partnership for the Goals", icon: "Wide+Range+of+Programs.svg" },
         ].map((item, index) => (
-          <li key={index}>{item}</li>
+          <div key={index} className="bg-[var(--card-skin)] p-6 rounded-xl flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all duration-300 group cursor-pointer border border-transparent hover:border-[var(--button-red)]/20">
+            <div className="h-16 w-16 rounded-full bg-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+              <Image
+                src={`https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/${item.icon}`}
+                alt={item.title}
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+              />
+            </div>
+            <span className="font-semibold text-[var(--foreground)] text-lg leading-tight">
+              {item.title}
+            </span>
+          </div>
         ))}
-      </ul>
+      </div>
     ),
     buttons: [],
   },
@@ -54,7 +80,7 @@ const faqItems = [
     id: 3,
     title: "Objectives of the Practice",
     description: (
-      <ul className="list-disc pl-5 space-y-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
         {[
           "To provide a Holistic Sustainability Strategy",
           "To introduce programs to promote good health and well-being",
@@ -66,9 +92,22 @@ const faqItems = [
           "To promote peace, justice, and educate people about various laws",
           "To establish collaborations with industries and academia in meeting the SDGs",
         ].map((item, index) => (
-          <li key={index}>{item}</li>
+          <div key={index} className="bg-[var(--card-skin)] p-6 rounded-xl flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all duration-300 group cursor-pointer border border-transparent hover:border-[var(--button-red)]/20">
+            <div className="h-16 w-16 rounded-full bg-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+              <Image
+                src={`https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/${index === 0 ? 'Holistic+Development.svg' : index === 1 ? 'Emotional+Well-Being.svg' : index === 2 ? 'Career+Counseling.svg' : index === 3 ? 'Mental+Health+Support.svg' : index === 4 ? 'Extensive+Research+Facilities.svg' : index === 5 ? 'Networking+Opportunities.svg' : index === 6 ? 'university.svg' : index === 7 ? 'Community+Services.svg' : 'Global.svg'}`}
+                alt={item}
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+              />
+            </div>
+            <span className="font-semibold text-[var(--foreground)] text-lg leading-tight">
+              {item}
+            </span>
+          </div>
         ))}
-      </ul>
+      </div>
     ),
     buttons: [],
   },
@@ -156,18 +195,6 @@ const faqItems = [
     description: "IEEE Kalinga University Student Branch organised an International Leadership Summit where leaders like Innovators, Scientists, and Entrepreneurs working towards sustainable development presented their thoughts to bring a better future.",
     buttons: [],
   },
-  {
-    id: 18,
-    title: "SDG Cell Establishment and Mission",
-    description: (
-      <div className="space-y-4">
-        <p>The University has established a Sustainable Development Goals (SDGs) cell to promote, implement, and monitor initiatives related to the SDGs. The cell serves as a dynamic hub dedicated to advancing the principles and objectives outlined in the United Nations 2030 Agenda for Sustainable Development. This specialised unit operates at the intersection of education, research, and community engagement, embodying the Universitys commitment to providing a more sustainable and equitable world.</p>
-        <p>One of the primary functions of this cell is to cultivate awareness and advocacy for the SDGs within the university community. Through targeted campaigns, educational programs, and outreach initiatives, the cell endeavours to instil a deep understanding of the global challenges addressed by the SDGs and the imperative for collective action.</p>
-        <p>Integral to its mission is the integration of sustainable development principles into the universitys academic landscape. The SDGs cell collaborates with faculty to infuse relevant content into diverse courses, ensuring that students from various disciplines are equipped with the knowledge and skills needed to contribute meaningfully to sustainable development.</p>
-      </div>
-    ),
-    buttons: [],
-  },
 ];
 
 const Items = [
@@ -221,7 +248,7 @@ export default function SDGCell() {
         imageWidth={1200}
         imageHeight={600}
         title="Harmony in Action: Implementing Sustainable Development Goals for a Better World"
-        subtitle="SDG Cell - Year of Establishment: 12/04/2022"
+        subtitle=""
         description="Kalinga University, Naya Raipur, is committed to serving in community development by introducing a skill development centre for rural women. Kalinga University has adopted five nearby villages and is continuously serving the development of these villages. The practice is dedicated to empowering women in these villages through skill development and capacity building."
         hasImage={true}
         readmore={false}
@@ -250,7 +277,7 @@ export default function SDGCell() {
         imageAlt="SDG Goals"
         showKnowMore={true}
         initialVisibleParagraphs={1}
-          
+        disableClipPath={false}
       />
       <SdgTabSection />
       <FAQ

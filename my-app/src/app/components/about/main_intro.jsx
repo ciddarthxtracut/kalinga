@@ -37,6 +37,7 @@ export default function MainIntro({
   disableClipPath = true,
   descriptionClassName = "text-[var(--light-text-gray)]",
   hidePointsUntilExpanded = false,
+  sectionClassName = null,
 }) {
   const descriptionArray = Array.isArray(description) ? description : [description];
   const [showAll, setShowAll] = useState(false);
@@ -71,7 +72,7 @@ export default function MainIntro({
 
 
   return (
-    <section className="md:py-16 bg-white py-16 !pb-20 ">
+    <section className={sectionClassName || "md:py-16 bg-white py-16 !pb-20"}>
       {/* SVG ClipPath Definition */}
       <svg width="0" height="0" className="absolute pointer-events-none">
         <defs>

@@ -1,8 +1,7 @@
 "use client";
 
 import AdmissionCareer from "../components/general/admission_cta";
-import CenterOfExcellence from "../components/about/center_of_excellence";
-import GlobalArrowButton from "../components/general/global-arrow_button";
+import Image from "next/image";
 
 /* ---------------- BREADCRUMB ---------------- */
 
@@ -85,34 +84,58 @@ export default function Page() {
   return (
     <>
       {clubSections.map((section) => (
-        <CenterOfExcellence
-          key={section.id}
-          title={section.title}
-          description=""
-          showDescription={false}
-          centres={section.clubs.map((club, index) => ({
-            id: index + 1,
+        <section key={section.id} className="py-16 bg-white relative">
+          <div className="container mx-auto px-2">
+            {/* Header Section */}
+            <div className="text-center mb-8 md:mb-12 pt-8 md:pt-0">
+              <h2 className="font-stix text-[var(--foreground)] text-2xl md:text-3xl lg:text-4xl mb-4">
+                {section.title}
+              </h2>
+            </div>
 
-          
-            name: (
-              <div className="flex flex-row items-center justify-between gap-4 w-full">
-                <span>{club.name}</span>
-
+            {/* Grid Layout - 3 Columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {section.clubs.map((club, index) => (
                 <div
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(club.url, "_blank");
-                  }}
+                  key={index}
+                  className="bg-[var(--lite-sand)] rounded-xl p-4 h-full flex flex-col relative overflow-hidden group hover:shadow-lg transition-shadow"
                 >
-                 <button type="button" aria-label="Next testimonial" className="cursor-pointer w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg bg-[var(--button-red)] text-white flex items-center justify-center hover:bg-[#A2A2A2] transition-colors flex-shrink-0"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5 sm:w-4 sm:h-4"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg></button>
-                </div>
-              </div>
-            ),
+                  {/* Image */}
+                  <div className="relative w-full h-[180px] mb-4 rounded-lg overflow-hidden bg-white">
+                    <Image
+                      src={club.image}
+                      alt={club.name}
+                      fill
+                      className="object-contain p-5"
+                    />
+                  </div>
 
-            title: "",
-            image: club.image,
-          }))}
-        />
+                  {/* Name with Button */}
+                  <div className="flex flex-row items-center justify-between gap-4 w-full">
+                    <p className="text-[16px] text-[var(--foreground)] font-plus-jakarta-sans font-semibold flex-1">
+                      {club.name}
+                    </p>
+
+                    <div
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(club.url, "_blank");
+                      }}
+                    >
+                      <button
+                        type="button"
+                        aria-label="Open link"
+                        className="cursor-pointer text-white flex items-center justify-center transition-colors flex-shrink-0"
+                      >
+                       <div class="w-10 h-10 bg-[var(--button-red)] group-hover:bg-[#c41e3a] rounded-lg flex items-center justify-center transition-colors shadow-md"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       ))}
 
       <AdmissionCareer />

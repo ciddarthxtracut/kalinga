@@ -6,15 +6,33 @@ import GlobalArrowButton from "../general/global-arrow_button";
 
 export default function Page() {
   const imageSets = [
+    // Academics
     ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/Infrastructure1.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/Infrastructure2.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/Infrastructure3.webp"],
-    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/transport-1.jpg", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/transport-2.jpg", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/transport-3.webp"],
-    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/mini-market2.webp","https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/mini-market3.webp"],
-    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/Health+Clinic1.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/Health+Clinic2.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/Health+Clinic3.webp"],
-    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/bank-atm1.png", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/bank-atm2.jpeg", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/bank-atm3.webp"],
-    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/security1.jpg","https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/security2.jpeg","https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/security3.jpeg"]
+    // Research
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/Pic1+(1).jpeg", "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/researchfacilities-labimage.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-facilities/modernlabrotary.webp"],
+    // Celebrations
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/student-dance.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/gallery2.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/gallery3.webp"],
+    // Sports
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/sports/sportsmain.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/sports/cricket.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/sports/gym1.webp"],
+    // Events & Activities
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/gallery1.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/gallery4.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/about-kalinga.webp"],
+    // Networking Opportunities
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alimini-meet1.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/social-media-1.png", "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/social-media-3.png"],
+    // Community Service
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/1.jpg", "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/2.jpg", "https://kalinga-university.s3.ap-south-1.amazonaws.com/unnat-bharat-abhiyan/3.jpg"],
+    // Internships and Placement Drives
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placements-silder-1.webp","https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/placemnt-intro.webp"],
+    // Recreation Corners
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-facilities/recreation.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/facilities/canteen.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-facilities/selfiepoints.webp"],
+    // Eco-Friendly Campus
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/campus/1.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/campus/3.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/campus/4.webp"],
+    // Hostel Life
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/hostel/occupancy.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/hostel/Acnonac.webp", "https://kalinga-university.s3.ap-south-1.amazonaws.com/facilities/canteen+mess.webp"],
+    // Multicultural Learning Environment
+    ["https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg", "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/students-3.jpg", "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-students-2.jpg"]
   ];
 
-  const [indexes, setIndexes] = useState([0, 0, 0, 0, 0, 0]);
+  const [indexes, setIndexes] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -27,15 +45,21 @@ export default function Page() {
 
 
   return (
-    <div className="container mx-auto py-16 md:pb-25 px-2 flex flex-col md:gap-20 gap-12 items-stretch">
+    <div className="container mx-auto py-16 md:pb-25 px-2 flex flex-col md:gap-35 gap-12 items-stretch">
 
       {[
-        { type: "sandal", title: "Academic Infrastructure", desc: "Kalinga University offers state-of-the-art academic infrastructure with smart classrooms, digital learning tools, and well-equipped labs that promote innovation and practical learning.", link: "/academic-facilities" },
-        { type: "red", title: "Transportation", desc: "With 30+ buses and 4-wheelers, our transport service offers convenient, safe, and affordable pick-up and drop facilities across Raipur, covering up to 70 km each way.", link: "/transport-facility", feesLink: "/ku-fees?tab=other" },
-        { type: "sandal", title: "Mini Market", desc: "The on-campus mini market includes an ATM, stationery shop, salon, juice and snack counters, and a chemist — ensuring students have access to essentials without leaving campus.", link: "/mini-market" },
-        { type: "red", title: "Health Clinic", desc: "Our on-campus health clinic, staffed by qualified doctors and nurses, provides consultation, counseling, and emergency medical support for students and staff.", link: "/health-clinic" },
-        { type: "sandal", title: "Banking & ATM", desc: "With tie-ups with the Central Bank of India and Canara Bank, students can avail of education loans easily. Two 24×7 ATMs (ICICI & OBC Bank) are also available on campus, supporting all major digital payment methods.", link: "/campus-facilities"},
-        { type: "red", title: "Safety & Security", desc: "The entire campus, including hostels and academic areas, is under continuous CCTV surveillance and managed by a trained in-house security team for complete safety.", link: "/campus-facilities" },
+        { type: "sandal", title: "Academics", subtitle: "Future-ready learning, right from day one", desc: "Academics at KU are all about practical knowledge and experiential learning that enable students become confident and ready to take up real-world challenges. Through interactive lectures, industry-oriented curriculum, digital classrooms, a resource-rich library, and supportive faculty, students learn to apply every concept in real life.", link: "/academic-facilities" },
+        { type: "red", title: "Research", subtitle: "Turning their curiosity into innovation", desc: "Experience a research-driven learning culture where students are encouraged to explore beyond textbooks and make an impactful contribution. At KU, students learn to apply their theoretical knowledge in laboratory work and gain confidence to explore new possibilities. Students are actively involved in discoveries that actually matter.", link: "/research" },
+        { type: "sandal", title: "Celebrations", subtitle: "Keeping the campus vibe alive", desc: "From festivals and cultural days celebrations to achieving University milestones, we make every moment count. Students come together to perform, celebrate, and create unforgettable memories. Music, dance, colours, and smiles all around fill the campus with excitement and joy, turning every moment into lifelong friendships.", link: "/campuslife" },
+        { type: "red", title: "Sports", subtitle: "Fueling spirit, performance, and teamwork", desc: "KU aims to make every student active and energised by promoting a balance between academics and sports. Indoor and outdoor games, a gymnasium, and yoga help students build confidence and focus better on studies. Regular participation reduces their stress while strengthening them physically and mentally.", link: "/sports-and-wellness-centre" },
+        { type: "sandal", title: "Events & Activities", subtitle: "Always buzzing with something exciting", desc: "Kalinga Utsav, Sports Day, Anand Mela, Induction Programs, Convocation Ceremony, Ideathon (Business Plan Competition), Hackathon (Coding Competition), Industrial Visits, Workshops, International Tours, and more add energy to campus life. Students get endless opportunities to participate, compete, and showcase their talents.", link: "/news-and-events" },
+        { type: "red", title: "Networking Opportunities", subtitle: "Turning new connections into opportunities", desc: "Guest lectures, alumni meets, seminars, and global conferences bring industry exposure right to the campus. Every interaction adds value to students' professional journey. They discover new horizons, gain industrial insights, and learn to make smarter career decisions.", link: "/about-us" },
+        { type: "sandal", title: "Community Service", subtitle: "Learning empathy beyond classrooms", desc: "Through our NCC and NSS departments, students are encouraged to give back while learning teamwork, discipline, and leadership qualities. Through cleanliness drives, blood donation camps, awareness campaigns, social and sustainable initiatives, and rural outreach, students develop a deeper understanding of social responsibility.", link: "/student-clubs" },
+        { type: "red", title: "Internships and Placement Drives", subtitle: "Turning their dreams into impactful careers", desc: "Career preparation at KU starts early through internship programs (on-campus and off-campus), enabling students gain confidence and industry experience. Our training and placement cell provides 360-degree training to students, preparing them for on-campus placement drives.", link: "/training-and-placement-cell" },
+        { type: "sandal", title: "Recreation Corners", subtitle: "Your chill zones are right on campus", desc: "Need a break? Recreation corners across campus give students a place to relax, recharge, and hang out with friends. These chill-out spots are perfect for short breaks to improve productivity and social bonding.", link: "/campus-facilities" },
+        { type: "red", title: "Eco-Friendly Campus", subtitle: "Learning in harmony with nature", desc: "Kalinga's green campus promotes sustainable practices and develops a sense of awareness and responsibility among young students. It is a space where students learn the importance of protecting the environment while enjoying a calm and refreshing atmosphere that supports their mental and physical well-being.", link: "/campus-facilities" },
+        { type: "sandal", title: "Hostel Life", subtitle: "Comfort, safety, and a home-like vibe", desc: "Hostel life at KU is all about convenience and lifelong bonds. CCTV cameras, 24/7 security, comfortable accommodation for both boys and girls, a hygienic mess facility, and a mini-market ensure students get everything they need under one roof. It's a place where students share experiences and learn to support each other like a family.", link: "/campus-facilities" },
+        { type: "red", title: "Multicultural Learning Environment", subtitle: "Where cultures meet, and friendships grow", desc: "Students at KU experience a vibrant multicultural environment where they learn and grow alongside their peers from across India and around the globe. Daily interactions introduce them to new languages and perspectives. They celebrate diversity, build new connections, and exchange ideas as they prepare for a global career.", link: "/international-students" },
       ].map((sec, index) => (
         
         <div
@@ -52,7 +76,7 @@ export default function Page() {
                 w-full mb-4 md:mb-0
               "
             >
-              <div className="relative h-[220px] md:h-[300px] rounded-2xl overflow-hidden shadow-lg w-full z-10">
+              <div className="relative h-[220px] md:h-[350px] rounded-2xl overflow-hidden shadow-lg w-full z-10">
                 <img
                   src={imageSets[index][indexes[index]]}
                   alt={`${sec.title} at Kalinga University`}
@@ -113,11 +137,12 @@ export default function Page() {
               md:absolute md:left-[0] md:top-[100px] flex flex-col justify-center
             "
             >
-              <h1 className="text-xl md:text-2xl font-regular mb-3">{sec.title}</h1>
+              <h1 className="text-xl md:text-2xl font-regular mb-2">{sec.title}</h1>
+              {sec.subtitle && <p className="text-sm font-medium text-[var(--foreground)]/80 mb-3 italic">{sec.subtitle}</p>}
               <p className="text-sm text-[var(--foreground)]/70 leading-relaxed mb-4 md:w-3/4 w-full">{sec.desc}</p>
-              <Link href={sec.link}>
+              {/* <Link href={sec.link}>
                 <GlobalArrowButton className="hover:!bg-[var(--background)]">Know More</GlobalArrowButton>
-              </Link>
+              </Link> */}
             </div>
           ) : (
             <div
@@ -127,13 +152,14 @@ export default function Page() {
               md:absolute md:right-[0px] md:top-[100px] flex flex-col justify-center
             "
             >
-              <h2 className="text-xl md:text-2xl font-regular mb-3 md:pl-[140px]">
+              <h2 className="text-xl md:text-2xl font-regular mb-2 md:pl-[140px]">
                 {sec.title}
               </h2>
+              {sec.subtitle && <p className="text-sm font-medium mb-3 italic md:pl-[140px] text-white/90">{sec.subtitle}</p>}
               <p className="text-sm leading-relaxed mb-4 md:pl-[140px] w-full">
                 {sec.desc}
               </p>
-              <div className={`md:pl-[140px] flex ${index === 1 ? 'gap-3 md:gap-4' : ''} flex-wrap`}>
+              {/* <div className="md:pl-[140px] flex gap-3 md:gap-4 flex-wrap">
                 <Link href={sec.link}>
                   <GlobalArrowButton 
                     className="!bg-white !text-[var(--foreground)]"
@@ -143,7 +169,7 @@ export default function Page() {
                     Know More
                   </GlobalArrowButton>
                 </Link>
-                {index === 1 && sec.feesLink && (
+                {sec.feesLink && (
                   <Link href={sec.feesLink}>
                     <GlobalArrowButton 
                       className="!bg-[var(--dark-orange-red)] !border-[1px] !border-white !text-white hover:!bg-[var(--dark-orange-red-light)]"
@@ -154,7 +180,7 @@ export default function Page() {
                     </GlobalArrowButton>
                   </Link>
                 )}
-              </div>
+              </div> */}
             </div>
           )}
         </div>

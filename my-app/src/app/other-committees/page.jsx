@@ -212,7 +212,7 @@ export default function OtherCommittees() {
       <FAQ
         title="List Of Important Committee Members"
         subtitle="Committees"
-        variant="table-display"
+        variant="card-display"
         tableSections={tableSections}
         items={faqItems}
         pyClassName="py-8 md:py-12"
