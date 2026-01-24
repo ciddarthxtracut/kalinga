@@ -59,6 +59,24 @@ const getStudyLevel = (programType) => {
   return "UG";
 };
 
+// Helper function to normalize strings for flexible searching (removes punctuation, filler words, and extra spaces)
+const normalizeString = (str) => {
+  if (!str) return "";
+
+  // List of common filler words to ignore in search
+  // Note: 'a' and 'an' are removed because they are common abbreviations (Arts, Animation)
+  const fillerWords = ["in", "of", "and", "the", "for", "to", "at", "by", "with", "special"];
+
+  return str
+    .toLowerCase()
+    // Replace all punctuation including brackets, braces, and symbols with space
+    .replace(/[.\-&(),\[\]{}:|]/g, " ")
+    .split(/\s+/)              // Split into words
+    .filter(word => word && !fillerWords.includes(word)) // Remove empty strings and filler words
+    .join("")                  // Join back with no spaces for dense comparison
+    .trim();
+};
+
 export default function OurPrograms({
   customPrograms = null,
   hideSearchFilter = false,
@@ -296,11 +314,17 @@ export default function OurPrograms({
 
     // Filter by search query
     if (searchQuery.trim()) {
-      const query = searchQuery.trim().toLowerCase();
+      const normalizedQuery = normalizeString(searchQuery.trim());
       filtered = filtered.filter(course => {
-        const courseName = (course.name || "").toLowerCase();
-        const deptName = (course.departmentName || "").toLowerCase();
-        return courseName.includes(query) || deptName.includes(query);
+        const normalizedCourseName = normalizeString(course.name || "");
+        const normalizedShortName = normalizeString(course.short_name || "");
+        const normalizedDeptName = normalizeString(course.departmentName || course.department?.name || "");
+
+        return (
+          normalizedCourseName.includes(normalizedQuery) ||
+          normalizedShortName.includes(normalizedQuery) ||
+          normalizedDeptName.includes(normalizedQuery)
+        );
       });
     }
 
@@ -318,6 +342,7 @@ export default function OurPrograms({
       return {
         id: course.id,
         title: courseName,
+        shortName: course.short_name || "",
         specialization: course.departmentName || "",
         duration: formatDuration(course), // Pass entire course object
         type: mappedLevel,

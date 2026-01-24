@@ -27,12 +27,19 @@ export default function ProgramCard({
 
       {/* Program Content */}
       <div className="relative z-10">
-        {/* Program Title - Dark Red */}
-        <h3 className={`text-[var(--button-red)] text-xl md:text-2xl lg:text-3xl !font-medium mb-2 font-plus-jakarta-sans normal-case ${titleClassName}`}>
-          {program.title}
+        {/* Main Red Heading - Short Name */}
+        <h3 className={`text-[var(--button-red)] text-xl md:text-2xl lg:text-3xl !font-medium mb-1 font-plus-jakarta-sans normal-case ${titleClassName}`}>
+          {program.shortName || program.title}
         </h3>
 
-        {/* Full Program Name - Display under title */}
+        {/* Full Program Name - Next line */}
+        {program.shortName && (
+          <p className="text-gray-600 text-sm md:text-base font-medium mb-1 font-plus-jakarta-sans">
+            {program.title}
+          </p>
+        )}
+
+        {/* Department Name - Following line */}
         {program.specialization && (
           <p className="text-[var(--button-red)] text-xs md:text-sm lg:text-base mb-3 md:mb-4 leading-relaxed font-plus-jakarta-sans">
             {program.specialization}
