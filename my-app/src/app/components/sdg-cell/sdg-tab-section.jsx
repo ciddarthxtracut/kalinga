@@ -473,6 +473,179 @@ const generateImages = (count, label) =>
         alt: `${label} image ${i + 1}`,
     }));
 
+const CSR_INTRO =
+    "Corporate Social Responsibility (CSR) at Kalinga University aims to make a positive social and environmental impact beyond academics. Over the years, our students and faculty members have actively participated in various programs that contribute to the welfare of society. These initiatives ensure that our students and staff become responsible citizens and inspire positive change.";
+
+const CSR_INITIATIVES = [
+    "Transport fees for students availing university transport are provided at subsidised rates, covering routes up to 70 KM (one way) to support students living far from campus.",
+    "The university provides scholarships under different categories to support meritorious and deserving students.",
+    "Absorption of fees or sponsorship support is provided on a case-by-case basis for students discontinuing education due to financial difficulties.",
+    "Environmental initiatives such as planting 1000+ plants and trees on and around the campus.",
+    "Installation of Rooftop Solar Power Panels and LED lighting systems to reduce energy consumption.",
+    "MoUs with certified vendors for proper disposal and recycling of waste materials.",
+    "Rainwater harvesting systems linked to recharge wells across all buildings and plantation of low water-consumption plants.",
+    "Promotion of sustainable practices through vermicomposting, apiculture, organic farming, nursery, greenhouse facilities, and electric vehicles.",
+    "Life Science and Pharmacy departments conduct regular blood donation camps and free medical consultations in nearby villages.",
+    "The Law Department’s Legal Aid Cell provides free legal consultancy to those in need.",
+    "Fashion Design and Interior Design departments actively promote Khadi within Chhattisgarh.",
+    "Various departments conduct free FDPs, MDPs, and knowledge dissemination programs for schools, colleges, government bodies, corporate, and defence institutions.",
+];
+
+const BP1_TITLE =
+    "Harmony in Action: Implementing Sustainable Development Goals for a Better World";
+
+const BP1_INTRO =
+    "Kalinga University, Naya Raipur, is committed to community development by introducing a skill development centre for rural women. The University has adopted five nearby villages and continuously works towards their development through skill development and capacity building initiatives.";
+
+const BP1_SDG_LIST = [
+    "No Poverty",
+    "Zero Hunger",
+    "Good Health and Well-being",
+    "Quality Education",
+    "Gender Equality",
+    "Clean Water and Sanitation",
+    "Affordable and Clean Energy",
+    "Decent Work and Economic Growth",
+    "Industry, Innovation and Infrastructure",
+    "Reduced Inequality",
+    "Sustainable Cities and Communities",
+    "Responsible Consumption and Production",
+    "Climate Action",
+    "Life Below Water",
+    "Life on Land",
+    "Peace, Justice and Strong Institutions",
+    "Partnership for the Goals",
+];
+
+const BP1_OBJECTIVES = [
+    "To provide a holistic sustainability strategy",
+    "To introduce programs that promote good health and well-being",
+    "To provide quality education and extend learning to society",
+    "To offer courses promoting gender equity",
+    "To generate and utilise green energy",
+    "To incorporate a culture of innovation",
+    "To spread awareness on climate change and sustainability",
+    "To promote peace, justice, and legal awareness",
+    "To establish collaborations with industries and academia to meet SDGs",
+];
+
+const BP1_PRACTICE = [
+    "Holistic Sustainability Strategy aligned with environmental, social, and economic SDGs.",
+    "Campus-wide eco-friendly infrastructure including energy-efficient buildings, solar panels, biogas plants, and sustainable landscaping.",
+    "Promotion of sustainable transportation such as cycling infrastructure and electric vehicles.",
+    "Interdisciplinary sustainability curriculum across academic programs.",
+    "Research and collaborations addressing at least one SDG through industry and government partnerships.",
+    "Community engagement through initiatives like IEEE, Unnat Bharat Abhiyan, awareness campaigns, and workshops.",
+    "Ethical and sustainable procurement prioritising eco-friendly and fair-trade products.",
+    "Health and well-being programs including counselling, stress management, and wellness initiatives.",
+    "Organisation of sustainable conferences and summits focusing on climate change, peace, justice, and sustainability.",
+];
+
+const BP1_ECONOMIC_EMPOWERMENT = [
+    "Funding support for Smart Dustbin projects distributed to nearby village schools.",
+    "Seed funding for development of a pond-cleaning robot to improve water quality.",
+    "Development of an e-loader made from waste materials for internal campus transport.",
+    "Support from government bodies like NABARD for conferences addressing climate change.",
+    "International Leadership Summit organised by IEEE KU Student Branch on sustainable development.",
+    "Establishment of an SDGs Cell to promote, implement, and monitor SDG initiatives across education, research, and community engagement.",
+];
+
+const BP1_IMAGES = [
+    { title: "Sustainability Infrastructure", src: "" },
+    { title: "Community Skill Development", src: "" },
+    { title: "Green Energy & Innovation", src: "" },
+    { title: "SDGs Awareness & Outreach", src: "" },
+];
+
+const BP2_TITLE =
+    "Women’s Empowerment and Skill Mastery in Rural Landscapes in Raipur, Chhattisgarh";
+
+const BP2_INTRO =
+    "Kalinga University, Naya Raipur, is committed to community development by introducing a skill development centre for rural women. The University has adopted five nearby villages and continuously works towards their development through skill development and capacity building initiatives.";
+
+const BP2_OBJECTIVES = [
+    "To provide economic empowerment",
+    "To improve the quality of life of rural people through poverty alleviation",
+    "To enhance education and knowledge among village women",
+    "To support community development",
+    "To develop entrepreneurial skills",
+];
+
+const BP2_PRACTICE =
+    "The Rural Women’s Empowerment and Skill Development Initiative envisions empowered, self-reliant rural women who actively participate in their communities. By investing in skills, education, and capacity building, Kalinga University contributes to sustainable rural development and resilience among women.";
+
+const BP2_ECONOMIC_EMPOWERMENT = [
+    "Generate livelihood opportunities through agriculture, handicrafts, tailoring, garment industries, and small-scale entrepreneurship.",
+    "Enhance employability by imparting vocational skills aligned with local economic needs.",
+];
+
+const BP2_POVERTY_ALLEVIATION = [
+    "Encourage income diversification through multiple skill-based economic activities.",
+    "Provide financial literacy training to promote economic independence.",
+];
+
+const BP2_EDUCATION = [
+    "Basic literacy and numeracy programs to bridge educational gaps.",
+    "Digital literacy training to improve access to information and technology.",
+];
+
+const BP2_COMMUNITY_DEVELOPMENT = [
+    "Leadership skill development for participation in governance and decision-making.",
+    "Active engagement in community programs and sustainability initiatives.",
+];
+
+const BP2_ENTREPRENEURSHIP = [
+    "Training in business planning, marketing, and financial management.",
+    "Facilitating market linkages for rural women’s products and services.",
+];
+
+const BP2_INITIATIVES = [
+    "Preparation of Hand Sanitisers",
+    "Tailoring",
+    "Mushroom Cultivation",
+    "Lotus Fibre Production for Fabrics",
+    "Traditional Hand Embroidery",
+    "General Housekeeping Training",
+    "Electrical Technician Training",
+];
+
+const BP2_EVIDENCE = [
+    "Hand sanitiser and mask production during COVID-19 created income opportunities.",
+    "Fashion Design department trained women in cloth mask making.",
+    "Faculty acted as trainers under Jan Shikshan Sansthan for multiple skill programs.",
+    "Lotus fibre innovation training empowered women through Train-the-Trainer models.",
+    "Strong market demand for handloom and embroidery products in Raipur.",
+    "Electrical and electronic repair skills enabled sustainable income sources.",
+    "Tailoring and embroidery programs provided dignified livelihoods.",
+    "Gas safety and energy-saving training in collaboration with Oil India Ltd.",
+    "Domestic care skill training enhanced employability with practical exposure.",
+];
+
+const BP2_IMAGES = [
+    { src: "" },
+    { src: "" },
+    { src: "" },
+    { src: "" },
+];
+
+const CONTRIBUTIONS_INTRO =
+    "Kalinga University actively contributes to sustainable and social development through a wide range of social works, campaigns, and awareness programs. These initiatives aim to create social awareness, promote responsible citizenship, and address key societal challenges. Students and faculty members participate in various outreach activities such as cleanliness drives, health camps, environmental campaigns, and social awareness programs, fostering a strong sense of community engagement and social responsibility.";
+
+const CONTRIBUTIONS_AREAS = [
+    "Social welfare campaigns and community outreach programs",
+    "Health awareness camps and blood donation drives",
+    "Environmental awareness initiatives and cleanliness drives",
+    "Awareness programs on social issues, sustainability, and public health",
+];
+
+const CONTRIBUTIONS_IMAGES = [
+    { src: "" },
+    { src: "" },
+    { src: "" },
+    { src: "" },
+];
+
+
 /** ✅ IMAGE PROVISIONS (leave src blank, you will fill) */
 const ENERGY_IMAGES = [
     { src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/sdg-cell/sgd-ecm-solar.webp", alt: "Energy measure image 1" },
@@ -532,6 +705,13 @@ const IMPORTANT_DAY_IMAGES = [
     { src: "", alt: "Important day celebration image 2" },
     { src: "", alt: "Important day celebration image 3" },
     { src: "", alt: "Important day celebration image 4" },
+];
+
+const CSR_IMAGES = [
+    { title: "Community Welfare Programs", src: "" },
+    { title: "Environmental Initiatives", src: "" },
+    { title: "Healthcare & Blood Donation Camps", src: "" },
+    { title: "Sustainable Campus Practices", src: "" },
 ];
 
 /** Reusable Image Grid */
@@ -1108,8 +1288,10 @@ export default function SdgTabSection() {
 
                         {/* Social Responsibility */}
 
+                        {/* Institutional Social Responsibility (ISR) and Extension Activities */}
                         {activeTab === "social" && (
                             <div className="space-y-8">
+                                {/* Intro */}
                                 <div className="space-y-4">
                                     <p className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
                                         {ISR_INTRO}
@@ -1127,21 +1309,342 @@ export default function SdgTabSection() {
                                     </details>
                                 </div>
 
-                                <div className="space-y-10">
-                                    {ISR_ACTIVITIES.map((activity, idx) => (
-                                        <div key={idx} className="space-y-4">
-                                            <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold text-[var(--foreground)]">
-                                                {activity.title}
-                                            </h3>
+                                {/* Activities as tiles */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {ISR_ACTIVITIES.map((item, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="rounded-xl overflow-hidden bg-gray-50 border border-gray-200 hover:shadow-md transition"
+                                        >
+                                            {/* Image tile */}
+                                            <div className="aspect-[4/3] bg-gray-200">
+                                                {item.src && (
+                                                    <img
+                                                        src={item.src}
+                                                        alt={`${item.title} (Image ${item.imageNo})`}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                )}
+                                            </div>
 
-                                            <ImageGrid
-                                                images={[
-                                                    {
-                                                        src: activity.src, // keep blank; you will fill URL
-                                                        alt: `${activity.title} (Image ${activity.imageNo})`,
-                                                    },
-                                                ]}
-                                            />
+                                            {/* Title under image */}
+                                            <div className="p-4 text-center">
+                                                <h3 className="font-plus-jakarta-sans text-sm md:text-base font-semibold text-[var(--foreground)]">
+                                                    {item.title}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* CSR at Kalinga University */}
+                        {activeTab === "csr" && (
+                            <div className="space-y-8">
+                                {/* Intro */}
+                                <p className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                                    {CSR_INTRO}
+                                </p>
+
+                                {/* Initiatives */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold text-[var(--foreground)] mb-4">
+                                        Our Initiatives
+                                    </h3>
+
+                                    <ul className="list-disc pl-6 space-y-3 text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                                        {CSR_INITIATIVES.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Images as tiles */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    {CSR_IMAGES.map((item, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="rounded-xl overflow-hidden bg-gray-50 border border-gray-200 hover:shadow-md transition"
+                                        >
+                                            <div className="aspect-[4/3] bg-gray-200">
+                                                {item.src && (
+                                                    <img
+                                                        src={item.src}
+                                                        alt={item.title}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                )}
+                                            </div>
+
+                                            <div className="p-4 text-center">
+                                                <h4 className="font-plus-jakarta-sans text-sm md:text-base font-semibold text-[var(--foreground)]">
+                                                    {item.title}
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+
+                        {/* Best Practice - 1 */}
+                        {activeTab === "bp1" && (
+                            <div className="space-y-8">
+                                {/* Title */}
+                                <h2 className="font-plus-jakarta-sans text-xl md:text-3xl font-semibold text-[var(--foreground)] text-center">
+                                    {BP1_TITLE}
+                                </h2>
+
+                                {/* Intro */}
+                                <p className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                                    {BP1_INTRO}
+                                </p>
+
+                                {/* SDGs Covered */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Sustainable Development Goals Addressed
+                                    </h3>
+                                    <ol className="list-decimal pl-6 grid grid-cols-1 sm:grid-cols-2 gap-y-2 text-sm md:text-base">
+                                        {BP1_SDG_LIST.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ol>
+                                </div>
+
+                                {/* Objectives */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Objectives of the Practice
+                                    </h3>
+                                    <ul className="list-disc pl-6 space-y-2 text-sm md:text-base">
+                                        {BP1_OBJECTIVES.map((obj, idx) => (
+                                            <li key={idx}>{obj}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* The Practice */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        The Practice
+                                    </h3>
+                                    <ol className="list-decimal pl-6 space-y-2 text-sm md:text-base">
+                                        {BP1_PRACTICE.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ol>
+                                </div>
+
+                                {/* Economic Empowerment */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Economic Empowerment
+                                    </h3>
+                                    <ol className="list-decimal pl-6 space-y-2 text-sm md:text-base">
+                                        {BP1_ECONOMIC_EMPOWERMENT.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ol>
+                                </div>
+
+                                {/* Images */}
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    {BP1_IMAGES.map((img, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="rounded-xl overflow-hidden bg-gray-200 border border-gray-200 hover:shadow-md transition"
+                                        >
+                                            <div className="aspect-[4/3] bg-gray-300">
+                                                {img.src && (
+                                                    <img
+                                                        src={img.src}
+                                                        alt="Best Practice 1 Image"
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Best Practice - 2 */}
+                        {activeTab === "bp2" && (
+                            <div className="space-y-8">
+                                {/* Title */}
+                                <h2 className="font-plus-jakarta-sans text-xl md:text-3xl font-semibold text-[var(--foreground)] text-center">
+                                    {BP2_TITLE}
+                                </h2>
+
+                                {/* Intro */}
+                                <p className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                                    {BP2_INTRO}
+                                </p>
+
+                                {/* Objectives */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Objectives of the Practice
+                                    </h3>
+                                    <ul className="list-disc pl-6 space-y-2 text-sm md:text-base">
+                                        {BP2_OBJECTIVES.map((obj, idx) => (
+                                            <li key={idx}>{obj}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* The Practice */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        The Practice
+                                    </h3>
+                                    <p className="text-sm md:text-base leading-relaxed">
+                                        {BP2_PRACTICE}
+                                    </p>
+                                </div>
+
+                                {/* Economic Empowerment */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Economic Empowerment
+                                    </h3>
+                                    <ul className="list-disc pl-6 space-y-2 text-sm md:text-base">
+                                        {BP2_ECONOMIC_EMPOWERMENT.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Poverty Alleviation */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Poverty Alleviation
+                                    </h3>
+                                    <ul className="list-disc pl-6 space-y-2 text-sm md:text-base">
+                                        {BP2_POVERTY_ALLEVIATION.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Education & Knowledge */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Education and Knowledge Enhancement
+                                    </h3>
+                                    <ul className="list-disc pl-6 space-y-2 text-sm md:text-base">
+                                        {BP2_EDUCATION.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Community Development */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Community Development
+                                    </h3>
+                                    <ul className="list-disc pl-6 space-y-2 text-sm md:text-base">
+                                        {BP2_COMMUNITY_DEVELOPMENT.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Entrepreneurship */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Entrepreneurship Development
+                                    </h3>
+                                    <ul className="list-disc pl-6 space-y-2 text-sm md:text-base">
+                                        {BP2_ENTREPRENEURSHIP.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Initiatives */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Initiatives
+                                    </h3>
+                                    <ol className="list-decimal pl-6 space-y-1 text-sm md:text-base">
+                                        {BP2_INITIATIVES.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ol>
+                                </div>
+
+                                {/* Evidence of Success */}
+                                <div>
+                                    <h3 className="font-plus-jakarta-sans text-lg md:text-xl font-semibold mb-3">
+                                        Evidence of Success
+                                    </h3>
+                                    <ol className="list-decimal pl-6 space-y-2 text-sm md:text-base">
+                                        {BP2_EVIDENCE.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ol>
+                                </div>
+
+                                {/* Images – image-only grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    {BP2_IMAGES.map((img, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="rounded-xl overflow-hidden bg-gray-200 border border-gray-200 hover:shadow-md transition"
+                                        >
+                                            <div className="aspect-[4/3] bg-gray-300">
+                                                {img.src && (
+                                                    <img
+                                                        src={img.src}
+                                                        alt="Best Practice 2 Image"
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Our Contributions in Sustainable and Social Development */}
+                        {activeTab === "contributions" && (
+                            <div className="space-y-8">
+                                {/* Paragraph */}
+                                <p className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                                    {CONTRIBUTIONS_INTRO}
+                                </p>
+
+                                {/* Key Focus Areas */}
+                                <ul className="list-disc pl-6 space-y-2 text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base">
+                                    {CONTRIBUTIONS_AREAS.map((item, idx) => (
+                                        <li key={idx}>{item}</li>
+                                    ))}
+                                </ul>
+
+                                {/* Images – Social Works / Campaigns / Awareness Camps */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+                                    {CONTRIBUTIONS_IMAGES.map((img, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="rounded-xl overflow-hidden bg-gray-200 border border-gray-200 hover:shadow-md transition"
+                                        >
+                                            <div className="aspect-[4/3] bg-gray-300">
+                                                {img.src && (
+                                                    <img
+                                                        src={img.src}
+                                                        alt="Social Work and Awareness Activity"
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                )}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -1151,7 +1654,7 @@ export default function SdgTabSection() {
 
 
                         {/* Placeholder for other tabs */}
-                        {!["measures", "waste", "water", "environmental", "initiatives", "audits", "reports", "equity", "programs", "disabled", "obligations", "celebrations", "conduct", "promotion", "social"].includes(activeTab) && (
+                        {!["measures", "waste", "water", "environmental", "initiatives", "audits", "reports", "equity", "programs", "disabled", "obligations", "celebrations", "conduct", "promotion", "social", "csr", "bp1", "bp2", "contributions"].includes(activeTab) && (
                             <p className="text-center text-[var(--foreground)]/70 font-plus-jakarta-sans text-sm md:text-base">
                                 Content will be added for this section.
                             </p>
