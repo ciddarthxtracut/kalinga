@@ -6,6 +6,7 @@ import Academiccards from "@/app/components/academic-facilities/academiccards";
 import AdmissionCareer from "@/app/components/general/admission_cta";
 import Safetyandsecuritymainintro from "../components/safetyandsecurity/safetyandsecuritymainintro";
 import Safetyandsecuritycards from "../components/safetyandsecurity/safetyandsecuritycards";
+import Safetyandsecuritycontact from "../components/safetyandsecurity/safetyandsecuritycontact";
 
 // Breadcrumb configuration (same pattern as AboutUs)
 const breadcrumbData = {
@@ -38,8 +39,10 @@ export default function SafetyAndSecurity() {
     }
   }
 `}</style>
+
             <Safetyandsecuritymainintro />
             <Safetyandsecuritycards />
+            <Safetyandsecuritycontact />
             <AdmissionCareer />
         </>
     );

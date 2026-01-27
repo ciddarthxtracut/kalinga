@@ -33,17 +33,17 @@ function Safetyandsecuritycards() {
             subtitle: "CAMPUS SAFETY & SECURITY",
         },
         {
-            title: "Emergency Helplines",
+            title: "Anti-Ragging Cell",
             description:
-                "In case any student faces any issue, they can immediately contact us at _______, and they will get quick support from the security team.",
+                "Our anti-ragging cell ensures that every student pursues their education without the fear of harassment or bullying.",
             imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/helpline.jpg",
             logoSrc: "",
             subtitle: "CAMPUS SAFETY & SECURITY",
         },
         {
-            title: "Dedicated Women’s Safety Team",
+            title: "Women Cell",
             description:
-                "We’ve a special team of women who specifically guard female students on our campus.",
+                "Our women's cell ensures a secure and respectful campus environment. If women face any issue, they can directly approach the cell members or call at - +91 9303097012",
             imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/security2.jpeg",
             logoSrc: "",
             subtitle: "CAMPUS SAFETY & SECURITY",

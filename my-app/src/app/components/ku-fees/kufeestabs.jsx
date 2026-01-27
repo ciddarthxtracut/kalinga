@@ -1101,7 +1101,7 @@ const OTHER_CHARGES = {
     ],
     scholarship:
         "Scholarships (General, Merit & Girl Student) are available on Tuition Fees. The above scholarships are not applicable to Pharmacy, Education, and Research Programs.",
-    uniformDetails: "Uniform Includes - 2 Trousers, 2 Shirts, 1 Blazer, 1 T-Shirt, 1 Lower, 1 Tie, 1 Bag",
+    // uniformDetails: "Uniform Includes - 2 Trousers, 2 Shirts, 1 Blazer, 1 T-Shirt, 1 Lower, 1 Tie, 1 Bag",
 };
 
 /** -----------------------------
@@ -1359,17 +1359,10 @@ export default function FeesTabSection() {
                                     </h2>
 
                                     <div className="p-4 rounded-lg border border-gray-200 bg-gray-50">
-                                        <div className="font-semibold mb-2">Other Charges</div>
+                                        <div className="font-semibold mb-2"></div>
                                         <ul className="list-disc pl-5 space-y-1 text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base">
                                             <li>Lateral Entry Fees: {OTHER_CHARGES.lateralEntryFee}</li>
                                         </ul>
-                                    </div>
-
-                                    <div className="p-4 mt-4 rounded-lg border border-gray-200 bg-white">
-                                        <div className="font-semibold mb-2">Uniform Details</div>
-                                        <p className="whitespace-normal break-words text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base">
-                                            {OTHER_CHARGES.uniformDetails}
-                                        </p>
                                     </div>
                                 </div>
                             )}

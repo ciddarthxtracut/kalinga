@@ -115,26 +115,7 @@ export default function Studentreportcards() {
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-facilities/careerdevelopmentcentre.webp",
             logoSrc: "",
             subtitle: "PARENT ENGAGEMENT",
-        },
-        {
-            title: "130+ Academic Programs",
-            description:
-                "Choose from career options including commerce, management, arts, science, pharmacy, law, technology, information technology, and education.",
-            imageSrc:
-                "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/bg-course.webp",
-            logoSrc: "",
-            subtitle: "CAREER OPTIONS",
-        },
-        {
-            title: "Bridge Courses",
-            description:
-                "We provide bridge courses in Physics, Chemistry, Maths, English, and more to help students from different academic backgrounds grasp essential concepts.",
-            imageSrc:
-                "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrc.webp",
-            logoSrc: "",
-            subtitle: "ACADEMIC SUPPORT",
-            link: "/international-students#bridge-course"
-        },
+        },   
         {
             title: "Competitive Exams Coaching",
             description:
