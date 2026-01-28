@@ -41,8 +41,8 @@ export default function SafetyAndSecurity() {
 `}</style>
 
             <Safetyandsecuritymainintro />
-            <Safetyandsecuritycards />
             <Safetyandsecuritycontact />
+            <Safetyandsecuritycards />
             <AdmissionCareer />
         </>
     );
