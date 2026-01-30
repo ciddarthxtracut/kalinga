@@ -1,4 +1,5 @@
 "use client";
+
 import MainIntro from "../components/about/main_intro";
 import ResearchIntro from "@/app/components/research-resources/research_intro";
 import BoardOfStudiesTable from "@/app/components/general/board_of_studies_table";
@@ -9,74 +10,131 @@ import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
 import { useEffect } from "react";
 
 const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/DSC02606+2.jpg",
-  pageTitle: "Research Resources",
-  objectPosition: "center",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Research Resources", href: "/research-resources" },
-  ],
+    heroImage:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/DSC02606+2.jpg",
+    pageTitle: "Research Resources",
+    objectPosition: "center",
+    customBreadcrumbs: [
+        { label: "Home", href: "/" },
+        { label: "Research Resources", href: "/research-resources" },
+    ],
 };
 
 export default function ResearchPapersAndBooksPublished() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.__breadcrumbData = breadcrumbData;
+        }
+    }, []);
 
-  // 7 tabs: IDs 35-41
-  // Mapping logic:
-  // 35 -> 2025-2026
-  // 36 -> 2024-2025
-  // ...
-  // 41 -> 2019-2020
-  const researchPaperTabs = Array.from({ length: 7 }, (_, i) => {
-    const id = 35 + i; // 35 to 41
-    const yearStart = 2025 - i; // 2025 to 2018
-    const yearEnd = yearStart + 1;
-    const label = `${yearStart}-${yearEnd}`;
+    /* =========================
+       RESEARCH PAPERS (DO NOT TOUCH)
+       IDs: 35–41
+    ========================== */
+    const researchPaperTabs = Array.from({ length: 7 }, (_, i) => {
+        const id = 35 + i;
+        const yearStart = 2025 - i;
+        const yearEnd = yearStart + 1;
 
-    return {
-      value: `year-${id}`,
-      label,
-      content: (
-        <APITable
-          tableId={id.toString()}
-          title={`Research Papers ${label}`}
-          className="py-16"
-          overflowX={true}
-        />
-      ),
-    };
-  });
+        return {
+            value: `research-${id}`,
+            label: `${yearStart}-${yearEnd}`,
+            content: (
+                <APITable
+                    tableId={id.toString()}
+                    title={`Research Papers ${yearStart}-${yearEnd}`}
+                    className="py-12"
+                    overflowX
+                />
+            ),
+        };
+    });
 
-  return (
-    <>
-      <MainIntro
-        title="Transforming Your Results Into Publications"
-        description="Kalinga University actively supports its researchers by providing them with resources, guidance, and support in their publication journey. From expert mentorship to providing access to publication tools and final printing, we’re with them at every step. We also help them present their work in front of a wider audience on both physical and digital platforms. "
-        imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/common/placeholder-img.png"
-        imageAlt="Kalinga University Research"
-        showKnowMore={true}
+    /* =========================
+       PATENTS
+       IDs: 11, 12, 13, 46, 47
+       (reverse year order)
+    ========================== */
+    const patentYears = [
+        { id: 11, label: "2018-2019" },
+        { id: 12, label: "2019-2020" },
+        { id: 13, label: "2020-2021" },
+        { id: 46, label: "2021-2022" },
+        { id: 47, label: "2022-2023" },
+    ];
 
-      />
-      <AccreditationRanking />
-      <BoardOfStudiesTable className="text-center"
-        title="List of Books Published"
-        description="Explore the published research works of our scholars, whose hard work in researching and putting their ideas together in one place can be seen in their impactful books."
-        columns={[" ", " ", " "]}
-        emptyRows={4}
-      />
-      <BoardOfStudiesTable className="text-center"
-        title="Kalinga University Patents"
-        columns={[" ", " ", " "]}
-        emptyRows={4}
-      />
-      <CtcdTrainingTabs customTabs={researchPaperTabs} />
+    const patentsTabs = patentYears.map((year) => ({
+        value: `patent-${year.id}`,
+        label: year.label,
+        content: (
+            <APITable
+                tableId={year.id.toString()}
+                title={`Patents ${year.label}`}
+                className="py-12"
+                overflowX
+            />
+        ),
+    }));
 
-      <AdmissionCareer />
-    </>
-  );
+    /* =========================
+       BOOKS PUBLISHED
+       IDs: 48–55
+       (2018–19 = 48 onwards)
+    ========================== */
+    const booksTabs = Array.from({ length: 8 }, (_, i) => {
+        const id = 48 + i;
+        const yearStart = 2018 + i;
+        const yearEnd = yearStart + 1;
+
+        return {
+            value: `books-${id}`,
+            label: `${yearStart}-${yearEnd}`,
+            content: (
+                <APITable
+                    tableId={id.toString()}
+                    title={`Books Published ${yearStart}-${yearEnd}`}
+                    className="py-12"
+                    overflowX
+                />
+            ),
+        };
+    });
+
+    return (
+        <>
+            {/* HERO INTRO */}
+            <MainIntro
+                title="Transforming Your Results Into Publications"
+                description="Kalinga University actively supports its researchers by providing them with resources, guidance, and support in their publication journey. From expert mentorship to providing access to publication tools and final printing, we’re with them at every step."
+                imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/common/placeholder-img.png"
+                imageAlt="Kalinga University Research"
+                showKnowMore
+            />
+
+            {/* SPACING FIX */}
+            <div className="my-16">
+                <AccreditationRanking />
+            </div>
+
+            {/* BOOKS (STATIC TABLE HEADER ONLY IF NEEDED) */}
+            <div className="my-16">
+                <CtcdTrainingTabs customTabs={booksTabs} />
+            </div>
+
+            {/* PATENTS */}
+            <div className="my-16">
+                <CtcdTrainingTabs customTabs={patentsTabs} />
+            </div>
+
+            {/* RESEARCH PAPERS (UNCHANGED LOGIC) */}
+            <div className="my-16">
+                <CtcdTrainingTabs customTabs={researchPaperTabs} />
+            </div>
+
+            {/* CTA */}
+            <div className="mt-20">
+                <AdmissionCareer />
+            </div>
+        </>
+    );
 }
