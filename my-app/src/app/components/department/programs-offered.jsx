@@ -74,13 +74,14 @@ export default function ProgramsOffered({
         <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-15">
           {/* Left Column */}
           <div className="flex flex-col gap-6 order-1 lg:order-1">
-            <div className="md:pt-20 pt-10">
+            <div >
               <h2 className="text-white mb-4">{title}</h2>
-              <p className="text-white leading-relaxed pr-10">
-                {description}
-              </p>
+              <div
+                className="text-white leading-relaxed pr-10 [&_a]:text-white [&_a]:underline [&_a]:font-bold transition-colors"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
             </div>
-            <div className="mt-auto">
+            <div className="pb-5">
               <Image
                 src={backgroundImage}
                 alt={imageAlt}

@@ -41,9 +41,10 @@ export default function WeStandOut({
                 {cards.map((card) => (
                   <div key={card.id} className="bg-[var(--card-sandal)] rounded-xl p-2 flex-shrink-0 w-[280px] sm:w-[300px] md:w-[350px]">
                     <div className="bg-[var(--button-red)] rounded-xl p-6 md:p-8 lg:p-10 text-white min-h-[180px] md:min-h-[200px] flex items-center h-full text-center">
-                      <p className="leading-relaxed font-plus-jakarta-sans">
-                        {card.text}
-                      </p>
+                      <div
+                        className="leading-relaxed font-plus-jakarta-sans [&_a]:text-white [&_a]:underline [&_a]:font-bold transition-colors"
+                        dangerouslySetInnerHTML={{ __html: card.text }}
+                      />
                     </div>
                   </div>
                 ))}
@@ -51,9 +52,10 @@ export default function WeStandOut({
                 {cards.map((card) => (
                   <div key={`duplicate-${card.id}`} className="bg-[var(--card-sandal)] rounded-xl p-2 flex-shrink-0 w-[280px] sm:w-[300px] md:w-[350px]">
                     <div className="bg-[var(--button-red)] rounded-xl p-6 md:p-8 lg:p-10 text-white min-h-[180px] md:min-h-[200px] flex items-center h-full text-center">
-                      <p className="leading-relaxed font-plus-jakarta-sans">
-                        {card.text}
-                      </p>
+                      <div
+                        className="leading-relaxed font-plus-jakarta-sans [&_a]:text-white [&_a]:underline [&_a]:font-bold transition-colors"
+                        dangerouslySetInnerHTML={{ __html: card.text }}
+                      />
                     </div>
                   </div>
                 ))}
@@ -64,9 +66,10 @@ export default function WeStandOut({
               {cards.map((card) => (
                 <div key={card.id} className="bg-[var(--card-sandal)] rounded-xl p-2">
                   <div className="bg-[var(--button-red)] rounded-xl p-6 md:p-8 lg:p-10 text-white min-h-[180px] md:min-h-[200px] flex items-center h-full text-center">
-                    <p className="leading-relaxed font-plus-jakarta-sans">
-                      {card.text}
-                    </p>
+                    <div
+                      className="leading-relaxed font-plus-jakarta-sans [&_a]:text-white [&_a]:underline [&_a]:font-bold transition-colors"
+                      dangerouslySetInnerHTML={{ __html: card.text }}
+                    />
                   </div>
                 </div>
               ))}

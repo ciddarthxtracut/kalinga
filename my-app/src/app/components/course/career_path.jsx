@@ -44,9 +44,10 @@ export default function CareerPath({
         {/* Header Section */}
         <div className="text-center mb-10">
           <h2 className="mb-4">{title}</h2>
-          <p className="text-[var(--light-text-gray)] max-w-3xl mx-auto">
-            {description}
-          </p>
+          <div
+            className="text-[var(--light-text-gray)] max-w-3xl mx-auto [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
 
         {/* Slider Section */}

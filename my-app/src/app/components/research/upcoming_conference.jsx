@@ -132,9 +132,10 @@ export default function UpcomingConference({
       <div className="container mx-auto">
         <h2 className="text-center mb-6">{finalTitle}</h2>
         {description && (
-          <p className="text-center text-black max-w-3xl mx-auto mb-10 leading-relaxed">
-            {description}
-          </p>
+          <div
+            className="text-center text-black max-w-3xl mx-auto mb-10 leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         )}
 
         {displayConferences && displayConferences.length > 0 ? (
@@ -193,9 +194,10 @@ export default function UpcomingConference({
                         <h3 className="text-2xl md:text-4xl  mb-3">
                           {conf.title}
                         </h3>
-                        <p className="text-[var(--light-text-gray)] text-sm">
-                          {conf.description}
-                        </p>
+                        <div
+                          className="text-[var(--light-text-gray)] text-sm [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+                          dangerouslySetInnerHTML={{ __html: conf.description }}
+                        />
                       </div>
 
                       {(conf.href || href) ? (

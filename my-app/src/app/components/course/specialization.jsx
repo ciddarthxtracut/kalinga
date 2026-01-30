@@ -76,9 +76,10 @@ export default function Specialization({ cards = cardData }) {
                                 <h2 className="mb-3 text-2xl md:text-4xl md:mb-4 text-[var(--foreground)]">
                                     {card.title}
                                 </h2>
-                                <p className="leading-relaxed font-plus-jakarta-sans text-gray-700">
-                                    {card.description}
-                                </p>
+                                <div
+                                    className="leading-relaxed font-plus-jakarta-sans text-gray-700 [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+                                    dangerouslySetInnerHTML={{ __html: card.description }}
+                                />
                             </div>
                         </div>
                     </div>

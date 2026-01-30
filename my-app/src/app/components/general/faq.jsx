@@ -563,7 +563,10 @@ const FAQ = ({
                       {section.description && (
                         <div className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans mb-4">
                           {typeof section.description === 'string' ? (
-                            <div dangerouslySetInnerHTML={{ __html: section.description }} />
+                            <div
+                              className="[&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+                              dangerouslySetInnerHTML={{ __html: section.description }}
+                            />
                           ) : (
                             section.description
                           )}
@@ -581,7 +584,7 @@ const FAQ = ({
                         </div>
                       ) : section.answer ? (
                         <div
-                          className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans"
+                          className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
                           dangerouslySetInnerHTML={{ __html: section.answer }}
                         />
                       ) : null}
@@ -628,7 +631,10 @@ const FAQ = ({
                           {item.answer.map((listItem, idx) => (
                             <li key={idx}>
                               {containsHTML(listItem) ? (
-                                <span dangerouslySetInnerHTML={{ __html: listItem }} />
+                                <span
+                                  className="[&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+                                  dangerouslySetInnerHTML={{ __html: listItem }}
+                                />
                               ) : (
                                 renderTextWithLinks(listItem)
                               )}
@@ -637,7 +643,7 @@ const FAQ = ({
                         </ul>
                       ) : containsHTML(item.answer) ? (
                         <div
-                          className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans"
+                          className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
                           dangerouslySetInnerHTML={{ __html: item.answer }}
                         />
                       ) : (
@@ -747,10 +753,10 @@ const FAQ = ({
                             // Find name field for prominent display
                             const nameField = section.columns?.find(col => col.key === 'name' || col.key === 'nameOfMember' || col.key === 'nameOfElectedCandidate')
                             const nameValue = nameField ? member[nameField.key] : null
-                            
+
                             // Get other fields (excluding slNo and name)
                             const otherFields = section.columns?.filter(col => col.key !== 'slNo' && col.key !== nameField?.key) || []
-                            
+
                             return (
                               <div
                                 key={memberIndex}
@@ -762,14 +768,14 @@ const FAQ = ({
                                     {nameValue}
                                   </span>
                                 )}
-                                
+
                                 {/* Other fields displayed below */}
                                 {otherFields.length > 0 && (
                                   <div className="w-full space-y-2">
                                     {otherFields.map((column) => {
                                       const value = member[column.key]
                                       if (!value) return null
-                                      
+
                                       return (
                                         <div key={column.key} className="w-full">
                                           <p className="text-xs font-semibold text-gray-500 uppercase mb-1">
@@ -783,7 +789,7 @@ const FAQ = ({
                                     })}
                                   </div>
                                 )}
-                                
+
                                 {/* Fallback if no columns defined */}
                                 {!section.columns && (
                                   <div className="w-full space-y-2">
@@ -867,7 +873,7 @@ const FAQ = ({
                         </ul>
                       ) : containsHTML(item.answer) ? (
                         <div
-                          className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans"
+                          className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
                           dangerouslySetInnerHTML={{ __html: item.answer }}
                         />
                       ) : (
@@ -1244,7 +1250,7 @@ const FAQ = ({
                       </ul>
                     ) : containsHTML(item.answer) ? (
                       <div
-                        className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans"
+                        className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
                         dangerouslySetInnerHTML={{ __html: item.answer }}
                       />
                     ) : (

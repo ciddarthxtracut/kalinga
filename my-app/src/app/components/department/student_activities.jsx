@@ -65,6 +65,7 @@ export default function StudentActivities({
   paddingClassName = "py-16",
   cardHeightClass = "h-full w-full",
   showReadMore = true,
+  fallbackToGlobal = false,
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -97,8 +98,18 @@ export default function StudentActivities({
 
         const data = await fetchNewsEvents(params);
 
-        if (data && data.results) {
-          let mappedActivities = data.results.map(item => ({
+        let results = data.results || [];
+
+        // If fallback enabled and no department results, fetch global results
+        if (fallbackToGlobal && departmentId && results.length === 0) {
+          const globalParams = { ...params };
+          delete globalParams.department;
+          const globalData = await fetchNewsEvents(globalParams);
+          results = globalData?.results || [];
+        }
+
+        if (results.length > 0) {
+          let mappedActivities = results.map(item => ({
             id: item.id,
             title: item.heading,
             description: parseHtmlToText(item.content),
@@ -114,6 +125,8 @@ export default function StudentActivities({
           }
 
           setActivities(mappedActivities);
+        } else {
+          setActivities([]);
         }
       } catch (err) {
         console.error("Failed to load  Events and Activities:", err);
