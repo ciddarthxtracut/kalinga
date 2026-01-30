@@ -160,7 +160,13 @@ export default function EligibilityCriteria({
                     {additionalButtons.map((button, index) => (
                       <Link
                         key={index}
-                        href={button.href}
+                        href={button.onClick ? "#" : button.href}
+                        onClick={(e) => {
+                          if (button.onClick) {
+                            e.preventDefault();
+                            button.onClick();
+                          }
+                        }}
                         className="group flex items-center gap-2 text-white hover:text-white/80 transition-colors"
                       >
                         <span className="text-lg md:text-xl font-medium">{button.label}</span>

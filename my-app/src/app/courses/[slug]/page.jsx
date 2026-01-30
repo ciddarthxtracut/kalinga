@@ -23,6 +23,7 @@ import AdmissionCareer from "@/app/components/general/admission_cta";
 import CourseNavigation from "@/app/components/general/course-navigation";
 import QuickLinks from "@/app/components/general/quick_links";
 import GlobalArrowButton from "@/app/components/general/global-arrow_button";
+import { useFlipbook } from "@/app/components/general/FlipbookContext";
 import { fetchAllCourses, fetchCourseCompleteDetail, fetchDepartmentCompleteDetail, parseHtmlToParagraphs, parseHtmlToText, parseHtmlListItems, fetchClubs, fetchClubDetail } from "@/app/lib/api";
 import { useBreadcrumbData } from "@/app/components/layout/BreadcrumbContext";
 import FacilitySlider from "@/app/components/course/facility-slider";
@@ -66,6 +67,7 @@ export default function DynamicCoursePage() {
   const [departmentData, setDepartmentData] = useState(null);
   const [metadataLoaded, setMetadataLoaded] = useState(false);
   const [clubsData, setClubsData] = useState([]);
+  const { openFlipbook } = useFlipbook();
 
   // Find course data from slug
   useEffect(() => {
@@ -376,7 +378,14 @@ export default function DynamicCoursePage() {
     href: courseData.eligibility_criteria[0].cta_link || "https://admissions.kalingauniversity.ac.in/",
     additionalButtons: [
       { label: "Fees", href: "/ku-fees" },
-      { label: "Scheme & Syllabus", href: "#syllabus" }
+      {
+        label: "Scheme & Syllabus",
+        href: (courseData?.syllabus_buttons?.length === 1) ? "#" : "#syllabus",
+        onClick: (courseData?.syllabus_buttons?.length === 1) ? () => {
+          const btn = courseData.syllabus_buttons[0];
+          openFlipbook(btn.file_url || btn.file, courseData.syllabus_info?.heading || "Scheme & Syllabus");
+        } : undefined
+      }
     ],
     lateralEntryData: courseData.lateral_entry ? {
       duration: formatDuration(courseData.lateral_entry.duration, courseData.lateral_entry.semester),
@@ -776,7 +785,7 @@ export default function DynamicCoursePage() {
           ctaLink=""
         />
       )}
-      {syllabusContent && (
+      {syllabusContent && !(syllabusContent.buttons && syllabusContent.buttons.length === 1) && (
         <div id="syllabus" className="scroll-mt-24 md:scroll-mt-28">
           <OrganogramOfKalinga
             title={syllabusContent.title}
