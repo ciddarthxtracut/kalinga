@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <HeroSe ction />
+      <HeroSection />
 
       {/* Quick Links Section */}
       <QuickLinks />
