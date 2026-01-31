@@ -726,3 +726,26 @@ export async function fetchClubDetail(id) {
   }
 }
 
+/**
+ * Fetches all designations from the API
+ * @returns {Promise<Array>} Array of designation objects
+ */
+export async function fetchDesignations() {
+  try {
+    const url = getApiUrl(API_CONFIG.designations.list());
+    const response = await fetch(url, {
+      method: 'GET',
+      next: { revalidate: 3600 },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return extractResults(data);
+  } catch (error) {
+    console.error('Error fetching designations:', error);
+    throw error;
+  }
+}

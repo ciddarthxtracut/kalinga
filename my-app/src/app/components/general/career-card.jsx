@@ -30,9 +30,10 @@ export default function CareerCard({ title, description, icon, imageUrl }) {
       <h3 className="mb-3 !text-[22px] leading-none">{title}</h3>
 
       {/* Description */}
-      <p className="text-[var(--foreground)] text-sm flex-grow">
-        {description}
-      </p>
+      <div
+        className="text-[var(--foreground)] text-sm flex-grow [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </div>
   );
 }

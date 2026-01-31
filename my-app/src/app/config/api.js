@@ -58,6 +58,11 @@ export const API_CONFIG = {
     detail: (id) => `/clubs/${id}/`,
   },
 
+  // Designations endpoints
+  designations: {
+    list: () => `/designations/`,
+  },
+
   // Add other API endpoints here as needed
 };
 

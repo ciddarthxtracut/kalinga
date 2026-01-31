@@ -361,17 +361,16 @@ export default function Testimonials({ testimonials = [], className = "", subtit
                                                 </div>
                                             </div>
                                             <div className="relative">
-                                                <p
+                                                <div
                                                     ref={(el) => {
                                                         if (el) quoteRefs.current[`quote-${item.id}`] = el;
                                                     }}
-                                                    className={`text-slate-800 leading-relaxed md:leading-loose font-normal ${!expandedQuotes[item.id] && needsReadMore[item.id]
-                                                            ? 'line-clamp-4'
-                                                            : ''
+                                                    className={`text-slate-800 leading-relaxed md:leading-loose font-normal [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold transition-colors ${!expandedQuotes[item.id] && needsReadMore[item.id]
+                                                        ? 'line-clamp-4'
+                                                        : ''
                                                         }`}
-                                                >
-                                                    {item.quote}
-                                                </p>
+                                                    dangerouslySetInnerHTML={{ __html: item.quote }}
+                                                />
                                                 {needsReadMore[item.id] && (
                                                     <button
                                                         onClick={(e) => {

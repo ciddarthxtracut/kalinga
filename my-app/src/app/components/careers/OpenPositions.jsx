@@ -620,8 +620,8 @@ export default function OpenPositions({
                       </div>
                     )}
                     {selectedPosition.eligibility && (
-                      <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 italic">
-                        <span className="text-sm font-semibold text-gray-600 not-italic block mb-1">Eligibility Criteria:</span>
+                      <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <span className="text-sm font-semibold text-gray-600  block mb-1">Eligibility Criteria:</span>
                         <div
                           className="text-gray-700 [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
                           dangerouslySetInnerHTML={{ __html: selectedPosition.eligibility }}

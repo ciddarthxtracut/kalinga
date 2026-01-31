@@ -130,9 +130,9 @@ function MentorCard({
             </div>
 
             <div className="relative z-10">
-              <p
+              <div
                 ref={quoteRef}
-                className="text-white text-base leading-relaxed pt-10 pb-8"
+                className="text-white text-base leading-relaxed pt-10 pb-8 [&_a]:text-white [&_a]:underline [&_a]:font-bold transition-colors"
                 style={!isQuoteExpanded ? {
                   display: '-webkit-box',
                   WebkitLineClamp: 4,
@@ -140,9 +140,8 @@ function MentorCard({
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                 } : {}}
-              >
-                {quote}
-              </p>
+                dangerouslySetInnerHTML={{ __html: quote }}
+              />
               {needsReadMore && (
                 <button
                   onClick={() => setIsQuoteExpanded(!isQuoteExpanded)}
@@ -231,51 +230,10 @@ function MentorCard({
               <h3 className="font-stix text-2xl md:text-3xl mb-4 text-[var(--foreground)]">
                 {title}
               </h3>
-              <div className="text-gray-700 leading-relaxed font-plus-jakarta-sans">
-                {Array.isArray(message) ? (
-                  message.map((item, index) => {
-                    // Handle section objects with title and items
-                    if (typeof item === 'object' && item.type === 'section') {
-                      return (
-                        <div key={index} className={index > 0 ? "mt-6" : ""}>
-                          <h4 className="font-semibold text-lg mb-3 text-[var(--foreground)]">
-                            {item.title}
-                          </h4>
-                          <ul className="list-disc list-outside ml-5 space-y-2">
-                            {item.items.map((listItem, idx) => {
-                              // Handle nested items with subitems
-                              if (typeof listItem === 'object' && listItem.subitems) {
-                                return (
-                                  <li key={idx} className="text-gray-700">
-                                    {listItem.text}
-                                    <ul className="list-disc list-outside ml-5 mt-2 space-y-2">
-                                      {listItem.subitems.map((subitem, subIdx) => (
-                                        <li key={subIdx} className="text-gray-700">{subitem}</li>
-                                      ))}
-                                    </ul>
-                                  </li>
-                                );
-                              }
-                              // Regular list item
-                              return <li key={idx} className="text-gray-700">{listItem}</li>;
-                            })}
-                          </ul>
-                        </div>
-                      );
-                    }
-                    // Handle regular string paragraphs
-                    return (
-                      <p key={index} className={index > 0 ? "mt-4" : ""}>
-                        {item}
-                      </p>
-                    );
-                  })
-                ) : typeof message === 'string' ? (
-                  <p>{message}</p>
-                ) : (
-                  message
-                )}
-              </div>
+              <div
+                className="text-gray-700 leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors [&_p]:mb-4 [&_ul]:mb-4 [&_ol]:mb-4 [&_li]:mb-2 [&_p:last-child]:mb-0 [&_ul:last-child]:mb-0 [&_ol:last-child]:mb-0"
+                dangerouslySetInnerHTML={{ __html: message }}
+              />
             </div>
           </div>
         </div>

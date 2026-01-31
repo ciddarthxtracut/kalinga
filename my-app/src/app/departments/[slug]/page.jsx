@@ -28,7 +28,7 @@ import DataTable from "@/app/components/general/data-table";
 import SectionHeading from "@/app/components/general/SectionHeading";
 import EligibilityCriteria from "@/app/components/course/eligibility_criteria";
 import CareerPath from "@/app/components/course/career_path";
-import { fetchAllDepartments, fetchDepartmentCompleteDetail, fetchAllDepartmentsCourses, parseHtmlToParagraphs, parseHtmlToText, parseHtmlListItems } from "@/app/lib/api";
+import { fetchAllDepartments, fetchDepartmentCompleteDetail, fetchAllDepartmentsCourses, parseHtmlToParagraphs, parseHtmlToText, parseHtmlListItems, fetchDesignations } from "@/app/lib/api";
 import { useBreadcrumbData } from "@/app/components/layout/BreadcrumbContext";
 import Gallery from "@/app/components/general/gallery";
 
@@ -54,6 +54,7 @@ export default function DynamicDepartmentPage() {
   const [error, setError] = useState(null);
   const [departmentId, setDepartmentId] = useState(null);
   const [departmentCourses, setDepartmentCourses] = useState([]);
+  const [designations, setDesignations] = useState([]);
 
   // Find department data from slug
   useEffect(() => {
@@ -208,19 +209,27 @@ export default function DynamicDepartmentPage() {
     }
   }, [departmentData]);
 
+  // Fetch designations
+  useEffect(() => {
+    const loadDesignations = async () => {
+      try {
+        const data = await fetchDesignations();
+        setDesignations(data);
+      } catch (err) {
+        console.warn('[Dept Page] Failed to fetch designations:', err);
+      }
+    };
+    loadDesignations();
+  }, []);
+
   // Map API data to components (same logic as static page)
   const mainIntroContent = departmentData?.about_sections?.[0] ? (() => {
-    const apiParagraphs = parseHtmlToParagraphs(departmentData.about_sections[0].content);
-    const mockSecondParagraph = "";
-
-    const description = apiParagraphs.length > 0
-      ? [apiParagraphs[0], mockSecondParagraph, ...apiParagraphs.slice(1)]
-      : [mockSecondParagraph];
+    const description = departmentData.about_sections[0].content;
 
     return {
       title: departmentData.about_sections[0].heading,
       subtitle: departmentData.about_sections[0].heading,
-      description: description,
+      description: parseHtmlToParagraphs(description),
       imageUrl: departmentData.about_sections[0].image,
       imageAlt: departmentData.about_sections[0].alt,
       initialVisibleParagraphs: 3,
@@ -231,14 +240,21 @@ export default function DynamicDepartmentPage() {
 
   // Map API data to DeptHeadIntro component props
   // Component expects: title, subtitle, department, imageSrc, quote, message
-  const deptHeadIntroContent = departmentData?.department_faculty_details?.[0] ? {
-    title: departmentData.department_faculty_details[0].name || "",
-    subtitle: departmentData.department_faculty_details[0].qualification || "Message from the Dean",
-    department: departmentData.name || "",
-    imageSrc: departmentData.department_faculty_details[0].image || "",
-    quote: departmentData.department_faculty_details[0].quote_description || "",
-    message: parseHtmlToParagraphs(departmentData.department_faculty_details[0].about || ""),
-  } : null;
+  const deptHeadIntroContent = departmentData?.department_faculty_details?.[0] ? (() => {
+    const faculty = departmentData.department_faculty_details[0];
+    const designationObj = designations.find(d => d.id === faculty.designation);
+    const rawDesignationName = designationObj ? designationObj.name : (faculty.qualification || "Dean");
+    const designationName = rawDesignationName.split(',')[0].trim();
+
+    return {
+      title: faculty.name || "",
+      subtitle: `Message from the ${designationName}`,
+      department: departmentData.name || "",
+      imageSrc: faculty.image || "",
+      quote: faculty.quote_description || "",
+      message: faculty.about || "",
+    };
+  })() : null;
 
   const publicationStats = departmentData?.milestones && departmentData.milestones.length > 0
     ? departmentData.milestones
@@ -314,7 +330,7 @@ export default function DynamicDepartmentPage() {
       .map((benefit, index) => ({
         id: benefit.id,
         title: benefit.heading || "",
-        body: parseHtmlToText(benefit.text) || "",
+        body: benefit.text || "",
         variant: index % 2 === 0 ? "gray" : "amber",
         image: benefit.image || null,
       }))
@@ -330,7 +346,7 @@ export default function DynamicDepartmentPage() {
       .map(faq => ({
         id: faq.id,
         question: faq.question || "",
-        answer: parseHtmlToText(faq.answer) || "",
+        answer: faq.answer || "",
       }));
   }, [departmentData?.faqs]);
 
@@ -346,7 +362,7 @@ export default function DynamicDepartmentPage() {
       .map(interview => ({
         id: interview.id,
         name: interview.heading || "",
-        description: parseHtmlToText(interview.description) || "",
+        description: interview.description || "",
         videoUrl: interview.video_link || null,
         thumbnail: interview.placeholder_image || null,
       }));
@@ -367,7 +383,7 @@ export default function DynamicDepartmentPage() {
         id: interview.id,
         name: interview.heading || "",
         role: "Student", // Default role
-        quote: parseHtmlToText(interview.description) || "",
+        quote: interview.description || "",
         image: interview.placeholder_image || null,
         theme: themes[index % themes.length], // Cycle through themes
       }));
@@ -391,7 +407,7 @@ export default function DynamicDepartmentPage() {
   const breadcrumbData = (departmentData?.name && !loading) ? {
     heroImage: departmentData?.banners?.[0]?.image || departmentData?.banners?.[0]?.image_url || "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/student-gathered.webp",
     pageTitle: departmentData.name,
-    imageposition: "object-[45%_25%]",
+    imageposition: "object-[45%_10%]",
     customBreadcrumbs: [
       { label: 'Home', href: '/' },
       {
@@ -458,7 +474,7 @@ export default function DynamicDepartmentPage() {
         <ProgramsOffered
           programs={programsOffered}
           title="Programs Offered"
-          description={parseHtmlToText(programsOverview)}
+          description={programsOverview}
           {...(programsImage && { backgroundImage: programsImage })}
           {...(programsImageAlt && { imageAlt: programsImageAlt })}
         />
@@ -479,11 +495,11 @@ export default function DynamicDepartmentPage() {
       {departmentData?.career_pathways && departmentData.career_pathways.length > 0 && (
         <CareerPath
           title="Career Pathways"
-          description={parseHtmlToText(departmentData.career_pathway_description || "")}
+          description={departmentData.career_pathway_description || ""}
           careers={departmentData.career_pathways.map(career => ({
             id: career.id,
             title: career.heading || career.title,
-            description: parseHtmlToText(career.description || ""),
+            description: career.description || "",
             imageUrl: career.icon_image || career.icon || null
           }))}
         />
@@ -528,7 +544,7 @@ export default function DynamicDepartmentPage() {
                     </div>
                   ), // Pass JSX element if no image
                   title: benefit.heading || '',
-                  description: parseHtmlToText(benefit.text) || '',
+                  description: benefit.text || '',
                 }))}
             />
           </div>
@@ -541,7 +557,7 @@ export default function DynamicDepartmentPage() {
             .sort((a, b) => (a.display_order || 0) - (b.display_order || 0))
             .map(item => ({
               id: item.id,
-              text: parseHtmlToText(item.description)
+              text: item.description
             }))
           }
         />
@@ -557,7 +573,7 @@ export default function DynamicDepartmentPage() {
             .map(club => ({
               id: club.id,
               title: club.name || "",
-              description: parseHtmlToText(club.description) || "",
+              description: club.description || "",
               image: club.logo || null,
               category: "Clubs", // Default category from component, can be customized per club if needed
             }))
@@ -611,7 +627,7 @@ export default function DynamicDepartmentPage() {
       )} */}
       <StudentActivities
         departmentId={departmentData?.id}
-
+        fallbackToGlobal={true}
       />
       <Gallery title="Glimpse" />
 

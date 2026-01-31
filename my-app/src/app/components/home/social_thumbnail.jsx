@@ -20,7 +20,7 @@ export default function SocialThumbs({ className = '' }) {
       <div className="px-2">
         {/* Title */}
         <div className="flex justify-center mb-4 sm:mb-2 text-center">
-          <h2 className="!text-[50px] md:!text-[100px] leading-[50px] md:leading-[100px] font-stix text-transparent [-webkit-text-stroke:1.57px_var(--button-red)] font-normal not-italic mb-10">Social Media Presence</h2>
+          <h2 className="!text-[50px] md:!text-[100px] leading-[50px] md:leading-[100px] font-stix text-transparent [-webkit-text-stroke:1.57px_var(--button-red)] font-normal  mb-10">Social Media Presence</h2>
         </div>
 
         {/* Images gallery - Marquee slider */}
