@@ -32,8 +32,8 @@ export default function CanteenMess() {
       type: "sandal",
       title: "Mess",
       desc: "We have designed three spacious halls to accommodate large groups of students at a time and serve with different food options every day. Meals of both vegetarian and non-vegetarian plans are prepared and served to students as per their preference, serving 4 meals a day – breakfast, lunch, high tea, and dinner.",
-      full:
-        "We have designed three spacious halls to accommodate large groups of students at a time and serve with different food options every day. Meals of both vegetarian and non-vegetarian plans are prepared and served to students as per their preference, serving 4 meals a day – breakfast, lunch, high tea, and dinner. There is a separate meal plan for international students as well. Experience warm hospitality with our attentive staff members who will take care of your food requirements. As part of the University’s support network for hostel students, during Ramadan, an appropriate meal plan is provided to our Muslim students, and at the time of Navratri, a special meal is provided to our Hindu students. With wholesome and nutritious meals, our students enjoy their food in a calm atmosphere near nature.",
+      extra:
+        "There is a separate meal plan for international students as well. Experience warm hospitality with our attentive staff members who will take care of your food requirements. As part of the University’s support network for hostel students, during Ramadan, an appropriate meal plan is provided to our Muslim students, and at the time of Navratri, a special meal is provided to our Hindu students. With wholesome and nutritious meals, our students enjoy their food in a calm atmosphere near nature.",
     },
     {
       type: "red",
@@ -43,8 +43,7 @@ export default function CanteenMess() {
     },
   ];
 
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMessExpanded, setIsMessExpanded] = useState(false);
 
   return (
     <div className="container mx-auto py-16 md:pb-25 px-2 flex flex-col md:gap-20 gap-12 items-stretch">
@@ -56,10 +55,10 @@ export default function CanteenMess() {
       {sections.map((sec, index) => (
         <div
           key={index}
-          className="relative w-full h-auto md:h-[400px] flex flex-col md:block"
+          className="relative w-full h-auto md:min-h-[400px] flex flex-col md:block"
         >
           {sec.type === "sandal" ? (
-            <div className="md:absolute md:bottom-[75px] md:right-[0px] md:w-[55%] w-full mb-4 md:mb-0">
+            <div className="md:absolute md:top-[25px] md:right-[0px] md:w-[55%] w-full mb-4 md:mb-0">
               <div className="relative h-[220px] md:h-[300px] rounded-2xl overflow-hidden shadow-lg w-full z-10">
                 <img
                   src={imageSets[index][indexes[index]]}
@@ -72,11 +71,10 @@ export default function CanteenMess() {
                 {imageSets[index].map((_, i) => (
                   <div
                     key={i}
-                    className={`h-2 rounded-full ${
-                      i === indexes[index]
+                    className={`h-2 rounded-full ${i === indexes[index]
                         ? "bg-[var(--dark-orange-red-light)] w-12"
                         : "bg-[var(--light-gray)] w-4"
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
@@ -95,11 +93,10 @@ export default function CanteenMess() {
                 {imageSets[index].map((_, i) => (
                   <div
                     key={i}
-                    className={`h-2 rounded-full ${
-                      i === indexes[index]
+                    className={`h-2 rounded-full ${i === indexes[index]
                         ? "bg-[var(--dark-orange-red-light)] w-12"
                         : "bg-[var(--light-gray)] w-4"
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
@@ -108,23 +105,32 @@ export default function CanteenMess() {
 
           {/* CONTENT */}
           {sec.type === "sandal" ? (
-            <div className="bg-[var(--card-sandal)] rounded-2xl p-6 md:p-8 shadow-md w-full md:w-[55%] md:min-h-[330px] md:absolute md:left-[0] md:top-[100px] flex flex-col justify-center">
+            <div className="bg-[var(--card-sandal)] rounded-2xl p-6 md:p-8 shadow-md w-full md:w-[55%] md:min-h-[330px] md:relative md:left-[0] md:mt-[100px] md:mb-8 flex flex-col justify-center">
               <h1 className="text-xl md:text-2xl font-regular mb-3">
                 {sec.title}
               </h1>
               <p className="text-sm text-[var(--foreground)]/70 leading-relaxed mb-4 md:w-3/4 w-full">
                 {sec.desc}
+                {!isMessExpanded && (
+                  <span
+                    onClick={() => setIsMessExpanded(true)}
+                    className="cursor-pointer font-bold ml-1 text-[var(--button-red)] hover:underline"
+                  >
+                    Read More
+                  </span>
+                )}
               </p>
-
-              {/* ✅ KEEP Read More ONLY FOR MESS */}
-              <GlobalArrowButton
-                onClick={() => {
-                  setActiveIndex(index);
-                  setPopupOpen(true);
-                }}
-              >
-                Read More
-              </GlobalArrowButton>
+              {isMessExpanded && sec.extra && (
+                <p className="text-sm text-[var(--foreground)]/70 leading-relaxed mb-4 md:w-3/4 w-full">
+                  {sec.extra}
+                  <span
+                    onClick={() => setIsMessExpanded(false)}
+                    className="cursor-pointer font-bold ml-1 text-[var(--button-red)] hover:underline"
+                  >
+                    Read Less
+                  </span>
+                </p>
+              )}
             </div>
           ) : (
             <div className="bg-[var(--button-red)] text-white rounded-2xl p-6 md:p-8 shadow-md w-full md:w-[55%] md:min-h-[330px] md:absolute md:right-[0px] md:top-[100px] flex flex-col justify-center">
@@ -134,33 +140,10 @@ export default function CanteenMess() {
               <p className="text-sm leading-relaxed mb-4 md:pl-[140px] w-full">
                 {sec.desc}
               </p>
-
-              {/* ❌ REMOVED Read More FOR CANTEEN/CAFETERIAS */}
             </div>
           )}
         </div>
       ))}
-
-      {/* ✅ Popup should open only for Mess */}
-      {popupOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4">
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setPopupOpen(false)}
-          />
-          <div className="relative bg-white rounded-2xl max-w-3xl w-full p-6 shadow-xl">
-            <h3 className="text-2xl mb-4">{sections[activeIndex].title}</h3>
-            <p className="text-sm leading-relaxed text-black/80">
-              {sections[activeIndex].full}
-            </p>
-            <div className="mt-6 flex justify-end">
-              <GlobalArrowButton onClick={() => setPopupOpen(false)}>
-                Close
-              </GlobalArrowButton>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -326,30 +326,28 @@ export default function CorporateTrainingAndConsultancyDivision() {
         subtitleImage="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/logo-ctcd.svg"
         subtitleImageAlt="CTCD Logo"
         customForm={<CTCDApplicationForm />}
-        buttonText="Enquire Now"
-        buttonLink="#ctcd-main-intro"
-
+        showButton={false}
       />
       <div id="ctcd-main-intro">
-      <MainIntro
-        title="Corporate Training and Consultancy Division (CTCD)"
-        description={[
-          "Due to increasing competition in the domestic and international markets, political influence, and technological advancements, organisations find it difficult to compete in the marketplace. Corporate Training and Consultancy Division (CTCD) at Kalinga helps businesses effectively utilise their most valuable asset, i.e., THEIR PEOPLE.",
-          "We offer training programs and provide one-on-one consultancy services to corporate employees using experiential methods at their location, at our campus, or through online mode, helping them upgrade their skills, boost morale, and improve productivity. Our team continuously researches and stays updated with the latest concepts and trends to provide valuable solutions to organisations. Through our soft skills, technical skills, and compliance training, they become ready to face any challenge and stand out in the workplace."
-        ]}
-        points={[
-          "To align training programs with business needs",
-          "To measure the impact of training through Key Result Areas (KRAs) and business metrics",
-          "To develop core competencies among employees",
-          "To measure the effectiveness of training through employees' performance evaluation and business results",
-          "To use the Phase-Wise training approach for continuous performance improvement"
-        ]}
-        imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/csr-intro.png"
-        imageAlt="CTCD"
-        initialVisibleParagraphs={1}
-        hidePointsUntilExpanded={true}
+        <MainIntro
+          title="Corporate Training and Consultancy Division (CTCD)"
+          description={[
+            "Due to increasing competition in the domestic and international markets, political influence, and technological advancements, organisations find it difficult to compete in the marketplace. Corporate Training and Consultancy Division (CTCD) at Kalinga helps businesses effectively utilise their most valuable asset, i.e., THEIR PEOPLE.",
+            "We offer training programs and provide one-on-one consultancy services to corporate employees using experiential methods at their location, at our campus, or through online mode, helping them upgrade their skills, boost morale, and improve productivity. Our team continuously researches and stays updated with the latest concepts and trends to provide valuable solutions to organisations. Through our soft skills, technical skills, and compliance training, they become ready to face any challenge and stand out in the workplace."
+          ]}
+          points={[
+            "To align training programs with business needs",
+            "To measure the impact of training through Key Result Areas (KRAs) and business metrics",
+            "To develop core competencies among employees",
+            "To measure the effectiveness of training through employees' performance evaluation and business results",
+            "To use the Phase-Wise training approach for continuous performance improvement"
+          ]}
+          imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/csr-intro.png"
+          imageAlt="CTCD"
+          initialVisibleParagraphs={1}
+          hidePointsUntilExpanded={true}
 
-      />
+        />
       </div>
       <CtcdTrainingTabs />
       <MasterClassTab
@@ -372,7 +370,7 @@ export default function CorporateTrainingAndConsultancyDivision() {
         cardBackgroundColor="bg-[var(--dark-blue)]"
         useContainer={true}
       />
-            <CTCDConsultancyTabSection />
+      <CTCDConsultancyTabSection />
       <AdmissionSteps
         title="Our Training Cycle"
         subtitle=""
@@ -419,7 +417,7 @@ export default function CorporateTrainingAndConsultancyDivision() {
         cardBackgroundColor="bg-[var(--button-red)]"
         useContainer={true}
       />
-      <Gallery title="Glimpses"/>
+      <Gallery title="Glimpses" />
       <AdmissionCareer />
     </>
   );

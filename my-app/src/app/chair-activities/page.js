@@ -6,32 +6,31 @@ import MainIntro from "../components/about/main_intro";
 import DataTable from "../components/general/data-table";
 import SectionHeading from "../components/general/SectionHeading";
 
+import CenterOfExcellence from "../components/about/center_of_excellence";
+
 const listStyle = { fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '14px' }
 
-
-const tableColumns = [
-  { key: "slNo", label: "Sl. No", width: "w-20" },
-  { key: "title", label: "Chair", width: "flex-1" },
-  { key: "action", label: "In-charge", width: "w-72" }
+const chairsData = [
+  {
+    id: 1,
+    name: "Shaheed Veer Narayan Singh Chair",
+    title: "In-charge: Dr. Ajay Shukla",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/shaheed.webp",
+  },
+  {
+    id: 2,
+    name: "Amartya Sen Chair",
+    title: "In-charge: Dr. Chandra Bhooshan Singh",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/amartya.webp",
+  },
+  {
+    id: 3,
+    name: "Weng Ming Hui Chair",
+    title: "In-charge: Dr. Kali doss",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/weng.webp",
+  },
 ];
 
-const tableData = [
-  {
-    slNo: 1,
-    title: "Shaheed Veer Narayan Singh Chair",
-    action: "Dr. Ajay Shukla",
-  },
-  {
-    slNo: 2,
-    title: "Amartya Sen Chair",
-    action: "Dr. Chandra Bhooshan Singh",
-  },
-  {
-    slNo: 3,
-    title: "Weng Ming Hui Chair",
-    action: "Dr. Kali doss",
-  },
-]
 const tableColumns1 = [
   { key: "slNo", label: "Sl. No", width: "w-20" },
   { key: "title", label: "Title of Program", width: "w-64" },
@@ -135,11 +134,11 @@ export default function Kalingachair() {
         { label: 'Chairs', href: '/chair-activities' }
       ]
     };
-    
+
     if (typeof window !== "undefined") {
       window.__breadcrumbData = breadcrumbData;
     }
-    
+
     return () => {
       if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
         delete window.__breadcrumbData;
@@ -159,22 +158,26 @@ export default function Kalingachair() {
         imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg"
         imageAlt="Kalinga University chairs"
       />
-      <SectionHeading
-        title="Chairs"
-        subtitle=""
-        titleClassName="text-center mt-10"
-        subtitleClassName=""
 
-      />
-      <DataTable
-        columns={tableColumns} data={tableData}
+      <CenterOfExcellence
+        centres={chairsData}
+        title="List of Chairs"
+        description=""
+        showDescription={false}
+        className="bg-white"
+        slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 1.2, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 24 },
+          1024: { slidesPerView: 3, spaceBetween: 0 },
+        }}
       />
       <section className="container mx-auto px-6 py-16">
         <div>
           <SectionHeading
             title="Details & Activities"
             subtitle=""
-            titleClassName="text-center mt-10"
+            titleClassName="text-center"
             subtitleClassName=""
           />
           <h3 className='text-2xl pt-6'>Amartya Sen Chair</h3>
@@ -199,7 +202,6 @@ export default function Kalingachair() {
         columns={tableColumns1} data={tableData1}
         overflowX={true}
       />
-      <div className="mb-50"></div>
     </>
   );
 }

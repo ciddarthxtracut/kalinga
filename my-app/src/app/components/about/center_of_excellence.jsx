@@ -102,22 +102,22 @@ export default function CenterOfExcellence({
       </div>
 
       {/* Slider Section - Edge to Edge */}
-      <div className="relative pl-0 md:pl-[50px]">
+      <div className={`relative pl-0 ${centres.length > 3 ? "md:pl-[50px]" : ""}`}>
         <style dangerouslySetInnerHTML={{
           __html: `
             .centres-swiper .centres-card-wrapper {
               background-color: #F5E6D3 !important;
-              min-height: 280px !important;
+              min-height: 380px !important;
               border-radius: 12px !important;
              
             }
             .centres-swiper .centres-card-wrapper > div {
               background-color: #F5E6D3 !important;
-              min-height: 280px !important;
+              min-height: 380px !important;
               border-radius: 12px !important;
             }
             .centres-swiper .centres-card-wrapper div[class*="relative"][class*="w-full"][class*="mb-4"] {
-              height: 180px !important;
+              height: 260px !important;
               background-color: white !important;
               border-radius: 12px;
               padding: 20px;
@@ -126,15 +126,18 @@ export default function CenterOfExcellence({
               justify-content: center;
             }
             .centres-swiper .centres-card-wrapper div[class*="relative"][class*="w-full"][class*="mb-4"] img {
-              object-fit: contain !important;
-              max-width: 80% !important;
-              max-height: 80% !important;
-              margin: 0 auto;
+              object-fit: cover !important;
+              width: 100% !important;
+              height: 100% !important;
+              max-width: 100% !important;
+              max-height: 100% !important;
+              margin: 0 !important;
               position: absolute;
-              top: 10% !important;
-              left: 50% !important;
-              transform: translateX(-50%);
-              padding: 10px;
+              top: 0 !important;
+              left: 0 !important;
+              transform: none !important;
+              padding: 0 !important;
+              object-position: top !important;
             }
             .centres-swiper .centres-card-wrapper p:first-of-type {
               font-family: plus-jakarta-sans, sans-serif;
