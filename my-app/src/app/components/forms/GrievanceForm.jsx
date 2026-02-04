@@ -59,18 +59,18 @@ export default function GrievanceForm() {
         >
             <form onSubmit={handleSubmit}>
                 <FormGrid>
-                    <InputField label="Full Name" name="name" value={formData.name} onChange={handleChange} required />
-                    <InputField label="Email Address" name="email" type="email" value={formData.email} onChange={handleChange} required />
-                    <InputField label="Phone Number" name="phone" value={formData.phone} onChange={handleChange} required />
+                    <InputField label="Student Name" name="name" value={formData.name} onChange={handleChange} required />
                     <InputField label="Program Name" name="program_name" value={formData.program_name} onChange={handleChange} />
                     <InputField label="Semester" name="semester" value={formData.semester} onChange={handleChange} />
                     <InputField label="Enrollment Number" name="enrollment_number" value={formData.enrollment_number} onChange={handleChange} />
+                    <InputField label="Phone Number" name="phone" value={formData.phone} onChange={handleChange} required />
+                    <InputField label="Email Address" name="email" type="email" value={formData.email} onChange={handleChange} required />
                 </FormGrid>
-                <InputField label="Details of Grievance" name="details" type="textarea" value={formData.details} onChange={handleChange} required />
+                <InputField label="Grievance Description" name="details" type="textarea" value={formData.details} onChange={handleChange} required />
 
                 <div className="flex justify-center mt-10">
                     <GlobalArrowButton variant="white" onClick={handleSubmit}>
-                        {loading ? 'Submitting...' : 'Submit Grievance'}
+                        {loading ? 'Submitting...' : 'Submit'}
                     </GlobalArrowButton>
                 </div>
 
