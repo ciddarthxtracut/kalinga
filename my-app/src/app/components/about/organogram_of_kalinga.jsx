@@ -125,9 +125,9 @@ const OrganogramOfKalinga = ({
                       </a>
                     </FlipbookTrigger>
                   ) : href.startsWith("#") ? (
-                    <a 
-                      href={href} 
-                      className="inline-flex" 
+                    <a
+                      href={href}
+                      className="inline-flex"
                       onClick={(e) => handleAnchorClick(e, href)}
                     >
                       {ButtonContent}
