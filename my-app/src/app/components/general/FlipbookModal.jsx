@@ -10,6 +10,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@$
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
+const PAGE_FLIP_SOUND_URL = 'https://kalinga-university.s3.ap-south-1.amazonaws.com/sound/pageflipsound.mp3';
+
 const PDFPage = React.forwardRef((props, ref) => {
     return (
         <div className="bg-white shadow-lg overflow-hidden" ref={ref}>
@@ -26,8 +28,16 @@ const FlipbookModal = ({ isOpen, onClose, pdfUrl, title }) => {
     const [pageInputValue, setPageInputValue] = useState('1');
     const [pagesToRender, setPagesToRender] = useState(4);
     const [containerWidth, setContainerWidth] = useState(0);
+    const isAudioUnlocked = useRef(false);
     const containerRef = useRef(null);
     const bookRef = useRef(null);
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        // Preload audio
+        audioRef.current = new Audio(PAGE_FLIP_SOUND_URL);
+        audioRef.current.load();
+    }, []);
 
     useEffect(() => {
         if (!isOpen) return;
@@ -58,6 +68,12 @@ const FlipbookModal = ({ isOpen, onClose, pdfUrl, title }) => {
         const flippedPage = e.data;
         setCurrentPage(flippedPage);
         setPageInputValue((flippedPage + 1).toString());
+
+        // Play page flip sound
+        if (audioRef.current) {
+            audioRef.current.currentTime = 0;
+            audioRef.current.play().catch(err => console.debug('Audio play failed:', err));
+        }
 
         // Lazy load: if we are within 2 pages of the end of current rendered set, load more
         if (flippedPage + 2 >= pagesToRender && pagesToRender < numPages) {
@@ -100,6 +116,18 @@ const FlipbookModal = ({ isOpen, onClose, pdfUrl, title }) => {
         window.open(pdfUrl, '_blank', 'noopener,noreferrer');
     };
 
+    const unlockAudio = () => {
+        if (!isAudioUnlocked.current && audioRef.current) {
+            audioRef.current.play()
+                .then(() => {
+                    audioRef.current.pause();
+                    audioRef.current.currentTime = 0;
+                    isAudioUnlocked.current = true;
+                })
+                .catch(err => console.debug('Audio unlock failed:', err));
+        }
+    };
+
     if (!isOpen) return null;
 
     function onDocumentLoadSuccess({ numPages }) {
@@ -115,13 +143,17 @@ const FlipbookModal = ({ isOpen, onClose, pdfUrl, title }) => {
             {/* Backdrop with blur */}
             <div
                 className="absolute inset-0 bg-black/80 backdrop-blur-xl"
-                onClick={onClose}
+                onClick={() => {
+                    unlockAudio();
+                    onClose();
+                }}
             ></div>
 
             {/* Modal Content */}
             <div
                 className="flex-1 w-full flex items-center justify-center p-4 md:p-12 pointer-events-none overflow-hidden"
                 ref={containerRef}
+                onClick={unlockAudio}
             >
                 <div className="flex items-center justify-center w-full pointer-events-auto">
                     {/* 4px White Border Frame with Integrated Header */}
