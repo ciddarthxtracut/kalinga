@@ -24,7 +24,7 @@ import ImageListItem from '@/app/components/ccrc/imagelistitem'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/app/components/general/tab'
 import CareerPath from '@/app/components/course/career_path'
 import ImageContent from '@/app/components/ccrc/imagecontent'
-
+import APITable from "../components/general/api-table";
 export default function Research() {
   const { openFlipbook } = useFlipbook();
   const pathname = usePathname();
@@ -57,10 +57,10 @@ export default function Research() {
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/infosys.webp",
       imageAlt: "Infosys",
     },
-    {
-      imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/byjus.webp",
-      imageAlt: "Byjus",
-    },
+    // {
+    //   imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/byjus.webp",
+    //   imageAlt: "Byjus",
+    // },
     {
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/capgemini.webp",
       imageAlt: "Capgemini",
@@ -586,6 +586,29 @@ export default function Research() {
     { slNo: 40, name: "Khushboo Taank", program: "LLB", session: "2022", company: "RBP LAW CHAMBERS" },
     { slNo: 41, name: "Rahul Agrawal", program: "MBA", session: "2023-2025", company: "VE Commercial Vehicles" },
   ];
+
+  const internshipTables = [
+    { id: 44, title: "Training & Internship for Session 2024-25" },
+    { id: 43, title: "Training & Internship for Session 2023-24" },
+    { id: 42, title: "Training & Internship for Session 2022-23" },
+    { id: 45, title: "Training & Internship for Session 2021-22" },
+  ];
+
+  const internshipFAQItems = internshipTables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
   return (
     <>
       <MainIntro
@@ -912,6 +935,14 @@ export default function Research() {
         nameTextClass="text-[var(--button-red)]"
         descriptionTextClass=""
         swiperClassName="ccrc-video-slider"
+      />
+
+      <FAQ
+        items={internshipFAQItems}
+        title=""
+        showHeading={false}
+        variant="default"
+        pyClassName=""
       />
       <Gallery
         title="Industrial Visit"

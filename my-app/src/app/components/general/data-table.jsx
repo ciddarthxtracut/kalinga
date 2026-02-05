@@ -40,7 +40,9 @@ const DataTable = ({
   evenRowBg = "bg-gray-50",
   oddRowBg = "bg-white",
   borderColor = "border-gray-300",
-  title = ""
+  title = "",
+  disableContainer = false,
+  maxHeight = ""
 }) => {
   // If no columns provided, create default structure
   const tableColumns = columns.length > 0
@@ -56,11 +58,11 @@ const DataTable = ({
   const tableData = data || []
 
   return (
-    <div className={`container mx-auto rounded-lg  ${className}`}>
+    <div className={`${disableContainer ? "w-full" : "container mx-auto"} rounded-lg ${className}`}>
       {title && (
         <h3 className="text-2xl pt-6 mb-4">{title}</h3>
       )}
-      <div className={overflowX ? "overflow-x-auto rounded-lg" : "rounded-lg overflow-hidden"}>
+      <div className={`${overflowX ? "overflow-x-auto" : "overflow-hidden"} ${maxHeight ? `${maxHeight} overflow-y-auto` : ""} rounded-lg`}>
         <table className={`${overflowX ? "min-w-full w-max" : "w-full"}`} style={{ borderSpacing: 0, borderCollapse: 'separate' }}>
           <thead>
             <tr className={headerBgColor}>

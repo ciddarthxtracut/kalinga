@@ -20,6 +20,7 @@ import ResearchCE from '../components/research-facilities/research-coe'
 import ResearchLab from '../components/research-facilities/research-lab'
 import ImageListItem from "@/app/components/ccrc/imagelistitem";
 import ImageContent from "@/app/components/ccrc/imagecontent";
+import APITable from "../components/general/api-table";
 
 export default function Research() {
   const pathname = usePathname();
@@ -166,6 +167,11 @@ export default function Research() {
             ),
         },
       ],
+    },
+    {
+      id: 56,
+      question: "Active MoU",
+      answer: <APITable tableId="56" nested={true} maxHeight="max-h-[400px]" />,
     },
   ];
 

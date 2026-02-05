@@ -45,6 +45,30 @@ const defaultVideoInterviews = [
         title: "98.20% Secured in CGBSE with Grit and Passion! Akhil Sen’s",
         videoUrl: "https://youtu.be/qAjXv54M99g?si=2rx3yeUq4p_2vWYT",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/topper.png",
+    },
+    {
+        id: 1,
+        title: "The Moment Kalinga Utsav Turned Into a Festival of Beats",
+        videoUrl: "https://youtu.be/aR7VkLpeAu4?si=QM8XiVq1Zv9AEWRl",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-events-1.png",
+    },
+    {
+        id: 2,
+        title: "Kalinga Utsav’s Showstopper | This Group Dance",
+        videoUrl: "https://youtu.be/2agwhwY3OuY?si=pN2UxmLkRKQFN_D1",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-events-2.png",
+    },
+    {
+        id: 3,
+        title: "Kalinga University Science Model Competition 4.0",
+        videoUrl: "https://youtu.be/BrpxFN8iZeQ?si=bnrbf8TTw3onq_Kb",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-science.png",
+    },
+    {
+        id: 4,
+        title: "98.20% Secured in CGBSE with Grit and Passion! Akhil Sen’s",
+        videoUrl: "https://youtu.be/qAjXv54M99g?si=2rx3yeUq4p_2vWYT",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/topper.png",
     }
 ];
 
@@ -211,7 +235,7 @@ export default function SustainableSlider({
                         loop={true}
                         speed={500}
                         autoplay={{
-                            delay: 12000000,
+                            delay: 3000,
                             disableOnInteraction: false,
                         }}
                         pagination={showPagination ? {

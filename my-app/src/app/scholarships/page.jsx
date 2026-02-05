@@ -410,6 +410,7 @@ export default function ScholarshipsPage() {
         title="Bank Loan MoUs"
         description="Kalinga University has signed an MOU with Canara Bank and the Central Bank of India, which are providing financial assistance to our students during admissions. "
         slidesPerView={1}
+        isContained={true}
         breakpoints={{
           640: {
             slidesPerView: 1.2,
@@ -421,11 +422,11 @@ export default function ScholarshipsPage() {
           },
           1024: {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 30,
           },
           1280: {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 30,
           },
         }}
       />

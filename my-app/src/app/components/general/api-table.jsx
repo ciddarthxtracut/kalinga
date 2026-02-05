@@ -24,19 +24,26 @@ import { fetchTableData } from '@/app/lib/api';
  * <APITable tableId="mou" />
  * <APITable tableId="7" title="MOU List" overflowX={true} />
  */
-const APITable = ({
-    tableId,
-    title = '',
-    showTableTitle = false,
-    className = '',
-    overflowX = true,
-    headerBgColor = 'bg-[var(--dark-blue)]',
-    headerTextColor = 'text-white',
-    evenRowBg = 'bg-gray-50',
-    oddRowBg = 'bg-white',
-    borderColor = 'border-gray-300',
-    fallback = 'show',
-}) => {
+const APITable = (props) => {
+    const {
+        tableId,
+        title = '',
+        showTableTitle = false,
+        className = '',
+        overflowX = true,
+        headerBgColor = 'bg-[var(--dark-blue)]',
+        headerTextColor = 'text-white',
+        evenRowBg = 'bg-gray-50',
+        oddRowBg = 'bg-white',
+        borderColor = 'border-gray-300',
+        fallback = 'show',
+    } = props;
+
+    // New prop
+    const nested = props.nested || false;
+    const maxHeight = props.maxHeight || "";
+    const excludeColumns = props.excludeColumns || [];
+
     const [tableData, setTableData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -73,6 +80,18 @@ const APITable = ({
         loadTableData();
     }, [tableId]);
 
+    // Container wrapper helper
+    const Wrapper = ({ children }) => {
+        if (nested) return <>{children}</>;
+        return (
+            <section className={`py-8 ${className}`}>
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    {children}
+                </div>
+            </section>
+        );
+    };
+
     // Hide section if fallback is 'hide' and there's an error or no data
     if (fallback === 'hide' && (error || !tableData)) {
         return null;
@@ -81,33 +100,27 @@ const APITable = ({
     // Loading state
     if (loading) {
         return (
-            <section className={`py-8 ${className}`}>
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center text-gray-500">Loading table data...</div>
-                </div>
-            </section>
+            <Wrapper>
+                <div className="text-center text-gray-500">Loading table data...</div>
+            </Wrapper>
         );
     }
 
     // Error state
     if (error) {
         return (
-            <section className={`py-8 ${className}`}>
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center text-red-500">Error: {error}</div>
-                </div>
-            </section>
+            <Wrapper>
+                <div className="text-center text-red-500">Error: {error}</div>
+            </Wrapper>
         );
     }
 
     // No data state
     if (!tableData || !tableData.headers || !tableData.rows) {
         return (
-            <section className={`py-8 ${className}`}>
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center text-gray-500">No table data available</div>
-                </div>
-            </section>
+            <Wrapper>
+                <div className="text-center text-gray-500">No table data available</div>
+            </Wrapper>
         );
     }
 
@@ -118,7 +131,7 @@ const APITable = ({
         widthPx: tableData.column_widths && tableData.column_widths[index]
             ? tableData.column_widths[index]
             : undefined,
-    }));
+    })).filter(col => !excludeColumns.includes(col.label));
 
     const data = tableData.rows.map((row) => {
         const rowObj = {};
@@ -132,21 +145,22 @@ const APITable = ({
     const displayTitle = title || (showTableTitle && tableData.title ? tableData.title : '');
 
     return (
-        <section className={`py-8 ${className}`}>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <DataTable
-                    columns={columns}
-                    data={data}
-                    title={displayTitle}
-                    overflowX={overflowX}
-                    headerBgColor={headerBgColor}
-                    headerTextColor={headerTextColor}
-                    evenRowBg={evenRowBg}
-                    oddRowBg={oddRowBg}
-                    borderColor={borderColor}
-                />
-            </div>
-        </section>
+        <Wrapper>
+            <DataTable
+                columns={columns}
+                data={data}
+                title={displayTitle}
+                overflowX={overflowX}
+                headerBgColor={headerBgColor}
+                headerTextColor={headerTextColor}
+                evenRowBg={evenRowBg}
+                oddRowBg={oddRowBg}
+                borderColor={props.borderColor || borderColor}
+                disableContainer={nested}
+                className={nested ? className : ''}
+                maxHeight={maxHeight}
+            />
+        </Wrapper>
     );
 };
 

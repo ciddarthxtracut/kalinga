@@ -28,11 +28,16 @@ function ReadMoreParagraphs({ text, isArray = false }) {
                                 <p key={`p-rem-${i}`} className="leading-relaxed">{p}</p>
                             ))}
                             {points.length > 0 && (
-                                <ul className="list-disc pl-5 space-y-2">
-                                    {points.map((item, idx) => (
-                                        <li key={`li-${idx}`} className="pl-1 leading-relaxed text-left">{item}</li>
-                                    ))}
-                                </ul>
+                                <>
+                                    {text.pointsHeading && (
+                                        <p className="font-bold leading-relaxed mb-2">{text.pointsHeading}</p>
+                                    )}
+                                    <ul className="list-disc pl-5 space-y-2">
+                                        {points.map((item, idx) => (
+                                            <li key={`li-${idx}`} className="pl-1 leading-relaxed text-left">{item}</li>
+                                        ))}
+                                    </ul>
+                                </>
                             )}
                         </div>
                     )}
@@ -79,6 +84,7 @@ const defaultMission = {
         'The primary purpose of Kalinga University is to become a global education hub in which faculty, staff, and students can discover, examine critically, preserve, and transmit the knowledge, wisdom, and values that will ensure the survival of future generations and improve the quality of life for all.',
         'The University seeks to help students develop an understanding and appreciation for the complex cultural and physical worlds in which they live and to realise their highest potential of intellectual, physical, and human development.',
     ],
+    pointsHeading: "To fulfill our mission, we:",
     points: [
         'Offer broad and balanced academic programs that are mutually reinforcing and emphasise high-quality and creative instruction at the undergraduate, graduate, professional, and postgraduate levels.',
         'Generate new knowledge through a broad array of scholarly research and creative endeavours, which provide a foundation for dealing with the immediate and long-range needs of society.',

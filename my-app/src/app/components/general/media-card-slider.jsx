@@ -37,6 +37,7 @@ export default function MediaCardSlider({
   backgroundColor = "bg-white",
   swiperClassName = "media-card-slider",
   imageObjectPosition = "object-top",
+  id = "",
 }) {
   // Determine which items to use - prioritize video if both provided
   const items = videoItems.length > 0 ? videoItems : imageItems;
@@ -119,7 +120,7 @@ export default function MediaCardSlider({
   }, [isModalOpen]);
 
   return (
-    <section className={` py-16 ${backgroundColor} relative ${className}`}>
+    <section id={id} className={` py-16 ${backgroundColor} relative ${className}`}>
       <div className="container mx-auto px-2">
         {/* Header Section */}
         <div className="text-center">

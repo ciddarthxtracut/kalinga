@@ -7,7 +7,7 @@ import SectionHeading from '../general/SectionHeading'
 
 const logos = [
   'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/infosys.webp',
-  'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/byjus.webp',
+  // 'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/byjus.webp',
   'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/capgemini.webp',
   'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/airtel.webp',
   'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/amul.webp',

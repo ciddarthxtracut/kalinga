@@ -10,6 +10,46 @@ import Gallery from "../components/general/gallery";
 import AdmissionCareer from "../components/general/admission_cta";
 import { fetchNewsEvents, fetchAllDepartments, parseHtmlToText } from '../lib/api';
 
+import MediaCardSlider from "../components/general/media-card-slider";
+
+const placementGalleryImages = [
+  // // Training and Placement Cell
+  // { id: 1, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-1.webp", title: "Training and Placement Gallery" },
+  // { id: 2, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-2.webp", title: "Training and Placement Gallery" },
+  // { id: 3, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-3.webp", title: "Training and Placement Gallery" },
+
+  // // Aditya Biotech Lab
+  // { id: 4, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-4.webp", title: "Aditya Biotech Lab" },
+  // { id: 5, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-5.webp", title: "Aditya Biotech Lab" },
+
+  // International Students / Campus (IDs 6-9)
+  { id: 6, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-1.jpeg", title: "Aditya Biotech Lab" },
+  { id: 7, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-2.jpeg", title: "Aditya Biotech Lab" },
+  { id: 8, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-3.jpeg", title: "Aditya Biotech Lab" },
+  { id: 9, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-4.jpg", title: "Automobile Expo Visit" },
+
+  // Automobile Expo Visit
+  { id: 10, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-5.jpg", title: "Automobile Expo Visit" },
+  { id: 11, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-6.jpg", title: "Automobile Expo Visit" },
+  { id: 12, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-7.jpg", title: "Automobile Expo Visit" },
+  { id: 13, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-8.jpg", title: "Automobile Expo Visit" },
+  { id: 14, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-9.jpg", title: "Automobile Expo Visit" },
+  { id: 15, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-10.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+  { id: 16, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-11.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+  { id: 17, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-12.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+  { id: 18, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-13.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+  { id: 19, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-14.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+  { id: 20, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-15.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+
+  // Bhilai Steel Plant Industrial Visit
+  { id: 21, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-16.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+  { id: 22, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-17.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+
+  // CIPET Visit
+  { id: 23, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-18.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+  { id: 24, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-19.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+];
+
 const breadcrumbData = {
   pageTitle: "News & Events",
   heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/news-and-event.jpg",
@@ -145,6 +185,12 @@ function NewsAndEvents() {
 
       {/* Static Sections */}
       <ThreeCardSider />
+      <MediaCardSlider
+        title="Industrial Visits"
+        imageItems={placementGalleryImages}
+        categoryTitle=""
+        id="industrial-visits"
+      />
       <Gallery />
       <AdmissionCareer />
 

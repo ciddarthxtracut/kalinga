@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import KIFCertificateSection from "@/app/components/kif/kif-certificate-section";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import ImageContent from "@/app/components/ccrc/imagecontent";
@@ -43,11 +44,11 @@ export default function KIFPage({
         { label: 'Kif', href: '/kif' }
       ]
     };
-    
+
     if (typeof window !== 'undefined') {
       window.__breadcrumbData = breadcrumbData;
     }
-    
+
     return () => {
       if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
         delete window.__breadcrumbData;
@@ -501,11 +502,8 @@ export default function KIFPage({
         subtitle="About KIF"
         description="KIF was established in 2023, where students' bold and unique ideas are supported so that their entrepreneurial ambitions can be turned into ACTION. Recognised as a Host Institute under the Ministry of MSME, Government of India, and structured as a Section 8, not-for-profit company under the Ministry of Corporate Affairs (MCA), Government of India, its motive is to promote the spirit of research, innovation, and entrepreneurship among students and faculty members of our University."
         additionalContent={kifAdditionalContent}
-        certificateLink="https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/KIF+MCA_compressed.pdf"
-        certificateLinkText="Ministry of Corporate Affairs Certificate"
-        selectionCriteria={selectionCriteria}
-        selectionCriteriaHeading="Our selection criteria include:"
       />
+      <KIFCertificateSection />
       <VisionMission data={visionMissionData} showImg={false} />
       <ImageListItem textClassName="hidden" listItemTextClassName="text-black" imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/chart+(17).webp" boxItems={boxItems} title="Our Key Offerings" subtitle="About KIF" description="Kalinga Incubation Foundation (KIF) is a platform for students to incubate their ideas and turn them into reality." />
       <QuickLinks links={links} title="What Awaits You At KIF?" description="Discover a comprehensive ecosystem with state-of-the-art infrastructure, expert mentorship, networking opportunities, seed funding support, and hands-on training through workshops and pitch sessions to transform your innovative ideas into successful startups."
@@ -540,7 +538,7 @@ export default function KIFPage({
         subtitle="Supporting ideas of innovators"
         description="Explore the spaces and partnerships that power the Kalinga Incubation Foundation."
       />
-      <StudentActivities activities={activities} subtitle="" title="KIF Events" showReadMore={false}/>
+      <StudentActivities activities={activities} subtitle="" title="KIF Events" showReadMore={false} />
       <Gallery
         images={galleryImages}
         title="Glimpses"

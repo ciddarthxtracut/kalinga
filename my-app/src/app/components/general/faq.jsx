@@ -626,7 +626,9 @@ const FAQ = ({
                       }`}
                   >
                     <div className="p-4 sm:p-5 md:p-6 bg-[var(--lite-sand)]">
-                      {Array.isArray(item.answer) ? (
+                      {item.component ? (
+                        item.component
+                      ) : Array.isArray(item.answer) ? (
                         <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans">
                           {item.answer.map((listItem, idx) => (
                             <li key={idx}>
@@ -1215,6 +1217,8 @@ const FAQ = ({
                         className="w-full text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans bg-transparent border border-gray-300 rounded p-2 min-h-[100px]"
                         placeholder="Enter answer"
                       />
+                    ) : item.component ? (
+                      item.component
                     ) : item.answer && typeof item.answer === 'object' && item.answer.type === 'table' ? (
                       <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
                         <DataTable

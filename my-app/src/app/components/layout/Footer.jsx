@@ -79,7 +79,7 @@ export default function Footer() {
                   <span className="text-white font-stix">Important Links</span>
                   <span className="hidden sm:block flex-1 border-t border-white/70 relative bottom-2"></span>
                 </h4>
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-6 md:gap-x-8 lg:gap-x-8 gap-y-2.5 sm:gap-y-3 md:gap-y-4 font-plus-jakarta-sans text-xs sm:text-[14px] leading-relaxed sm:leading-[25px] font-normal">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-6 md:gap-x-8 lg:gap-x-30 gap-y-2.5 sm:gap-y-3 md:gap-y-4 font-plus-jakarta-sans text-xs sm:text-[14px] leading-relaxed sm:leading-[25px] font-normal">
                   <ul className="text-white/80 space-y-2 sm:space-y-3">
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/students-welfare">Student Welfare</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="https://wpengineering.kalingauniversity.ac.in/">Working Professionals</a></li>

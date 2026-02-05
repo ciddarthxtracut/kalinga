@@ -3,43 +3,52 @@ import MainIntro from '../components/about/main_intro';
 import MasterClassTab from '../components/ctcd/master_class_tab';
 import OrganogramOfKalinga from '../components/about/organogram_of_kalinga';
 import AdmissionSteps from '../components/admissions/admission-steps';
-import ImageListItem from '../components/ccrc/imagelistitem';
+import Specialization from '../components/course/specialization';
 import AdmissionCareer from '../components/general/admission_cta';
 import CTCDApplicationForm from '../components/forms/CTCDApplicationForm';
 import Gallery from '../components/general/gallery';
 import CtcdTrainingTabs from '../components/ctcd/ctcd_training_tabs';
 import CTCDConsultancyTabSection from '../components/ctcd/ctcd_consultancy_tab_section'
+
 export default function CorporateTrainingAndConsultancyDivision() {
-  const Items = [
+  const benefitsData = [
     {
-      id: 1,
-      text: "Improved workflow across different departments"
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/facility-management.svg",
+      title: "Improved workflow across different departments",
+      description: ""
     },
     {
-      id: 2,
-      text: "Better employee management with optimised HR processes"
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Career+Counseling.svg",
+      title: "Better employee management with optimised HR processes",
+      description: ""
     },
     {
-      id: 3,
-      text: "Improved performance management systems"
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Holistic+Development.svg",
+      title: "Improved performance management systems",
+      description: ""
     },
     {
-      id: 4,
-      text: "Cost-cutting and reduced wastage of resources"
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/careers/wages.svg",
+      title: "Cost-cutting and reduced wastage of resources",
+      description: ""
     },
     {
-      id: 5,
-      text: "Improved efficiency in day-to-day processes"
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/Value+addition.svg",
+      title: "Improved efficiency in day-to-day processes",
+      description: ""
     },
     {
-      id: 6,
-      text: "Seamless integration of digital tools"
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Extensive+Research+Facilities.svg",
+      title: "Seamless integration of digital tools",
+      description: ""
     },
     {
-      id: 7,
-      text: "Long-term growth and profitability"
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Future+Career+Planning.svg",
+      title: "Long-term growth and profitability",
+      description: " "
     },
   ];
+
   const admissionSteps = [
     {
       id: 1,
@@ -381,7 +390,10 @@ export default function CorporateTrainingAndConsultancyDivision() {
         showHeaderButton={false}
         itemsAlignment="center"
       />
-      <ImageListItem items={Items} description="" imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-intro.jpg" title="Benefits for Organisations" />
+      <div className="container mx-auto px-4 mt-16 mb-16">
+        <h2 className="font-stix text-center mb-8">Benefits for Organisations</h2>
+        <Specialization cards={benefitsData} />
+      </div>
       <MainIntro
         title="Training Benefits"
         description={[

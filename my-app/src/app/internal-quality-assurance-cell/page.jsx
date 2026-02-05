@@ -24,11 +24,11 @@ const IQACPage = () => {
         { label: 'IQAC', href: '/internal-quality-assurance-cell' }
       ]
     };
-    
+
     if (typeof window !== 'undefined') {
       window.__breadcrumbData = breadcrumbData;
     }
-    
+
     return () => {
       if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
         delete window.__breadcrumbData;
@@ -195,7 +195,7 @@ const IQACPage = () => {
         showDescriptionReadMore={true}
         description=""
       />
-      <ContactSection />
+      <ContactSection mail="iqac@kalingauniversity.ac.in" />
       <AdmissionCareer />
     </>
   )

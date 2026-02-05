@@ -6,7 +6,7 @@ import SectionHeading from "../general/SectionHeading";
 import FlipbookTrigger from "../general/FlipbookTrigger";
 
 const defaultContent = {
-  title: "Organogram of Kalinga University",
+  title: "Organogram",
   description: [
     "Kalinga University follows a well-structured governance model to ensure smooth administration and institutional integrity. It begins with the Chancellor, followed by the Vice-Chancellor and Director General. Their roles and responsibilities are well-defined, enabling proper decision-making across all the departments of the university.",
   ],
@@ -125,9 +125,9 @@ const OrganogramOfKalinga = ({
                       </a>
                     </FlipbookTrigger>
                   ) : href.startsWith("#") ? (
-                    <a 
-                      href={href} 
-                      className="inline-flex" 
+                    <a
+                      href={href}
+                      className="inline-flex"
                       onClick={(e) => handleAnchorClick(e, href)}
                     >
                       {ButtonContent}

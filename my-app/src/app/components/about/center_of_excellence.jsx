@@ -60,6 +60,7 @@ export default function CenterOfExcellence({
   showReadMore = false,
   className = "bg-white",
   slidesPerView = 1,
+  isContained = false,
   breakpoints = {
     640: {
       slidesPerView: 1.5,
@@ -102,7 +103,7 @@ export default function CenterOfExcellence({
       </div>
 
       {/* Slider Section - Edge to Edge */}
-      <div className={`relative pl-0 ${centres.length > 3 ? "md:pl-[50px]" : ""}`}>
+      <div className={`relative ${isContained ? "container mx-auto px-2" : `pl-0 ${centres.length > 3 ? "md:pl-[50px]" : ""}`}`}>
         <style dangerouslySetInnerHTML={{
           __html: `
             .centres-swiper .centres-card-wrapper {
@@ -126,7 +127,7 @@ export default function CenterOfExcellence({
               justify-content: center;
             }
             .centres-swiper .centres-card-wrapper div[class*="relative"][class*="w-full"][class*="mb-4"] img {
-              object-fit: cover !important;
+              object-fit: contain !important;
               width: 100% !important;
               height: 100% !important;
               max-width: 100% !important;
@@ -136,8 +137,8 @@ export default function CenterOfExcellence({
               top: 0 !important;
               left: 0 !important;
               transform: none !important;
-              padding: 0 !important;
-              object-position: top !important;
+              padding: 20px !important;
+              object-position: center !important;
             }
             .centres-swiper .centres-card-wrapper p:first-of-type {
               font-family: plus-jakarta-sans, sans-serif;

@@ -1,5 +1,5 @@
 "use client"
-import ImageListItem from "@/app/components/ccrc/imagelistitem";
+import Specialization from "../components/course/specialization";
 import ImageContent from "@/app/components/ccrc/imagecontent";
 import Cards from "@/app/components/ccrc/cards";
 import Hearfrom from "@/app/components/ccrc/Hearfrom";
@@ -125,24 +125,29 @@ const sliderItems = [
   },
 
 ]
-const Items = [
+const ccrcBenefitsData = [
   {
-    id: 1,
-    text: "Collaborative [Industry + Academia Expertise]"
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Networking+Opportunities.svg",
+    title: "Collaborative",
+    description: "Industry + Academia Expertise"
   },
   {
-    id: 2,
-    text: "Customized [Solutions for the Industry]"
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/Value+addition.svg",
+    title: "Customized",
+    description: "Solutions for the Industry"
   },
   {
-    id: 3,
-    text: "Result-Oriented [Turn Key Execution]"
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/Entrepreneurial+Thinking.svg",
+    title: "Result-Oriented",
+    description: "Turn Key Execution"
   },
   {
-    id: 4,
-    text: "Comprehensive [Single Window Solution on HR Consultancy, Training and Development, Recruitment]"
+    icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Holistic+Development.svg",
+    title: "Comprehensive",
+    description: "Single Window Solution on HR Consultancy, Training and Development, Recruitment"
   }
-]
+];
+
 const blueItems = [
   {
     imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/industry/abbott.png",
@@ -395,7 +400,10 @@ export default function CCRCPage() {
         "With skill-based training programs, workshops, guest lectures, corporate mentorship, industrial visits, soft skill trainings, personality development workshops, internships, industrial training, campus placement drives, and industry-certified programs, we're able to maximise the output and save the time of students and working professionals, and build a future-ready workforce. The Centre features state-of-the-art infrastructure and resources that meet industry standards and has earned high appreciation from leading organisations across India and abroad. With experiential learning strategies and an updated curriculum, our students are placed at top companies, and corporate professionals have learned to deliver maximum output and maintain consistent performance."
       ]}
     />
-    <ImageListItem items={Items} description="" imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-intro.jpg" title="Benefits for Organisations" />
+    <div className="container mx-auto px-4 mt-16 mb-16">
+      <h2 className="font-stix text-center mb-8">Benefits for Organisations</h2>
+      <Specialization cards={ccrcBenefitsData} />
+    </div>
     <DeptHeadIntro items={MentorIntroProps} />
     <SectionHeading
       title="Our Domains"

@@ -219,21 +219,21 @@ export default function AcademicsApi() {
       icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/icons/teachings.svg",
       title: "Value Added Courses",
       description: "Explore a wide range of short-term value-added certification courses conducted by industry experts at the University. ",
-      link: "/value-added-courses"
+      link: "/value-added-course"
     },
     {
       id: 3,
       icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/icons/Curriculum.svg",
       title: "Industrial Visits",
       description: "To understand the industry dynamics, we conduct industrial visits where students interact with industry professionals and explore real-world applications.",
-      link: ""
+      link: "/news-and-events#industrial-visits"
     },
     {
       id: 4,
       icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Industrial+Visits.svg",
       title: "Internships & Placement",
       description: "Get an on-campus or off-campus internship opportunity and get placed in top companies through our Campus Placement Drives.",
-      link: "/placement"
+      link: "/placements"
     },
     {
       id: 5,
