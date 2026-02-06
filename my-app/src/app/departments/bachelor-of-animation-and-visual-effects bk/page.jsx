@@ -20,27 +20,7 @@ import QuickLinks from "@/app/components/general/quick_links";
 function Courses() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/student-computer-course.webp",
-      pageTitle: "Bachelor of Animation and Visual Effects",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'Bachelor of Animation and Visual Effects', href: '/departments/bachelor-of-animation-and-visual-effects' }
-      ]
-    };
-    
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   // MainIntro content
   const mainIntroContent = {
     title: "Have you ever wondered how impossible visuals are used in movies and games?",

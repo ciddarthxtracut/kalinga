@@ -11,23 +11,11 @@ import RaipurVideoSection from '../components/about-raipur/raipurvideo';
 import Ncctopvideo from '../components/Ncc/ncc-topvideo';
 import Nccvideos from '../components/Ncc/ncc-videos';
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/Ncc-3.webp",
-  pageTitle: "NCC",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "NCC", href: "/ncc" },
-  ],
-};
+
 const page = () => {
 
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
   return (
 
     <>

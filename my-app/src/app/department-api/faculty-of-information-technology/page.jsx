@@ -56,8 +56,6 @@ import MediaCardSlider from "../../components/general/media-card-slider";
 import WeStandOut from "../../components/department/we_stand_out";
 import UpcomingConference from "../../components/research/upcoming_conference";
 import { fetchDepartmentCompleteDetail, parseHtmlToParagraphs, parseHtmlToText } from "@/app/lib/api";
-import { useBreadcrumbData } from "@/app/components/layout/BreadcrumbContext";
-
 // Generate slug from department name if slug is not available
 const generateSlug = (name) => {
   if (!name) return 'faculty-of-information-technology';
@@ -242,8 +240,6 @@ export default function FacultyOfInformationTechnology() {
   } : null;
 
   // Update breadcrumb using the hook
-  useBreadcrumbData(breadcrumbData);
-
   // Map API data to videoItems for MediaCardSlider - Only if data exists
   const videoItems = departmentData?.video_interviews && departmentData.video_interviews.length > 0
     ? departmentData.video_interviews.map(video => ({

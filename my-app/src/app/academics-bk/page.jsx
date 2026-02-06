@@ -6,22 +6,8 @@ import { renderProgramCard } from '../components/general/program-cards-slider'
 import AdmissionCareer from '../components/general/admission_cta'
 import QuickLinks from "../components/general/quick_links";
 
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
-  pageTitle: "Academics",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Academics', href: '/academics' }
-  ]
-};
-
 export default function Academics() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
   const [searchQuery, setSearchQuery] = useState('')
 
   // Academics content - 9 faculty cards

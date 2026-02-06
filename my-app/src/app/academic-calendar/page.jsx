@@ -3,19 +3,8 @@
 import GlobalArrowButton from "../components/general/global-arrow_button";
 import FlipbookTrigger from "../components/general/FlipbookTrigger";
 
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-calendar/academic-calendar-banner.webp",
-  pageTitle: "Academic Calendar",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Academic Calendar', href: '/academic-calendar' }
-  ]
-};
-
-// Register breadcrumb data globally
 if (typeof window !== 'undefined') {
-  window.__breadcrumbData = breadcrumbData;
+  
 }
 
 

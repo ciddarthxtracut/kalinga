@@ -8,20 +8,7 @@ import KalingaBuzzTabs from "@/app/components/kalinga-buzz/KalingaBuzzTabs";
 // Disable static generation to prevent SSR issues
 export const dynamic = 'force-dynamic';
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-  pageTitle: " Kalinga Buzz",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Kalinga Buzz", href: "/kalinga-buzz" },
-  ],
-};
 
-// Register breadcrumb data globally
-if (typeof window !== "undefined") {
-  window.__breadcrumbData = breadcrumbData;
-}
 
 export default function KalingaBuzz() {
 

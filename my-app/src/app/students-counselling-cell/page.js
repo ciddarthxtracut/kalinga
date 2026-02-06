@@ -7,18 +7,11 @@ import EmployeeBenefits from "../components/careers/EmployeeBenefits"
 
 // Model breradcrumb
 
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
-  pageTitle: "Students Counselling Cell",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Students Counselling Cell', href: '/students-counselling-cell' }
-  ]
-};
+
 
 // Register it globally (no import needed - this pattern works automatically)
 if (typeof window !== 'undefined') {
-  window.__breadcrumbData = breadcrumbData;
+  
 }
 
 const counsellingAreas = [

@@ -152,28 +152,7 @@ const galleryItems = [
 function Sportsandwellnesscentre() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/sports/sportsmain.webp",
-      pageTitle: "Sports & Wellness Centre",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Sports & Wellness", href: "/sports-and-wellness-centre" },
-      ],
-    };
-
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   return (
     <>

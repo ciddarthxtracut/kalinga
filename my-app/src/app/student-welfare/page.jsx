@@ -16,27 +16,7 @@ import MediaCardSlider from '../components/general/media-card-slider';
 const page = () => {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
-      pageTitle: "Student Welfare",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'Student Welfare', href: '/student-welfare' }
-      ]
-    };
-    
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
 
   const kifAdditionalContent = [

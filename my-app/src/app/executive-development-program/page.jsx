@@ -3,21 +3,8 @@
 import React from "react";
 import MainIntro from "@/app/components/about/main_intro";
 
-const breadcrumbData = {
-    heroImage:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-    pageTitle: " Executive Development Program",
-    customBreadcrumbs: [
-      { label: "Home", href: "/" },
-      { label: "Executive Development Program", href: "/executive-development-program" },
-    ],
-  };
-  
-  // Register breadcrumb data globally
-  if (typeof window !== "undefined") {
-    window.__breadcrumbData = breadcrumbData;
-  }
 
+  
   export default function Radio() {
     return (
       <div>

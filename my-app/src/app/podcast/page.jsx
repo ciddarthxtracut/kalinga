@@ -32,28 +32,7 @@ const videoItems = [
 const Podcast = () => {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-      pageTitle: "Kalinga Podcast",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Podcast", href: "/podcast" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   return (
     <div>
       <MainIntro

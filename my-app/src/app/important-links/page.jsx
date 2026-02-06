@@ -5,19 +5,9 @@ import Image from "next/image";
 
 /* ---------------- BREADCRUMB ---------------- */
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
-  pageTitle: "Important Links",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Important Links", href: "/important-links" },
-  ],
-};
 
-if (typeof window !== "undefined") {
-  window.__breadcrumbData = breadcrumbData;
-}
+
+
 
 /* ---------------- DATA ---------------- */
 const clubSections = [

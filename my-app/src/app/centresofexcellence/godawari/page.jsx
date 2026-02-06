@@ -90,32 +90,7 @@ const galleryImages = glimpses.map((g) => ({
 export default function ElectricVehiclesTrainingCentrePage() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/godawari/godawari-banner.webp",
-      pageTitle: "Electric Vehicles Training",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Centres of Excellence", href: "/centresofexcellence" },
-        {
-          label: "Electric Vehicles Training Centre",
-          href: "/centresofexcellence/godawari",
-        },
-      ],
-    };
-
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   return (
     <main className="bg-white">

@@ -58,28 +58,7 @@ const Items = [
 export default function ResearchResources() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/researchfaciities-introimg2.webp",
-      pageTitle: "Research Resources",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Research Resources", href: "/research-resources" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   const { openFlipbook } = useFlipbook();
 
   const resourceFaqItems = [

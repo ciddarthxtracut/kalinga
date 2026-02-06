@@ -8,7 +8,6 @@ import AdmissionCareer from '@/app/components/general/admission_cta'
 import QuickLinks from "@/app/components/general/quick_links";
 import Stack from '@/app/components/gsap/Stack'
 import { fetchAllDepartments, fetchDepartmentCompleteDetail, parseHtmlToText, fetchDepartmentCourseCounts } from '@/app/lib/api'
-import { useBreadcrumbData } from '@/app/components/layout/BreadcrumbContext'
 import GlobalArrowButton from '@/app/components/general/global-arrow_button'
 
 // Function to convert text to proper title case
@@ -29,16 +28,6 @@ const toTitleCase = (str) => {
       return word;
     })
     .join(' ');
-};
-
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
-  pageTitle: "Academics",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Academics', href: '/academics-api' }
-  ]
 };
 
 // Generate slug from department name if slug is not available
@@ -69,8 +58,6 @@ export default function AcademicsApi() {
   const [expandedDept, setExpandedDept] = useState(null) // Track which department is expanded
 
   // Register breadcrumb data
-  useBreadcrumbData(breadcrumbData);
-
   // Fetch all departments and their complete details
   useEffect(() => {
     const loadDepartments = async () => {

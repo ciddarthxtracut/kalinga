@@ -53,30 +53,7 @@ const RadioGallery =[
 export default function Radio() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname, // Add pathname to validate data belongs to this page
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-      pageTitle: "Kalinga Radio",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Kalinga Radio", href: "/radio" },
-      ],
-    };
-    
-    // Set breadcrumb data in useEffect to ensure it's set after render
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    // Cleanup: remove data when component unmounts or pathname changes
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   return (
     <div>
       <MainIntro

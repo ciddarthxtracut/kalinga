@@ -114,28 +114,7 @@ const AntiImages = [
 export default function Page() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
-      pageTitle: "Anti-Ragging Cell",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Anti Ragging Cell", href: "/anti-ragging-cell" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   return (
     <>

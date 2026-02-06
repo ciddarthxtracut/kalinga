@@ -5,21 +5,10 @@ import SectionHeading from '../components/general/SectionHeading'
 
 const listStyle = { fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '14px' }
 
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
-  pageTitle: "Terms & Conditions",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Terms & Conditions', href: '/terms-conditions' }
-  ]
-};
+
 
 export default function TermsConditionsPage() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
   return (
     <section className='container mx-auto px-6 py-16'>
       <div className='text-center'>

@@ -204,28 +204,7 @@ const galleryImages = [
 export default function LaboratoriesPage() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/laboratories/laboratories-heroimage.webp",
-      pageTitle: "Laboratories",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Laboratories", href: "/laboratories" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   return (
     <main className="bg-white">

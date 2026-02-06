@@ -2,17 +2,9 @@
 
 import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
 
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg",
-  imageposition: "object-top",
-  pageTitle: "Corporate Training And Consultancy Division (CTCD)",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "CTCD", href: "/corporate-training-and-consultancy-division" },
-  ],
-};
 
-if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
+
+if (typeof window !== "undefined") 
 
 export default function CtcdPage() {
   return (

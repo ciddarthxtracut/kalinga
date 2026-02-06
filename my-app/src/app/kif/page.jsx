@@ -33,28 +33,7 @@ export default function KIFPage({
 } = {}) {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/k4.jpg",
-      pageTitle: "Kalinga Incubation Foundation",
-      imageposition: "center",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'Kif', href: '/kif' }
-      ]
-    };
-
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   const visionMissionData = visionMissionDataProp ?? [{
     visionTitle: "Vision",

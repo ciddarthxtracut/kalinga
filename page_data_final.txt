@@ -1,0 +1,530 @@
+export const pageDataMap: Record<string, PageData> = {
+  "/Ncc": {
+    slug: "/Ncc",
+    title: "NCC",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/Ncc-3.webp",
+  },
+  "/Voter-Portal": {
+    slug: "/Voter-Portal",
+    title: "Voter Portal",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-calendar/academic-calendar-banner.webp",
+  },
+  "/about-raipur": {
+    slug: "/about-raipur",
+    title: "About Raipur",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about-raipur/raipur_breadcrujmb.webp",
+  },
+  "/about-us": {
+    slug: "/about-us",
+    title: "About Kalinga",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+  },
+  "/academic-and-industry-collaborations": {
+    slug: "/academic-and-industry-collaborations",
+    title: "Academic and Industry Collaborations",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/campuslife.webp",
+  },
+  "/academic-calendar": {
+    slug: "/academic-calendar",
+    title: "Academic Calendar",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-calendar/academic-calendar-banner.webp",
+  },
+  "/academic-facilities": {
+    slug: "/academic-facilities",
+    title: "Academic Facilities",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
+  },
+  "/academic-planner": {
+    slug: "/academic-planner",
+    title: "Academic Planner",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/academics": {
+    slug: "/academics",
+    title: "Academics",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
+  },
+  "/academics-bk": {
+    slug: "/academics-bk",
+    title: "Academics",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
+  },
+  "/admission-procedure": {
+    slug: "/admission-procedure",
+    title: "Admission Procedure",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
+  },
+  "/admissions": {
+    slug: "/admissions",
+    title: "Admissions",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/student-gathered.webp",
+  },
+  "/alumini": {
+    slug: "/alumini",
+    title: "Alumni",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
+  },
+  "/annual-reports": {
+    slug: "/annual-reports",
+    title: "Annual Reports",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+  },
+  "/anti-ragging-cell": {
+    slug: "/anti-ragging-cell",
+    title: "Anti-Ragging Cell",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
+  },
+  "/book-chapters": {
+    slug: "/book-chapters",
+    title: "Book Chapters",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
+  },
+  "/book-publications": {
+    slug: "/book-publications",
+    title: "Book Publications",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/cafeteria-mess": {
+    slug: "/cafeteria-mess",
+    title: "Cafeteria & Mess",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/canteen-and-mess/canteen+mess+(6).webp",
+  },
+  "/campus-facilities": {
+    slug: "/campus-facilities",
+    title: "Campus Facilities",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/campus-life-intro-1.webp",
+  },
+  "/campuslife": {
+    slug: "/campuslife",
+    title: "Campus Life",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/campuslife.webp",
+  },
+  "/career-and-corporate-resource-centre": {
+    slug: "/career-and-corporate-resource-centre",
+    title: "Career and Corporate Resource Centre",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/IMG-20250409-WA0032-Picsart-AiImageEnhancer.jpg",
+    imagePosition: "object-center",
+  },
+  "/careers": {
+    slug: "/careers",
+    title: "Careers",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/career.webp",
+  },
+  "/central-instrumentation-facility": {
+    slug: "/central-instrumentation-facility",
+    title: "Central Instrumentation Facility",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+  },
+  "/centresofexcellence/ai-ml": {
+    slug: "/centresofexcellence/ai-ml",
+    title: "AI & ML Courses Training",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/aiml/aiml-banner.webp",
+  },
+  "/centresofexcellence/automobile": {
+    slug: "/centresofexcellence/automobile",
+    title: "Automobile Training",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/automobile/automobile-banner.webp",
+  },
+  "/centresofexcellence/bosch": {
+    slug: "/centresofexcellence/bosch",
+    title: "BRIDGE Courses Training",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/bosch/bosch-banner.webp",
+  },
+  "/centresofexcellence/godawari": {
+    slug: "/centresofexcellence/godawari",
+    title: "Electric Vehicles Training",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/godawari/godawari-banner.webp",
+  },
+  "/centresofexcellence/iiot": {
+    slug: "/centresofexcellence/iiot",
+    title: "IIoT Training",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/iiot/iiot-banner.webp",
+  },
+  "/centresofexcellence/msme": {
+    slug: "/centresofexcellence/msme",
+    title: "MSME Training",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/msme/msme-banner.webp",
+  },
+  "/centresofexcellence/robotics": {
+    slug: "/centresofexcellence/robotics",
+    title: "Robotics, Coding & Drones Training",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/robotics/robotics-banner.webp",
+  },
+  "/chair-activities": {
+    slug: "/chair-activities",
+    title: "Chairs",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/chairman": {
+    slug: "/chairman",
+    title: "Chairman",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/chancellor": {
+    slug: "/chancellor",
+    title: "Chancellor",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/chhattisgarh": {
+    slug: "/chhattisgarh",
+    title: "Chhattisgarh",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/conferences-and-events": {
+    slug: "/conferences-and-events",
+    title: "Conferences & Events",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/conferences/conferences-objective.webp",
+  },
+  "/contact-us": {
+    slug: "/contact-us",
+    title: "Contact Us",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/courses/[slug]": {
+    slug: "/courses/[slug]",
+    title: "",
+    banner: "",
+  },
+  "/csr": {
+    slug: "/csr",
+    title: "Corporate Social Responsibility",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/kif-banner.webp",
+  },
+  "/ctcd": {
+    slug: "/ctcd",
+    title: "Corporate Training And Consultancy Division (CTCD)",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg",
+    imagePosition: "object-top",
+  },
+  "/department-api/bachelor-of-animation-and-visual-effects": {
+    slug: "/department-api/bachelor-of-animation-and-visual-effects",
+    title: "",
+    banner: "",
+  },
+  "/department-api/faculty-of-information-technology": {
+    slug: "/department-api/faculty-of-information-technology",
+    title: "",
+    banner: "",
+  },
+  "/departments/[slug]": {
+    slug: "/departments/[slug]",
+    title: "",
+    banner: "",
+    imagePosition: "object-[45%_10%]",
+  },
+  "/departments/bachelor-of-animation-and-visual-effects bk": {
+    slug: "/departments/bachelor-of-animation-and-visual-effects bk",
+    title: "Bachelor of Animation and Visual Effects",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/student-computer-course.webp",
+  },
+  "/director-general": {
+    slug: "/director-general",
+    title: "Director-general",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/document-verification": {
+    slug: "/document-verification",
+    title: "Document Verification",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/downloads": {
+    slug: "/downloads",
+    title: "Downloads",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+  },
+  "/ekeeda-digital-library": {
+    slug: "/ekeeda-digital-library",
+    title: "Ekeeda Digital Library",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/entrance-exam": {
+    slug: "/entrance-exam",
+    title: "Entrance Exam",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/entrance-exam/banner.webp",
+    imagePosition: "object-top",
+  },
+  "/executive-development-program": {
+    slug: "/executive-development-program",
+    title: "Executive Development Program",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/grievance-redressal": {
+    slug: "/grievance-redressal",
+    title: "Grievance Redressal Cell",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/grievance/grievance-banner.webp",
+  },
+  "/health-clinic": {
+    slug: "/health-clinic",
+    title: "Health Clinic",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/health-clinic/health-clinic-1.webp",
+  },
+  "/hostel": {
+    slug: "/hostel",
+    title: "Hostel",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/facilities/hostel.webp",
+  },
+  "/ieee": {
+    slug: "/ieee",
+    title: "IEEE KU Student Branch",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/ieee-banner.webp",
+  },
+  "/important-links": {
+    slug: "/important-links",
+    title: "Important Links",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/institution-innovation-council": {
+    slug: "/institution-innovation-council",
+    title: "Institution Innovation Council",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/internal-quality-assurance-cell": {
+    slug: "/internal-quality-assurance-cell",
+    title: "IQAC",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+  },
+  "/international-students": {
+    slug: "/international-students",
+    title: "International Students",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/international-students-banner.webp",
+  },
+  "/ipr-cell": {
+    slug: "/ipr-cell",
+    title: "IPR Cell",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
+  },
+  "/kalinga-buzz": {
+    slug: "/kalinga-buzz",
+    title: "Kalinga Buzz",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/kif": {
+    slug: "/kif",
+    title: "Kalinga Incubation Foundation",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/k4.jpg",
+    imagePosition: "center",
+  },
+  "/ku-fees": {
+    slug: "/ku-fees",
+    title: "KU Fees",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/laboratories": {
+    slug: "/laboratories",
+    title: "Laboratories",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/laboratories/laboratories-heroimage.webp",
+  },
+  "/leadership": {
+    slug: "/leadership",
+    title: "Leadership",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/library": {
+    slug: "/library",
+    title: "KU Library",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/library/Library-1.webp",
+  },
+  "/media": {
+    slug: "/media",
+    title: "Media",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/mini-market": {
+    slug: "/mini-market",
+    title: "Mini Market",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/mini-market/minimarket_breadcrumb.webp",
+  },
+  "/mou": {
+    slug: "/mou",
+    title: "MOU",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/campuslife.webp",
+  },
+  "/national-council-teacher-education": {
+    slug: "/national-council-teacher-education",
+    title: "National Council For Teacher Education",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/news-and-events": {
+    slug: "/news-and-events",
+    title: "News & Events",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/news-and-event.jpg",
+  },
+  "/news-and-events/[slug]": {
+    slug: "/news-and-events/[slug]",
+    title: "News & Events",
+    banner: "",
+  },
+  "/nss": {
+    slug: "/nss",
+    title: "NSS",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/nss/nss-benefits-new.webp",
+  },
+  "/organogram": {
+    slug: "/organogram",
+    title: "Organogram",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/organogram/kalinga-org-banner.webp",
+  },
+  "/other-committees": {
+    slug: "/other-committees",
+    title: "Committees",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/patents": {
+    slug: "/patents",
+    title: "Patents",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
+  },
+  "/pay-online": {
+    slug: "/pay-online",
+    title: "Pay Online",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/phd": {
+    slug: "/phd",
+    title: "Ph.D",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Phd-BannerImage.webp",
+  },
+  "/placements": {
+    slug: "/placements",
+    title: "Placements",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
+    imagePosition: "object-center",
+  },
+  "/podcast": {
+    slug: "/podcast",
+    title: "Kalinga Podcast",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/privacy-policy": {
+    slug: "/privacy-policy",
+    title: "Privacy Policy",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/pro-chancellor": {
+    slug: "/pro-chancellor",
+    title: "pro-Chancellor",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/radio": {
+    slug: "/radio",
+    title: "Kalinga Radio",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/refund-policy": {
+    slug: "/refund-policy",
+    title: "Refund & Cancellation Policy",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/registrar": {
+    slug: "/registrar",
+    title: "Registrar",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/research": {
+    slug: "/research",
+    title: "Research",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/reserarch-banner.webp",
+    imagePosition: "object-center",
+  },
+  "/research-conferences": {
+    slug: "/research-conferences",
+    title: "Research Conferences",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/research-facilities": {
+    slug: "/research-facilities",
+    title: "Research Facilities",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/researchfaciities-introimg2.webp",
+  },
+  "/research-papers-and-books-published": {
+    slug: "/research-papers-and-books-published",
+    title: "Research Resources",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/DSC02606+2.jpg",
+  },
+  "/research-resources": {
+    slug: "/research-resources",
+    title: "Research Resources",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/researchfaciities-introimg2.webp",
+  },
+  "/rti": {
+    slug: "/rti",
+    title: "Right To Information (RTI)",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
+  },
+  "/safety-and-security": {
+    slug: "/safety-and-security",
+    title: "Safety and Security",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
+  },
+  "/scholarships": {
+    slug: "/scholarships",
+    title: "Scholarships",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/library/Library-1.webp",
+  },
+  "/sdg-cell": {
+    slug: "/sdg-cell",
+    title: "SDG Cell",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+  "/sports-and-wellness-centre": {
+    slug: "/sports-and-wellness-centre",
+    title: "Sports & Wellness Centre",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/sports/sportsmain.webp",
+  },
+  "/student-clubs": {
+    slug: "/student-clubs",
+    title: "Student Clubs",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/campuslife.webp",
+  },
+  "/student-support": {
+    slug: "/student-support",
+    title: "Student Support",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-support/studentsupportmain.webp",
+  },
+  "/student-welfare": {
+    slug: "/student-welfare",
+    title: "Student Welfare",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
+  },
+  "/students-counselling-cell": {
+    slug: "/students-counselling-cell",
+    title: "Students Counselling Cell",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+  },
+  "/terms-conditions": {
+    slug: "/terms-conditions",
+    title: "Terms & Conditions",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+  },
+  "/training-and-placement-cell": {
+    slug: "/training-and-placement-cell",
+    title: "Training and Placement Cell",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-intro.jpg",
+    imagePosition: "object-center",
+  },
+  "/transport-facility": {
+    slug: "/transport-facility",
+    title: "Transport Facility",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
+  },
+  "/unnat-bharat-abhiyan": {
+    slug: "/unnat-bharat-abhiyan",
+    title: "Unnat Bharat Abhiyan",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/kif-banner.webp",
+  },
+  "/value-added-course": {
+    slug: "/value-added-course",
+    title: "Value Added Courses",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/international-students-banner.webp",
+  },
+  "/value-additions": {
+    slug: "/value-additions",
+    title: "Value Additions",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/international-students-banner.webp",
+  },
+  "/vice-chancellor": {
+    slug: "/vice-chancellor",
+    title: "Vice-Chancellor",
+    banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
+  },
+};

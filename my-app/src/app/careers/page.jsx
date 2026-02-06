@@ -6,22 +6,8 @@ import EmployeeBenefits from "../components/careers/EmployeeBenefits"
 import CareerForm from "../components/forms/CareerForm"
 import FaqSection from "../components/general/faq"
 import Gallery from '../components/campuslife/campusgallery';
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/career.webp",
-  pageTitle: "Careers",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Careers', href: '/careers' }
-  ]
-};
-
 export default function Careers() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
 
   useEffect(() => {
     // Enable scrolling but hide scrollbar - works on all devices including mobile

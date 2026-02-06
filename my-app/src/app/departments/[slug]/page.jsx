@@ -29,7 +29,6 @@ import SectionHeading from "@/app/components/general/SectionHeading";
 import EligibilityCriteria from "@/app/components/course/eligibility_criteria";
 import CareerPath from "@/app/components/course/career_path";
 import { fetchAllDepartments, fetchDepartmentCompleteDetail, fetchAllDepartmentsCourses, parseHtmlToParagraphs, parseHtmlToText, parseHtmlListItems, fetchDesignations } from "@/app/lib/api";
-import { useBreadcrumbData } from "@/app/components/layout/BreadcrumbContext";
 import Gallery from "@/app/components/general/gallery";
 
 // import CustomScrollCard from "@/app/components/gsap/CustomScrollCard"; // No longer used
@@ -419,8 +418,6 @@ export default function DynamicDepartmentPage() {
     customBreadcrumbs: []
   } : null;
 
-  useBreadcrumbData(breadcrumbData);
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -489,7 +486,6 @@ export default function DynamicDepartmentPage() {
           message={deptHeadIntroContent.message}
         />
       )}
-
 
       {/* Career Pathways */}
       {departmentData?.career_pathways && departmentData.career_pathways.length > 0 && (

@@ -14,28 +14,7 @@ export default function PhdPage() {
   const pathname = usePathname();
   const { openFlipbook } = useFlipbook();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Phd-BannerImage.webp",
-      pageTitle: "Ph.D",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Ph.D", href: "/phd" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   const phdResources = [
     {

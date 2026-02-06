@@ -14,28 +14,7 @@ import Specialization from '../components/department/specialization';
 function Hostel() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/facilities/hostel.webp",
-      pageTitle: "Hostel",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Hostel", href: "/hostel" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   const specializationItems = [
     {
       id: 1,

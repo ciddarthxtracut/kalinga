@@ -4,22 +4,8 @@ import React, { useEffect } from "react";
 import GlobalArrowButton from "@/app/components/general/global-arrow_button";
 import SectionHeading from "@/app/components/general/SectionHeading";
 
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
-  pageTitle: "Right To Information (RTI)",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'RTI', href: '/RTI' }
-  ]
-};
-
 export default function GetInTouch() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
   return (
     <section className="py-16 mt-16 mb-30 bg-[var(--dark-blue)] lg:h-[500px] rounded-xl mx-2">
       <div className="container mx-auto px-6">

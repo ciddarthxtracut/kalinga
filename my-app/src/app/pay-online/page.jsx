@@ -4,19 +4,7 @@ import React from "react";
 import Link from "next/link";
 import LeadershipCard from "../components/general/leadership-card";
 
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-  pageTitle: "Pay Online",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Pay Online', href: '/pay-online' }
-  ]
-};
 
-// Register breadcrumb data globally
-if (typeof window !== "undefined") {
-  window.__breadcrumbData = breadcrumbData;
-}
 
 const paymentOptions = [
   {

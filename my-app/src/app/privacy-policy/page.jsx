@@ -3,21 +3,10 @@
 import React, { useEffect } from 'react'
 import SectionHeading from '../components/general/SectionHeading'
 
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-  pageTitle: "Privacy Policy",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Privacy Policy', href: '/privacy-policy' }
-  ]
-};
+
 
 export default function PrivacyPolicyPage() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
 
   return (
       <section className='container mx-auto px-6 py-16'>

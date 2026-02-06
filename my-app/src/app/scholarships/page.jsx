@@ -12,28 +12,7 @@ import AdmissionCareer from "../components/general/admission_cta";
 export default function ScholarshipsPage() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/library/Library-1.webp",
-      pageTitle: "Scholarships",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Scholarships", href: "/scholarships" },
-      ],
-    };
-
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   useEffect(() => {
     const el = document.querySelector(".why-study-swiper .swiper");
     const sw = el?.swiper;

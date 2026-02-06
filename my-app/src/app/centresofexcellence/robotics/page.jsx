@@ -6,19 +6,7 @@ import CareerPath from "@/app/components/course/career_path";
 import AdmissionCareer from "@/app/components/general/admission_cta";
 import Gallery from "@/app/components/general/gallery";
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/robotics/robotics-banner.webp",
-  pageTitle: "Robotics, Coding & Drones Training ",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Centres of Excellence", href: "/centresofexcellence" },
-    {
-      label: "Robotics, Coding, & Drones Training Centre",
-      href: "/centresofexcellence/robotics",
-    },
-  ],
-};
+
 
 const aboutCentreDescription = [
   "BDS Education stands at the forefront of tech education by providing training to students in futuristic skills such as AI, coding, robotics, and drones. Their Teach It Yourself (TIY) model and Knowledge-Through-Projects approach empower educators and inspire students to become innovators and real-world problem solvers.",
@@ -101,12 +89,7 @@ const galleryImages = glimpses.map((g) => ({
 }));
 
 export default function RoboticsCodingDronesTrainingCentrePage() {
-  useEffect(() => {
-    if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
-    return () => {
-      if (typeof window !== "undefined") delete window.__breadcrumbData;
-    };
-  }, []);
+  
 
   return (
     <main className="bg-white">

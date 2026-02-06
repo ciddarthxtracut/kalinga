@@ -215,7 +215,6 @@ export default function CorporateTrainingAndConsultancyDivision() {
     {
       id: 4,
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/annual-8.webp",
-      imageAlt: "Future-Ready Classrooms: AI & Digital Tools in Education and Beyond",
       title: "Future-Ready Classrooms: AI & Digital Tools in Education and Beyond",
       description: "",
       buttonText: "",
@@ -308,12 +307,12 @@ export default function CorporateTrainingAndConsultancyDivision() {
       alt: "Masterclass 2025-26 Glimpse 4"
     },
     {
-      id: 5,
+      id: 1,
       image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/chart+(11).webp",
       alt: "Masterclass 2025-26 Glimpse 5"
     },
     {
-      id: 6,
+      id: 2,
       image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/chart+(12).webp",
       alt: "Masterclass 2025-26 Glimpse 6"
     },

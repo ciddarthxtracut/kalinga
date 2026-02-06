@@ -10,28 +10,7 @@ import Campusfacilityvideo from '../components/campus-facilities/campusfacilityv
 function CampusFacilities() {
     const pathname = usePathname();
 
-    useEffect(() => {
-        const breadcrumbData = {
-            pathname: pathname,
-            heroImage:
-                "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/campus-life-intro-1.webp",
-            pageTitle: "Campus Facilities",
-            customBreadcrumbs: [
-                { label: "Home", href: "/" },
-                { label: "Campus Facilities", href: "/campus-facilities" },
-            ],
-        };
-        
-        if (typeof window !== "undefined") {
-            window.__breadcrumbData = breadcrumbData;
-        }
-        
-        return () => {
-            if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-                delete window.__breadcrumbData;
-            }
-        };
-    }, [pathname]);
+    
 
     return (
         <>

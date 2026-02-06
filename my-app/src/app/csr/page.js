@@ -28,27 +28,7 @@ export default function CSRPage({
 } = {}) {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/kif-banner.webp",
-      pageTitle: "Corporate Social Responsibility",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'CSR', href: '/csr' }
-      ]
-    };
-    
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   const visionMissionData = visionMissionDataProp ?? [{
     visionTitle: "Core Values",
     missionTitle: "Mission",

@@ -21,27 +21,7 @@ import VisaFrofrroGuidelines from '../components/international/visa_frofrro_guid
 export default function InternationalStudents() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/international-students-banner.webp",
-      pageTitle: "International Students",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'International Students', href: '/international-students' }
-      ]
-    };
-    
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   const newsConferences = [
     {
       id: 1,

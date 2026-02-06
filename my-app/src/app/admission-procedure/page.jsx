@@ -12,19 +12,9 @@ import Admissionscholarshipeligibilty from '../components/admission-procedure/ad
 import Admissionhacks from '../components/admission-procedure/admissionhacks';
 
 function AdmissionProcedure() {
-    const breadcrumbData = {
-        heroImage:
-            "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
-        pageTitle: "Admission Procedure",
-        customBreadcrumbs: [
-            { label: "Home", href: "/" },
-            { label: "Admission Procedure", href: "/admission-procedure" },
-        ],
-    };
+    
 
-    if (typeof window !== "undefined") {
-        window.__breadcrumbData = breadcrumbData;
-    }
+    
     return (
 
         <div>

@@ -6,24 +6,11 @@ import ImageContent from "@/app/components/ccrc/imagecontent";
 import EntranceExamFormCards from "@/app/components/entrance-exam/entrance-exam-cards";
 import CareerApplicationForm from "@/app/components/careers/CareerApplicationForm";
 import FaqSection from "@/app/components/general/faq";
-import { useBreadcrumbData } from "@/app/components/layout/BreadcrumbContext";
 import AdmissionCareer from "@/app/components/general/admission_cta";
 import EntranceExamUpdated from "@/app/components/entrance-exam/entrance-exam-updated";
 
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/entrance-exam/banner.webp",
-  imageposition: "object-top",
-  pageTitle: "Entrance Exam",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Entrance Exam', href: '/entrance-exam' }
-  ]
-};
-
 const EntranceExamPage = () => {
   // Register breadcrumb data
-  useBreadcrumbData(breadcrumbData);
   const careerFAQs = [
     {
       id: 1,

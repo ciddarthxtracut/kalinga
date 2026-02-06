@@ -16,28 +16,7 @@ import CustomGallery from '@/app/components/general/gallery'
 const TrainingAndPlacementCell = () => {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-intro.jpg",
-      imageposition: "object-center",
-      pageTitle: "Training and Placement Cell",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Training and Placement Cell", href: "/training-and-placement-cell" },
-      ],
-    };
-    
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   const blueItems = [
     {
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-1.webp",

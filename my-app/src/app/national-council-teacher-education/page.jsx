@@ -5,19 +5,6 @@ import DataTable from "../components/general/data-table";
 import SectionHeading from "../components/general/SectionHeading";
 
 
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-  pageTitle: "National Council For Teacher Education",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'National Council For Teacher Education', href: '/national-council-teacher-education' }
-  ]
-};
-
-// Register breadcrumb data globally
-if (typeof window !== "undefined") {
-  window.__breadcrumbData = breadcrumbData;
-}
 
 
 // const buttons = [

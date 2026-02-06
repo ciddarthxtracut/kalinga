@@ -54,7 +54,7 @@ export function useBreadcrumb() {
 }
 
 // Hook for pages to set breadcrumb data
-export function useBreadcrumbData(data) {
+export function {
     const context = useBreadcrumb();
     const setBreadcrumbData = context?.setBreadcrumbData;
     const setIsLoading = context?.setIsLoading;

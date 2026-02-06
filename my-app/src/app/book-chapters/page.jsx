@@ -4,22 +4,10 @@ import { useEffect } from "react";
 import APITable from "../components/general/api-table";
 import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
 
-const breadcrumbData = {
-    heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
-    pageTitle: "Book Chapters",
-    breadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Book Chapters", href: "/book-chapters" },
-    ],
-};
+
 
 export default function BookChaptersPage() {
-    useEffect(() => {
-        if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
-        return () => {
-            if (typeof window !== "undefined") delete window.__breadcrumbData;
-        };
-    }, []);
+    
 
     // 8 tabs: IDs 27-34
     // Mapping logic:

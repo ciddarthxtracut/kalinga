@@ -72,19 +72,8 @@ const MediaCardSlider = dynamicImport(() => import("@/app/components/general/med
 // Disable static generation to prevent SSR issues with DOMMatrix
 export const dynamic = 'force-dynamic';
 
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
-  pageTitle: "Alumni",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Alumni', href: '/alumini' }
-  ]
-};
-
-// Register breadcrumb data globally
 if (typeof window !== 'undefined') {
-  window.__breadcrumbData = breadcrumbData;
+  
 }
 
 export default function Alumini() {

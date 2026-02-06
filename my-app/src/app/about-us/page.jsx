@@ -318,27 +318,7 @@ const universityAchievements = [
 export default function AboutUs() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
-      pageTitle: "About Kalinga",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'About Kalinga', href: '/about-us' }
-      ]
-    };
-    
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   return (
     <div>
       <MainIntro

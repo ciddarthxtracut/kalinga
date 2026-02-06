@@ -6,19 +6,8 @@ import SectionHeading from '../components/general/SectionHeading'
 import DataTable from '../components/general/data-table';
 
 
-/// Breadcrumb configuration
-const breadcrumbData = {
-    heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-    pageTitle: "Research Conferences",
-    customBreadcrumbs: [
-      { label: 'Home', href: '/' },
-      { label: 'Research Conferences', href: '/research-conferences' }
-    ]
-  };
-  
-  // Register breadcrumb data globally
-  if (typeof window !== 'undefined') {
-    window.__breadcrumbData = breadcrumbData;
+/if (typeof window !== 'undefined') {
+    
   }
   
   const tableColumns = [

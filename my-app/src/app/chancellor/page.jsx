@@ -3,23 +3,8 @@
 import React, { useEffect } from "react";
 import ChairmanMessage from "../components/leadership/chairman_message";
 
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
-  pageTitle: "Chancellor",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Chancellor", href: "/chancellor" },
-  ],
-};
-
 export default function Leadership() {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
   return (
     <>
       <ChairmanMessage

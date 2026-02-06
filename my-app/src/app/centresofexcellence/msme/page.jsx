@@ -85,32 +85,7 @@ const galleryImages = glimpsesImageItems.map((g) => ({
 export default function MSMETrainingCentrePage() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/msme/msme-banner.webp",
-      pageTitle: "MSME Training",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Centres of Excellence", href: "/centresofexcellence" },
-        {
-          label: "MSME Training Centre",
-          href: "/centresofexcellence/msme",
-        },
-      ],
-    };
-
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   return (
     <main className="bg-white">

@@ -194,28 +194,7 @@ const iicfounds = [
 export default function InstitutionInnovationCouncil() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-      pageTitle: "Institution Innovation Council",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Institution Innovation Council", href: "/institution-innovation-council" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   return (
     <div className="bg-white">
 

@@ -161,28 +161,7 @@ const cards = [
 export default function Chhattisgarh() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-      pageTitle: "Chhattisgarh",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Chhattisgarh", href: "/chhattisgarh" },
-      ],
-    };
-
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   return (
     <div>
       <ImageContent title="A Land Rich in Culture, Heritage & Diversity" subtitle="Discover Chhattisgarh" description="Located in the heart of India and also known as the ‘Rice Bowl of India’, Chhattisgarh is known for its popular temples, waterfalls, and historical sites. It has become a hub for students, researchers, travellers, and entrepreneurs due to growing opportunities in education, sustainable development, innovation, and exploration. It is famous for its Dhokra (bell metal) art, terracotta sculptures, and bamboo crafts that are admired globally for their detailing and precision. Chhattisgarh offers an inspiring learning environment and lifestyle." imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/about-raipur/2148248881.jpg" imageAlt="Chhattisgarh Banner" />

@@ -5,21 +5,6 @@ import SectionHeading from "../components/general/SectionHeading";
 import GlobalArrowButton from "../components/general/global-arrow_button";
 import CenterOfExcellence from "../components/about/center_of_excellence";
 
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
-  pageTitle: "Media",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Media", href: "/media" },
-  ],
-};
-
-if (typeof window !== "undefined") {
-  window.__breadcrumbData = breadcrumbData;
-}
-
 export default function Page() {
 
   /* -------- Media Grid Images -------- */
@@ -231,7 +216,7 @@ export default function Page() {
     id: 7,
     name: " ",
     title: " ",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/media/36.jpg", },
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/media/36.jpg"},
   {
     id: 8,
     name: " ",

@@ -47,25 +47,25 @@ const defaultVideoInterviews = [
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/topper.png",
     },
     {
-        id: 1,
+        id: 5,
         title: "The Moment Kalinga Utsav Turned Into a Festival of Beats",
         videoUrl: "https://youtu.be/aR7VkLpeAu4?si=QM8XiVq1Zv9AEWRl",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-events-1.png",
     },
     {
-        id: 2,
+        id: 6,
         title: "Kalinga Utsav’s Showstopper | This Group Dance",
         videoUrl: "https://youtu.be/2agwhwY3OuY?si=pN2UxmLkRKQFN_D1",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-events-2.png",
     },
     {
-        id: 3,
+        id: 7,
         title: "Kalinga University Science Model Competition 4.0",
         videoUrl: "https://youtu.be/BrpxFN8iZeQ?si=bnrbf8TTw3onq_Kb",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-science.png",
     },
     {
-        id: 4,
+        id: 8,
         title: "98.20% Secured in CGBSE with Grit and Passion! Akhil Sen’s",
         videoUrl: "https://youtu.be/qAjXv54M99g?si=2rx3yeUq4p_2vWYT",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/topper.png",
@@ -270,7 +270,7 @@ export default function SustainableSlider({
                         }}
                     >
                         {videos.map((video, index) => (
-                            <SwiperSlide key={video.id}>
+                            <SwiperSlide key={`video-${video.id}-${index}`}>
                                 <div className="relative overflow-hidden transition-all duration-700 transform h-full flex items-center justify-center">
                                     <VideoCardSlider
                                         image={video.image}

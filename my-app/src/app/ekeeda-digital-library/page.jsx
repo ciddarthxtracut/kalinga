@@ -6,20 +6,7 @@ import SectionHeading from '../components/general/SectionHeading';
 import ResearchSixGridButtons from "@/app/components/research/research_six_grid-buttons";
 import MainIntro from '../components/about/main_intro';
 
-const breadcrumbData = {
-    heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-    pageTitle: " Ekeeda Digital Library",
-    customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Ekeeda Digital Library", href: "/ekeeda-digital-library" },
-    ],
-};
 
-// Register breadcrumb data globally
-if (typeof window !== "undefined") {
-    window.__breadcrumbData = breadcrumbData;
-}
 
 export default function EkeedaPage() {
     const buttons = [

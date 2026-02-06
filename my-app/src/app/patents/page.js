@@ -4,22 +4,10 @@ import { useEffect } from "react";
 import APITable from "../components/general/api-table";
 import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
 
-const breadcrumbData = {
-    heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp", // detailed placeholder
-    pageTitle: "Patents",
-    breadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Patents", href: "/patents" },
-    ],
-};
+
 
 export default function PatentsPage() {
-    useEffect(() => {
-        if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
-        return () => {
-            if (typeof window !== "undefined") delete window.__breadcrumbData;
-        };
-    }, []);
+    
 
     const patentTabs = Array.from({ length: 5 }, (_, i) => {
         const id = 9 + i; // 9 to 13

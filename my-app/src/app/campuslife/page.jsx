@@ -13,27 +13,7 @@ import UpcomingConferences from "../components/research/upcoming_conference";
 export default function Page() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/campuslife.webp",
-      pageTitle: "Campus Life",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'Campus Life', href: '/campuslife' }
-      ]
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   return (
     <>
       <MainIntro

@@ -8,18 +8,9 @@ import { useFlipbook } from "../components/general/FlipbookContext";
 import GlobalArrowButton from "../components/general/global-arrow_button";
 
 /* ---------------- Breadcrumb ---------------- */
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/international-students-banner.webp",
-  pageTitle: "Value Added Courses",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Value Added Courses", href: "/value-added-courses" },
-  ],
-};
-// Register breadcrumb data globally
+
 if (typeof window !== 'undefined') {
-  window.__breadcrumbData = breadcrumbData;
+  
 }
 /* ---------------- Video Data ---------------- */
 const videoItems = [

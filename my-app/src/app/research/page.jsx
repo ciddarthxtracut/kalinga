@@ -25,28 +25,7 @@ import APITable from "../components/general/api-table";
 export default function Research() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/reserarch-banner.webp",
-      pageTitle: "Research",
-      imageposition: "object-center",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'Research', href: '/research' }
-      ]
-    };
-
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   const newsConferences = [
     {

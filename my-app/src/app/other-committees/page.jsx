@@ -2,22 +2,7 @@
 
 import React, { useEffect } from "react";
 import FAQ from "../components/general/faq";
-import { useBreadcrumbData } from "../components/layout/BreadcrumbContext";
-
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
-  pageTitle: "Committees",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Other Committees", href: "/other-committees" },
-  ],
-};
-
 export default function OtherCommittees() {
-  useBreadcrumbData(breadcrumbData);
-
   // Internal Complaint Committee
   const internalComplaintCommittee = {
     id: 1,

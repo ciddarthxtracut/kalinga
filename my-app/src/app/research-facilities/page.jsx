@@ -9,28 +9,7 @@ import ResearchFacilitiesIntro from '../components/research-facilities/research-
 const page = () => {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/researchfaciities-introimg2.webp",
-      pageTitle: "Research Facilities",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Research Facilities", href: "/research-facilities" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
     return (
         <>

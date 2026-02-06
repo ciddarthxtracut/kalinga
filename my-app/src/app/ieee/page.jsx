@@ -17,19 +17,9 @@ import VisaFroFrroGuidelines from "../components/international/visa_frofrro_guid
 /* ---------------- DYNAMIC IMPORT ---------------- */
 
 
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/ieee-banner.webp",
-  pageTitle: "IEEE KU Student Branch",
-  objectPosition: "center",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "IEEE", href: "/ieee" },
-  ],
-};
 
-if (typeof window !== "undefined") {
-  window.__breadcrumbData = breadcrumbData;
-}
+
+
 
 
 

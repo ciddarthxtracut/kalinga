@@ -9,15 +9,7 @@ import AdmissionCareer from "@/app/components/general/admission_cta";
 import SectionHeading from "@/app/components/general/SectionHeading";
 
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/conferences/conferences-objective.webp",
-  pageTitle: "Conferences & Events",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Conferences & Events", href: "/conferences-and-events" },
-  ],
-};
+
 
 const whyAttendItems = [
   { id: 1, text: "Present your research paper to a wide audience." },
@@ -124,16 +116,7 @@ const upcomingEvents = [
 ];
 
 export default function ConferencesAndEventsPage() {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    return () => {
-      if (typeof window !== "undefined") {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, []);
+  
 
   return (
     <>

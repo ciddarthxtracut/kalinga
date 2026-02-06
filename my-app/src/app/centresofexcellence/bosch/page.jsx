@@ -6,19 +6,7 @@ import CareerPath from "@/app/components/course/career_path";
 import AdmissionCareer from "@/app/components/general/admission_cta";
 import Gallery from "@/app/components/general/gallery";
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/bosch/bosch-banner.webp",
-  pageTitle: "BRIDGE Courses Training",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Centres of Excellence", href: "/centresofexcellence" },
-    {
-      label: "BRIDGE Courses Training Centre",
-      href: "/centresofexcellence/bosch",
-    },
-  ],
-};
+
 
 const aboutCentreDescription = [
   "BOSCH is a globally renowned leader in engineering and electronics, and we have partnered with them to offer programs for school dropout students (18–25 years) that bridge their educational gaps on their academic campus.",
@@ -101,12 +89,7 @@ const galleryImages = glimpses.map((g) => ({
 }));
 
 export default function BridgeCentrePage() {
-  useEffect(() => {
-    if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
-    return () => {
-      if (typeof window !== "undefined") delete window.__breadcrumbData;
-    };
-  }, []);
+  
 
   return (
     <main className="bg-white">

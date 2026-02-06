@@ -2,24 +2,12 @@
 
 import React from "react";
 import FAQ from "../components/general/faq";
-import { useBreadcrumbData } from "../components/layout/BreadcrumbContext";
 import ImageContent from "../components/ccrc/imagecontent";
 import MainIntro from "../components/about/main_intro";
 import SdgTabSection from "../components/sdg-cell/sdg-tab-section";
 import Image from "next/image";
 import SpecializationCard from "../components/course/specialization";
 import FacilitySlider from "../components/course/facility-slider";
-
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
-  pageTitle: "SDG Cell",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "SDG Cell", href: "/sdg-cell" },
-  ],
-};
 
 // FAQ items for different sections
 const faqItems = [
@@ -239,9 +227,6 @@ const Items = [
 ];
 
 export default function SDGCell() {
-  useBreadcrumbData(breadcrumbData);
-
-
   return (
     <div className="min-h-screen bg-white">
       <ImageContent

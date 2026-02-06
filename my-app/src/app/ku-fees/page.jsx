@@ -9,28 +9,7 @@ import AdmissionCareer from '../components/general/admission_cta';
 function KuFees() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-      pageTitle: "KU Fees",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "KU Fees", href: "/ku-fees" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   return (
     <div>

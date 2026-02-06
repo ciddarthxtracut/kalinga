@@ -12,20 +12,6 @@ import AdmissionCareer from "@/app/components/general/admission_cta";
 import MediaCardSlider from "@/app/components/general/media-card-slider";
 // Removing accidental process import
 import SectionHeading from "../components/general/SectionHeading";
-import { useBreadcrumbData } from "@/app/components/layout/BreadcrumbContext";
-
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/IMG-20250409-WA0032-Picsart-AiImageEnhancer.jpg",
-  pageTitle: "Career and Corporate Resource Centre",
-  imageposition: "object-center",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Career and Corporate Resource Centre', href: '/career-and-corporate-resource-centre' }
-  ]
-};
-
-
-
 const cards = [
   {
     title: "Corporate Training and Consultancy Division (CTCD)",
@@ -60,7 +46,6 @@ const cards = [
     href: "/training-and-placement-cell",
   },
 ]
-
 
 const sliderItems = [
   {
@@ -389,8 +374,6 @@ const MentorIntroProps = [
   }
 ]
 export default function CCRCPage() {
-  useBreadcrumbData(breadcrumbData);
-
   return <>
 
     <ImageContent
@@ -447,7 +430,6 @@ export default function CCRCPage() {
     <Gallery title="Glimpses" paddingClassName="py-20" />
 
     <AdmissionCareer />
-
 
     {/* <CCrcContent /> */}
   </>;

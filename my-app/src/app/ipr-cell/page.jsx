@@ -70,31 +70,7 @@ const IPR_READMORE_PDF =
 export default function IPRCellPage() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
-      pageTitle: "IPR Cell",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "IPR Cell", href: "/ipr-cell" },
-      ],
-    };
-
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (
-        typeof window !== "undefined" &&
-        window.__breadcrumbData?.pathname === pathname
-      ) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   const columns = [
     { key: "sno", label: "S. No.", width: "w-24" },

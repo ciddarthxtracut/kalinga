@@ -3,19 +3,8 @@ import React from "react";
 import SectionHeading from "../components/general/SectionHeading";
 
 
-// Breadcrumb configuration
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
-  pageTitle: "Book Publications",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Book Publications', href: '/book-publications' }
-  ]
-};
-
-// Register breadcrumb data globally
 if (typeof window !== 'undefined') {
-  window.__breadcrumbData = breadcrumbData;
+  
 }
 
 export default function Page() {

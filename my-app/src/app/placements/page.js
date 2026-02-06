@@ -29,28 +29,7 @@ export default function Research() {
   const { openFlipbook } = useFlipbook();
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alumini.webp",
-      imageposition: "object-center",
-      pageTitle: "Placements",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'Placements', href: '/placements' }
-      ]
-    };
-
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   const blueItems = [
     {

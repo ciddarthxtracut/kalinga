@@ -8,15 +8,7 @@ import GlobalArrowButton from "@/app/components/general/global-arrow_button";
 import AdmissionCareer from "@/app/components/general/admission_cta";
 import GrievanceForm from "@/app/components/forms/GrievanceForm";
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/grievance/grievance-banner.webp",
-  pageTitle: "Grievance Redressal Cell",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Grievance Redressal Cell", href: "/grievance-redressal" },
-  ],
-};
+
 
 const aboutP1 =
   "The Grievance Redressal Cell is established at KU as per the UGC guidelines to record the complaints of students and staff members regarding academic, administrative, discrimination, harassment, examination, finance, facilities, and infrastructure-related issues.";
@@ -55,12 +47,7 @@ const committeeMembers = [
 
 
 export default function GrievanceRedressalPage() {
-  useEffect(() => {
-    if (typeof window !== "undefined") window.__breadcrumbData = breadcrumbData;
-    return () => {
-      if (typeof window !== "undefined") delete window.__breadcrumbData;
-    };
-  }, []);
+  
 
   const columns = [
     { key: "sno", label: "S. No.", width: "w-24" },

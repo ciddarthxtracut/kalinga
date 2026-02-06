@@ -6,14 +6,7 @@ import GlobalArrowButton from "../components/general/global-arrow_button";
 import FlipbookTrigger from "../components/general/FlipbookTrigger";
 
 
-const breadcrumbData = {
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
-  pageTitle: "Downloads",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'Downloads', href: '/downloads' }
-  ]
-};
+
 
 const downloadsreport = [
   {
@@ -120,11 +113,7 @@ const downloadsreport = [
 ];
 
 export default function Page() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
   return (
     <>
 

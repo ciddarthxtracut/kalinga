@@ -4,23 +4,11 @@ import MiniMarketFacility from '../components/mini-market/minimarket-facility'
 import AdmissionCareer from '../components/general/admission_cta'
 import RaipurVideoSection from '../components/about-raipur/raipurvideo';
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/mini-market/minimarket_breadcrumb.webp",
-  pageTitle: "Mini Market",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Mini Market", href: "/mini-market" },
-  ],
-};
+
 
 const page = () => {
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
   return (
     <>
       <style jsx global>{`

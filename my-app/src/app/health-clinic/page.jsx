@@ -8,15 +8,7 @@ import RaipurVideoSection from '../components/about-raipur/raipurvideo';
 
 
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/health-clinic/health-clinic-1.webp",
-  pageTitle: "Health Clinic",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Health Clinic", href: "/health-clinic" },
-  ],
-};
+
 const page = () => {
   const campusVideos = [
     {
@@ -27,11 +19,7 @@ const page = () => {
 
   ];
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
 
   return (
 

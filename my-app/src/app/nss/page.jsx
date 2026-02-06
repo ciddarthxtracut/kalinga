@@ -113,28 +113,7 @@ const learningOutcomeCards = [
 export default function NSSPage() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/nss/nss-benefits-new.webp",
-      pageTitle: "NSS",
-      customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "NSS", href: "/nss" },
-      ],
-    };
-    
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   return (
     <>

@@ -5,19 +5,8 @@ import MainIntro from '../components/about/main_intro'
 
 
 
-/// Breadcrumb configuration
-const breadcrumbData = {
-    heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
-    pageTitle: "Transport Facility",
-    customBreadcrumbs: [
-      { label: 'Home', href: '/' },
-      { label: 'Transport Facility', href: '/transport-facility' }
-    ]
-  };
-  
-  // Register breadcrumb data globally
-  if (typeof window !== 'undefined') {
-    window.__breadcrumbData = breadcrumbData;
+/if (typeof window !== 'undefined') {
+    
   }
 
 export default function TransportFacilityPage() {

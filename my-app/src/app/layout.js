@@ -52,9 +52,8 @@ import Header from "./components/layout/Header";
 import Breadcrumb from "./components/layout/Breadcrumb";
 import Footer from "./components/layout/Footer";
 import ClickSparkWrapper from "./components/layout/ClickSparkWrapper";
-import { BreadcrumbProvider } from "./components/layout/BreadcrumbContext";
-import ChatbotPopup from "./components/layout/ChatbotPopup";
 import { FlipbookProvider } from "./components/general/FlipbookContext";
+import ChatbotPopup from "./components/layout/ChatbotPopup";
 import { ChatbotProvider } from "./components/layout/ChatbotContext";
 
 const geistSans = Geist({
@@ -99,22 +98,20 @@ export default function RootLayout({ children }) {
       >
         <ChatbotProvider>
           <FlipbookProvider>
-            <BreadcrumbProvider>
-              <ClickSparkWrapper>
-                <Header />
-                <script
-                  dangerouslySetInnerHTML={{
-                    __html: `if (typeof history !== 'undefined') history.scrollRestoration = 'manual';`
-                  }}
-                />
-                <main className="min-h-screen">
-                  <Breadcrumb />
-                  {children}
-                </main>
-                <Footer />
-                <ChatbotPopup />
-              </ClickSparkWrapper>
-            </BreadcrumbProvider>
+            <ClickSparkWrapper>
+              <Header />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `if (typeof history !== 'undefined') history.scrollRestoration = 'manual';`
+                }}
+              />
+              <main className="min-h-screen">
+                <Breadcrumb />
+                {children}
+              </main>
+              <Footer />
+              <ChatbotPopup />
+            </ClickSparkWrapper>
           </FlipbookProvider>
         </ChatbotProvider>
       </body>

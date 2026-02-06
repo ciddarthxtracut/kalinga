@@ -13,22 +13,10 @@ import AdmissionCareer from '../components/general/admission_cta'
 import RaipurVideoSection from '../components/about-raipur/raipurvideo';
 import LibraryEvents from '../components/library/library-events';
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/library/Library-1.webp",
-  pageTitle: "KU Library",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "KU Library", href: "/library" },
-  ],
-};
+
 const page = () => {
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-  }, []);
+  
   return (
     <>
       <style jsx global>{`

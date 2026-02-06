@@ -102,22 +102,10 @@ export default async function NewsEventDetailsPage({ params }) {
     })) : [];
 
     // Set breadcrumb data
-    const breadcrumbData = {
-        heroImage: mainImage.src,
-        pageTitle: "News & Events",
-        customBreadcrumbs: [
-            { label: "Home", href: "/" },
-            { label: "News & Events", href: "/news-and-events" },
-        ],
-    };
+
 
     return (
         <>
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `window.__breadcrumbData = ${JSON.stringify(breadcrumbData)};`,
-                }}
-            />
             <EventDetailContent
                 tags={tags}
                 title={newsEvent.heading}

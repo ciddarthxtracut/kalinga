@@ -15,27 +15,7 @@ import OrganogramOfKalinga from "../components/about/organogram_of_kalinga";
 export default function Admissions() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/student-gathered.webp",
-      pageTitle: "Admissions",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'Admissions', href: '/admissions' }
-      ]
-    };
-    
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   // Handle scrolling to program search section when hash is present
   useEffect(() => {

@@ -8,23 +8,11 @@ import Safetyandsecuritymainintro from "../components/safetyandsecurity/safetyan
 import Safetyandsecuritycards from "../components/safetyandsecurity/safetyandsecuritycards";
 import Safetyandsecuritycontact from "../components/safetyandsecurity/safetyandsecuritycontact";
 
-// Breadcrumb configuration (same pattern as AboutUs)
-const breadcrumbData = {
-    heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
-    pageTitle: "Safety and Security",
-    customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Safety And Security", href: "/safety-and-security" },
-    ],
-};
+(same pattern as AboutUs)
+
 
 export default function SafetyAndSecurity() {
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.__breadcrumbData = breadcrumbData;
-        }
-    }, []);
+    
 
     return (
         <>

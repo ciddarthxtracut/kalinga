@@ -25,7 +25,6 @@ import QuickLinks from "@/app/components/general/quick_links";
 import GlobalArrowButton from "@/app/components/general/global-arrow_button";
 import { useFlipbook } from "@/app/components/general/FlipbookContext";
 import { fetchAllCourses, fetchCourseCompleteDetail, fetchDepartmentCompleteDetail, parseHtmlToParagraphs, parseHtmlToText, parseHtmlListItems, fetchClubs, fetchClubDetail } from "@/app/lib/api";
-import { useBreadcrumbData } from "@/app/components/layout/BreadcrumbContext";
 import FacilitySlider from "@/app/components/course/facility-slider";
 // Helper function to format duration
 const formatDuration = (duration, semester) => {
@@ -405,8 +404,6 @@ export default function DynamicCoursePage() {
       }
     ]
   } : null;
-
-  useBreadcrumbData(breadcrumbData);
 
   const careerPathContent = courseData?.career_info && courseData.career_info.length > 0 ? {
     title: "Career Pathways",

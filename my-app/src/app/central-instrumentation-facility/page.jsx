@@ -22,27 +22,7 @@ import MediaCardSlider from "@/app/components/general/media-card-slider";
 const CentralInstrumentationFacilityPage = () => {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
-      pageTitle: "Central Instrumentation Facility",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'Central Instrumentation Facility', href: '/central-instrumentation-facility' }
-      ]
-    };
-    
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
   const videoItems2 = [
     {
       id: 1,

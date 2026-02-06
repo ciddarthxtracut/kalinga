@@ -50,14 +50,7 @@ const placementGalleryImages = [
   { id: 24, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-19.jpg", title: "Bhilai Steel Plant Industrial Visit" },
 ];
 
-const breadcrumbData = {
-  pageTitle: "News & Events",
-  heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/news-and-event.jpg",
-  customBreadcrumbs: [
-    { label: 'Home', href: '/' },
-    { label: 'News & Events', href: '/news-and-events' }
-  ]
-}
+
 
 function NewsAndEvents() {
   const [newsItems, setNewsItems] = useState([]);
@@ -67,22 +60,7 @@ function NewsAndEvents() {
 
 
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    // Fetch departments
-    const loadDepartments = async () => {
-      try {
-        const deps = await fetchAllDepartments();
-        setDepartments(deps);
-      } catch (err) {
-        console.error("Failed to load departments", err);
-      }
-    };
-    loadDepartments();
-  }, []);
+  
 
   const loadNews = useCallback(async () => {
     setLoading(true);

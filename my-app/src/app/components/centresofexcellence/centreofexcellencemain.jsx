@@ -69,20 +69,8 @@ export default function CenterOfExcellenceMain({
   description = "At Kalinga, we'll not just build your future with only classroom-based studies, but there's something more to it that will make your learning experience fun and exciting. Presenting to you our Centres of Excellence that will introduce you to the future of technologies.",
   nameOnly = false,
   showDescription = true,
-  breadcrumbData = null,
   headerTextMaxWidthClass = "max-w-screen-xl",
 }) {
-  useEffect(() => {
-    if (!breadcrumbData) return;
-
-    if (typeof window !== "undefined") {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== "undefined") delete window.__breadcrumbData;
-    };
-  }, [breadcrumbData]);
 
   return (
     <section className="py-16 bg-white relative">

@@ -9,23 +9,10 @@ import APITable from "../components/general/api-table";
 import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
 import { useEffect } from "react";
 
-const breadcrumbData = {
-    heroImage:
-        "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/DSC02606+2.jpg",
-    pageTitle: "Research Resources",
-    objectPosition: "center",
-    customBreadcrumbs: [
-        { label: "Home", href: "/" },
-        { label: "Research Resources", href: "/research-resources" },
-    ],
-};
+
 
 export default function ResearchPapersAndBooksPublished() {
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.__breadcrumbData = breadcrumbData;
-        }
-    }, []);
+    
 
     /* =========================
        RESEARCH PAPERS (DO NOT TOUCH)

@@ -14,27 +14,7 @@ import QuickLinks from "../components/general/quick_links";
 const IQACPage = () => {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const breadcrumbData = {
-      pathname: pathname,
-      heroImage: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
-      pageTitle: "IQAC",
-      customBreadcrumbs: [
-        { label: 'Home', href: '/' },
-        { label: 'IQAC', href: '/internal-quality-assurance-cell' }
-      ]
-    };
-
-    if (typeof window !== 'undefined') {
-      window.__breadcrumbData = breadcrumbData;
-    }
-
-    return () => {
-      if (typeof window !== 'undefined' && window.__breadcrumbData?.pathname === pathname) {
-        delete window.__breadcrumbData;
-      }
-    };
-  }, [pathname]);
+  
 
   const MentorIntroProps = [
     {

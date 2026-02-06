@@ -10,28 +10,7 @@ import Academicvideo from "../components/academic-facilities/academicvideo";
 export default function AcademicFacilities() {
     const pathname = usePathname();
 
-    useEffect(() => {
-        const breadcrumbData = {
-            pathname: pathname,
-            heroImage:
-                "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/academics-banner.webp",
-            pageTitle: "Academic Facilities",
-            customBreadcrumbs: [
-                { label: "Home", href: "/" },
-                { label: "Academic Facilities", href: "/academic-facilities" },
-            ],
-        };
-        
-        if (typeof window !== "undefined") {
-            window.__breadcrumbData = breadcrumbData;
-        }
-        
-        return () => {
-            if (typeof window !== "undefined" && window.__breadcrumbData?.pathname === pathname) {
-                delete window.__breadcrumbData;
-            }
-        };
-    }, [pathname]);
+    
 
     return (
         <>

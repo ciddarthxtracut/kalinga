@@ -15,8 +15,6 @@ import AdmissionCareer from "@/app/components/general/admission_cta";
 import CourseNavigation from "@/app/components/general/course-navigation";
 import QuickLinks from "@/app/components/general/quick_links";
 import { fetchCourseCompleteDetail, parseHtmlToParagraphs, parseHtmlToText, parseHtmlListItems } from "@/app/lib/api";
-import { useBreadcrumbData } from "@/app/components/layout/BreadcrumbContext";
-
 // Helper function to format duration
 const formatDuration = (duration, semester) => {
   if (duration && semester) {
@@ -191,8 +189,6 @@ function Courses() {
   // Update breadcrumb using the hook
   // During loading: shows empty (hidden)
   // After data loads: shows actual breadcrumb with course name and slug
-  useBreadcrumbData(breadcrumbData);
-
   // CareerPath content - Map from API career_info - Only if data exists
   const careerPathContent = courseData?.career_info && courseData.career_info.length > 0 ? {
     title: "Career Pathways",

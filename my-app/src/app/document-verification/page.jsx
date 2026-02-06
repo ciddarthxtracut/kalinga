@@ -115,19 +115,9 @@ const boxItems = [{
   ),
 },];
 
-const breadcrumbData = {
-  heroImage:
-    "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
-  pageTitle: "Document Verification",
-  customBreadcrumbs: [
-    { label: "Home", href: "/" },
-    { label: "Document Verification", href: "/document-verification" },
-  ],
-};
 
-if (typeof window !== "undefined") {
-  window.__breadcrumbData = breadcrumbData;
-}
+
+
 
 
 export default function Page() {
