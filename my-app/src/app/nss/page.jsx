@@ -175,7 +175,7 @@ export default function NSSPage() {
 
           <Gallery images={[]} title="NSS Activities Gallery" />
 
-      <NewsEvents categoryId="7" title="NCC Events" titleClassName="text-center" hideCalendar={true} />
+      <NewsEvents categoryId="7" title="NSS Events" titleClassName="text-center" hideCalendar={true} />
       <AdmissionCareer />
 
       {/* ✅ FIXED + WORKING GLOBAL CSS */}
