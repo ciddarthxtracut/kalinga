@@ -2,6 +2,22 @@
 
 import GlobalArrowButton from "../components/general/global-arrow_button";
 
+// Breadcrumb configuration
+const breadcrumbData = {
+  heroImage:
+    "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-calendar/academic-calendar-banner.webp",
+  pageTitle: "Voter Portal",
+  customBreadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Voter Portal", href: "/voter-portal" },
+  ],
+};
+
+// Register breadcrumb data globally
+if (typeof window !== "undefined") {
+  window.__breadcrumbData = breadcrumbData;
+}
+
 export default function Page() {
   return (
     <section className="min-h-[70vh] mb-10 flex items-center justify-center bg-white py-20">

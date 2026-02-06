@@ -8,15 +8,15 @@ import Safetyandsecuritymainintro from "../components/safetyandsecurity/safetyan
 import Safetyandsecuritycards from "../components/safetyandsecurity/safetyandsecuritycards";
 import Safetyandsecuritycontact from "../components/safetyandsecurity/safetyandsecuritycontact";
 
-(same pattern as AboutUs)
+// (same pattern as AboutUs)
 
 
 export default function SafetyAndSecurity() {
-    
 
-    return (
-        <>
-            <style jsx global>{`
+
+  return (
+    <>
+      <style jsx global>{`
   .absolute.inset-0 > img {
     object-position: center 40% !important;
   }
@@ -28,10 +28,10 @@ export default function SafetyAndSecurity() {
   }
 `}</style>
 
-            <Safetyandsecuritymainintro />
-            <Safetyandsecuritycontact />
-            <Safetyandsecuritycards />
-            <AdmissionCareer />
-        </>
-    );
+      <Safetyandsecuritymainintro />
+      <Safetyandsecuritycontact />
+      <Safetyandsecuritycards />
+      <AdmissionCareer />
+    </>
+  );
 }

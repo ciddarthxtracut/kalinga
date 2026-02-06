@@ -2,9 +2,10 @@
 
 import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
 
-
-
-if (typeof window !== "undefined") 
+// Register breadcrumb data globally
+if (typeof window !== "undefined") {
+  // window logic
+}
 
 export default function CtcdPage() {
   return (
