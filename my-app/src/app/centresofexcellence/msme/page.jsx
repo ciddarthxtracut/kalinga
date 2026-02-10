@@ -6,6 +6,7 @@ import ImageContent from "@/app/components/ccrc/imagecontent";
 import AdmissionCareer from "@/app/components/general/admission_cta";
 import CareerPath from "@/app/components/course/career_path";
 import Gallery from "@/app/components/general/gallery";
+import RaipurVideoSection from "@/app/components/about-raipur/raipurvideo";
 
 const learnCards = [
   {
@@ -103,6 +104,16 @@ export default function MSMETrainingCentrePage() {
       <CareerPath careers={learnCards} title="What You’ll Learn" description="" />
 
       <Gallery images={galleryImages} title="Glimpses of MSME Centre Activities" />
+
+      <RaipurVideoSection
+        videoId = "lqO-cvAVMvc"
+        thumbnail = "https://kalinga-university.s3.ap-south-1.amazonaws.com/coe/msme-thumbnail.jpg"
+        title = "I am SME of India Chairman Rajiv Chawla on Kalinga University's MSME Session & Centre of Excellence"
+        description = "" // optional
+        alt = "Video thumbnail"
+        heightClass = "h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
+        className = "" // optional wrapper class
+    />
 
       <AdmissionCareer />
       <style jsx global>{`

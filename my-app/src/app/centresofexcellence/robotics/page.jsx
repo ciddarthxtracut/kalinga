@@ -5,6 +5,7 @@ import ImageContent from "@/app/components/ccrc/imagecontent";
 import CareerPath from "@/app/components/course/career_path";
 import AdmissionCareer from "@/app/components/general/admission_cta";
 import Gallery from "@/app/components/general/gallery";
+import RaipurVideoSection from "@/app/components/about-raipur/raipurvideo";
 
 
 
@@ -108,6 +109,16 @@ export default function RoboticsCodingDronesTrainingCentrePage() {
         images={galleryImages}
         title="Glimpses of Robotics, Coding & Drones Centre Activities"
       />
+
+      <RaipurVideoSection
+        videoId = "XZ8gVVzu8Ts"
+        thumbnail = "https://kalinga-university.s3.ap-south-1.amazonaws.com/coe/bds-thumbnail.jpg"
+        title = "Empowering Students with AI and Robotics: A Tour of Kalinga University's Centre of Excellence Lab"
+        description = "" // optional
+        alt = "Video thumbnail"
+        heightClass = "h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
+        className = "" // optional wrapper class
+    />
 
       <AdmissionCareer />
       <style jsx global>{`

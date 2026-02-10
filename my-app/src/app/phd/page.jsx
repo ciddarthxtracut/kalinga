@@ -122,6 +122,47 @@ export default function PhdPage() {
         { label: "Undertaking", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf", "Undertaking") },
       ]
     },
+     {
+      id: 13,
+      title: "Ethics Committee Constitution",
+      description: "Download the undertaking format.",
+      buttons: [
+        { label: "Download", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf", "Download") },
+      ]
+    },
+    {
+      
+      id: 14,
+      title: "Constitution of the Ethics Board for Maintaining Research Integrity",
+      description: "Download the undertaking format.",
+      buttons: [
+        { label: "Download", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/research/5.+CONSTITUTION+OF+ETHICS+BOARD+FOR+MAINTAINING+RESEARCH+INTEGRITY.pdf", "Download") },
+      ]
+    },
+    {
+      id: 15,
+      title: "Research Integrity & Ethics Policy",
+      description: "Download the undertaking format.",
+      buttons: [
+        { label: "Download", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf", "Download") },
+      ]
+    },
+    {
+      id: 16,
+      title: "Research Advisory Committee",
+      description: "Download the undertaking format.",
+      buttons: [
+        { label: "Download", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf", "Download") },
+      ]
+    },
+    {
+      id: 17,
+      title: "Constitution of the Research Advisory Committee and Departmental Research Committee",
+      description: "Download the undertaking format.",
+      buttons: [
+        { label: "Download", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Constitution+of+Research+Advisory+Committee.pdf", "Download") },
+      ]
+    },
   ];
 
   return (
