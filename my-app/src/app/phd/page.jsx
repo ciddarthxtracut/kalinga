@@ -14,7 +14,7 @@ export default function PhdPage() {
   const pathname = usePathname();
   const { openFlipbook } = useFlipbook();
 
-  
+
 
   const phdResources = [
     {
@@ -101,7 +101,7 @@ export default function PhdPage() {
       title: "Ph.D. Notification 2025-26",
       description: "Latest notifications for the upcoming academic year.",
       buttons: [
-        { label: "Ph.D. Notification 2025-26", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2025+Notification+26-07-2025.pdf", "Ph.D. Notification 2025-26") },
+        { label: "Ph.D. Notification 2025-26", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2026+Notification.pdf", "Ph.D. Notification 2025-26") },
       ]
     },
     {
@@ -111,7 +111,7 @@ export default function PhdPage() {
       buttons: [
         { label: "Ph.d. Scholars", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/DETAILS+OF+CURRENTLY+ENROLLED+Ph.D.+SCHOLARS+(1).pdf", "Ph.d. Scholars") },
         { label: "Ph.d. Supervisors", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/DETAILS+OF+SUPERVISOR.pdf", "Ph.d. Supervisor") },
-        
+
       ]
     },
     {
@@ -122,7 +122,7 @@ export default function PhdPage() {
         { label: "Undertaking", onClick: () => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf", "Undertaking") },
       ]
     },
-     {
+    {
       id: 13,
       title: "Ethics Committee Constitution",
       description: "Download the undertaking format.",
@@ -131,7 +131,7 @@ export default function PhdPage() {
       ]
     },
     {
-      
+
       id: 14,
       title: "Constitution of the Ethics Board for Maintaining Research Integrity",
       description: "Download the undertaking format.",

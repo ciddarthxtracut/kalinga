@@ -263,7 +263,7 @@ export default function PhdResourcesAccordion({ className = "" }) {
           <ul className="flex flex-wrap gap-3">
             <LinkItem
               label="Ph.D. Notification 2025-26"
-              href="https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2025+Notification+26-07-2025.pdf"
+              href="https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2026+Notification.pdf"
             />
           </ul>
         ),
