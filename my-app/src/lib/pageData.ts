@@ -218,7 +218,7 @@ export const pageDataMap: Record<string, PageData> = {
     },
     "/director-general": {
         slug: "/director-general",
-        title: "Director-general",
+        title: "Director General",
         banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
     },
     "/document-verification": {
@@ -401,7 +401,7 @@ export const pageDataMap: Record<string, PageData> = {
     },
     "/pro-chancellor": {
         slug: "/pro-chancellor",
-        title: "pro-Chancellor",
+        title: "Pro-Chancellor",
         banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
     },
     "/radio": {

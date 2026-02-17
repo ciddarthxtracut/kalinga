@@ -25,7 +25,7 @@ export default function EmployeeBenefits({ counsellingAreas, headingTextColor })
     },
     {
       id: 4,
-      title: "Employee Friendly Policies and facilities",
+      title: "Employee Friendly Policies and Facilities",
       description: "A positive and flexible work environment that promotes productivity while supporting personal commitments.",
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/careers/Work%E2%80%93Life+Balance.svg"
     },

@@ -317,12 +317,12 @@ const Header = () => {
             title: 'Research',
             links: [
               { label: 'Research Overview', href: '/research' },
-              { label: 'IPR (Intellectual Property Rights Cell)', href: '/ipr-cell' },
-              { label: 'Books Publications by Ku', href: '/book-publications' },
+              // { label: 'IPR (Intellectual Property Rights Cell)', href: '/ipr-cell' },
+              // { label: 'Books Publications by Ku', href: '/book-publications' },
               { label: 'Ph. D', href: '/phd' },
               // { label: 'Research Resources', href: '/research-resources' },
               // { label: 'Research Facilities', href: '/research-facilities' },
-              { label: 'Laboratories', href: '/laboratories' },
+              // { label: 'Laboratories', href: '/laboratories' },
             ]
           },
           // {

@@ -12,20 +12,15 @@ export default function Leadership() {
         name="Dr. Sandeep Gandhi"
         title="Registrar"
         messageHeading="Registrar's Message"
-        quote="Education is not merely about degrees, but about shaping character, leadership, and purpose for a better tomorrow."
+        quote="Education must expand perspectives, challenge limitations, and prepare minds for a global future."
         message={[
-  "With great honour and pleasure, I welcome you to Kalinga University.",
-  "As the Registrar of the university, I have the opportunity to lead with a clear vision and purpose, ensuring that we consistently deliver excellence in education in the years to come.",
-  "The quality of education you receive at KU will not only open doors to job opportunities in reputed organizations but will also equip you with the skills required to launch your own startup and contribute economic value to the nation.",
-  "We understand that today’s students must compete at an international level to secure opportunities in leading global companies, which requires the development of creative and innovative thinking.",
-  "Keeping this in mind, we work closely with our students at every stage to help them achieve their future aspirations.",
-  "Here, students are not only motivated and guided academically but also develop emotional intelligence essential for both personal and professional life.",
-  "We believe that placements and internship opportunities are the need of the hour for every student.",
-  "Accordingly, we provide internship opportunities from the first year itself and conduct campus recruitment drives with national and international hiring partners.",
-  "With a blend of contemporary knowledge, skills, and values, we groom high-calibre thinkers to become morally upright, physically sound, and productive citizens in an ever-evolving society.",
-  "I have complete trust in your immeasurable potential and wish you every success in your future endeavours."
-]
-}
+          "With great honour and pleasure, I welcome you to Kalinga University.",
+          "As a Registrar of the university, I have the opportunity to lead with a vision and a purpose, ensuring that we always deliver excellence in education in the years to come. The quality of education you will receive at KU will not only open doors to job opportunities in reputed companies but will also prepare you with the skills to launch your own startup firm, adding economic value to the nation.",
+          "We understand that students these days need to compete at an international level to get opportunities in the world’s top companies, and for this, they need to develop a creative and innovative thinking process. Keeping this in mind, we are working with our students at each step so that they can achieve their future endeavours. Here, they’re not only motivated and guided but also develop emotional intelligence, which they will need in both personal and professional life.",
+          "Further, we believe that placements and internship opportunities are the need of the hour for every student. For this, we provide internships to students from their first year and conduct campus drives where our National and International hiring partners conduct interviews of our students on campus. With a blend of contemporary knowledge, skills and values, we groom high-calibre thinkers to become morally upright and physically sound citizens and turn into productive individuals in an ever-evolving society.",
+          "I have complete trust in your unmeasured potential, and I wish you all success in your future endeavours."
+        ]
+        }
       />
     </>
   );

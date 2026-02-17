@@ -77,9 +77,9 @@ export default function ContactForm() {
                                             </svg>
                                         </span>
                                         <p className="text-[var(--foreground)]">
-                                            Kalinga University
+                                            Kalinga University, Kotni,
                                             <br />
-                                            Kotni, Near Mantralaya,
+                                            Near Mantralaya,
                                             Naya Raipur - 492101, Chhattisgarh, India
                                         </p>
                                     </li>
