@@ -8,6 +8,7 @@ import AccreditationsApprovalsSection from '../components/ana/AccreditationsAppr
 
 
 function Accreditations() {
+
     const aboutApproval = [
         { id: 1, name: "CG Government", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/cg-government.webp" },
         { id: 2, name: "UGC", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/ugc.webp" },
@@ -17,7 +18,6 @@ function Accreditations() {
         { id: 6, name: "NCTE", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002978.png" },
         { id: 6, name: "NAAC Accreditation B+", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/Accreditation+and+Ranking+Logo/Naac+niirf+2025.png" },
     ]
-
     const ranking = [
         {
             id: 0,
@@ -61,12 +61,12 @@ function Accreditations() {
         {
             id: 1,
             text: "A.I.U. Membership",
-            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/AIU-Membership.webp",
+            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/AIU-Membership.pdf",
         },
         {
             id: 2,
             text: "PHD Chamber of Commerce and Industry",
-            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/PHD-Chamber-of-Commerce-and-Industry.webp",
+            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/PHD-Chamber-of-Commerce-and-Industry.pdf",
         },
         {
             id: 3,
@@ -88,49 +88,147 @@ function Accreditations() {
             text: "Tribhuvan University Kirtipur, Nepal",
             href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Tribhuvan%2BUniversity%2C%2BNepal%2C%2BB.pdf"
         },
-         {
+        {
             id: 7,
             text: "Ministry Of Education",
-            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Ministry+Of+Education%2C+Nepal.webp"
+            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Ministry+Of+Education%2C+Nepal.pdf"
         },
-         {
+        {
             id: 8,
             text: "CTEVT Nepal Equivalency",
             href: ""
         },
-         {
+        {
             id: 9,
             text: "Equivalence to Sambalpur University, Odisha",
-            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Equivalence+to+Sambalpur+University%2C+Odisha.webp"
+            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Equivalence+to+Sambalpur+University%2C+Odisha.pdf"
         },
-         {
+        {
             id: 10,
             text: "MoU with National Law University",
             href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/MoU+with+National+Law+University.pdf"
         },
-        
-         {
+
+        {
             id: 11,
             text: "Kalinga University - Statutes and Ordinance",
             href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/statutes_ordinance.pdf"
         },
-         {
+        {
             id: 12,
             text: "IIC Appreciation Letter",
             href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/IIC+Appreciation+Letter.pdf"
         },
-         {
+        {
             id: 13,
             text: "Digital Smart Campus Ranking 2024",
-            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Digital+Smart+Campus+Ranking+2024.webp"
+            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Digital+Smart+Campus+Ranking+2024.pdf"
         },
-         {
+        {
             id: 14,
             text: "CSR Ranking Law 2025",
-            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/CSR-Ranking-Law-2025.webp"
+            href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/CSR-Ranking-Law-2025.pdf"
         },
 
     ];
+
+    const accreditationsData = {
+        title: "Accreditations & Approvals",
+        tabs: [
+            { id: "cg", label: "C.G. Govt. Approval" },
+            { id: "ugc", label: "UGC Approval" },
+            { id: "pci", label: "PCI Approval" },
+            { id: "aicte", label: "AICTE Approval" },
+            { id: "bci", label: "BCI Approval" },
+            { id: "naac", label: "National Assessment and Accreditation Council" },
+            { id: "ncte", label: "NCTE Approval" },
+            { id: "eoa_pharmacy", label: "EOA PHARMACY" },
+            { id: "eoa_diploma", label: "EOA Diploma Engg" },
+        ],
+        sections: {
+            cg: {
+                docs: [
+                    { title: "C.G. Govt. Approval", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/C.G.+Govt.+Approval.pdf" },
+                ]
+            },
+            ugc: {
+                docs: [
+                    { title: "UGC Approval (under section 12B)", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/UGC+Approval+(under+section+12B).pdf" },
+                    { title: "UGC 2(f) Approval", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/UGC+2(f)+Approval.pdf" },
+                ]
+            },
+            pci: {
+                years: {
+                    "2024 - 25": [{ title: "2024-25 PCI APPROVAL LETTER", url: "#" }],
+                    "2020 - 21": [{ title: "PCI extension of approval for 2020-21", url: "#" }],
+                    "2019 - 20": [{ title: "PCI extension of approval for 2019-20", url: "#" }],
+                    "2018 - 19": [{ title: "P.C.I. Approval - B.Pharmacy 2018 - 19", url: "#" }],
+                    "2017 - 18": [{ title: "P.C.I. Approval - B.Pharmacy 2017 - 18", url: "#" }],
+                    "2016 - 17": [{ title: "P.C.I. Approval - B.Pharmacy 2016 - 17", url: "#" }],
+                },
+            },
+
+            aicte: {
+                years: {
+                    "2025 - 26": [
+                        { title: "AICTE-DIPLOMA ENGINEERING 2025-26 EOA (With Working Professional)", url: "#" },
+                        { title: "AICTE B.TECH. 2025-26 EOA (with Working Professional)", url: "#" },
+                    ],
+                    "2024 - 25": [{ title: "AICTE-DIPLOMA ENGINEERING 2024-25", url: "#" }, { title: "AICTE B.TECH. 2024-25 EOA)", url: "#" },],
+                    "2023 - 24": [{ title: "AICTE EOA of B.Tech. (Engineering) - Session 2023-24", url: "#" }, { title: "AICTE EOA of Diploma (Engineering) - Session 2023-24", url: "#" },],
+                    "2022 - 23": [{ title: "AICTE EOA of B.Tech (Engineering) - Session 2022-23", url: "#" }, { title: "AICTE EOA of Diploma (Engineering) - Session 2022-23", url: "#" }, { title: "AICTE EOA of Pharmacy - Session 2022-23", url: "#" },],
+                    "2021 - 22": [{ title: "AICTE - EOA - 2021-22 (B.Tech)", url: "#" }, { title: "AICTE - EOA - 2021-22 (DIPLOMA)", url: "#" }, { title: "AICTE - EOA - 2021-22 (PHARMACY)", url: "#" },],
+                    "2020 - 21": [{ title: "AICTE - EOA - 2020-21 (B.Tech)", url: "#" },],
+                    "2019 - 20": [{ title: "AICTE - EOA - 2019-20 (B.Tech)", url: "#" },],
+                    "2018 - 19": [{ title: "A.I.C.T.E. Extension of Approval - Technology - 2018 - 19", url: "#" }, { title: "A.I.C.T.E. Extension of Approval - Diploma Pharmacy - 2018 - 19", url: "#" }, { title: "A.I.C.T.E. Extension of Approval - Diploma Engineering - 2018 - 19", url: "#" }, { title: "A.I.C.T.E. Extension of Approval - B.Pharmacy - 2018 - 19", url: "#" },],
+                    "2017 - 18": [{ title: "A.I.C.T.E. Approval - Diploma Pharmacy - 2017 - 18", url: "#" }, { title: "A.I.C.T.E. - Approval - Diploma in Engineering - 2017 - 18", url: "#" }, { title: "A.I.C.T.E. Extension of Approval - Technology - 2017 - 18", url: "#" }, { title: "A.I.C.T.E. Extension of Approval - B.Pharmacy - 2017 - 18", url: "#" },],
+                    "2016 - 17": [{ title: "A.I.C.T.E. Extension of Approval - B.Pharmacy - 2016 - 17", url: "#" }, { title: "A.I.C.T.E. Extension of Approval - Technology - 2016 - 17", url: "#" },],
+                    "2015 - 16": [{ title: "A.I.C.T.E. Extension of Approval - Technology - 2015 - 16", url: "#" }, { title: "A.I.C.T.E. - Approval - B.Pharmacy - 2015 - 16", url: "#" },],
+                    "2014 - 15": [{ title: "A.I.C.T.E. Approval - Technology - 2014 - 15", url: "#" },],
+                },
+            },
+            bci: {
+                years: {
+                    "2024 - 25": [{ title: "BCI Approval - Session 2024-25", url: "#" },],
+                    "2023 - 24": [{ title: "BCI Approval - Session 2023-24", url: "#" },],
+                    "2022 - 23": [{ title: "BCI Approval - Session 2022-23", url: "#" },],
+                    "2021 - 22": [{ title: "BCI Approval - Session 2021-22", url: "#" },],
+                    "2020 - 21": [{ title: "BCI Approval - Session 2020-21", url: "#" },],
+                    "2019 - 20": [{ title: "BCI Approval 2019-20", url: "#" },],
+                    "2016 - 19": [{ title: "B.C.I. Approval Extension till 2016 - 19", url: "#" },],
+                    "2014 - 16": [{ title: "B.C.I. Approval - 2014 - 15 & 2015 - 16", url: "#" },],
+                }
+            },
+            naac: {
+                docs: [
+                    { title: "National Assessment and Accreditation Council", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/National+Assessment+and+Accreditation+Council.pdf" },
+                ]
+            },
+            ncte: { years: { "2017 - 18": [{ title: "N.C.T.E. Approval - B.Ed for 2017 - 18", url: "#" }, { title: "N.C.T.E. Approval - B.P.Ed for 2017 - 18", url: "#" },] } },
+            eoa_pharmacy: {
+                years: {
+                    "2021 - 22": [{ title: "EOA PHARMACY 2021-22", url: "#" },
+                    ],
+                    "2020 - 21": [{ title: "EOA PHARMACY 2020-21", url: "#" },
+                    ],
+                    "2019 – 20": [{ title: "EOA PHARMACY 2019-20", url: "#" },
+                    ],
+
+
+                }
+            },
+            eoa_diploma: {
+                years: {
+                    "2020 - 21": [{ title: "EOA Diploma Engg 2020-21", url: "#" },
+                    ],
+                    "2019 – 20": [{ title: "EOA Diploma Engg 2019-20", url: "#" },
+                    ],
+                }
+            },
+        },
+    };
+
+
     return (
         <>
             <AccreditationRanking
@@ -139,7 +237,7 @@ function Accreditations() {
                 accreditations={aboutApproval}
             />
             <AwardsScrollbar title="NIRF Ranking" awards={ranking} />
-            <AccreditationsApprovalsSection />
+            <AccreditationsApprovalsSection data={accreditationsData} />
             <ResearchSixGridButtons buttons={defaultButtons} />
         </>
     )
