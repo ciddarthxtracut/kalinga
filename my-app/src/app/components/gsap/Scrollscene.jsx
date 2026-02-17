@@ -161,7 +161,7 @@ export const ScrollScene = () => {
                             className="relative text-center px-4 max-w-5xl"
                         >
                             <h3 className="text-3xl md:text-6xl font-serif text-white drop-shadow-lg leading-tight">
-                                Featuring curators from around the world
+                                A Sneak Peek into Your Daily Campus Life
                             </h3>
                         </motion.div>
                     </div>

@@ -278,10 +278,10 @@ const Programs = () => {
         {/* Two column layout */}
         <div className="mb-4 sm:mb-5 lg:mb-6 text-center">
           <SectionHeading
-            subtitle="Explore Our Programs"
+            subtitle="Explore our Academic Programs"
             title="Learn Without Limits. Grow Without Boundaries."
           />
-          <p className="text-[var(--light-text-gray)] text-sm md:text-sm max-w-3xl mx-auto">Explore future-focused programs that combine academic excellence with hands-on industry exposure, preparing you for success in a connected, global world.</p>
+          <p className="text-[var(--light-text-gray)] text-sm md:text-sm max-w-3xl mx-auto">Discover programs combining academics with hands-on learning exposure, preparing you for real-world careers.</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-6 sm:mb-8 lg:mb-10 items-center">
           {/* Left column: Text and Tabs */}

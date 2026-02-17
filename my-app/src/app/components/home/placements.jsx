@@ -73,7 +73,7 @@ const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg
 
   // Get title and description from API or use defaults
   const title = placementInfo?.heading || "A Proven Placement Track Record"
-  const description = placementInfo?.description || "Kalinga University has a strong placement ecosystem that supports students at every step of their professional journey. With industry-aligned training, practical exposure, and career guidance, students become job-ready."
+  const description = placementInfo?.description || "Kalinga University has a strong placement ecosystem that bridges academic excellence with real-world opportunities. With structured industry-oriented training, internship programs, and campus placement drives, our graduates are building successful careers across industries worldwide."
 
   // Convert logo URLs to image elements for LogoLoop
   const logoLoopItems = logos.map((logo, index) => ({
@@ -262,7 +262,7 @@ const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg
                 <h5
                   className="font-plus-jakarta-sans text-sm sm:text-base md:text-lg leading-tight sm:leading-[25px] text-white text-left w-full px-4 sm:px-6 lg:px-12"
                 >
-                  Trusted by 400+ Global Recruiters
+                  Our Top Recruiters
                 </h5>
 
                 <div className="w-full overflow-hidden relative px-2">

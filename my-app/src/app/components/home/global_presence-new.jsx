@@ -287,13 +287,13 @@ export default function Map({ backgroundColor = "", textColor = "", subtitleText
     <section className={`pt-16 ${backgroundColor}`}>
       <div className="container mx-auto px-4 relative">
         <SectionHeading
-          subtitle="Global Scale"
-          title="Expanding Horizons Through Global Partnerships"
+          subtitle="Learning Across Borders"
+          title="A Top Destination for Global Learners"
           subtitleClassName="mb-2 text-center"
           titleClassName={`mb-4 text-center ${textColor}`}
           subtitleTextColor={subtitleTextColor}
         />
-        <p className={`text-center ${textColor}`}>Kalinga University is home to students from 29+ countries, fostering a truly international learning environment. Through academic exchange programs, research collaborations, and strategic global alliances, the University prepares students to become globally competent professionals and leaders.</p>
+        <p className={`text-center ${textColor}`}>KU is a top private university in India that offers a dynamic platform to its National and International students, where unique ideas are appreciated and cultural diversity is celebrated. Our global students from 29+ Countries receive unparalleled mentorship and guidance throughout their academic journey.</p>
         <div className="relative flex justify-center">
           <Image
             src="https://kalinga-university.s3.ap-south-1.amazonaws.com/about/globe-new.png"

@@ -6,7 +6,7 @@ import Link from 'next/link'
 const AboutKalinga = () => {
   const [isExpanded, setIsExpanded] = useState(false)
 
-  const fullText = "Established in 2013, Kalinga University, Raipur stands as one of the best private universities in Chhattisgarh, strategically located in the Smart City of New Raipur.With a 50-acre green campus, Centres of Excellence, and strong industry placement partnerships, Kalinga University is dedicated to nurturing global leaders through innovation, inclusivity, and excellence.Home to students from over 29+countries, the University offers state-of-the-art education in Arts & Humanities, Commerce & Management,Education,Information Technology, Law, Pharmacy,Science and Technology supported by global collaborations with IBM, Cisco, Bosch, and more."
+  const fullText = "Kalinga offers a diverse platform for the holistic development of its students. With students from across the globe, the University celebrates diversity while offering a diverse range of programs aligned with NEP 2020. With state-of-the-art facilities, hands-on training, and industry-relevant curriculum, students are transformed into confident, future-ready professionals."
 
   const truncateLimit = 200
   const truncatedText = fullText.length > truncateLimit ? fullText.slice(0, truncateLimit) + '...' : fullText
@@ -40,7 +40,7 @@ const AboutKalinga = () => {
               <div className={`grid md:grid-cols-2 gap-6 items-start relative z-1 transition-all duration-300`}>                {/* Left: Title and button */}
                 <div className="space-y-6">
                   <h2 className="font-stix text-3xl md:text-4xl lg:text-5xl leading-tight">
-                    Kalinga University — The Pride of Central India
+                    A Leading Private University in Chhattisgarh
                   </h2>
                   <div className="mt-4">
                     <Link href="/about-us" className="inline-flex">

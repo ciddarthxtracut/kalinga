@@ -13,8 +13,8 @@ const AccreditationRanking = ({
     { id: 1, name: 'NIRF', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/nirf.webp' },
     { id: 2, name: 'NAAC B+', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/naac.webp' },
     { id: 2, name: 'UGC Grant', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/ugc.webp' },
-    { id: 4, name: 'Outlook', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/outlook.webp' },
-    { id: 5, name: 'Competition 3', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/competition.webp' },
+    // { id: 4, name: 'Outlook', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/outlook.webp' },
+    // { id: 5, name: 'Competition 3', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/competition.webp' },
 
 
     // { id: 1, name: 'Best Practices', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/best-prac.webp' },

@@ -1,4 +1,6 @@
+'use client'
 import React from "react";
+
 import MediaCardSlider from "@/app/components/general/media-card-slider";
 
 const getYouTubeId = (url) => {
@@ -32,7 +34,11 @@ const getYouTubeThumb = (url) => {
     return id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : "";
 };
 
-function Valueadditionvideointerview() {
+function Valueadditionvideointerview({
+    title = "Their Experience Can Become Your Inspiration",
+    description = ""
+}) {
+
     const ytLinks = [
         "https://www.youtube.com/shorts/x9PulcmUk8k",
         "https://www.youtube.com/shorts/hpwxIgcmMcI",
@@ -74,7 +80,8 @@ function Valueadditionvideointerview() {
 
             <MediaCardSlider
                 categoryTitle=""
-                title="Their Experience Can Become Your Inspiration"
+                title={title}
+                description={description}
                 videoItems={videoItems}
                 cardBgClass="bg-white"
                 nameTextClass="text-[var(--button-red)]"

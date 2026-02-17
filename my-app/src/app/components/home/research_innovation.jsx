@@ -3,6 +3,9 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css'
 import GlobalArrowButton from '../general/global-arrow_button'
 import SectionHeading from '../general/SectionHeading'
 
@@ -13,12 +16,16 @@ export default function ResearchInnovation() {
   const [startups, setStartups] = useState(0)
   const [researchLabs, setResearchLabs] = useState(0)
   const [citations, setCitations] = useState(0)
+  const [patents, setPatents] = useState(0)
+  const [hIndex, setHIndex] = useState(0)
 
   const stats = [
-    { label: 'Research Publications', value: '3360+', variant: 'orange', targetValue: 3360, setter: setResearchPublications },
+    { label: 'Research Publications', value: '3360+', variant: 'white', targetValue: 3360, setter: setResearchPublications },
     { label: 'Startups', value: '6+', variant: 'white', targetValue: 6, setter: setStartups },
     { label: 'Research Labs', value: '90+', variant: 'white', targetValue: 90, setter: setResearchLabs },
     { label: 'Citations', value: '2136 +', variant: 'white', targetValue: 2136, setter: setCitations },
+    { label: 'Patents', value: '532 +', variant: 'white', targetValue: 532, setter: setPatents },
+    { label: 'H-Index', value: '19+', variant: 'white', targetValue: 19, setter: setHIndex },
   ]
 
   // Count-up animation function
@@ -29,7 +36,7 @@ export default function ResearchInnovation() {
       const progress = Math.min(elapsed / duration, 1)
       const current = Math.floor(start + (end - start) * progress)
       setter(current)
-      
+
       if (progress < 1) {
         requestAnimationFrame(animate)
       }
@@ -50,6 +57,8 @@ export default function ResearchInnovation() {
             animateValue(0, 6, 2000, setStartups)
             animateValue(0, 90, 2000, setResearchLabs)
             animateValue(0, 2136, 2000, setCitations)
+            animateValue(0, 532, 2000, setPatents)
+            animateValue(0, 19, 2000, setHIndex)
           }
         })
       },
@@ -72,11 +81,13 @@ export default function ResearchInnovation() {
       'Startups': startups,
       'Research Labs': researchLabs,
       'Citations': citations,
+      'Patents': patents,
+      'H-Index': hIndex,
     }
     const animatedValue = animatedValues[stat.label]
     // Check if the original value has a space before the +
     const hasSpace = stat.value.includes(' +')
-    return `${animatedValue.toLocaleString()}${hasSpace ? ' +' : '+'}`
+    return `${(animatedValue ?? 0).toLocaleString()}${hasSpace ? ' +' : '+'}`
   }
 
   return (
@@ -88,13 +99,16 @@ export default function ResearchInnovation() {
           <div className="pt-4 sm:pt-6 md:pt-12">
             <SectionHeading
               subtitle="Research At Kalinga"
-              title="Fueling Innovation Through Research Excellence"
+              title="A Hub of Innovation and Discovery"
               titleClassName="text-[var(--foreground)]"
             />
+            <p className="text-[var(--foreground)] mt-2 sm:mt-4">
+              Empowering researchers with the most advanced research labs, including a Central Instrumentation Facility Lab featuring exclusive instruments for cutting-edge experiments. Our 90+ Research Labs and an active IPR cell will accelerate your research work.
+            </p>
             <div className="mt-4 sm:mt-6">
               <Link href="/research">
                 <GlobalArrowButton >
-                Explore More
+                  Explore More
                 </GlobalArrowButton>
               </Link>
             </div>
@@ -103,7 +117,7 @@ export default function ResearchInnovation() {
           {/* Right side with image */}
           <div className="relative flex justify-center md:justify-end items-center mt-6 md:mt-0">
             <div className="relative w-full h-[400px] rounded-[10px] overflow-hidden shadow-2xl">
-              <Image 
+              <Image
                 src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/staff-guiding.png"
                 alt="Research & Innovation"
                 fill
@@ -114,26 +128,47 @@ export default function ResearchInnovation() {
         </div>
 
         {/* Bottom section: Statistics Cards in Dark Blue Container */}
-        <div className="bg-[var(--dark-blue)] rounded-2xl p-6 sm:p-8 md:p-10 lg:p-7">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="bg-[var(--dark-blue)] rounded-2xl p-6 sm:p-8 md:p-10 lg:p-7 relative group">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={stats.length > 4}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+              },
+            }}
+            className="research-stats-swiper !pb-2"
+          >
             {stats.map((stat, index) => (
-              <div 
-                key={index}
-                className="rounded-xl p-4 sm:p-4 flex flex-col justify-between transition-colors duration-300 bg-[var(--light-gray)] hover:bg-[var(--card-skin)]"
-              >
-                <div>
-                  <h3 className="text-lg sm:text-xl font-stix  text-[var(--foreground)] border-b border-black pb-4">
-                    {stat.label}
-                  </h3>
+              <SwiperSlide key={index} className="h-full">
+                <div
+                  className={`rounded-xl p-4 sm:p-4 flex flex-col justify-between transition-colors duration-300 h-full min-h-[160px] ${stat.variant === 'orange' ? 'bg-[var(--button-red)]' : 'bg-[var(--light-gray)] hover:bg-[var(--card-skin)]'}`}
+                >
+                  <div>
+                    <h3 className={`text-lg sm:text-xl font-stix border-b pb-4 ${stat.variant === 'orange' ? 'text-white border-white/30' : 'text-[var(--foreground)] border-black'}`}>
+                      {stat.label}
+                    </h3>
+                  </div>
+                  <div>
+                    <h2 className={`font-stix mt-2 ${stat.variant === 'orange' ? 'text-white' : 'text-[var(--foreground)]'}`}>
+                      {getAnimatedValue(stat)}
+                    </h2>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="font-stix  text-[var(--foreground)] mt-2">
-                    {getAnimatedValue(stat)}
-                  </h2>
-                </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
     </section>

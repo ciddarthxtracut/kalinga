@@ -46,21 +46,21 @@ export default function CampusTour() {
               {/* Left: Title and Description */}
               <div className="flex-1 space-y-2 sm:space-y-3">
                 <h2 className="font-stix font-medium text-white leading-tight">
-                Step Into the Heart of Our Campus
+                  Step Into the Heart of Our Campus
                 </h2>
                 <p className="text-white leading-relaxed max-w-3xl">
-                Take a 360° virtual tour of Kalinga University’s lush 50-acre green campus — explore our world-class infrastructure, academic blocks, research labs, hostels, and vibrant student spaces from anywhere in the world.
+                  Take a 360° virtual tour of our luscious green campus and explore our world-class infrastructure.
                 </p>
               </div>
 
               {/* Right: CTA Button */}
               <div className="flex items-center gap-3">
                 <a href="https://virtualtour.kalingauniversity.ac.in/">
-              <GlobalArrowButton className="!bg-white !text-black"
-                arrowClassName="!bg-[var(--button-red)]"
-                arrowIconClassName="!text-white"
-                textClassName="!text-black"
-                >Explore Now</GlobalArrowButton>
+                  <GlobalArrowButton className="!bg-white !text-black"
+                    arrowClassName="!bg-[var(--button-red)]"
+                    arrowIconClassName="!text-white"
+                    textClassName="!text-black"
+                  >Explore Now</GlobalArrowButton>
                 </a>
               </div>
             </div>

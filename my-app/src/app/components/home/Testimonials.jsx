@@ -15,10 +15,10 @@ const defaultTestimonialsData = [
     },
     {
         id: 2,
-        name: "Sarah Jenkins",
-        role: "Student- Automobile Engineering",
-        quote: "Kalinga Incubation Centre gave me a perfect platform where I turned my business idea into a successful startup. I am extremely grateful for their guidance.",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/program/diploma.webp",
+        name: "Tanjila Khan",
+        role: "Student- B.Tech CSE",
+        quote: "Tanjila’s journey in the field of Computer Science reflects her passion towards technology and innovation. Through practical lab sessions, coding projects, Hackathons, and constant mentorship by expert faculty members, she is building strong technical skills and preparing for a successful career.",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/tanjila.webp",
         theme: "red"
     },
     {
