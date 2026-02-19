@@ -263,7 +263,7 @@ export default function PhdResourcesAccordion({ className = "" }) {
           <ul className="flex flex-wrap gap-3">
             <LinkItem
               label="Ph.D. Notification 2025-26"
-              href="https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2026+Notification.pdf"
+              href="https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2025+Notification+26-07-2025.pdf"
             />
           </ul>
         ),
@@ -294,13 +294,13 @@ export default function PhdResourcesAccordion({ className = "" }) {
                     "JOINT COUNCIL OF SCIENTIFIC AND INDUSTRIAL RESEARCH",
                   ],
                   ["3", "UGC-NETJRF", "NATIONAL ELIGIBILITY TEST"],
-                  ["4", "NFSC", "NATIONAL FELLOWSHIP FOR SCHEDULED CASTE"],
-                  ["5", "NFST", "NATIONAL FELLOWSHIP FOR SCHEDULED TRIBES"],
-                  [
-                    "6",
-                    "INSPIRE",
-                    "INNOVATION IN SCIENCE PURSUIT FOR INSPIRED RESEARCH",
-                  ],
+                  // ["4", "NFSC", "NATIONAL FELLOWSHIP FOR SCHEDULED CASTE"],
+                  // ["5", "NFST", "NATIONAL FELLOWSHIP FOR SCHEDULED TRIBES"],
+                  // [
+                  //   "6",
+                  //   "INSPIRE",
+                  //   "INNOVATION IN SCIENCE PURSUIT FOR INSPIRED RESEARCH",
+                  // ],
                 ]}
               />
             </div>

@@ -183,7 +183,7 @@ function NewsAndEvents() {
         }
       `}</style>
     </div>
-  );
+  );  
 }
 
 export default NewsAndEvents;
