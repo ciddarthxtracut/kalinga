@@ -15,7 +15,7 @@ import OrganogramOfKalinga from "../components/about/organogram_of_kalinga";
 export default function Admissions() {
   const pathname = usePathname();
 
-  
+
 
   // Handle scrolling to program search section when hash is present
   useEffect(() => {
@@ -298,7 +298,7 @@ export default function Admissions() {
           </div>
         </section>
       }>
-        <OurPrograms programCardTitleClassName=" !text-base md:!text-lg lg:!text-xl" />
+        <OurPrograms programCardTitleClassName=" !text-base md:!text-lg lg:!text-xl" customSubtitle="Explore  our programs" />
       </Suspense>
       <OrganogramOfKalinga
         title={entranceExamContent.title}
