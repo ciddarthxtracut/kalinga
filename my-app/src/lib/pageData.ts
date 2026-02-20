@@ -128,6 +128,11 @@ export const pageDataMap: Record<string, PageData> = {
         title: "Central Instrumentation Facility",
         banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
     },
+    "/centresofexcellence": {
+        slug: "/centresofexcellence",
+        title: "Centres of Excellence",
+        banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-intro.jpg",
+    },
     "/centresofexcellence/ai-ml": {
         slug: "/centresofexcellence/ai-ml",
         title: "AI & ML Courses Training",
@@ -297,8 +302,8 @@ export const pageDataMap: Record<string, PageData> = {
         title: "Kalinga Buzz",
         banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
     },
-    "/kif": {
-        slug: "/kif",
+    "/kalinga-incubation-foundation": {
+        slug: "/kalinga-incubation-foundation",
         title: "Kalinga Incubation Foundation",
         banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/k4.jpg",
         imagePosition: "center",

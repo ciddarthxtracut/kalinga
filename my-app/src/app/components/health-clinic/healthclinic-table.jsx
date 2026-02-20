@@ -36,7 +36,7 @@ export default function HealthClinicTable({
           data={data}
           overflowX={true}
           className="!shadow-none"
-          headerBgColor="bg-[var(--dark-blue)]"   // ✅ same site-blue variable
+          headerBgColor="bg-[var(--button-red)]"   // ✅ same site-blue variable
           headerTextColor="text-white"
           evenRowBg="bg-white"
           oddRowBg="bg-gray-50"

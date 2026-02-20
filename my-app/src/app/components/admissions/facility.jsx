@@ -147,24 +147,29 @@ export default function Facility({
           <Swiper
             modules={[Navigation, Autoplay]}
             loop={true}
+            centeredSlides={true}
             spaceBetween={24}
             slidesPerView={1}
             breakpoints={{
               640: {
                 slidesPerView: 2,
                 spaceBetween: 20,
+                centeredSlides: false,
               },
               768: {
                 slidesPerView: 3,
                 spaceBetween: 24,
+                centeredSlides: true,
               },
               1024: {
                 slidesPerView: 4,
                 spaceBetween: 24,
+                centeredSlides: false,
               },
               1280: {
                 slidesPerView: 5,
                 spaceBetween: 24,
+                centeredSlides: true,
               },
             }}
             autoplay={{
@@ -186,7 +191,7 @@ export default function Facility({
                     {/* Image Container - Fixed wrapper with padding for upward growth (250px visible + 50px padding = 300px total) */}
                     <div className="relative w-full min-h-[300px] overflow-hidden rounded-xl">
                       {/* Image - Positioned at bottom, grows upward on hover */}
-                      <div className="absolute bottom-0 left-0 right-0 h-[250px] group-hover:h-[300px]  transition-all duration-300">
+                      <div className="facility-image-container absolute bottom-0 left-0 right-0 h-[250px] group-hover:h-[300px] transition-all duration-300">
                         <Image
                           src={facility.image}
                           alt={facility.name}
@@ -195,8 +200,8 @@ export default function Facility({
                         />
                       </div>
                       {/* Label - Overlaid on image */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-white px-4 py-3 m-3 rounded-lg z-10 group-hover:bg-[var(--button-red)] transition-all duration-300">
-                        <p className="text-[var(--foreground)] font-semibold text-center group-hover:text-white transition-all duration-300">
+                      <div className="facility-label-container absolute bottom-0 left-0 right-0 bg-white px-4 py-3 m-3 rounded-lg z-10 group-hover:bg-[var(--button-red)] transition-all duration-300">
+                        <p className="facility-label-text text-[var(--foreground)] font-semibold text-center group-hover:text-white transition-all duration-300">
                           {facility.name}
                         </p>
                       </div>
@@ -206,6 +211,22 @@ export default function Facility({
               </SwiperSlide>
             ))}
           </Swiper>
+
+          <style jsx global>{`
+            .facility-swiper .swiper-slide-active .group {
+              z-index: 50 !important;
+              box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+            }
+            .facility-swiper .swiper-slide-active .facility-image-container {
+              height: 300px !important;
+            }
+            .facility-swiper .swiper-slide-active .facility-label-container {
+              background-color: var(--button-red) !important;
+            }
+            .facility-swiper .swiper-slide-active .facility-label-text {
+              color: white !important;
+            }
+          `}</style>
 
           {/* Navigation Buttons */}
           <div className="flex justify-end items-center gap-3">

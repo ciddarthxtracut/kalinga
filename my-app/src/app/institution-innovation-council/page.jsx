@@ -257,6 +257,10 @@ export default function InstitutionInnovationCouncil() {
             data={iicCommitteeTable}
             overflowX={true}
             className="shadow-none"
+            headerBgColor="bg-[var(--button-red)]"
+            headerTextColor="text-white"
+            evenRowBg="bg-white"
+            oddRowBg="bg-gray-50"
           />
         </div>
       </div>

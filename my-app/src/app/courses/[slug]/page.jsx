@@ -549,7 +549,7 @@ export default function DynamicCoursePage() {
           icon: "https://kalinga-university.s3.amazonaws.com/kalinga_backend/files/clubs/kif_2.webp",
           title: "Kalinga Incubation Foundation (KIF)",
           description: parseHtmlToText("<p>KIF converts students&#39; bold and unique entrepreneurial ideas into ACTION by providing all-around support.</p>\r\n\r\n<p>&nbsp;</p>"),
-          href: "/kif"
+          href: "/kalinga-incubation-foundation"
         },
         {
           id: 3,

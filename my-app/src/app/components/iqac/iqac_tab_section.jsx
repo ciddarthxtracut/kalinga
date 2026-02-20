@@ -1219,6 +1219,10 @@ function ParentsFeedbackForm({ onClose }) {
 }
 
 const IQAC_TABS = [
+  { id: "objectives", label: "Objectives Of IQAC" },
+  { id: "functions", label: "Functions Of IQAC" },
+  { id: "strategies", label: "Strategies Of IQAC" },
+  { id: "benefits", label: "Benefits Of IQAC" },
   { id: "minutes", label: "IQAC Minutes Of Meeting" },
   { id: "initiatives", label: "IQAC Initiatives" },
   { id: "feedback", label: "Feedback Analysis & Action Taken Report" },
@@ -1228,6 +1232,50 @@ const IQAC_TABS = [
   { id: "naac", label: "NAAC SSR" },
   { id: "financial", label: "Financial Audited Statements" },
   { id: "feedback-form", label: "Feedback Form" },
+];
+
+const IQAC_OBJECTIVES = [
+  "To ensure continuous improvement in the entire operations of the University.",
+  "To build confidence among stakeholders, including students, parents, staff members, funding agencies, and society, regarding the dedication of the university towards quality and integrity.",
+];
+
+const IQAC_FUNCTIONS = [
+  "To propose policies and strategies for significant contributions to the overall development of the University.",
+  "To collect and organise feedback responses from students, faculty members, alumni, and recruiters to improve quality-related institutional processes.",
+  "To develop and apply innovative practices in various programs/activities to enhance the educational standards.",
+  "To check various parameters under academic and administrative activities through regular visits to classrooms and organising meetings with students and faculty members.",
+  "To monitor class work and activities related to academics.",
+  "To conduct periodic visits to different departments and do departmental audits.",
+  "To verify and review the effectiveness of quality parameters.",
+  "To implement suggestions that are put forward in the meetings by the committee members of the IQAC, after taking necessary approvals from the management.",
+  "To review the teaching-learning processes and methods of operation from time to time.",
+  "To document the various programs/activities that contribute to quality improvement and educational excellence.",
+];
+
+const IQAC_STRATEGIES = [
+  { text: "IQAC of Kalinga University will adopt a participatory approach among the staff of the University." },
+  { text: "IQAC proposes to meet the quality and effectiveness of all the functions of the university." },
+  {
+    text: "IQAC will develop its mechanisms and procedures to:",
+    subItems: [
+      "Ensure timely, efficient, and progressive performance of academic, administrative, and financial tasks.",
+      "Maintain relevance and standards of academic and research programs.",
+      "Ensure equitable access and affordability of our academic programs for various sections of society.",
+      "Optimise and integrate modern teaching and learning methodologies.",
+      "Maintain a comprehensive Student Information System.",
+      "Improve the transparency and credibility of evaluation procedures.",
+      "Ensure the adequacy, maintenance, and functioning of the support systems and services.",
+      "Improve research activities and networking with other institutions in India and abroad.",
+    ],
+  },
+];
+
+const IQAC_BENEFITS = [
+  "Brings clarity and focus to various institutional functions, improving the quality of higher education.",
+  "Improves the coordination among various activities of the institute and establishes effective practices to maintain the standards.",
+  "Provides a strong foundation for informed decision-making at every step.",
+  "Promotes innovation and research activities for academic advancement.",
+  "Enhances the internal communication among different departments and stakeholders to ensure transparency at all levels.",
 ];
 
 // IQAC Committee Data
@@ -1460,7 +1508,7 @@ const FEEDBACK_ANALYSIS = {
 // Strategic Plan Content
 const STRATEGIC_PLAN_CONTENT = `Kalinga University promotes knowledge development through innovation & research, hands-on learning, and student startups. It provides a platform for students to experiment, work on real-world projects, and bring their innovative ideas. It has also established an incubation centre to support and transform the brilliant startup ideas of young students into successful businesses.
 
-KU is supporting people from five villages, including Kotni, Palaud, Kuhera, Parsada, and Kotrabhata, and provides effective teaching and learning in model classrooms. Scholarships for SC/ST/OBC students improve the knowledge pool and inclusivity in the nearby communities. The university is also utilising its talent pool through Skill Pathshala in Kotni Village, where youth are trained in cooking, sewing, and security services. Kalinga also offers employment opportunities to people from nearby areas for their career growth.
+KU is supporting people from five villages, including Kotni, Palaud, Kuhera, Parsada, and Kotrabhata, and provides effective teaching and learning in classrooms. Scholarships for SC/ST/OBC students improve the knowledge pool and inclusivity in the nearby communities. The university is also utilising its talent pool through Skill Pathshala in Kotni Village, where youth are trained in cooking, sewing, and security services. Kalinga also offers employment opportunities to people from nearby areas for their career growth.
 
 These initiatives prove the University's commitment to expanding its horizons and developing social responsibility.`;
 
@@ -1561,6 +1609,77 @@ export default function IqacTabSection() {
           {/* Content Area - White Background */}
           <div className="flex-1 w-full">
             <div className="rounded-[16px] bg-white p-4 md:p-5 shadow-sm h-full flex flex-col">
+              {/* Objectives Tab */}
+              {activeTab === "objectives" && (
+                <div className="flex-1">
+                  <h2 className="font-plus-jakarta-sans text-xl md:text-3xl text-[var(--foreground)] mb-6 text-center mt-3">
+                    Objectives Of IQAC
+                  </h2>
+                  <ul className="list-disc pl-5 space-y-3">
+                    {IQAC_OBJECTIVES.map((item, idx) => (
+                      <li key={idx} className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Functions Tab */}
+              {activeTab === "functions" && (
+                <div className="flex-1">
+                  <h2 className="font-plus-jakarta-sans text-xl md:text-3xl text-[var(--foreground)] mb-6 text-center mt-3">
+                    Functions Of IQAC
+                  </h2>
+                  <ul className="list-disc pl-5 space-y-3">
+                    {IQAC_FUNCTIONS.map((item, idx) => (
+                      <li key={idx} className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Strategies Tab */}
+              {activeTab === "strategies" && (
+                <div className="flex-1">
+                  <h2 className="font-plus-jakarta-sans text-xl md:text-3xl text-[var(--foreground)] mb-6 text-center mt-3">
+                    Strategies Of IQAC
+                  </h2>
+                  <ul className="list-disc pl-5 space-y-4">
+                    {IQAC_STRATEGIES.map((item, idx) => (
+                      <li key={idx} className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                        {item.text}
+                        {item.subItems && (
+                          <ul className="list-disc pl-5 mt-2 space-y-2">
+                            {item.subItems.map((sub, sIdx) => (
+                              <li key={sIdx}>{sub}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Benefits Tab */}
+              {activeTab === "benefits" && (
+                <div className="flex-1">
+                  <h2 className="font-plus-jakarta-sans text-xl md:text-3xl text-[var(--foreground)] mb-6 text-center mt-3">
+                    Benefits Of IQAC
+                  </h2>
+                  <ul className="list-disc pl-5 space-y-3">
+                    {IQAC_BENEFITS.map((item, idx) => (
+                      <li key={idx} className="text-[var(--foreground)] font-plus-jakarta-sans text-sm md:text-base leading-relaxed">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {/* IQAC Committee Tab */}
               {activeTab === "committee" && (
                 <div className="flex-1">
@@ -1941,7 +2060,7 @@ export default function IqacTabSection() {
               )}
 
               {/* Placeholder content for other tabs */}
-              {!["committee", "initiatives", "minutes", "feedback", "strategic", "satisfaction", "feedback-form"].includes(activeTab) && (
+              {!["committee", "initiatives", "minutes", "feedback", "strategic", "satisfaction", "feedback-form", "objectives", "functions", "strategies", "benefits"].includes(activeTab) && (
                 <div className="flex-1">
                   <h2 className="font-plus-jakarta-sans text-xl md:text-3xl text-[var(--foreground)] mb-4 text-center mt-3">
                     {IQAC_TABS.find((tab) => tab.id === activeTab)?.label}

@@ -43,7 +43,7 @@ function Academiccards() {
             imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/kif.png",
             logoSrc: "",
             subtitle: "INNOVATION & STARTUPS",
-            link: "/kif",
+            link: "/kalinga-incubation-foundation",
         },
         {
             title: "Moot Court",

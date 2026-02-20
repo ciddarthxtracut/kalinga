@@ -142,7 +142,7 @@ const ubaImages = [
 export default function UnnatBharatAbhiyanPage() {
   const pathname = usePathname();
 
-  
+
 
 
   return (
@@ -262,6 +262,10 @@ export default function UnnatBharatAbhiyanPage() {
             data={ubaTeamTable}
             overflowX={true}
             className="shadow-none"
+            headerBgColor="bg-[var(--button-red)]"
+            headerTextColor="text-white"
+            evenRowBg="bg-white"
+            oddRowBg="bg-gray-50"
           />
         </div>
       </div>

@@ -133,11 +133,11 @@ export default function IPRCellPage() {
       </div>
 
       <section className="pb-12">
-        <div className="container mx-auto px-4">
-          <h2 className="!font-stix text-4xl">Our IPR Committee</h2>
+        <div className="container mx-auto px-4 ">
+          <h2 className="!font-stix text-4xl text-center">Our IPR Committee</h2>
 
           <div className="mt-6">
-            <DataTable columns={columns} data={data} overflowX={true} />
+            <DataTable columns={columns} data={data} overflowX={true} headerBgColor="bg-[var(--button-red)]" headerTextColor="text-white" evenRowBg="bg-white" oddRowBg="bg-gray-50" />
           </div>
         </div>
       </section>

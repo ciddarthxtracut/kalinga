@@ -1,7 +1,10 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import SectionHeading from '../general/SectionHeading';
+
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 // Testimonials data array
 const defaultTestimonialsData = [
@@ -36,10 +39,50 @@ const defaultTestimonialsData = [
         quote: "Finding technical co-founders was my biggest challenge. This community bridged that gap immediately.",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/student-say-1.webp",
         theme: "amber"
+    },
+    {
+        id: 6,
+        name: "Mansi Majumdar",
+        role: "Department of Zoology",
+        quote: "Mansi’s academic journey at Kalinga University is a perfect combination of hands-on learning and classroom knowledge. Through laboratory sessions, smart classroom lectures, and step-by-step mentoring, she’s continuously moving closer towards her dream career.",
+        video: "https://www.youtube.com/watch?v=JLlMztuYLao",
+        theme: "orange"
+    },
+    {
+        id: 7,
+        name: "Shreyanka Raha",
+        role: "Department of Journalism & Mass Communication",
+        quote: "Shreyanka’s journey at Kalinga University reflects her transformation into a confident communicator. Drawn by the university’s academic pattern that emphasizes internships and all-around exposure, she experienced a perfect balance of theoretical and practical learning that helped her master the art of communication",
+        video: "https://www.youtube.com/watch?v=U-ofFXqFKfU",
+        theme: "red"
+    },
+    {
+        id: 8,
+        name: "Payal Talukar",
+        role: "MBA",
+        quote: "Payal’s dream is to build her own brand and work in top corporates. Through her MBA journey at Kalinga University, she is gaining strong exposure through group discussions, industrial visits, case studies, and club activities, which are helping her grow into a confident professional.",
+        video: "https://www.youtube.com/watch?v=t8UAjsnO4PQ",
+        theme: "amber"
+    },
+    {
+        id: 9,
+        name: "Kimberly Brita",
+        role: "Diploma in Computer Science",
+        quote: "Kimberley Brita from Zimbabwe chose Kalinga University to pursue her dream of studying in India. Impressed by the world-class infrastructure, eco-friendly campus, and vibrant student life, she enjoys her time here by balancing learning, leisure, and personal growth.",
+        video: "https://www.youtube.com/watch?v=Yt-dPCrghNc",
+        theme: "orange"
+    },
+    {
+        id: 10,
+        name: "Mona Aggarwal",
+        role: "BBA LLB",
+        quote: "Mona is shaping her career at Kalinga University through a balance of practical training and classroom studies from expert faculty members. Through moot court competitions, internship programs, and guest lectures, she is gaining real-world skills and confidence required to succeed in the legal world",
+        video: "https://www.youtube.com/watch?v=V6xjrHuF5e0",
+        theme: "red"
     }
 ];
 
-export default function Testimonials({ testimonials = [], className = "", subtitle = "Real Stories. Real Success.", title = "Stories that define our Kalinga spirit.", titleClassName = "", subtitleClassName = "", subtitleTextColor = "" }) {
+export default function Testimonials({ testimonials = [], className = "", subtitle = "Real Stories. Real Success.", title = "Stories that Define Kalinga’s Spirit", titleClassName = "", subtitleClassName = "", subtitleTextColor = "" }) {
     const testimonialsData = testimonials.length > 0 ? testimonials : defaultTestimonialsData;
     const [activeIndex, setActiveIndex] = useState(1);
     const [isMobile, setIsMobile] = useState(false);
@@ -50,6 +93,7 @@ export default function Testimonials({ testimonials = [], className = "", subtit
     const cardRefs = useRef({});
     const quoteRefs = useRef({});
     const autoplayIntervalRef = useRef(null);
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -174,8 +218,8 @@ export default function Testimonials({ testimonials = [], className = "", subtit
             autoplayIntervalRef.current = null;
         }
 
-        // Don't start autoplay if hovered
-        if (isHovered) return;
+        // Don't start autoplay if hovered or video is playing
+        if (isHovered || isVideoPlaying) return;
 
         // Start autoplay
         autoplayIntervalRef.current = setInterval(() => {
@@ -188,7 +232,7 @@ export default function Testimonials({ testimonials = [], className = "", subtit
                 autoplayIntervalRef.current = null;
             }
         };
-    }, [testimonialsData.length, isHovered]);
+    }, [testimonialsData.length, isHovered, isVideoPlaying]);
 
     const getSlideStyles = (index) => {
         const total = testimonialsData.length;
@@ -333,18 +377,33 @@ export default function Testimonials({ testimonials = [], className = "", subtit
                                         className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-12 p-4 sm:p-6 md:p-10 pb-4 transition-opacity rounded-xl sm:rounded-2xl duration-500 border-2 border-gray-300 items-center"
                                         style={{ opacity: styles.contentOpacity }}
                                     >
-                                        {/* Image */}
+                                        {/* Image or Video */}
                                         <div className="w-full md:w-5/12 flex-shrink-0 relative">
                                             <div className="aspect-[3/3] sm:aspect-[3/3] w-full bg-white rounded-xl sm:rounded-2xl border-2 sm:border-4 md:border-[6px] border-white relative overflow-hidden">
-                                                <img
-                                                    src={item.image}
-                                                    className="w-full h-full object-cover object-top"
-                                                    alt={item.name}
-                                                    onLoad={() => {
-                                                        // Recalculate height when image loads
-                                                        setTimeout(recalculateHeight, 100);
-                                                    }}
-                                                />
+                                                {item.video ? (
+                                                    <div className="absolute inset-0 w-full h-full bg-black rounded-lg overflow-hidden">
+                                                        <ReactPlayer
+                                                            src={item.video}
+                                                            width="100%"
+                                                            height="100%"
+                                                            controls
+                                                            onPlay={() => setIsVideoPlaying(true)}
+                                                            onPause={() => setIsVideoPlaying(false)}
+                                                            onEnded={() => setIsVideoPlaying(false)}
+                                                            playing={false}
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <img
+                                                        src={item.image}
+                                                        className="w-full h-full object-cover object-top"
+                                                        alt={item.name}
+                                                        onLoad={() => {
+                                                            // Recalculate height when image loads
+                                                            setTimeout(recalculateHeight, 100);
+                                                        }}
+                                                    />
+                                                )}
                                             </div>
                                         </div>
 

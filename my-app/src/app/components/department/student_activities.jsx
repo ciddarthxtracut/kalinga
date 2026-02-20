@@ -198,6 +198,7 @@ export default function StudentActivities({
           <div className="mt-2">
             <Link href={activity.slug ? `/news-and-events/${activity.slug}` : "#"} passHref className="inline-block">
               <GlobalArrowButton
+                as="span"
                 className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
                 textClassName="!text-[var(--button-red)] !px-0"
                 arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"

@@ -12,6 +12,7 @@ import FAQ from "../components/general/faq";
 import AdmissionCareer from "../components/general/admission_cta";
 import SampleTesting from '../components/cif/sample_testing';
 import Testimonials from "../components/home/Testimonials";
+import MediaCardSlider from "../components/general/media-card-slider";
 export default function KalseePage() {
   const milestones = [
     {
@@ -206,6 +207,74 @@ export default function KalseePage() {
       icon: <Image src="https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/scholarship.png" alt="Scholarships" width={64} height={64} className="object-contain" />
     },
   ]
+  const highScorers = [
+    {
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kal-mat/Dhanajay+Sahu.webp",
+      title: "DHANANJAY SAHU",
+      description: "MBA"
+    },
+    {
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kal-mat/Divya+Choudhary.webp",
+      title: "DIVYA CHOUDHARY",
+      description: "MBA"
+    },
+    {
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kal-mat/Bhavika+rathi.webp",
+      title: "BHAVIKA RATHI",
+      description: "BBA"
+    },
+    {
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kal-mat/Alok+gupta.webp",
+      title: "ALOK GUPTA",
+      description: "MBA"
+    },
+    {
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kal-mat/Ayush+SIngh.webp",
+      title: "AYUSH SINGH",
+      description: "BBA"
+    },
+    {
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kal-mat/Yuraj+Singh.webp",
+      title: "YUVRAJ SINGH CHOUHAN",
+      description: "BBA"
+    },
+    {
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/kal-mat/NISHANT+SWARNKAR.webp",
+      title: "NISHANT SWARNKAR",
+      description: "BBA"
+    }
+  ];
+
+  // const videoItems1 = [
+  //   {
+  //     id: 1,
+  //     name: "SGS Technical Services Pvt Ltd ",
+  //     videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/SGS+Technical+services+Pvt.+ltd+Campus+Drive.mp4",
+  //     thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/campus-1.png",
+  //     description: "SGS Technical Services Pvt Ltd",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "9M India Limited",
+  //     videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/9M+india+limited+Campus+Drive+CCRC.mp4",
+  //     thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/campus-2.png",
+  //     description: "9M India Limited",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Hirojet Campus Drive",
+  //     videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/Hirojet+Campus+Drive.mp4",
+  //     thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/campus-3.png",
+  //     description: "Hirojet",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Airtel Campus Drive",
+  //     videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/Airtel+Campus+Drive.mp4",
+  //     thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Campus+Drives/campus-4.png",
+  //     description: "Airtel",
+  //   },
+  // ];
   return (
     <>
       <HeroSectionTwo
@@ -342,10 +411,27 @@ export default function KalseePage() {
         showImage={false}
         bgColor="bg-white"
       />
+      {/* <MediaCardSlider
+        categoryTitle=""
+        title="Campus Drives"
+        videoItems={videoItems1}
+        cardBgClass="bg-white"
+        nameTextClass="text-[var(--button-red)]"
+        descriptionTextClass=""
+        swiperClassName="ccrc-video-slider"
+      /> */}
+      <MediaCardSlider
+        title="High Scorers Of KAL-MAT"
+        description="Introducing our KAL-MAT achievers whose top scores turned into a bright future."
+        imageItems={highScorers}
+        cardBgClass="bg-white"
+        nameTextClass="text-[var(--button-red)]"
+        swiperClassName="high-scorers-slider"
+      />
       {/* <Testimonials testimonials={testimonials} className="bg-[var(--light-gray)]" /> */}
       <FAQ title="Frequently Asked Questions"
-      subtitle=""
-       items={faqItems} />
+        subtitle=""
+        items={faqItems} />
       <AdmissionCareer />
     </>
   );

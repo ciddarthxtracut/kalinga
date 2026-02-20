@@ -12,7 +12,8 @@ const QuickLinkCard = ({
   showDescriptionReadMore = true, // controls the description read more button
   href = null,
   iconWrapperClassName = "w-12 h-12 sm:w-14 sm:h-14", // Default size
-  alt = ""
+  alt = "",
+  onToggleExpand // Add this prop
 }) => {
   const isImageUrl = typeof icon === 'string' && (icon.startsWith('http') || icon.startsWith('/'))
   const [isExpanded, setIsExpanded] = useState(false)
@@ -58,7 +59,11 @@ const QuickLinkCard = ({
   }, [description, showDescriptionReadMore])
 
   const toggleExpand = () => {
-    setIsExpanded(!isExpanded)
+    const newExpandedState = !isExpanded
+    setIsExpanded(newExpandedState)
+    if (onToggleExpand) {
+      onToggleExpand(newExpandedState)
+    }
   }
 
   return (

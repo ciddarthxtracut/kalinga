@@ -48,7 +48,7 @@ const AboutKalinga = () => {
                         arrowClassName="!bg-[var(--button-red)]"
                         arrowIconClassName="!text-white"
                         textClassName="!text-black"
-                      >Learn More</GlobalArrowButton>
+                      >Know  More</GlobalArrowButton>
                     </Link>
                   </div>
                 </div>

@@ -2,13 +2,13 @@
 
 import React, { useState, useRef } from 'react'
 import Image from 'next/image'
-import SectionHeading from '../general/SectionHeading'    
+import SectionHeading from '../general/SectionHeading'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-export default function FeatureCards({ 
+export default function FeatureCards({
   isSlider = true,
   title = "Why is Kalinga University the Right Choice?",
   subtitle = "Why is Kalinga University the Right Choice?",
@@ -16,145 +16,145 @@ export default function FeatureCards({
   cardMinHeight = '260px',
   cardLineClamp = 3,
   cards = [
-    { 
-      id: 1, 
-      title: 'Global Exposure', 
-      body: 'Students from 29+ nationalities create a truly global learning environment. Collaborate, connect, and grow through multi-cultural programs and diverse perspectives.', 
+    {
+      id: 1,
+      title: 'Global Exposure',
+      body: 'Students from 29+ nationalities create a truly global learning environment. Collaborate, connect, and grow through multi-cultural programs and diverse perspectives.',
       variant: 'gray',
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Global.svg'
     },
-    { 
-      id: 2, 
-      title: 'Vibrant Campus Life', 
-      body: 'Experience an unforgettable college life filled with green spaces, lively events, and a dynamic student community.', 
+    {
+      id: 2,
+      title: 'Vibrant Campus Life',
+      body: 'Experience an unforgettable college life filled with green spaces, lively events, and a dynamic student community.',
       variant: 'amber',
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/university.svg'
     },
-    { 
-      id: 3, 
-      title: 'Career Counseling', 
-      body: 'Get personalized guidance and support at every stage of your academic journey — from choosing the right path to landing your dream job.', 
+    {
+      id: 3,
+      title: 'Career Counseling',
+      body: 'Get personalized guidance and support at every stage of your academic journey — from choosing the right path to landing your dream job.',
       variant: 'gray',
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Career+Counseling.svg'
     },
-    { 
-      id: 4, 
-      title: 'Wide Range of Programs', 
-      body: 'Choose from 130+ industry-relevant programs across disciplines — from Computer Science to Pharmacy — and unlock limitless career opportunities.', 
+    {
+      id: 4,
+      title: 'Wide Range of Programs',
+      body: 'Choose from 130+ industry-relevant programs across disciplines — from Computer Science to Pharmacy — and unlock limitless career opportunities.',
       variant: 'amber',
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Wide+Range+of+Programs.svg'
     },
-    { 
-      id: 5, 
-      title: 'Abundant Scholarships', 
-      body: 'Avail up to 100% scholarships through merit, sports, cultural, and achiever categories — rewarding talent and ambition.', 
+    {
+      id: 5,
+      title: 'Abundant Scholarships',
+      body: 'Avail up to 100% scholarships through merit, sports, cultural, and achiever categories — rewarding talent and ambition.',
       variant: 'gray',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Abundant+Scholarships.svg' 
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Abundant+Scholarships.svg'
     },
-    { 
-      id: 6, 
-      title: 'Industry-Relevant Curriculum', 
-      body: 'Aligned with the New Education Policy 2020, our curriculum bridges classroom learning with real-world industry needs.', 
+    {
+      id: 6,
+      title: 'Industry-Relevant Curriculum',
+      body: 'Aligned with the New Education Policy 2020, our curriculum bridges classroom learning with real-world industry needs.',
       variant: 'amber',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Industry-Relevant+Curriculum.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Industry-Relevant+Curriculum.svg'
     },
-    { 
-      id: 7, 
-      title: 'Holistic Development', 
-      body: 'We focus on nurturing confident, well-rounded individuals ready to make informed life and career decisions.', 
+    {
+      id: 7,
+      title: 'Holistic Development',
+      body: 'We focus on nurturing confident, well-rounded individuals ready to make informed life and career decisions.',
       variant: 'gray',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Holistic+Development.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Holistic+Development.svg'
     },
-    { 
-      id: 8, 
-      title: 'Extensive Research Facilities', 
-      body: 'With 90+ advanced labs, including IT and CIF labs, Kalinga University leads in innovation and research excellence.', 
+    {
+      id: 8,
+      title: 'Extensive Research Facilities',
+      body: 'With 90+ advanced labs, including IT and CIF, Kalinga University leads in innovation and research excellence.',
       variant: 'amber',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Extensive+Research+Facilities.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Extensive+Research+Facilities.svg'
     },
-    { 
-      id: 9, 
-      title: 'Experienced Faculties', 
-      body: 'Learn from highly qualified professors from India and abroad who inspire and guide students toward leadership and success.', 
+    {
+      id: 9,
+      title: 'Experienced Faculties',
+      body: 'Learn from highly qualified professors from India and abroad who inspire and guide students toward leadership and success.',
       variant: 'gray',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Experienced+Faculties.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Experienced+Faculties.svg'
     },
-    { 
-      id: 10, 
-      title: 'Flagship Events', 
-      body: 'Celebrate creativity and achievement through exciting events like Hackathons, Kalinga Utsav, Sports Fest, Moot Courts, and Convocation Ceremonies.', 
+    {
+      id: 10,
+      title: 'Flagship Events',
+      body: 'Celebrate creativity and achievement through exciting events like Hackathons, Kalinga Utsav, Sports Fest, Moot Courts, and Convocation Ceremonies.',
       variant: 'amber',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Flagship+Events.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Flagship+Events.svg'
     },
-    { 
-      id: 11, 
-      title: 'Internships & Industrial Visits', 
-      body: 'Gain real-world exposure with internship opportunities and industrial visits that build practical skills and confidence.', 
+    {
+      id: 11,
+      title: 'Internships & Industrial Visits',
+      body: 'Gain real-world exposure with internship opportunities and industrial visits that build practical skills and confidence.',
       variant: 'gray',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Industrial+Visits.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Industrial+Visits.svg'
     },
-    { 
-      id: 12, 
-      title: 'Improve Employability', 
-      body: 'Develop skills employers value — communication, leadership, teamwork, problem-solving, and critical thinking — beyond academics.', 
+    {
+      id: 12,
+      title: 'Improve Employability',
+      body: 'Develop skills employers value — communication, leadership, teamwork, problem-solving, and critical thinking — beyond academics.',
       variant: 'amber',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Improve+Employability.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Improve+Employability.svg'
     },
-    { 
-      id: 13, 
-      title: 'Campus Placement Drives', 
-      body: 'With 400+ recruitment partners, students secure placements across top industries and leading organizations.', 
+    {
+      id: 13,
+      title: 'Campus Placement Drives',
+      body: 'With 400+ recruitment partners, students secure placements across top industries and leading organizations.',
       variant: 'gary',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Campus+Placement+Drives.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Campus+Placement+Drives.svg'
     },
-    { 
-      id: 14, 
-      title: 'Networking Opportunities', 
-      body: 'Engage with industry leaders, alumni, and professionals through workshops, seminars, and conferences that strengthen your career network.', 
+    {
+      id: 14,
+      title: 'Networking Opportunities',
+      body: 'Engage with industry leaders, alumni, and professionals through workshops, seminars, and conferences that strengthen your career network.',
       variant: 'amber',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Networking+Opportunities.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Networking+Opportunities.svg'
     },
-    { 
-      id: 15, 
-      title: 'Cultural Celebrations', 
-      body: 'Enjoy a vibrant campus culture through festivals, concerts, talent shows, and open mic events that unite students from all backgrounds.', 
+    {
+      id: 15,
+      title: 'Cultural Celebrations',
+      body: 'Enjoy a vibrant campus culture through festivals, concerts, talent shows, and open mic events that unite students from all backgrounds.',
       variant: 'gray',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Cultural+Celebrations.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Cultural+Celebrations.svg'
     },
-    { 
-      id: 16, 
-      title: 'Community Services', 
-      body: 'Join NCC and NSS initiatives and become a socially responsible citizen contributing to meaningful community work.', 
+    {
+      id: 16,
+      title: 'Community Services',
+      body: 'Join NCC and NSS initiatives and become a socially responsible citizen contributing to meaningful community work.',
       variant: 'amber',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Community+Services.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Community+Services.svg'
     },
-    { 
-      id: 17, 
-      title: 'Educational Tours', 
-      body: 'Experience learning beyond classrooms through national and international educational tours, including visits to top industries and destinations like Dubai.', 
+    {
+      id: 17,
+      title: 'Educational Tours',
+      body: 'Experience learning beyond classrooms through national and international educational tours, including visits to top industries and destinations like Dubai.',
       variant: 'gray',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Educational+Tours.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Educational+Tours.svg'
     },
-    { 
-      id: 18, 
-      title: 'Mentor-Mentee System', 
-      body: 'Benefit from personalized guidance through one-on-one mentoring that supports your academic and personal growth.', 
+    {
+      id: 18,
+      title: 'Mentor-Mentee System',
+      body: 'Benefit from personalized guidance through one-on-one mentoring that supports your academic and personal growth.',
       variant: 'amber',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Mentor-Mentee+System.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Mentor-Mentee+System.svg'
     },
-    { 
-      id: 19, 
-      title: 'Emotional Well-Being', 
-      body: 'Participate in wellness programs designed to support mental health, reduce stress, and promote a positive learning environment.', 
+    {
+      id: 19,
+      title: 'Emotional Well-Being',
+      body: 'Participate in wellness programs designed to support mental health, reduce stress, and promote a positive learning environment.',
       variant: 'gray',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Emotional+Well-Being.svg'  
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Emotional+Well-Being.svg'
     },
-    { 
-      id: 20, 
-      title: '100% Automation', 
-      body: 'Access everything digitally through our student ERP system — from admissions and academics to results, schedules, and notifications.', 
+    {
+      id: 20,
+      title: '100% Automation',
+      body: 'Access everything digitally through our student ERP system — from admissions and academics to results, schedules, and notifications.',
       variant: 'amber',
-      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/100%25+Automation.svg' 
+      image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/100%25+Automation.svg'
     },
   ],
   fullText = "Spread across 50+ Acres of Land, the University offers fully equipped infrastructure with the most advanced curriculum that prepares students to compete in global opportunities. Every space on our campus generates curiosity and encourages motivation among young minds. We just don't focus on classroom-based learning, but our primary focus is to provide a holistic learning experience to our students so that they can become all-rounders in their personal and professional lives. With a supportive and inclusive learning environment, our students have achieved remarkable success and transformed their DREAMS into REALITY.",
@@ -167,7 +167,7 @@ export default function FeatureCards({
   const [isExpanded, setIsExpanded] = useState(false)
   const [cardExpanded, setCardExpanded] = useState({})
   const swiperRef = useRef(null)
-  
+
   const toggleCard = (id) => setCardExpanded((prev) => ({ ...prev, [id]: !prev[id] }))
   const collapsedTextStyle = {
     display: '-webkit-box',
@@ -180,14 +180,14 @@ export default function FeatureCards({
   const truncateLimit = 400
   const truncatedText = effectiveFullText?.length > truncateLimit ? effectiveFullText.slice(0, truncateLimit) : effectiveFullText
   const hiddenText = effectiveFullText?.length > truncateLimit ? effectiveFullText.slice(truncateLimit) : ''
-  const displayText = isExpanded ? effectiveFullText : truncatedText
- 
+  const displayText = truncatedText
+
   return (
     <section className="py-16 px-2">
       <div className="relative">
         {/* Main rounded dark panel */}
         <div className="relative rounded-2xl sm:rounded-3xl bg-[var(--dark-blue)] overflow-visible text-white shadow-md p-4 px-0 sm:p-6 md:p-8 lg:p-12 pt-10">
-          
+
           {/* Top section: Image left, Text right */}
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 md:mb-10">
             {/* Image on left - extending outside on top */}
@@ -211,14 +211,14 @@ export default function FeatureCards({
                   title={title || undefined}
                   titleClassName={`text-white ${titleClassName || ''}`}
                   subtitleClassName={`text-white/70 ${subtitleClassName || ''}`}
-                  subtitleTextColor="!text-[var(--dark-orange-red)]"                  />
+                  subtitleTextColor="!text-[var(--dark-orange-red)]" />
               )}
               <p className="text-white leading-relaxed">
                 {displayText}
                 {!isExpanded && hiddenText && (
                   <>
                     {' '}
-                    <button 
+                    <button
                       onClick={() => setIsExpanded(true)}
                       className="inline-flex items-center gap-1 text-orange-400 hover:text-orange-300 font-medium text-xs sm:text-sm transition-colors cursor-pointer"
                     >
@@ -230,7 +230,7 @@ export default function FeatureCards({
                   <>
                     {hiddenText}
                     {' '}
-                    <button 
+                    <button
                       onClick={() => setIsExpanded(false)}
                       className="inline-flex items-center gap-1 text-orange-400 hover:text-orange-300 font-medium text-xs sm:text-sm transition-colors cursor-pointer"
                     >
@@ -311,7 +311,7 @@ export default function FeatureCards({
                   </SwiperSlide>
                 ))}
               </Swiper>
-              
+
               {/* Navigation buttons - bottom right */}
               <div className="container mx-auto flex justify-end items-center gap-3 mt-6 sm:mt-8">
                 <button
@@ -322,7 +322,7 @@ export default function FeatureCards({
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                
+
                 <button
                   className="feature-cards-swiper-button-next w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[var(--button-red)] hover:bg-[#A2A2A2] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-md"
                   aria-label="Next cards"

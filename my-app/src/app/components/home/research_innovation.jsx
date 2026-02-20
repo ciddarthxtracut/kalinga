@@ -103,7 +103,7 @@ export default function ResearchInnovation() {
               titleClassName="text-[var(--foreground)]"
             />
             <p className="text-[var(--foreground)] mt-2 sm:mt-4">
-              Empowering researchers with the most advanced research labs, including a Central Instrumentation Facility Lab featuring exclusive instruments for cutting-edge experiments. Our 90+ Research Labs and an active IPR cell will accelerate your research work.
+              Empowering researchers with the most advanced research labs, including a Central Instrumentation Facility featuring exclusive instruments for cutting-edge experiments. Our 90+ Research Labs and an active IPR cell will accelerate your research work.
             </p>
             <div className="mt-4 sm:mt-6">
               <Link href="/research">

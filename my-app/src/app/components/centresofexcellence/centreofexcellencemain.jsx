@@ -65,7 +65,7 @@ const centresOfExcellence = [
 
 export default function CenterOfExcellenceMain({
   centres = centresOfExcellence,
-  title = "Centres of Excellence",
+  title = "Advanced Research and Training Centres",
   description = "At Kalinga, we'll not just build your future with only classroom-based studies, but there's something more to it that will make your learning experience fun and exciting. Presenting to you our Centres of Excellence that will introduce you to the future of technologies.",
   nameOnly = false,
   showDescription = true,

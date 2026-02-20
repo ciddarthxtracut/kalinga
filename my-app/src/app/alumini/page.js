@@ -73,7 +73,7 @@ const MediaCardSlider = dynamicImport(() => import("@/app/components/general/med
 export const dynamic = 'force-dynamic';
 
 if (typeof window !== 'undefined') {
-  
+
 }
 
 export default function Alumini() {
@@ -181,7 +181,7 @@ export default function Alumini() {
     name: "Vaishali Baghel",
     year: "LLB (2022-24)",
     role: "Cleared the Chhattisgarh Judiciary Exam",
-    quote: "aishali was a dedicated student of her batch and during her academic year, she developed a strong understanding of Law and its principles. With her focus on in-depth learning of every legal concept and live practice in the moot court of Kalinga, she cleared the Chhattisgarh Judiciary Examination. Her achievement is an inspiring milestone, and we proudly recognise her success. ",
+    quote: "Vaishali Baghel was a dedicated student of her batch and during her academic year, she developed a strong understanding of Law and its principles. With her focus on in-depth learning of every legal concept and live practice in the moot court of Kalinga, she cleared the Chhattisgarh Judiciary Examination. Her achievement is an inspiring milestone, and we proudly recognise her success. ",
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/Vaishali++baghel.webp",
     theme: "orange"
   },

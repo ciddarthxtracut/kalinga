@@ -84,12 +84,12 @@ export default function Home() {
       <Facilities />
       <Placements hideMilestones={false} />
       <ValueAdditionVideoInterview
-        title="We Promised. We Delivered"
+        title="We Promised. We Delivered."
         description=""
       />
       <Testimonials />
       <MediaCardSlider
-        categoryTitle="Students’ Success Stories"
+        categoryTitle="Transformative Learning Experience"
         title="Hear From Our Students"
         description=""
         videoItems={videoItems}

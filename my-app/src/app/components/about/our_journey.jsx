@@ -199,13 +199,11 @@ export default function OurJourney() {
         /* Desktop only - custom wide slides */
         @media (min-width: 1024px) {
           .journey-swiper .swiper-slide {
-            width: 66.666% !important;
             overflow: visible !important;
           }
           .journey-swiper .swiper-wrapper {
             align-items: stretch;
             overflow: visible !important;
-            padding-right: 33.333%;
           }
           .swiper-slide-next .journey-card-content , .swiper-slide-prev .journey-card-content {
             background-color: var(--lite-sand) !important;
@@ -294,7 +292,7 @@ export default function OurJourney() {
         }
         .journey-card-content {
           overflow: hidden;
-          width: 100%;
+          width: 85%;
           height: 100%;
         }
         @media (min-width: 768px) {
@@ -350,7 +348,7 @@ export default function OurJourney() {
               },
               1024: {
                 slidesPerView: 1.5,
-                spaceBetween: 200,
+                spaceBetween: 40,
                 centeredSlides: false,
               },
             }}

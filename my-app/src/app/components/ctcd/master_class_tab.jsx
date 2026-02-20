@@ -384,8 +384,8 @@ export default function MasterClassTab({
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`font-plus-jakarta-sans text-sm md:text-base lg:text-lg px-4 md:px-8 lg:px-10 py-3 md:py-4 rounded-lg transition-all duration-200 whitespace-normal md:whitespace-nowrap ${activeTab === tab.id
-                  ? 'bg-[var(--button-red)] text-white font-semibold shadow-md'
-                  : 'bg-[var(--lite-sand)] text-gray-800 font-normal hover:opacity-90'
+                ? 'bg-[var(--button-red)] text-white font-semibold shadow-md'
+                : 'bg-[var(--lite-sand)] text-gray-800 font-normal hover:opacity-90'
                 }`}
             >
               {tab.label}
@@ -428,19 +428,15 @@ export default function MasterClassTab({
                         </div>
                         {activity.buttonText && activity.button === "true" && (
                           <div className="mt-4">
-                            <button
+                            <GlobalArrowButton
                               onClick={() => setSelectedMasterclass(details)}
-                              className="inline-block"
+                              className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
+                              textClassName="!text-[var(--button-red)] !px-0"
+                              arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
+                              arrowIconClassName="!text-white"
                             >
-                              <GlobalArrowButton
-                                className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
-                                textClassName="!text-[var(--button-red)] !px-0"
-                                arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
-                                arrowIconClassName="!text-white"
-                              >
-                                {activity.buttonText}
-                              </GlobalArrowButton>
-                            </button>
+                              {activity.buttonText}
+                            </GlobalArrowButton>
                           </div>
                         )}
                       </div>
@@ -597,11 +593,11 @@ export default function MasterClassTab({
 
               {/* Calendar Modal */}
               {showCalendar && (
-                <div 
+                <div
                   className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
                   onClick={() => setShowCalendar(false)}
                 >
-                  <div 
+                  <div
                     className="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto relative"
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -627,7 +623,7 @@ export default function MasterClassTab({
                     <div className="px-6 pb-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {masterclassCalendar.map((item) => (
-                          <div 
+                          <div
                             key={item.id}
                             className="bg-gradient-to-br from-[var(--lite-sand)] to-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200"
                           >

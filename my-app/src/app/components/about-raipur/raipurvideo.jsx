@@ -18,7 +18,7 @@ export default function RaipurVideoSection({
     const showReadMore = Boolean(description && description.trim().length > 0);
 
     return (
-        <div className={`w-full flex justify-center ${className}`}>
+        <div className={`w-full flex justify-center pb-20 ${className}`}>
             <div className="w-full max-w-[1200px] rounded-xl md:rounded-2xl overflow-hidden relative mx-2">
                 {/* If not playing → show thumbnail */}
                 {!play && (

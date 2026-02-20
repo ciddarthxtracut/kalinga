@@ -53,10 +53,6 @@ function SportsAndWellnessHero() {
   return (
     <>
       <style jsx global>{`
-        .sports-wellness-bg {
-          background-color: #f3f4f6;
-        }
-
         /* kill white bg coming from ImageListItem wrapper */
         .sports-imagelistitem .bg-white {
           background: transparent !important;

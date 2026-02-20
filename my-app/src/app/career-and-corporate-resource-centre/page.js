@@ -35,7 +35,7 @@ const cards = [
     imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/IMG-20250409-WA0026-Picsart-AiImageEnhancer.webp",
     logoSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/logo-kif.svg",
     subtitle: "CORPORATE TRAINING & CONSULTANCY DIVISION",
-    href: "/kif",
+    href: "/kalinga-incubation-foundation",
   },
   {
     title: "Training & Placements",

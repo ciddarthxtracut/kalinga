@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import QuickLinkCard from './quick_link_card'
 import SectionHeading from "../general/SectionHeading";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -60,7 +60,25 @@ const QuickLinks = ({
   gridClassName = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10",
   slider = false,
   iconWrapperClassName,
+  children,
 }) => {
+  const [expandedCount, setExpandedCount] = useState(0)
+  const swiperRef = useRef(null)
+
+  const handleToggleExpand = (isExpanded) => {
+    setExpandedCount(prev => isExpanded ? prev + 1 : prev - 1)
+  }
+
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.autoplay) {
+      if (expandedCount > 0) {
+        swiperRef.current.autoplay.stop()
+      } else {
+        swiperRef.current.autoplay.start()
+      }
+    }
+  }, [expandedCount])
+
   // Default description only if not provided
   const displayDescription = description;
 
@@ -104,6 +122,7 @@ const QuickLinks = ({
                 },
               }}
               className="!pb-6 [&_.swiper-wrapper]:!items-stretch"
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
               {links.map((link) => (
                 <SwiperSlide key={link.id} className="!h-auto">
@@ -118,6 +137,7 @@ const QuickLinks = ({
                       href={link.href || link.link}
                       iconWrapperClassName={iconWrapperClassName}
                       alt={link.alt}
+                      onToggleExpand={handleToggleExpand}
                     />
                   </div>
                 </SwiperSlide>
@@ -180,6 +200,13 @@ const QuickLinks = ({
                 alt={link.alt}
               />
             ))}
+          </div>
+        )}
+
+        {/* Custom children (e.g., buttons) */}
+        {children && (
+          <div className="mt-12 flex justify-center">
+            {children}
           </div>
         )}
       </div>

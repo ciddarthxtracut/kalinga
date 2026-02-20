@@ -17,8 +17,11 @@ import Image from "next/image";
 import SectionHeading from "@/app/components/general/SectionHeading";
 import WhyStudy from "@/app/components/department/why-study";
 import Gallery from "@/app/components/general/gallery";
+import GlobalArrowButton from "@/app/components/general/global-arrow_button";
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import CsrForm from "../components/forms/csr-form";
 
 export default function CSRPage({
   visionMissionData: visionMissionDataProp,
@@ -253,6 +256,87 @@ export default function CSRPage({
     }
   ];
 
+  const aboutQuickLinks = [
+    {
+      id: 1,
+      title: "Transport Subsidy",
+      description: "The transport fees provided to the students (who avail the facility) are at subsidised rates. The bus route covers distances of up to 70 KM (one way) to facilitate students who live far from the university.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/transport.svg",
+      href: "/campus-life"
+    },
+
+    {
+      id: 3,
+      title: "Financial Support",
+      description: "Absorption of fees or providing appropriate sponsor(s) to those students who are discontinuing or leaving their education midway due to financial difficulties (on a case-by-case basis).",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/fees.svg",
+      href: "/admissions"
+    },
+    {
+      id: 4,
+      title: "Environmental Initiatives",
+      description: "Taking environmental initiatives from time to time by planting 1000+ plants and trees on and around the campus.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Flagship+Events.svg",
+      href: "#"
+    },
+    {
+      id: 5,
+      title: "Renewable Energy",
+      description: "We have installed Rooftop Solar Power Panels that convert sunlight into electricity, which reduces the usage of traditional power sources. LED lights have been installed throughout the campus, which minimises energy consumption and enhances lighting quality.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Extensive+Research+Facilities.svg",
+      href: "#"
+    },
+    {
+      id: 6,
+      title: "Waste Management",
+      description: "An MoU has been signed with certified vendors, which ensures that waste materials have been carefully disposed of and recycled.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Educational+Tours.svg",
+      href: "#"
+    },
+    {
+      id: 7,
+      title: "Water Conservation",
+      description: "Every building on our campus is equipped with a rainwater harvesting system that is linked to recharge wells. We have also planted less water-consuming plants on our campus to minimise water usage and to improve biodiversity.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/facility-management.svg",
+      href: "#"
+    },
+    {
+      id: 8,
+      title: "Green Campus",
+      description: "Kalinga’s green campus promotes sustainable practices through vermicomposting, apiculture, organic farming, nursery, greenhouse, and electric vehicles.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/campus+life.svg",
+      href: "#"
+    },
+    {
+      id: 9,
+      title: "Healthcare Camps",
+      description: "The University's Life Science and Pharmacy Departments undertake various Blood Donation camps that conduct periodic visits to villages in the state for free medical consultations.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Emotional+Well-Being.svg",
+      href: "#"
+    },
+    {
+      id: 10,
+      title: "Legal Aid",
+      description: "The University's Law Department consists of the Legal Aid Cell that provides free legal consultancy to needy people.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Mentor-Mentee+System.svg",
+      href: "#"
+    },
+    {
+      id: 11,
+      title: "Khadi Promotion",
+      description: "The University's Fashion Design and Interior Design departments have taken various initiatives to promote Khadi within the state of Chhattisgarh.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Cultural+Celebrations.svg",
+      href: "#"
+    },
+    {
+      id: 12,
+      title: "Knowledge Programs",
+      description: "Our various departments conduct free Faculty Development Programs (FDP), Management Development Programs (MDP) and knowledge dissemination programs at various schools, colleges, government departments, corporate and defence institutions.",
+      icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Career+Counseling.svg",
+      href: "#"
+    }
+  ];
+
   // Table columns configuration
   const csrTableColumns = [
     { key: "slNo", label: "S.No", width: "w-20" },
@@ -455,7 +539,7 @@ export default function CSRPage({
       {/* <VisionMission data={visionMissionData} showImg={false} /> */}
       <ImageListItem items={Items} description="" imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/chart-3.webp" title="Objectives of the Organisation" />
 
-      <ImageContent hasImage={true} imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrclogo.webp" className="items-center justify-center" title="Career and Corporate Resource Centre" subtitleclassName="hidden" description="It is a philanthropic organisation that is primarily involved in education and social welfare activities. The society works towards uplifting the underprivileged communities by offering them inclusive educational opportunities, healthcare facilities, and engaging in charitable activities. The society operates educational institutions, healthcare camps, scholarship programs, and other social welfare initiatives." buttonLink="/career-and-corporate-resource-centre" />
+      {/* <ImageContent hasImage={true} imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrclogo.webp" className="items-center justify-center" title="Career and Corporate Resource Centre" subtitleclassName="hidden" description="It is a philanthropic organisation that is primarily involved in education and social welfare activities. The society works towards uplifting the underprivileged communities by offering them inclusive educational opportunities, healthcare facilities, and engaging in charitable activities. The society operates educational institutions, healthcare camps, scholarship programs, and other social welfare initiatives." buttonLink="/career-and-corporate-resource-centre" /> */}
       <WhyStudy
         items={whyStudyItems}
         sectionTitle="Our Programs"
@@ -464,7 +548,23 @@ export default function CSRPage({
           1280: { slidesPerView: 3 },
         }}
       />
-
+      <QuickLinks
+        slider={true}
+        links={aboutQuickLinks}
+        title="CSR at Kalinga University"
+        titleClassName="!text-white"
+        showReadMore={false}
+        description="Corporate Social Responsibility (CSR) at Kalinga University aims to make a positive social and environmental impact beyond academics. Over the years, our students and faculty members have actively participated in various programs that contribute to the welfare of society. It includes healthcare camps, blood donation camps, environmental initiatives, sustainable initiatives, community-based projects, conducting educational camps or providing employment opportunities in nearby villages, maintaining a fair student policy, promoting social equality, and much more. We ensure that our students and staff members become responsible citizens and inspire others."
+      >
+        <Link
+          href="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/SCHOLARSHIP_25-26+(4).pdf"
+          target="_blank"
+        >
+          <GlobalArrowButton>
+            Click to know more
+          </GlobalArrowButton>
+        </Link>
+      </QuickLinks>
       {/* Target Groups Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto text-center">
@@ -494,8 +594,13 @@ export default function CSRPage({
         title=""
         subtitle=""
       />
+      <StudentActivities
+        title="Events and Activities"
+        subtitle="Experience Campus Life Beyond Academics"
+        fallbackToGlobal={true}
+      />
+      <CsrForm />
       {/* <CenterOfExcellence centres={centres} title="Startup Partners" description="Explore the spaces and partnerships that power the Kalinga Incubation Foundation." /> */}
-      {/* <StudentActivities activities={activities} title="CSR Glimpse" subtitle="" showReadMore={false}/> */}
       <Gallery title=" CSR Glimpse" paddingClassName="py-20" />
       <AdmissionCareer />
 
