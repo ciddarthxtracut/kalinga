@@ -27,7 +27,7 @@ export default function BookChaptersPage() {
             content: (
                 <APITable
                     tableId={id.toString()}
-                    title={`Book Chapters ${label}`}
+                    title={`Book / Book Chapters ${label}`}
                     className="py-16"
                     overflowX={true}
                 />

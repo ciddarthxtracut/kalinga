@@ -42,7 +42,7 @@ const phdWhyChooseItems = [
     {
         id: 7,
         title: "Advanced Labs",
-        description: "With 90 + labs, including a computer lab and a CIF lab, scholars can easily conduct research work using advanced equipment.",
+        description: "With 90 + labs, including a computer lab and a CIF scholars can easily conduct research work using advanced equipment.",
         icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/microscope.svg",
     },
     {
@@ -76,7 +76,7 @@ export default function WhyChoosePhd() {
     return (
         <section className="py-16 bg-white">
             <div className="container mx-auto px-4 text-center mb-12">
-                <h2 className="text-3xl md:text-5xl font-plus-jakarta-sans text-[var(--foreground)] font-bold">
+                <h2 className="font-stix  mb-2 text-[var(--foreground)]  !py-2">
                     Why Choose Kalinga For Ph.D.?
                 </h2>
             </div>

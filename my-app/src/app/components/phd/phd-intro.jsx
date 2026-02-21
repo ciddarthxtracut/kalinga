@@ -23,6 +23,7 @@ export default function PhdIntro() {
         ]}
         imageAlt="Kalinga University Research"
         knowMoreHref="https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2026+Notification.pdf"
+        knowMoreLabel="Ph.D. Notification 2026"
         showKnowMore={true}
       />
     </section>
