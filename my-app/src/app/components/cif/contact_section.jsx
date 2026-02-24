@@ -28,7 +28,7 @@ function MentorCard({
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const cleanPhone = (num) => {
-    if (!num) return "";
+    if (typeof num !== "string") return "";
     // Clean number to keep only digits and + for dialer
     return num.replace(/[^\d+]/g, "");
   };
@@ -86,27 +86,39 @@ function MentorCard({
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <a href={`mailto:${mail}`} className="text-sm sm:text-base hover:text-white transition-colors underline">
-                    {mail}
-                  </a>
+                  {typeof mail === "string" ? (
+                    <a href={`mailto:${mail}`} className="text-sm sm:text-base hover:text-white transition-colors underline">
+                      {mail}
+                    </a>
+                  ) : (
+                    mail
+                  )}
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     <svg className="w-5 h-5 text-[var(--dark-orange-red)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    <a href={`tel:${cleanPhone(phone)}`} className="text-sm sm:text-base hover:text-white transition-colors">
-                      {phone}
-                    </a>
+                    {typeof phone === "string" ? (
+                      <a href={`tel:${cleanPhone(phone)}`} className="text-sm sm:text-base hover:text-white transition-colors">
+                        {phone}
+                      </a>
+                    ) : (
+                      phone
+                    )}
                   </div>
                   {phone2 && (
                     <div className="flex items-center gap-3">
                       <svg className="w-5 h-5 text-[var(--dark-orange-red)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
-                      <a href={`tel:${cleanPhone(phone2)}`} className="text-sm sm:text-base hover:text-white transition-colors">
-                        {phone2}
-                      </a>
+                      {typeof phone2 === "string" ? (
+                        <a href={`tel:${cleanPhone(phone2)}`} className="text-sm sm:text-base hover:text-white transition-colors">
+                          {phone2}
+                        </a>
+                      ) : (
+                        phone2
+                      )}
                     </div>
                   )}
                 </div>
