@@ -335,21 +335,21 @@ export default function Research() {
       name: "Anant Jha",
       videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Anant+Jha+CCRC+Placement+Video.mp4",
       thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Anant+Jha.jpg",
-      description: "Pharmachy department",
+      description: "Pharmacy department",
     },
     {
       id: 2,
       name: "Ashley Christina Thomas",
       videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Ashley+Christina+Thomas+CCRC+Placement+Video.mp4",
       thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Ashley+Christina+Thomas.jpg",
-      description: "Pharmachy department",
+      description: "Pharmacy department",
     },
     {
       id: 3,
       name: "David Kisku",
       videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/David+Kisku+CCRC+Placement+Video.mp4",
       thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/David+Kisku.jpg",
-      description: "Pharmachy department",
+      description: "Pharmacy department",
     },
     {
       id: 4,
@@ -376,7 +376,7 @@ export default function Research() {
       id: 7,
       name: "Shiwangi Sinha",
       videoUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Shiwangi+Sinha+CCRC+Placement+Video.mp4",
-      description: "Pharmachy department",
+      description: "Pharmacy department",
     },
   ]
   const videoItems3 = [
@@ -570,8 +570,43 @@ export default function Research() {
     { slNo: 41, name: "Rahul Agrawal", program: "MBA", session: "2023-2025", company: "VE Commercial Vehicles" },
   ];
 
+  const CapacityInitiatives202425Tables = [
+    { id: 61, title: "Capacity Development & Skill Enhancement Initiatives - 2024 - 25" },
+  ];
+
+  const CapacityInitiatives202324Tables = [
+    { id: 62, title: "Capacity Development & Skill Enhancement Initiatives - 2023 - 24" },
+  ];
+
+  const CapacityInitiatives202223Tables = [
+    { id: 63, title: "Capacity Development & Skill Enhancement Initiatives - 2022 - 23" },
+  ];
+
+  const CapacityInitiatives202122Tables = [
+    { id: 64, title: "Capacity Development & Skill Enhancement Initiatives - 2021 - 22" },
+  ];
+
+  const CapacityInitiatives202021Tables = [
+    { id: 65, title: "Capacity Development & Skill Enhancement Initiatives - 2020 - 21" },
+  ];
+
+  const CapacityInitiatives201819Tables = [
+    { id: 67, title: "Capacity Development & Skill Enhancement Initiatives - 2018 - 19" },
+  ];
+
+
+
+
   const collaborationTables = [
     { id: 59, title: "Our Collaborations" },
+  ];
+
+  const guidanceForCompetitiveExamsTables = [
+    { id: 60, title: "Guidance For Competitive Exams" },
+  ];
+
+  const DetailsofCareerCounsellingTables = [
+    { id: 58, title: "Details of Career Counselling" },
   ];
 
   const internshipTables = [
@@ -698,6 +733,39 @@ export default function Research() {
     },
   ];
 
+  const DetailsofCareerCounsellingFAQItems = DetailsofCareerCounsellingTables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
+  const guidanceForCompetitiveExamsFAQItems = guidanceForCompetitiveExamsTables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
+
   const collaborationFAQItems = collaborationTables.map(item => ({
     id: item.id,
     question: item.title,
@@ -729,6 +797,103 @@ export default function Research() {
       />
     )
   }));
+
+  const CapacityInitiatives202425FAQItems = CapacityInitiatives202425Tables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
+  const CapacityInitiatives202324FAQItems = CapacityInitiatives202324Tables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
+  const CapacityInitiatives202223FAQItems = CapacityInitiatives202223Tables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
+  const CapacityInitiatives202122FAQItems = CapacityInitiatives202122Tables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
+  const CapacityInitiatives202021FAQItems = CapacityInitiatives202021Tables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
+  const CapacityInitiatives201819FAQItems = CapacityInitiatives201819Tables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
   return (
     <>
       <MainIntro
@@ -928,6 +1093,18 @@ export default function Research() {
           </TabsContent>
         </Tabs>
       </div>
+
+      <MainIntro
+        title="Career Development Centre at KU"
+        subtitle=""
+        description={[
+          "Our Career Development Centre prepares students for successful careers by providing them with the necessary resources and guidance. The team connects students with different companies and trains them in essential skills, helping them achieve their personal and professional goals. The centre helps students identify their interests, guides them with job search strategies, conducts training programs, and provides internships and job opportunities at KU’s campus placement drives."]}
+        imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg"
+        imageAlt="Kalinga University Placement"
+        initialVisibleParagraphs={1}
+        showKnowMore={true}
+      />
+
       <CareerPath
         title={skillsContent.title}
         description={skillsContent.description}
@@ -956,6 +1133,15 @@ export default function Research() {
         descriptionTextClass=""
         swiperClassName="ccrc-video-slider"
       />
+
+      <ContactSection
+        title="Contact Our Placement Cell"
+        description=""
+        mail="tpo@kalingauniversity.ac.in"
+        phone="Pankaj Tiwari: +91-7471126830"
+        phone2="Arup Haldar: +91-9303097009"
+        address=""
+      />
       {/* <QuickLinks title="Entrepreneurship & Startup Support" titleClassName="text-white" links={links2} description="We're here to put your entrepreneurial ideas into action. Here, you will not just dream but build something real that solves people's problems." showReadMore={false} /> */}
       <MediaCardSlider
         categoryTitle=""
@@ -968,18 +1154,8 @@ export default function Research() {
         swiperClassName="ccrc-video-slider"
         imageObjectPosition="object-bottom"
       />
-
-      <ContactSection
-        title="Contact Our Placement Cell"
-        description=""
-        mail="tpo@kalingauniversity.ac.in"
-        phone="Pankaj Tiwari: +91-7471126830"
-        phone2="Arup Haldar: +91-9303097009"
-        address=""
-      />
-
       <FAQ
-        items={collaborationFAQItems}
+        items={[...collaborationFAQItems, ...guidanceForCompetitiveExamsFAQItems, ...DetailsofCareerCounsellingFAQItems, ...CapacityInitiatives202425FAQItems, ...CapacityInitiatives202324FAQItems, ...CapacityInitiatives202223FAQItems, ...CapacityInitiatives202122FAQItems, ...CapacityInitiatives202021FAQItems, ...CapacityInitiatives201819FAQItems]}
         title=""
         showHeading={false}
         variant="default"

@@ -327,9 +327,9 @@ const Header = () => {
         imageAlt: 'News and Events',
         sections: [
           {
-            title: 'Events & Activities',
+            title: 'News & Activities',
             links: [
-              { label: 'News & Events', href: '/news-and-events' },
+              { label: 'Events & Activities', href: '/news-and-events' },
               { label: 'Conferences & Events', href: '/conferences-and-events' },
               { label: 'Industrial Visits', href: '/news-and-events' },
               { label: 'Excursions', href: '/news-and-events' },

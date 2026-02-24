@@ -50,6 +50,19 @@ const placementGalleryImages = [
   { id: 24, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-19.jpg", title: "Bhilai Steel Plant Industrial Visit" },
 ];
 
+const customImages = [
+  { id: 4, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/new-year.png", alt: "New Year Celebration" },
+  { id: 5, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/Gallery-1.webp", alt: "gallery-1" },
+  { id: 6, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/Gallery-2.webp", alt: "gallery-2" },
+  { id: 7, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/Gallery-3.webp", alt: "gallery-3" },
+  { id: 8, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/Gallery-4.webp", alt: "gallery-4" },
+  { id: 9, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/gallery-5.webp", alt: "gallery-5" },
+  { id: 10, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/Gallery-6.webp", alt: "gallery-6" },
+  { id: 11, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/gallery-7.webp", alt: "gallery-7" },
+  { id: 12, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/gallery-8.webp", alt: "gallery-8" },
+  { id: 13, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/gallery-9.webp", alt: "gallery-9" }
+];
+
 
 
 function NewsAndEvents() {
@@ -60,7 +73,7 @@ function NewsAndEvents() {
 
 
 
-  
+
 
   const loadNews = useCallback(async () => {
     setLoading(true);
@@ -169,7 +182,7 @@ function NewsAndEvents() {
         categoryTitle=""
         id="industrial-visits"
       />
-      <Gallery />
+      <Gallery images={customImages} />
       <AdmissionCareer />
 
       {/* Scrollbar Styles */}
@@ -183,7 +196,7 @@ function NewsAndEvents() {
         }
       `}</style>
     </div>
-  );  
+  );
 }
 
 export default NewsAndEvents;

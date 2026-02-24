@@ -48,28 +48,28 @@ const defaultVideoInterviews = [
     },
     {
         id: 5,
-        title: "The Moment Kalinga Utsav Turned Into a Festival of Beats",
-        videoUrl: "https://youtu.be/aR7VkLpeAu4?si=QM8XiVq1Zv9AEWRl",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-events-1.png",
+        title: "Kalinga University Diwali Milan 2024",
+        videoUrl: "https://youtu.be/c4W4X7XJQdU?si=IKztonS7e72l6oes",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/diwali.png",
     },
     {
         id: 6,
-        title: "Kalinga Utsav’s Showstopper | This Group Dance",
-        videoUrl: "https://youtu.be/2agwhwY3OuY?si=pN2UxmLkRKQFN_D1",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-events-2.png",
+        title: "Kalinga University Celebrates Holi",
+        videoUrl: "https://youtu.be/s9oAdl8BM6A?si=5DrPb2MkGce2xBrK",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/holi-celbration.png",
     },
     {
         id: 7,
-        title: "Kalinga University Science Model Competition 4.0",
-        videoUrl: "https://youtu.be/BrpxFN8iZeQ?si=bnrbf8TTw3onq_Kb",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/kailnga-science.png",
+        title: "Ratri Before Navratri | Navratri Special",
+        videoUrl: "https://youtu.be/WEJfkUyFqxg?si=_Oiq-zR6tKxOcmyJ",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/naravathi.png",
     },
     {
         id: 8,
-        title: "98.20% Secured in CGBSE with Grit and Passion! Akhil Sen’s",
-        videoUrl: "https://youtu.be/qAjXv54M99g?si=2rx3yeUq4p_2vWYT",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/topper.png",
-    }
+        title: "Kalinga University Welcomes the New Year",
+        videoUrl: "https://youtu.be/6rfNe4npIP0?si=MnERcO5r2G-Zonoi",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/news-and-events/new-year.png",
+    },
 ];
 
 // Video Card Component
