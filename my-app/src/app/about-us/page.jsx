@@ -342,14 +342,17 @@ export default function AboutUs() {
         initialVisibleParagraphs={1}
       />
       <AccreditationRanking
+        id="accreditations-approvals"
         heading="Accreditations & Associations"
         secondHeading=""
         accreditations={aboutAccreditations}
       />
       <CoreValues />
       {/* <VisionMission /> */}
-      <VisionMissionUpdated />
-      <WhoWeAre />
+      <VisionMissionUpdated
+        id="vision-mission" />
+      <WhoWeAre
+        id="who-we-are" />
       <Leadership />
       <AccreditationRanking
         heading="Approvals & Recognitions"
@@ -380,7 +383,8 @@ export default function AboutUs() {
         showReadMore={false}
         description="At KU, you will get to explore more than just academics. Here, we don’t just talk about subjects, but we help our students in launching their startups or performing groundbreaking research work."
       />
-      <AwardsScrollbar />
+      <AwardsScrollbar
+        id="awards-accolades" />
       <FeatureCards
         title="Discover Kalinga Advantage"
         subtitle="Best Private University In India"
@@ -418,7 +422,7 @@ export default function AboutUs() {
       sectionClassName="py-0 pb-16"
     /> */}
       <Map />
-      <FAQ variant="table-display" tableSections={aboutFaqData} items={[]} subtitle="" title="Governance Structure" />
+      <FAQ variant="table-display" tableSections={aboutFaqData} items={[]} subtitle="" title="Governance Structure" id="governance-structure" />
       <AdmissionCareer />
     </div>
   );

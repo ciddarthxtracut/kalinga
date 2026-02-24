@@ -112,9 +112,9 @@ const Header = () => {
               { label: 'Why Kalinga', href: '/about-us#vision-mission' },
               { label: 'About Raipur', href: '/about-raipur' },
               { label: 'Administration & Leadership', href: '/leadership' },
-              { label: 'Awards and accolades', href: '/about-us' },
+              { label: 'Awards and accolades', href: '/about-us#awards-accolades' },
               { label: 'Organogram', href: '/organogram' },
-              { label: 'Accreditations & Approvals', href: '#' },
+              { label: 'Accreditations & Approvals', href: '/about-us#accreditations-approvals' },
             ]
           },
           // {
@@ -128,15 +128,14 @@ const Header = () => {
           {
             title: 'Councils & Committees',
             links: [
-              { label: 'Governing Council', href: '#' },
-              { label: 'Executive Council', href: '#' },
-              { label: 'Academic Council', href: '#' },
-              { label: 'Finance Committee', href: '#' },
-              { label: 'Library Committee', href: '#' },
-              { label: 'Anti Ragging', href: '/anti-ragging-cell' },
-              { label: 'IIC', href: '/institution-innovation-council' },
-              { label: 'IQAC', href: '/iqac' },
-              { label: 'Planning Board', href: '#' },
+              { label: 'Board of Management', href: '/about-us#governance-structure' },
+              // { label: 'Executive Council', href: '#' },
+              { label: 'Academic Council', href: '/about-us#governance-structure' },
+              // { label: 'Finance Committee', href: '#' },
+              // { label: 'Library Committee', href: '#' },
+              // { label: 'Anti Ragging', href: '/anti-ragging-cell' },
+              // { label: 'IQAC', href: '/iqac' },
+              // { label: 'Planning Board', href: '#' },
             ]
           }
         ]
@@ -211,12 +210,13 @@ const Header = () => {
           {
             title: 'Admissions',
             links: [
-              { label: 'Admission Procedure', href: '/admission-procedure' },
+              // { label: 'Admission Procedure', href: '/admission-procedure' },
               { label: 'Discover Programs', href: '/admissions' },
               { label: 'Entrance Exam – KALSEE/KALMAT', href: '/entrance-exam' },
               { label: 'Scholarships', href: '/scholarships' },
+              { label: 'Value Additions', href: '/value-additions' },
               { label: 'B.Voc admission', href: 'https://bvoc.kalingauniversity.ac.in/' },
-              { label: 'Apply now', href: 'https://admissions.kalingauniversity.ac.in/' },
+
 
 
             ],
@@ -224,11 +224,9 @@ const Header = () => {
           {
             title: 'Admission Process',
             links: [
-              { label: 'Value Additions', href: '/value-additions' },
-              { label: 'Download Admission Form', href: '#' },
+              { label: 'Admission Procedure', href: '/admission-procedure' },
               { label: 'Fees structure of ku', href: '/ku-fees' },
-              { label: 'Document verification', href: '/document-verification' },
-              { label: 'Pay your fees', href: '/pay-your-fees' },
+
             ]
           }
         ]

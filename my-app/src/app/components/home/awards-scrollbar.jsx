@@ -183,11 +183,12 @@ export default function AwardsScrollbar({
   hideTopLeaves = false,
   showLeavesAroundButton = false,
   dottedLineTop = null,
+  id,
 }) {
   const swiperRef = useRef(null);
 
   return (
-    <section className="py-10 sm:py-14 bg-white px-4 lg:px-5">
+    <section id={id} className="py-10 sm:py-14 bg-white px-4 lg:px-5">
       <div className="">
         {/* Header - Show button with leaves if hideTitle is true, otherwise show title */}
         {hideTitle ? (

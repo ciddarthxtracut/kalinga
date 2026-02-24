@@ -21,7 +21,7 @@ import VisaFrofrroGuidelines from '../components/international/visa_frofrro_guid
 export default function InternationalStudents() {
   const pathname = usePathname();
 
-  
+
   const newsConferences = [
     {
       id: 1,
@@ -361,12 +361,12 @@ export default function InternationalStudents() {
       />
       <PublicationGrid stats={publicationStats} />
       <AccreditationRanking
-        heading="Accreditations & Associations"
+        heading="Approvals & Accreditations"
         secondHeading=""
       />
 
       <ImageListItem
-        imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/int-why-3.webp"
+        imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/int-g-3.webp"
         boxItems={boxItems}
         title="Why study in India"
         subtitle=""

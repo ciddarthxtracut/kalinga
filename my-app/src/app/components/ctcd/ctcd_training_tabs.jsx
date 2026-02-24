@@ -43,7 +43,7 @@ const transformToGalleryImages = (images) => {
 };
 
 // Constants for Gallery component
-const GALLERY_TITLE = "Glimpse";
+const GALLERY_TITLE = "Glimpses";
 const GALLERY_TITLE_CLASSNAME = "font-stix text-[28px] leading-[44px] text-[var(--foreground)] mb-[14px] text-center";
 const GALLERY_IMAGES = transformToGalleryImages(trainingGlimpse);
 

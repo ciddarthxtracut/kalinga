@@ -38,7 +38,7 @@ const IQACPage = () => {
           height: 80
         },
         {
-          src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IQAC/nirf-details.png",
+          src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/nirf-logo-new.jpeg",
           alt: "NIRF",
           name: "NIRF",
           width: 120,
@@ -98,12 +98,17 @@ const IQACPage = () => {
         showDescriptionReadMore={true}
         description=""
       /> */}
-      <ContactSection mail="iqac@kalingauniversity.ac.in" />
+
       <StudentActivities
         title="News & Events"
         fallbackToGlobal={true}
       />
       <Gallery title="Glimpses" />
+      <ContactSection
+        mail="iqac@kalingauniversity.ac.in"
+        phone=""
+        address=""
+      />
       <AdmissionCareer />
     </>
   )

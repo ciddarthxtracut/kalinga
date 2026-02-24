@@ -57,7 +57,7 @@ const EntranceExamPage = () => {
       <ImageListItem items={Items} imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/ccrc.webp" title="Apply For KU Entrance Exams" subtitle="" description="Take the first step towards your dream career. Our entrance examinations are designed to be student-friendly with flexible scheduling, no negative marking, and scholarships up to 100% based on performance." />
       {/* <EntranceExamFormCards /> */}
       <EntranceExamUpdated />
-      <CareerApplicationForm
+      {/* <CareerApplicationForm
         heading="Entrance Exam Application Form"
         description=""
         backgroundClass="bg-[var(--dark-blue)]"
@@ -65,7 +65,7 @@ const EntranceExamPage = () => {
         submitLabel="Submit"
         useArrowSubmitButton={true}
         arrowSubmitVariant="white"
-      />
+      /> */}
 
       {/* <FaqSection items={careerFAQs} showHeading={false} /> */}
       <AdmissionCareer />

@@ -34,6 +34,18 @@ const defaultFAQItems = [
   }
 ]
 
+// Helper to slugify titles for IDs
+const slugify = (text) => {
+  if (!text) return ""
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')     // Replace spaces with -
+    .replace(/[^\w-]+/g, '')  // Remove all non-word chars
+    .replace(/--+/g, '-')     // Replace multiple - with single -
+}
+
 const FAQ = ({
   items = defaultFAQItems,
   title = "Frequently Asked Questions",
@@ -58,7 +70,8 @@ const FAQ = ({
   pyClassName = "py-16",
   headerBgColor = "bg-[var(--dark-blue)]", // Background color for table header
   // For button variant
-  buttons = []
+  buttons = [],
+  id
 }) => {
   // Initialize with first item open for default variant
   const [openItems, setOpenItems] = useState(() => {
@@ -461,11 +474,11 @@ const FAQ = ({
   }
 
   // Wrapper component that conditionally renders with or without section
-  const Wrapper = ({ children, className = "" }) => {
+  const Wrapper = ({ children, className = "", id }) => {
     if (noSection) {
-      return <div className={className}>{children}</div>
+      return <div id={id} className={className}>{children}</div>
     }
-    return <section className={className}>{children}</section>
+    return <section id={id} className={className}>{children}</section>
   }
 
   // Render Table Display Variant (like first image)
@@ -513,8 +526,30 @@ const FAQ = ({
       setUnifiedOpenId(prev => prev === fullId ? null : fullId)
     }
 
+    // Handle hash-based opening of sections
+    useEffect(() => {
+      const handleHashJump = () => {
+        if (typeof window !== 'undefined' && window.location.hash) {
+          const currentHash = window.location.hash.replace('#', '')
+          if (currentHash) {
+            // Check if any table section matches the hash
+            const matchingSection = tableSectionsList.find(s => slugify(s.title) === currentHash)
+            if (matchingSection) {
+              const sectionId = matchingSection.id || tableSectionsList.indexOf(matchingSection)
+              setUnifiedOpenId(`table-${sectionId}`)
+            }
+          }
+        }
+      }
+
+      // Run on initial load and when hash changes
+      handleHashJump()
+      window.addEventListener('hashchange', handleHashJump)
+      return () => window.removeEventListener('hashchange', handleHashJump)
+    }, [tableSectionsList])
+
     return (
-      <Wrapper className={`${backgroundColor} ${pyClassName}`}>
+      <Wrapper id={id} className={`${backgroundColor} ${pyClassName}`}>
         <div className="container mx-auto px-2">
           {showHeading && (
             <div className="mb-5">
@@ -536,7 +571,7 @@ const FAQ = ({
               const isOpen = unifiedOpenId === fullId
 
               return (
-                <div key={section.id || index} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                <div key={section.id || index} id={slugify(section.title)} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
                   <button
                     onClick={() => toggleUnified(sectionId, 'table')}
                     className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
@@ -704,7 +739,7 @@ const FAQ = ({
     }
 
     return (
-      <Wrapper className={`${backgroundColor} ${pyClassName}`}>
+      <Wrapper id={id} className={`${backgroundColor} ${pyClassName}`}>
         <div className="container mx-auto px-2">
           {showHeading && (
             <div className="mb-5">
@@ -907,7 +942,7 @@ const FAQ = ({
     }))
 
     return (
-      <Wrapper className={`${backgroundColor} ${pyClassName}`}>
+      <Wrapper id={id} className={`${backgroundColor} ${pyClassName}`}>
         <div className="container mx-auto px-2">
           {showHeading && (
             <SectionHeading
@@ -986,7 +1021,7 @@ const FAQ = ({
     const maxCol = editableTableData.length > 0 ? Math.max(...editableTableData.map(item => item.col), 0) : 0
 
     return (
-      <Wrapper className={`${backgroundColor} ${pyClassName}`}>
+      <Wrapper id={id} className={`${backgroundColor} ${pyClassName}`}>
         <div className="container mx-auto px-2">
           {showHeading && (
             <SectionHeading
@@ -1088,7 +1123,7 @@ const FAQ = ({
 
   // Render Default or Editable Variant
   return (
-    <Wrapper className={`${backgroundColor} ${pyClassName}`}>
+    <Wrapper id={id} className={`${backgroundColor} ${pyClassName}`}>
       <div className="container mx-auto px-2">
         {showHeading && (
           <SectionHeading

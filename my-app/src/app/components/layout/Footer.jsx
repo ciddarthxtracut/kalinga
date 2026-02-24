@@ -81,13 +81,13 @@ export default function Footer() {
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-6 md:gap-x-8 lg:gap-x-30 gap-y-2.5 sm:gap-y-3 md:gap-y-4 font-plus-jakarta-sans text-xs sm:text-[14px] leading-relaxed sm:leading-[25px] font-normal">
                   <ul className="text-white/80 space-y-2 sm:space-y-3">
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/students-welfare">Student Welfare</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/student-welfare">Student Welfare</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="https://wpengineering.kalingauniversity.ac.in/">Working Professionals</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/sdg-cell">SDG Cell</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/ieee">IEEE Student Branch</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/executive-development-program">Executive <br />Development Program</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/csr">CSR @ KU</a></li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/kif">KIF</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/kalinga-innovation-foundation">KIF</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">SC & ST Grievance Cell</a></li>
 
                   </ul>
@@ -101,7 +101,8 @@ export default function Footer() {
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/unnat-bharat-abhiyan">Unnat Bharat Abhiyan</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/voter-portal">Voter Portal</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/careers">Careers</a></li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">Grievance Redressal Committees</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/institution-innovation-council">IIC</a></li>
+
 
 
 
@@ -118,19 +119,21 @@ export default function Footer() {
                       </FlipbookTrigger>
                     </li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/privacy-policy">Privacy Policy</a></li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/terms-and-conditions">Terms & Conditions</a></li>
+                    {/* <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/terms-and-conditions">Terms & Conditions</a></li> */}
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/refund-policy">Refund Policy</a></li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">Accessibility</a></li>
+                    {/* <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">Accessibility</a></li> */}
                     <li>
                       <FlipbookTrigger pdfUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/downloads/IT+Policy+-+KU.pdf" title="IT Policy">
                         <a className="hover:text-white transition-colors lg:whitespace-nowrap break-words cursor-pointer" onClick={() => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/downloads/IT+Policy+-+KU.pdf", "IT Policy")}>IT Policy</a>
                       </FlipbookTrigger>
                     </li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">Online Submission For Grievance Redressal</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/grievance-redressal">Online Submission For Grievance Redressal</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/grievance-redressal">Grievance Redressal Committees</a></li>
+
 
                   </ul>
                   <ul className="text-white/80 space-y-2 sm:space-y-3">
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/admissions">Discover program</a></li>
+                    {/* <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/admissions">Discover program</a></li> */}
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/radio">Kalinga Radio</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/podcast">Kalinga Podcast</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/kalinga-buzz">Kalinga Buzz</a></li>
@@ -149,7 +152,7 @@ export default function Footer() {
                         Follow Us
                       </h4>
                       <div className="flex items-center justify-start gap-2.5 sm:gap-2.5 lg:gap-3">
-                        <a href="https://www.facebook.com/kalingauniversity/" aria-label="facebook" className="text-white hover:text-orange-400 transition-colors"><svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z" /></svg></a>
+                        <a href="https://www.facebook.com/kalingauniversitynayaraipur/" aria-label="facebook" className="text-white hover:text-orange-400 transition-colors"><svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z" /></svg></a>
                         <a href="https://twitter.com/Kalingaraipur" aria-label="x (twitter)" className="text-white hover:text-orange-400 transition-colors"><svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg></a>
                         <a href="https://www.youtube.com/@KalingaUniversityRaipurIndia" aria-label="youtube" className="text-white hover:text-orange-400 transition-colors"><svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21.593 7.203a2.506 2.506 0 00-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 00-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 001.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z" /></svg></a>
                         <a href="https://www.linkedin.com/school/kalinga-university-raipur/" aria-label="linkedin" className="text-white hover:text-orange-400 transition-colors"><svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg></a>

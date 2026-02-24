@@ -568,7 +568,7 @@ export default function CSRPage({
         description="Corporate Social Responsibility (CSR) at Kalinga University aims to make a positive social and environmental impact beyond academics. Over the years, our students and faculty members have actively participated in various programs that contribute to the welfare of society. It includes healthcare camps, blood donation camps, environmental initiatives, sustainable initiatives, community-based projects, conducting educational camps or providing employment opportunities in nearby villages, maintaining a fair student policy, promoting social equality, and much more. We ensure that our students and staff members become responsible citizens and inspire others."
       >
         <Link
-          href="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/SCHOLARSHIP_25-26+(4).pdf"
+          href="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/Bhagwan+Sri+Bala+Sai+CSR+Brochure+Modified+-+16+NOV.pdf"
           target="_blank"
         >
           <GlobalArrowButton>

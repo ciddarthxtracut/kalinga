@@ -174,7 +174,7 @@ export default function Admissions() {
       },
       {
         id: 4,
-        name: "Playground",
+        name: "Sports Complex",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/facilities/DSC00047.webp",
       },
       {

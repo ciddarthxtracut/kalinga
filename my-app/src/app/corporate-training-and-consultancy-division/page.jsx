@@ -367,18 +367,6 @@ export default function CorporateTrainingAndConsultancyDivision() {
         tab2GalleryTitle="Glimpses"
         tab2GalleryclassName="mt-10"
       />
-      <OrganogramOfKalinga
-        title="Consultancy Services"
-        description={[
-          "Our consultancy services are designed to transform organisations to reach their maximum potential. Our experts conduct one-on-one discussions with team members of companies and develop strategies that improve their organisations' workflows, HR processes, and performance management systems. ",
-          "More specifically, we assist them in talent management, digital integration, and workforce planning; every approach ensures improved productivity and employee engagement. We help them make SMARTER decisions with proper resource planning and integration, enabling them to grow with a clear roadmap"
-        ]}
-        buttonLabel="Explore Now"
-        href="#ctcd-consultancy-tab-section"
-        cardBackgroundColor="bg-[var(--dark-blue)]"
-        useContainer={true}
-      />
-      <CTCDConsultancyTabSection />
       <AdmissionSteps
         title="Our Training Cycle"
         subtitle=""
@@ -419,6 +407,19 @@ export default function CorporateTrainingAndConsultancyDivision() {
         hidePointsUntilExpanded={true}
         showKnowMore={true}
       />
+      <OrganogramOfKalinga
+        title="Consultancy Services"
+        description={[
+          "Our consultancy services are designed to transform organisations to reach their maximum potential. Our experts conduct one-on-one discussions with team members of companies and develop strategies that improve their organisations' workflows, HR processes, and performance management systems. ",
+          "More specifically, we assist them in talent management, digital integration, and workforce planning; every approach ensures improved productivity and employee engagement. We help them make SMARTER decisions with proper resource planning and integration, enabling them to grow with a clear roadmap"
+        ]}
+        buttonLabel="Explore Now"
+        href="#ctcd-consultancy-tab-section"
+        cardBackgroundColor="bg-[var(--dark-blue)]"
+        useContainer={true}
+      />
+      <CTCDConsultancyTabSection />
+
       <OrganogramOfKalinga
 
         title="Download Brochure 2025-26"

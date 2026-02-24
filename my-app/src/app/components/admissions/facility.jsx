@@ -14,7 +14,7 @@ const defaultFacilities = [
   {
     id: 2,
     name: "Solar-Powered Campus",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/02+C1.png",
   },
   {
     id: 3,
@@ -64,11 +64,11 @@ const defaultFacilities = [
   {
     id: 12,
     name: "Green House",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/laboratories/laboratories-glimpse1.webp",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/green-house.webp",
   },
   {
     id: 13,
-    name: "Farm / Medicinal Garden",
+    name: "Animal House Facility",
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-facilities/animal+house.webp",
   },
   {

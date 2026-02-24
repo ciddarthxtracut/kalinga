@@ -6,7 +6,8 @@ import LogoLoop from '../gsap/LogoLoop'
 const AccreditationRanking = ({
   heading = "Approvals & Accreditations",
   secondHeading = null,
-  accreditations = null
+  accreditations = null,
+  id
 }) => {
   // Default accreditations if none provided
   const defaultAccreditations = [
@@ -44,7 +45,7 @@ const AccreditationRanking = ({
   }))
 
   return (
-    <section className="py-16 ">
+    <section id={id} className="py-16 ">
       <div className="">
         <div className="relative flex flex-col md:flex-row items-center md:items-center">
           {/* Left title pill */}

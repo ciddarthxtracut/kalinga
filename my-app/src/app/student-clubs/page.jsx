@@ -9,6 +9,27 @@ import VerticalTabs from "../components/general/VerticalTabs";
 /* ---------------- DATA (Easy to Update) ---------------- */
 const clubSections = [
   {
+    id: 4,
+    title: "Arts & Humanities",
+    clubs: [
+      {
+        name: "Behavioral Club",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Behavioural+Club.webp",
+        description: "It organises various camps, workshops, and sessions on important topics like emotional well-being, gender sensitivity, and child rights. It makes students aware of social issues and develops the values of respect, kindness, and equality."
+      },
+      {
+        name: "Literary Club",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Literary+Club.webp",
+        description: "Students who are passionate about reading, writing, poetry, storytelling, or debate can join the literary club and participate in various events and competitions."
+      },
+      {
+        name: "Bhoomi Club",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Bhoomi+Club.webp",
+        description: "It promotes community welfare and social responsibility by organising donation camps, cleanliness camps, and volunteer programs that support the underprivileged and develop a spirit of service towards society."
+      },
+    ],
+  },
+  {
     id: 1,
     title: "Commerce & Management",
     clubs: [
@@ -29,17 +50,7 @@ const clubSections = [
       },
     ],
   },
-  {
-    id: 2,
-    title: "Pharmacy",
-    clubs: [
-      {
-        name: "Pharma Club",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Pharmacy.webp",
-        description: "Our Pharma Club gives students a platform where they can learn and present their talents in our department of pharmaceutical sciences. With activities like workshops, competitions, real project work, and industrial visits, our students build exceptional practical skills in the pharmacy industry. The club promotes a friendly learning space where they can perform experiments, share ideas, expand their network, and develop innovative healthcare solutions."
-      },
-    ],
-  },
+
   {
     id: 3,
     title: "Education",
@@ -52,23 +63,45 @@ const clubSections = [
     ],
   },
   {
-    id: 4,
-    title: "Arts & Humanities",
+    id: 7,
+    title: "Information Technology",
     clubs: [
       {
-        name: "Behavioural Club",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Behavioural+Club.webp",
-        description: "It organises various camps, workshops, and sessions on important topics like emotional well-being, gender sensitivity, and child rights. It makes students aware of social issues and develops the values of respect, kindness, and equality."
+        name: "Infinity Club",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Infinity+Club.webp",
+        description: "We just don’t talk about technology, but we believe in creating it. Join the Infinity Club and turn your curiosity into powerful tech. Explore coding, cybersecurity, artificial intelligence, data science, machine learning, Internet of Things (IoT), and Robotics & Automation through practical projects and workshops provided by the club. Take advantage of the resources and expert mentorship, and learn to debug the most complex problems."
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Law",
+    clubs: [
+      {
+        name: "Moot Court Club",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Moot+Court+Club.webp",
+        description: "We have a well-furnished moot court on our campus that provides invaluable opportunities to our law students in developing advocacy skills in a practical setting. From researching legal cases, preparing petitions, or presenting arguments, our students get a complete understanding of the courtroom proceedings from the best private law colleges of India. Here, students learn how to present their arguments, and they even get the opportunity to participate in moot court competitions."
       },
       {
-        name: "Literary Club",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Literary+Club.webp",
-        description: "Students who are passionate about reading, writing, poetry, storytelling, or debate can join the literary club and participate in various events and competitions."
+        name: "Legal Aid Clinic",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Legal+Aid+Clinic.webp",
+        description: "The Legal Aid Clinic is a community-based initiative that provides support to people who are unable to afford legal services. It aims to promote justice, raise legal awareness, and assist underprivileged individuals with legal matters."
       },
       {
-        name: "Bhoomi Club",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Bhoomi+Club.webp",
-        description: "It promotes community welfare and social responsibility by organising donation camps, cleanliness camps, and volunteer programs that support the underprivileged and develop a spirit of service towards society."
+        name: "Pro Bono Club",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Pro+Bono+Club.webp",
+        description: "A Pro Bono Club is a student or community-based organisation that provides free legal services to people who cannot afford to pay for legal representation. The club's goal is to provide legal services to the underserved while giving our students real-world exposure."
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Pharmacy",
+    clubs: [
+      {
+        name: "Pharma Club",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Pharmacy.webp",
+        description: "Our Pharma Club gives students a platform where they can learn and present their talents in our department of pharmaceutical sciences. With activities like workshops, competitions, real project work, and industrial visits, our students build exceptional practical skills in the pharmacy industry. The club promotes a friendly learning space where they can perform experiments, share ideas, expand their network, and develop innovative healthcare solutions."
       },
     ],
   },
@@ -112,38 +145,6 @@ const clubSections = [
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Standard+Club+under+BIS+(Mechanical+and+Mining+Engineering).webp",
         description: "Do you know how standards impact industries and innovation? Standardisation plays a key role in maintaining product quality and safety. Our Standard Club of the faculty of technology is giving you a platform to explore its influence through workshops, seminars, quiz competitions, and debates. With the Bureau of Indian Standards' support and expert mentorship, you’ll learn to redefine quality and set new trends."
       }
-    ],
-  },
-  {
-    id: 7,
-    title: "Information Technology",
-    clubs: [
-      {
-        name: "Infinity Club",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Infinity+Club.webp",
-        description: "We just don’t talk about technology, but we believe in creating it. Join the Infinity Club and turn your curiosity into powerful tech. Explore coding, cybersecurity, artificial intelligence, data science, machine learning, Internet of Things (IoT), and Robotics & Automation through practical projects and workshops provided by the club. Take advantage of the resources and expert mentorship, and learn to debug the most complex problems."
-      },
-    ],
-  },
-  {
-    id: 8,
-    title: "Law",
-    clubs: [
-      {
-        name: "Moot Court Club",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Moot+Court+Club.webp",
-        description: "We have a well-furnished moot court on our campus that provides invaluable opportunities to our law students in developing advocacy skills in a practical setting. From researching legal cases, preparing petitions, or presenting arguments, our students get a complete understanding of the courtroom proceedings from the best private law colleges of India. Here, students learn how to present their arguments, and they even get the opportunity to participate in moot court competitions."
-      },
-      {
-        name: "Legal Aid Clinic",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Legal+Aid+Clinic.webp",
-        description: "The Legal Aid Clinic is a community-based initiative that provides support to people who are unable to afford legal services. It aims to promote justice, raise legal awareness, and assist underprivileged individuals with legal matters."
-      },
-      {
-        name: "Pro Bono Club",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Pro+Bono+Club.webp",
-        description: "A Pro Bono Club is a student or community-based organisation that provides free legal services to people who cannot afford to pay for legal representation. The club's goal is to provide legal services to the underserved while giving our students real-world exposure."
-      },
     ],
   },
 ];
