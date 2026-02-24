@@ -38,7 +38,7 @@ const defaultVideosInput = [
 function Newraipurvideos({
     videos = defaultVideosInput,
     subtitle = "",
-    title = "New Raipur Videos",
+    title = "New Raipur in Action",
     description = "Explore New Raipur through videos showcasing smart infrastructure, planning, lifestyle, and future-ready development.",
     backgroundColor = "bg-[var(--light-gray)]",
     showPagination = true,

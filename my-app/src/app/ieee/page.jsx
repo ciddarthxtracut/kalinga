@@ -31,7 +31,7 @@ const admissionOrganogramContent = {
   cardBackgroundColor: "bg-[var(--button-red)]",
   title: "IEEE Student Branch Magazine",
   description: "MINDROID is a reflection of IEEE KU Student Branch’s journey into technology, innovation, and research. It highlights student articles, futuristic tech topics, and hands-on learning experiences.",
-  buttonLabel: "Download Pdf",
+  buttonLabel: "Explore MINDROID",
   onClick: null,
   href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IEEE/IEEE-KU-SB-Magazine_Apr-Sept-2022.pdf",
   buttonClassName: "!bg-white !text-black",

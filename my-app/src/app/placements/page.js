@@ -20,13 +20,14 @@ import MediaCardSlider from "@/app/components/general/media-card-slider";
 import Gallery from '../components/campuslife/campusgallery';
 import Placements from "../components/home/placements";
 import Partner from "../components/ccrc/partner";
-
+import ContactSection from "../components/cif/contact_section";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/app/components/general/tab'
 import CareerPath from '@/app/components/course/career_path'
 import ImageContent from '@/app/components/ccrc/imagecontent'
 import APITable from "../components/general/api-table";
 import GlobalArrowButton from "../components/general/global-arrow_button";
 import FlipbookTrigger from "../components/general/FlipbookTrigger";
+import CustomGallery from '../components/general/gallery'
 
 export default function Research() {
   const { openFlipbook } = useFlipbook();
@@ -569,11 +570,74 @@ export default function Research() {
     { slNo: 41, name: "Rahul Agrawal", program: "MBA", session: "2023-2025", company: "VE Commercial Vehicles" },
   ];
 
+  const collaborationTables = [
+    { id: 59, title: "Our Collaborations" },
+  ];
+
   const internshipTables = [
     { id: 44, title: "Training & Internship for Session 2024-25" },
     { id: 43, title: "Training & Internship for Session 2023-24" },
     { id: 42, title: "Training & Internship for Session 2022-23" },
     { id: 45, title: "Training & Internship for Session 2021-22" },
+  ];
+
+  const galleryImages = [
+    {
+      id: 1,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-1.webp",
+      alt: "Training and Placement Gallery 1"
+    },
+    {
+      id: 2,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-2.webp",
+      alt: "Training and Placement Gallery 2"
+    },
+    {
+      id: 3,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-3.webp",
+      alt: "Training and Placement Gallery 3"
+    },
+    {
+      id: 4,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-4.webp",
+      alt: "Training and Placement Gallery 4"
+    },
+    {
+      id: 5,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-5.webp",
+      alt: "Training and Placement Gallery 5"
+    },
+    {
+      id: 6,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-6.webp",
+      alt: "Training and Placement Gallery 6"
+    },
+    {
+      id: 7,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/images-1.webp",
+      alt: "Training and Placement Gallery 7"
+    },
+    {
+      id: 8,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/images-2.webp",
+      alt: "Training and Placement Gallery 8"
+    },
+    {
+      id: 9,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/images-3.webp",
+      alt: "Training and Placement Gallery 9"
+    },
+    {
+      id: 10,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/images-4.webp",
+      alt: "Training and Placement Gallery 10"
+    },
+    {
+      id: 11,
+      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/images-5.webp",
+      alt: "Training and Placement Gallery 11"
+    },
+
   ];
 
   const annualReportButtons = [
@@ -634,6 +698,22 @@ export default function Research() {
     },
   ];
 
+  const collaborationFAQItems = collaborationTables.map(item => ({
+    id: item.id,
+    question: item.title,
+    component: (
+      <APITable
+        tableId={item.id.toString()}
+        className="py-0"
+        overflowX={true}
+        showTableTitle={false}
+        nested={true}
+        maxHeight="max-h-[600px]"
+        excludeColumns={["Certificate No.", "Certificate No"]}
+      />
+    )
+  }));
+
   const internshipFAQItems = internshipTables.map(item => ({
     id: item.id,
     question: item.title,
@@ -681,6 +761,7 @@ export default function Research() {
         descriptionTextClass=""
         swiperClassName="ccrc-video-slider"
       />
+
       <MainIntro
         title="Training And Placement Cell"
         description={[
@@ -878,7 +959,8 @@ export default function Research() {
       {/* <QuickLinks title="Entrepreneurship & Startup Support" titleClassName="text-white" links={links2} description="We're here to put your entrepreneurial ideas into action. Here, you will not just dream but build something real that solves people's problems." showReadMore={false} /> */}
       <MediaCardSlider
         categoryTitle=""
-        title="Recruiters Testimonials"
+        title="Here From Our Recruiters"
+        description="Want to know what employers think about Kalinga University and its graduates? Their feedback will give you a detailed understanding of their experience in conducting interviews at our campus, and you’ll also understand how the skills of our students match their requirements."
         videoItems={videoItems2}
         cardBgClass="bg-white"
         nameTextClass="text-[var(--button-red)]"
@@ -886,6 +968,24 @@ export default function Research() {
         swiperClassName="ccrc-video-slider"
         imageObjectPosition="object-bottom"
       />
+
+      <ContactSection
+        title="Contact Our Placement Cell"
+        description=""
+        mail="tpo@kalingauniversity.ac.in"
+        phone="Pankaj Tiwari: +91-7471126830"
+        phone2="Arup Haldar: +91-9303097009"
+        address=""
+      />
+
+      <FAQ
+        items={collaborationFAQItems}
+        title=""
+        showHeading={false}
+        variant="default"
+        pyClassName="py-8"
+      />
+
       <section className="pt-16 pb-16 bg-white">
         <div className="container mx-auto px-6">
 
@@ -1053,6 +1153,10 @@ export default function Research() {
           { id: 23, src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-18.jpg", alt: "International Students Banner" },
           { id: 24, src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ind-19.jpg", alt: "International Students Banner" },
         ]}
+      />
+      <CustomGallery
+        images={galleryImages}
+        title="Glimpses of Our Training and Placement Activities"
       />
       <AdmissionCareer />
     </>

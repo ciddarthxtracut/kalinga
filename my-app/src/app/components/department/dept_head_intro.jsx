@@ -232,7 +232,11 @@ function MentorCard({
               </h3>
               <div
                 className="text-gray-700 leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors [&_p]:mb-4 [&_ul]:mb-4 [&_ol]:mb-4 [&_li]:mb-2 [&_p:last-child]:mb-0 [&_ul:last-child]:mb-0 [&_ol:last-child]:mb-0"
-                dangerouslySetInnerHTML={{ __html: message }}
+                dangerouslySetInnerHTML={{
+                  __html: Array.isArray(message)
+                    ? message.join(' ')
+                    : message
+                }}
               />
             </div>
           </div>

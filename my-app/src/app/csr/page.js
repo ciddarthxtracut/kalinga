@@ -202,7 +202,18 @@ export default function CSRPage({
     {
       slNo: 2,
       initiative: "Scholarships",
-      description: "The university provides scholarships under different categories. Click to know more: https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/SCHOLARSHIP_25-26+(4).pdf"
+      description: (
+        <>
+          The university provides scholarships under different categories. To know more, visit -{" "}
+          <Link
+            href="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/SCHOLARSHIP_25-26+(4).pdf"
+            target="_blank"
+            className="text-[var(--button-red)] font-semibold underline"
+          >
+            Scholarships
+          </Link>.
+        </>
+      )
     },
     {
       slNo: 3,

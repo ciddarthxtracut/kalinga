@@ -37,6 +37,7 @@ export default function CareerPath({
   title = "Career Pathways",
   description = "Get ready to turn your unique ideas into reality in the world of tech and design with limitless career opportunities.",
   careers = defaultCareers,
+  maxWords = null,
 }) {
   return (
     <section className="py-16 pb-16 bg-white relative">
@@ -90,6 +91,7 @@ export default function CareerPath({
                     title={career.title}
                     description={career.description}
                     imageUrl={career.imageUrl || career.imageSrc}
+                    maxWords={maxWords}
                   />
                 </div>
               </SwiperSlide>

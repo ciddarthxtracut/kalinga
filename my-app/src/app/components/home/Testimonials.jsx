@@ -12,7 +12,7 @@ const defaultTestimonialsData = [
         id: 1,
         name: "Devansh Dubey",
         role: "Student- MCA",
-        quote: "The mentorship I received was transformative. They didn't just help me refine my pitch; they helped me reshape my entire business model for scalability.",
+        quote: "Devansh is transforming into a skilled IT professional through project-based learning, lab sessions, industry-oriented training, and a supportive learning environment. He is sharpening his problem-solving skills and preparing himself to stand out in the competitive IT world.",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/students-say-2.webp",
         theme: "orange"
     },
@@ -28,7 +28,7 @@ const defaultTestimonialsData = [
         id: 3,
         name: "Noor Fatima Ashrafi",
         role: "Student- LLB",
-        quote: "The network effects here are real. Being surrounded by other ambitious founders pushed us to iterate faster and aim higher than we thought possible.",
+        quote: "She is developing strong analytical thinking and courtroom skills through a combination of classroom lectures and practical training in Kalinga’s Moot Court. It proves her passion for justice and advocacy.",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/student-say-3.webp",
         theme: "amber"
     },
@@ -36,7 +36,7 @@ const defaultTestimonialsData = [
         id: 5,
         name: "Khyati",
         role: "BTech CS AIML",
-        quote: "Finding technical co-founders was my biggest challenge. This community bridged that gap immediately.",
+        quote: "Khyati chose her dream career in Artificial Intelligence and Machine Learning to learn futuristic tech skills. She is gaining an in-depth knowledge of AI tools and technologies, machine learning concepts, NLP models, and more, becoming ready to land into a highly-demaning job.",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/student-say-1.webp",
         theme: "amber"
     },

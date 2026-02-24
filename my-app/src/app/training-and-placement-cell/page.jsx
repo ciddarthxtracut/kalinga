@@ -11,12 +11,12 @@ import Partner from '@/app/components/ccrc/partner'
 import MediaCardSlider from '@/app/components/general/media-card-slider'
 import Testimonials from '@/app/components/home/Testimonials'
 import Gallery from '@/app/components/campuslife/campusgallery'
-import CustomGallery from '@/app/components/general/gallery'
+
 
 const TrainingAndPlacementCell = () => {
   const pathname = usePathname();
 
-  
+
   const blueItems = [
     {
       imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-1.webp",
@@ -296,33 +296,7 @@ const TrainingAndPlacementCell = () => {
       },
     ]
   }
-  const galleryImages = [
-    {
-      id: 1,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-1.webp",
-      alt: "Training and Placement Gallery 1"
-    },
-    {
-      id: 2,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-2.webp",
-      alt: "Training and Placement Gallery 2"
-    },
-    {
-      id: 3,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-3.webp",
-      alt: "Training and Placement Gallery 3"
-    },
-    {
-      id: 4,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-4.webp",
-      alt: "Training and Placement Gallery 4"
-    },
-    {
-      id: 5,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-5.webp",
-      alt: "Training and Placement Gallery 5"
-    },
-  ]
+
   return (
     <>
       <MainIntro
@@ -570,10 +544,6 @@ const TrainingAndPlacementCell = () => {
         nameTextClass="text-[var(--button-red)]"
         descriptionTextClass="text-gray-600"
         swiperClassName="top-performers-slider"
-      />
-      <CustomGallery
-        images={galleryImages}
-        title="Glimpses of Our Training and Placement Activities"
       />
     </>
   )

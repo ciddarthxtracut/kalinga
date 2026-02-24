@@ -331,7 +331,8 @@ const Header = () => {
             links: [
               { label: 'News & Events', href: '/news-and-events' },
               { label: 'Conferences & Events', href: '/conferences-and-events' },
-              // { label: 'Alumni talk', href: '/news-and-events' },
+              { label: 'Industrial Visits', href: '/news-and-events' },
+              { label: 'Excursions', href: '/news-and-events' },
             ]
           }
         ]

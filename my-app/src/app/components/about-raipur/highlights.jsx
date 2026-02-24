@@ -72,7 +72,7 @@ function Highlights() {
 
     return (
         <div>
-            <CareerPath careers={aboutFeatureCards} title='Key Highlights of Raipur' description='' />
+            <CareerPath careers={aboutFeatureCards} title='Key Highlights of Raipur' description='' maxWords={25} />
         </div>
     )
 }

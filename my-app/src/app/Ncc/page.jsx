@@ -46,7 +46,6 @@ const page = () => {
       <Nccvideos />
       <NccVisionMission />
       <NccHeadMessage />
-      <NccEvents />
       <StudentActivities
         title="Events & Activities"
         subtitle="Experience Campus Life Beyond Academics"

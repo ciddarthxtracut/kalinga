@@ -22,9 +22,16 @@ function MentorCard({
   message = "",
   mail = DEFAULT_EMAIL,
   phone = DEFAULT_PHONE,
+  phone2 = null,
   address = DEFAULT_ADDRESS,
 }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const cleanPhone = (num) => {
+    if (!num) return "";
+    // Clean number to keep only digits and + for dialer
+    return num.replace(/[^\d+]/g, "");
+  };
 
   return (
     <>
@@ -83,22 +90,36 @@ function MentorCard({
                     {mail}
                   </a>
                 </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-[var(--dark-orange-red)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <a href={`tel:${phone}`} className="text-sm sm:text-base hover:text-white transition-colors">
-                    {phone}
-                  </a>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-[var(--dark-orange-red)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href={`tel:${cleanPhone(phone)}`} className="text-sm sm:text-base hover:text-white transition-colors">
+                      {phone}
+                    </a>
+                  </div>
+                  {phone2 && (
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-[var(--dark-orange-red)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <a href={`tel:${cleanPhone(phone2)}`} className="text-sm sm:text-base hover:text-white transition-colors">
+                        {phone2}
+                      </a>
+                    </div>
+                  )}
                 </div>
-                <div className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-[var(--dark-orange-red)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
-                  <p className="text-sm sm:text-base leading-relaxed">
-                    {address}
-                  </p>
-                </div>
+                {address && (
+                  <div className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-[var(--dark-orange-red)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                    <p className="text-sm sm:text-base leading-relaxed">
+                      {address}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
