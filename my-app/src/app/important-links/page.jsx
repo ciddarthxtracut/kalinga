@@ -49,13 +49,13 @@ const clubSections = [
       {
         name: "National Assessment and Accreditation Council",
         image:
-          "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/nirf-logo-new.jpeg",
+          "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/naac.webp",
         url: "http://www.naac.gov.in",
       },
       {
         name: "National Institutional Ranking Framework",
         image:
-          "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/naac-logo.webp",
+          "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/nirf-logo-new.jpeg",
         url: "https://www.nirfindia.org/Home",
       },
       {

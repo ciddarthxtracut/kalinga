@@ -32,12 +32,12 @@ const videoItems = [
 const Podcast = () => {
   const pathname = usePathname();
 
-  
+
   return (
     <div>
       <MainIntro
-        title="Kalinga Podcast"
-        subtitle="An Initiative By Kalinga University"
+        title="An Initiative By Kalinga University"
+        subtitle=""
         description={[
           <>
             <strong>Big Ideas, Bold Voices, and Conversations that Inspire</strong> - Welcome to Kalinga Podcast!

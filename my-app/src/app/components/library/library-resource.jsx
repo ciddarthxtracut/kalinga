@@ -78,12 +78,12 @@ const eResources = [
   },
   {
     id: 9,
-    title: "INFEED",
+    title: "INFED",
     description:
       "INDIAN Access Management Federation (INFED), the first Federation in India, has adopted Shibboleth, a standard-based open-source software, for authenticating authorized users from colleges and universities and provide them seamless access to e-resources from anywhere, anytime. The INFLIBNET Centre, as one of its core mandates, provides access to scholarly e-resource to universities and colleges in India under the e-ShodhSindhu. The INFED is being set-up as a centralized agency to coordinate with member institutions in the process of implementation of user authentication and access control mechanism distributed across participating institutions using standardized rules and metadata for exchange of attributes.",
     image:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/library/library-eresourse-infed.jpg",
-    href: "https://infeed.in/",
+    href: "https://infed.inflibnet.ac.in/",
   },
 ];
 

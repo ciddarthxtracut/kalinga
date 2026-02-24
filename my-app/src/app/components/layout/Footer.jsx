@@ -88,6 +88,8 @@ export default function Footer() {
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/executive-development-program">Executive <br />Development Program</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/csr">CSR @ KU</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/kif">KIF</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">SC & ST Grievance Cell</a></li>
+
                   </ul>
                   <ul className="text-white/80 space-y-2 sm:space-y-3">
 
@@ -99,6 +101,8 @@ export default function Footer() {
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/unnat-bharat-abhiyan">Unnat Bharat Abhiyan</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/voter-portal">Voter Portal</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/careers">Careers</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">Grievance Redressal Committees</a></li>
+
 
 
                   </ul>
@@ -122,6 +126,8 @@ export default function Footer() {
                         <a className="hover:text-white transition-colors lg:whitespace-nowrap break-words cursor-pointer" onClick={() => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/downloads/IT+Policy+-+KU.pdf", "IT Policy")}>IT Policy</a>
                       </FlipbookTrigger>
                     </li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">Online Submission For Grievance Redressal</a></li>
+
                   </ul>
                   <ul className="text-white/80 space-y-2 sm:space-y-3">
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/admissions">Discover program</a></li>

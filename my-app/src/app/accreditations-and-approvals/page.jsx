@@ -204,10 +204,12 @@ function Accreditations() {
                     { title: "National Assessment and Accreditation Council", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/National+Assessment+and+Accreditation+Council.pdf" },
                 ]
             },
-            ncte: { 
-                years: { 
-                    "2017 - 18": [{ title: "N.C.T.E. Approval - B.Ed for 2017 - 18", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/NCTE/N.C.T.E.+Approval+-+B.Ed+for+2017+-+18.pdf" }, 
-                        { title: "N.C.T.E. Approval - B.P.Ed for 2017 - 18", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/NCTE/N.C.T.E.+Approval+-+B.P.Ed+for+2017+-+18.pdf" },] } },
+            ncte: {
+                years: {
+                    "2017 - 18": [{ title: "N.C.T.E. Approval - B.Ed for 2017 - 18", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/NCTE/N.C.T.E.+Approval+-+B.Ed+for+2017+-+18.pdf" },
+                    { title: "N.C.T.E. Approval - B.P.Ed for 2017 - 18", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/NCTE/N.C.T.E.+Approval+-+B.P.Ed+for+2017+-+18.pdf" },]
+                }
+            },
             eoa_pharmacy: {
                 years: {
                     "2021 - 22": [{ title: "EOA PHARMACY 2021-22", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/EOA/EOA+PHARMACY+2021-22.pdf" },
@@ -239,6 +241,7 @@ function Accreditations() {
                 secondHeading=""
                 accreditations={aboutApproval}
             />
+
             <AwardsScrollbar title="NIRF Ranking" awards={ranking} />
             <AccreditationsApprovalsSection data={accreditationsData} />
             <ResearchSixGridButtons buttons={defaultButtons} />

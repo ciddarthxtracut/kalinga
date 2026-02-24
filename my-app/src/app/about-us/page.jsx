@@ -40,6 +40,20 @@ const aboutFaqData = [
     ]
   },
   {
+    id: 3,
+    title: "Board Of Management",
+    columns: [
+      { key: "slNo", label: "S. No.", width: "w-20" },
+      { key: "member", label: "Members", width: "flex-1" }
+    ],
+    data: [
+      { slNo: 1, member: "Chairman of the Committee - Vice-Chancellor, Kalinga University" },
+      { slNo: 2, member: "One Member - Nominated by Hon’ble Governor of CG" },
+      { slNo: 3, member: "Three Members- Nominated by Sponsoring Body" },
+      { slNo: 4, member: "Member Secretary - Registrar, Kalinga University" }
+    ]
+  },
+  {
     id: 2,
     title: "Governing Body",
     columns: [
@@ -53,21 +67,8 @@ const aboutFaqData = [
       { slNo: 4, body: "Two Members - Nominated by the Sponsoring Body" },
       { slNo: 5, body: "Member Secretary - Registrar, Kalinga University" }
     ]
-  },
-  {
-    id: 3,
-    title: "Board Of Management",
-    columns: [
-      { key: "slNo", label: "S. No.", width: "w-20" },
-      { key: "member", label: "Members", width: "flex-1" }
-    ],
-    data: [
-      { slNo: 1, member: "Chairman of the Committee - Vice-Chancellor, Kalinga University" },
-      { slNo: 2, member: "One Member - Nominated by Hon’ble Governor of CG" },
-      { slNo: 3, member: "Three Members- Nominated by Sponsoring Body" },
-      { slNo: 4, member: "Member Secretary - Registrar, Kalinga University" }
-    ]
   }
+
 ];
 
 const aboutFeatureCards = [
@@ -229,16 +230,16 @@ const universityAchievements = [
     id: 1,
     stepNumber: "01",
     title: "2018-19",
-    description: "Best Research and Innovation University",
-    backDescription: "Best Research and Innovation University - Global Leaders Award",
+    description: "Best University in Research & Innovation",
+    backDescription: "Best University in Research & Innovation - Global Leaders Award",
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/step1.png",
   },
   {
     id: 2,
     stepNumber: "02",
     title: "2018-19",
-    description: "Excellence Work in the Educational Sector",
-    backDescription: "Excellence Work in the Educational Sector - National Majesty Awards",
+    description: "Excellent Work in the Educational Sector",
+    backDescription: "Excellent Work in the Educational Sector - National Majesty Awards",
     image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/step1.png",
   },
   {
@@ -395,8 +396,7 @@ export default function AboutUs() {
         steps={universityAchievements}
         title="University Achievements"
         subtitle=""
-        ctaLabel="Explore More"
-        ctaHref="/news-and-events"
+        showHeaderButton={false}
         showReadMore={true}
         showIcon={false}
       />

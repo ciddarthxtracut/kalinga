@@ -40,46 +40,46 @@ const defaultTestimonialsData = [
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/student-say-1.webp",
         theme: "amber"
     },
-    {
-        id: 6,
-        name: "Mansi Majumdar",
-        role: "Department of Zoology",
-        quote: "Mansi’s academic journey at Kalinga University is a perfect combination of hands-on learning and classroom knowledge. Through laboratory sessions, smart classroom lectures, and step-by-step mentoring, she’s continuously moving closer towards her dream career.",
-        video: "https://www.youtube.com/watch?v=JLlMztuYLao",
-        theme: "orange"
-    },
-    {
-        id: 7,
-        name: "Shreyanka Raha",
-        role: "Department of Journalism & Mass Communication",
-        quote: "Shreyanka’s journey at Kalinga University reflects her transformation into a confident communicator. Drawn by the university’s academic pattern that emphasizes internships and all-around exposure, she experienced a perfect balance of theoretical and practical learning that helped her master the art of communication",
-        video: "https://www.youtube.com/watch?v=U-ofFXqFKfU",
-        theme: "red"
-    },
-    {
-        id: 8,
-        name: "Payal Talukar",
-        role: "MBA",
-        quote: "Payal’s dream is to build her own brand and work in top corporates. Through her MBA journey at Kalinga University, she is gaining strong exposure through group discussions, industrial visits, case studies, and club activities, which are helping her grow into a confident professional.",
-        video: "https://www.youtube.com/watch?v=t8UAjsnO4PQ",
-        theme: "amber"
-    },
-    {
-        id: 9,
-        name: "Kimberly Brita",
-        role: "Diploma in Computer Science",
-        quote: "Kimberley Brita from Zimbabwe chose Kalinga University to pursue her dream of studying in India. Impressed by the world-class infrastructure, eco-friendly campus, and vibrant student life, she enjoys her time here by balancing learning, leisure, and personal growth.",
-        video: "https://www.youtube.com/watch?v=Yt-dPCrghNc",
-        theme: "orange"
-    },
-    {
-        id: 10,
-        name: "Mona Aggarwal",
-        role: "BBA LLB",
-        quote: "Mona is shaping her career at Kalinga University through a balance of practical training and classroom studies from expert faculty members. Through moot court competitions, internship programs, and guest lectures, she is gaining real-world skills and confidence required to succeed in the legal world",
-        video: "https://www.youtube.com/watch?v=V6xjrHuF5e0",
-        theme: "red"
-    }
+    // {
+    //     id: 6,
+    //     name: "Mansi Majumdar",
+    //     role: "Department of Zoology",
+    //     quote: "Mansi’s academic journey at Kalinga University is a perfect combination of hands-on learning and classroom knowledge. Through laboratory sessions, smart classroom lectures, and step-by-step mentoring, she’s continuously moving closer towards her dream career.",
+    //     video: "https://www.youtube.com/watch?v=JLlMztuYLao",
+    //     theme: "orange"
+    // },
+    // {
+    //     id: 7,
+    //     name: "Shreyanka Raha",
+    //     role: "Department of Journalism & Mass Communication",
+    //     quote: "Shreyanka’s journey at Kalinga University reflects her transformation into a confident communicator. Drawn by the university’s academic pattern that emphasizes internships and all-around exposure, she experienced a perfect balance of theoretical and practical learning that helped her master the art of communication",
+    //     video: "https://www.youtube.com/watch?v=U-ofFXqFKfU",
+    //     theme: "red"
+    // },
+    // {
+    //     id: 8,
+    //     name: "Payal Talukar",
+    //     role: "MBA",
+    //     quote: "Payal’s dream is to build her own brand and work in top corporates. Through her MBA journey at Kalinga University, she is gaining strong exposure through group discussions, industrial visits, case studies, and club activities, which are helping her grow into a confident professional.",
+    //     video: "https://www.youtube.com/watch?v=t8UAjsnO4PQ",
+    //     theme: "amber"
+    // },
+    // {
+    //     id: 9,
+    //     name: "Kimberly Brita",
+    //     role: "Diploma in Computer Science",
+    //     quote: "Kimberley Brita from Zimbabwe chose Kalinga University to pursue her dream of studying in India. Impressed by the world-class infrastructure, eco-friendly campus, and vibrant student life, she enjoys her time here by balancing learning, leisure, and personal growth.",
+    //     video: "https://www.youtube.com/watch?v=Yt-dPCrghNc",
+    //     theme: "orange"
+    // },
+    // {
+    //     id: 10,
+    //     name: "Mona Aggarwal",
+    //     role: "BBA LLB",
+    //     quote: "Mona is shaping her career at Kalinga University through a balance of practical training and classroom studies from expert faculty members. Through moot court competitions, internship programs, and guest lectures, she is gaining real-world skills and confidence required to succeed in the legal world",
+    //     video: "https://www.youtube.com/watch?v=V6xjrHuF5e0",
+    //     theme: "red"
+    // }
 ];
 
 export default function Testimonials({ testimonials = [], className = "", subtitle = "Real Stories. Real Success.", title = "Stories that Define Kalinga’s Spirit", titleClassName = "", subtitleClassName = "", subtitleTextColor = "" }) {

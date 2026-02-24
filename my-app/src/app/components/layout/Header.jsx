@@ -117,14 +117,14 @@ const Header = () => {
               { label: 'Accreditations & Approvals', href: '#' },
             ]
           },
-          {
-            title: 'Statutory Compliance',
-            links: [
-              { label: 'Online Submission For Grievance Redressal', href: '#' },
-              { label: 'Grievance Redressal Committees', href: '#' },
-              { label: 'SC & ST Grievance Cell', href: '#' },
-            ]
-          },
+          // {
+          //   title: 'Statutory Compliance',
+          //   links: [
+          //     { label: 'Online Submission For Grievance Redressal', href: '#' },
+          //     { label: 'Grievance Redressal Committees', href: '#' },
+          //     { label: 'SC & ST Grievance Cell', href: '#' },
+          //   ]
+          // },
           {
             title: 'Councils & Committees',
             links: [

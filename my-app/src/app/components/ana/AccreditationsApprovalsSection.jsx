@@ -12,10 +12,9 @@ function PdfRow({ item }) {
       target={disabled ? undefined : "_blank"}
       rel={disabled ? undefined : "noopener noreferrer"}
       className={`flex items-center gap-4 px-5 py-4 rounded-xl border transition
-        ${
-          disabled
-            ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed"
-            : "bg-white border-gray-200 hover:bg-gray-50 text-[var(--foreground)]"
+        ${disabled
+          ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed"
+          : "bg-white border-gray-200 hover:bg-gray-50 text-[var(--foreground)]"
         }`}
     >
       {/* PDF icon */}
@@ -84,7 +83,7 @@ export default function AccreditationsApprovalsSection({ data }) {
   return (
     <section className="w-full py-10 px-2">
       {/* Title */}
-      <h1 className="text-center font-plus-jakarta-sans text-3xl md:text-5xl font-semibold mb-10">
+      <h1 className="text-center text-3xl md:text-5xl mb-10">
         {pageTitle}
       </h1>
 
@@ -107,10 +106,9 @@ export default function AccreditationsApprovalsSection({ data }) {
                         setExpandedYears({});
                       }}
                       className={`w-full text-left px-8 py-6 rounded-xl font-plus-jakarta-sans text-base md:text-lg font-semibold transition
-                        ${
-                          isActive
-                            ? "bg-[var(--button-red)] text-white"
-                            : "bg-[var(--lite-sand)] text-[var(--foreground)] hover:opacity-90"
+                        ${isActive
+                          ? "bg-[var(--button-red)] text-white"
+                          : "bg-[var(--lite-sand)] text-[var(--foreground)] hover:opacity-90"
                         }`}
                     >
                       {tab.label}
@@ -150,9 +148,8 @@ export default function AccreditationsApprovalsSection({ data }) {
                               </h3>
 
                               <div
-                                className={`w-10 h-10 rounded-md bg-[var(--button-red)] text-white flex items-center justify-center transition-transform ${
-                                  isExpanded ? "rotate-180" : ""
-                                }`}
+                                className={`w-10 h-10 rounded-md bg-[var(--button-red)] text-white flex items-center justify-center transition-transform ${isExpanded ? "rotate-180" : ""
+                                  }`}
                               >
                                 <svg
                                   width="14"

@@ -34,7 +34,7 @@ const page = () => {
       <RaipurVideoSection
         videoId="llHISVPRkxI"
         thumbnail="https://kalinga-university.s3.amazonaws.com/kalinga_backend/files/department/about/FacultyofCommerceAndMangement-AboutDept.webp"
-        title="Explore the Vast World of Knowledge: Tour of Kalinga University Library"
+        title=""
         description="" // optional
         alt="Video thumbnail"
         heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
@@ -46,7 +46,7 @@ const page = () => {
       <RaipurVideoSection
         videoId="hdL0Eeb6Moc"
         thumbnail="https://kalinga-university.s3.ap-south-1.amazonaws.com/library/student-experience-library.webp"
-        title="Student highlights quality education and library"
+        title=""
         description="" // optional
         alt="Video thumbnail"
         heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
@@ -59,7 +59,7 @@ const page = () => {
         fallbackToGlobal={true}
       />
       <LibraryEAccess />
-      <Gallery />
+      {/* <Gallery /> */}
       <AdmissionCareer />
     </>
   )

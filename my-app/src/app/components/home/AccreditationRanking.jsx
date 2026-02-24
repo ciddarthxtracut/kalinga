@@ -4,17 +4,22 @@ import React from 'react'
 import LogoLoop from '../gsap/LogoLoop'
 
 const AccreditationRanking = ({
-  heading = "Accreditation & Ranking",
+  heading = "Approvals & Accreditations",
   secondHeading = null,
   accreditations = null
 }) => {
   // Default accreditations if none provided
   const defaultAccreditations = [
-    { id: 1, name: 'NIRF', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/nirf.webp' },
+    { id: 1, name: 'NIRF', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/nirf-logo-new.jpeg' },
     { id: 2, name: 'NAAC B+', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/naac.webp' },
     { id: 2, name: 'UGC Grant', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/ugc.webp' },
-    // { id: 4, name: 'Outlook', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/outlook.webp' },
-    // { id: 5, name: 'Competition 3', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/competition.webp' },
+    { id: 4, name: 'AICTE', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/acite.webp' },
+    { id: 5, name: 'NCTE', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002978.png' },
+    { id: 6, name: 'BCI', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/bci.webp' },
+    { id: 7, name: 'PCI', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002980.png' },
+    { id: 8, name: 'CG Government', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/cg-government.webp' },
+
+
 
 
     // { id: 1, name: 'Best Practices', logo: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/best-prac.webp' },
