@@ -87,7 +87,7 @@ export default function Footer() {
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/ieee">IEEE Student Branch</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/executive-development-program">Executive <br />Development Program</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/csr">CSR @ KU</a></li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/kalinga-innovation-foundation">KIF</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="kalinga-incubation-foundation">KIF</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">SC & ST Grievance Cell</a></li>
 
                   </ul>
@@ -127,8 +127,7 @@ export default function Footer() {
                         <a className="hover:text-white transition-colors lg:whitespace-nowrap break-words cursor-pointer" onClick={() => openFlipbook("https://kalinga-university.s3.ap-south-1.amazonaws.com/downloads/IT+Policy+-+KU.pdf", "IT Policy")}>IT Policy</a>
                       </FlipbookTrigger>
                     </li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/grievance-redressal">Online Submission For Grievance Redressal</a></li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/grievance-redressal">Grievance Redressal Committees</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/grievance-redressal">Grievance Redressal</a></li>
 
 
                   </ul>

@@ -352,8 +352,8 @@ const Header = () => {
       href: '/career-and-corporate-resource-centre',
     },
     {
-      label: 'KIF',
-      href: '/kalinga-incubation-foundation',
+      label: 'CIF',
+      href: '/central-instrumentation-facility',
     },
     {
       label: 'CSR',
