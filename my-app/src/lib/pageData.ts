@@ -17,8 +17,8 @@ export const pageDataMap: Record<string, PageData> = {
         title: "NCC",
         banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/Ncc-3.webp",
     },
-    "/Voter-Portal": {
-        slug: "/Voter-Portal",
+    "/voter-portal": {
+        slug: "/voter-portal",
         title: "Voter Portal",
         banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-calendar/academic-calendar-banner.webp",
     },
