@@ -72,18 +72,15 @@ export default async function NewsEventDetailsPage({ params }) {
     }
 
     // Transform API data for the UI component
-    // Tags could be Department or Category
     const tags = [];
     if (newsEvent.date) tags.push({ label: newsEvent.date, color: 'orange' });
     if (newsEvent.category_name) tags.push({ label: newsEvent.category_name, color: 'blue' });
     if (newsEvent.department_name) tags.push({ label: newsEvent.department_name, color: 'red' });
 
     // Parse description/content
-    // Existing component expects array of paragraphs
     const description = parseHtmlToParagraphs(newsEvent.content);
 
     // Images
-    // Main image is newsEvent.images[0] or fallback
     const mainImage = {
         src: newsEvent.images && newsEvent.images.length > 0
             ? newsEvent.images.find(img => img.is_featured)?.image || newsEvent.images[0].image
@@ -91,17 +88,11 @@ export default async function NewsEventDetailsPage({ params }) {
         alt: newsEvent.heading
     };
 
-    // Gallery images (rest of images)
-    // Filter out the main image if used, or just pass all?
-    // Let's pass all images as gallery, or exclude the featured one if it's the main image.
-    // The API returns a list of images.
     const galleryImages = newsEvent.images ? newsEvent.images.map(img => ({
         id: img.id,
         src: img.image,
         alt: img.alt || newsEvent.heading
     })) : [];
-
-    // Set breadcrumb data
 
 
     return (
@@ -113,15 +104,6 @@ export default async function NewsEventDetailsPage({ params }) {
                 mainImage={mainImage}
                 galleryImages={galleryImages}
             />
-            {/* <CareerApplicationForm
-                heading="Registration Form"
-                description="Share your details to stay connected with Kalinga University, receive updates, and participate in alumni activities and events."
-                backgroundClass="bg-[var(--dark-blue)]"
-                hideTabs={true}
-                submitLabel="Submit Career Details"
-                useArrowSubmitButton={true}
-                arrowSubmitVariant="white"
-            /> */}
             <UpcomingEvents />
             <AdmissionCareer />
         </>

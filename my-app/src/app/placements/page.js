@@ -642,11 +642,11 @@ export default function Research() {
       image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-5.webp",
       alt: "Training and Placement Gallery 5"
     },
-    {
-      id: 6,
-      image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-6.webp",
-      alt: "Training and Placement Gallery 6"
-    },
+    // {
+    //   id: 6,
+    //   image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/pt-glimple-6.webp",
+    //   alt: "Training and Placement Gallery 6"
+    // },
     {
       id: 7,
       image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/placement-training-cell/images-1.webp",

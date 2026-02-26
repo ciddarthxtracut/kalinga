@@ -206,7 +206,7 @@ export default function CSRPage({
         <>
           The university provides scholarships under different categories. To know more, visit -{" "}
           <Link
-            href="https://kalinga-university.s3.ap-south-1.amazonaws.com/csr/SCHOLARSHIP_25-26+(4).pdf"
+            href="/scholarships"
             target="_blank"
             className="text-[var(--button-red)] font-semibold underline"
           >

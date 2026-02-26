@@ -466,7 +466,7 @@ function OutdoorGames({
       </h5>
 
       <div className="mt-4">
-        <DataTable columns={facilitiesColumns} data={facilitiesRows} overflowX={true} />
+        <DataTable columns={facilitiesColumns} data={facilitiesRows} overflowX={true} headerBgColor="bg-[var(--button-red)]" headerTextColor="text-white" evenRowBg="bg-white" oddRowBg="bg-gray-50" />
       </div>
 
       {/* ✅ TABLE 2 (DataTable) */}
@@ -475,7 +475,7 @@ function OutdoorGames({
       </p>
 
       <div className="mt-4">
-        <DataTable columns={groundsColumns} data={groundRows} overflowX={true} />
+        <DataTable columns={groundsColumns} data={groundRows} overflowX={true} headerBgColor="bg-[var(--button-red)]" headerTextColor="text-white" evenRowBg="bg-white" oddRowBg="bg-gray-50" />
       </div>
     </div>
   );

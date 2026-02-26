@@ -16,7 +16,7 @@ import MediaCardSlider from '../components/general/media-card-slider';
 const page = () => {
   const pathname = usePathname();
 
-  
+
 
 
   const kifAdditionalContent = [
@@ -1430,6 +1430,7 @@ function EventsTable({ title, data }) {
           columns={columns}
           data={tableData}
           overflowX={true}
+          headerBgColor="bg-[var(--button-red)]" headerTextColor="text-white" evenRowBg="bg-white" oddRowBg="bg-gray-50"
         />
       </div>
     </div>

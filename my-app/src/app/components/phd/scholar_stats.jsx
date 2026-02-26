@@ -37,7 +37,13 @@ const fellowshipTable = {
         },
         {
             slNo: "3",
-            logo: "-",
+            logo: (
+                <img
+                    src="https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/nta-1.png"
+                    alt="CSIR NTA Logo"
+                    className="h-10 object-contain mx-auto"
+                />
+            ),
             schemeName: "UGC-NETJRF",
             fullForm: "NATIONAL ELIGIBILITY TEST"
         },

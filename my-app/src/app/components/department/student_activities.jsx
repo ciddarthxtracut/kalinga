@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useRef, useEffect, useMemo, useState } from "react";
 import { fetchNewsEvents, parseHtmlToText } from "@/app/lib/api";
+import Modal from "../general/Modal";
 
 const defaultActivities = [
   {
@@ -66,6 +67,7 @@ export default function StudentActivities({
   cardHeightClass = "h-full w-full",
   showReadMore = true,
   fallbackToGlobal = false,
+  useModal = false,
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -76,6 +78,19 @@ export default function StudentActivities({
 
   const [activities, setActivities] = useState(providedActivities || defaultActivities);
   const [loading, setLoading] = useState(!providedActivities);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedActivity, setSelectedActivity] = useState(null);
+
+  const openActivityModal = (activity) => {
+    setSelectedActivity(activity);
+    setIsModalOpen(true);
+  };
+
+  const closeActivityModal = () => {
+    setIsModalOpen(false);
+    setSelectedActivity(null);
+  };
+  // ... rest of useEffect
 
   useEffect(() => {
     // If activities are provided via props, use them and don't fetch
@@ -170,35 +185,44 @@ export default function StudentActivities({
 
     return (
       <div className={`bg-[var(--light-gray)] rounded-lg p-5 ${cardHeightClass} flex flex-col`}>
-        <div className="relative w-full h-[250px]">
-          <Image
-            src={activity.imageSrc}
-            alt={activity.imageAlt}
-            fill
-            className="rounded-lg object-cover"
-          />
-          {activity.date && (
-            <div className="absolute bottom-3 right-3 bg-[var(--dark-orange-red-light)] px-3 py-1.5 rounded text-[#000] text-[11px] font-medium z-10">
-              {activity.date}
-            </div>
-          )}
-        </div>
+        {activity.imageSrc && (
+          <div className="relative w-full h-[250px]">
+            <Image
+              src={activity.imageSrc}
+              alt={activity.imageAlt || activity.title}
+              fill
+              className="rounded-lg object-cover"
+            />
+            {activity.date && (
+              <div className="absolute bottom-3 right-3 bg-[var(--dark-orange-red-light)] px-3 py-1.5 rounded text-[#000] text-[11px] font-medium z-10">
+                {activity.date}
+              </div>
+            )}
+          </div>
+        )}
 
-        <h3 className="text-left text-lg mt-5 mb-2 leading-normal">
+        {!activity.imageSrc && activity.date && (
+          <div className="w-fit bg-[var(--dark-orange-red-light)] px-3 py-1 rounded text-[#000] text-[11px] font-medium mb-3">
+            {activity.date}
+          </div>
+        )}
+
+        <h3 className="text-left text-lg mt-0 mb-2 leading-normal line-clamp-2">
           {activity.title}
         </h3>
 
         <div className="text-left flex-grow text-neutral-800">
-          <p className="m-0">
+          <p className="m-0 text-sm line-clamp-3">
             {preview}
           </p>
         </div>
 
         {showReadMore && (activity.buttonText !== "" && activity.buttonText !== false) && (
-          <div className="mt-2">
-            <Link href={activity.slug ? `/news-and-events/${activity.slug}` : "#"} passHref className="inline-block">
+          <div className="mt-4">
+            {useModal ? (
               <GlobalArrowButton
-                as="span"
+                as="button"
+                onClick={() => openActivityModal(activity)}
                 className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
                 textClassName="!text-[var(--button-red)] !px-0"
                 arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
@@ -206,7 +230,19 @@ export default function StudentActivities({
               >
                 {activity.buttonText || "Read More"}
               </GlobalArrowButton>
-            </Link>
+            ) : (
+              <Link href={activity.slug ? `/news-and-events/${activity.slug}` : "#"} passHref className="inline-block">
+                <GlobalArrowButton
+                  as="span"
+                  className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
+                  textClassName="!text-[var(--button-red)] !px-0"
+                  arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
+                  arrowIconClassName="!text-white"
+                >
+                  {activity.buttonText || "Read More"}
+                </GlobalArrowButton>
+              </Link>
+            )}
           </div>
         )}
       </div>
@@ -441,6 +477,92 @@ export default function StudentActivities({
           )}
         </div>
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeActivityModal}
+        title={selectedActivity?.title}
+      >
+        <div className="flex flex-col gap-6">
+          {selectedActivity?.imageSrc && (
+            <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={selectedActivity.imageSrc}
+                alt={selectedActivity.imageAlt || selectedActivity.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            {selectedActivity?.organisedBy && (
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <span className="font-bold text-[var(--button-red)] block mb-1 uppercase tracking-wider text-xs">Organised By</span>
+                <span className="text-gray-800 font-medium">{selectedActivity.organisedBy}</span>
+              </div>
+            )}
+            {selectedActivity?.date && (
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <span className="font-bold text-[var(--button-red)] block mb-1 uppercase tracking-wider text-xs">Date</span>
+                <span className="text-gray-800 font-medium">{selectedActivity.date}</span>
+              </div>
+            )}
+            {selectedActivity?.time && (
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <span className="font-bold text-[var(--button-red)] block mb-1 uppercase tracking-wider text-xs">Time</span>
+                <span className="text-gray-800 font-medium">{selectedActivity.time}</span>
+              </div>
+            )}
+            {selectedActivity?.venue && (
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <span className="font-bold text-[var(--button-red)] block mb-1 uppercase tracking-wider text-xs">Venue</span>
+                <span className="text-gray-800 font-medium">{selectedActivity.venue}</span>
+              </div>
+            )}
+            {selectedActivity?.eventType && (
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <span className="font-bold text-[var(--button-red)] block mb-1 uppercase tracking-wider text-xs">Event Type</span>
+                <span className="text-gray-800 font-medium">{selectedActivity.eventType}</span>
+              </div>
+            )}
+            {selectedActivity?.attendedBy && (
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <span className="font-bold text-[var(--button-red)] block mb-1 uppercase tracking-wider text-xs">Attended By</span>
+                <span className="text-gray-800 font-medium">{selectedActivity.attendedBy}</span>
+              </div>
+            )}
+          </div>
+
+          {selectedActivity?.description && (
+            <div className="space-y-4">
+              <h4 className="text-lg font-bold border-l-4 border-[var(--button-red)] pl-3 text-[var(--foreground)] uppercase tracking-wide">
+                Details of the Program
+              </h4>
+              <div className="text-gray-700 leading-relaxed font-plus-jakarta-sans whitespace-pre-wrap">
+                {selectedActivity.description}
+              </div>
+            </div>
+          )}
+
+          {selectedActivity?.learningOutcomes && (
+            <div className="space-y-4 bg-[var(--card-skin)] p-6 rounded-xl border border-[var(--button-red)]/10">
+              <h4 className="text-lg font-bold flex items-center gap-2 text-[var(--button-red)] uppercase tracking-wide">
+                <span className="w-8 h-[2px] bg-[var(--button-red)]"></span>
+                Learning Outcomes
+              </h4>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+                {selectedActivity.learningOutcomes.map((outcome, idx) => (
+                  <li key={idx} className="flex gap-3 text-gray-700 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--button-red)] mt-2 flex-shrink-0"></span>
+                    <span className="text-sm font-medium">{outcome}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </Modal>
     </section>
   );
 }

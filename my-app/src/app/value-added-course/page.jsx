@@ -3,9 +3,6 @@ import { useState } from "react";
 import MainIntro from "../components/about/main_intro";
 import MediaCardSlider from "../components/general/media-card-slider";
 import SectionHeading from "../components/general/SectionHeading";
-import FlipbookTrigger from "../components/general/FlipbookTrigger";
-import { useFlipbook } from "../components/general/FlipbookContext";
-import GlobalArrowButton from "../components/general/global-arrow_button";
 
 const breadcrumbData = {
   heroImage:
@@ -118,7 +115,6 @@ const pdfData = {
 export default function ValueAddedPage() {
   const years = Object.keys(pdfData);
   const [activeYear, setActiveYear] = useState(years[0]);
-  const { openFlipbook } = useFlipbook();
 
   return (
     <>
@@ -165,25 +161,13 @@ export default function ValueAddedPage() {
           </div>
 
 
-          {/* Flipbook Button */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-lg p-8 flex flex-col items-center justify-center min-h-[400px]">
-            <h3 className="text-2xl font-bold text-[var(--foreground)] mb-4 text-center">
-              Value Added Courses {activeYear}
-            </h3>
-            <p className="text-gray-600 mb-6 text-center max-w-2xl">
-              Click below to view the complete list of value-added courses offered during the academic year {activeYear}
-            </p>
-            <FlipbookTrigger
-              pdfUrl={pdfData[activeYear]}
+          {/* PDF Viewer */}
+          <div className="bg-white rounded-xl overflow-hidden shadow-lg p-2 flex flex-col items-center justify-center min-h-[600px]">
+            <iframe
+              src={`${pdfData[activeYear]}#toolbar=0&navpanes=0&scrollbar=0`}
+              className="w-full h-[600px] border-none rounded-lg"
               title={`Value Added Courses ${activeYear}`}
-            >
-              <GlobalArrowButton
-                onClick={() => openFlipbook(pdfData[activeYear], `Value Added Courses ${activeYear}`)}
-                className="!w-auto !px-8 !py-3"
-              >
-                View {activeYear} Courses
-              </GlobalArrowButton>
-            </FlipbookTrigger>
+            />
           </div>
         </div>
       </section>

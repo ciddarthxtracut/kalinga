@@ -11,6 +11,7 @@ import AdmissionCareer from "../components/general/admission_cta";
 import { fetchNewsEvents, fetchAllDepartments, parseHtmlToText } from '../lib/api';
 
 import MediaCardSlider from "../components/general/media-card-slider";
+import StudentActivities from "../components/department/student_activities";
 
 const placementGalleryImages = [
   // // Training and Placement Cell
@@ -150,6 +151,56 @@ function NewsAndEvents() {
     }));
   }, [newsItems]);
 
+  const eventActivities = [
+    {
+      id: 'educational-picnic-kanker',
+      title: "One-Day Educational Picnic to Kanker",
+      description: "A one-day educational picnic for the B.Ed Semester 3 students, organised to provide historical exposure and opportunities for team bonding. The trip began with a historic visit to the Kanker Palace, where students interacted with the official guide and learnt about the significance of the architecture and its royal linkage. After this, students visited Sarvodaya Vidyalaya, an educational institution run under the guidance of the daughter of Raja Saheb, where they learnt community-based educational practices. Following this, the students visited Malajkundum Dam and Dudh Nadi Dam, where they understood the importance of dams in water conservation. The picnic provided valuable exposure to students beyond classroom-based learning.",
+      date: "19.11.2025",
+      time: "06:00 A.M. to 10:00 P.M.",
+      venue: "From Raipur to Kanker (C.G)",
+      organisedBy: "Faculty of Education",
+      eventType: "Offline",
+      attendedBy: "B.Ed Students and Faculty Members",
+      buttonText: "Read More"
+    },
+    {
+      id: 'international-trip-dubai',
+      title: "An International Trip to Dubai",
+      description: "To take learning beyond textbooks, we organised an international educational trip to Dubai. It was a 5-night and 6-day trip in which a team of students and faculty members explored one of the world’s most advanced cities. The trip included a stay at a luxury 4-star hotel, Indian meals, and private transportation. They explored Burj Khalifa, Miracle Garden, Dubai Mall, Dubai Frame, Knowledge Village, Marina Dhow Cruise, and Desert Safari. The trip generated curiosity among students and unforgettable memories as we prepared students for a global future.",
+      date: "15.04.2025",
+      venue: "Dubai, UAE",
+      buttonText: "Read More"
+    },
+    {
+      id: 'excursion-manali',
+      title: "An Excursion to Manali, Himachal Pradesh",
+      description: "After the insightful industrial visit to Sorbax Pharmaceutical, Badii, faculty members and students went on a trip to Manali, where students enjoyed paragliding and other activities. The trip ended with a fun learning experience and enriched the bond between students.",
+      date: "24.02.2025 - 02.03.2025",
+      venue: "Manali, Himachal Pradesh",
+      buttonText: "Read More"
+    },
+    {
+      id: 'jagran-film-festival',
+      title: "Collaboration with Jagran Film Festival (Raipur)",
+      description: "It aimed to provide students with exposure to the world of cinema and media through special screenings, panel discussions, and interactive sessions with filmmakers and industry experts.",
+      date: "17.01.2025 - 18.01.2025",
+      time: "09:30 A.M. to 06:30 P.M.",
+      venue: "City Centre Mall, Pandri (Raipur)",
+      organisedBy: "Department of Journalism and Mass Communication, Faculty of Arts & Humanities",
+      eventType: "Offline",
+      attendedBy: "Students and faculty members from the Arts & Humanities Department",
+      buttonText: "Read More",
+      learningOutcomes: [
+        "An understanding of the key stages of cinema and film production.",
+        "Networking opportunities with filmmakers, critics, and industry professionals.",
+        "A broader perspective on storytelling techniques, cinematic forms, and global cinematic trends.",
+        "Creative and technical elements behind filmmaking.",
+        "Ethical, social, and cultural influence on the industry.",
+        "Career pathways and opportunities in the cinema and media industries."
+      ]
+    }
+  ];
 
 
   return (
@@ -181,6 +232,13 @@ function NewsAndEvents() {
         imageItems={placementGalleryImages}
         categoryTitle=""
         id="industrial-visits"
+      />
+      <StudentActivities
+        id="events-activities"
+        title="Excursions"
+        subtitle=""
+        activities={eventActivities}
+        useModal={true}
       />
       <Gallery images={customImages} />
       <AdmissionCareer />

@@ -10,9 +10,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@$
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
+const PAGE_FLIP_SOUND_URL = 'https://kalinga-university.s3.ap-south-1.amazonaws.com/sound/pageflipsound.mp3';
+
 const PDFPage = React.forwardRef((props, ref) => {
     return (
-        <div className="bg-white shadow-lg" ref={ref}>
+        <div className="bg-white shadow-lg overflow-hidden" ref={ref}>
             {props.children}
         </div>
     );
@@ -24,11 +26,23 @@ const InlineFlipbook = ({ pdfUrl, title }) => {
     const [numPages, setNumPages] = useState(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [pageInputValue, setPageInputValue] = useState('1');
+    const [pagesToRender, setPagesToRender] = useState(4);
     const [containerWidth, setContainerWidth] = useState(0);
+    const isAudioUnlocked = useRef(false);
     const containerRef = useRef(null);
     const bookRef = useRef(null);
+    const audioRef = useRef(null);
 
     useEffect(() => {
+        // Preload audio
+        audioRef.current = new Audio(PAGE_FLIP_SOUND_URL);
+        audioRef.current.load();
+    }, []);
+
+    useEffect(() => {
+        // Reset pages to render when URL changes
+        setPagesToRender(4);
+
         const updateWidth = () => {
             if (containerRef.current) {
                 setContainerWidth(containerRef.current.offsetWidth);
@@ -44,9 +58,21 @@ const InlineFlipbook = ({ pdfUrl, title }) => {
     }, [pdfUrl]);
 
     const onFlip = useCallback((e) => {
-        setCurrentPage(e.data);
-        setPageInputValue((e.data + 1).toString());
-    }, []);
+        const flippedPage = e.data;
+        setCurrentPage(flippedPage);
+        setPageInputValue((flippedPage + 1).toString());
+
+        // Play page flip sound
+        if (audioRef.current) {
+            audioRef.current.currentTime = 0;
+            audioRef.current.play().catch(err => console.debug('Audio play failed:', err));
+        }
+
+        // Lazy load: if we are within 2 pages of the end of current rendered set, load more
+        if (flippedPage + 2 >= pagesToRender && pagesToRender < numPages) {
+            setPagesToRender(prev => Math.min(prev + 4, numPages));
+        }
+    }, [pagesToRender, numPages]);
 
     const handlePageInputChange = (e) => {
         setPageInputValue(e.target.value);
@@ -83,16 +109,29 @@ const InlineFlipbook = ({ pdfUrl, title }) => {
         window.open(pdfUrl, '_blank', 'noopener,noreferrer');
     };
 
+    const unlockAudio = () => {
+        if (!isAudioUnlocked.current && audioRef.current) {
+            audioRef.current.play()
+                .then(() => {
+                    audioRef.current.pause();
+                    audioRef.current.currentTime = 0;
+                    isAudioUnlocked.current = true;
+                })
+                .catch(err => console.debug('Audio unlock failed:', err));
+        }
+    };
+
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
     }
 
-    // Calculate dimensions - balanced for visibility and size
-    const pageWidth = containerWidth > 0 ? Math.min((containerWidth - 50) / 2, 650) : 500;
-    const pageHeight = pageWidth * 1.414; // A4 aspect ratio
+    // Calculate dimensions
+    const isMobile = containerWidth < 768;
+    const pageWidth = isMobile ? Math.min(containerWidth - 20, 400) : Math.min((containerWidth - 60) / 2, 600);
+    const pageHeight = isMobile ? pageWidth * 1.41 : pageWidth * 1.41;
 
     return (
-        <div ref={containerRef} className="w-full">
+        <div ref={containerRef} className="w-full" onClick={unlockAudio}>
             {/* Header */}
             <div className="p-3 bg-gray-50 border-b border-gray-200 flex items-center justify-between">
                 <h3 className="text-lg md:text-xl font-bold text-[var(--foreground)]">
@@ -143,31 +182,69 @@ const InlineFlipbook = ({ pdfUrl, title }) => {
                                 width={pageWidth}
                                 height={pageHeight}
                                 size="stretch"
-                                minWidth={300}
-                                maxWidth={700}
-                                minHeight={400}
-                                maxHeight={900}
-                                showCover={false}
+                                minWidth={200}
+                                maxWidth={800}
+                                minHeight={300}
+                                maxHeight={1200}
+                                showCover={isMobile}
                                 mobileScrollSupport={true}
                                 onFlip={onFlip}
-                                className="shadow-2xl"
+                                className="magazine-flipbook shadow-2xl"
                                 style={{ margin: '0 auto' }}
                                 drawShadow={true}
                                 flippingTime={800}
-                                usePortrait={false}
+                                usePortrait={isMobile}
                                 startPage={0}
                                 autoSize={false}
+                                startZIndex={100}
                             >
-                                {Array.from(new Array(numPages), (el, index) => (
-                                    <PDFPage key={`page_${index + 1}`}>
-                                        <ReactPdfPage
-                                            pageNumber={index + 1}
-                                            width={pageWidth}
-                                            renderTextLayer={false}
-                                            renderAnnotationLayer={false}
-                                        />
-                                    </PDFPage>
-                                ))}
+                                {(() => {
+                                    const pages = [...Array(numPages).keys()].map((p) => (
+                                        <PDFPage key={p}>
+                                            {p < pagesToRender ? (
+                                                <ReactPdfPage
+                                                    pageNumber={p + 1}
+                                                    width={pageWidth}
+                                                    renderTextLayer={false}
+                                                    renderAnnotationLayer={false}
+                                                    loading={
+                                                        <div className="flex flex-col items-center justify-center h-full w-full bg-gray-50/50">
+                                                            <div className="animate-pulse flex flex-col items-center">
+                                                                <div className="h-10 w-10 bg-gray-200 rounded-full mb-2"></div>
+                                                                <div className="h-2 w-20 bg-gray-200 rounded"></div>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                />
+                                            ) : (
+                                                <div className="flex flex-col items-center justify-center h-full w-full bg-gray-50/30">
+                                                    <div className="animate-pulse flex flex-col items-center">
+                                                        <div className="h-10 w-10 bg-white/10 rounded-full mb-2 border border-gray-200"></div>
+                                                        <div className="h-2 w-20 bg-white/10 rounded border border-gray-200"></div>
+                                                        <p className="mt-2 text-gray-400 text-[10px] uppercase tracking-widest font-medium">Loading Page {p + 1}</p>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </PDFPage>
+                                    ));
+
+                                    // Add a blank page if odd on desktop
+                                    if (!isMobile && numPages % 2 !== 0) {
+                                        pages.push(
+                                            <PDFPage key="padding-page">
+                                                <div className="w-full h-full bg-[#f8f9fa] flex items-center justify-center border-l border-gray-100 shadow-inner">
+                                                    <div className="opacity-10">
+                                                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </PDFPage>
+                                        );
+                                    }
+                                    return pages;
+                                })()}
                             </HTMLFlipBook>
                         </div>
                     )}

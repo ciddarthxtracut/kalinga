@@ -336,10 +336,10 @@ const Header = () => {
           {
             title: 'News & Activities',
             links: [
-              { label: 'Events & Activities', href: '/news-and-events' },
+              { label: 'Events & Activities', href: '/news-and-events#events-activities' },
               { label: 'Conferences & Events', href: '/conferences-and-events' },
-              { label: 'Industrial Visits', href: '/news-and-events' },
-              { label: 'Excursions', href: '/news-and-events' },
+              { label: 'Industrial Visits', href: '/news-and-events#industrial-visits' },
+              { label: 'Excursions', href: '/news-and-events#events-activities' },
             ]
           }
         ]
