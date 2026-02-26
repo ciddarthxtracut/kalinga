@@ -53,12 +53,9 @@ export default function ResearchInnovation() {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true)
-            animateValue(0, 3360, 2000, setResearchPublications)
-            animateValue(0, 6, 2000, setStartups)
-            animateValue(0, 90, 2000, setResearchLabs)
-            animateValue(0, 2136, 2000, setCitations)
-            animateValue(0, 532, 2000, setPatents)
-            animateValue(0, 19, 2000, setHIndex)
+            stats.forEach(stat => {
+              animateValue(0, stat.targetValue, 2000, stat.setter)
+            })
           }
         })
       },

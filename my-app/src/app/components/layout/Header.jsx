@@ -70,6 +70,14 @@ const Header = () => {
     setActiveMenu(null);
     if (typeof window !== 'undefined') {
       const html = document.documentElement;
+      // Skip scroll reset if there's a hash (allow deep linking)
+      if (window.location.hash) {
+        setIsScrolled(false);
+        setIsMobileMenuOpen(false);
+        setActiveMenu(null);
+        return;
+      }
+
       // Temporarily disable smooth scroll to make the jump instant and invisible
       html.classList.add('no-smooth-scroll');
 
@@ -128,9 +136,10 @@ const Header = () => {
           {
             title: 'Councils & Committees',
             links: [
-              { label: 'Board of Management', href: '/about-us#governance-structure' },
+              { label: 'Governing Body', href: '/about-us#governing-body' },
+              { label: 'Board of Management', href: '/about-us#board-of-management' },
               // { label: 'Executive Council', href: '#' },
-              { label: 'Academic Council', href: '/about-us#governance-structure' },
+              { label: 'Academic Council', href: '/about-us#academic-council' },
               // { label: 'Finance Committee', href: '#' },
               // { label: 'Library Committee', href: '#' },
               // { label: 'Anti Ragging', href: '/anti-ragging-cell' },

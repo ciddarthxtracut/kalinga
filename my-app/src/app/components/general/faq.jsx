@@ -537,6 +537,29 @@ const FAQ = ({
             if (matchingSection) {
               const sectionId = matchingSection.id || tableSectionsList.indexOf(matchingSection)
               setUnifiedOpenId(`table-${sectionId}`)
+
+              // Reinforce scroll to the section
+              setTimeout(() => {
+                const element = document.getElementById(slugify(matchingSection.title))
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              }, 100)
+              return;
+            }
+
+            // Check if any regular item matches the hash
+            const matchingItem = regularItems.find(item => slugify(item.question) === currentHash)
+            if (matchingItem) {
+              setUnifiedOpenId(`regular-${matchingItem.id}`)
+
+              // Reinforce scroll to the item
+              setTimeout(() => {
+                const element = document.getElementById(slugify(matchingItem.question))
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              }, 100)
             }
           }
         }

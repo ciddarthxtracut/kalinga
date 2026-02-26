@@ -96,7 +96,7 @@ const AboutKalinga = () => {
                     style={{ transform: `translateY(${isExpanded ? '10px' : '-70px'})` }}
                   >
                     <Image
-                      src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/about-kalinga.webp"
+                      src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/girl-stand.webp"
                       alt="Students"
                       fill
                       sizes="(max-width: 768px) 0vw, 555px"
