@@ -46,27 +46,27 @@ const MentorIntroProps = [
 const committeeMembers = [
   {
     sno: 1,
-    name: "Dr. Vijayalaxmi Biradar, Professor, Dept. of Engineering, Director IQAC",
+    name: "Dr. R. Uday Kumar, Dean CS & IT",
     position: "Head",
   },
   {
     sno: 2,
-    name: "Dr. Rahul Mishra, Professor, Dept. of Engineering, DAA & COE",
+    name: "Dr. Vijayalaxmi Biradar, Professor, Dept. of Engineering, Director IQAC",
     position: "Member",
   },
   {
     sno: 3,
-    name: "Dr. Sushma Dubey, Head Dept. of Biotechnology",
+    name: "Dr. Rahul Mishra, Professor, Dept. of Engineering, DAA & COE",
     position: "Member",
   },
   {
     sno: 4,
-    name: "Dr. Amit Joshi, Asst. Professor, Dept. Biotechnology, Asst. COE",
+    name: "Dr. Sushma Dubey, Head Dept. of Biotechnology",
     position: "Member",
   },
   {
     sno: 5,
-    name: "Dr. R. Uday Kumar, Dean CS & IT",
+    name: "Dr. Amit Joshi, Asst. Professor, Dept. Biotechnology, Asst. COE",
     position: "Member",
   },
 ];
@@ -161,7 +161,7 @@ export default function IPRCellPage() {
         </div>
       </section>
 
-      <CtcdTrainingTabs customTabs={yearlyTabs} />
+      <CtcdTrainingTabs heading="IPR Events" customTabs={yearlyTabs} />
       <AdmissionCareer />
     </main>
   );

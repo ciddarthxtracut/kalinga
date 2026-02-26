@@ -11,6 +11,7 @@ import IQACTabSection from '../components/iqac/iqac_tab_section'
 import QuickLinks from "../components/general/quick_links";
 import StudentActivities from "@/app/components/department/student_activities";
 import Gallery from "@/app/components/general/gallery";
+import TwoLogo from "../components/iqac/two-logo";
 const IQACPage = () => {
   const pathname = usePathname();
 
@@ -85,6 +86,7 @@ const IQACPage = () => {
         imageAlt="IQAC"
         descriptionClassName="text-[var(--foreground)]"
       />
+      {/* <TwoLogo logos={MentorIntroProps[0].logos} /> */}
       {/* <PublicationGrid stats={publicationStats} /> */}
       <DeptHeadIntro items={MentorIntroProps} className="pt-10 pb-20" />
       <IQACTabSection />

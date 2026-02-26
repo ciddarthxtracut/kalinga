@@ -114,7 +114,7 @@ const Header = () => {
               { label: 'Administration & Leadership', href: '/leadership' },
               { label: 'Awards and accolades', href: '/about-us#awards-accolades' },
               { label: 'Organogram', href: '/organogram' },
-              { label: 'Accreditations & Approvals', href: '/about-us#accreditations-approvals' },
+              { label: 'Accreditations & Approvals', href: '/accreditations-and-approvals' },
             ]
           },
           // {

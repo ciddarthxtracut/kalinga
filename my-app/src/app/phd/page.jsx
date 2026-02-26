@@ -26,10 +26,10 @@ export default function PhdPage() {
 
   const phdResources = [
     { id: 0, text: "Research Overview", isPopup: true },
-    { id: 1, text: "Ethics Committee Constitution", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf" },
+    // { id: 1, text: "Ethics Committee Constitution", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf" },
     { id: 2, text: "Constitution of the Ethics Board for Maintaining Research Integrity", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/5.+CONSTITUTION+OF+ETHICS+BOARD+FOR+MAINTAINING+RESEARCH+INTEGRITY.pdf" },
     { id: 3, text: "Research Integrity & Ethics Policy", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf" },
-    { id: 4, text: "Research Advisory Committee", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf" },
+    // { id: 4, text: "Research Advisory Committee", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf" },
     { id: 5, text: "Constitution of the Research Advisory Committee and Departmental Research Committee", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Constitution+of+Research+Advisory+Committee.pdf" },
     { id: 6, text: "Ordinance No. 48", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ordinance+No.+48+(16.09.2013).pdf" },
     { id: 7, text: "Revised Ordinance No. 48", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Amended+Ordinance+No.+48+(18.02.2022).pdf" },
@@ -46,7 +46,7 @@ export default function PhdPage() {
     { id: 18, text: "UGC Regulation 2022", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/UGC+Regulation+2022+(1).pdf" },
     { id: 19, text: "UGC Notification Plagiarism 2018", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/UGCNotification_Plagiarism_2018.pdf" },
     { id: 20, text: "UGC Regulation 2016", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/UGC+Regulations+2016+(1).pdf" },
-    { id: 21, text: "Ph.D. Notification 2026", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2026+Notification.pdf" },
+    // { id: 21, text: "Ph.D. Notification 2026", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Ph.+D.+2026+Notification.pdf" },
     { id: 23, text: "Ph.d. Scholars", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/DETAILS+OF+CURRENTLY+ENROLLED+Ph.D.+SCHOLARS+(1).pdf" },
     { id: 24, text: "Ph.d. Supervisors", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/DETAILS+OF+SUPERVISOR.pdf" },
     { id: 25, text: "Undertaking", href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/phd/Undertaking+(1).pdf" },

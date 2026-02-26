@@ -113,7 +113,7 @@ function TrainingGlimpseGallery() {
     );
 }
 
-export default function CtcdTrainingTabs({ customTabs }) {
+export default function CtcdTrainingTabs({ customTabs, heading }) {
     const [open, setOpen] = useState(false);
     const [openTechnical, setOpenTechnical] = useState(false);
 
@@ -131,9 +131,14 @@ export default function CtcdTrainingTabs({ customTabs }) {
                 }
             `}</style>
                 {/* Outer dark-blue container */}
-                <div className="rounded-xl  bg-[var(--dark-blue)] py-16 mx-2">
+                <div className="rounded-xl  bg-[var(--dark-blue)] py-16 mx-2 mb-12">
                     {/* Top tabs row */}
                     <div className="container mx-auto">
+                        {heading && (
+                            <div className="mb-10 text-center">
+                                <h2 className="!font-stix text-4xl text-white">{heading}</h2>
+                            </div>
+                        )}
                         <Tabs defaultValue={customTabs[0]?.value}>
                             <TabsList className="!flex !gap-4 md:!gap-5 !bg-transparent !rounded-none !p-0 !overflow-x-auto !overflow-y-visible scrollbar-hide !px-2 md:!px-0 !pb-2 md:!pb-0">
                                 {customTabs.map((tab) => (

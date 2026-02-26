@@ -48,7 +48,6 @@ const scholarsTable = {
     columns: [
         { key: "slNo", label: "S.No.", width: "w-16" },
         { key: "year", label: "Year", width: "w-24" },
-        { key: "status", label: "Status", width: "w-24" },
         { key: "scheme", label: "Scheme", width: "w-24" },
         { key: "name", label: "Name of Scholar", width: "flex-1" },
         { key: "fatherName", label: "Fathers’ Name", width: "flex-1" },
@@ -59,7 +58,6 @@ const scholarsTable = {
         {
             slNo: "1",
             year: "2025",
-            status: "PENDING",
             scheme: "NETJRF",
             name: "ROBIN KUMAR VERMA",
             fatherName: "SANTOSH DAS",
@@ -75,7 +73,6 @@ const scholarsTable = {
         {
             slNo: "2",
             year: "2025",
-            status: "PENDING",
             scheme: "NETJRF",
             name: "SHUBHAM SINGH",
             fatherName: "VISHNU SINGH",
@@ -91,7 +88,6 @@ const scholarsTable = {
         {
             slNo: "3",
             year: "2025",
-            status: "PENDING",
             scheme: "CSIR",
             name: "PRIYA",
             fatherName: "ASHOK MALIK",
@@ -107,7 +103,6 @@ const scholarsTable = {
         {
             slNo: "4",
             year: "2025",
-            status: "PENDING",
             scheme: "NETJRF",
             name: "SHEETAL NAIK",
             fatherName: "GOURISHANKAR",
