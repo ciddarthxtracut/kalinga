@@ -125,8 +125,13 @@ export default function MainIntro({
                   <p
                     key={idx}
                     className={`${descriptionClassName} leading-relaxed break-words overflow-visible text-justify`}
-                    dangerouslySetInnerHTML={{ __html: paragraph }}
-                  />
+                  >
+                    {typeof paragraph === "string" ? (
+                      <span dangerouslySetInnerHTML={{ __html: paragraph }} />
+                    ) : (
+                      paragraph
+                    )}
+                  </p>
                 ))
               ) : (
                 // HTML string format - render with dangerouslySetInnerHTML to support ul/li
