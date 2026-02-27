@@ -56,7 +56,7 @@ export default function ResearchCE() {
         id: 7,
         name: "Automobile Training Centre",
         title: "We have signed an MoU with an ISO-certified company that provides training in the repair & maintenance of 2 & 3-wheelers.",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research-facilities/researchfacilities-justauto.jpg",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/justauto-solutions.png",
         href: "/centresofexcellence/automobile",
       },
     ],
@@ -78,7 +78,7 @@ export default function ResearchCE() {
       `}</style>
 
       <CenterOfExcellence
-        title="Laboratories and Centres of Excellence."
+        title="Centres of Excellence"
         description="To align academic learning with industrial knowledge we have partnered with seven leading companies that offer skill-based training to students in various high-demanding sectors like electric vehicles, drone technology, AI, cybersecurity, automobiles, and many more. We’re a leading research university, empowering students to go from textbooks to real-world innovation and become ready to stand out in the competitive job market."
         centres={centres.map(c => ({
           ...c,

@@ -1043,7 +1043,7 @@ export default function CtcdTrainingTabs({ customTabs, heading }) {
                             </div>
 
                             <div>
-                                <h4 className="font-semibold text-lg mb-2">● Goal Setting</h4>
+                                <h4 className="font-semibold text-lg mb-2">● Goal Seng</h4>
                                 <p className="ml-4 text-sm">Categorizing & Prioritizing Goals, Mapping the Milestones, Curating the Action Plan, Building Deservability</p>
                             </div>
 

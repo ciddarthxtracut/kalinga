@@ -54,7 +54,7 @@ function Valueadditioncards() {
             link: "/corporate-training-and-consultancy-division", // ✅ will show Know More
         },
         {
-            title: "CIF Labs",
+            title: "CIF",
             description:
                 "Facilitating researchers and students with high-end instruments in basic, applied, and life sciences.",
             imageSrc:
@@ -64,7 +64,7 @@ function Valueadditioncards() {
             link: "/research-facilities",
         },
         {
-            title: "CoEs",
+            title: "CoE",
             description:
                 "Our Centres of Excellence include: Electric Vehicles (Godawari Electric Motors Pvt. Ltd. - Eblu), IIoT (Technoviz Automation), Robotics, Coding, & Drones (BDS Education), AI-ML (IBM Innovation Centre for Education - ICE), MSME (IamSMEofIndia), BRIDGE Courses (BOSCH), Automobile Training Centre (JustAuto Solutions).",
             imageSrc:

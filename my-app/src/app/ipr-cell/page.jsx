@@ -29,7 +29,7 @@ const MentorIntroProps = [
   {
     id: 1,
     title: "Dr R Udaya Kumar",
-    subtitle: "Message from HoD",
+    subtitle: "Message from Head",
     department: "Head - IPR Cell",
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/ipr/ipr-sir.webp",

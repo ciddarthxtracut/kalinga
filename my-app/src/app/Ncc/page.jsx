@@ -15,10 +15,54 @@ import StudentActivities from "@/app/components/department/student_activities";
 
 const page = () => {
 
-
+  const nccgallery = [
+    {
+      id: 1,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/01.jpg",
+    },
+    {
+      id: 2,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/02.jpg",
+    },
+    {
+      id: 3,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/03.jpg",
+    },
+    {
+      id: 4,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/04.jpg",
+    },
+    {
+      id: 5,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/05.jpg",
+    },
+    {
+      id: 6,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/06.jpg",
+    },
+    {
+      id: 7,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/07.jpg",
+    },
+    {
+      id: 8,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/08.jpg",
+    },
+    {
+      id: 9,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/09.jpg",
+    },
+    {
+      id: 10,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/10.jpg",
+    },
+    {
+      id: 11,
+      src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ncc/11.jpg",
+    }
+  ];
 
   return (
-
     <>
       <style jsx global>{`
       .absolute.inset-0 > img {
@@ -52,7 +96,11 @@ const page = () => {
         categoryId={2}
         fallbackToGlobal={true}
       />
-      <Gallerys />
+      <Gallerys
+        title="Glimpses"
+        subtitle=""
+        images={nccgallery}
+      />
       <AdmissionCareer />
     </>
   )

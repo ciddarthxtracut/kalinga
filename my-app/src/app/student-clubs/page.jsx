@@ -36,12 +36,12 @@ const clubSections = [
       {
         name: "Finance Club – Bull",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Finance+Club+%E2%80%93+Bull.webp",
-        description: "The club is named after the symbol of optimism in financial markets. The Bull Club is dedicated to developing financial literacy and analytical acumen among students. Activities will include stock market simulations, budget planning & analysis, financial modelling sessions, guest lectures by financial analysts, and quizzes on banking and investment."
+        description: "The club is named after the symbol of optimism in financial markets. The Bull Club is dedicated to developing financial literacy and analytical acumen among students. Activities include stock market simulations, budget planning & analysis, financial modelling sessions, guest lectures by financial analysts, and quizzes on banking and investment."
       },
       {
         name: "Marketing Club – Mercadeo",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Marketing+Club+-+Mercadeo.webp",
-        description: "The name of the marketing club is derived from “Mercadeo” (Spanish for marketing). Marcedeo provides a vibrant platform for students interested in brand building, digital marketing, and consumer behaviour. The club conducts ad-mad shows, marketing case study competitions, social media campaigns, business idea/plan competition - Ideathon, and brainstorming sessions on current market trends."
+        description: "The name of the marketing club is derived from “Mercadeo” (a Spanish word for marketing). Marcedeo provides a vibrant platform for students interested in brand building, digital marketing, and consumer behaviour. The club conducts ad-mad shows, marketing case study competitions, social media campaigns, business idea/plan competition - Ideathon, and brainstorming sessions on current market trends."
       },
       {
         name: "HR Club – Sapiens",
@@ -69,7 +69,7 @@ const clubSections = [
       {
         name: "Infinity Club",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Infinity+Club.webp",
-        description: "We just don’t talk about technology, but we believe in creating it. Join the Infinity Club and turn your curiosity into powerful tech. Explore coding, cybersecurity, artificial intelligence, data science, machine learning, Internet of Things (IoT), and Robotics & Automation through practical projects and workshops provided by the club. Take advantage of the resources and expert mentorship, and learn to debug the most complex problems."
+        description: "We just don’t talk about technology, but we believe in creating it. Join the Infinity Club and turn your curiosity into powerful tech. Explore coding, cybersecurity, artificial intelligence, data science, machine learning, Internet of Things (IoT), and Robotics & Automation through practical projects and conducted by the club. Take advantage of the resources and expert mentorship, and learn to debug the most complex problems."
       },
     ],
   },
@@ -128,7 +128,7 @@ const clubSections = [
       {
         name: "Spark Club (Electrical Engineering)",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Spark+Club+(Electrical+Engineering).webp",
-        description: "Do you love power systems, microelectronics, smart grids, or high-voltage engineering? At Spark Club, you will live what you have studied in your textbooks. From working on complex circuits to power systems, get the freedom to explore and innovate with projects that will prepare you for the future."
+        description: "Do you like power systems, microelectronics, smart grids, or high-voltage engineering? At Spark Club, you will live what you have studied in your textbooks. From working on complex circuits to power systems, get the freedom to explore and innovate with projects that will prepare you for the future."
       },
       {
         name: "Avishkar Club (Civil Engineering)",

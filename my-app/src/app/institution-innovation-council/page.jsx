@@ -435,7 +435,7 @@ export default function InstitutionInnovationCouncil() {
         title="Impact Lecture Series"
         subtitleclassName="hidden"
         description=" The IIC Impact Lecture Series aims to promote innovation and entrepreneurship among students of higher education institutions across India. The lecture enables students to learn from leading experts on topics like start-ups, intellectual property rights, innovation, and entrepreneurship challenges and solutions. 
-Kalinga University hosted its first session of the Impact Lecture Series on 15th April 2024 in an offline mode. Students learned to become successful entrepreneurs, learned from real-life experiences, and received guidance on how to think and act creatively and innovatively by setting goals in the right direction. "
+Kalinga University hosted its first session of the Impact Lecture Series on 15th April 2024 in an offline mode. Students learn to become successful entrepreneurs, gain real-life experiences, and received guidance on how to think and act creatively and innovatively by setting goals in the right direction. "
       />
 
       <section className="pt-16 pb-16 bg-white">
@@ -472,7 +472,7 @@ Kalinga University hosted its first session of the Impact Lecture Series on 15th
         </div>
       </section>
       <Gallery
-        title="Glimpse"
+        title="Glimpses"
 
         images={[
           { id: 1, image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IIC/DSC06210.jpg", alt: "Institution Innovation Council" },

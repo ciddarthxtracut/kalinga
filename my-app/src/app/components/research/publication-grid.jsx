@@ -29,32 +29,33 @@ export default function PublicationGrid({
       description: "A healthy H-Index highlights the quality, consistency, and global impact of research contributions by our faculty and scholars.",
     },
     {
-      title: "Research Labs",
-      value: "90 +",
-      description: "Equipped with state-of-the-art infrastructure, our research labs provide hands-on exposure and advanced experimentation facilities across disciplines.",
-    },
-    {
       title: "Citations",
       value: "2136 +",
       description: "High citation counts demonstrate the relevance, credibility, and global recognition of research carried out at Kalinga University.",
     },
     {
-      id: 1,
-      title: 'Total Number of Centres of Excellence (CoE)',
-      value: '7',
-
+      title: "Labs",
+      value: "90 +",
+      description: "Equipped with state-of-the-art infrastructure, our research labs provide hands-on exposure and advanced experimentation facilities across disciplines.",
     },
     {
-      id: 2,
-      title: 'Total Number of Laboratories',
-      value: '90+',
+      id: 1,
+      title: 'Centres of Excellence (CoE)',
+      value: '7',
+      description: "Centres of Excellence include: AI & ML Courses Training Centre; Automobile Training Centre; BRIDGE Courses Training Centre; Robotics, Coding, & Drone; Electric Vehicles Training Centre; IIoT Training Centre; and MSME Training Centre.",
 
     },
+    // {
+    //   id: 2,
+    //   title: 'Total Number of Laboratories',
+    //   value: '90+',
+
+    // },
     {
       id: 3,
       title: 'Books & Chapters',
-      value: '3306',
-
+      value: '3306 +',
+      description: "Published a vast collection of books and book chapters across diverse disciplines.",
     }
   ]
 }) {

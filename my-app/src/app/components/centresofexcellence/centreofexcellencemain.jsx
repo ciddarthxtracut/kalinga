@@ -18,7 +18,7 @@ const centresOfExcellence = [
     name: "Automobile Training Centre",
     title: "JustAuto Solutions",
     image:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/justauto.webp",
+      "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/justauto-solutions.png",
     href: "/centresofexcellence/automobile",
   },
   {

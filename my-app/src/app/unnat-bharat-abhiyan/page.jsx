@@ -350,7 +350,7 @@ export default function UnnatBharatAbhiyanPage() {
 
                   <div className="mt-8">
                     <Gallery
-                      title="Glimpse"
+                      title="Glimpses"
                       images={ubaImages}
                       backgroundColor="bg-white"
                     />

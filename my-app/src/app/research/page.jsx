@@ -22,6 +22,7 @@ import ResearchLab from '../components/research-facilities/research-lab'
 import ImageListItem from "@/app/components/ccrc/imagelistitem";
 import ImageContent from "@/app/components/ccrc/imagecontent";
 import APITable from "../components/general/api-table";
+import PhdObjectivesPanel from "../components/phd/phd-objectives";
 
 export default function Research() {
   const { openFlipbook } = useFlipbook();
@@ -112,60 +113,13 @@ export default function Research() {
     },
   ];
 
-  const Items = [
-    {
-      id: 1,
-      text: "Library access to thousands of books, journals, magazines, research papers, dissertations, e-catalogues, online search tools, newspapers, and rare publications."
-    },
-    {
-      id: 2,
-      text: "SPSS software support for academic and research work."
-    },
-    {
-      id: 3,
-      text: "Online study materials including DELNET, NPTEL, National Digital Library, J-Gate (Social Science and Science & Technology), INSPEC by Elsevier, and Web of Science."
-    },
-    {
-      id: 4,
-      text: "CIF equipped with advanced instruments such as X-Ray Diffractometer, Viscometer, Scanning Electron Microscope, Digital pH Meter, 3D Printer, and more."
-    },
-    {
-      id: 5,
-      text: "Computer labs with high-performance computing systems and pre-installed software."
-    },
-    {
-      id: 6,
-      text: "Centres of Excellence including IBM Innovation Centre for Education, IamSMEofIndia, EBLU, BDS Education, IIoT, BOSCH, and JustAuto."
-    },
-    {
-      id: 7,
-      text: "Publication support for writing, editing, indexing, and publishing papers in UGC-CARE and Scopus-listed journals."
-    },
-    {
-      id: 8,
-      text: "IPR Support Cell assisting with patent filing, copyright support, ethics compliance, and plagiarism detection."
-    },
-    {
-      id: 9,
-      text: "Incubation Centre through Kalinga Incubation Foundation supporting startup ideas, business models, mentorship, and fund generation."
-    },
-    {
-      id: 10,
-      text: "Workshops, seminars, and competitions to showcase talent to a larger audience."
-    },
-    {
-      id: 11,
-      text: "Research grants and funding guidance for applying to grants and fellowships."
-    }
-  ];
-
   return (
     <div>
       <MainIntro
         title="Research and Innovation"
         description={[
           "Kalinga University promotes research through a knowledge-sharing mechanism that goes beyond textbooks and classroom-based studies. The primary aim of our research department is to make the outcome impactful by collaborating with renowned universities and R&D institutions. Our research-ready curriculum is constantly updated with innovative programs to tackle real-world challenges, encouraging interdisciplinary and multidisciplinary education.",
-          "Our IPR cell supports patent filing, technology development, and commercialisation, while our incubation cell connects us with local/national industry, research labs & institutions, civil society, and the Government. We conduct research work under our well-designed research policy, and to promote that, we have ample online study material, SPSS tools for research, and Drillbit to check plagiarism in research. The Central Instrumentation Facility at Kalinga has all the high-tech instruments that are not available anywhere else in Chhattisgarh."
+          "Our IPR cell supports patent filing, technology development, and commercialisation, while our incubation cell connects us with local/national industry, research labs & institutions, civil society, and the Government. We conduct research work under our well-designed research policy, and to promote that, we have ample online study material, SPSS tools for research, and Drillbit to check plagiarism in research. The Central Instrumentation Facility at Kalinga has all the high-tech instruments available only in limited institutions in Central India."
         ]}
         imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/research/research-main-content.webp"
         imageAlt="Kalinga University Research"
@@ -188,12 +142,8 @@ export default function Research() {
         showKnowMore={true}
         initialVisibleParagraphs={1}
       />
-      <ImageListItem
-        items={Items}
-        imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/research-resources/research-toolkit.webp"
-        title="Your Research Toolkit"
-        description=""
-      />
+
+      <PhdObjectivesPanel />
       <OrganogramOfKalinga
         title="Apply Now for Ph.D. Admissions"
         description="Begin your research journey with world-class faculty, advanced labs, and a structured research ecosystem."
@@ -224,7 +174,7 @@ export default function Research() {
           },
           {
             id: 3,
-            href: "/career-and-corporate-resource-centre",
+            href: "/central-instrumentation-facility",
             icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/icons/Extensive+Research+Facilities.svg",
             title: "Central Instrumentation Facility",
             description: "Convert your bold ideas into a great discovery! Our CIF are packed with high-end instruments like an X-Ray Diffractometer, 3D Printer, Bio-Chemistry Analyser, Scanning Electron Microscope, and more.",
@@ -320,7 +270,7 @@ export default function Research() {
       <ResearchSixGridButtons />
 
 
-      <ImageContent
+      {/* <ImageContent
         hasImage={false}
         buttonText="Know More"
         buttonLink="https://kalinga-university.s3.ap-south-1.amazonaws.com/research/Constitution+of+Research+Advisory+Committee.pdf"
@@ -332,7 +282,7 @@ export default function Research() {
             The Research Advisory Committee at Kalinga University promotes and monitors all research-related activities. They advise, promote research-related programs, support their development and implementation, review all the research and evaluation activities, help in mobilising funds through major and minor research projects, and secure sponsorship for seminars, symposia, conferences, or workshops from various funding agencies. We have a separate Departmental Research Committee for each department that oversees the Ph.D. admission process. The committee members carefully review each application and also evaluate their research proposals to ensure they are meeting the quality guidelines of their respective departments.
           </>
         }
-      />
+      /> */}
 
 
       <div id="seedmoney">

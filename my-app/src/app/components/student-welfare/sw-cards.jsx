@@ -29,7 +29,7 @@ const swCardsData = [
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/cultural-events.jpg",
     logoSrc: "",
-    href: "/news-and-events",
+    href: "",
   },
   {
     title: "Inclusive & Supportive Environment",
@@ -38,7 +38,7 @@ const swCardsData = [
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/inclusive-environment.webp",
     logoSrc: "",
-    href: "/student-support",
+    href: "",
   },
   {
     title: "International Student Support",
@@ -65,7 +65,7 @@ const swCardsData = [
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/facilities-for-pwd-students.jpg",
     logoSrc: "",
-    href: "/student-support",
+    href: "",
   },
   {
     title: "Prevention Against Sexual Harassment",
@@ -110,16 +110,16 @@ const swCardsData = [
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/sanitary-napkin-vending-machines.jpeg",
     logoSrc: "",
-    href: "/campus-facilities",
+    href: "",
   },
   {
-    title: "Free Health Checkup Health Camps",
+    title: "Free Health Checkup Camps",
     description:
       "Every year, we organise free health checkup camps for our students and faculty members in collaboration with various hospitals.",
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/free-health-checkup.png",
     logoSrc: "",
-    href: "/health-clinic",
+    href: "",
   },
   {
     title: "Blood Donation Camps",
@@ -128,7 +128,7 @@ const swCardsData = [
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/blood-dontaion.jpeg",
     logoSrc: "",
-    href: "/student-clubs",
+    href: "",
   },
   {
     title: "NCC",
@@ -173,7 +173,7 @@ const swCardsData = [
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/First-weeks.webp",
     logoSrc: "",
-    href: "/student-support",
+    href: "",
   },
   {
     title: "FIRST-STEP Induction Programs",
@@ -182,7 +182,7 @@ const swCardsData = [
     imageSrc:
       "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-welfare/induction-program.webp",
     logoSrc: "",
-    href: "/student-support",
+    href: "",
   },
   {
     title: "Scholarships",
@@ -220,8 +220,8 @@ export default function SwCards() {
   const wrapperRef = useRef(null);
 
   const [open, setOpen] = useState(false);
-  const [modalData, setModalData] = useState({ 
-    title: "", 
+  const [modalData, setModalData] = useState({
+    title: "",
     description: "",
     detailedDescription: "",
     benefits: []
@@ -256,28 +256,28 @@ export default function SwCards() {
       cardEls.forEach((cardEl) => {
         const title = getTitleFromCard(cardEl);
         const data = swCardsData.find((c) => c.title === title);
-        
+
         // Find button wrapper - try multiple approaches
         let btnWrap = cardEl.querySelector(".absolute.left-5.bottom-4");
-        
+
         // If not found, try finding by position classes
         if (!btnWrap) {
           const allDivs = cardEl.querySelectorAll("div");
           btnWrap = Array.from(allDivs).find(div => {
             const classes = div.className || "";
-            return classes.includes("absolute") && 
-                   classes.includes("left-5") && 
-                   classes.includes("bottom-4") &&
-                   div.querySelector("button");
+            return classes.includes("absolute") &&
+              classes.includes("left-5") &&
+              classes.includes("bottom-4") &&
+              div.querySelector("button");
           });
         }
-        
+
         if (!btnWrap) {
           // Last resort: find any div with absolute positioning that contains a button
           const absoluteDivs = cardEl.querySelectorAll("div[class*='absolute']");
           btnWrap = Array.from(absoluteDivs).find(div => div.querySelector("button"));
         }
-        
+
         if (!btnWrap) {
           return;
         }
@@ -291,14 +291,14 @@ export default function SwCards() {
           btnWrap.style.removeProperty("display"); // Remove any inline display:none
           btnWrap.style.display = "inline-flex"; // Set it again
           btnWrap.classList.add("sw-modal-button-visible");
-          
+
           // Add click handler for modal cards
           if (data?.showModal && data?.modalContent) {
             const button = btnWrap.querySelector("button");
             if (button && !button.dataset.modalHandlerAdded) {
               // Mark as handled to avoid duplicate listeners
               button.dataset.modalHandlerAdded = "true";
-              
+
               // Add modal click handler (use capture phase to run before React's handler)
               button.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -322,7 +322,7 @@ export default function SwCards() {
 
     // Run immediately and also after a short delay to ensure DOM is ready
     apply();
-    
+
     // Use setTimeout to ensure DOM is fully rendered
     const timeoutId = setTimeout(() => {
       apply();

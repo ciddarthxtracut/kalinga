@@ -26,13 +26,13 @@ const defaultButtons = [
     text: "Research, Consultancy & IPR Policy",
     href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/Research+Consultacy_compressed+(1).pdf",
   },
-  {
-    id: 2,
-    text: "Ethics Committee Constitution",
-    href: "",
-    isTable: true,
-    tableType: "ethics",
-  },
+  // {
+  //   id: 2,
+  //   text: "Ethics Committee Constitution",
+  //   href: "",
+  //   isTable: true,
+  //   tableType: "ethics",
+  // },
   {
     id: 3,
     text: "Software used for Plagiarism",
@@ -40,16 +40,16 @@ const defaultButtons = [
     isContent: true,
     contentType: "software",
   },
-  {
-    id: 4,
-    text: "Research Policy",
-    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/1.+Research+Policy+(2).pdf",
-  },
-  {
-    id: 5,
-    text: "Constitution of the Ethics Board for Maintaining Research Integrity",
-    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/5.+CONSTITUTION+OF+ETHICS+BOARD+FOR+MAINTAINING+RESEARCH+INTEGRITY.pdf"
-  },
+  // {
+  //   id: 4,
+  //   text: "Research Policy",
+  //   href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/1.+Research+Policy+(2).pdf",
+  // },
+  // {
+  //   id: 5,
+  //   text: "Constitution of the Ethics Board for Maintaining Research Integrity",
+  //   href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/research/5.+CONSTITUTION+OF+ETHICS+BOARD+FOR+MAINTAINING+RESEARCH+INTEGRITY.pdf"
+  // },
   {
     id: 6,
     text: "Conferences",
@@ -57,6 +57,13 @@ const defaultButtons = [
   },
 
   // Right Column
+  // {
+  //   id: 7,
+  //   text: "Research Advisory Committee",
+  //   href: "",
+  //   isTable: true,
+  //   tableType: "research",
+  // },
   {
     id: 7,
     text: "Research Advisory Committee",
@@ -64,23 +71,16 @@ const defaultButtons = [
     isTable: true,
     tableType: "research",
   },
-  {
-    id: 7,
-    text: "Research Advisory Committee",
-    href: "",
-    isTable: true,
-    tableType: "research",
-  },
-  {
-    id: 10,
-    text: "Research Integrity & Ethics Policy",
-    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/RESEARCH+Ethics.pdf",
-  },
-  {
-    id: 11,
-    text: "Constitution of the Research Advisory Committee",
-    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Constitution+of+Research+Advisory+Committee.pdf",
-  },
+  // {
+  //   id: 10,
+  //   text: "Research Integrity & Ethics Policy",
+  //   href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/RESEARCH+Ethics.pdf",
+  // },
+  // {
+  //   id: 11,
+  //   text: "Constitution of the Research Advisory Committee",
+  //   href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/Constitution+of+Research+Advisory+Committee.pdf",
+  // },
   // {
   //   id: 12,
   //   text: "Doctoral Research Committee",
@@ -118,11 +118,11 @@ const defaultButtons = [
   //   text: "IPR Cell",
   //   href: "/ipr-cell",
   // },
-  {
-    id: 19,
-    text: "Conferences",
-    href: "/research-conferences",
-  },
+  // {
+  //   id: 19,
+  //   text: "Conferences",
+  //   href: "/research-conferences",
+  // },
 
 ];
 
@@ -306,7 +306,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-stix text-2xl font-bold text-[var(--foreground)]">
-                Plagiarism Policy
+                Seed Money Policy
               </h3>
               <button
                 onClick={handleCloseContentModal}
@@ -419,7 +419,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
                       }}
                       className="bg-[#3A3B7B] hover:bg-[#4B4C9D] text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2 group"
                     >
-                      DrillBit
+                      Know More
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
                         <path d="M5 12h14"></path>
                         <path d="m12 5 7 7-7 7"></path>
@@ -442,7 +442,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
           aria-modal="true"
         >
           <div
-            className="bg-white rounded-2xl w-full max-w-6xl max-h-[70vh] overflow-hidden relative shadow-2xl"
+            className="bg-white rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden relative shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -460,7 +460,7 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
             </div>
 
             {/* Table Content */}
-            <div className="w-full max-h-[calc(90vh-100px)] overflow-y-auto p-4 md:p-6 pb-12">
+            <div className="w-full max-h-[calc(90vh-120px)] overflow-y-auto p-4 md:p-6 pb-20">
               {selectedTableType === "ethics" ? (
                 <DataTable
                   columns={ethicsCommitteeColumns}

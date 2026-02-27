@@ -90,7 +90,7 @@ const galleryImages = glimpses.map((g) => ({
 export default function AutomobileTrainingCentrePage() {
   const pathname = usePathname();
 
-  
+
 
   return (
     <>
@@ -98,7 +98,7 @@ export default function AutomobileTrainingCentrePage() {
         title="Automobile Training Centre"
         subtitle="In collaboration with JustAuto Solutions"
         description={aboutText}
-        imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/about/justauto.webp"
+        imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/research/justauto-solutions.png"
         imageAlt="Automobile Training Centre"
         readmore={false}
       />

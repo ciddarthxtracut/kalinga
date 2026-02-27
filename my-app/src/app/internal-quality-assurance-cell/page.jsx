@@ -12,6 +12,7 @@ import QuickLinks from "../components/general/quick_links";
 import StudentActivities from "@/app/components/department/student_activities";
 import Gallery from "@/app/components/general/gallery";
 import TwoLogo from "../components/iqac/two-logo";
+import CareerPath from '@/app/components/course/career_path'
 const IQACPage = () => {
   const pathname = usePathname();
 
@@ -74,7 +75,55 @@ const IQACPage = () => {
       description: "Kalinga Journal is a peer-reviewed academic publication that showcases research, scholarly articles, and academic contributions from faculty members and researchers, promoting academic excellence and knowledge dissemination.",
       href: "/research"
     }
-  ]
+  ];
+  const skillsContent = {
+    title: "",
+    description: "",
+    careers: [
+      {
+        id: 1,
+        title: "Other Quality inititaives",
+        description: "",
+        imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IQAC/service.svg",
+        imageAlt: "Other Quality inititaives",
+      },
+      {
+        id: 2,
+        title: "Setting a robust Feedback System",
+        description: "",
+        imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IQAC/Feedback+System.svg",
+        imageAlt: "Setting a robust Feedback System",
+      },
+      {
+        id: 3,
+        title: "Setting an Audit System",
+        description: "",
+        imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IQAC/Audit+System.svg",
+        imageAlt: "Setting an Audit System",
+      },
+      {
+        id: 4,
+        title: "Applying for Rankings",
+        description: "",
+        imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IQAC/ranking.svg",
+        imageAlt: "Applying for Rankings",
+      },
+      {
+        id: 5,
+        title: "Workshops/Seminars",
+        description: "",
+        imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IQAC/Seminars.svg",
+        imageAlt: "Workshops/Seminars",
+      },
+      {
+        id: 6,
+        title: "Building a POCO Software",
+        description: "",
+        imageSrc: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IQAC/POCO+Software.svg",
+        imageAlt: "Building a POCO Software",
+      },
+    ]
+  };
   return (
     <>
       <MainIntro
@@ -106,6 +155,11 @@ const IQACPage = () => {
         fallbackToGlobal={true}
       />
       <Gallery title="Glimpses" />
+      <CareerPath
+        title={skillsContent.title}
+        description={skillsContent.description}
+        careers={skillsContent.careers}
+      />
       <ContactSection
         mail="iqac@kalingauniversity.ac.in"
         phone=""

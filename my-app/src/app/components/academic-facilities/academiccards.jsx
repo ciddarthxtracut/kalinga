@@ -85,7 +85,7 @@ function Academiccards() {
         {
             title: "Central Instrumentation Facility",
             description:
-                "Every year, we provide on-campus and off-campus internship opportunities to our students and conduct hands-on training programs on real-world skills to improve their practical knowledge and technical expertise. We don’t just make our students academically strong but also job-ready with new skills so that they can meet industry demands.",
+                "Every year, we provide on-campus internship opportunities to our students and conduct hands-on training programs on advanced instruments to improve their practical knowledge and technical expertise. We don’t just make our students academically strong but also job-ready with new skills so that they can meet industry demands.",
             imageSrc:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/education.webp",
             logoSrc: "",
@@ -138,7 +138,7 @@ function Academiccards() {
             subtitle: "DIGITAL EDUCATION",
         },
         {
-            title: "TnP Cell",
+            title: "Training and Placement Cell",
             description:
                 "The training team conducts interview prep sessions, resume building, and soft skills training programs to fill the gap between academic learning and companies' expectations. The placement team organises campus drives to generate placement opportunities for graduate and postgraduate students.",
             imageSrc:

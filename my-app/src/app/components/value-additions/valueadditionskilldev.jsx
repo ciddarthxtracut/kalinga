@@ -7,7 +7,7 @@ function Valueadditionskilldev() {
             id: 1,
             name: "Make Your Resume Exceptional",
             title:
-                "Once you finish your degree with KU, your resume will contain all the additional skills or certifications that will keep you in the spotlight among other applicants.",
+                "By the time you complete your academic program at KU, your resume will contain all the additional skills or certifications that will keep you in the spotlight among other applicants.",
             image:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/value-additions/resume.webp",
         },
