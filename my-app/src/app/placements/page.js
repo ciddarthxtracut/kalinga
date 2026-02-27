@@ -12,7 +12,6 @@ import QuickLinks from "../components/general/quick_links";
 import FAQ from "../components/general/faq";
 import ResearchSixGridButtons from "../components/research/research_six_grid-buttons";
 import AdmissionCareer from "../components/general/admission_cta";
-import UpcomingConferences from "../components/research/upcoming_conference";
 import MentorIntro from "../components/department/dept_head_intro";
 import CenterOfExcellence from "../components/about/center_of_excellence";
 import AwardsScrollbar from "../components/home/awards-scrollbar";
@@ -906,6 +905,16 @@ export default function Research() {
         initialVisibleParagraphs={1}
         showKnowMore={true}
       />
+      <MentorIntro
+        title="Shubham Sharma"
+        subtitle="Outstanding Achiever"
+        department={null}
+        imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/out.webp"
+        quote="B.Tech. 2019 <br/> Sr. Software Developer at Oracle India Private Ltd.<br/>Package: <span style='color: var(--background);'>29.98 LPA</span><br/><img src='https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/oracle.png' alt='Oracle Logo' style='height: 80px; margin-top: 10px; background: white; padding: 5px; border-radius: 4px;' />"
+        showQuotes={false}
+        quoteContainerClassName="pl-6 md:pl-14"
+        className="py-10 bg-white"
+      />
       <Partner
         blueTitle="Best Campus Placement University in Chhattisgarh"
         redTitle="MoU Partners"
@@ -1103,6 +1112,48 @@ export default function Research() {
         imageAlt="Kalinga University Placement"
         initialVisibleParagraphs={1}
         showKnowMore={true}
+      />
+
+      <FAQ
+        title="Collaborations & Activities"
+        subtitle="Collaboration"
+        items={[
+          {
+            id: 1,
+            question: "Our Collaborations",
+            component: <APITable tableId="68" nested={true} />
+          },
+          {
+            id: 2,
+            question: "Our Collaborative Activities",
+            component: (
+              <Tabs defaultValue="2022 - 2023">
+                <TabsList className="mb-4">
+                  <TabsTrigger value="2022 - 2023">2022 - 2023</TabsTrigger>
+                  <TabsTrigger value="2021 - 2022">2021 - 2022</TabsTrigger>
+                  <TabsTrigger value="2020 - 2021">2020 - 2021</TabsTrigger>
+                  <TabsTrigger value="2019 - 2020">2019 - 2020</TabsTrigger>
+                  <TabsTrigger value="2018 - 2019">2018 - 2019</TabsTrigger>
+                </TabsList>
+                <TabsContent value="2022 - 2023">
+                  <APITable tableId="67" nested={true} />
+                </TabsContent>
+                <TabsContent value="2021 - 2022">
+                  <APITable tableId="69" nested={true} />
+                </TabsContent>
+                <TabsContent value="2020 - 2021">
+                  <APITable tableId="70" nested={true} />
+                </TabsContent>
+                <TabsContent value="2019 - 2020">
+                  <APITable tableId="71" nested={true} />
+                </TabsContent>
+                <TabsContent value="2018 - 2019">
+                  <APITable tableId="72" nested={true} />
+                </TabsContent>
+              </Tabs>
+            )
+          }
+        ]}
       />
 
       <CareerPath

@@ -69,6 +69,10 @@ const FAQ = ({
   overflowX = false,
   pyClassName = "py-16",
   headerBgColor = "bg-[var(--dark-blue)]", // Background color for table header
+  headerTextColor = "text-white",
+  evenRowBg = "bg-gray-50",
+  oddRowBg = "bg-white",
+  borderColor = "border-gray-300",
   // For button variant
   buttons = [],
   id
@@ -638,6 +642,10 @@ const FAQ = ({
                             overflowX={true}
                             className="shadow-none"
                             headerBgColor={headerBgColor}
+                            headerTextColor={headerTextColor}
+                            evenRowBg={evenRowBg}
+                            oddRowBg={oddRowBg}
+                            borderColor={borderColor}
                           />
                         </div>
                       ) : section.answer ? (

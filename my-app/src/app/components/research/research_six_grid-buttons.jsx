@@ -96,9 +96,7 @@ const defaultButtons = [
   {
     id: 14,
     text: "Research Paper",
-    href: "",
-    isTable: true,
-    tableType: "papers",
+    href: "/research-papers",
   },
   {
     id: 15,

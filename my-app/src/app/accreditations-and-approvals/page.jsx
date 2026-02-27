@@ -5,6 +5,7 @@ import APITable from '../components/general/api-table';
 import ResearchSixGridButtons from '../components/research/research_six_grid-buttons';
 import AwardsScrollbar from '../components/home/awards-scrollbar';
 import AccreditationsApprovalsSection from '../components/ana/AccreditationsApprovalsSection';
+import NIRFRankings from '../components/approvals/nirf_rankings';
 
 
 function Accreditations() {
@@ -16,44 +17,9 @@ function Accreditations() {
         { id: 4, name: "BCI", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/bci.webp" },
         { id: 5, name: "PCI", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002980.png" },
         { id: 6, name: "NCTE", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/Group+1000002978.png" },
-        { id: 6, name: "NAAC Accreditation B+", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/Accreditation+and+Ranking+Logo/Naac+niirf+2025.png" },
-    ]
-    const ranking = [
-        {
-            id: 0,
-            year: "2025",
-            title: "Ranked in top 101–150 universities",
-            subtitle: "",
-            active: true,
-        },
-        {
-            id: 1,
-            year: "2024",
-            title: "Ranked in top 101–150 universities",
-            subtitle: "",
-            active: true,
-        },
-        {
-            id: 2,
-            year: "2023",
-            title: "Ranked in top 101–150 universities",
-            subtitle: "",
-            active: true,
-        },
-        {
-            id: 3,
-            year: "2022",
-            title: "Ranked in top 101–150 universities",
-            subtitle: "",
-            active: true,
-        },
-        {
-            id: 4,
-            year: "2021",
-            title: "Ranked in top 151–200 universities",
-            subtitle: "",
-            active: true,
-        },
+        // { id: 6, name: "NAAC Accreditation B+", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/Accreditation+and+Ranking+Logo/Naac+niirf+2025.png" },
+        { id: 6, name: "NAAC Accreditation B+", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/naac.webp" },
+        { id: 6, name: "NIRF", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/nirf-logo-new.jpeg" },
 
     ]
     const defaultButtons = [
@@ -140,8 +106,8 @@ function Accreditations() {
             { id: "pci", label: "PCI Approval" },
             { id: "aicte", label: "AICTE Approval" },
             { id: "bci", label: "BCI Approval" },
-            { id: "naac", label: "National Assessment and Accreditation Council" },
             { id: "ncte", label: "NCTE Approval" },
+            { id: "naac", label: "National Assessment and Accreditation Council" },
             { id: "eoa_pharmacy", label: "EOA PHARMACY" },
             { id: "eoa_diploma", label: "EOA Diploma Engg" },
         ],
@@ -242,7 +208,16 @@ function Accreditations() {
                 accreditations={aboutApproval}
             />
 
-            <AwardsScrollbar title="NIRF Ranking" awards={ranking} />
+            <NIRFRankings
+                description="NIRF is a methodology adopted by the Ministry of Education, Government of India, to rank higher education institutions in India. It considers several parameters such as Teaching, Learning and Resources, Research and Professional Practice, Graduation Outcomes, etc."
+                rankings={[
+                    { year: "2021", range: "151-200" },
+                    { year: "2022", range: "101-150" },
+                    { year: "2023", range: "101-150" },
+                    { year: "2024", range: "101-150" },
+                    { year: "2025", range: "101-150" },
+                ]}
+            />
             <AccreditationsApprovalsSection data={accreditationsData} />
             <ResearchSixGridButtons buttons={defaultButtons} />
         </>

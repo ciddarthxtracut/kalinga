@@ -157,6 +157,11 @@ export default function Page() {
         subtitleClassName="!hidden"
         variant="table-display"
         items={[]}
+        headerBgColor="bg-[var(--button-red)]"
+        headerTextColor="text-white"
+        evenRowBg="bg-white"
+        oddRowBg="bg-gray-50"
+        borderColor="border-gray-200"
         tableSections={[
 
           {
