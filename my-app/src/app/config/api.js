@@ -58,6 +58,11 @@ export const API_CONFIG = {
     detail: (id) => `/clubs/${id}/`,
   },
 
+  // College Pictures endpoints
+  collegePictures: {
+    list: () => `/college-pictures/`,
+  },
+
   // Designations endpoints
   designations: {
     list: () => `/designations/`,

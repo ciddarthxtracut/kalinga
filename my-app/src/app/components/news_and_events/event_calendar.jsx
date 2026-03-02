@@ -236,8 +236,15 @@ export default function EventCalendar({ items = [], departments = [], showNews =
               {currentEvents.length > 0 ? (
                 <div className="space-y-6 flex-grow min-h-0">
                   {currentEvents.map((item) => {
-                    const plainText = parseHtmlToText(item.content || '');
-                    const shortDesc = plainText.length > 100 ? plainText.substring(0, 100) + '...' : plainText;
+                    // Truncation logic helper for fallback content
+                    const getTruncatedContent = (content) => {
+                      const plainText = parseHtmlToText(content || '');
+                      const words = plainText.split(/\s+/);
+                      if (words.length <= 18) return plainText;
+                      return words.slice(0, 18).join(" ") + " ....";
+                    };
+
+                    const shortDesc = item.short_para ? parseHtmlToText(item.short_para) : getTruncatedContent(item.content);
 
                     return (
                       <div key={item.id} className="bg-[var(--light-gray)] rounded-lg shadow-sm overflow-hidden flex items-center flex-wrap md:flex-nowrap">
@@ -261,7 +268,7 @@ export default function EventCalendar({ items = [], departments = [], showNews =
                           <h3 className="text-xl md:text-2xl  mb-3 font-stix leading-tight">
                             {item.heading}
                           </h3>
-                          <p className="text-[var(--text-gray)] mb-4 text-sm leading-relaxed line-clamp-2">
+                          <p className="text-[var(--text-gray)] mb-4 text-sm leading-relaxed">
                             {shortDesc}
                           </p>
 

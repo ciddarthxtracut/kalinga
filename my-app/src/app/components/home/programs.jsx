@@ -55,14 +55,14 @@ const getStudyLevel = (programType) => {
 
 // Helper function to format duration
 const formatDuration = (course) => {
-  if (!course) return "3 Year"
+  if (!course || !course.duration) return null
   const duration = course.duration
   const durationNum = typeof duration === 'number' ? duration : parseInt(duration)
-  let formattedDuration = "3 Year"
+  let formattedDuration = null
 
   if (!isNaN(durationNum)) {
     formattedDuration = `${durationNum} Year${durationNum > 1 ? 's' : ''}`
-  } else if (duration && typeof duration === 'string') {
+  } else if (duration && typeof duration === 'string' && duration.trim() !== '') {
     formattedDuration = duration
   }
 
@@ -107,17 +107,17 @@ const Programs = () => {
           })
         ])
 
-        // Create a map of course ID to image URL
+        // Create a map of course ID to about data object
         // Handle multiple entries per course by keeping the first one
         const aboutMap = new Map()
         if (Array.isArray(courseAboutData)) {
           courseAboutData.forEach(item => {
-            if (item.course && item.image) {
+            if (item.course) {
               // Convert course ID to number for consistent matching
               const courseId = typeof item.course === 'number' ? item.course : parseInt(item.course)
 
-              if (!aboutMap.has(courseId) && item.image) {
-                aboutMap.set(courseId, item.image)
+              if (!aboutMap.has(courseId)) {
+                aboutMap.set(courseId, item)
               }
             }
           })
@@ -186,14 +186,14 @@ const Programs = () => {
       id: `static-phd-${spec.replace(/\s+/g, '-').toLowerCase()}`,
       title: "Doctor of Philosophy",
       shortName: `Ph.D - ${spec}`,
-      summary: `Research program in ${spec.toLowerCase()}. Doctor of Philosophy (Ph.D.) is a research-based doctoral program designed to equip students with advanced knowledge and research skills.`,
+      summary: `Advanced research-based doctoral program in ${spec.toLowerCase()} for developing specialized expertise.`,
       type: "PhD",
       program_type: "phd",
       specialization: spec,
       courseSlug: "phd",
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/phd-placeholder.jpg", // Fallback image
-      hideDuration: true,
-      hideScholarshipLink: true,
+      duration: "3 Years",
+      scholarships: "Check eligibility",
       showSpecializationDropdown: false,
       applyNowLink: "https://admissions.kalingauniversity.ac.in/"
     }));
@@ -243,14 +243,49 @@ const Programs = () => {
       const mappedLevel = getStudyLevel(programType)
       const courseSlug = course.slug || course.name?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
 
-      // Get image from course-about API, fallback to sequential placeholder
+      // Get about data from course-about API, fallback to sequential placeholder
       const courseId = typeof course.id === 'number' ? course.id : parseInt(course.id)
-      let courseImage = courseAboutMap.get(courseId)
+      const aboutData = courseAboutMap.get(courseId)
+      let courseImage = aboutData?.image
 
       if (!courseImage) {
         // Use sequential placeholder if API image is missing
         courseImage = PROGRAM_PLACEHOLDERS[placeholderCounter % PROGRAM_PLACEHOLDERS.length]
         placeholderCounter++
+      }
+
+      // Extract one suitable description truncated to 12 words
+      let content = ""
+
+      // 1. Try course.about_sections (if the API included it)
+      if (course.about_sections && Array.isArray(course.about_sections) && course.about_sections.length > 0) {
+        content = course.about_sections[0].content || ""
+      }
+
+      // 2. Fallback to courseAboutMap (from /course-about/ API)
+      if (!content && aboutData?.content) {
+        content = aboutData.content
+      }
+
+      // 3. Fallback to course.summary
+      if (!content && course.summary) {
+        content = course.summary
+      }
+
+      let finalSummary = ""
+      if (content) {
+        // Strip HTML tags
+        const plainText = content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
+        // Split into words and truncate to 18 words
+        const words = plainText.split(/\s+/)
+        if (words.length > 18) {
+          finalSummary = words.slice(0, 18).join(' ') + " ...."
+        } else {
+          finalSummary = plainText
+        }
+      } else {
+        // Ultimate fallback
+        finalSummary = `Explore ${courseName} program with comprehensive curriculum and industry exposure.`
       }
 
       return {
@@ -260,7 +295,7 @@ const Programs = () => {
         specialization: course.specialization || course.departmentName || "",
         type: mappedLevel,
         img: courseImage,
-        summary: course.summary || `Explore ${courseName} program with comprehensive curriculum and industry exposure.`,
+        summary: finalSummary,
         scholarships: course.hideScholarshipLink ? null : 'Check eligibility',
         courseSlug: courseSlug,
         courseUrl: course.courseUrl,

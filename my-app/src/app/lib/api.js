@@ -155,6 +155,30 @@ export async function fetchAllCourses() {
 }
 
 /**
+ * Fetches college pictures from the API
+ * @returns {Promise<Array>} Array of college picture objects
+ */
+export async function fetchCollegePictures() {
+  try {
+    const url = getApiUrl(API_CONFIG.collegePictures.list());
+    const response = await fetch(url, {
+      method: 'GET',
+      next: { revalidate: 3600 },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return extractResults(data);
+  } catch (error) {
+    console.error('Error fetching college pictures:', error);
+    throw error;
+  }
+}
+
+/**
  * Fetches courses for a department from the API
  * @param {string|number} slugOrId - The department slug or ID
  * @returns {Promise<Array>} Array of course objects

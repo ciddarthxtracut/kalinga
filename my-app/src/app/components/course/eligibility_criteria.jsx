@@ -18,6 +18,49 @@ const defaultContent = {
   admissionButtonLabel: "Admission Open",
 };
 
+const CriterionItem = ({ criterion }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Helper to strip HTML and count words
+  const stripHtml = (html) => {
+    if (!html) return "";
+    return html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  };
+
+  const text = stripHtml(criterion);
+  const words = text.split(" ").filter((word) => word.length > 0);
+  const isTooLong = words.length > 200;
+
+  if (!isTooLong) {
+    return (
+      <p
+        className="text-white"
+        dangerouslySetInnerHTML={{ __html: criterion }}
+      />
+    );
+  }
+
+  const truncatedText = words.slice(0, 200).join(" ") + " ...";
+
+  return (
+    <div className="flex flex-col gap-1">
+      <p className="text-white">
+        {isExpanded ? (
+          <span dangerouslySetInnerHTML={{ __html: criterion }} />
+        ) : (
+          <span>{truncatedText}</span>
+        )}
+      </p>
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="text-[var(--card-skin)] text-xs font-semibold hover:underline w-fit mt-1"
+      >
+        {isExpanded ? "Read Less" : "Read More"}
+      </button>
+    </div>
+  );
+};
+
 export default function EligibilityCriteria({
   imageUrl = defaultContent.imageUrl,
   imageAlt = defaultContent.imageAlt,
@@ -32,10 +75,22 @@ export default function EligibilityCriteria({
 }) {
   const [activeTab, setActiveTab] = useState("direct");
 
-  const currentDuration = activeTab === "lateral" && lateralEntryData ? lateralEntryData.duration : duration;
-  const currentCriteria = activeTab === "lateral" && lateralEntryData ? lateralEntryData.criteria : criteria;
-  const currentTitle = activeTab === "lateral" && lateralEntryData ? "Lateral Entry Eligibility" : title;
-  const currentDescription = activeTab === "lateral" && lateralEntryData ? lateralEntryData.description : null;
+  const currentDuration =
+    activeTab === "lateral" && lateralEntryData
+      ? lateralEntryData.duration
+      : duration;
+  const currentCriteria =
+    activeTab === "lateral" && lateralEntryData
+      ? lateralEntryData.criteria
+      : criteria;
+  const currentTitle =
+    activeTab === "lateral" && lateralEntryData
+      ? "Lateral Entry Eligibility"
+      : title;
+  const currentDescription =
+    activeTab === "lateral" && lateralEntryData
+      ? lateralEntryData.description
+      : null;
 
   return (
     <section className="bg-[var(--dark-blue)] py-16 rounded-2xl mx-2">
@@ -78,13 +133,18 @@ export default function EligibilityCriteria({
 
             {/* Duration Box */}
             <div className="bg-[var(--card-skin)] rounded-lg px-2 py-5 text-center">
-              <h3 className="text-[18px] md:text-[24px]">Duration : {currentDuration}</h3>
+              <h3 className="text-[18px] md:text-[24px]">
+                Duration : {currentDuration}
+              </h3>
             </div>
 
             {/* Eligibility Criteria Section */}
             <div>
               {currentDescription && (
-                <div className="mb-6 text-white/90 text-[15px] leading-relaxed font-plus-jakarta-sans" dangerouslySetInnerHTML={{ __html: currentDescription }} />
+                <div
+                  className="mb-6 text-white/90 text-[15px] leading-relaxed font-plus-jakarta-sans"
+                  dangerouslySetInnerHTML={{ __html: currentDescription }}
+                />
               )}
               <div className="mb-6">
                 <SectionHeading
@@ -95,8 +155,8 @@ export default function EligibilityCriteria({
 
               <ul className="space-y-4">
                 {currentCriteria.map((criterion, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <div className="bg-[var(--card-skin)]   rounded-md p-1.5 flex-shrink-0">
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="bg-[var(--card-skin)]   rounded-md p-1.5 flex-shrink-0 mt-0.5">
                       <svg
                         width="20"
                         height="20"
@@ -114,7 +174,7 @@ export default function EligibilityCriteria({
                         />
                       </svg>
                     </div>
-                    <p className="text-white" dangerouslySetInnerHTML={{ __html: criterion }} />
+                    <CriterionItem criterion={criterion} />
                   </li>
                 ))}
               </ul>
