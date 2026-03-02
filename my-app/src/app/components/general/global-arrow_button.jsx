@@ -8,7 +8,8 @@ const GlobalArrowButton = ({
   variant = "default", // "default", "no-arrow", "transparent", "white"
   icon, // optional custom icon component
   onClick,
-  as: Component = "button"
+  as: Component = "button",
+  ...props
 }) => {
   const showArrow = variant === "default" || variant === "transparent" || variant === "white";
 
@@ -73,6 +74,7 @@ const GlobalArrowButton = ({
     <Component
       onClick={onClick}
       className={`${baseButtonClasses} ${variantButtonClasses[variant] || variantButtonClasses.default} ${showArrow ? '' : ''} ${className}`}
+      {...props}
     >
       <p className={`text-left  !font-medium max-w-fit ${textclassname} ${textClassName}`}>{children}</p>
       {showArrow && (

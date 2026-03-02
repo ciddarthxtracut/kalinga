@@ -39,7 +39,8 @@ export default function MainIntro({
   descriptionClassName = "text-[var(--light-text-gray)]",
   hidePointsUntilExpanded = false,
   sectionClassName = null,
-  imageObjectFit = "cover"
+  imageObjectFit = "cover",
+  extraContent = null
 }) {
   const [showAll, setShowAll] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -264,6 +265,12 @@ export default function MainIntro({
                     )}
                   </div>
                 )}
+
+              {extraContent && (
+                <div className="extra-content">
+                  {extraContent}
+                </div>
+              )}
             </div>
           </div>
 
