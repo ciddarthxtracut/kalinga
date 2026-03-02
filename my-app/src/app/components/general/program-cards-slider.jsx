@@ -35,19 +35,32 @@ export const renderProgramCard = (program) => {
                 height={20}
                 className="mt-0.5"
               />
-              <span className="text-gray-800"><span className="font-stix md:text-[20px] text-[16px] text-black">Scholarships :</span> {program.scholarships}</span>
+              <span className="text-gray-800">
+                <span className="font-stix md:text-[20px] text-[16px] text-black">Scholarships :</span>
+                <Link href="/scholarships" className="ml-1 hover:text-[var(--button-red)] transition-colors inline-block">
+                  {program.scholarships}
+                </Link>
+              </span>
             </li>
           )}
-          {program.programs && (
+          {program.duration && (
             <li className="flex items-start gap-2">
-              <Image
-                src="https://kalinga-university.s3.ap-south-1.amazonaws.com/logos/hand-graduation-icon.png"
-                alt="Programs icon"
-                width={20}
-                height={20}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--button-red)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="mt-0.5"
-              />
-              <span className="text-gray-800"><span className="font-stix md:text-[20px] text-[16px] text-black">Programs :</span> {program.programs}</span>
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span className="text-gray-800"><span className="font-stix md:text-[20px] text-[16px] text-black">Duration :</span> {program.duration}</span>
             </li>
           )}
         </ul>

@@ -51,8 +51,8 @@ const defaultActivities = [
 function getPreviewText(desc) {
   const text = Array.isArray(desc) ? desc.join(" ") : (desc || "").toString();
   const words = text.trim().split(/\s+/);
-  if (words.length <= 20) return text;
-  return words.slice(0, 20).join(" ") + "...";
+  if (words.length <= 18) return text;
+  return words.slice(0, 18).join(" ") + " ....";
 }
 
 
@@ -127,7 +127,8 @@ export default function StudentActivities({
           let mappedActivities = results.map(item => ({
             id: item.id,
             title: item.heading,
-            description: parseHtmlToText(item.content),
+            description: item.short_para ? parseHtmlToText(item.short_para) : getPreviewText(parseHtmlToText(item.content)),
+            fullDescription: parseHtmlToText(item.content),
             imageSrc: item.primary_image?.image || item.images?.[0]?.image || "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/image+15.png",
             imageAlt: item.primary_image?.alt || item.images?.[0]?.alt || item.heading || "Events & Activities",
             date: item.date,
@@ -178,10 +179,7 @@ export default function StudentActivities({
   }, [activities]);
 
   const ActivityCard = ({ activity }) => {
-    const preview = useMemo(
-      () => getPreviewText(activity.description),
-      [activity.description]
-    );
+    const preview = activity.description;
 
     return (
       <div className={`bg-[var(--light-gray)] rounded-lg p-5 ${cardHeightClass} flex flex-col`}>
@@ -207,12 +205,12 @@ export default function StudentActivities({
           </div>
         )}
 
-        <h3 className="text-left text-lg mt-0 mb-2 leading-normal line-clamp-2">
+        <h3 className="text-left text-lg mt-0 mb-2 leading-normal">
           {activity.title}
         </h3>
 
         <div className="text-left flex-grow text-neutral-800">
-          <p className="m-0 text-sm line-clamp-3">
+          <p className="m-0 text-sm whitespace-pre-wrap">
             {preview}
           </p>
         </div>
@@ -534,13 +532,13 @@ export default function StudentActivities({
             )}
           </div>
 
-          {selectedActivity?.description && (
+          {(selectedActivity?.fullDescription || selectedActivity?.description) && (
             <div className="space-y-4">
               <h4 className="text-lg font-bold border-l-4 border-[var(--button-red)] pl-3 text-[var(--foreground)] uppercase tracking-wide">
                 Details of the Program
               </h4>
               <div className="text-gray-700 leading-relaxed font-plus-jakarta-sans whitespace-pre-wrap">
-                {selectedActivity.description}
+                {selectedActivity.fullDescription || selectedActivity.description}
               </div>
             </div>
           )}

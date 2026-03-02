@@ -75,8 +75,15 @@ export default function UpcomingConference({
           }
 
           const mappedEvents = filteredResults.map(item => {
-            const plainText = parseHtmlToText(item.content || '');
-            const descText = plainText.length > 150 ? plainText.substring(0, 150) + '...' : plainText;
+            // Truncation logic helper for fallback content
+            const getTruncatedContent = (content) => {
+              const plainText = parseHtmlToText(content || '');
+              const words = plainText.split(/\s+/);
+              if (words.length <= 18) return plainText;
+              return words.slice(0, 18).join(" ") + " ....";
+            };
+
+            const descText = item.short_para ? parseHtmlToText(item.short_para) : getTruncatedContent(item.content);
 
             return {
               id: item.id,

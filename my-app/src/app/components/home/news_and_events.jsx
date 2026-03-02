@@ -247,7 +247,7 @@ export default function NewsEvents({ categoryId, categoryIds, title, fallback = 
                               </div>
                               <div className="flex-1 pt-1">
                                 <p className="text-xs text-gray-600 font-semibold !text-[12px]">{news.date}</p>
-                                <h4 className="text-sm text-gray-800 !font-medium leading-tight mb-1 group-hover:text-[var(--dark-blue)] transition-colors line-clamp-2">{news.title}</h4>
+                                <h4 className="text-sm text-gray-800 !font-medium leading-tight mb-1 group-hover:text-[var(--dark-blue)] transition-colors">{news.title}</h4>
                               </div>
                             </Link>
                           ))
@@ -354,7 +354,7 @@ export default function NewsEvents({ categoryId, categoryIds, title, fallback = 
                           </div>
                           <div className="flex-1 pt-1">
                             <p className="text-xs text-white/70 font-semibold !text-[12px]">{event.date}</p>
-                            <p className="text-sm text-white !font-medium leading-relaxed line-clamp-2 group-hover:text-orange-300 transition-colors">{event.title}</p>
+                            <p className="text-sm text-white !font-medium leading-relaxed group-hover:text-orange-300 transition-colors">{event.title}</p>
                           </div>
                         </Link>
                       ))

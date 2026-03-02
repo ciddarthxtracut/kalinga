@@ -29,7 +29,7 @@ import DataTable from "@/app/components/general/data-table";
 import SectionHeading from "@/app/components/general/SectionHeading";
 import EligibilityCriteria from "@/app/components/course/eligibility_criteria";
 import CareerPath from "@/app/components/course/career_path";
-import { fetchAllDepartments, fetchDepartmentCompleteDetail, fetchAllDepartmentsCourses, parseHtmlToParagraphs, parseHtmlToText, parseHtmlListItems, fetchDesignations } from "@/app/lib/api";
+import { fetchAllDepartments, fetchDepartmentCompleteDetail, fetchAllDepartmentsCourses, parseHtmlToParagraphs, parseHtmlToText, parseHtmlListItems, fetchDesignations, fetchCollegePictures } from "@/app/lib/api";
 import Gallery from "@/app/components/general/gallery";
 import GlobalArrowButton from "@/app/components/general/global-arrow_button";
 
@@ -56,6 +56,7 @@ export default function DynamicDepartmentPage() {
   const [departmentId, setDepartmentId] = useState(null);
   const [departmentCourses, setDepartmentCourses] = useState([]);
   const [designations, setDesignations] = useState([]);
+  const [galleryImages, setGalleryImages] = useState([]);
 
   // Find department data from slug
   useEffect(() => {
@@ -221,6 +222,29 @@ export default function DynamicDepartmentPage() {
       }
     };
     loadDesignations();
+  }, []);
+
+  // Fetch Gallery Images
+  useEffect(() => {
+    const loadGallery = async () => {
+      try {
+        const data = await fetchCollegePictures();
+        if (data && data.length > 0) {
+          // Flatten all images from all sets if multiple exist, 
+          // or just take the first one if that's the intended structure
+          const allImages = data.flatMap(item => item.images || [])
+            .map(img => ({
+              id: img.id,
+              image: img.image,
+              alt: img.alt || "Glimpse"
+            }));
+          setGalleryImages(allImages);
+        }
+      } catch (err) {
+        console.warn('[Dept Page] Failed to fetch gallery images:', err);
+      }
+    };
+    loadGallery();
   }, []);
 
   // Map API data to components (same logic as static page)
@@ -648,7 +672,7 @@ export default function DynamicDepartmentPage() {
         departmentId={departmentData?.id}
         fallbackToGlobal={true}
       />
-      <Gallery title="Glimpses" />
+      <Gallery title="Glimpses" images={galleryImages.length > 0 ? galleryImages : undefined} />
 
       {faqItems && faqItems.length > 0 && (
         <FAQ

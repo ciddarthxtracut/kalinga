@@ -114,6 +114,15 @@ function NewsAndEvents() {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  // Truncation helper for fallback content
+  const getTruncatedContent = (content) => {
+    if (!content) return "";
+    const text = parseHtmlToText(content);
+    const words = text.split(/\s+/);
+    if (words.length <= 18) return text;
+    return words.slice(0, 18).join(" ") + " ....";
+  };
+
   // 1. Future Events (Date > Today) - For Top Section
   const futureEvents = useMemo(() => {
     return newsItems.filter(item => {
@@ -139,16 +148,18 @@ function NewsAndEvents() {
       if (!item.date) return false;
       const d = new Date(item.date);
       return d >= oneWeekAgo && d <= oneWeekFuture;
-    }).slice(0, 3).map(item => ({
-      id: item.id,
-      title: item.heading,
-      date: item.date,
-      category: item.category_name,
-      description: parseHtmlToText(item.content).substring(0, 80) + "...",
-      image: item.images?.[0]?.image || 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg',
-      href: `/news-and-events/${item.slug}`,
-      registerButtonText: "Read More"
-    }));
+    }).slice(0, 3).map(item => {
+      return {
+        id: item.id,
+        title: item.heading,
+        date: item.date,
+        category: item.category_name,
+        description: item.short_para ? parseHtmlToText(item.short_para) : getTruncatedContent(item.content),
+        image: item.images?.[0]?.image || 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg',
+        href: `/news-and-events/${item.slug}`,
+        registerButtonText: "Read More"
+      };
+    });
   }, [newsItems]);
 
   const eventActivities = [
@@ -202,6 +213,12 @@ function NewsAndEvents() {
     }
   ];
 
+  const mappedEventActivities = eventActivities.map(activity => ({
+    ...activity,
+    description: getTruncatedContent(activity.description),
+    fullDescription: activity.description
+  }));
+
 
   return (
     <div>
@@ -237,7 +254,7 @@ function NewsAndEvents() {
         id="events-activities"
         title="Excursions"
         subtitle=""
-        activities={eventActivities}
+        activities={mappedEventActivities}
         useModal={true}
       />
       <Gallery images={customImages} />

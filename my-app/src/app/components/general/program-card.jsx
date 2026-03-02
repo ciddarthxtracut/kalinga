@@ -47,7 +47,7 @@ export default function ProgramCard({
         {/* Program Details Section */}
         <div className="mb-4 md:mb-6 md:flex  gap-5">
           {/* Duration */}
-          {!program.hideDuration && (
+          {!program.hideDuration && program.duration && (
             <p className="whitespace-nowrap">
               Duration : {program.duration}
             </p>
