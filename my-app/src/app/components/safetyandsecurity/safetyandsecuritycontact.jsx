@@ -4,23 +4,7 @@ import MentorIntro from "../cif/contact_section";
 function Safetyandsecuritycontact() {
     return (
         <div>
-            {/* Hide Email + Address rows ONLY for this section */}
-            <style>{`
-  /* Hide EMAIL row */
-  .safety-helpline-card .text-white\\/80 > div:nth-child(1) {
-    display: none !important;
-  }
 
-  /* Hide ADDRESS row */
-  .safety-helpline-card .text-white\\/80 > div:nth-child(3) {
-    display: none !important;
-  }
-
-  /* ✅ Hide ONLY the default phone icon from MentorCard (extra icon) */
-  .safety-helpline-card .text-white\\/80 > div:nth-child(2) > svg {
-    display: none !important;
-  }
-`}</style>
 
 
             <MentorIntro
@@ -28,7 +12,8 @@ function Safetyandsecuritycontact() {
                 cardClassName="safety-helpline-card"
                 mail=""     // keep empty (row hidden by CSS)
                 address=""  // keep empty (row hidden by CSS)
-                phone={
+                phone=""
+                phone2={
                     <div className="flex flex-col gap-3">
                         {/* Row 1 */}
                         <div className="flex items-center gap-3">

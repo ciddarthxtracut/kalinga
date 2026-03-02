@@ -11,13 +11,13 @@ export default function Hostelgrid() {
   const stats = [
     {
       id: 1,
-      title: "Boy's Accommodation",
+      title: "Boys' Accommodation",
       number: "930 ",
       description: "Comfortable hostel facilities for boys",
     },
     {
       id: 2,
-      title: "Girl's Accommodation",
+      title: "Girls' Accommodation",
       number: "460 ",
       description: "Safe and secure hostel facilities for girls",
     },

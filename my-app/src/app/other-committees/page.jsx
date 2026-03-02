@@ -10,7 +10,7 @@ export default function OtherCommittees() {
     columns: [
       { key: "slNo", label: "S.No.", width: "w-16" },
       { key: "name", label: "Name Of Member", width: "flex-1" },
-      { key: "position", label: "Position", width: "flex-1" },
+      { key: "position", label: "", width: "flex-1" },
     ],
     data: [
       { slNo: "1", name: "Dr. Rahul Mishra", position: "Dean, Academic Affairs - Chairperson of the Committee" },
@@ -31,7 +31,7 @@ export default function OtherCommittees() {
     columns: [
       { key: "slNo", label: "S.No", width: "w-16" },
       { key: "name", label: "Name of Member", width: "flex-1" },
-      { key: "position", label: "Position", width: "flex-1" },
+      { key: "position", label: "", width: "flex-1" },
     ],
     data: [
       { slNo: "1", name: "Dr. Rahul Mishra", position: "Dean, Academic Affairs – Chairperson of the Committee" },
@@ -40,8 +40,8 @@ export default function OtherCommittees() {
       { slNo: "4", name: "Dr. Shilpi Bhattacharya", position: "Dean, Faculty of Arts & Humanities" },
       { slNo: "5", name: "Dr. A. Vijayanand", position: "Chief Proctor" },
       { slNo: "6", name: "Dr. Shilpi Shrivastava", position: "HoD, Dept. of Chemistry" },
-      { slNo: "7", name: "Ms. Mariyan Ahmed", position: "Student Representative" },
-      { slNo: "8", name: "Mrs. Shipli Nishant Tanwani", position: "Academic Officer" },
+      { slNo: "7", name: "Ms. Mariyam Ahmed", position: "Student Representative" },
+      { slNo: "8", name: "Mrs. Shilpi Nishant Tanwani", position: "Academic Officer" },
     ],
   };
 
@@ -59,12 +59,30 @@ export default function OtherCommittees() {
       { slNo: "1", name: "Dr. Lincy Roy", position: "Head of the Committee", designation: "Deputy Registrar & Head HR, Administration" },
       { slNo: "2", name: "Dr. A. Vijayanand", position: "Member", designation: "Chief Proctor" },
       { slNo: "3", name: "Ms. Saloni Tyagi", position: "Member", designation: "Assistant Professor, Faculty of Law" },
-      { slNo: "4", name: "Ms. Mariyan Ahmed", position: "Member", designation: "Assistant Professor, Faculty of C&M" },
+      { slNo: "4", name: "Ms. Mariyam Ahmed", position: "Member", designation: "Assistant Professor, Faculty of C&M" },
       { slNo: "5", name: "Mrs. Shilpi N. Tanwani", position: "Member", designation: "Academic Officer, Administration" },
       { slNo: "6", name: "Ms. Ankita Nihlani", position: "Member", designation: "Assistant Registrar, Administration" },
       { slNo: "7", name: "Ms. Alishiba Mahanand", position: "Member", designation: "Student Representative from B.Com." },
       { slNo: "8", name: "Ms. Arti Sinha", position: "Member", designation: "Student Representative from B.Ed." },
       { slNo: "9", name: "Dr. Naresh Sharma", position: "Member", designation: "Lawyer" },
+    ],
+    footerContent: [
+      "The Women's Cell or Sexual Harassment Prevention Committee has been constituted at Kalinga University under the guidelines issued by the UGC, NAAC, and the Supreme Court to consider complaints related to any sexual discrimination or harassment of girls or women within the University.",
+      "Contact Details:",
+      "Dr. Lincy Roy - Head of Committee",
+      "Phone: +91-9303097012",
+      "Email: lincy.roy@kalingauniversity.ac.in",
+      "Regulation 2013 of Prevention, Prohibition and Redressal of Sexual Harassment of Women and Students in HEIs: https://kalinga-university.s3.ap-south-1.amazonaws.com/other-committees/Regulation+2013+of+Prevention%2C+Prohibition+and+Redressal+of+Sexual+Harassment+of+Women+and+Student+in+HEI's.pdf",
+      "Regulation 2015 of Prevention, Prohibition and Redressal of Sexual Harassment of Women and Students in HEIs: https://kalinga-university.s3.ap-south-1.amazonaws.com/other-committees/Regulation+2015+of+Prevention%2C+Prohibition+and+Redressal+of+Sexual+Harassment+of+Women+and+Student+in+HEI's.pdf",
+      "<b>Functions and Responsibilities of the Women's Cell & Prevention of Sexual Harassment (POSH) Committee:</b>",
+      "Promote measures aimed at achieving gender equality, removal of gender bias or discrimination, sexual harassment and other acts of gender based violence.",
+      "Organise awareness programmes and campaigns for the benefit of all members of the University on sexual harassment and gender based discrimination.",
+      "Fulfil the directives of and guidelines issued by the Supreme Court to create an academic and work environment that is free of sexual harassment or gender-based discrimination.",
+      "Receive and redress complaints received from any member of the University (including students, research scholars, staff, hostel residents and outsiders on University premises) alleging sexual harassment by another member(s) of the University.",
+      "Take suo-moto cognisance of any act of sexual harassment or gender-based discrimination on the University campus and/or facilities and take further action in this regard.",
+      "Conduct formal inquiry, investigate and take decisions upon each complaint and recommend appropriate punishment or action to be taken, by the appropriate authority, in each instance.",
+      "Engage the services of a professional or other expert in the course of performing its functions.",
+      "Ensure that all information pertaining to either complaints registered or the proceedings and findings of any inquiries and/or investigations is kept strictly confidential.",
     ],
   };
 
@@ -75,7 +93,7 @@ export default function OtherCommittees() {
     columns: [
       { key: "slNo", label: "S.No.", width: "w-16" },
       { key: "name", label: "Name", width: "flex-1" },
-      { key: "designation", label: "Designation", width: "flex-1" },
+      { key: "designation", label: "Position", width: "flex-1" },
       { key: "area", label: "Area", width: "w-32" },
     ],
     data: [
@@ -95,7 +113,7 @@ export default function OtherCommittees() {
     columns: [
       { key: "slNo", label: "S.No.", width: "w-16" },
       { key: "name", label: "Name", width: "flex-1" },
-      { key: "designation", label: "Designation", width: "flex-1" },
+      { key: "designation", label: "Position", width: "flex-1" },
       { key: "area", label: "Area", width: "w-32" },
     ],
     data: [
@@ -115,7 +133,7 @@ export default function OtherCommittees() {
     columns: [
       { key: "slNo", label: "S.No.", width: "w-16" },
       { key: "name", label: "Name", width: "flex-1" },
-      { key: "designation", label: "Designation", width: "flex-1" },
+      { key: "designation", label: "Position", width: "flex-1" },
       { key: "area", label: "Area", width: "w-32" },
     ],
     data: [
@@ -144,7 +162,7 @@ export default function OtherCommittees() {
     ],
     data: [
       { slNo: "1", post: "President", name: "Ms. Mariyam Ahmed", fathersName: "Mr. Ainuddin Ahmed", course: "Ph.D.", yearSem: "2nd Yr.", remarks: "-" },
-      { slNo: "2", post: "Vice President", name: "Ms. Bilesiya Lavanya", fathersName: "Mr. Prakash Bilesiya", course: "MBA", yearSem: "3rd Sem", remarks: "-" },
+      { slNo: "2", post: "Vice President", name: "Ms. Lavanya Bilesiya", fathersName: "Mr. Prakash Bilesiya", course: "MBA", yearSem: "3rd Sem", remarks: "-" },
       { slNo: "3", post: "Secretory", name: "Mr. Surendra Sahu", fathersName: "Mr. Joidha Ram", course: "B.P.Ed.", yearSem: "3rd Sem", remarks: "-" },
       { slNo: "4", post: "Joint Secretary", name: "Ms. Muskan Singh", fathersName: "Mr. Ashok Singh", course: "MBA", yearSem: "3rd Sem", remarks: "Reserved for Girl Student" },
     ],
@@ -152,28 +170,6 @@ export default function OtherCommittees() {
 
   // FAQ items for committees with additional content
   const faqItems = [
-    {
-      id: 8,
-      question: "Women Cell / Prevention of Sexual Harassment (POSH) Committee",
-      answer: [
-        "The Women's Cell or Sexual Harassment Prevention Committee has been constituted at Kalinga University under the guidelines issued by the UGC, NAAC, and the Supreme Court to consider complaints related to any sexual discrimination or harassment of girls or women within the University.",
-        "Contact Details:",
-        "Dr. Lincy Roy - Head of Committee",
-        "Phone: +91-9303097012",
-        "Email: lincy.roy@kalingauniversity.ac.in",
-        "Regulation 2013 of Prevention, Prohibition and Redressal of Sexual Harassment of Women and Students in HEIs: https://kalinga-university.s3.ap-south-1.amazonaws.com/other-committees/Regulation+2013+of+Prevention%2C+Prohibition+and+Redressal+of+Sexual+Harassment+of+Women+and+Student+in+HEI's.pdf",
-        "Regulation 2015 of Prevention, Prohibition and Redressal of Sexual Harassment of Women and Students in HEIs: https://kalinga-university.s3.ap-south-1.amazonaws.com/other-committees/Regulation+2015+of+Prevention%2C+Prohibition+and+Redressal+of+Sexual+Harassment+of+Women+and+Student+in+HEI's.pdf",
-        "<b>Functions and Responsibilities of the Women's Cell & Prevention of Sexual Harassment (POSH) Committee:</b>",
-        "Promote measures aimed at achieving gender equality, removal of gender bias or discrimination, sexual harassment and other acts of gender based violence.",
-        "Organise awareness programmes and campaigns for the benefit of all members of the University on sexual harassment and gender based discrimination.",
-        "Fulfil the directives of and guidelines issued by the Supreme Court to create an academic and work environment that is free of sexual harassment or gender-based discrimination.",
-        "Receive and redress complaints received from any member of the University (including students, research scholars, staff, hostel residents and outsiders on University premises) alleging sexual harassment by another member(s) of the University.",
-        "Take suo-moto cognisance of any act of sexual harassment or gender-based discrimination on the University campus and/or facilities and take further action in this regard.",
-        "Conduct formal inquiry, investigate and take decisions upon each complaint and recommend appropriate punishment or action to be taken, by the appropriate authority, in each instance.",
-        "Engage the services of a professional or other expert in the course of performing its functions.",
-        "Ensure that all information pertaining to either complaints registered or the proceedings and findings of any inquiries and/or investigations is kept strictly confidential.",
-      ],
-    },
     {
       id: 9,
       question: "Fraud Awareness Guidelines",

@@ -345,46 +345,16 @@ export default function OpenPositions({
                       )}
 
                       {/* Buttons - Full width to match image */}
-                      {(position.knowMoreButton || position.registrationButton) && (
-                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-[450px]">
-                          {position.knowMoreButton && (
-                            <GlobalArrowButton
-                              className="!bg-[var(--dark-orange-red)] !text-white hover:!bg-[var(--dark-orange-red)]/90 flex-1 justify-between w-full"
-                              arrowClassName="!bg-white"
-                              arrowIconClassName="!text-[var(--button-red)]"
-                              onClick={() => handleKnowMore(position)}
-                            >
-                              {position.knowMoreButton}
-                            </GlobalArrowButton>
-                          )}
-                          {position.registrationButton && (
-                            position.registrationLink ? (
-                              <a
-                                href={position.registrationLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex-1 w-full"
-                              >
-                                {/* <GlobalArrowButton
-                                  className="!bg-[var(--button-red)] !text-white hover:!bg-[var(--button-red)]/90 flex-1 justify-between w-full"
-                                  arrowClassName="!bg-white"
-                                  arrowIconClassName="!text-[var(--button-red)]"
-                                  onClick={position.onRegistrationClick}
-                                >
-                                  {position.registrationButton}
-                                </GlobalArrowButton> */}
-                              </a>
-                            ) : (
-                              <GlobalArrowButton
-                                className="!bg-[var(--button-red)] !text-white hover:!bg-[var(--button-red)]/90 flex-1 justify-between w-full"
-                                arrowClassName="!bg-white"
-                                arrowIconClassName="!text-[var(--button-red)]"
-                                onClick={position.onRegistrationClick}
-                              >
-                                {position.registrationButton}
-                              </GlobalArrowButton>
-                            )
-                          )}
+                      {position.knowMoreButton && (
+                        <div className="flex flex-col gap-3 sm:gap-4 w-full max-w-[450px]">
+                          <GlobalArrowButton
+                            className="!bg-[var(--dark-orange-red)] !text-white hover:!bg-[var(--dark-orange-red)]/90 !w-full justify-between"
+                            arrowClassName="!bg-white"
+                            arrowIconClassName="!text-[var(--button-red)]"
+                            onClick={() => handleKnowMore(position)}
+                          >
+                            {position.knowMoreButton}
+                          </GlobalArrowButton>
                         </div>
                       )}
                     </div>

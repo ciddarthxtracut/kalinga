@@ -18,7 +18,6 @@ function AdmissionProcedure() {
             "Your hard work deserves a reward.",
             "At Kalinga University, you don’t have to worry about the tuition fee as we’ve got you covered. Our scholarships are designed to help bright minds and talented students succeed in their careers. ",
             "<span style='font-weight: bold; font-size: 1.125rem;'>Who Are Eligible For Our Scholarships?</span>",
-            "<a href='https://kalinga-university.s3.ap-south-1.amazonaws.com/scholarships/SCHOLARSHIP_25-26+(4)+(1).pdf' target='_blank' style='color: var(--button-red); font-weight: bold;'>Download Scholarship Policy</a>"
         ],
         points: [
             "Merit-based performers",
@@ -39,7 +38,9 @@ function AdmissionProcedure() {
         ],
         imageUrl: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ccrc/placement.png",
         imageAlt: "Scholarships & Financial Assistance",
-        knowMoreLabel: "Read More"
+        knowMoreLabel: "Read More",
+        extraLink: "https://kalinga-university.s3.ap-south-1.amazonaws.com/scholarships/Scholarships+2026-2027.pdf",
+        extraLinkLabel: "Download Scholarship Policy"
 
     }
 
@@ -70,6 +71,8 @@ function AdmissionProcedure() {
                 imageUrl={scholarshipContent.imageUrl}
                 imageAlt={scholarshipContent.imageAlt}
                 knowMoreLabel={scholarshipContent.knowMoreLabel}
+                extraLink={scholarshipContent.extraLink}
+                extraLinkLabel={scholarshipContent.extraLinkLabel}
                 hidePointsUntilExpanded={true}
             />
             <Admissionhacks />

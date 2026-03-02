@@ -8,22 +8,22 @@ import MediaCardSlider from '../components/general/media-card-slider';
 const videoItems = [
   {
     id: 1,
-    name: "Dr. Sunayana Shukla",
-    description: "Dr. Sunayana Shukla",
+    title: "Dr. Sunayana Shukla",
+    description: "ICF Certified Coach, NLP Trainer, Child Psychologist, Career Counsellor",
     videoUrl: "https://www.youtube.com/watch?v=WdKMix0cahA",
     thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/podcast/podcast-2.png",
   },
   {
     id: 2,
-    name: "Sandeep Gandhi",
-    description: "Sandeep Gandhi",
+    title: "Dr. Sandeep Gandhi",
+    description: "Registrar, Kalinga University",
     videoUrl: "https://www.youtube.com/watch?v=eSTWPTAJ-N8",
     thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/podcast/podcast-3.png",
   },
   {
     id: 3,
-    name: "Saurabh Banwar",
-    description: "Saurabh Banwar",
+    title: "Saurabh Banwar",
+    description: "Manager, CTCD",
     videoUrl: "https://www.youtube.com/watch?v=gwcT3TN_5iM",
     thumbnail: "https://kalinga-university.s3.ap-south-1.amazonaws.com/podcast/podcast-4.png",
   },
@@ -55,7 +55,7 @@ const Podcast = () => {
 
       <MediaCardSlider
         categoryTitle=""
-        title="Our Podcast"
+        title="Our Podcasts"
         description=""
         videoItems={videoItems}
         cardBgClass="bg-white"

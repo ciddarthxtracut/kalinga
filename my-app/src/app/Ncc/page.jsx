@@ -105,7 +105,7 @@ const page = () => {
       <RaipurVideoSection
         videoId="u2yYHsX52Y"
         thumbnail="https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp"
-        title="Why Every Student Should Join NCC | Career Boost, Discipline & More Revealed"
+        title=""
         description="" // optional
         alt="Video thumbnail"
         heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default

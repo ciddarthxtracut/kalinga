@@ -654,6 +654,37 @@ const FAQ = ({
                           dangerouslySetInnerHTML={{ __html: section.answer }}
                         />
                       ) : null}
+
+                      {/* Footer Content for Table Display */}
+                      {section.footerContent && (
+                        <div className="mt-6 border-t border-gray-100 pt-6">
+                          {Array.isArray(section.footerContent) ? (
+                            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans">
+                              {section.footerContent.map((listItem, idx) => (
+                                <li key={idx}>
+                                  {containsHTML(listItem) ? (
+                                    <span
+                                      className="[&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+                                      dangerouslySetInnerHTML={{ __html: listItem }}
+                                    />
+                                  ) : (
+                                    renderTextWithLinks(listItem)
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : containsHTML(section.footerContent) ? (
+                            <div
+                              className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+                              dangerouslySetInnerHTML={{ __html: section.footerContent }}
+                            />
+                          ) : (
+                            <p className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans">
+                              {renderTextWithLinks(section.footerContent)}
+                            </p>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -889,6 +920,37 @@ const FAQ = ({
                           })}
                         </div>
                       ) : null}
+
+                      {/* Footer Content for Card Display */}
+                      {section.footerContent && (
+                        <div className="mt-4 border-t border-gray-100 pt-6">
+                          {Array.isArray(section.footerContent) ? (
+                            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans">
+                              {section.footerContent.map((listItem, idx) => (
+                                <li key={idx}>
+                                  {containsHTML(listItem) ? (
+                                    <span
+                                      className="[&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+                                      dangerouslySetInnerHTML={{ __html: listItem }}
+                                    />
+                                  ) : (
+                                    renderTextWithLinks(listItem)
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : containsHTML(section.footerContent) ? (
+                            <div
+                              className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans [&_a]:text-[var(--button-red)] [&_a]:underline [&_a]:font-bold [&_a]:hover:text-[var(--dark-orange-red)] transition-colors"
+                              dangerouslySetInnerHTML={{ __html: section.footerContent }}
+                            />
+                          ) : (
+                            <p className="text-gray-700 text-sm leading-relaxed font-plus-jakarta-sans">
+                              {renderTextWithLinks(section.footerContent)}
+                            </p>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

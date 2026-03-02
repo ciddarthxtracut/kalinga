@@ -462,7 +462,7 @@ function OutdoorGames({
 
       {/* ✅ TABLE 1 (DataTable) */}
       <h5 className="mt-10 font-plus-jakarta-sans font-semibold text-[var(--foreground)]">
-        Outdoor Game Facilities
+        Outdoor Games Facilities
       </h5>
 
       <div className="mt-4">
@@ -565,7 +565,7 @@ function GlimpseGrid({ images = [] }) {
     <div className="mt-8">
       {/* ✅ Reduced on mobile only */}
       <p className="font-stix text-xl md:text-3xl text-[var(--foreground)]">
-        Training Glimpse
+        Training Glimpses
       </p>
 
       <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">

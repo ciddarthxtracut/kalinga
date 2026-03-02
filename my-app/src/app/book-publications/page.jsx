@@ -12,7 +12,7 @@ export default function Page() {
   const books = [
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(1).webp",
-      title: "Beyond the WOMB",
+      title: "Beyond the Womb",
       author: "Snehashish Sarkar",
       designation: "Assistant Professor",
       faculty: "Faculty of Arts and Humanities",
@@ -26,21 +26,21 @@ export default function Page() {
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(27).webp",
-      title: "NARI SHAKTI: The Catalyst For A Vikshit Bharat KALINGA",
+      title: "NARI SHAKTI: The Catalyst For A Vikshit Bharat",
       author: "Mr. Tushar Ranjan Barik",
       designation: "Assistant Professor",
       faculty: "Faculty of Commerce & Management",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(28).webp",
-      title: "Cybersecurity Essentials",
+      title: "NARI SHAKTI: The Catalyst For A Vikshit Bharat",
       author: "Dr. Deepti Pattnaik",
       designation: "Assistant Professor",
       faculty: "Faculty of Commerce & Management",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(29).webp",
-      title: "Beyond the Womb",
+      title: "Cybersecurity Essentials",
       author: "Mr. Kamlesh Kumar Yadav",
       designation: "Assistant Professor",
       faculty: "Faculty of CS & IT",
@@ -54,195 +54,261 @@ export default function Page() {
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(31).webp",
-      title: "Micro Economics",
-      author: "Mr. Sandeep ROy",
+      title: "Synchronous and Induction Machines",
+      author: "Mr. Sandeep Roy",
       designation: "Assistant Professor",
       faculty: "Faculty of Engineering and Technology",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(32).webp",
-      title: "Synchronous and Induction Machines",
+      title: "Cybersecurity Essentials",
       author: "Mrs. Ashu Nayak",
       designation: "Assistant Professor",
       faculty: "Faculty of CS & IT",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(4).webp",
-      title: "Advanced Engineering Mathematics",
+      title: "Protection Of Plant Varieties & Farmers' Rights",
       author: "Ms. Srishti Shriwastava",
       designation: "Associate Professor",
       faculty: "Faculty of Law",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(5).webp",
-      title: "Modern Physics for Engineers",
-      author: "Mr. Soumyadeep Chakrabarti",
+      title: "Protection Of Plant Varieties & Farmers' Rights",
+      author: "Ms. Itishri Upadhyay",
       designation: "Assistant Professor",
       faculty: "Faculty of Law",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(6).webp",
-      title: "Principles of Management",
-      author: "Mr. Ranjan Kumar Ray",
+      title: "Protection Of Plant Varieties & Farmers' Rights",
+      author: "Mr. Soumyadeep Chakrabarti",
       designation: "Assistant Professor",
       faculty: "Faculty of Law",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(7).webp",
-      title: "Data Structures using C",
-      author: "Dr. Anupa Sinha",
+      title: "Protection Of Plant Varieties & Farmers' Rights",
+      author: "Mr. Ranjan Kumar Ray",
       designation: "Assistant Professor",
       faculty: "Faculty of IT",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(8).webp",
-      title: "Introduction to Biotechnology",
-      author: "Dr. Sushma Dubey",
-      designation: "Associate Professor",
-      faculty: "Faculty of Science",
+      title: "Research Methodology",
+      author: "Dr. D. Kalidoss",
+      designation: "Associate Professor cum Director Sports",
+      faculty: "",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(9).webp",
-      title: "Pharmaceutical Inorganic Chemistry",
-      author: "Dr. Preeti Pandey",
+      title: "Micro Economics",
+      author: "Dr. Chandra Bhoosan Singh",
       designation: "Assistant Professor",
-      faculty: "Faculty of Pharmacy",
+      faculty: "Faculty of Commerce and Management",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(10).webp",
-      title: "Environmental Science and Engineering",
-      author: "Dr. Deepa Biswas",
-      designation: "Associate Professor",
-      faculty: "Faculty of Engineering",
+      title: "Technical Analysis",
+      author_1: "Dr. Chandra Bhoosan Singh",
+      author_2: "Dr. Deepti Pattnaik",
+      designation: "",
+      faculty: "Faculty of Commerce and Management",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(11).webp",
-      title: "Business Communication Skills",
-      author: "Dr. Shilpi Bhattacharya",
-      designation: "Professor",
-      faculty: "Faculty of Arts & Humanities",
+      title: "Taxation and GST in India",
+      author: "Dr. Chandra Bhoosan Singh",
+      designation: "Assistant Professor",
+      faculty: "Faculty of Commerce and Management",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(13).webp",
-      title: "Consumer Behaviour",
-      author: "Dr. Shinki Pandey",
-      designation: "Assistant Professor",
-      faculty: "Faculty of Management",
+      title: "Synchronous and Induction Machines",
+      author: "Dr. Manoj Kumar Nigam",
+      designation: "Professor and Head",
+      faculty: "Faculty of Engineering and Technology",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(14).webp",
-      title: "Network Security and Cryptography",
-      author: "Dr. R. Udaya Kumar",
+      title: "Geography of Bharat",
+      author: "Dr. A. Rajshekar",
       designation: "Professor",
-      faculty: "Faculty of Engineering",
+      faculty: "Faculty of Arts and Humanities",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(15).webp",
-      title: "Constitutional Law of India",
-      author: "Dr. Azim Khan",
-      designation: "Professor",
-      faculty: "Faculty of Law",
+      title: "Cybersecurity Essentials",
+      author: "Dr. Anupa Sinha",
+      designation: "Assistant Professor",
+      faculty: "Faculty of CS & IT",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(16).webp",
-      title: "Organic Chemistry for Beginners",
-      author: "Dr. Preeti Pandey",
-      designation: "Assistant Professor",
-      faculty: "Faculty of Science",
+      title: "Nai Talim: An Experiential Learning",
+      author_1: "Dr. Lubhawani Tripathi",
+      author_2: "Dr. Harsha Sharma",
+      designation_1: "Associate Professor",
+      designation_2: "Assistant Professor",
+      faculty: "Faculty of Education",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(17).webp",
-      title: "Software Engineering Principles",
-      author: "Dr. Manoj Kumar Nigam",
-      designation: "Professor",
-      faculty: "Faculty of IT",
+      title: "Research Methodology",
+      author: "Dr. Lubhawani Tripathi",
+      designation: "Associate Professor",
+      faculty: "Faculty of Education",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(18).webp",
-      title: "Digital Electronics and Logic Design",
-      author: "Dr. Vijayalaxmi Biradar",
-      designation: "Professor",
-      faculty: "Faculty of Engineering",
+      title: "Whispers of Wonderland",
+      author: "Dr. Papri Mukhopadhyay",
+      designation: "Assistant Professor",
+      faculty: "Faculty of Arts & Humanities",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(19).webp",
-      title: "English Literature: A Critical History",
-      author: "Dr. A. Vijayanand",
-      designation: "Assistant Professor",
+      title: "",
+      author: "Dr. Shraddha Hirkane",
+      designation: "Associate Professor",
       faculty: "Faculty of Arts & Humanities",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(20).webp",
-      title: "Physical Geography of India",
-      author: "Dr. A. Rajshekhar",
-      designation: "Professor",
-      faculty: "Faculty of Science",
+      title: "Railway Engineering",
+      author_1: "Dr. Ruchi Chandrakar",
+      author_2: "Dr. Swati Agarwal",
+      author_3: "Dr. Akshit Lamba",
+      author_4: "Ashutosh Pandey",
+      designation_1: "Assistant Professor",
+      designation_2: "Assistant Professor",
+      designation_3: "Assistant Professor",
+      designation_4: "Assistant Professor",
+      faculty: "Faculty of Technology",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(21).webp",
-      title: "Modern Indian History",
-      author: "Dr. Sanjana Singh",
-      designation: "Professor",
-      faculty: "Faculty of Arts & Humanities",
+      title: "Wisdom of the Ages",
+      author: "Dr. Amit Joshi",
+      designation: "Assistant Professor",
+      faculty: "Faculty of Science",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(22).webp",
-      title: "Media Law and Ethics",
-      author: "Dr. Yogesh Vaishnaw",
+      title: "Gender and Society",
+      author: "Esha Chatterjee",
       designation: "Assistant Professor",
-      faculty: "Faculty of Journalism",
+      faculty: "Faculty of Arts and Humanities",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(23).webp",
-      title: "Criminal Procedure Code",
-      author: "Dr. Narendra Singh",
-      designation: "Associate Professor",
-      faculty: "Faculty of Law",
+      title: "Innovative Education strategies",
+      author_1: "Dr. Shraddha Verma",
+      author_2: "Dr. Saroj Nayyar",
+      designation_1: "Dean",
+      designation_2: "Assistant Professor",
+      faculty: "Faculty of Education",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(24).webp",
-      title: "Evolutionary Biology",
-      author: "Dr. R. Jayakumar",
-      designation: "Professor",
+      title: "Next Generation Biotechnology",
+      author_1: "Dr. R. Jayakumar",
+      author_2: "Dr. Megha Chaturvedi",
+      designation_1: "Professor & Dean",
+      designation_2: "Assistant Professor",
       faculty: "Faculty of Science",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(25).webp",
-      title: "Marketing Management Trends",
-      author: "Dr. Byju John",
-      designation: "Professor",
-      faculty: "Faculty of Management",
+      title: "Exam Hand Pharmacist and Drug Inspector",
+      author: "Dr. Sandip prasad Tiwari",
+      designation: "Principal",
+      faculty: "Faculty of Pharmacy",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(26).webp",
-      title: "Discrete Mathematics",
-      author: "Dr. Jagannadha Rao",
+      title: "Challenges of NEP-2020",
+      author: "Dr. Saroj Nayyar",
       designation: "Assistant Professor",
-      faculty: "Faculty of Science",
+      faculty: "Faculty of Education",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(30).webp",
-      title: "Thermodynamics and Heat Transfer",
-      author: "Dr. Vinay Chandra Jha",
-      designation: "Professor",
-      faculty: "Faculty of Engineering",
+      title: "Cybersecurity and Essentials",
+      author: "Mr. Omprakash Dewangan",
+      designation: "Hod(Incharge)",
+      faculty: "Faculty of CS & IT",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(33).webp",
-      title: "Social Work and Community Development",
-      author: "Dr. Manoj Mathew P",
+      title: "Indian Contract Act",
+      author: "Mrs. Saloni Tyagi Shrivastava",
       designation: "Assistant Professor",
-      faculty: "Faculty of Arts & Humanities",
+      faculty: "Faculty of Law",
     },
     {
       img: "https://kalinga-university.s3.ap-south-1.amazonaws.com/book-publications/banner(12).webp",
-      title: "Advances in Zoology",
-      author: "Dr. Ajay Kumar Harit",
-      designation: "Associate Professor",
-      faculty: "Faculty of Science",
+      title: "Starlit Blueprint",
+      author: "Dr. Satvik Jain",
+      designation: "Assistant Professor",
+      faculty: "Faculty of Commerce & Management",
     },
   ];
 
+  const BookCard = ({ book }) => {
+    const authors = book.author
+      ? [book.author]
+      : [book.author_1, book.author_2, book.author_3, book.author_4].filter(
+        Boolean
+      );
+
+    const authorText =
+      authors.length > 1
+        ? authors.slice(0, -1).join(", ") + " & " + authors.slice(-1)
+        : authors[0] || "";
+
+    const designations = book.designation
+      ? [book.designation]
+      : [
+        book.designation_1,
+        book.designation_2,
+        book.designation_3,
+        book.designation_4,
+      ].filter(Boolean);
+
+    const uniqueDesignations = [...new Set(designations)];
+    const designationText = uniqueDesignations.join(", ");
+
+    return (
+      <div className="bg-[#eef2f5] rounded-xl p-4 flex gap-7 hover:shadow-lg transition-all duration-300 flex-wrap md:flex-nowrap">
+        {/* Left side: Image */}
+        <div className="w-full md:w-2/5 flex-shrink-0 max-h-52 overflow-hidden rounded-lg shadow-sm border border-black/5">
+          <img
+            src={book.img}
+            alt={book.title}
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* Right side: Metadata */}
+        <div className="md:w-3/5 flex flex-col py-1 justify-around">
+          <h3 className="font-stix text-[#a34439] text-base md:text-lg lg:text-xl font-medium leading-tight font-plus-jakarta-sans">
+            {book.title}
+            <div className="w-16 h-px bg-gray-300 my-3"></div>
+          </h3>
+
+          <div className="space-y-1">
+            <p className="font-stix text-lg md:text-xl font-medium text-gray-800">
+              By {authorText}
+            </p>
+            <p className="text-xs md:text-sm">{designationText}</p>
+            <p className="text-xs tracking-tight mt-1">{book.faculty}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="bg-white min-h-screen">

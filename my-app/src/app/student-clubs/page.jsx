@@ -41,7 +41,7 @@ const clubSections = [
       {
         name: "Marketing Club – Mercadeo",
         image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Marketing+Club+-+Mercadeo.webp",
-        description: "The name of the marketing club is derived from “Mercadeo” (a Spanish word for marketing). Marcedeo provides a vibrant platform for students interested in brand building, digital marketing, and consumer behaviour. The club conducts ad-mad shows, marketing case study competitions, social media campaigns, business idea/plan competition - Ideathon, and brainstorming sessions on current market trends."
+        description: "The name of the marketing club is derived from “Mercadeo” (a Spanish word for marketing). Mercadeo provides a vibrant platform for students interested in brand building, digital marketing, and consumer behaviour. The club conducts ad-mad shows, marketing case study competitions, social media campaigns, business idea/plan competition - Ideathon, and brainstorming sessions on current market trends."
       },
       {
         name: "HR Club – Sapiens",
@@ -57,7 +57,7 @@ const clubSections = [
     clubs: [
       {
         name: "Educraft Club",
-        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/Educraft+Club.webp",
+        image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-clubs/images-1.webp",
         description: "It is a platform that combines creativity, experiential learning, inclusive education, and holistic development of students. This club provides them with a real-world insight into different teaching methods by organizing various activities and projects that supplement the course curriculum while improving their communication and leadership skills."
       },
     ],

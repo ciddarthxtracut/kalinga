@@ -1236,7 +1236,7 @@ const page = () => {
       />
       <MediaCardSlider
         categoryTitle=""
-        title="Videos"
+        title="Moments of Joy, Pride & Celebration"
         description=""
         videoItems={videoItems}
         cardBgClass="bg-white"

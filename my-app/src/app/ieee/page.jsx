@@ -13,6 +13,8 @@ import AccreditationRanking from "../components/home/AccreditationRanking";
 import ContactSection from '../components/cif/contact_section'
 import OrganogramOfKalinga from "../components/about/organogram_of_kalinga";
 import VisaFroFrroGuidelines from "../components/international/visa_frofrro_guidelines";
+import DataTable from "../components/general/data-table";
+import ResearchSixGridButtons from "../components/research/research_six_grid-buttons";
 
 /* ---------------- DYNAMIC IMPORT ---------------- */
 
@@ -24,7 +26,7 @@ import VisaFroFrroGuidelines from "../components/international/visa_frofrro_guid
 
 
 const CARD_TEXT_CLASSNAME = "mt-[10px] text-white";
-const SECTION_TITLE_LASSNAME = "text-white";
+const SECTION_TITLE_CLASSNAME = "text-white";
 
 
 const admissionOrganogramContent = {
@@ -111,6 +113,16 @@ const objectives = [
     text: "Education and Professional Development - Offers educational and professional development resources, including online courses, webinars, workshops, and certification programs."
   }
 ];
+
+const researchSixGridButtons = [
+  {
+    id: 1,
+    text: "Read More",
+    onClick: null,
+    href: "#",
+  },
+];
+
 const aboutAccreditations = [
   { id: 1, name: "KU Logo", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IEEE/ku+sb+logo.jpeg" },
   { id: 2, name: "IEEE MP", logo: "https://kalinga-university.s3.ap-south-1.amazonaws.com/IEEE/IEEE+MP+SECTION.jpg" },
@@ -139,6 +151,58 @@ const imageSrc =
 
 const message =
   "For research collaboration, testing services, and technical support, please contact us.";
+
+
+const defaultButtons = [
+  {
+    id: 1,
+    text: "Edition 8 - Volume 4, Issue -2 July 2025 - December 2025",
+    onClick: null,
+    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/Vol4+issue+2.pdf",
+  },
+  {
+    id: 2,
+    text: "Edition 7 - Volume 4, Issue -1 January 2025 - June 2025",
+    onClick: null,
+    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/Vol4+issue+1.pdf",
+  },
+  {
+    id: 3,
+    text: "Edition 6 - Volume 3, Issue - 2 July - December 2024",
+    onClick: null,
+    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/vol3+issue+2.pdf",
+  },
+  {
+    id: 4,
+    text: "Edition 5 - Volume 3, Issue- 1 January - June 2024",
+    onClick: null,
+    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/vol3+issue+1.pdf",
+  },
+  {
+    id: 5,
+    text: "Edition 4 - Volume 2, Issue 2 July 2023-December 2023",
+    onClick: null,
+    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/vol+2+issue+2.pdf",
+  },
+  {
+    id: 6,
+    text: "Edition 3 - Volume 2, Issue 1 January - June 2023",
+    onClick: null,
+    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/vol+2+issue+1.pdf",
+  },
+  {
+    id: 7,
+    text: "Edition 2 - Volume 1, Issue 2 October –December 2022",
+    onClick: null,
+    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/vol+1+issue+2.pdf",
+  },
+  {
+    id: 8,
+    text: "Edition 1 - Volume 1, Issue 1 April-September 2022",
+    onClick: null,
+    href: "https://kalinga-university.s3.ap-south-1.amazonaws.com/ieee/vol1+issue+1.pdf",
+  },
+];
 
 export default function Page() {
   return (
@@ -562,6 +626,9 @@ export default function Page() {
           href={admissionOrganogramContent.href}
         />
       </section>
+
+      <ResearchSixGridButtons buttons={defaultButtons} />
+
       <SectionHeading
         title={
           <>

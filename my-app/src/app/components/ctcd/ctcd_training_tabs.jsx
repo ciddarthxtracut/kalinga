@@ -496,7 +496,9 @@ export default function CtcdTrainingTabs({ customTabs, heading }) {
                                                 />
                                             </div>
                                             <h3 className={CARD_TITLE_CLASSNAME}>Our Corporate Training Projects</h3>
+
                                         </div>
+                                        <p>Our corporate training team has conducted impactful training programs, supporting thousands of working professionals from top organisations in different sectors. They first understand their challenges and then design customised training programs. Some of our core topics include communication, leadership, team productivity, sales & marketing, digital knowledge, and much more. We have seen positive results in our feedback sessions, where employees have seen improved confidence and mindset, and companies were able to build a strong leadership pipeline. This makes us one of the trusted growth partners for organisations that seek sustainable growth and excellence. </p>
 
                                         {/* Projects Table */}
                                         <div className="overflow-x-auto overflow-y-auto max-h-[600px] border border-gray-200 rounded-lg">
@@ -996,7 +998,7 @@ export default function CtcdTrainingTabs({ customTabs, heading }) {
                         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 md:p-8 shadow-2xl"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="flex items-start justify-between gap-4 mb-4">
+                        <div className="flex items-start justify-between gap-4 mb-4 pt-10">
                             <h3 className="font-stix text-2xl md:text-3xl text-[var(--foreground)]">
                                 Behavioural Topics
                             </h3>
@@ -1229,7 +1231,7 @@ export default function CtcdTrainingTabs({ customTabs, heading }) {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="flex items-start justify-between gap-4 mb-4">
-                            <h3 className="font-stix text-2xl md:text-3xl text-[var(--foreground)]">
+                            <h3 className="font-stix text-2xl md:text-3xl text-[var(--foreground)] pt-10">
                                 Technical Topics
                             </h3>
 

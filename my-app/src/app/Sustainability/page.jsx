@@ -61,13 +61,13 @@ export default function SDGCell() {
       <SdgTabSection />
       {/* <FacilitySlider /> */}
       {/* <SpecializationCard /> */}
-      <FAQ
+      {/* <FAQ
         title="SDG Cell Resources"
         subtitle=""
         variant="button"
         buttons={faqItems}
         pyClassName="py-8 md:py-12"
-      />
+      /> */}
     </div>
   );
 }

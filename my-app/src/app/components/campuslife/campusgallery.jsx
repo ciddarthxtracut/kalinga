@@ -32,7 +32,7 @@ const defaultImages = [
 ];
 
 export default function Gallery({
-  title = "Collage of life @KU",
+  title = "Glimpses",
   images = defaultImages,
   description = null
 }) {

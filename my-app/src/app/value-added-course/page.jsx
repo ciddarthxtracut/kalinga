@@ -177,7 +177,7 @@ export default function ValueAddedPage() {
       <div className="px-2 md:px-0">
         <MediaCardSlider
           categoryTitle=""
-          title="Our Student Experiences"
+          title="Our Students’ Experiences"
           videoItems={videoItems}
           nameTextClass="text-[#A61E1E]"
           swiperClassName="value-added-video-slider"

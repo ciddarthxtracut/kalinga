@@ -106,7 +106,7 @@ function HostelFeeTable({ rows }) {
             { key: "hostelName", label: "Hostel Name", widthPx: 220 },
             { key: "food", label: "Food", widthPx: 140 },
             { key: "occupancy", label: "Occupancy", widthPx: 120 },
-            { key: "waterCooled", label: "Air-Cooled (₹)", widthPx: 210 },
+            { key: "waterCooled", label: "Water Cooled Room (₹)", widthPx: 210 },
             { key: "acRoom", label: "AC Room (₹)", widthPx: 160 },
         ],
         []
@@ -158,18 +158,18 @@ function BoysHostel() {
 
             <HostelFeeTable
                 rows={[
-                    ["Brahmaputra", "Veg", "5", "98,000", "1,22,000"],
-                    ["Brahmaputra", "Non-Veg", "5", "1,34,000", "1,58,000"],
-                    ["Pacific", "Veg", "7", "78,000", "96,000"],
-                    ["Pacific", "Non-Veg", "7", "1,14,000", "1,32,000"],
-                    ["Pacific", "Veg", "5", "98,000", "1,36,000"],
-                    ["Pacific", "Non-Veg", "5", "1,34,000", "1,58,000"],
-                    ["Pacific", "Veg", "3", "1,12,000", "1,57,000"],
-                    ["Pacific", "Non-Veg", "3", "1,48,000", "1,93,000"],
-                    ["Pacific", "Veg", "2", "1,16,000", "1,76,000"],
-                    ["Pacific", "Non-Veg", "2", "1,52,000", "2,12,000"],
-                    ["Everest", "Veg", "4", "90,000", "NA"],
-                    ["Everest", "Non-Veg", "4", "1,26,000", "NA"],
+                    ["Brahmaputra", "Veg", "5", "1,02,000", "1,26,000"],
+                    ["Brahmaputra", "Non-Veg", "5", "1,38,000", "1,62,000"],
+                    ["Pacific", "Veg", "7", "82,000", "1,00,000"],
+                    ["Pacific", "Non-Veg", "7", "1,18,000", "1,36,000"],
+                    ["Pacific", "Veg", "5", "1,02,000", "1,26,000"],
+                    ["Pacific", "Non-Veg", "5", "1,38,000", "1,62,000"],
+                    ["Pacific", "Veg", "3", "1,16,000", "1,61,000"],
+                    ["Pacific", "Non-Veg", "3", "1,52,000", "1,97,000"],
+                    ["Pacific", "Veg", "2", "1,20,000", "1,80,000"],
+                    ["Pacific", "Non-Veg", "2", "1,56,000", "2,16,000"],
+                    ["Everest", "Veg", "4", "94,000", "NA"],
+                    ["Everest", "Non-Veg", "4", "1,30,000", "NA"],
                 ]}
             />
         </>

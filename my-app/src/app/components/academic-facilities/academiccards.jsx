@@ -186,7 +186,7 @@ function Academiccards() {
         {
             title: "Language Lab",
             description:
-                "A dedicated learning space designed for students to improve their language and communication skills in English and Hindi",
+                "A dedicated learning space designed for students to improve their language and communication skills in English and Hindi.",
             imageSrc:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/academics/arts.webp",
             logoSrc: "",

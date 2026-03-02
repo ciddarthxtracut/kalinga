@@ -8,7 +8,7 @@ import RaipurVideoSection from '../components/about-raipur/raipurvideo';
 
 const page = () => {
 
-  
+
   return (
     <>
       <style jsx global>{`
@@ -26,7 +26,7 @@ const page = () => {
       <RaipurVideoSection
         videoId="8bqYKGqQ8XI"
         thumbnail="https://kalinga-university.s3.ap-south-1.amazonaws.com/mini-market/thumbnail.webp"
-        title="Kalinga University's Convenient Mini Market: One Stop Station for Campus Life Essentials!"
+        title=""
         description="" // optional
         alt="Video thumbnail"
         heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default

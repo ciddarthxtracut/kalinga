@@ -33,7 +33,7 @@ export default function KIFPage({
 } = {}) {
   const pathname = usePathname();
 
-  
+
 
   const visionMissionData = visionMissionDataProp ?? [{
     visionTitle: "Vision",
@@ -477,8 +477,8 @@ export default function KIFPage({
   return (
     <div>
       <ImageContent
-        title="About Kalinga Incubation Foundation (KIF) Ideation | Execution | Expansion"
-        subtitle="About KIF"
+        title="About Kalinga Incubation Foundation (KIF)"
+        subtitle="Ideation | Execution | Expansion"
         description="KIF was established in 2023, where students' bold and unique ideas are supported so that their entrepreneurial ambitions can be turned into ACTION. Recognised as a Host Institute under the Ministry of MSME, Government of India, and structured as a Section 8, not-for-profit company under the Ministry of Corporate Affairs (MCA), Government of India, its motive is to promote the spirit of research, innovation, and entrepreneurship among students and faculty members of our University."
         additionalContent={kifAdditionalContent}
       />
@@ -505,7 +505,7 @@ export default function KIFPage({
 
       <OrganogramOfKalinga
         title="Join Us on Your Entrepreneurial Journey"
-        description="We transform young innovators' ideas into scalable and profitable ventures."
+        description="Let’s work together on your ideas and turn them into a successful venture."
         buttonLabel="Download Form"
         href="https://kalinga-university.s3.ap-south-1.amazonaws.com/kif/stratup_reg_form.pdf"
         cardBackgroundColor="bg-[var(--button-red)]"
@@ -513,8 +513,8 @@ export default function KIFPage({
       />
       <CenterOfExcellence
         centres={centres}
-        title="Startup Partners"
-        subtitle="Supporting ideas of innovators"
+        title="Startups"
+        subtitle="Supporting Ideas of Innovators"
         description="Explore the spaces and partnerships that power the Kalinga Incubation Foundation."
       />
       <StudentActivities activities={activities} subtitle="" title="KIF Events" showReadMore={false} />

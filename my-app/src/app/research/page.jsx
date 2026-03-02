@@ -291,27 +291,9 @@ export default function Research() {
           variant="button"
           title=""
           subtitle=""
+          pyClassName="py-5"
         />
       </div>
-
-
-      {/* 
-        categoryId="RESEARCH_ID" is a placeholder. 
-        Since this ID presumably doesn't exist, it will fallback to showing ALL events (fallback='all' by default).
-        Once a real Research category ID exists, it will filter correctly.
-      */}
-      {/* <NewsEvents categoryId="RESEARCH_ID" title="Upcoming Conferences & Events" /> */}
-      {/* <UpcomingConferences
-        categoryIds={['5']}
-        title="Conferences & Events"
-        fallback="all"
-        limit={5}
-      /> */}
-      {/* <CenterOfExcellence
-        centres={centres}
-        title=" Collaborative Activities/MoU"
-        description="Explore the spaces and partnerships that power the Kalinga Incubation Foundation."
-      /> */}
       <ResearchCE />
       <AwardsScrollbar
         title="Awards Received for Research & Innovation"

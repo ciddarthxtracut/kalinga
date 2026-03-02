@@ -88,14 +88,14 @@ const defaultButtons = [
   // },
   {
     id: 13,
-    text: "Seed Money",
+    text: "Seed Money Policy",
     href: "",
     isContent: true,
     contentType: "seed-money",
   },
   {
     id: 14,
-    text: "Research Paper",
+    text: "Research Papers",
     href: "/research-papers",
   },
   {
@@ -300,13 +300,13 @@ export default function ResearchSixGridButtons({ buttons = defaultButtons }) {
           aria-modal="true"
         >
           <div
-            className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden relative shadow-2xl p-6 md:p-8"
+            className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden relative shadow-2xl p-6 md:p-8 pt-12 md:pt-16"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-stix text-2xl font-bold text-[var(--foreground)]">
-                Seed Money Policy
+                {selectedTitle}
               </h3>
               <button
                 onClick={handleCloseContentModal}

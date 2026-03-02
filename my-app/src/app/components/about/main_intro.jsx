@@ -33,6 +33,8 @@ export default function MainIntro({
   knowMoreLabel = "Read More",
   knowMoreHref = null,
   onKnowMore = null,
+  extraLink = null,
+  extraLinkLabel = "Explore Now",
   reverseLayout = false,
   applyTransform3dSlant = true,
   disableClipPath = true,
@@ -209,38 +211,34 @@ export default function MainIntro({
               )}
 
               {showKnowMore && (
-                needsTruncation ||
-                (hidePointsUntilExpanded && points && points.length > 0) ||
-                (knowMoreHref && knowMoreHref !== "#")
-              ) && (
-                  <div className="pt-2">
-                    {knowMoreHref && knowMoreHref !== "#" ? (
-                      (() => {
-                        const isPdf = knowMoreHref.toLowerCase().endsWith(".pdf");
-                        const buttonEl = (
-                          <GlobalArrowButton
-                            className="w-fit !bg-white !text-white gap-2 !px-0 !py-0"
-                            textClassName="!text-[var(--button-red)] !font-semibold !px-0"
-                            arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
-                            arrowIconClassName="!text-white"
-                          >
-                            {knowMoreLabel}
-                          </GlobalArrowButton>
-                        );
+                <div className="pt-2 flex flex-wrap gap-4 items-center">
+                  {/* Expansion Toggle (Read More / Show Less) */}
+                  {(needsTruncation || (hidePointsUntilExpanded && points && points.length > 0)) && (
+                    <GlobalArrowButton
+                      className="w-fit !bg-white !text-white gap-2 !px-0 !py-0"
+                      textClassName="!text-[var(--button-red)] !font-semibold !px-0"
+                      arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
+                      arrowIconClassName="!text-white"
+                      onClick={() => setShowAll(!showAll)}
+                    >
+                      {showAll ? "Show Less" : knowMoreLabel}
+                    </GlobalArrowButton>
+                  )}
 
-                        return isPdf ? (
-                          <FlipbookTrigger pdfUrl={knowMoreHref} title={knowMoreLabel}>
-                            <a
-                              href={knowMoreHref}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={onKnowMore}
-                              className="inline-block"
-                            >
-                              {buttonEl}
-                            </a>
-                          </FlipbookTrigger>
-                        ) : (
+                  {/* Know More external Link */}
+                  {knowMoreHref && knowMoreHref !== "#" && (
+                    (() => {
+                      const isPdf = knowMoreHref.toLowerCase().endsWith(".pdf");
+                      const buttonEl = (
+                        <GlobalArrowButton
+                          className="w-fit"
+                        >
+                          {knowMoreLabel}
+                        </GlobalArrowButton>
+                      );
+
+                      return isPdf ? (
+                        <FlipbookTrigger pdfUrl={knowMoreHref} title={knowMoreLabel}>
                           <a
                             href={knowMoreHref}
                             target="_blank"
@@ -250,25 +248,30 @@ export default function MainIntro({
                           >
                             {buttonEl}
                           </a>
-                        );
-                      })()
-                    ) : (
-                      <GlobalArrowButton
-                        className="w-fit !bg-white !text-white gap-2 !px-0 !py-0"
-                        textClassName="!text-[var(--button-red)] !font-semibold !px-0"
-                        arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
-                        arrowIconClassName="!text-white"
-                        onClick={() => setShowAll(!showAll)}
-                      >
-                        {showAll ? "Show Less" : knowMoreLabel}
-                      </GlobalArrowButton>
+                        </FlipbookTrigger>
+                      ) : (
+                        <a
+                          href={knowMoreHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={onKnowMore}
+                          className="inline-block"
+                        >
+                          {buttonEl}
+                        </a>
+                      );
+                    })()
+                  ) : (
+                  <GlobalArrowButton
+                    className="w-fit !bg-white !text-white gap-2 !px-0 !py-0"
+                    textClassName="!text-[var(--button-red)] !font-semibold !px-0"
+                    arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
+                    arrowIconClassName="!text-white"
+                    onClick={() => setShowAll(!showAll)}
+                  >
+                    {showAll ? "Show Less" : knowMoreLabel}
+                  </GlobalArrowButton>
                     )}
-                  </div>
-                )}
-
-              {extraContent && (
-                <div className="extra-content">
-                  {extraContent}
                 </div>
               )}
             </div>

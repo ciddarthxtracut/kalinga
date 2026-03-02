@@ -89,7 +89,7 @@ const defaultFacilities = [
   {
     id: 17,
     name: "University Health Clinic",
-    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/campus-life/Health+Clinic1.webp",
+    image: "https://kalinga-university.s3.ap-south-1.amazonaws.com/gallery/chemist_shop.webp",
   },
   {
     id: 18,

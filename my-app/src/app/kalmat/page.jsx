@@ -35,7 +35,13 @@ export default function KalseePage() {
     },
     {
       question: "How can I prepare for the KAL-MAT exam?",
-      answer: "Some of the prep tips include: Clear all your concepts till class 12th. Give a specific time to all 4 subjects during your preparation. Focus on weak subjects or chapters. Practice sample papers or mock tests regularly. Refer to books of reputed publishers."
+      answer: [
+        "Clear all your concepts till class 12th.",
+        "Give a specific time to all 4 subjects during your preparation.",
+        "Focus on weak subjects or chapters.",
+        "Practice sample papers or mock tests regularly.",
+        "Refer to books of reputed publishers."
+      ]
     },
     {
       question: "Is KAL-MAT mandatory for admission into BBA and MBA programs?",
@@ -47,7 +53,12 @@ export default function KalseePage() {
     },
     {
       question: "What time management strategies can I follow during the exam?",
-      answer: "First, scan all questions carefully. Prioritise solving easier questions. Manage your time for each question. Solve difficult questions in the end."
+      answer: [
+        "First, scan all questions carefully.",
+        "Prioritise solving easier questions.",
+        "Manage your time for each question.",
+        "Solve difficult questions in the end."
+      ]
     },
     {
       question: "When will the KAL-MAT results be declared?",
@@ -292,8 +303,8 @@ export default function KalseePage() {
         imageSrc="https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/student-img.png"
       />
       <MainIntro
-        title="What is KAL-MAT?"
-        description="Kalinga Management Aptitude Test (KAL-MAT) 2025-26 is your pathway to book a spot in KU’s prestigious BBA and MBA programs. Aspiring students from India and other countries can appear for this exam and shape their destiny."
+        title="Kalinga Management Aptitude Test [KAL-MAT]"
+        description="KAL-MAT is your pathway to book a spot in KU’s prestigious BBA and MBA programs. Aspiring students from India and other countries can appear for this exam and shape their destiny."
         imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/kal-mat/kalmat-intro.jpg"
         imageAlt="KALSEE"
       />
@@ -375,7 +386,7 @@ export default function KalseePage() {
               title: "BBA",
               specialization: "Bachelor of Business Administration",
               duration: "3 Years",
-              eligibility: "10+12",
+              eligibility: "10+2",
               type: "UG",
               coursePageUrl: "/courses/bachelor-of-business-administration",
               hideScholarshipLink: true,

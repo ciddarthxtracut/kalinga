@@ -125,6 +125,7 @@ function Accreditations() {
             },
             pci: {
                 years: {
+                    "2026 - 27": [{ title: "2026-27 PCI APPROVAL LETTER", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/about/accerdation/2026-27+-+PCI+APPROVAL+(PHARMACY)+2026-27.pdf" }],
                     "2024 - 25": [{ title: "2024-25 PCI APPROVAL LETTER", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/PCI/2024-25+PCI+APPROVAL+LETTER+2024-25.pdf" }],
                     "2020 - 21": [{ title: "PCI extension of approval for 2020-21", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/PCI/PCI+extension+of+approval+for+2020-21.pdf" }],
                     "2019 - 20": [{ title: "PCI extension of approval for 2019-20", url: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/Approval+PDF/PCI/PCI+extension+of+approval+for+2019-20.pdf" }],

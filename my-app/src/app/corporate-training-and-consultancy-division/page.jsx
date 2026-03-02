@@ -423,13 +423,12 @@ export default function CorporateTrainingAndConsultancyDivision() {
       <OrganogramOfKalinga
 
         title="Download Brochure 2025-26"
-        description="Download our comprehensive Corporate Training and Consultancy Division (CTCD) brochure for 2025-26 to explore our training programs, consultancy services, masterclasses, and how we can help your organization enhance employee skills, boost productivity, and achieve business excellence through customized training solutions."
+        description="Download our comprehensive Corporate Training and Consultancy Division (CTCD) brochure to explore our training programs, consultancy services, masterclasses, and how we can help your organization enhance employee skills, boost productivity, and achieve business excellence through customized training solutions."
         buttonLabel="Explore Now"
         href="https://kalinga-university.s3.ap-south-1.amazonaws.com/ctcd/CTCD+-+Corporate+Training+and+Consultancy+Division_compressed+(1).pdf"
         cardBackgroundColor="bg-[var(--button-red)]"
         useContainer={true}
       />
-      <Gallery title="Glimpses" />
       <AdmissionCareer />
     </>
   );

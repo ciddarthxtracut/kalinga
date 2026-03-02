@@ -388,7 +388,7 @@ const CentralInstrumentationFacilityPage = () => {
               title: "Entrepreneurship in Biotechnology",
               startDate: "17 - 01 - 2026",
               price: "INR 1,000/-",
-              applications: "Biotech Startups, Healthcare and Ventures, Agricultural and Food Biotechnology, Environmental Biotechnology, Global Biotech Ecosystem",
+              applications: "Biotech Startups, Healthcare and Pharma Ventures, Agricultural and Food Biotechnology, Environmental Biotechnology, Global Biotech Ecosystem",
               skills: [
                 "Identify and Develop Innovative Solutions for Biotech-Based Problems",
                 "Build Sustainable Business Models",

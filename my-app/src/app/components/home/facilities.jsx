@@ -38,7 +38,7 @@ export default function Facilities() {
     },
     {
       id: 5,
-      title: 'Lab',
+      title: 'Labs',
       image: 'https://kalinga-university.s3.ap-south-1.amazonaws.com/facilities/labotories.webp',
       description: 'Learning at KU is deeply practical. Our modern, well-equipped laboratories allow students to experiment, explore, and put theory into action. Every lab session is guided by experienced faculty, helping students build confidence, clarity, and industry-ready skills.'
     }

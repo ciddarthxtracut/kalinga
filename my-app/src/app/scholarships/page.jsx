@@ -41,7 +41,7 @@ export default function ScholarshipsPage() {
     };
   }, []);
 
-  const scholarshipPolicyPdf = "https://kalinga-university.s3.ap-south-1.amazonaws.com/scholarships/SCHOLARSHIP_25-26+(4)+(1).pdf";
+  const scholarshipPolicyPdf = "https://kalinga-university.s3.ap-south-1.amazonaws.com/scholarships/Scholarships+2026-2027.pdf";
 
 
   const whyStudyItems = [

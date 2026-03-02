@@ -28,12 +28,15 @@ export default function KalseePage() {
     {
       question: "How can I prepare for the KALSEE exam?",
       answer:
-        "Firstly, you need to clear all your concepts by class 12th, and secondly, solve some sample papers and MCQs related to all 4 subjects by referring to the books of reputed publishers.",
+        "Firstly, you need to clear all your concepts till class 12th, and secondly, solve some sample papers and MCQs related to all 4 subjects by referring to the books of reputed publishers.",
     },
     {
       question: "What time management strategies can I follow during the exam?",
-      answer:
-        "Focus on solving easier questions first. Avoid spending too much time on any question. Allot time for each section.",
+      answer: [
+        "Focus on solving easier questions first. ",
+        "Avoid spending too much time on any question. ",
+        "Allot time for each section.",
+      ],
     },
     {
       question: "How long will my score be valid?",
@@ -63,88 +66,88 @@ export default function KalseePage() {
   ];
 
   const testimonials = [
-  {
-    name: "Syedzaid Mohammad",
-    title: "Syedzaid Mohammad",
-    subtitle: "B. TECH. (Computer Science Engineering)",
-    description: "Score: 81",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(1).png",
-    videoUrl: "", // keep empty if no video
-  },
-  {
-    name: "Vishal Kumar Mandal",
-    title: "Vishal Kumar Mandal",
-    subtitle: "B. TECH. CS - AIML with IBM",
-    description: "Score: 81",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(2).png",
-    videoUrl: "",
-  },
-  {
-    name: "Ajay Chauhan",
-    title: "Ajay Chauhan",
-    subtitle: "B. TECH. (Computer Science Engineering)",
-    description: "Score: 80",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(3).png",
-    videoUrl: "",
-  },
-  {
-    name: "Chintu Maurya",
-    title: "Chintu Maurya",
-    subtitle: "B. TECH. (Computer Science Engineering)",
-    description: "Score: 81",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(4).png",
-    videoUrl: "",
-  },
-  {
-    name: "Govind Kumar",
-    title: "Govind Kumar",
-    subtitle: "B. TECH. (Computer Science Engineering)",
-    description: "Score: 80",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(5).png",
-    videoUrl: "",
-  },
-  {
-    name: "Kajal Kumari",
-    title: "Kajal Kumari",
-    subtitle: "B. TECH. LATERAL ENTRY (Computer Science Engineering)",
-    description: "Score: 80",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(6).png",
-    videoUrl: "",
-  },
-  {
-    name: "Mahesh Verma",
-    title: "Mahesh Verma",
-    subtitle: "B. TECH. CS - AIML WITH IBM",
-    description: "Score: 81",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(7).png",
-    videoUrl: "",
-  },
-  {
-    name: "Pankaj Kumar Sahu",
-    title: "Pankaj Kumar Sahu",
-    subtitle: "B. TECH. (Computer Science Engineering)",
-    description: "Score: 81",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(8).png",
-    videoUrl: "",
-  },
-  {
-    name: "Sudhir Kushwaha",
-    title: "Sudhir Kushwaha",
-    subtitle: "B. TECH. (Computer Science Engineering)",
-    description: "Score: 80",
-    thumbnail:
-      "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(9).png",
-    videoUrl: "",
-  },
-];
+    {
+      name: "Syedzaid Mohammad",
+      title: "Syedzaid Mohammad",
+      subtitle: "B. TECH. (Computer Science Engineering)",
+      description: "Score: 81",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(1).png",
+      videoUrl: "", // keep empty if no video
+    },
+    {
+      name: "Vishal Kumar Mandal",
+      title: "Vishal Kumar Mandal",
+      subtitle: "B. TECH. CS - AIML with IBM",
+      description: "Score: 81",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(2).png",
+      videoUrl: "",
+    },
+    {
+      name: "Ajay Chauhan",
+      title: "Ajay Chauhan",
+      subtitle: "B. TECH. (Computer Science Engineering)",
+      description: "Score: 80",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(3).png",
+      videoUrl: "",
+    },
+    {
+      name: "Chintu Maurya",
+      title: "Chintu Maurya",
+      subtitle: "B. TECH. (Computer Science Engineering)",
+      description: "Score: 81",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(4).png",
+      videoUrl: "",
+    },
+    {
+      name: "Govind Kumar",
+      title: "Govind Kumar",
+      subtitle: "B. TECH. (Computer Science Engineering)",
+      description: "Score: 80",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(5).png",
+      videoUrl: "",
+    },
+    {
+      name: "Kajal Kumari",
+      title: "Kajal Kumari",
+      subtitle: "B. TECH. LATERAL ENTRY (Computer Science Engineering)",
+      description: "Score: 80",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(6).png",
+      videoUrl: "",
+    },
+    {
+      name: "Mahesh Verma",
+      title: "Mahesh Verma",
+      subtitle: "B. TECH. CS - AIML WITH IBM",
+      description: "Score: 81",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(7).png",
+      videoUrl: "",
+    },
+    {
+      name: "Pankaj Kumar Sahu",
+      title: "Pankaj Kumar Sahu",
+      subtitle: "B. TECH. (Computer Science Engineering)",
+      description: "Score: 81",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(8).png",
+      videoUrl: "",
+    },
+    {
+      name: "Sudhir Kushwaha",
+      title: "Sudhir Kushwaha",
+      subtitle: "B. TECH. (Computer Science Engineering)",
+      description: "Score: 80",
+      thumbnail:
+        "https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee-student(9).png",
+      videoUrl: "",
+    },
+  ];
 
   const kifSteps = [
     {
@@ -298,8 +301,8 @@ export default function KalseePage() {
       />
       <KalseeMilestone />
       <MainIntro
-        title=" What is KALSEE?"
-        description="Kalinga Scholastic Entrance Examination (KALSEE) is your gateway to book a seat in our selected course among 130+ Programs of KU. With amazing scholarships and endless career options, it’s time to make your dreams come true with one of the top private university in Chhattisgarh. "
+        title="Kalinga Scholastic Entrance Examination [KALSEE]"
+        description="KALSEE is your gateway to secure a seat in a selected program among 130+ academic programs at KU. With amazing scholarships and endless career options, it’s time to make your dreams come true with one of the top private university in Chhattisgarh. "
         imageUrl="https://kalinga-university.s3.ap-south-1.amazonaws.com/kalsee/kalsee.webp"
         imageAlt="KALSEE"
       />
@@ -330,8 +333,8 @@ export default function KalseePage() {
         backgroundColor="bg-[var(--light-gray)] mx-2 rounded-xl"
       />
       <FAQ title="Frequently Asked Questions"
-      subtitle=""
-      items={faqItems} />
+        subtitle=""
+        items={faqItems} />
       <AdmissionCareer />
     </>
   );

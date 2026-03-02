@@ -12,11 +12,11 @@ const IQAC_TABS = [
     { id: "arts", label: "Faculty of Arts & Humanities" },
     { id: "commerce", label: "Faculty of Commerce & Management" },
     { id: "education", label: "Faculty of Education" },
-    { id: "engineering", label: "Faculty of Technology" },
     { id: "it", label: "Faculty of Information Technology" },
     { id: "law", label: "Faculty of Law" },
     { id: "pharmacy", label: "Faculty of Pharmacy" },
     { id: "science", label: "Faculty of Science" },
+    { id: "engineering", label: "Faculty of Technology" },
 
     // ✅ Then Research
     { id: "research", label: "PhD Programs" },

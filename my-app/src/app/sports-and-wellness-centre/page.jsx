@@ -9,6 +9,7 @@ import AdmissionCareer from '@/app/components/general/admission_cta'
 import Gallery from '@/app/components/general/gallery'
 import Sportsandwellnesshighlightvideo from '../components/sports-and-wellness-centre/sportsandwellnesshighlightvideo'
 import Sportsandwellnessvideo from '../components/sports-and-wellness-centre/sportsandwellnessvideo'
+import SectionHeading from '../components/general/SectionHeading'
 
 
 const galleryItems = [
@@ -152,7 +153,7 @@ const galleryItems = [
 function Sportsandwellnesscentre() {
   const pathname = usePathname();
 
-  
+
 
   return (
     <>
@@ -171,12 +172,13 @@ function Sportsandwellnesscentre() {
       <Sportsandwellnesshighlightvideo />
       <SportsWellnessOverview />
       <Sportsandwellnessvideo />
-      <div className="container py-10">
+      <div className="container py-10 text-center">
+        <SectionHeading title="Sports Facilities" titleClassName="text-center" />
         <SportsFacilitiesTabs />
       </div>
       {/* Category ID 6 is Sports */}
       <NewsEvents categoryId="6" title="Sports Achievers" titleClassName="text-center" hideCalendar={true} />
-      <Gallery title='Glimpse' images={galleryItems} />
+      <Gallery title='Glimpses' images={galleryItems} />
       <AdmissionCareer />
     </>
   )

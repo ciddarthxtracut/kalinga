@@ -128,6 +128,7 @@ export default function Footer() {
                       </FlipbookTrigger>
                     </li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/grievance-redressal">Grievance Redressal</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/other-committees">Other Committees</a></li>
 
 
                   </ul>

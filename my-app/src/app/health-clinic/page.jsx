@@ -19,7 +19,7 @@ const page = () => {
 
   ];
 
-  
+
 
   return (
 
@@ -40,7 +40,7 @@ const page = () => {
       <RaipurVideoSection
         videoId="ogUpFzbzP1c"
         thumbnail="https://kalinga-university.s3.ap-south-1.amazonaws.com/about/about-banner.webp"
-        title="Kalinga University's 24x7 Medical Facility Ensures Student Health"
+        title=""
         description="" // optional
         alt="Video thumbnail"
         heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default

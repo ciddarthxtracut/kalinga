@@ -8,7 +8,7 @@ function Sportsandwellnesshighlightvideo() {
         <RaipurVideoSection
             videoId="r0tBeANR5fQ"
             thumbnail="https://kalinga-university.s3.ap-south-1.amazonaws.com/sports/basektballevent.webp"
-            title="Sports & Wellness Fest Highlights"
+            title=""
             description=""
             alt="Sports and Wellness Fest Highlights"
         />

@@ -472,7 +472,7 @@ export const pageDataMap: Record<string, PageData> = {
     },
     "/sdg-cell": {
         slug: "/sdg-cell",
-        title: "Sustainable Initiatives",
+        title: "Sustainability",
         banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/common/kalinga-front-banner02.webp",
     },
     "/sports-and-wellness-centre": {

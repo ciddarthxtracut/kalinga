@@ -27,9 +27,9 @@ export default function Studentreportcards() {
             link: "/corporate-training-and-consultancy-division",
         },
         {
-            title: "Academic Clubs & Non-Academic Clubs",
+            title: "Student Clubs",
             description:
-                "Students participate in the activities of departmental academic clubs and also enthusiastically take part in music, dance, arts, and literature clubs.",
+                "With vibrant academic clubs at KU, students get the opportunity to showcase their skills and develop interests in new activities.",
             imageSrc:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-support/academicandnonacademic.webp",
             logoSrc: "",
@@ -74,7 +74,7 @@ export default function Studentreportcards() {
         {
             title: "Student Welfare Services",
             description:
-                "The Department of Student Welfare facilitates a student-centric learning environment where students can develop their hobbies, interests, and participate in in-house programs.",
+                "The Department of Student Welfare facilitates a student-centric learning environment where they can develop their hobbies, interests, and participate in in-house programs.",
             imageSrc:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/program/computer.webp",
             logoSrc: "",
@@ -83,7 +83,7 @@ export default function Studentreportcards() {
         {
             title: "Student Feedback",
             description:
-                "We value student feedback and continuously work on improving student life and academic experience.",
+                "We value student feedback and continuously work on improving their life and academic experience.",
             imageSrc:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/program/MBA.webp",
             logoSrc: "",
@@ -92,7 +92,7 @@ export default function Studentreportcards() {
         {
             title: "Mentor-Mentee System",
             description:
-                "Our professors provide personal attention and guidance to students in academics and career development, increasing confidence and keeping them on the right track.",
+                "Our professors provide personal attention and guidance to students in academics and career development, boosting their confidence and keeping them on the right track.",
             imageSrc:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/student-support/mentormentee.webp",
             logoSrc: "",
@@ -101,7 +101,7 @@ export default function Studentreportcards() {
         {
             title: "Academic Advice",
             description:
-                "From selecting the right program to securing placements, our team provides career guidance and effective time management strategies.",
+                "From selecting the right program to securing placements, we provide complete career guidance and effective time management strategies.",
             imageSrc:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/alumini/alimini-meet1.webp",
             logoSrc: "",
@@ -115,7 +115,7 @@ export default function Studentreportcards() {
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-facilities/careerdevelopmentcentre.webp",
             logoSrc: "",
             subtitle: "PARENT ENGAGEMENT",
-        },   
+        },
         {
             title: "Competitive Exams Coaching",
             description:
@@ -128,7 +128,7 @@ export default function Studentreportcards() {
         {
             title: "Scholarships",
             description:
-                "Obtain up to 100% scholarships as per our eligibility criteria and make your finances more manageable. Students who face financial difficulties at the time of admission can get scholarships, like merit-based, sports-based, entrance exam, content creators, and more, based on eligibility criteria.",
+                "Obtain up to 100% scholarships as per our eligibility criteria and make your finances more manageable. Students who face financial difficulties at the time of admission can get scholarships, like merit-based, sports-based, entrance exam, content creators, and more.",
             imageSrc:
                 "https://kalinga-university.s3.ap-south-1.amazonaws.com/academic-facilities/scolarships.webp",
             logoSrc: "",
@@ -236,7 +236,7 @@ export default function Studentreportcards() {
       `}</style>
 
             <h2 className="mb-1 text-black text-center">
-                Experience KU’s Unmatched Student Services
+                Experience KU’s Unmatched Student Support Services
             </h2>
 
             {/* ✅ Hidden on first paint */}

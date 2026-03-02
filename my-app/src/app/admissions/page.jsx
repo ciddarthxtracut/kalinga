@@ -206,7 +206,7 @@ export default function Admissions() {
         id: 2,
         icon: "https://kalinga-university.s3.ap-south-1.amazonaws.com/admission/Value+addition.svg",
         title: "Value Addition",
-        description: "Gain a competitive edge with our value-added courses, workshops, and certifAcquire real-world knowledge and skills apart from the course curriculum and become confident, career-ready, and future-focused.",
+        description: "Acquire real-world knowledge and skills apart from the course curriculum and become confident, career-ready, and future-focused.",
         href: "/value-additions"
       },
       {
