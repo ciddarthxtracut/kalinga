@@ -228,7 +228,8 @@ export default function Footer() {
             </h2>
           </div>
         </div>
-        <div suppressHydrationWarning className="text-center py-2   text-black">
+        <div suppressHydrationWarning className="text-center py-3 text-black flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-1 sm:gap-0 px-6 sm:px-16">
+          <p className="text-xs">Designed & Developed by <a href="https://www.xtracut.com" className="text-[var(--dark-orange-red)]" target="_blank">Xtracut</a></p>
           <p className="text-xs">© 2026 Kalinga University. All rights reserved.</p>
         </div>
       </footer>
