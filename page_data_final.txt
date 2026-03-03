@@ -461,8 +461,8 @@ export const pageDataMap: Record<string, PageData> = {
     title: "Scholarships",
     banner: "https://cdn.kalingauniversity.ac.in/library/Library-1.webp",
   },
-  "/sdg-cell": {
-    slug: "/sdg-cell",
+  "/sustainability": {
+    slug: "/sustainability",
     title: "SDG Cell",
     banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
   },
