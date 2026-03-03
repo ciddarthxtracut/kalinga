@@ -41,7 +41,13 @@ const nextConfig = {
     ];
   },
   transpilePackages: ['motion', 'framer-motion', 'motion-dom', 'motion-utils'],
-  turbopack: {},
+  webpack: (config) => {
+    config.resolve.extensionAlias = {
+      '.js': ['.js', '.ts', '.tsx', '.mjs'],
+      '.mjs': ['.mjs', '.js', '.ts', '.tsx'],
+    };
+    return config;
+  },
 };
 
 export default nextConfig;
