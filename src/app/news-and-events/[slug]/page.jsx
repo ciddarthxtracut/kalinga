@@ -6,6 +6,20 @@ import AdmissionCareer from '@/app/components/general/admission_cta';
 import UpcomingEvents from '@/app/components/admissions/upcoming_events';
 import { fetchNewsEvents, fetchNewsEventDetails, fetchNewsEventSEO, parseHtmlToParagraphs, parseHtmlListItems } from '@/app/lib/api';
 
+// Static Generation for News & Events Pages
+export async function generateStaticParams() {
+    try {
+        const newsResponse = await fetchNewsEvents({ is_published: true });
+        const news = newsResponse?.results || newsResponse;
+        return news.map((item) => ({
+            slug: item.slug,
+        }));
+    } catch (error) {
+        console.error("Error generating static params for news & events:", error);
+        return [];
+    }
+}
+
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
     const { slug } = await params;

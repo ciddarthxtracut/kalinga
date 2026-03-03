@@ -1,5 +1,7 @@
 import { fetchAllDepartments, fetchAllCourses, fetchNewsEvents } from '@/app/lib/api';
 
+export const dynamic = "force-static";
+
 const BASE_URL = 'https://kalingauniversity.ac.in';
 const LAST_MOD = '2026-03-02';
 
