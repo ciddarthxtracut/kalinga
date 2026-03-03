@@ -40,7 +40,7 @@ const nextConfig = {
       },
     ];
   },
-  transpilePackages: ['motion', 'framer-motion', 'motion-dom'],
+  transpilePackages: [],
   webpack: (config) => {
     config.resolve.extensionAlias = {
       '.js': ['.js', '.ts', '.tsx', '.mjs'],
