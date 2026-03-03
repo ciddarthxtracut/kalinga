@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -29,15 +31,7 @@ const nextConfig = {
     ],
     qualities: [75, 100],
   },
-  async redirects() {
-    return [
-      {
-        source: '/about',
-        destination: '/about-us',
-        permanent: true,
-      },
-    ];
-  },
+  transpilePackages: ['motion', 'motion-dom', 'framer-motion'],
   // Use webpack explicitly for DOMMatrix polyfill support
   webpack: (config, { isServer, webpack }) => {
     if (isServer) {
