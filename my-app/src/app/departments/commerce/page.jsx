@@ -390,6 +390,7 @@ export default function CommerceDepartmentPage() {
                 nameTextClass="text-[var(--button-red)]"
                 descriptionTextClass=""
                 swiperClassName="ccrc-video-slider"
+                imageObjectPosition="object-center"
             />
             <StudentActivities
                 activities={commerceActivities}

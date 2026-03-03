@@ -59,7 +59,7 @@ export default function ProgramsOffered({
   programs = defaultPrograms,
   title = "Programs Offered",
   description = "Explore our diverse academic programs designed to empower your future.",
-  backgroundImage = "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placements-silder-1.webp",
+  backgroundImage = "https://kalinga-university.s3.ap-south-1.amazonaws.com/aiml/aiml-banner.webp",
   imageAlt = "Students",
   hideSearch = false
 }) {
@@ -86,8 +86,8 @@ export default function ProgramsOffered({
               <Image
                 src={backgroundImage}
                 alt={imageAlt}
-                width={500}
-                height={400}
+                width={800}
+                height={600}
                 className="rounded-lg object-cover w-full h-[300px] md:h-[400px] lg:h-[500px]"
               />
             </div>

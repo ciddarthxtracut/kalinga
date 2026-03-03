@@ -224,7 +224,7 @@ export const pageDataMap: Record<string, PageData> = {
     "/departments/management": {
         slug: "/departments/management",
         title: "Department of Management",
-        banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/departments/Faculty+of+Commerece+and+Management/01.webp",
+        banner: "https://kalinga-university.s3.ap-south-1.amazonaws.com/contact-us/contact-us-banner.webp",
     },
     "/director-general": {
         slug: "/director-general",

@@ -105,7 +105,7 @@ export default function VisionMissionUpdated({
     return (
         <section className="">
             <div className="container mx-auto">
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-1 items-start md:justify-center">
+                <div className="flex flex-col lg:flex-row md:gap-8 gap-1 items-start md:justify-center">
 
                     {/* Left Column: Cards */}
                     <div className="flex-1 flex flex-col gap-4 lg:pr-12 pt-0 pt-16 pb-16    ">

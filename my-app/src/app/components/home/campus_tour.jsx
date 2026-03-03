@@ -5,7 +5,7 @@ import GlobalArrowButton from '../general/global-arrow_button'
 
 export default function CampusTour() {
   return (
-    <section className="py-16">
+    <section className="py-16" suppressHydrationWarning={true}>
       <div className="px-2">
         <div className="relative bg-cover bg-center rounded-2xl overflow-hidden shadow-xl mx-auto w-full h-[500px] sm:h-[500px] md:h-[600px] lg:h-[653px]" style={{
           backgroundImage: `url('https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/college-ful-image.png')`,

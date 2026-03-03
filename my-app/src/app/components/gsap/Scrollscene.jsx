@@ -60,7 +60,7 @@ export const ScrollScene = () => {
     ];
 
     return (
-        <div ref={containerRef} className="h-[400vh] relative w-full bg-white">
+        <div ref={containerRef} className="h-[400vh] relative w-full bg-white" suppressHydrationWarning={true}>
             <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center perspective-1000">
 
                 {/* LAYER 1: SCATTER IMAGES (z-40) */}

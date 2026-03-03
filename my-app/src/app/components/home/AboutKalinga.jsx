@@ -29,26 +29,27 @@ const AboutKalinga = () => {
           }
         }
       `}} />
-      <section className={`py-10 ${isExpanded ? 'pb-16 md:pb-10' : 'pb-10'}`}>
-        <div className="px-2 flex justify-center relative">
+      <section suppressHydrationWarning={true} className={`py-10 ${isExpanded ? 'pb-16 md:pb-10' : 'pb-10'}`}>
+        <div suppressHydrationWarning={true} className="px-2 flex justify-center relative">
           {/* Single dark blue panel with overlapping image */}
           <div
+            suppressHydrationWarning={true}
             className={`relative bg-[var(--dark-blue)] rounded-2xl py-5 md:py-16 text-white overflow-visible shadow-2xl w-full transition-all duration-300 ${isExpanded ? 'pb-8 md:pb-16' : 'pb-5 md:pb-16'} ${isExpanded ? 'md:h-[650px]' : 'md:h-[550px]'}`}
             style={{ height: isExpanded ? 'auto' : undefined, minHeight: isExpanded ? undefined : '550px' }}
           >
-            <div className="container mx-auto" >
-              <div className={`grid md:grid-cols-2 gap-6 items-start relative z-1 transition-all duration-300`}>                {/* Left: Title and button */}
+            <div suppressHydrationWarning={true} className="container mx-auto" >
+              <div suppressHydrationWarning={true} className={`grid md:grid-cols-2 gap-6 items-start relative z-1 transition-all duration-300`}>                {/* Left: Title and button */}
                 <div className="space-y-6">
                   <h2 className="font-stix text-3xl md:text-4xl lg:text-5xl leading-tight">
                     Your Future Matters
                   </h2>
                   <div className="mt-4">
                     <Link href="/about-us" className="inline-flex">
-                      <GlobalArrowButton className="!bg-white !text-black"
+                      <GlobalArrowButton as="span" className="!bg-white !text-black"
                         arrowClassName="!bg-[var(--button-red)]"
                         arrowIconClassName="!text-white"
                         textClassName="!text-black"
-                      >Know  More</GlobalArrowButton>
+                      >Know More</GlobalArrowButton>
                     </Link>
                   </div>
                 </div>
@@ -93,7 +94,7 @@ const AboutKalinga = () => {
                 <div className="flex justify-end">
                   <div
                     className="relative w-[555px] h-[452px] rounded-[10px] overflow-hidden shadow-2xl"
-                    style={{ transform: `translateY(${isExpanded ? '10px' : '-70px'})` }}
+                    style={{ transform: `translateY(${isExpanded ? '10px' : '-35px'})` }}
                   >
                     <Image
                       src="https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/girl-stand.webp"

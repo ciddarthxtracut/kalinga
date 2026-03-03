@@ -183,13 +183,13 @@ export default function FeatureCards({
   const displayText = truncatedText
 
   return (
-    <section className="py-16 px-2">
-      <div className="relative">
+    <section suppressHydrationWarning={true} className="py-16 px-2">
+      <div suppressHydrationWarning={true} className="relative">
         {/* Main rounded dark panel */}
-        <div className="relative rounded-2xl sm:rounded-3xl bg-[var(--dark-blue)] overflow-visible text-white shadow-md p-4 px-0 sm:p-6 md:p-8 lg:p-12 pt-10">
+        <div suppressHydrationWarning={true} className="relative rounded-2xl sm:rounded-3xl bg-[var(--dark-blue)] overflow-visible text-white shadow-md p-4 px-0 sm:p-6 md:p-8 lg:p-12 pt-10">
 
           {/* Top section: Image left, Text right */}
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 md:mb-10">
+          <div suppressHydrationWarning={true} className="container mx-auto grid grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 md:mb-10">
             {/* Image on left - extending outside on top */}
             <div className="relative w-full h-[350px] md:h-[450px] -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-25 xl:-mt-24 lg:p-8 p-0 py-5 md:py-0">
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transform-3d-slant-mirror">
@@ -204,7 +204,7 @@ export default function FeatureCards({
             </div>
 
             {/* Text content on right */}
-            <div className="flex flex-col justify-center">
+            <div suppressHydrationWarning={true} className="flex flex-col justify-center">
               {(title || subtitle) && (
                 <SectionHeading
                   subtitle={subtitle || undefined}
@@ -244,7 +244,7 @@ export default function FeatureCards({
 
           {/* Cards row - Grid or Slider */}
           {isSlider ? (
-            <div className="relative">
+            <div suppressHydrationWarning={true} className="relative">
               {/* Swiper Slider */}
               <Swiper
                 modules={[Navigation, Autoplay]}
@@ -272,8 +272,8 @@ export default function FeatureCards({
               >
                 {cards.map((c) => (
                   <SwiperSlide key={c.id} className="h-auto">
-                    <div className="h-full">
-                      <div className={`relative rounded-lg p-4 sm:p-5 md:p-5 lg:p-5 shadow-xl h-full flex items-center ${c.variant === 'amber' ? 'bg-[var(--card-sandal)] text-black' : 'bg-[var(--card-gray)] text-gray-800'}`} style={{ minHeight: cardMinHeight }}>
+                    <div suppressHydrationWarning={true} className="h-full">
+                      <div suppressHydrationWarning={true} className={`relative rounded-lg p-4 sm:p-5 md:p-5 lg:p-5 shadow-xl h-full flex items-center ${c.variant === 'amber' ? 'bg-[var(--card-sandal)] text-black' : 'bg-[var(--card-gray)] text-gray-800'}`} style={{ minHeight: cardMinHeight }}>
                         <div className="flex flex-col gap-3 sm:gap-4 w-full h-full">
                           {c.image && (
                             <div className="flex-shrink-0">

@@ -319,6 +319,7 @@ export default function Testimonials({ testimonials = [], className = "", subtit
             className={`flex flex-col items-center justify-center overflow-x-hidden selection:bg-orange-100 selection:text-orange-900 py-16 rounded-xl mx-2 ${className}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            suppressHydrationWarning={true}
         >
             <style jsx>{`
                 ::-webkit-scrollbar { display: none; }

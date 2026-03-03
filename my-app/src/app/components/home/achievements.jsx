@@ -145,18 +145,18 @@ export default function Achievements() {
           }
         }
       `}} />
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-2">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <section suppressHydrationWarning={true} className="py-16 bg-white">
+        <div suppressHydrationWarning={true} className="container mx-auto px-2">
+          <div suppressHydrationWarning={true} className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Side - Heading and Button */}
-            <div className="flex flex-col justify-center">
+            <div suppressHydrationWarning={true} className="flex flex-col justify-center">
               <SectionHeading
                 title="Our Growth Story in Numbers"
                 titleClassName="text-[var(--foreground)] mb-6 lg:mb-8"
               />
               <div>
                 <Link href="/about-us" className="inline-flex">
-                  <GlobalArrowButton className="w-full sm:w-[160px] h-[44px] justify-between">
+                  <GlobalArrowButton as="span" className="w-full sm:w-[160px] h-[44px] justify-between">
                     Learn More
                   </GlobalArrowButton>
                 </Link>
@@ -164,7 +164,7 @@ export default function Achievements() {
             </div>
 
             {/* Right Side - Swiper Slider */}
-            <div className="relative">
+            <div suppressHydrationWarning={true} className="relative">
               {/* Navigation Buttons - Positioned below 2nd card, aligned to left */}
               <div className="achievements-nav-buttons flex items-center gap-3 justify-center sm:justify-start pointer-events-auto !z-[9]">
                 <div className="bg-white p-[2px] shadow-lg rounded-lg pointer-events-none">
@@ -216,7 +216,7 @@ export default function Achievements() {
               >
                 {achievements.map((achievement) => (
                   <SwiperSlide key={achievement.id} className="!h-auto">
-                    <div className="bg-[var(--light-gray)] rounded-xl p-10 md:p-6 flex flex-col justify-between">
+                    <div suppressHydrationWarning={true} className="bg-[var(--light-gray)] rounded-xl p-10 md:p-6 flex flex-col justify-between">
                       <div>
                         <h3 className="text-lg sm:text-xl font-stix  text-[var(--foreground)] mb-4">
                           {achievement.title}

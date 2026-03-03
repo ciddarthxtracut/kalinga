@@ -1,4 +1,4 @@
-import { fetchAllDepartments } from '@/app/lib/api';
+import { fetchAllDepartments, fetchAllCourses, fetchNewsEvents } from '@/app/lib/api';
 
 const BASE_URL = 'https://kalingauniversity.ac.in';
 const LAST_MOD = '2026-03-02';
@@ -140,6 +140,19 @@ const staticPages = [
     { url: '/privacy-policy', priority: 0.3, changefreq: 'yearly' },
     { url: '/terms-conditions', priority: 0.3, changefreq: 'yearly' },
     { url: '/refund-policy', priority: 0.3, changefreq: 'yearly' },
+
+    // ─── Additional Static Pages ──────────────────────────────────────────────────
+    { url: '/Sustainability', priority: 0.7, changefreq: 'monthly' },
+    { url: '/international', priority: 0.6, changefreq: 'monthly' },
+    { url: '/all-forms', priority: 0.5, changefreq: 'monthly' },
+    { url: '/ekeeda-digital-library', priority: 0.6, changefreq: 'monthly' },
+    { url: '/executive-development-program', priority: 0.6, changefreq: 'monthly' },
+    { url: '/kalmat', priority: 0.7, changefreq: 'monthly' },
+    { url: '/kalsee', priority: 0.7, changefreq: 'monthly' },
+    { url: '/research-papers', priority: 0.6, changefreq: 'monthly' },
+    { url: '/unnat-bharat-abhiyan', priority: 0.6, changefreq: 'monthly' },
+    { url: '/ctcd', priority: 0.6, changefreq: 'monthly' },
+    { url: '/chair-activities', priority: 0.6, changefreq: 'monthly' },
 ];
 
 /** Exclude these slugs from the dynamic departments section (already in staticPages) */
@@ -171,8 +184,45 @@ export default async function sitemap() {
                 }));
         }
     } catch {
-        // Continue without dynamic routes if API is unavailable at build time
+        // Continue if API fails
     }
 
-    return [...staticEntries, ...departmentEntries];
+    // ── 3. Dynamic course pages ──────────────────────────────────────────────────
+    let courseEntries = [];
+    try {
+        const courses = await fetchAllCourses();
+        if (Array.isArray(courses)) {
+            courseEntries = courses
+                .filter((course) => course?.slug)
+                .map((course) => ({
+                    url: `${BASE_URL}/courses/${course.slug}`,
+                    lastModified: LAST_MOD,
+                    changeFrequency: 'monthly',
+                    priority: 0.7,
+                }));
+        }
+    } catch {
+        // Continue if API fails
+    }
+
+    // ── 4. Dynamic news & events pages ───────────────────────────────────────────
+    let newsEntries = [];
+    try {
+        const newsResponse = await fetchNewsEvents({ is_published: true });
+        const news = newsResponse?.results || newsResponse;
+        if (Array.isArray(news)) {
+            newsEntries = news
+                .filter((item) => item?.slug)
+                .map((item) => ({
+                    url: `${BASE_URL}/news-and-events/${item.slug}`,
+                    lastModified: LAST_MOD,
+                    changeFrequency: 'weekly',
+                    priority: 0.6,
+                }));
+        }
+    } catch {
+        // Continue if API fails
+    }
+
+    return [...staticEntries, ...departmentEntries, ...courseEntries, ...newsEntries];
 }

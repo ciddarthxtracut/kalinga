@@ -76,7 +76,7 @@ const GlobalArrowButton = ({
       className={`${baseButtonClasses} ${variantButtonClasses[variant] || variantButtonClasses.default} ${showArrow ? '' : ''} ${className}`}
       {...props}
     >
-      <p className={`text-left  !font-medium max-w-fit ${textclassname} ${textClassName}`}>{children}</p>
+      <span className={`text-left  !font-medium max-w-fit ${textclassname} ${textClassName}`}>{children}</span>
       {showArrow && (
         <span className={`${arrowContainerClasses[variant] || arrowContainerClasses.default} ${arrowClassName}`}>
           <ArrowIcon />

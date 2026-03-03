@@ -173,7 +173,7 @@ export default function ChatbotPopup() {
             </AnimatePresence>
 
             {/* Toggle Button & Tooltip Container */}
-            <div className="fixed bottom-6 right-4 md:right-8 z-[9999] flex flex-col items-end gap-3 pointer-events-none">
+            <div className="fixed bottom-6 right-4 md:right-8 z-[9999] flex flex-col items-end gap-3 pointer-events-none" suppressHydrationWarning={true}>
                 {/* Tooltip / Call to Action */}
                 <AnimatePresence>
                     {showTooltip && !isOpen && (

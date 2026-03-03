@@ -2,6 +2,12 @@
 
 import React from "react";
 import SectionHeading from "../general/SectionHeading";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 const FacultyCard = ({ name, designation, department }) => {
     return (
@@ -42,22 +48,66 @@ const FacultyCard = ({ name, designation, department }) => {
     );
 };
 
-export default function FacultyList({ items, title = "Our Faculty", description, departmentName }) {
+export default function FacultyList({ items, title = "Our Faculty", description, departmentName, sectionClassName = "py-16 bg-white" }) {
     return (
-        <section className="py-16 bg-white">
+        <section className={sectionClassName}>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <SectionHeading title={title} titleClassName="text-center !py-2" />
                 </div>
 
-                <div className="bg-[var(--dark-blue)] rounded-[32px] p-8 md:p-12 lg:p-16 shadow-2xl">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div className="bg-[var(--dark-blue)] rounded-[32px] p-6 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden">
+                    {/* Custom Styles for Swiper Pagination */}
+                    <style jsx global>{`
+                        .faculty-swiper .swiper-pagination-bullet {
+                            background: white;
+                            opacity: 0.5;
+                            width: 8px;
+                            height: 8px;
+                            transition: all 0.3s ease;
+                        }
+                        .faculty-swiper .swiper-pagination-bullet-active {
+                            background: var(--button-red) !important;
+                            opacity: 1;
+                            width: 24px;
+                            border-radius: 4px;
+                        }
+                        .faculty-swiper .swiper-pagination {
+                            bottom: 20px !important;
+                        }
+                    `}</style>
+
+                    {/* Mobile Swiper */}
+                    <div className="md:hidden">
+                        <Swiper
+                            modules={[Autoplay, Pagination]}
+                            spaceBetween={20}
+                            slidesPerView={1}
+                            pagination={{
+                                clickable: true,
+                                dynamicBullets: true,
+                            }}
+                            autoplay={{ delay: 3000, disableOnInteraction: false }}
+                            className="pb-16 faculty-swiper"
+                        >
+                            {items.map((faculty, index) => (
+                                <SwiperSlide key={index} className="h-auto">
+                                    <FacultyCard
+                                        name={faculty.name}
+                                        designation={faculty.designation}
+                                    />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+
+                    {/* Desktop Grid */}
+                    <div className="hidden md:grid md:grid-cols-2 gap-6 lg:gap-8">
                         {items.map((faculty, index) => (
                             <FacultyCard
                                 key={index}
                                 name={faculty.name}
                                 designation={faculty.designation}
-                            // department={departmentName}
                             />
                         ))}
                     </div>

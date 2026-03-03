@@ -446,9 +446,9 @@ export default function DynamicDepartmentPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--button-red)] mx-auto mb-4"></div>
+      <div className="min-h-screen flex items-center justify-center" suppressHydrationWarning={true}>
+        <div className="text-center" suppressHydrationWarning={true}>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--button-red)] mx-auto mb-4" suppressHydrationWarning={true}></div>
           <p className="text-[var(--light-text-gray)]">Loading department information...</p>
         </div>
       </div>
@@ -457,8 +457,8 @@ export default function DynamicDepartmentPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen flex items-center justify-center" suppressHydrationWarning={true}>
+        <div className="text-center" suppressHydrationWarning={true}>
           <p className="text-red-600 mb-4">Error loading department data: {error}</p>
           <p className="text-[var(--light-text-gray)]">Please try refreshing the page.</p>
         </div>
@@ -468,8 +468,8 @@ export default function DynamicDepartmentPage() {
 
   if (!departmentData) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen flex items-center justify-center" suppressHydrationWarning={true}>
+        <div className="text-center" suppressHydrationWarning={true}>
           <p className="text-[var(--light-text-gray)]">Department not found.</p>
         </div>
       </div>
@@ -489,8 +489,8 @@ export default function DynamicDepartmentPage() {
           showKnowMore={mainIntroContent.showKnowMore}
           knowMoreLabel={mainIntroContent.knowMoreLabel}
           extraContent={
-            departmentData?.name?.toUpperCase().includes("COMMERCE") &&
-            departmentData?.name?.toUpperCase().includes("MANAGEMENT") && (
+            (departmentData?.name?.toUpperCase().includes("COMMERCE") ||
+              departmentData?.name?.toUpperCase().includes("MANAGEMENT")) && (
               <div className="mt-8 flex flex-wrap gap-4">
                 <GlobalArrowButton
                   as={Link}
@@ -672,7 +672,7 @@ export default function DynamicDepartmentPage() {
         departmentId={departmentData?.id}
         fallbackToGlobal={true}
       />
-      <Gallery title="Glimpses" images={galleryImages.length > 0 ? galleryImages : undefined} />
+      <Gallery title="Glimpses" images={galleryImages.length > 0 ? galleryImages : undefined} paddingClassName="py-0" />
 
       {faqItems && faqItems.length > 0 && (
         <FAQ

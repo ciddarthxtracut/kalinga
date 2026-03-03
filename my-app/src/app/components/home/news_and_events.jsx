@@ -200,12 +200,12 @@ export default function NewsEvents({ categoryId, categoryIds, title, fallback = 
           scrollbar-width: none;
         }
       `}} />
-      <section className="relative w-full py-16">
-        <div className="container mx-auto px-2">
+      <section className="relative w-full py-16" suppressHydrationWarning={true}>
+        <div suppressHydrationWarning className="container mx-auto px-2">
           {/* Main Layout: News section with title + Event Calendar */}
-          <div className={`${hideCalendar ? 'flex justify-center' : 'grid grid-cols-1 md:grid-cols-[1.8fr_2.0fr_0.8fr]'} gap-6 sm:gap-6 items-end`}>
+          <div suppressHydrationWarning className={`${hideCalendar ? 'flex justify-center' : 'grid grid-cols-1 md:grid-cols-[1.8fr_2.0fr_0.8fr]'} gap-6 sm:gap-6 items-end`}>
             {/* Left section: News & Events title and two cards */}
-            <div className={`${hideCalendar ? 'w-full md:w-[82%]' : 'md:col-span-2'} flex flex-col`}>
+            <div suppressHydrationWarning className={`${hideCalendar ? 'w-full md:w-[82%]' : 'md:col-span-2'} flex flex-col`}>
               {/* Section title */}
               <SectionHeading
                 title={title || "News & Events"}
@@ -213,7 +213,7 @@ export default function NewsEvents({ categoryId, categoryIds, title, fallback = 
               />
 
               {/* Two column grid for news cards: If single item and hiding calendar, use flex center */}
-              <div className={`${(hideCalendar && newsItems.length === 0) ? 'flex justify-center' : 'grid grid-cols-1 md:grid-cols-2'} gap-6 sm:gap-6`}>
+              <div suppressHydrationWarning className={`${(hideCalendar && newsItems.length === 0) ? 'flex justify-center' : 'grid grid-cols-1 md:grid-cols-2'} gap-6 sm:gap-6`}>
                 {/* Column 1: Featured news */}
                 {featuredNews ? (
                   <Link href={`/news-and-events/${featuredNews.slug}`} className={`${(hideCalendar && newsItems.length === 0) ? 'w-full md:w-[48%]' : 'block h-full'}`}>
@@ -230,8 +230,8 @@ export default function NewsEvents({ categoryId, categoryIds, title, fallback = 
 
                 {/* Column 2: stacked news list - Hide if empty and hiding calendar */}
                 {(!hideCalendar || newsItems.length > 0) && (
-                  <div className={`${(hideCalendar && newsItems.length === 0) ? 'hidden' : 'w-full'}`}>
-                    <div className="bg-[var(--light-gray)] rounded-lg shadow-lg w-full h-auto md:h-[380px] p-4 sm:p-5 flex flex-col">
+                  <div suppressHydrationWarning className={`${(hideCalendar && newsItems.length === 0) ? 'hidden' : 'w-full'}`}>
+                    <div suppressHydrationWarning className="bg-[var(--light-gray)] rounded-lg shadow-lg w-full h-auto md:h-[380px] p-4 sm:p-5 flex flex-col">
                       {/* Items List - Fixed 3 items, no read more toggle */}
                       <div className="flex-1 space-y-4">
                         {newsItems.length > 0 ? (
@@ -261,6 +261,7 @@ export default function NewsEvents({ categoryId, categoryIds, title, fallback = 
                       <div className="mt-2 flex justify-center flex-shrink-0">
                         <Link href="/news-and-events">
                           <GlobalArrowButton
+                            as="span"
                             variant="no-arrow"
                             className="w-fit !bg-[var(--light-gray)] !shadow-none hover:!shadow-none gap-3 !px-0"
                             textClassName="!text-[#000] !font-semibold !ml-0 !px-0"

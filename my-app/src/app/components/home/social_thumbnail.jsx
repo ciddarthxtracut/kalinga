@@ -16,7 +16,7 @@ const items = [
 
 export default function SocialThumbs({ className = '' }) {
   return (
-    <section className={`w-full py-16 ${className}`}>
+    <section className={`w-full py-16 ${className}`} suppressHydrationWarning={true}>
       <div className="px-2">
         {/* Title */}
         <div className="flex justify-center mb-4 sm:mb-2 text-center">

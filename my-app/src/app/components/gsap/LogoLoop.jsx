@@ -169,7 +169,7 @@ export const LogoLoop = memo(
       const sequenceRect = seqRef.current?.getBoundingClientRect?.();
       const sequenceWidth = sequenceRect?.width ?? 0;
       const sequenceHeight = sequenceRect?.height ?? 0;
-      
+
       if (isVertical) {
         const parentHeight = containerRef.current?.parentElement?.clientHeight ?? 0;
         if (containerRef.current && parentHeight > 0) {
@@ -182,7 +182,7 @@ export const LogoLoop = memo(
           const viewport = containerRef.current?.clientHeight ?? parentHeight ?? sequenceHeight;
           const copiesNeeded = Math.ceil(viewport / sequenceHeight) + ANIMATION_CONFIG.COPY_HEADROOM;
           const newCopyCount = Math.max(ANIMATION_CONFIG.MIN_COPIES, copiesNeeded);
-          
+
           // Only update if values actually changed (compare with ref to prevent infinite loops)
           if (prevDimensionsRef.current.height !== newHeight) {
             setSeqHeight(newHeight);
@@ -197,7 +197,7 @@ export const LogoLoop = memo(
         const newWidth = Math.ceil(sequenceWidth);
         const copiesNeeded = Math.ceil(containerWidth / sequenceWidth) + ANIMATION_CONFIG.COPY_HEADROOM;
         const newCopyCount = Math.max(ANIMATION_CONFIG.MIN_COPIES, copiesNeeded);
-        
+
         // Only update if values actually changed (compare with ref to prevent infinite loops)
         if (prevDimensionsRef.current.width !== newWidth) {
           setSeqWidth(newWidth);
@@ -327,8 +327,8 @@ export const LogoLoop = memo(
     );
 
     return (
-      <div ref={containerRef} className={rootClassName} style={containerStyle} role="region" aria-label={ariaLabel}>
-        <div className="logoloop__track" ref={trackRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div ref={containerRef} suppressHydrationWarning={true} className={rootClassName} style={containerStyle} role="region" aria-label={ariaLabel}>
+        <div suppressHydrationWarning={true} className="logoloop__track" ref={trackRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           {logoLists}
         </div>
       </div>

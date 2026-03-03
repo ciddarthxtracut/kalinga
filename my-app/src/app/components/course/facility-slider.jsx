@@ -3,6 +3,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import Link from 'next/link';
 import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -26,7 +27,7 @@ export default function FacilitySlider({
         <div className={`w-full container mx-auto h-auto md:h-[400px] flex flex-col md:block relative mt-16 ${className}`}>
 
             {/* Content Box - Left Side */}
-            <div className="bg-[var(--card-sandal)] rounded-2xl p-6 md:p-8 shadow-md w-full md:w-[55%] md:min-h-[330px] md:absolute md:left-0 md:top-[35px] flex flex-col justify-center z-0 order-2 mt-6 md:mt-0">
+            <div className="bg-[var(--card-sandal)] rounded-2xl p-6 md:p-8 shadow-md w-full md:w-[55%] md:min-h-[330px] md:absolute md:left-0 md:top-[35px] flex flex-col justify-center z-20 order-2 mt-6 md:mt-0">
                 <h3 className="mb-2 font-serif text-[var(--foreground)]">{title}</h3>
                 {subtitle && (
                     <p className="mb-4">
@@ -38,9 +39,11 @@ export default function FacilitySlider({
                 </p>
                 {ctaText && (
                     <div className="mt-6">
-                        <GlobalArrowButton href={ctaLink}>
-                            {ctaText}
-                        </GlobalArrowButton>
+                        <Link href={ctaLink} passHref legacyBehavior>
+                            <GlobalArrowButton as="a">
+                                {ctaText}
+                            </GlobalArrowButton>
+                        </Link>
                     </div>
                 )}
             </div>

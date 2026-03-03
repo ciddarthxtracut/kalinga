@@ -43,7 +43,7 @@ export default function GalleryAll() {
     }, [])
 
     return (
-        <section ref={sectionRef} className="relative w-full py-16 bg-white">
+        <section ref={sectionRef} className="relative w-full py-16 bg-white" suppressHydrationWarning={true}>
             <div className="container mx-auto px-2">
                 {/* Mobile: Title above grid */}
                 <div className="md:hidden mb-6 text-center transition-all duration-700"
@@ -73,11 +73,10 @@ export default function GalleryAll() {
                                 {images.map((img, idx) => (
                                     <div
                                         key={img.id}
-                                        className={`relative aspect-square rounded-lg overflow-hidden shadow-md transition-all duration-500 ${
-                                            isInView 
-                                                ? 'opacity-100 scale-100' 
+                                        className={`relative aspect-square rounded-lg overflow-hidden shadow-md transition-all duration-500 ${isInView
+                                                ? 'opacity-100 scale-100'
                                                 : 'opacity-0 scale-75'
-                                        }`}
+                                            }`}
                                         style={{
                                             transitionDelay: isInView ? `${idx * 80}ms` : '0ms'
                                         }}
@@ -111,11 +110,10 @@ export default function GalleryAll() {
                                         return (
                                             <div
                                                 key={img.id}
-                                                className={`absolute ${pos} z-10 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105 duration-300 ${
-                                                    isInView 
-                                                        ? 'opacity-100 scale-100 animate-popup' 
+                                                className={`absolute ${pos} z-10 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105 duration-300 ${isInView
+                                                        ? 'opacity-100 scale-100 animate-popup'
                                                         : 'opacity-0 scale-75'
-                                                }`}
+                                                    }`}
                                                 style={{
                                                     animationDelay: isInView ? `${idx * 150}ms` : '0ms',
                                                     transitionDelay: isInView ? `${idx * 150}ms` : '0ms'
@@ -134,10 +132,10 @@ export default function GalleryAll() {
 
                             {/* Desktop: Center title and yellow banner */}
                             <div className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 w-full px-4 sm:px-6 transition-all duration-700"
-                            style={{
-                                transitionDelay: isInView ? `${images.length * 150 + 200}ms` : '0ms',
-                                opacity: isInView ? 1 : 0,
-                            }}>
+                                style={{
+                                    transitionDelay: isInView ? `${images.length * 150 + 200}ms` : '0ms',
+                                    opacity: isInView ? 1 : 0,
+                                }}>
                                 {/* <div className="bg-[#FFE311] py-2 sm:py-3 px-4 sm:px-6 mb-4 sm:mb-6 rounded-lg shadow-lg inline-block max-w-[90%] sm:max-w-none">
                                     <p className="text-[10px] sm:text-xs md:text-sm font-semibold text-black leading-tight"
                                         style={{
@@ -186,7 +184,7 @@ export default function GalleryAll() {
         </div> */}
                 </div>
             </div>
-            
+
             <style jsx>{`
                 @keyframes popup {
                     0% {

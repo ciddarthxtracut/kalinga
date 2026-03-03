@@ -296,6 +296,7 @@ export default function MainIntro({
                   )}
                 </div>
               )}
+              {extraContent}
             </div>
           </div>
 

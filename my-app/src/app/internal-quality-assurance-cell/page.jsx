@@ -33,17 +33,17 @@ const IQACPage = () => {
       `,
       logos: [
         {
-          src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/naac.webp",
+          src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/nirf-new.webp",
           alt: "NAAC",
           name: "NAAC",
-          width: 120,
+          width: 1000,
           height: 80
         },
         {
-          src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/nirf-logo-new.jpeg",
+          src: "https://kalinga-university.s3.ap-south-1.amazonaws.com/accreditation/naac-new.webp",
           alt: "NIRF",
           name: "NIRF",
-          width: 120,
+          width: 150,
           height: 80
         }
       ],
@@ -136,7 +136,7 @@ const IQACPage = () => {
         descriptionClassName="text-[var(--foreground)]"
         sectionClassName="bg-white !py-0 !pb-0"
       />
-      {/* <TwoLogo logos={MentorIntroProps[0].logos} /> */}
+      <TwoLogo logos={MentorIntroProps[0].logos} />
       {/* <PublicationGrid stats={publicationStats} /> */}
       <DeptHeadIntro items={MentorIntroProps} className="pt-10 pb-20" />
       <CareerPath

@@ -53,7 +53,7 @@ const FEES_COMMERCE = {
     rows: [
         {
             "S.No.": 1,
-            Course: "MBA** (Dual Specialisations)",
+            Course: "MBA**",
             "Tenure (Years)": 2,
             Sem: 4,
             "Proposed Tuition Fee Per Sem (INR)": "1,25,000/-",

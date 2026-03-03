@@ -308,8 +308,8 @@ const Programs = () => {
 
 
   return (
-    <section className="py-12 sm:py-16">
-      <div className="container mx-auto px-2 md:pt-16">
+    <section suppressHydrationWarning={true} className="py-12 sm:py-16">
+      <div suppressHydrationWarning className="container mx-auto px-2 md:pt-16">
         {/* Two column layout */}
         <div className="mb-4 sm:mb-5 lg:mb-6 text-center">
           <SectionHeading
@@ -318,9 +318,9 @@ const Programs = () => {
           />
           <p className="text-[var(--light-text-gray)] text-sm md:text-sm max-w-3xl mx-auto">Discover programs combining academics with hands-on learning exposure, preparing you for real-world careers.</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-6 sm:mb-8 lg:mb-10 items-center">
+        <div suppressHydrationWarning className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-6 sm:mb-8 lg:mb-10 items-center">
           {/* Left column: Text and Tabs */}
-          <div className="flex flex-col justify-around">
+          <div suppressHydrationWarning className="flex flex-col justify-around">
             {/* Header text */}
             <div className="mb-4 sm:mb-5 lg:mb-6 hidden">
               <SectionHeading
@@ -364,9 +364,9 @@ const Programs = () => {
           </div>
 
           {/* Right column: Form and Search */}
-          <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 items-start lg:items-end w-full lg:w-auto">
+          <div suppressHydrationWarning className="flex flex-col gap-4 sm:gap-5 lg:gap-6 items-start lg:items-end w-full lg:w-auto">
             {/* Red form card */}
-            <div className="hidden bg-[var(--dark-blue)] p-6 sm:p-8 lg:p-10 shadow-xl w-full lg:w-full max-w-[560px] h-auto min-h-[230px] sm:min-h-[250px] lg:min-h-[300px] rounded-[10px]">
+            <div suppressHydrationWarning className="hidden bg-[var(--dark-blue)] p-6 sm:p-8 lg:p-10 shadow-xl w-full lg:w-full max-w-[560px] h-auto min-h-[230px] sm:min-h-[250px] lg:min-h-[300px] rounded-[10px]">
               <div className="space-y-6 sm:space-y-8">
                 {/* I am a */}
                 <div className="flex items-center gap-3 sm:gap-4 relative">
@@ -447,9 +447,9 @@ const Programs = () => {
         </div>
 
         {/* Cards row using Stack inside Swiper */}
-        <div className="relative">
+        <div suppressHydrationWarning={true} className="relative">
           {loading ? (
-            <div className="w-full bg-[var(--lite-sand)] border border-gray-200 rounded-lg p-6 text-center text-[var(--light-text-gray)]">
+            <div suppressHydrationWarning={true} className="w-full bg-[var(--lite-sand)] border border-gray-200 rounded-lg p-6 text-center text-[var(--light-text-gray)]">
               Loading programs...
             </div>
           ) : error ? (
@@ -552,6 +552,7 @@ const Programs = () => {
         <div className="relative flex items-center justify-center mt-4 px-2 sm:px-0">
           <Link href="/admissions">
             <GlobalArrowButton
+              as="span"
               className="!bg-white !text-black shadow-none"
               arrowClassName="!bg-[var(--button-red)]"
               arrowIconClassName="!text-white"

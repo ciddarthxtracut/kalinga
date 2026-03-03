@@ -110,9 +110,23 @@ function NewsAndEvents() {
     loadNews();
   }, [loadNews]);
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // --- Derived Data Processing ---
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const today = useMemo(() => {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }, []);
+
+  // Helper to ensure stable rendering for SSR
+  const isFutureEvent = (dateStr) => {
+    if (!mounted) return false;
+    return new Date(dateStr) > today;
+  };
 
   // Truncation helper for fallback content
   const getTruncatedContent = (content) => {
@@ -127,7 +141,7 @@ function NewsAndEvents() {
   const futureEvents = useMemo(() => {
     return newsItems.filter(item => {
       if (!item.date) return false;
-      return new Date(item.date) > today;
+      return isFutureEvent(item.date);
     }).map(item => ({
       id: item.id,
       image: item.images?.[0]?.image || 'https://kalinga-university.s3.ap-south-1.amazonaws.com/common/student.jpg',

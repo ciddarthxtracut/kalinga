@@ -1,12 +1,14 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { getLogoSrc, getLogoAlt } from '../../config/contact-info'
 import FlipbookTrigger from '../general/FlipbookTrigger'
 import { useFlipbook } from '../general/FlipbookContext'
+import Modal from '../general/Modal'
 
 export default function Footer() {
   const { openFlipbook } = useFlipbook();
+  const [isFraudModalOpen, setIsFraudModalOpen] = useState(false);
   return (
     <>
       <style dangerouslySetInnerHTML={{
@@ -28,14 +30,14 @@ export default function Footer() {
           }
         }
       `}} />
-      <footer className="text-white mt-5 px-2">
-        <div className="relative bg-[var(--dark-blue)] rounded-[10px] sm:rounded-[15px]">
-          <div className="px-4 sm:px-6 md:px-6 lg:px-12 py-6 sm:py-8 md:py-8 lg:py-10 !pb-0 relative z-10">
+      <footer className="text-white mt-5 px-2" suppressHydrationWarning={true}>
+        <div className="relative bg-[var(--dark-blue)] rounded-[10px] sm:rounded-[15px]" suppressHydrationWarning={true}>
+          <div className="px-4 sm:px-6 md:px-6 lg:px-12 py-6 sm:py-8 md:py-8 lg:py-10 !pb-0 relative z-10" suppressHydrationWarning={true}>
             {/* Top Row: Logo and Follow Us */}
-            <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4 sm:gap-4 md:gap-0 mb-6 sm:mb-6 md:mb-8 lg:mb-10">
+            <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4 sm:gap-4 md:gap-0 mb-6 sm:mb-6 md:mb-8 lg:mb-10" suppressHydrationWarning={true}>
               {/* Logo Section - Left */}
-              <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3">
-                <div className="relative h-[40px] sm:h-[45px] md:h-[49px] lg:h-12 w-[120px] sm:w-[140px] md:w-[200px]">
+              <div suppressHydrationWarning className="flex items-center gap-2 sm:gap-2.5 lg:gap-3">
+                <div suppressHydrationWarning className="relative h-[40px] sm:h-[45px] md:h-[49px] lg:h-12 w-[120px] sm:w-[140px] md:w-[200px]">
                   <Image
                     src={getLogoSrc('primary')}
                     alt={getLogoAlt('primary')}
@@ -47,9 +49,9 @@ export default function Footer() {
             </div>
 
             {/* Main Content: Three Columns */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 sm:gap-8 md:gap-8 lg:gap-10">
+            <div suppressHydrationWarning className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 sm:gap-8 md:gap-8 lg:gap-10">
               {/* Quick Link - 2 columns */}
-              <div className="sm:col-span-1 md:col-span-2 mb-6 sm:mb-0">
+              <div suppressHydrationWarning className="sm:col-span-1 md:col-span-2 mb-6 sm:mb-0">
                 <h4 className="text-sm sm:text-base lg:text-lg font-stix mb-4 sm:mb-4 lg:mb-6 flex items-end gap-2">
                   <span className="text-white font-stix">Quick Links</span>
                   {/* <span className="flex-1 border-t border-thick border-white/70 relative bottom-2"></span> */}
@@ -74,7 +76,7 @@ export default function Footer() {
               </div>
 
               {/* Important Links - 2 columns */}
-              <div className="sm:col-span-1 md:col-span-6 mb-6 sm:mb-0 md:-ml-[45px]">
+              <div suppressHydrationWarning className="sm:col-span-1 md:col-span-6 mb-6 sm:mb-0 md:-ml-[45px]">
                 <h4 className="text-sm sm:text-base lg:text-lg font-normal mb-4 sm:mb-6 flex items-end gap-2">
                   <span className="text-white font-stix">Important Links</span>
                   <span className="hidden sm:block flex-1 border-t border-white/70 relative bottom-2"></span>
@@ -137,13 +139,14 @@ export default function Footer() {
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/radio">Kalinga Radio</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/podcast">Kalinga Podcast</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/kalinga-buzz">Kalinga Buzz</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words cursor-pointer" onClick={() => setIsFraudModalOpen(true)}>Fraud Awareness Guidelines</a></li>
                   </ul>
 
                 </div>
               </div>
 
               {/* Contact Us */}
-              <div className="sm:col-span-2 md:col-span-3 md:col-start-10 mt-0 md:-mt-15 md:ml-7">
+              <div suppressHydrationWarning className="sm:col-span-2 md:col-span-3 md:col-start-10 mt-0 md:-mt-15 md:ml-7">
                 <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-6">
                   {/* Follow Us Section */}
                   <div className="">
@@ -225,10 +228,34 @@ export default function Footer() {
             </h2>
           </div>
         </div>
-        <div className="text-center py-2   text-black">
+        <div suppressHydrationWarning className="text-center py-2   text-black">
           <p className="text-xs">© 2026 Kalinga University. All rights reserved.</p>
         </div>
       </footer>
+
+      <Modal
+        isOpen={isFraudModalOpen}
+        onClose={() => setIsFraudModalOpen(false)}
+        title="Fraud Awareness Guidelines"
+      >
+        <div className="space-y-6 text-gray-700 font-plus-jakarta-sans leading-relaxed">
+          <section>
+            <p className="mb-4">
+              <b>Fraud Awareness Guidelines: </b> Kalinga goes to great lengths to protect our students from fraud. If you suspect having received fraudulent emails, SMS, or found a website or social media account that tries to pass off as official Kalinga University, we encourage you to let us know at your earliest convenience, so that we can quickly take action to stop the fraud.
+            </p>
+            <p className="mb-4">
+              Please report all suspicious activity to our dedicated Anti-Abuse Mailbox at <a href="mailto:report@kalingauniversity.ac.in" className="text-[var(--button-red)] font-bold underline">report@kalingauniversity.ac.in</a>. We thoroughly investigate every report of suspected fraud, but generally, we do not respond to personal inquiries. Thank you for joining our effort to combat online fraud.
+            </p>
+          </section>
+
+          <section>
+            <h4 className="text-xl font-bold mb-3 text-[var(--foreground)] font-stix">Fraudulent Use of Our Brand</h4>
+            <p className="mb-4">
+              Attempts have been made to defraud students online by the unauthorised use of the Kalinga University name and brand via email communications and graphics that appear, on the surface, to have originated from Kalinga University. Kalinga accepts no responsibility for any costs, charges, or payments made that were improperly incurred as a result of fraudulent activity.
+            </p>
+          </section>
+        </div>
+      </Modal>
     </>
   )
 }

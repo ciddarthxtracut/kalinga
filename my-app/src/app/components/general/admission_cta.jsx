@@ -37,7 +37,7 @@ const AdmissionCareer = ({
   imageAlt = defaultContent.image.alt,
 }) => {
   return (
-    <section className="pt-16 bg-white px-2">
+    <section className="pt-16 bg-white px-2" suppressHydrationWarning={true}>
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0">
         {/* Left Panel - Admission */}
         <div className="w-full bg-[var(--dark-orange-red)] md:rounded-l-lg rounded-lg p-5 sm:p-7 md:p-13 text-white flex flex-col  justify-center items-start">

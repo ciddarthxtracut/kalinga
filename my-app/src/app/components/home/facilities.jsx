@@ -140,13 +140,14 @@ export default function Facilities() {
           }
         }
       `}} />
-      <section
+      <section suppressHydrationWarning={true}
         className="relative w-full py-8 sm:py-12 md:py-16"
         aria-label="Facilities section"
       >
-        <div className="px-2">
+        <div suppressHydrationWarning={true} className="px-2">
           {/* Main content area with selected facility */}
           <div
+            suppressHydrationWarning={true}
             className="relative w-full rounded-xl sm:rounded-2xl overflow-visible shadow-lg h-[400px] sm:h-[400px] md:h-[580px] lg:h-[648px]"
             style={{
               backgroundImage: `url(${facilities[currentSlide].image})`,
@@ -162,8 +163,8 @@ export default function Facilities() {
           >
             {/* dark overlay */}
             <div className="absolute inset-0 bg-black/60 rounded-2xl transition-opacity duration-300"></div>
-            <div className="container mx-auto px-5" >
-              <div className="relative z-10 h-full py-4 sm:py-6 md:py-8 lg:py-12 xl:py-30 flex flex-col justify-between">
+            <div suppressHydrationWarning={true} className="container mx-auto px-5" >
+              <div suppressHydrationWarning={true} className="relative z-10 h-full py-4 sm:py-6 md:py-8 lg:py-12 xl:py-30 flex flex-col justify-between">
                 {/* Top Section - Heading */}
                 <div className="text-white">
                   <div className="sm:-mt-6 md:-mt-8 lg:-mt-10 xl:-mt-12">
@@ -201,6 +202,7 @@ export default function Facilities() {
               {/* Desktop overlay slider */}
               <div className="hidden lg:block lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:mt-0 lg:-translate-y-16 xl:-translate-y-20 lg:-bottom-12 xl:-bottom-16 lg:z-30 lg:w-[90%]">
                 <div
+                  suppressHydrationWarning={true}
                   className="flex gap-1 sm:gap-1.5 md:gap-2 overflow-x-auto pb-2 facilities-image-slider"
                   style={{
                     scrollbarWidth: 'none',
@@ -213,6 +215,7 @@ export default function Facilities() {
                     const progressForBar = idx < currentSlide ? 100 : idx === currentSlide ? progress : 0
                     return (
                       <div
+                        suppressHydrationWarning={true}
                         key={facility.id}
                         className="flex flex-col gap-0.5 sm:gap-1 flex-shrink-0 facility-thumbnail"
                       >

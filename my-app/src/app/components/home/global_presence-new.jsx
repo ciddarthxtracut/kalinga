@@ -284,7 +284,7 @@ export default function Map({ backgroundColor = "", textColor = "", subtitleText
   }, [activeLocation]);
 
   return (
-    <section className={`pt-16 ${backgroundColor}`}>
+    <section className={`pt-16 ${backgroundColor}`} suppressHydrationWarning={true}>
       <div className="container mx-auto px-4 relative">
         <SectionHeading
           subtitle="Learning Across Borders"

@@ -37,7 +37,7 @@ const logos = [
   'https://kalinga-university.s3.ap-south-1.amazonaws.com/placement/ultratech.webp'
 ]
 
-const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg-[var(--light-gray)]", marginClassName = "-mb-28", placementData }) => {
+const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg-[var(--light-gray)]", marginClassName = "-mb-28", placementData, customImages }) => {
   const stackRef = useRef(null)
   const sectionRef = useRef(null)
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -60,21 +60,23 @@ const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg
   }, [placementStats])
 
   // Use API images if available, otherwise fallback to default
-  const placementImages = placementPhotos.length > 0
-    ? placementPhotos.map(photo => photo.image).filter(Boolean)
-    : [
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement1.webp',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement2.webp',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement3.webp',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement4.webp',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement5.webp',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement6.webp',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-1.png',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-2.png',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-3.png',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-4.png',
-      'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-5.png'
-    ]
+  const placementImages = customImages && customImages.length > 0
+    ? customImages
+    : placementPhotos.length > 0
+      ? placementPhotos.map(photo => photo.image).filter(Boolean)
+      : [
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement1.webp',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement2.webp',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement3.webp',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement4.webp',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement5.webp',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/placement6.webp',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-1.png',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-2.png',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-3.png',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-4.png',
+        'https://kalinga-university.s3.ap-south-1.amazonaws.com/Home/place-5.png'
+      ]
 
   // Get title and description from API or use defaults
   const title = placementInfo?.heading || "A Proven Placement Track Record"
@@ -164,11 +166,11 @@ const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg
 
   return (
     <>
-      <section ref={sectionRef} className={`py-16 ${bgColor}`}>
-        <div className="container mx-auto px-2">
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center md:items-center">
+      <section ref={sectionRef} className={`py-16 ${bgColor}`} suppressHydrationWarning={true}>
+        <div suppressHydrationWarning className="container mx-auto px-2">
+          <div suppressHydrationWarning className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center md:items-center">
             {/* Left: title + stats */}
-            <div className="w-full">
+            <div suppressHydrationWarning className="w-full">
 
               <SectionHeading
                 subtitle="Student Placements"
@@ -212,7 +214,7 @@ const Placements = ({ hideMarquee = false, hideMilestones = false, bgColor = "bg
             </div>
 
             {/* Right: Stack card component */}
-            <div className={`flex justify-center md:justify-end mt-6 md:mt-0 z-2 ${marginClassName}`}>
+            <div suppressHydrationWarning className={`flex justify-center md:justify-end mt-6 md:mt-0 z-2 ${marginClassName}`}>
               <div className="w-full max-w-[530px]">
                 <div style={{ width: '100%', height: '480px' }}>
                   <Stack

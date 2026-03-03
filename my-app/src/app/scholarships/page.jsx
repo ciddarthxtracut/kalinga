@@ -579,7 +579,7 @@ export default function ScholarshipsPage() {
         <div className="rounded-2xl bg-[var(--lite-sand)] p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
             <h3 className="font-stix text-xl md:text-2xl text-[var(--foreground)]">
-              Scholarship Policy (2025–26)
+              Scholarship Policy
             </h3>
             <p className="mt-2 text-gray-700">
               Download the official scholarship policy document for detailed eligibility and terms.

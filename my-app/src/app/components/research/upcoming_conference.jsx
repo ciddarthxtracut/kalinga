@@ -23,7 +23,7 @@ export default function UpcomingConference({
   showDate = true,
   imageWidth = 40,
   imageHeight = 400,
-  imageContainerClass = "!w-[40%] object-cover",
+  imageContainerClass = "object-cover",
   href = null,
   categoryText = "Upcoming Conferences",
 
@@ -153,6 +153,15 @@ export default function UpcomingConference({
           cursor: not-allowed;
           background: #ccc;
         }
+        .conference-img {
+          width: var(--desktop-width);
+        }
+        @media (max-width: 767px) {
+          .conference-img {
+            width: 100% !important;
+            height: auto !important;
+          }
+        }
       `}</style>
       <div className="container mx-auto">
         <h2 className="text-center mb-6">{title}</h2>
@@ -189,16 +198,16 @@ export default function UpcomingConference({
               >
                 {displayConferences.map((conf) => (
                   <SwiperSlide key={conf.id}>
-                    <div className={`${backgroundColorcard} rounded-2xl shadow-sm flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center`}>
+                    <div className={`${backgroundColorcard} rounded-2xl shadow-sm flex flex-col md:flex-row justify-center items-center`}>
                       <Image
                         src={conf.image}
                         alt={conf.title}
                         width={600}
                         height={imageHeight}
-                        className={`${imageContainerClass} rounded-xl object-contain`}
+                        className={`${imageContainerClass} rounded-xl object-contain conference-img`}
                         style={{
                           height: `${imageHeight}px`,
-                          width: `${imageWidth}%`,
+                          "--desktop-width": `${imageWidth}%`,
                         }}
                         unoptimized
                       />
@@ -246,7 +255,7 @@ export default function UpcomingConference({
             </div>
 
             {navigationType === "dots" ? (
-              <div className="conference-pagination flex justify-center gap-3 mt-8" />
+              <div className="conference-pagination flex justify-center gap-3 md:mt-8 mt-0" />
             ) : (
               <div className="conference-nav-buttons">
                 <button type="button" className="conf-nav-btn conf-button-prev">

@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import SectionHeading from "../general/SectionHeading";
 import GlobalArrowButton from "../general/global-arrow_button";
+import FlipbookTrigger from "../general/FlipbookTrigger";
 
 export default function StudentCell({
   imageSrc = "https://kalinga-university.s3.ap-south-1.amazonaws.com/international-students/student-cell.webp",
@@ -32,6 +33,7 @@ export default function StudentCell({
     "Redressal of student grievances",
     "Issue of all official letters and documents related to International students",
   ],
+  buttons = [],
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -117,6 +119,47 @@ export default function StudentCell({
                 >
                   {isExpanded ? "Read Less" : ctaLabel}
                 </GlobalArrowButton>
+              )}
+              {buttons && buttons.length > 0 && (
+                <div className="flex flex-wrap gap-4 mt-6">
+                  {buttons.map((btn, index) => {
+                    const isPdf = btn.fileUrl && btn.fileUrl.toLowerCase().endsWith(".pdf");
+                    const buttonEl = (
+                      <GlobalArrowButton
+                        key={btn.id || index}
+                        className="!bg-white !text-black"
+                        arrowClassName="!bg-[var(--button-red)]"
+                        arrowIconClassName="!text-white"
+                        textClassName="!text-black text-xs sm:text-base"
+                      >
+                        {btn.text}
+                      </GlobalArrowButton>
+                    );
+
+                    return isPdf ? (
+                      <FlipbookTrigger key={btn.id || index} pdfUrl={btn.fileUrl} title={btn.text}>
+                        <a
+                          href={btn.fileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex"
+                        >
+                          {buttonEl}
+                        </a>
+                      </FlipbookTrigger>
+                    ) : (
+                      <a
+                        key={btn.id || index}
+                        href={btn.fileUrl || "#"}
+                        target={btn.fileUrl ? "_blank" : undefined}
+                        rel={btn.fileUrl ? "noopener noreferrer" : undefined}
+                        className="inline-flex"
+                      >
+                        {buttonEl}
+                      </a>
+                    );
+                  })}
+                </div>
               )}
             </div>
           </div>

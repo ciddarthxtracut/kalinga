@@ -135,7 +135,7 @@ export const ScrollComponent = ({
   }
 
   return (
-    <section>
+    <section suppressHydrationWarning={true}>
       {texts.map((text, index) => (
         <VelocityText
           key={index}

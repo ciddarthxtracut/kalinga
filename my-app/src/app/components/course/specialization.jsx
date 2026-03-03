@@ -40,7 +40,7 @@ export default function Specialization({ cards = cardData }) {
     };
 
     return (
-        <div className="relative flex flex-col gap-6 my-[50px] mx-auto items-center">
+        <div className="relative flex flex-col gap-6 md:my-[50px] my-[0px] mx-auto items-center">
             {cards.map((card, index) => {
                 // Alternate colors: 0 = light sandal, 1 = white, 2 = light sandal
                 const backgroundColor = index % 2 === 0 ? 'bg-[var(--card-skin)]' : 'bg-[var(--card-white)]';

@@ -45,12 +45,12 @@ const AccreditationRanking = ({
   }))
 
   return (
-    <section id={id} className="py-16 ">
-      <div className="">
-        <div className="relative flex flex-col md:flex-row items-center md:items-center">
+    <section suppressHydrationWarning={true} id={id} className="py-16 ">
+      <div suppressHydrationWarning={true} className="">
+        <div suppressHydrationWarning={true} className="relative flex flex-col md:flex-row items-center md:items-center">
           {/* Left title pill */}
-          <div className="relative w-full md:w-auto z-10 md:mr-[-130px]">
-            <div className="bg-[var(--button-red)] text-white rounded-r-[80px] sm:rounded-r-[100px] md:rounded-r-[120px] flex items-center justify-center shadow-lg w-full md:w-[430px] h-auto min-h-[100px] sm:min-h-[140px] md:h-[172px] px-4 sm:px-6 md:px-0 md:md-0 mb-3">
+          <div suppressHydrationWarning={true} className="relative w-full md:w-auto z-10 md:mr-[-130px]">
+            <div suppressHydrationWarning={true} className="bg-[var(--button-red)] text-white rounded-r-[80px] sm:rounded-r-[100px] md:rounded-r-[120px] flex items-center justify-center shadow-lg w-full md:w-[430px] h-auto min-h-[100px] sm:min-h-[140px] md:h-[172px] px-4 sm:px-6 md:px-0 md:md-0 mb-3">
               <h2 className="text-2xl sm:text-2xl md:text-4xl font-stix leading-tight text-left py-2 sm:py-0">
                 {heading.split(' & ').map((part, index, array) => (
                   <span key={index} className="block font-stix">
@@ -67,7 +67,7 @@ const AccreditationRanking = ({
           </div>
 
           {/* LogoLoop slider */}
-          <div className="flex-1 w-full justify-center items-center md:pl-[130px] overflow-hidden relative">
+          <div suppressHydrationWarning={true} className="flex-1 w-full justify-center items-center md:pl-[130px] overflow-hidden relative">
             <LogoLoop
               logos={logoLoopItems}
               speed={60}

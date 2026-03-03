@@ -120,7 +120,7 @@ export default function MediaCardSlider({
   }, [isModalOpen]);
 
   return (
-    <section id={id} className={` py-16 ${backgroundColor} relative ${className}`}>
+    <section id={id} className={` py-16 ${backgroundColor} relative ${className}`} suppressHydrationWarning={true}>
       <div className="container mx-auto px-2">
         {/* Header Section */}
         <div className="text-center">
@@ -185,7 +185,7 @@ export default function MediaCardSlider({
                             // Use video element for video thumbnails (including those with #t= time fragments)
                             <video
                               src={item.thumbnail}
-                              className="absolute inset-0 w-full h-full object-cover object-top"
+                              className={`absolute inset-0 w-full h-full object-cover md:object-top ${imageObjectPosition}`}
                               preload="metadata"
                               muted
                               playsInline

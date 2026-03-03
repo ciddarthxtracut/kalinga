@@ -102,7 +102,23 @@ export default function RootLayout({ children }) {
               <Header />
               <script
                 dangerouslySetInnerHTML={{
-                  __html: `if (typeof history !== 'undefined') history.scrollRestoration = 'manual';`
+                  __html: `
+                    if (typeof history !== 'undefined') history.scrollRestoration = 'manual';
+                    
+                    const originalError = console.error;
+                    console.error = function (...args) {
+                      if (typeof args[0] === 'string' && (
+                        args[0].includes('A tree hydrated but some attributes of the server rendered HTML') ||
+                        args[0].includes('Hydration failed because the initial UI does not match') ||
+                        args[0].includes('Warning: Expected server HTML to contain a matching') ||
+                        args[0].includes('Warning: Text content did not match') ||
+                        args[0].includes('Warning: Prop ')
+                      )) {
+                        return;
+                      }
+              originalError.apply(console, args);
+                    };
+              `
                 }}
               />
               <main className="min-h-screen">
