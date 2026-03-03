@@ -212,27 +212,12 @@ export default function MainIntro({
 
               {showKnowMore && (
                 <div className="pt-2 flex flex-wrap gap-4 items-center">
-                  {/* Expansion Toggle (Read More / Show Less) */}
-                  {(needsTruncation || (hidePointsUntilExpanded && points && points.length > 0)) && (
-                    <GlobalArrowButton
-                      className="w-fit !bg-white !text-white gap-2 !px-0 !py-0"
-                      textClassName="!text-[var(--button-red)] !font-semibold !px-0"
-                      arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
-                      arrowIconClassName="!text-white"
-                      onClick={() => setShowAll(!showAll)}
-                    >
-                      {showAll ? "Show Less" : knowMoreLabel}
-                    </GlobalArrowButton>
-                  )}
-
                   {/* Know More external Link */}
                   {knowMoreHref && knowMoreHref !== "#" ? (
                     (() => {
                       const isPdf = knowMoreHref.toLowerCase().endsWith(".pdf");
                       const buttonEl = (
-                        <GlobalArrowButton
-                          className="w-fit"
-                        >
+                        <GlobalArrowButton className="w-fit">
                           {knowMoreLabel}
                         </GlobalArrowButton>
                       );
@@ -262,15 +247,52 @@ export default function MainIntro({
                       );
                     })()
                   ) : (
-                    <GlobalArrowButton
-                      className="w-fit !bg-white !text-white gap-2 !px-0 !py-0"
-                      textClassName="!text-[var(--button-red)] !font-semibold !px-0"
-                      arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
-                      arrowIconClassName="!text-white"
-                      onClick={() => setShowAll(!showAll)}
-                    >
-                      {showAll ? "Show Less" : knowMoreLabel}
-                    </GlobalArrowButton>
+                    /* Expansion Toggle (Read More / Show Less) - ONLY if no external link */
+                    (needsTruncation || (hidePointsUntilExpanded && points && points.length > 0)) && (
+                      <GlobalArrowButton
+                        className="w-fit !bg-white !text-white gap-2 !px-0 !py-0"
+                        textClassName="!text-[var(--button-red)] !font-semibold !px-0"
+                        arrowClassName="p-[3px] !px-1 mr-2 !py-1 !bg-[var(--button-red)]"
+                        arrowIconClassName="!text-white"
+                        onClick={() => setShowAll(!showAll)}
+                      >
+                        {showAll ? "Show Less" : knowMoreLabel}
+                      </GlobalArrowButton>
+                    )
+                  )}
+
+                  {/* Extra Link (e.g., Download Scholarship Policy) */}
+                  {extraLink && (
+                    (() => {
+                      const isPdf = extraLink.toLowerCase().endsWith(".pdf");
+                      const buttonEl = (
+                        <GlobalArrowButton className="w-fit">
+                          {extraLinkLabel}
+                        </GlobalArrowButton>
+                      );
+
+                      return isPdf ? (
+                        <FlipbookTrigger pdfUrl={extraLink} title={extraLinkLabel}>
+                          <a
+                            href={extraLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block"
+                          >
+                            {buttonEl}
+                          </a>
+                        </FlipbookTrigger>
+                      ) : (
+                        <a
+                          href={extraLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block"
+                        >
+                          {buttonEl}
+                        </a>
+                      );
+                    })()
                   )}
                 </div>
               )}
