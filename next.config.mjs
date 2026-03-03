@@ -40,7 +40,7 @@ const nextConfig = {
       },
     ];
   },
-  transpilePackages: [],
+  transpilePackages: ['motion', 'framer-motion', 'motion-dom', 'motion-utils'],
   webpack: (config) => {
     config.resolve.extensionAlias = {
       '.js': ['.js', '.ts', '.tsx', '.mjs'],
@@ -48,7 +48,11 @@ const nextConfig = {
     };
     return config;
   },
-  turbopack: {},
+  turbopack: {
+    resolveAlias: {
+      // Potentially helpful aliases for motion-dom
+    }
+  },
 };
 
 export default nextConfig;
