@@ -57,10 +57,7 @@ const nextConfig = {
     }
     return config;
   },
-  // Add empty turbopack config to silence the warning
   // We're using webpack for the DOMMatrix polyfill
-  turbopack: {},
-  transpilePackages: ['motion', 'framer-motion', 'motion-dom', 'motion-utils'],
 };
 
 export default nextConfig;

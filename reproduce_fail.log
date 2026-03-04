@@ -1,0 +1,150 @@
+
+> kalinga-university@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 16.0s
+  Running TypeScript ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/121) ...
+Warning: Please use the `legacy` build in Node.js environments.
+Warning: Please use the `legacy` build in Node.js environments.
+Warning: Please use the `legacy` build in Node.js environments.
+Warning: Please use the `legacy` build in Node.js environments.
+Warning: Please use the `legacy` build in Node.js environments.
+  Generating static pages using 11 workers (30/121) 
+  Generating static pages using 11 workers (60/121) 
+  Generating static pages using 11 workers (90/121) 
+✓ Generating static pages using 11 workers (121/121) in 3.5s
+  Finalizing page optimization ...
+
+Route (app)                                                   Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /a
+├ ○ /a-all
+├ ○ /about-raipur
+├ ○ /about-us
+├ ○ /academic-and-industry-collaborations
+├ ○ /academic-calendar
+├ ○ /academic-facilities
+├ ○ /academic-planner
+├ ○ /academics
+├ ○ /academics-bk
+├ ○ /accreditations-and-approvals
+├ ○ /admission-procedure
+├ ○ /admissions
+├ ○ /all-forms
+├ ○ /alumini
+├ ○ /annual-reports
+├ ○ /anti-ragging-cell
+├ ○ /book-chapters
+├ ○ /book-publications
+├ ○ /cafeteria-mess
+├ ○ /campus-facilities
+├ ○ /campuslife
+├ ○ /career-and-corporate-resource-centre
+├ ○ /careers
+├ ○ /central-instrumentation-facility
+├ ○ /centresofexcellence
+├ ○ /centresofexcellence/ai-ml
+├ ○ /centresofexcellence/automobile
+├ ○ /centresofexcellence/bosch
+├ ○ /centresofexcellence/godawari
+├ ○ /centresofexcellence/iiot
+├ ○ /centresofexcellence/msme
+├ ○ /centresofexcellence/robotics
+├ ○ /chair-activities
+├ ○ /chairman
+├ ○ /chairs-and-their-activities
+├ ○ /chancellor
+├ ○ /chhattisgarh
+├ ○ /conferences-and-events
+├ ○ /contact-us
+├ ○ /corporate-training-and-consultancy-division
+├ ƒ /courses/[slug]
+├ ○ /csr
+├ ○ /ctcd
+├ ○ /department-api/bachelor-of-animation-and-visual-effects
+├ ○ /department-api/faculty-of-information-technology
+├ ƒ /departments/[slug]
+├ ○ /departments/bachelor-of-animation-and-visual-effects bk
+├ ○ /departments/commerce
+├ ○ /departments/management
+├ ○ /director-general
+├ ○ /document-verification
+├ ○ /downloads
+├ ○ /ekeeda-digital-library
+├ ○ /entrance-exam
+├ ○ /executive-development-program
+├ ○ /grievance-redressal
+├ ○ /gsap
+├ ○ /health-clinic
+├ ○ /hostel
+├ ○ /ieee
+├ ○ /important-links
+├ ○ /institution-innovation-council
+├ ○ /internal-quality-assurance-cell
+├ ○ /international
+├ ○ /international-students
+├ ○ /ipr-cell
+├ ○ /kalinga-buzz
+├ ○ /kalinga-incubation-foundation
+├ ○ /kalmat
+├ ○ /kalsee
+├ ○ /ku-fees
+├ ○ /laboratories
+├ ○ /leadership
+├ ○ /library
+├ ○ /media
+├ ○ /mini-market
+├ ○ /mou
+├ ○ /national-council-teacher-education
+├ ○ /Ncc
+├ ○ /news-and-events
+├ ƒ /news-and-events/[slug]
+├ ○ /nss
+├ ○ /organogram
+├ ○ /other-committees
+├ ○ /patents
+├ ○ /pay-online
+├ ○ /phd
+├ ○ /podcast
+├ ○ /privacy-policy
+├ ○ /pro-chancellor
+├ ○ /radio
+├ ○ /refund-policy
+├ ○ /registrar
+├ ○ /research
+├ ○ /research-conferences
+├ ○ /research-facilities
+├ ○ /research-papers
+├ ○ /research-papers-and-books-published
+├ ○ /research-resources
+├ ○ /rti
+├ ○ /safety-and-security
+├ ○ /scholarships
+├ ○ /sitemap.xml                                                      1h      1y
+├ ○ /sports-and-wellness-centre
+├ ○ /student-clubs
+├ ○ /student-support
+├ ○ /student-welfare
+├ ○ /students-counselling-cell
+├ ○ /Sustainability
+├ ○ /terms-conditions
+├ ○ /thank-you
+├ ○ /training-and-placement-cell
+├ ○ /training-and-placements
+├ ○ /transport-facility
+├ ○ /unnat-bharat-abhiyan
+├ ○ /value-added-course
+├ ○ /value-additions
+├ ○ /vice-chancellor
+└ ○ /voter-portal
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
