@@ -55,7 +55,9 @@ import ClickSparkWrapper from "./components/layout/ClickSparkWrapper";
 import { FlipbookProvider } from "./components/general/FlipbookContext";
 import ChatbotPopup from "./components/layout/ChatbotPopup";
 import { ChatbotProvider } from "./components/layout/ChatbotContext";
-import metadataExport from "../../metadata_export.json";
+import { headers } from "next/headers";
+import siteMeta from "./config/site-meta.json";
+import { getPageMetadata } from "@/lib/getPageMetadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,12 +69,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Global meta: edit metadata_export.json "default" key to change title, description, OG, etc. without touching code.
-const defaultMeta = metadataExport.default;
-export const metadata = {
-  ...defaultMeta,
-  metadataBase: defaultMeta.metadataBase ? new URL(defaultMeta.metadataBase) : undefined,
+const defaultMetadata = {
+  ...siteMeta,
+  metadataBase: siteMeta.metadataBase ? new URL(siteMeta.metadataBase) : undefined,
 };
+
+// Dynamic meta from metadata_export.json by path; edit that file to update any page's title/description.
+export async function generateMetadata() {
+  const h = await headers();
+  const pathname = h.get("x-pathname");
+  if (!pathname) return defaultMetadata;
+  let metadataExport;
+  try {
+    const fs = require("fs");
+    const path = require("path");
+    const jsonPath = path.join(process.cwd(), "metadata_export.json");
+    if (fs.existsSync(jsonPath)) {
+      metadataExport = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+    }
+  } catch (_) {
+    return defaultMetadata;
+  }
+  const meta = getPageMetadata(pathname, metadataExport);
+  if (!meta) return defaultMetadata;
+  return {
+    ...meta,
+    metadataBase: meta.metadataBase ? new URL(meta.metadataBase) : defaultMetadata.metadataBase,
+  };
+}
 
 export default function RootLayout({ children }) {
   return (

@@ -55,7 +55,7 @@ import ClickSparkWrapper from "./components/layout/ClickSparkWrapper";
 import { FlipbookProvider } from "./components/general/FlipbookContext";
 import ChatbotPopup from "./components/layout/ChatbotPopup";
 import { ChatbotProvider } from "./components/layout/ChatbotContext";
-import metadataExport from "../../../metadata_export.json";
+import siteMeta from "./config/site-meta.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,11 +67,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Global meta: edit metadata_export.json "default" key to change title, description, OG, etc. without touching code.
-const defaultMeta = metadataExport.default;
+// Global meta: edit src/app/config/site-meta.json (keep in sync with metadata_export.json "default")
 export const metadata = {
-  ...defaultMeta,
-  metadataBase: defaultMeta.metadataBase ? new URL(defaultMeta.metadataBase) : undefined,
+  ...siteMeta,
+  metadataBase: siteMeta.metadataBase ? new URL(siteMeta.metadataBase) : undefined,
 };
 
 export default function RootLayout({ children }) {
