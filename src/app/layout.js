@@ -55,6 +55,7 @@ import ClickSparkWrapper from "./components/layout/ClickSparkWrapper";
 import { FlipbookProvider } from "./components/general/FlipbookContext";
 import ChatbotPopup from "./components/layout/ChatbotPopup";
 import { ChatbotProvider } from "./components/layout/ChatbotContext";
+import metadataExport from "../../metadata_export.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,18 +67,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Global meta: edit metadata_export.json "default" key to change title, description, OG, etc. without touching code.
+const defaultMeta = metadataExport.default;
 export const metadata = {
-  title: "Kalinga University - Transforming Futures with Knowledge & Innovation",
-  description: "Kalinga University is a leading institution offering world-class education in engineering, management, science, arts, and more.",
-  icons: {
-    icon: "https://cdn.kalingauniversity.ac.in/favicon.png",
-    shortcut: "https://cdn.kalingauniversity.ac.in/favicon.png",
-    apple: "https://cdn.kalingauniversity.ac.in/favicon.png",
-  },
-  other: {
-    "google-fonts-inter": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap",
-    "google-fonts-stix": "https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap",
-  },
+  ...defaultMeta,
+  metadataBase: defaultMeta.metadataBase ? new URL(defaultMeta.metadataBase) : undefined,
 };
 
 export default function RootLayout({ children }) {

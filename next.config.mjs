@@ -5,6 +5,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {
+    resolveAlias: {
+      // Use CJS build so Turbopack avoids motion-dom's ESM .mjs internal resolution bug
+      'motion-dom': './node_modules/motion-dom/dist/cjs/index.js',
+    },
+  },
   images: {
     remotePatterns: [
       {
