@@ -9,7 +9,7 @@ import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
 // Configure PDF worker
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 // Component to render PDF Thumbnail
 function PdfThumbnail({ url, alt }) {
@@ -58,7 +58,7 @@ function NewsletterCard({ title, href }) {
         >
             {/* Image Area (PDF Thumbnail) */}
             <div className="absolute inset-0 w-full h-full">
-                <PdfThumbnail url={getProxiedPdfUrl(href)} alt={title} />
+                <PdfThumbnail url={href} alt={title} />
             </div>
 
             {/* Gradient Overlay */}
