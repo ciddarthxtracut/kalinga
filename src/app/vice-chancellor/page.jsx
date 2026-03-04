@@ -1,12 +1,35 @@
-"use client";
-
-import React, { useEffect } from "react";
 import ChairmanMessage from "../components/leadership/chairman_message";
 
-export default function Leadership() {
+export const metadata = {
+  title: "Vice-Chancellor's Message | Kalinga University Raipur",
+  description: "Read the message from Dr. R. Shridhar, Vice-Chancellor of Kalinga University. Discover our commitment to global education standards and research innovation.",
+  keywords: "Vice-Chancellor Kalinga University, Dr. R. Shridhar, University leadership messages, Higher education standards India",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/vice-chancellor",
+  },
+};
+
+export default function ViceChancellorPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Vice-Chancellor's Message - Kalinga University",
+    "description": "Official message from the Vice-Chancellor of Kalinga University.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Vice-Chancellor", "item": "https://kalingauniversity.ac.in/vice-chancellor" }
+      ]
+    }
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ChairmanMessage
         imageSrc="https://cdn.kalingauniversity.ac.in/about/Leadership/Shridhar.png"
         imageAlt="Dr. R. Shridhar"

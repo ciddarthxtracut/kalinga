@@ -1,27 +1,36 @@
-"use client";
+import TransportFacilityClient from "./TransportFacilityClient";
 
-import React from 'react'
-import MainIntro from '../components/about/main_intro'
-
-
-
-if (typeof window !== 'undefined') {
-
-}
+export const metadata = {
+  title: "School Transport Facility | Bus Routes | Kalinga University",
+  description: "Convenient and safe transport facilities for students and staff at Kalinga University. With 30+ buses covering up to 70 KM, we ensure reliable commuting to campus.",
+  keywords: "University transport Raipur, Bus facility Chhattisgarh, Kalinga University bus routes, Student commuting Raipur India",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/transport-facility",
+  },
+};
 
 export default function TransportFacilityPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Transport Facility - Kalinga University",
+    "description": "Information about the university's bus routes, safety measures, and transport services.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Transport", "item": "https://kalingauniversity.ac.in/transport-facility" }
+      ]
+    }
+  };
+
   return (
     <>
-      <MainIntro
-        title="Transport Facility"
-        subtitle=""
-        description="We provide transportation facilities to our students, staff members, and visitors to ensure their convenience, safety, reliability, and punctuality. We have 30+ buses and 4-wheel vehicles that provide pick-up and drop-off facilities with a comfortable travelling experience. The transport facility provided to the students is at minimal rates (included in the fee structure). Teachers are given proctorial duties both in the morning and evening for the safety of students. Our buses and cars cover distances of up to 70 KM (one way) to facilitate those who reside far from the university. "
-        imageUrl="https://cdn.kalingauniversity.ac.in/campus-life/transport-3.webp"
-        imageAlt="Transport Facility"
-        showKnowMore={true}
-        knowMoreLabel="Bus Route Details"
-        knowMoreHref="https://cdn.kalingauniversity.ac.in/common/Bus+Route+Details.pdf"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <TransportFacilityClient />
     </>
-  )
+  );
 }

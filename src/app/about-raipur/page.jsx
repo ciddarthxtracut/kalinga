@@ -1,43 +1,36 @@
-"use client"
+import AboutRaipurClient from "./AboutRaipurClient";
 
-import React, { useEffect } from 'react'
-import { usePathname } from 'next/navigation'
-import RaipurMainIntro from '@/app/components/about-raipur/raipur_main_intro'
-import NewRaipur from '@/app/components/about-raipur/new_raipur'
-import Highlights from '@/app/components/about-raipur/highlights'
-import AdmissionCareer from '../components/general/admission_cta'
-import RaipurVideo from '../components/about-raipur/raipurvideo'
-import Newraipurvideos from '../components/about-raipur/newraipurvideos'
+export const metadata = {
+  title: "About Raipur | Smart City Raipur Chhattisgarh",
+  description: "Explore Raipur, the heart of Chhattisgarh and a growing smart city. Learn about its heritage, modern infrastructure, and student life at Kalinga University.",
+  keywords: "Raipur city guide, Naya Raipur smart city, Raipur tourism Chhattisgarh, Life in Raipur for students",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/about-raipur",
+  },
+};
 
-function page() {
-  const pathname = usePathname();
-
-  
-
+export default function AboutRaipurPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "About Raipur - Kalinga University",
+    "description": "Information about Raipur city, its culture, and infrastructure.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "About Raipur", "item": "https://kalingauniversity.ac.in/about-raipur" }
+      ]
+    }
+  };
 
   return (
     <>
-      <style jsx global>{`
-  .absolute.inset-0 > img {
-    object-position: center 40% !important;
-  }
-
-  @media (max-width: 768px) {
-    .absolute.inset-0 > img {
-      object-position: center 5% !important;
-    }
-  }
-`}</style>
-      <RaipurMainIntro
-        knowMoreLabel=''
-        knowMoreHref='' />
-      <RaipurVideo />
-      <NewRaipur />
-      <Newraipurvideos />
-      <Highlights />
-      <AdmissionCareer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <AboutRaipurClient />
     </>
-  )
+  );
 }
-
-export default page

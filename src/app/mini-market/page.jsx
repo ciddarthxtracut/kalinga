@@ -1,40 +1,36 @@
-"use client";
-import React, { useEffect } from 'react'
-import MiniMarketFacility from '../components/mini-market/minimarket-facility'
-import AdmissionCareer from '../components/general/admission_cta'
-import RaipurVideoSection from '../components/about-raipur/raipurvideo';
+import MiniMarketClient from "./MiniMarketClient";
 
+export const metadata = {
+  title: "On-Campus Mini Market | Student Conveniences | Kalinga University",
+  description: "Get daily essentials without leaving campus. Kalinga University's mini market offers groceries, stationery, and other supplies for the convenience of students and staff.",
+  keywords: "University mini market Raipur, Campus convenience store Chhattisgarh, Student essentials Kalinga University, Stationery and groceries campus India",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/mini-market",
+  },
+};
 
-
-const page = () => {
-
+export default function MiniMarketPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Mini Market - Kalinga University",
+    "description": "Information about the on-campus retail facilities and services for students at Kalinga University.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Mini Market", "item": "https://kalingauniversity.ac.in/mini-market" }
+      ]
+    }
+  };
 
   return (
     <>
-      <style jsx global>{`
-  .absolute.inset-0 > img {
-    object-position: center 40% !important;
-  }
-
-  @media (max-width: 768px) {
-    .absolute.inset-0 > img {
-      object-position: center 5% !important;
-    }
-  }
-`}</style>
-      <MiniMarketFacility />
-      <RaipurVideoSection
-        videoId="8bqYKGqQ8XI"
-        thumbnail="https://cdn.kalingauniversity.ac.in/mini-market/thumbnail.webp"
-        title=""
-        description="" // optional
-        alt="Video thumbnail"
-        heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
-        className="" // optional wrapper class
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <AdmissionCareer />
+      <MiniMarketClient />
     </>
-  )
+  );
 }
-
-export default page

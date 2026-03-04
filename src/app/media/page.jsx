@@ -1,20 +1,31 @@
-"use client";
+import React from "react";
+import MediaClient from "./MediaClient";
 
-import React, { useState, useEffect } from "react";
-import SectionHeading from "../components/general/SectionHeading";
-import GlobalArrowButton from "../components/general/global-arrow_button";
-import CenterOfExcellence from "../components/about/center_of_excellence";
+export const metadata = {
+  title: "Media Coverage & Awards | Kalinga University",
+  description:
+    "Explore Kalinga University's media coverage, press releases, and prestigious awards. Stay updated with our latest achievements and news highlights from top newspapers and media houses.",
+  keywords: [
+    "Kalinga University Media",
+    "Press Coverage",
+    "University Awards",
+    "News Highlights",
+    "Kalinga University Achievements",
+    "Press Releases",
+    "Dainik Bhaskar Kalinga",
+    "Patrika Kalinga University",
+  ],
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/media/",
+  },
+};
 
 export default function Page() {
-
-  /* -------- Media Grid Images -------- */
   const mediaImages = [
-
     "https://cdn.kalingauniversity.ac.in/media/WORKSHOP+FOR+SCIENCE+%26+KOLLOTICS+8TH+DECEMBER%2C+2015.jpg",
     "https://cdn.kalingauniversity.ac.in/media/Dainik+Bhaskar-24.07.17.jpg",
     "https://cdn.kalingauniversity.ac.in/media/kalingaaug172021.jpeg",
     "https://cdn.kalingauniversity.ac.in/media/dainik_bhaskar_26_09_2017.jpg",
-
     "https://cdn.kalingauniversity.ac.in/media/WhatsApp+Image+2020-11-25+at+11.44.38+(2).jpeg",
     "https://cdn.kalingauniversity.ac.in/media/TREE+PLANTATION+BY+KALING+STUDENTS%2C+JUNE%2C+2015_1.jpg",
     "https://cdn.kalingauniversity.ac.in/media/WhatsApp+Image+2020-10-24+at+11.44.31+(1).jpeg",
@@ -49,11 +60,9 @@ export default function Page() {
     "https://cdn.kalingauniversity.ac.in/media/New+Doc+2018-08-03_haribhumi.jpg",
     "https://cdn.kalingauniversity.ac.in/media/FACULTY+DEVELOPMENT+PROGRAM+13TH+JUNE%2C+2015_2+(1).jpg",
     "https://cdn.kalingauniversity.ac.in/media/Discussions_on_Pharmaceutical_Industry.jpg",
-
     "https://cdn.kalingauniversity.ac.in/media/Patrika_BEd._Induction_Day_Kalinga_University.jpg",
     "https://cdn.kalingauniversity.ac.in/media/5+(1).jpg",
     "https://cdn.kalingauniversity.ac.in/media/WhatsApp+Image+2020-09-22+at+08.50.06.jpeg",
-
     "https://cdn.kalingauniversity.ac.in/media/WORKSHOP+FOR+CITIZEN+COP+APP+2ND+DECEMBER%2C+2015_2.jpg",
     "https://cdn.kalingauniversity.ac.in/media/4+(1).jpg",
     "https://cdn.kalingauniversity.ac.in/media/3+(1).jpg",
@@ -174,58 +183,15 @@ export default function Page() {
     "https://cdn.kalingauniversity.ac.in/media/COMMENCEMENT+OF+NEW+SESSION+OF+2015-16+BY+HAVAN+AND+BHANDARA%2C+JULY+2015_1.jpg",
   ];
 
-  /* -------- Slider Images (Centre of Excellence) -------- */
   const excellenceImages = [
-    {
-      id: 1,
-      name: "Pratibha Samman – 2018",
-      title: "Awarded to Dr. Sandip Arora, Kalinga University",
-      image: "https://cdn.kalingauniversity.ac.in/media/34.jpg",
-    },
-    {
-      id: 2,
-      name: "MoU Exchange Ceremony",
-      title: "Kalinga University with Government Officials",
-      image: "https://cdn.kalingauniversity.ac.in/media/awards.jpg",
-    },
-    {
-      id: 3,
-      name: "Notable Networker Award",
-      title: "BNI – In Recognition of Outstanding Performance",
-      image: "https://cdn.kalingauniversity.ac.in/media/1.jpg",
-    },
-    {
-      id: 4,
-      name: "Abhinandan Patra – 2018",
-      title: "Miss India Khadi Uttar Pradesh Fashion Show",
-      image: "https://cdn.kalingauniversity.ac.in/media/2.jpg",
-    },
-    {
-      id: 5,
-      name: "Guest of Honour Award",
-      title: "Durg District VTP’s Association",
-      image: "https://cdn.kalingauniversity.ac.in/media/35.jpg",
-    },
-    {
-      id: 6,
-      name: " ",
-      title: " ",
-      image: "https://cdn.kalingauniversity.ac.in/media/3.jpg",
-    },
-    {
-      id: 7,
-      name: " ",
-      title: " ",
-      image: "https://cdn.kalingauniversity.ac.in/media/36.jpg"
-    },
-    {
-      id: 8,
-      name: " ",
-      title: " ",
-      image: "https://cdn.kalingauniversity.ac.in/media/4.jpg",
-    },
-
-
+    { id: 1, name: "Pratibha Samman – 2018", title: "Awarded to Dr. Sandip Arora, Kalinga University", image: "https://cdn.kalingauniversity.ac.in/media/34.jpg" },
+    { id: 2, name: "MoU Exchange Ceremony", title: "Kalinga University with Government Officials", image: "https://cdn.kalingauniversity.ac.in/media/awards.jpg" },
+    { id: 3, name: "Notable Networker Award", title: "BNI – In Recognition of Outstanding Performance", image: "https://cdn.kalingauniversity.ac.in/media/1.jpg" },
+    { id: 4, name: "Abhinandan Patra – 2018", title: "Miss India Khadi Uttar Pradesh Fashion Show", image: "https://cdn.kalingauniversity.ac.in/media/2.jpg" },
+    { id: 5, name: "Guest of Honour Award", title: "Durg District VTP’s Association", image: "https://cdn.kalingauniversity.ac.in/media/35.jpg" },
+    { id: 6, name: " ", title: " ", image: "https://cdn.kalingauniversity.ac.in/media/3.jpg" },
+    { id: 7, name: " ", title: " ", image: "https://cdn.kalingauniversity.ac.in/media/36.jpg" },
+    { id: 8, name: " ", title: " ", image: "https://cdn.kalingauniversity.ac.in/media/4.jpg" },
     { id: 9, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/56.jpg" },
     { id: 10, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/30.jpg" },
     { id: 11, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/31.jpg" },
@@ -236,7 +202,6 @@ export default function Page() {
     { id: 16, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/55.jpg" },
     { id: 17, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/32+(1).jpg" },
     { id: 18, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/32.jpg" },
-
     { id: 19, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/52.jpg" },
     { id: 20, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/51.jpg" },
     { id: 21, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/27.jpg" },
@@ -247,7 +212,6 @@ export default function Page() {
     { id: 26, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/48.jpg" },
     { id: 27, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/26.jpg" },
     { id: 28, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/25.jpg" },
-
     { id: 29, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/47.jpg" },
     { id: 30, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/23.jpg" },
     { id: 31, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/24.jpg" },
@@ -258,7 +222,6 @@ export default function Page() {
     { id: 36, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/21.jpg" },
     { id: 37, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/19.jpg" },
     { id: 38, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/44.jpg" },
-
     { id: 39, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/18.jpg" },
     { id: 40, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/16.jpg" },
     { id: 41, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/43.jpg" },
@@ -267,12 +230,7 @@ export default function Page() {
     { id: 44, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/13.jpg" },
     { id: 45, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/15.jpg" },
     { id: 46, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/17.jpg" },
-    {
-      id: 47,
-      name: " ",
-      title: " ",
-      image: "https://cdn.kalingauniversity.ac.in/media/5.jpg",
-    },
+    { id: 47, name: " ", title: " ", image: "https://cdn.kalingauniversity.ac.in/media/5.jpg" },
     { id: 48, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/41.jpg" },
     { id: 49, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/40.jpg" },
     { id: 50, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/11.jpg" },
@@ -287,119 +245,25 @@ export default function Page() {
     { id: 59, name: "", title: "", image: "https://cdn.kalingauniversity.ac.in/media/6.jpg" },
   ];
 
-  const [showAll, setShowAll] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const visibleImages = showAll ? mediaImages : mediaImages.slice(0, 9);
-
-  const openImageModal = (imageSrc) => {
-    setSelectedImage(imageSrc);
-  };
-
-  const closeImageModal = () => {
-    setSelectedImage(null);
-  };
-
-  // Close modal on ESC key
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        closeImageModal();
-      }
-    };
-    if (selectedImage) {
-      document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden"; // Prevent background scrolling
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Media Coverage and Awards - Kalinga University",
+    "description": "Gallery of media coverage and awards received by Kalinga University from various news organizations and institutions.",
+    "publisher": {
+      "@type": "University",
+      "name": "Kalinga University",
+      "url": "https://kalingauniversity.ac.in/"
     }
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "unset";
-    };
-  }, [selectedImage]);
+  };
 
   return (
     <>
-      <SectionHeading
-        title={
-          <>
-            Media Coverage
-          </>
-        }
-        titleClassName="text-center text-2xl md:text-5xl font-stix mt-20"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      {/* -------- Media Grid -------- */}
-      <section className="max-w-7xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {visibleImages.map((img, index) => (
-            <div
-              key={index}
-              className="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 bg-white cursor-pointer"
-              onClick={() => openImageModal(img)}
-            >
-              <img
-                src={img}
-                alt={`media-${index}`}
-                className="w-full h-[300px] object-cover"
-              />
-            </div>
-          ))}
-        </div>
-
-        {!showAll && (
-          <div className="flex justify-center mt-12">
-            <GlobalArrowButton onClick={() => setShowAll(true)}>
-              Read More
-            </GlobalArrowButton>
-          </div>
-        )}
-      </section>
-
-      {/* -------- Center Of Excellence Slider -------- */}
-      <CenterOfExcellence
-        centres={excellenceImages}
-        title="Awards"
-        description={false}
-        nameOnly={false}
-      />
-
-      {/* -------- Image Modal Popup -------- */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
-          onClick={closeImageModal}
-        >
-          <div className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center">
-            {/* Close Button */}
-            <button
-              onClick={closeImageModal}
-              className="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70"
-              aria-label="Close modal"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 6L6 18" />
-                <path d="M6 6l12 12" />
-              </svg>
-            </button>
-
-            {/* Full Image */}
-            <img
-              src={selectedImage}
-              alt="Full size media"
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
-      )}
+      <MediaClient mediaImages={mediaImages} excellenceImages={excellenceImages} />
     </>
   );
 }

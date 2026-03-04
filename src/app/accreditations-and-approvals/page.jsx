@@ -7,8 +7,29 @@ import AwardsScrollbar from '../components/home/awards-scrollbar';
 import AccreditationsApprovalsSection from '../components/ana/AccreditationsApprovalsSection';
 import NIRFRankings from '../components/approvals/nirf_rankings';
 
+export const metadata = {
+    title: "Accreditations & Approvals | Kalinga University Raipur",
+    description: "Kalinga University is UGC recognized, NAAC B+ accredited, and approved by AICTE, PCI, BCI, and NCTE. Explore our official rankings and approvals.",
+    keywords: "UGC approved university Chhattisgarh, NAAC accredited university Raipur, AICTE approved engineering college, PCI BCI approved courses",
+    alternates: {
+        canonical: "https://kalingauniversity.ac.in/accreditations-and-approvals",
+    },
+};
 
 function Accreditations() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Accreditations & Approvals - Kalinga University",
+        "description": "Official accreditations, approvals, and rankings of Kalinga University.",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+                { "@type": "ListItem", "position": 2, "name": "Accreditations & Approvals", "item": "https://kalingauniversity.ac.in/accreditations-and-approvals" }
+            ]
+        }
+    };
 
     const aboutApproval = [
         { id: 1, name: "CG Government", logo: "https://cdn.kalingauniversity.ac.in/about/accerdation/cg-government.webp" },
@@ -203,6 +224,10 @@ function Accreditations() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <AccreditationRanking
                 heading="Accreditations & Approvals"
                 secondHeading=""

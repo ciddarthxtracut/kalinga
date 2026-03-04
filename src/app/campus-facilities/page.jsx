@@ -1,37 +1,46 @@
-"use client";
+import CampusFacilitiesClient from "./CampusFacilitiesClient";
 
-import React, { useEffect } from 'react'
-import { usePathname } from 'next/navigation'
-import Campusfacilitymainintro from '@/app/components/campus-facilities/campusfacilitymainintro'
-import AdmissionCareer from '../components/general/admission_cta'
-import Campusfacilitiescard from '../components/campus-facilities/campusfacilitiescard';
-import Campusfacilityvideo from '../components/campus-facilities/campusfacilityvideo';
+export const metadata = {
+  title: "University Campus Facilities | Kalinga University Hostel & Sports",
+  description: "Explore Kalinga University campus facilities. We offer world-class hostels, libraries, gym, sports complex, and cafeteria in a 50+ acre eco-friendly campus.",
+  keywords: "University campus facilities, University hostel facilities, Student life in university, Kalinga University Raipur campus",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/campus-facilities",
+  },
+};
 
-function CampusFacilities() {
-    const pathname = usePathname();
-
-    
-
-    return (
-        <>
-            <style jsx global>{`
-  .absolute.inset-0 > img {
-    object-position: center 15% !important;
-  }
-
-  @media (max-width: 768px) {
-    .absolute.inset-0 > img {
-      object-position: center 5% !important;
+export default function CampusFacilitiesPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Campus Facilities - Kalinga University",
+    "description": "Information about campus facilities at Kalinga University Raipur including hostel, library, and sports.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kalingauniversity.ac.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Campus Facilities",
+          "item": "https://kalingauniversity.ac.in/campus-facilities"
+        }
+      ]
     }
-  }
-`}</style>
+  };
 
-            <Campusfacilitymainintro />
-            <Campusfacilityvideo />
-            <Campusfacilitiescard />
-            <AdmissionCareer />
-        </>
-    )
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <CampusFacilitiesClient />
+    </>
+  );
 }
-
-export default CampusFacilities

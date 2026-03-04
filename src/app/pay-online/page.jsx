@@ -1,10 +1,22 @@
-"use client";
-
 import React from "react";
-import Link from "next/link";
-import LeadershipCard from "../components/general/leadership-card";
+import PayOnlineClient from "./PayOnlineClient";
 
-
+export const metadata = {
+  title: "Online Fee Payment | National & International | Kalinga University",
+  description:
+    "Securely pay your university fees online at Kalinga University. Options available for both national and international students. Quick, safe, and convenient payment gateway.",
+  keywords: [
+    "Kalinga University Pay Online",
+    "Online Fee Payment",
+    "University Payment Gateway",
+    "Student Fee Payment",
+    "International Student Payment",
+    "Net Banking University Fees",
+  ],
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/pay-online/",
+  },
+};
 
 const paymentOptions = [
   {
@@ -23,25 +35,26 @@ const paymentOptions = [
   },
 ];
 
-export default function KalingaBuzz() {
+export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Kalinga University Online Payment Portal",
+    "description": "Payment portal for national and international students of Kalinga University.",
+    "publisher": {
+      "@type": "University",
+      "name": "Kalinga University",
+      "url": "https://kalingauniversity.ac.in/"
+    }
+  };
+
   return (
-    <section className="py-12 md:py-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {paymentOptions.map((option) => (
-            <Link key={option.id} href={option.href} target="_blank" className="block h-full group">
-              <LeadershipCard
-                image={option.image}
-                name={option.name}
-                title={option.title}
-                imageContainerClassName="h-[250px] md:h-[300px]"
-                usePTagForName={true}
-                showArrowButton={true}
-              />
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <PayOnlineClient paymentOptions={paymentOptions} />
+    </>
   );
 }

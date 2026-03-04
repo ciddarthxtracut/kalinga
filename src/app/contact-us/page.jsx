@@ -1,24 +1,41 @@
-"use client";
+import ContactUsClient from "./ContactUsClient";
 
-import React, { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import ContactForm from "@/app/components/forms/ContactForm";
-import AdmissionCareer from "@/app/components/general/admission_cta";
-import FollowUs from "@/app/components/contact_us/follow_us";
-import Map from "@/app/components/contact_us/map_section";
-
-const ContactUs = () => {
-  const pathname = usePathname();
-
-  
-  return (
-    <>
-      <ContactForm />
-      <FollowUs />
-      <Map />
-      <AdmissionCareer />
-    </>
-  );
+export const metadata = {
+  title: "Contact Kalinga University Raipur | Campus Address & Support",
+  description: "Get in touch with Kalinga University Raipur. Find our campus address, contact number, and email. Visit us for admissions inquiry or career guidance.",
+  keywords: "University contact number, University address Raipur, Kalinga University contact, Raipur university helpdesk",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/contact-us",
+  },
 };
 
-export default ContactUs;
+export default function ContactUsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "EducationalOrganization",
+      "name": "Kalinga University",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kotni, Near Mantralaya, Naya Raipur",
+        "addressLocality": "Raipur",
+        "addressRegion": "Chhattisgarh",
+        "postalCode": "492101",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91 99072 80000",
+      "email": "admission@kalingauniversity.ac.in"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ContactUsClient />
+    </>
+  );
+}

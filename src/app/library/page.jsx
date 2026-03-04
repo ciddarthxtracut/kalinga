@@ -1,68 +1,36 @@
-"use client";
+import LibraryClient from "./LibraryClient";
 
-import React from 'react'
-import { useEffect } from 'react'
-import LibraryIntro from '../components/library/library-intro'
-import LibraryHeadMessage from '../components/library/library-head-intro'
-import LibraryGrid from '../components/library/library-feature'
-import LibraryResource from '../components/library/library-resource'
+export const metadata = {
+  title: "Central Library | Digital & Physical Resources | Kalinga University",
+  description: "Access a world of knowledge at Kalinga University's Central Library. Explore thousands of books, digital journals, and e-resources through our e-access portal.",
+  keywords: "University library Raipur, Digital library Chhattisgarh, Kalinga University e-resources, Academic journals India",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/library",
+  },
+};
 
-import LibraryEAccess from '../components/library/library-login'
-import Gallery from '../components/campuslife/campusgallery';
-import AdmissionCareer from '../components/general/admission_cta'
-import RaipurVideoSection from '../components/about-raipur/raipurvideo';
-import StudentActivities from "@/app/components/department/student_activities";
-
-const page = () => {
-
+export default function LibraryPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Central Library - Kalinga University",
+    "description": "Details about the library facilities, resources, and digital access at Kalinga University.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Library", "item": "https://kalingauniversity.ac.in/library" }
+      ]
+    }
+  };
 
   return (
     <>
-      <style jsx global>{`
-  .absolute.inset-0 > img {
-    object-position: center 60% !important;
-  }
-
-  @media (max-width: 768px) {
-    .absolute.inset-0 > img {
-      object-position: center 5% !important;
-    }
-  }
-`}</style>
-
-      <LibraryIntro />
-      <RaipurVideoSection
-        videoId="llHISVPRkxI"
-        thumbnail="https://kalinga-university.s3.amazonaws.com/kalinga_backend/files/department/about/FacultyofCommerceAndMangement-AboutDept.webp"
-        title=""
-        description="" // optional
-        alt="Video thumbnail"
-        heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
-        className="" // optional wrapper class
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <LibraryGrid />
-      <LibraryHeadMessage />
-      <LibraryResource />
-      <RaipurVideoSection
-        videoId="hdL0Eeb6Moc"
-        thumbnail="https://cdn.kalingauniversity.ac.in/library/student-experience-library.webp"
-        title=""
-        description="" // optional
-        alt="Video thumbnail"
-        heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
-        className="" // optional wrapper class
-      />
-      <StudentActivities
-        title="Events & Activities"
-        subtitle="Experience Campus Life Beyond Academics"
-        categoryId={2}
-        fallbackToGlobal={true}
-      />
-      <LibraryEAccess />
-      {/* <Gallery /> */}
-      <AdmissionCareer />
+      <LibraryClient />
     </>
-  )
+  );
 }
-
-export default page

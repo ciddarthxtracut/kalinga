@@ -1,17 +1,15 @@
-"use client"
+import AdmissionProcedureClient from "./AdmissionProcedureClient";
 
-import React from 'react'
-import AdmissionCareer from '../components/general/admission_cta';
-import Admissionproceduresteps from '../components/admission-procedure/admissionproceduresteps';
-import Admissionform from '../components/admission-procedure/admissionform';
-import Admissioncrackandwin from '../components/admission-procedure/admissioncrackandwin';
-import Admissionprocedureexams from '../components/admission-procedure/admissionprocedureexams';
-import Admissionearlybenefits from '../components/admission-procedure/admissionearlybenefits';
-import Admissionhacks from '../components/admission-procedure/admissionhacks';
-import MainIntro from '../components/about/main_intro';
+export const metadata = {
+    title: "Admission Procedure 2026 | How to Apply | Kalinga University",
+    description: "Find out how to apply for admissions at Kalinga University for 2026. Step-by-step guide to the admission process, entrance exams, and eligibility criteria.",
+    keywords: "Kalinga University admission process, how to apply Raipur university, admission steps India 2026, university entrance exam Raipur",
+    alternates: {
+        canonical: "https://kalingauniversity.ac.in/admission-procedure",
+    },
+};
 
-function AdmissionProcedure() {
-
+export default function AdmissionProcedurePage() {
     const scholarshipContent = {
         title: "Scholarships & Financial Assistance",
         description: [
@@ -41,44 +39,29 @@ function AdmissionProcedure() {
         knowMoreLabel: "Read More",
         extraLink: "https://cdn.kalingauniversity.ac.in/scholarships/Scholarships+2026-2027.pdf",
         extraLinkLabel: "Download Scholarship Policy"
+    };
 
-    }
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Admission Procedure - Kalinga University",
+        "description": "Step-by-step admission process for Kalinga University Raipur.",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+                { "@type": "ListItem", "position": 2, "name": "Admission Procedure", "item": "https://kalingauniversity.ac.in/admission-procedure" }
+            ]
+        }
+    };
 
     return (
-
-        <div>
-            <style jsx global>{`
-            .absolute.inset-0 > img {
-                object-position: center 60% !important;
-            }
-
-            @media (max-width: 768px) {
-                .absolute.inset-0 > img {
-                object-position: center 5% !important;
-                }
-            }
-            `}</style>
-
-            <Admissionproceduresteps />
-            <Admissionform />
-            <Admissioncrackandwin />
-            <Admissionprocedureexams />
-            <Admissionearlybenefits />
-            <MainIntro
-                title={scholarshipContent.title}
-                description={scholarshipContent.description}
-                points={scholarshipContent.points}
-                imageUrl={scholarshipContent.imageUrl}
-                imageAlt={scholarshipContent.imageAlt}
-                knowMoreLabel={scholarshipContent.knowMoreLabel}
-                extraLink={scholarshipContent.extraLink}
-                extraLinkLabel={scholarshipContent.extraLinkLabel}
-                hidePointsUntilExpanded={true}
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <Admissionhacks />
-            <AdmissionCareer />
-        </div>
-    )
+            <AdmissionProcedureClient scholarshipContent={scholarshipContent} />
+        </>
+    );
 }
-
-export default AdmissionProcedure

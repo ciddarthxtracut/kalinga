@@ -1,9 +1,23 @@
-"use client";
+import React from "react";
+import RadioClient from "./RadioClient";
 
-import React, { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import MainIntro from "@/app/components/about/main_intro";
-import Gallery from "@/app/components/general/gallery";
+export const metadata = {
+  title: "Kalinga Radio | Campus Voice & Live Updates | Kalinga University",
+  description:
+    "Tune into Kalinga Radio, the official voice of Kalinga University. Stay updated with campus news, trending topics, live shows, and interviews with students, faculty, and experts.",
+  keywords: [
+    "Kalinga Radio",
+    "University Radio Station",
+    "Campus Radio India",
+    "Live Campus News",
+    "Student Radio Kalinga",
+    "University Broadcast",
+    "Kalinga Radio App",
+  ],
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/radio/",
+  },
+};
 
 const RadioGallery = [
   {
@@ -48,29 +62,28 @@ const RadioGallery = [
     alt: "Gallery-7",
     href: "https://play.google.com/store/apps/details?id=kalingradio.online.radions&pli=1"
   },
-]
+];
 
-export default function Radio() {
-  const pathname = usePathname();
-
+export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Kalinga Radio - Kalinga University",
+    "description": "official campus radio of Kalinga University providing news and entertainment.",
+    "publisher": {
+      "@type": "University",
+      "name": "Kalinga University",
+      "url": "https://kalingauniversity.ac.in/"
+    }
+  };
 
   return (
-    <div>
-      <MainIntro
-        title="Kalinga Radio"
-        subtitle="An Initiative By Kalinga University"
-        description={[<strong key="radio-intro">Tune in to Kalinga Radio & never miss a moment!</strong>,
-          "From college happenings, trending news, live shows, and important information on examinations or on upcoming events and activities, Kalinga Radio will always keep you connected and stay updated. It offers students a great platform where they can conduct shows, host interviews, and hear inspiring stories from alumni, faculty members, and special guests. Be a part of the campus conversation - anytime, anywhere.",
-        ]}
-        imageUrl="https://cdn.kalingauniversity.ac.in/common/kalinga-radio.webp"
-        imageAlt="Kalinga University Radio"
-        showKnowMore={true}
-        knowMoreHref="https://play.google.com/store/apps/details?id=kalingradio.online.radions&pli=1"
-        knowMoreLabel="Download Now"
-        initialVisibleParagraphs={2}
-        disableClipPath={false}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Gallery images={RadioGallery} title="Kalinga Radio Highlights" paddingClassName="py-16" forceSlider={true} />
-    </div>
+      <RadioClient images={RadioGallery} />
+    </>
   );
 }

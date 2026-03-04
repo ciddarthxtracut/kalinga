@@ -67,6 +67,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://kalingauniversity.ac.in"),
   title: "Kalinga University - Transforming Futures with Knowledge & Innovation",
   description: "Kalinga University is a leading institution offering world-class education in engineering, management, science, arts, and more.",
   icons: {

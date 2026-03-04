@@ -22,7 +22,14 @@ import QuickLinks from "./components/home/QuickLinks";
 import ValueAdditionVideoInterview from "./components/value-additions/valueadditionvideointerview";
 import MediaCardSlider from "./components/general/media-card-slider";
 
-
+export const metadata = {
+  title: "Kalinga University Raipur | UGC Approved Private University",
+  description: "Kalinga University Raipur is a NAAC accredited, UGC approved private university in Chhattisgarh. Admission open 2026 for B.Tech, MBA, Law, and 100+ UG/PG courses.",
+  keywords: "Kalinga University Raipur, Private university in Chhattisgarh, UGC approved private university, NAAC accredited private university, University admissions 2026",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/",
+  },
+};
 
 export default function Home() {
   const videoItems = [

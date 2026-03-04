@@ -1,34 +1,46 @@
-"use client";
+import AcademicFacilitiesClient from "./AcademicFacilitiesClient";
 
-import React, { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import Academicmainintro from "@/app/components/academic-facilities/academicmainintro";
-import Academiccards from "@/app/components/academic-facilities/academiccards";
-import AdmissionCareer from "@/app/components/general/admission_cta";
-import Academicvideo from "../components/academic-facilities/academicvideo";
+export const metadata = {
+  title: "Academic Facilities at Kalinga University | Labs & Libraries",
+  description: "Explore the academic facilities at Kalinga University Raipur. Our campus features 90+ advanced labs, a vast central library, and modern learning resources.",
+  keywords: "University academic facilities, 90+ Labs Kalinga University, Central Instrumentation Facility Raipur, Academic resources university",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/academic-facilities",
+  },
+};
 
-export default function AcademicFacilities() {
-  const pathname = usePathname();
-
-
+export default function AcademicFacilitiesPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Academic Facilities - Kalinga University",
+    "description": "State-of-the-art academic facilities and infrastructure at Kalinga University Raipur.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kalingauniversity.ac.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Academic Facilities",
+          "item": "https://kalingauniversity.ac.in/academic-facilities"
+        }
+      ]
+    }
+  };
 
   return (
     <>
-      <style jsx global>{`
-  .absolute.inset-0 > img {
-    object-position: center 60% !important;
-  }
-
-  @media (max-width: 768px) {
-    .absolute.inset-0 > img {
-      object-position: center 5% !important;
-    }
-  }
-`}</style>
-      <Academicmainintro />
-      <Academiccards />
-      <Academicvideo />
-      <AdmissionCareer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <AcademicFacilitiesClient />
     </>
   );
 }

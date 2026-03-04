@@ -11,7 +11,37 @@ import FAQ from "../components/general/faq";
 import AdmissionCareer from "../components/general/admission_cta";
 import MediaCardSlider from "../components/general/media-card-slider";
 import Image from "next/image";
+
+export const metadata = {
+  title: "KALSEE - Kalinga Scholastic Entrance Examination | Admissions 2026-27",
+  description:
+    "KALSEE is the gateway to 130+ academic programs at Kalinga University. Apply online for UG, PG, and Ph.D. entrance exams. Check eligibility, exam pattern, and scholarship details.",
+  keywords: [
+    "KALSEE",
+    "Kalinga Scholastic Entrance Examination",
+    "University Entrance Exam",
+    "Kalinga University Admissions",
+    "UG PG Entrance Exam",
+    "Ph.D. Entrance Exam India",
+    "Scholarship Entrance Exam",
+  ],
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/kalsee/",
+  },
+};
+
 export default function KalseePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "KALSEE - Kalinga Scholastic Entrance Examination",
+    "description": "Entrance examination for various undergraduate and postgraduate programs at Kalinga University.",
+    "publisher": {
+      "@type": "University",
+      "name": "Kalinga University",
+      "url": "https://kalingauniversity.ac.in/"
+    }
+  };
   const faqItems = [
 
 
@@ -288,6 +318,10 @@ export default function KalseePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeroSectionTwo
         id="kalsee-application-form"
         backgroundImage="https://cdn.kalingauniversity.ac.in/kalsee/kalsee-banner-new.png"

@@ -1,14 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import React from "react";
 import APITable from "../components/general/api-table";
 import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
 
-
-
-export default function PatentsPage() {
-    
-
+export default function PatentsClient() {
     const patentTabs = Array.from({ length: 5 }, (_, i) => {
         const id = 9 + i; // 9 to 13
         const year = 2025 - i; // 2025 to 2021

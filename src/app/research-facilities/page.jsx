@@ -1,44 +1,46 @@
-"use client";
-import React, { useEffect } from 'react'
-import { usePathname } from 'next/navigation'
-import ResearchGrid from '../components/research-facilities/research-grid'
-import AdmissionCareer from '../components/general/admission_cta'
-import ResearchLab from '../components/research-facilities/research-lab'
-import MainIntro from "../components/about/main_intro";
-import CenterOfExcellenceMain from "../components/centresofexcellence/centreofexcellencemain";
+import ResearchFacilitiesClient from "./ResearchFacilitiesClient";
 
-const page = () => {
-    const pathname = usePathname();
+export const metadata = {
+    title: "Research Facilities & CoE | Kalinga University Raipur",
+    description: "Discover the research facilities at Kalinga University. Our Centres of Excellence provide skill-based training in AI, EV, Drone Technology, and Cyber Security.",
+    keywords: "Research university Raipur, Centres of Excellence Kalinga, University innovation hub, Skill-based training Raipur, Kalinga University Research",
+    alternates: {
+        canonical: "https://kalingauniversity.ac.in/research-facilities",
+    },
+};
+
+export default function ResearchFacilitiesPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Research Facilities - Kalinga University",
+        "description": "Research infrastructure and Centres of Excellence at Kalinga University Raipur.",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://kalingauniversity.ac.in/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Research Facilities",
+                    "item": "https://kalingauniversity.ac.in/research-facilities"
+                }
+            ]
+        }
+    };
 
     return (
         <>
-            <MainIntro
-                title="Introducing Our Centres of Excellence (CoE)"
-                description={[
-                    "To align academic learning with industrial knowledge, we have partnered with seven leading companies that offer skill-based training to students in various high-demanding sectors like electric vehicles, drone technology, AI, cybersecurity, automobiles, and many more. We’re a leading research university, empowering students to go from textbooks to real-world innovation and become ready to stand out in the competitive job market."
-                ]}
-                imageUrl="https://cdn.kalingauniversity.ac.in/research-facilities/researchfaciities-introimg1.webp"
-                imageAlt="Research Facilities"
-                showButton={false}
-                showKnowMore={false}
-                sectionClassName="py-8"
-                disableClipPath={false}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <ResearchGrid />
-            <ResearchLab />
-            <CenterOfExcellenceMain
-                breadcrumbData={{
-                    heroImage: "https://cdn.kalingauniversity.ac.in/placement/placement-intro.jpg",
-                    pageTitle: "Centres of Excellence",
-                    customBreadcrumbs: [
-                        { label: "Home", href: "/" },
-                        { label: "Centres of Excellence", href: "/centresofexcellence" },
-                    ],
-                }}
-            />
-            <AdmissionCareer />
+            <ResearchFacilitiesClient />
         </>
-    )
+    );
 }
-
-export default page

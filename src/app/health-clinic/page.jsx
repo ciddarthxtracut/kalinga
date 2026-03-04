@@ -1,55 +1,36 @@
-"use client";
-import React, { useEffect } from 'react'
-import HCIntro from '../components/health-clinic/healthclinic-intro'
-import HealthClinicTable from '../components/health-clinic/healthclinic-table'
-import AdmissionCareer from '../components/general/admission_cta'
-import RaipurVideoSection from '../components/about-raipur/raipurvideo';
+import HealthClinicClient from "./HealthClinicClient";
 
+export const metadata = {
+  title: "University Health Clinic | Medical Facilities | Kalinga University",
+  description: "Ensuring student well-being at Kalinga University. Our on-campus health clinic provides medical assistance, first aid, and wellness support for all students.",
+  keywords: "University health clinic Raipur, Medical facilities Chhattisgarh, Student wellness support Kalinga, On-campus physician India",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/health-clinic",
+  },
+};
 
-
-
-
-const page = () => {
-  const campusVideos = [
-    {
-      id: 1,
-      title: "Kalinga University Campus Tour",
-      videoUrl: "https://youtu.be/r0tBeANR5fQ",
-    },
-
-  ];
-
-
+export default function HealthClinicPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Health Clinic - Kalinga University",
+    "description": "Details about the medical clinic and health support services available to students at Kalinga University.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Health Clinic", "item": "https://kalingauniversity.ac.in/health-clinic" }
+      ]
+    }
+  };
 
   return (
-
     <>
-      <style jsx global>{`
-  .absolute.inset-0 > img {
-    object-position: center 60% !important;
-  }
-
-  @media (max-width: 768px) {
-    .absolute.inset-0 > img {
-      object-position: center 5% !important;
-    }
-  }
-`}</style>
-      <HCIntro />
-      <HealthClinicTable />
-      <RaipurVideoSection
-        videoId="ogUpFzbzP1c"
-        thumbnail="https://cdn.kalingauniversity.ac.in/about/about-banner.webp"
-        title=""
-        description="" // optional
-        alt="Video thumbnail"
-        heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
-        className="" // optional wrapper class
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      <AdmissionCareer />
+      <HealthClinicClient />
     </>
-  )
+  );
 }
-
-export default page

@@ -2,6 +2,39 @@ import { fetchAllCourses, fetchCourseCompleteDetail } from "@/app/lib/api";
 import CourseClientPage from "./CourseClientPage";
 
 /**
+ * Metadata Generation for Course Pages
+ */
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  let data = null;
+
+  try {
+    data = await fetchCourseCompleteDetail(slug);
+  } catch (error) {
+    console.error("Error fetching metadata for course:", error);
+  }
+
+  if (data) {
+    return {
+      title: data.meta_title || `${data.name} | Kalinga University`,
+      description: data.meta_description || `Enroll in ${data.name} at Kalinga University. Check eligibility, fee structure, and career opportunities.`,
+      keywords: data.keywords || data.meta_keywords,
+      authors: data.author ? [{ name: data.author }] : [{ name: "Kalinga University" }],
+      alternates: {
+        canonical: data.canonical_url || `https://kalingauniversity.ac.in/courses/${slug}`,
+      },
+      title: {
+        absolute: data.meta_title || `${data.name} | Kalinga University`,
+      }
+    };
+  }
+
+  return {
+    title: "Course | Kalinga University",
+  };
+}
+
+/**
  * Static Generation for Course Pages
  */
 export async function generateStaticParams() {

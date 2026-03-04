@@ -1,11 +1,35 @@
-"use client";
-
-import React from "react";
 import ChairmanMessage from "../components/leadership/chairman_message";
 
-export default function Leadership() {
+export const metadata = {
+  title: "Registrar's Message | Kalinga University Raipur",
+  description: "Read the message from Dr. Sandeep Gandhi, Registrar of Kalinga University. Learn about our commitment to placement, internships, and student success.",
+  keywords: "Registrar Kalinga University, Dr. Sandeep Gandhi, University administration, Admissions and placements Raipur",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/registrar",
+  },
+};
+
+export default function RegistrarPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Registrar's Message - Kalinga University",
+    "description": "Official message from the Registrar of Kalinga University.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Registrar", "item": "https://kalingauniversity.ac.in/registrar" }
+      ]
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ChairmanMessage
         imageSrc="https://cdn.kalingauniversity.ac.in/about/Leadership/Sandeep+Gandhi.png"
         imageAlt="Dr. Sandeep Gandhi"
@@ -19,8 +43,7 @@ export default function Leadership() {
           "We understand that students these days need to compete at an international level to get opportunities in the world’s top companies, and for this, they need to develop a creative and innovative thinking process. Keeping this in mind, we are working with our students at each step so that they can achieve their future endeavours. Here, they’re not only motivated and guided but also develop emotional intelligence, which they will need in both personal and professional life.",
           "Further, we believe that placements and internship opportunities are the need of the hour for every student. For this, we provide internships to students from their first year and conduct campus drives where our National and International hiring partners conduct interviews of our students on campus. With a blend of contemporary knowledge, skills and values, we groom high-calibre thinkers to become morally upright and physically sound citizens and turn into productive individuals in an ever-evolving society.",
           "I have complete trust in your unmeasured potential, and I wish you all success in your future endeavours."
-        ]
-        }
+        ]}
       />
     </>
   );

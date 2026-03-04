@@ -1,9 +1,15 @@
-"use client";
+import OtherCommitteesClient from "./OtherCommitteesClient";
 
-import React, { useEffect } from "react";
-import FAQ from "../components/general/faq";
-export default function OtherCommittees() {
-  // Internal Complaint Committee
+export const metadata = {
+  title: "Statutory Committees & Grievance Redressal | Kalinga University",
+  description: "Explore the various statutory committees at Kalinga University, including the Internal Complaint Committee, Women Cell, and SC/ST Cell, ensuring a safe academic environment.",
+  keywords: "University committees Raipur, Grievance redressal Chhattisgarh, Women cell university India, SC ST cell academic governance",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/other-committees",
+  },
+};
+
+export default function OtherCommitteesPage() {
   const internalComplaintCommittee = {
     id: 1,
     title: "Internal Complaint Committee",
@@ -24,7 +30,6 @@ export default function OtherCommittees() {
     ],
   };
 
-  // Grievance Redressal Committee
   const grievanceRedressalCommittee = {
     id: 2,
     title: "Grievance Redressal Committee",
@@ -45,7 +50,6 @@ export default function OtherCommittees() {
     ],
   };
 
-  // Women Cell / Prevention of Sexual Harassment (POSH) Committee
   const womenCellCommittee = {
     id: 3,
     title: "Women Cell / Prevention of Sexual Harassment (POSH) Committee",
@@ -66,27 +70,8 @@ export default function OtherCommittees() {
       { slNo: "8", name: "Ms. Arti Sinha", position: "Member", designation: "Student Representative from B.Ed." },
       { slNo: "9", name: "Dr. Naresh Sharma", position: "Member", designation: "Lawyer" },
     ],
-    footerContent: [
-      "The Women's Cell or Sexual Harassment Prevention Committee has been constituted at Kalinga University under the guidelines issued by the UGC, NAAC, and the Supreme Court to consider complaints related to any sexual discrimination or harassment of girls or women within the University.",
-      "Contact Details:",
-      "Dr. Lincy Roy - Head of Committee",
-      "Phone: +91-9303097012",
-      "Email: lincy.roy@kalingauniversity.ac.in",
-      "Regulation 2013 of Prevention, Prohibition and Redressal of Sexual Harassment of Women and Students in HEIs: https://cdn.kalingauniversity.ac.in/other-committees/Regulation+2013+of+Prevention%2C+Prohibition+and+Redressal+of+Sexual+Harassment+of+Women+and+Student+in+HEI's.pdf",
-      "Regulation 2015 of Prevention, Prohibition and Redressal of Sexual Harassment of Women and Students in HEIs: https://cdn.kalingauniversity.ac.in/other-committees/Regulation+2015+of+Prevention%2C+Prohibition+and+Redressal+of+Sexual+Harassment+of+Women+and+Student+in+HEI's.pdf",
-      "<b>Functions and Responsibilities of the Women's Cell & Prevention of Sexual Harassment (POSH) Committee:</b>",
-      "Promote measures aimed at achieving gender equality, removal of gender bias or discrimination, sexual harassment and other acts of gender based violence.",
-      "Organise awareness programmes and campaigns for the benefit of all members of the University on sexual harassment and gender based discrimination.",
-      "Fulfil the directives of and guidelines issued by the Supreme Court to create an academic and work environment that is free of sexual harassment or gender-based discrimination.",
-      "Receive and redress complaints received from any member of the University (including students, research scholars, staff, hostel residents and outsiders on University premises) alleging sexual harassment by another member(s) of the University.",
-      "Take suo-moto cognisance of any act of sexual harassment or gender-based discrimination on the University campus and/or facilities and take further action in this regard.",
-      "Conduct formal inquiry, investigate and take decisions upon each complaint and recommend appropriate punishment or action to be taken, by the appropriate authority, in each instance.",
-      "Engage the services of a professional or other expert in the course of performing its functions.",
-      "Ensure that all information pertaining to either complaints registered or the proceedings and findings of any inquiries and/or investigations is kept strictly confidential.",
-    ],
   };
 
-  // SC/ST Cell
   const scStCell = {
     id: 4,
     title: "SC/ST Cell",
@@ -106,7 +91,6 @@ export default function OtherCommittees() {
     ],
   };
 
-  // OBC Cell
   const obcCell = {
     id: 5,
     title: "OBC Cell",
@@ -126,7 +110,6 @@ export default function OtherCommittees() {
     ],
   };
 
-  // Minority Cell
   const minorityCell = {
     id: 6,
     title: "Minority Cell",
@@ -147,7 +130,6 @@ export default function OtherCommittees() {
     ],
   };
 
-  // Student Council
   const studentCouncil = {
     id: 7,
     title: "Student Council",
@@ -168,16 +150,6 @@ export default function OtherCommittees() {
     ],
   };
 
-  // FAQ items for committees with additional content
-  const faqItems = [
-    // {
-    //   id: 9,
-    //   question: "Fraud Awareness Guidelines",
-    //   answer:
-    //     "<b>Fraud Awareness Guidelines: </b> Kalinga goes to great lengths to protect our students from fraud. If you suspect having received fraudulent emails, SMS, or found a website or social media account that tries to pass off as official Kalinga University, we encourage you to let us know at your earliest convenience, so that we can quickly take action to stop the fraud. Please report all suspicious activity to our dedicated Anti-Abuse Mailbox at report@kalingauniversity.ac.in. We thoroughly investigate every report of suspected fraud, but generally, we do not respond to personal inquiries. Thank you for joining our effort to combat online fraud. <b>Fraudulent Use of Our Brand</b> Attempts have been made to defraud students online by the unauthorised use of the Kalinga University name and brand via email communications and graphics that appear, on the surface, to have originated from Kalinga University. Kalinga accepts no responsibility for any costs, charges, or payments made that were improperly incurred as a result of fraudulent activity.",
-    // },
-  ];
-
   const tableSections = [
     internalComplaintCommittee,
     grievanceRedressalCommittee,
@@ -188,17 +160,27 @@ export default function OtherCommittees() {
     studentCouncil,
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "University Committees - Kalinga University",
+    "description": "Details about various academic and administrative committees and councils at Kalinga University.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Committees", "item": "https://kalingauniversity.ac.in/other-committees" }
+      ]
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-white pt-10">
-      <FAQ
-        title="List Of Important Committee Members"
-        subtitle="Committees"
-        variant="card-display"
-        tableSections={tableSections}
-        items={faqItems}
-        pyClassName="py-8 md:py-12"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </div>
+      <OtherCommitteesClient tableSections={tableSections} faqItems={[]} />
+    </>
   );
 }
-

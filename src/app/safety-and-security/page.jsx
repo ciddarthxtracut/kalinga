@@ -1,37 +1,36 @@
-"use client";
+import SafetyAndSecurityClient from "./SafetyAndSecurityClient";
 
-import React, { useEffect } from "react";
-import Academicmainintro from "@/app/components/academic-facilities/academicmainintro";
-import Academiccards from "@/app/components/academic-facilities/academiccards";
-import AdmissionCareer from "@/app/components/general/admission_cta";
-import Safetyandsecuritymainintro from "../components/safetyandsecurity/safetyandsecuritymainintro";
-import Safetyandsecuritycards from "../components/safetyandsecurity/safetyandsecuritycards";
-import Safetyandsecuritycontact from "../components/safetyandsecurity/safetyandsecuritycontact";
+export const metadata = {
+  title: "Campus Safety & Security | 24/7 Protection | Kalinga University",
+  description: "Your safety is our priority. Kalinga University provides 24/7 security, CCTV surveillance, and a dedicated security team to ensure a safe learning environment.",
+  keywords: "Campus security Raipur, Student safety Chhattisgarh, University CCTV surveillance India, 24/7 security campus Kalinga",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/safety-and-security",
+  },
+};
 
-// (same pattern as AboutUs)
-
-
-export default function SafetyAndSecurity() {
-
+export default function SafetyAndSecurityPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Safety & Security - Kalinga University",
+    "description": "Details about the safety measures, security personnel, and surveillance systems at Kalinga University.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Safety & Security", "item": "https://kalingauniversity.ac.in/safety-and-security" }
+      ]
+    }
+  };
 
   return (
     <>
-      <style jsx global>{`
-  .absolute.inset-0 > img {
-    object-position: center 40% !important;
-  }
-
-  @media (max-width: 768px) {
-    .absolute.inset-0 > img {
-      object-position: center 5% !important;
-    }
-  }
-`}</style>
-
-      <Safetyandsecuritymainintro />
-      <Safetyandsecuritycontact />
-      <Safetyandsecuritycards />
-      <AdmissionCareer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SafetyAndSecurityClient />
     </>
   );
 }

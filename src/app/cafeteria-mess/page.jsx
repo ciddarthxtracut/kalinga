@@ -1,45 +1,36 @@
-"use client";
-import React from 'react'
-import AboutCafeteria from '../components/cafeteria-mess/about-cafeteria-mess'
-import AdmissionCareer from '../components/general/admission_cta';
-import CanteenMess from '../components/cafeteria-mess/cafeteria-facility-mess';
-import Page from '../components/campuslife/featuresection';
-import RaipurVideoSection from '../components/about-raipur/raipurvideo';
+import CafeteriaClient from "./CafeteriaClient";
 
+export const metadata = {
+  title: "Cafeteria & Mess Facilities | Healthy Dining | Kalinga University",
+  description: "Enjoy a variety of healthy and delicious food options at Kalinga University. Our cafeteria and mess facilities provide hygienic dining for students and staff.",
+  keywords: "University cafeteria Raipur, Campus dining Chhattisgarh, Student mess facilities Kalinga, Hygienic food university India",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/cafeteria-mess",
+  },
+};
 
-
-
-
-const page = () => {
+export default function CafeteriaPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cafeteria & Mess - Kalinga University",
+    "description": "Details about the dining facilities, menu, and hygiene standards at Kalinga University's cafeteria and mess.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Cafeteria & Mess", "item": "https://kalingauniversity.ac.in/cafeteria-mess" }
+      ]
+    }
+  };
 
   return (
     <>
-      <style jsx global>{`
-      .absolute.inset-0 > img {
-        object-position: center 40% !important;
-      }
-    
-      @media (max-width: 768px) {
-        .absolute.inset-0 > img {
-          object-position: center 5% !important;
-        }
-      }
-    `}</style>
-      <AboutCafeteria />
-      <CanteenMess />
-      <RaipurVideoSection
-        videoId="Wsv6dss4wSs"
-        thumbnail="https://cdn.kalingauniversity.ac.in/canteen-and-mess/cafeteria-thumbnail.jpg"
-        title=""
-        description="" // optional
-        alt="Video thumbnail"
-        heightClass="h-[380px] sm:h-[420px] md:h-[520px]" // optional, keep default
-        className="" // optional wrapper class
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <AdmissionCareer />
-
+      <CafeteriaClient />
     </>
-  )
+  );
 }
-
-export default page

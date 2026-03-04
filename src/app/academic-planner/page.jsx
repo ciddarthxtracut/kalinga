@@ -1,74 +1,36 @@
-"use client";
+import AcademicPlannerClient from "./AcademicPlannerClient";
 
-import React, { useState, useEffect } from 'react'
-import EventCalendar from "@/app/components/news_and_events/event_calendar";
-import { fetchNewsEvents, fetchAllDepartments } from "@/app/lib/api";
+export const metadata = {
+  title: "Academic Planner | Semester Workflow | Kalinga University",
+  description: "Plan your semester with Kalinga University's academic planner. Detailed schedule of classes, assignments, and academic milestones for all programs.",
+  keywords: "Academic planner Kalinga University, university semester plan Raipur, student study schedule Chhattisgarh",
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/academic-planner",
+  },
+};
 
-
-
-
-
-
-
-export default function Page() {
-  const [events, setEvents] = useState([]);
-  const [departments, setDepartments] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const [newsEventsData, departmentsData] = await Promise.all([
-          fetchNewsEvents(),
-          fetchAllDepartments()
-        ]);
-
-        // Handle both array and object with results property
-        const allEvents = newsEventsData.results || newsEventsData || [];
-
-        // Extract unique categories from all news/events data
-        const categoryMap = new Map();
-        allEvents.forEach(item => {
-          if (item.category && item.category_name) {
-            categoryMap.set(String(item.category), {
-              id: String(item.category),
-              name: item.category_name
-            });
-          }
-        });
-        const uniqueCategories = Array.from(categoryMap.values());
-
-        setEvents(allEvents);
-        setDepartments(departmentsData || []);
-        setCategories(uniqueCategories);
-      } catch (error) {
-        console.error('Error loading academic planner data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center">Loading academic events...</div>
-      </div>
-    );
-  }
+export default function AcademicPlannerPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Academic Planner - Kalinga University",
+    "description": "Plan your academic year with our comprehensive calendar and event schedule.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Academic Planner", "item": "https://kalingauniversity.ac.in/academic-planner" }
+      ]
+    }
+  };
 
   return (
-    <div>
-      <EventCalendar
-        items={events}
-        departments={departments}
-        categories={categories}
-        showNews={false}
-        hideNewsCategory={true}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </div>
-  )
+      <AcademicPlannerClient />
+    </>
+  );
 }

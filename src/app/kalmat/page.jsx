@@ -13,7 +13,37 @@ import AdmissionCareer from "../components/general/admission_cta";
 import SampleTesting from '../components/cif/sample_testing';
 import Testimonials from "../components/home/Testimonials";
 import MediaCardSlider from "../components/general/media-card-slider";
+
+export const metadata = {
+  title: "KAL-MAT - Kalinga Management Aptitude Test | BBA & MBA Entrance Exam",
+  description:
+    "KAL-MAT is the entrance exam for BBA and MBA programs at Kalinga University. Learn about exam pattern, eligibility, syllabus, and registration for management studies.",
+  keywords: [
+    "KAL-MAT",
+    "Kalinga Management Aptitude Test",
+    "BBA Entrance Exam",
+    "MBA Entrance Exam",
+    "Kalinga University",
+    "Management Entrance India",
+    "Business School Admissions",
+  ],
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/kal-mat/",
+  },
+};
+
 export default function KalseePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "KAL-MAT - Kalinga Management Aptitude Test",
+    "description": "Entrance examination for management programs at Kalinga University.",
+    "publisher": {
+      "@type": "University",
+      "name": "Kalinga University",
+      "url": "https://kalingauniversity.ac.in/"
+    }
+  };
   const milestones = [
     {
       value: '4 LPA',
@@ -288,6 +318,10 @@ export default function KalseePage() {
   // ];
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeroSectionTwo
         id="hero-banner"
         backgroundImage="https://cdn.kalingauniversity.ac.in/kal-mat/kalmat-banner-new.png"

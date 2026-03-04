@@ -1,9 +1,23 @@
-"use client";
+import React from "react";
+import PodcastClient from "./PodcastClient";
 
-import React, { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import MainIntro from "@/app/components/about/main_intro";
-import MediaCardSlider from '../components/general/media-card-slider';
+export const metadata = {
+  title: "Kalinga Podcast | Big Ideas & Bold Voices | Kalinga University",
+  description:
+    "Listen to inspiring conversations, expert talks, and student stories on the Kalinga University Podcast. A platform for students, faculty, alumni, and industry leaders to share bold ideas.",
+  keywords: [
+    "Kalinga Podcast",
+    "University Podcast",
+    "Educational Podcast India",
+    "Student Voices",
+    "Academic Conversations",
+    "Industry Leader Interviews",
+    "Student Media Kalinga",
+  ],
+  alternates: {
+    canonical: "https://kalingauniversity.ac.in/podcast/",
+  },
+};
 
 const videoItems = [
   {
@@ -27,44 +41,28 @@ const videoItems = [
     videoUrl: "https://www.youtube.com/watch?v=gwcT3TN_5iM",
     thumbnail: "https://cdn.kalingauniversity.ac.in/podcast/podcast-4.png",
   },
-]
+];
 
-const Podcast = () => {
-  const pathname = usePathname();
-
+export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Kalinga University Podcast",
+    "description": "Podcast platform featuring voices from Kalinga University community.",
+    "publisher": {
+      "@type": "University",
+      "name": "Kalinga University",
+      "url": "https://kalingauniversity.ac.in/"
+    }
+  };
 
   return (
-    <div>
-      <MainIntro
-        title="An Initiative By Kalinga University"
-        subtitle=""
-        description={[
-          <>
-            <strong>Big Ideas, Bold Voices, and Conversations that Inspire</strong> - Welcome to Kalinga Podcast!
-          </>,
-          "A platform that shapes the voice of our students, faculty members, alumni, and industry leaders. From inspiring talks to engaging conversations, experience a whole new vibe at our podcast studio. Our students don’t just learn by listening, but they also learn how to create and host their own podcasts. ",
-          "So, plug in your earphones and discover new stories and ideas that will inspire you.",
-        ]}
-        imageUrl="https://cdn.kalingauniversity.ac.in/common/podcast.webp"
-        imageAlt="Kalinga University Podcast"
-        showKnowMore={false}
-        showButton={false}
-        initialVisibleParagraphs={5}
-        disableClipPath={false}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      <MediaCardSlider
-        categoryTitle=""
-        title="Our Podcasts"
-        description=""
-        videoItems={videoItems}
-        cardBgClass="bg-white"
-        nameTextClass="text-[var(--button-red)]"
-        descriptionTextClass=""
-        swiperClassName="ccrc-video-slider"
-      />
-    </div>
+      <PodcastClient videoItems={videoItems} />
+    </>
   );
-};
-
-export default Podcast; 
+}

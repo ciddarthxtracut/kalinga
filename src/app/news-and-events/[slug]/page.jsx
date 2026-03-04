@@ -27,9 +27,12 @@ export async function generateMetadata({ params }) {
 
     if (seoData) {
         return {
-            title: seoData.meta_title || seoData.title,
+            title: {
+                absolute: seoData.meta_title || seoData.title,
+            },
             description: seoData.meta_description,
-            keywords: seoData.meta_keywords,
+            keywords: seoData.meta_keywords || seoData.keywords,
+            authors: seoData.author ? [{ name: seoData.author }] : [{ name: "Kalinga University" }],
             openGraph: {
                 title: seoData.og_title || seoData.meta_title,
                 description: seoData.og_description || seoData.meta_description,
@@ -42,19 +45,24 @@ export async function generateMetadata({ params }) {
                 images: seoData.twitter_image ? [seoData.twitter_image] : [],
             },
             alternates: {
-                canonical: seoData.canonical_url,
+                canonical: seoData.canonical_url || `https://kalingauniversity.ac.in/news-and-events/${slug}`,
             },
         };
     }
 
-    // Fallback metadata if SEO endpoint doesn't return data (or returns 404 but item exists)
-    // We'll try to fetch the item details to get basic info
+    // Fallback metadata if SEO endpoint doesn't return data (only if empty)
     try {
         const item = await fetchNewsEventDetails(slug);
         if (item) {
+            const title = `${item.heading} | Kalinga University`;
             return {
-                title: item.heading,
-                description: item.heading, // We could parse content if needed
+                title: {
+                    absolute: title,
+                },
+                description: item.heading,
+                alternates: {
+                    canonical: `https://kalingauniversity.ac.in/news-and-events/${slug}`,
+                }
             }
         }
     } catch (e) {

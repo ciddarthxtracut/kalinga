@@ -1,43 +1,36 @@
-"use client";
+import BookChaptersClient from "./BookChaptersClient";
 
-import { useEffect } from "react";
-import APITable from "../components/general/api-table";
-import CtcdTrainingTabs from "../components/ctcd/ctcd_training_tabs";
-
-
+export const metadata = {
+    title: "Book Chapters Published | Faculty Research | Kalinga University",
+    description: "Explore the scholarly contributions of Kalinga University faculty. A comprehensive list of published book chapters across various academic disciplines.",
+    keywords: "Book chapters Kalinga University, research publications Raipur, faculty research Chhattisgarh",
+    alternates: {
+        canonical: "https://kalingauniversity.ac.in/book-chapters",
+    },
+};
 
 export default function BookChaptersPage() {
-    
-
-    // 8 tabs: IDs 27-34
-    // Mapping logic:
-    // 27 -> 2025-2026
-    // 28 -> 2024-2025
-    // ...
-    // 34 -> 2018-2019
-    const bookChapterTabs = Array.from({ length: 8 }, (_, i) => {
-        const id = 27 + i; // 27 to 34
-        const yearStart = 2025 - i; // 2025 to 2018
-        const yearEnd = yearStart + 1;
-        const label = `${yearStart}-${yearEnd}`;
-
-        return {
-            value: `year-${id}`,
-            label,
-            content: (
-                <APITable
-                    tableId={id.toString()}
-                    title={`Book / Book Chapters ${label}`}
-                    className="py-16"
-                    overflowX={true}
-                />
-            ),
-        };
-    });
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Book Chapters - Kalinga University",
+        "description": "Scholarly book chapters published by our distinguished faculty members.",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kalingauniversity.ac.in/" },
+                { "@type": "ListItem", "position": 2, "name": "Book Chapters", "item": "https://kalingauniversity.ac.in/book-chapters" }
+            ]
+        }
+    };
 
     return (
-        <main className="bg-white font-jakarta">
-            <CtcdTrainingTabs customTabs={bookChapterTabs} />
-        </main>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <BookChaptersClient />
+        </>
     );
 }

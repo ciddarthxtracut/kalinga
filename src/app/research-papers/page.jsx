@@ -1,32 +1,44 @@
-"use client";
-
 import React from "react";
-import APITable from "../components/general/api-table";
-import MainIntro from "../components/about/main_intro";
+import ResearchPapersClient from "./ResearchPapersClient";
 
-export default function ResearchPapersPage() {
+export const metadata = {
+    title: "Research Papers & Publications | Kalinga University",
+    description:
+        "Browse the research papers and academic publications by the faculty and students of Kalinga University. We are committed to fostering a culture of rigorous inquiry and innovation.",
+    keywords: [
+        "Research Papers",
+        "Academic Publications",
+        "Kalinga University Research",
+        "Faculty Publications",
+        "Scientific Research Papers",
+        "Journal Articles",
+        "Research Innovation",
+    ],
+    alternates: {
+        canonical: "https://kalingauniversity.ac.in/research-papers/",
+    },
+};
+
+export default function Page() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Research Papers - Kalinga University",
+        "description": "Database of research papers and publications from Kalinga University.",
+        "publisher": {
+            "@type": "University",
+            "name": "Kalinga University",
+            "url": "https://kalingauniversity.ac.in/"
+        }
+    };
+
     return (
-        <main className="bg-white font-jakarta">
-            {/* <MainIntro
-                title="Research Papers"
-                subtitle="Publications"
-                description={[
-                    "Browse through the research papers published by our esteemed faculty and students. Kalinga University remains committed to fostering a culture of rigorous inquiry and knowledge dissemination through high-impact research publications.",
-                    "Our research community continues to contribute significantly to various disciplines, sharing insights and discoveries that address contemporary challenges and drive innovation forward."
-                ]}
-                imageUrl="https://cdn.kalingauniversity.ac.in/research/research-main-content.webp"
-                imageAlt="Research Papers"
-                showKnowMore={false}
-            /> */}
-
-            <div className="container mx-auto px-6 py-16">
-                <APITable
-                    tableId="57"
-                    title="Research Paper Publications"
-                    overflowX={true}
-                    nested={false}
-                />
-            </div>
-        </main>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <ResearchPapersClient />
+        </>
     );
 }
