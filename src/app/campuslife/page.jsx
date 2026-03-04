@@ -8,6 +8,7 @@ import GalleryAll from "../components/general/image_animation";
 import CampusLife from "../components/campuslife/campusvideo";
 import Gallery from "../components/campuslife/campusgallery";
 import AdmissionCareer from "../components/general/admission_cta";
+import { ScrollScene } from "../components/gsap/Scrollscene";
 import UpcomingConferences from "../components/research/upcoming_conference";
 
 export default function Page() {
@@ -30,7 +31,8 @@ export default function Page() {
       <Facilities />
       <FeaturesSection />
       <CampusLife />
-      <GalleryAll className="mt-10 mb-10" />
+      {/* <ImageAnimation /> */}
+      <ScrollScene />
 
       {/* 
         Show events from Sports (6) and NCC (7).
