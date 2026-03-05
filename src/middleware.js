@@ -12,6 +12,13 @@ export function middleware(request) {
     return NextResponse.redirect(url, redirect.permanent ? 301 : 302);
   }
 
+  // Automatically strip .php from URLs to handle old indexed links
+  if (pathname.endsWith('.php')) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.slice(0, -4); // remove .php
+    return NextResponse.redirect(url, 301);
+  }
+
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-pathname", pathname);
   return NextResponse.next({

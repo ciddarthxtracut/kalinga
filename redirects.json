@@ -1,7 +1,277 @@
 [
     {
-        "source": "",
-        "destination": "",
+        "source": "/book-publication",
+        "destination": "/book-publications",
+        "permanent": true
+    },
+    {
+        "source": "/admission_procedure",
+        "destination": "/admission-procedure",
+        "permanent": true
+    },
+    {
+        "source": "/about_kalinga",
+        "destination": "/about-us",
+        "permanent": true
+    },
+    {
+        "source": "/downloads_information.php",
+        "destination": "/downloads",
+        "permanent": true
+    },
+    {
+        "source": "/downloads_information.php",
+        "destination": "/downloads",
+        "permanent": true
+    },
+    {
+        "source": "/contact",
+        "destination": "/contact-us",
+        "permanent": true
+    },
+    {
+        "source": "/international",
+        "destination": "/international-students",
+        "permanent": true
+    },
+    {
+        "source": "/job_openings",
+        "destination": "/careers",
+        "permanent": true
+    },
+    {
+        "source": "/rti.php",
+        "destination": "/rti",
+        "permanent": true
+    },
+    {
+        "source": "/brochures",
+        "destination": "/downloads",
+        "permanent": true
+    },
+    {
+        "source": "/doc_veri",
+        "destination": "/document-verification",
+        "permanent": true
+    },
+    {
+        "source": "/ku",
+        "destination": "/ku-fees",
+        "permanent": true
+    },
+    {
+        "source": "/ph.d-admissions",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/science_conference",
+        "destination": "/events",
+        "permanent": true
+    },
+    {
+        "source": "/law_national_conference",
+        "destination": "/events",
+        "permanent": true
+    },
+    {
+        "source": "/ciftrainingprogram",
+        "destination": "/central-instrumentation-facility",
+        "permanent": true
+    },
+    {
+        "source": "/ciftrainingprogram",
+        "destination": "/central-instrumentation-facility",
+        "permanent": true
+    },
+    {
+        "source": "/kalsee_2021",
+        "destination": "/kalsee",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_commerce",
+        "destination": "/departments/faculty-of-commerce-and-management",
+        "permanent": true
+    },
+    {
+        "source": "/big-data",
+        "destination": "/events",
+        "permanent": true
+    },
+    {
+        "source": "/registrar_message",
+        "destination": "/registrar",
+        "permanent": true
+    },
+    {
+        "source": "/SIMETGSD-2024",
+        "destination": "/departments/faculty-of-commerce-and-management",
+        "permanent": true
+    },
+    {
+        "source": "/SIMETGSD-2024",
+        "destination": "/departments/faculty-of-commerce-and-management",
+        "permanent": true
+    },
+    {
+        "source": "/reel_competition2022",
+        "destination": "/events",
+        "permanent": true
+    },
+    {
+        "source": "/riect22",
+        "destination": "/events",
+        "permanent": true
+    },
+    {
+        "source": "/ICETSD-2024",
+        "destination": "/events",
+        "permanent": true
+    },
+    {
+        "source": "/Law-Conference",
+        "destination": "/departments/faculty-of-law",
+        "permanent": true
+    },
+    {
+        "source": "/Law-Conference",
+        "destination": "/departments/faculty-of-law",
+        "permanent": true
+    },
+    {
+        "source": "/antisquad",
+        "destination": "/anti-ragging-cell",
+        "permanent": true
+    },
+    {
+        "source": "/virtual_placement_fest_2022",
+        "destination": "/training-and-placements",
+        "permanent": true
+    },
+    {
+        "source": "/ku_value_addition",
+        "destination": "/value-additions",
+        "permanent": true
+    },
+    {
+        "source": "/PhD-Ordinance",
+        "destination": "/phd",
+        "permanent": true
+    },
+    {
+        "source": "/grievancecommittee",
+        "destination": "/grievance-redressal",
+        "permanent": true
+    },
+    {
+        "source": "/research_convention",
+        "destination": "/events",
+        "permanent": true
+    },
+    {
+        "source": "/post_graduate_engineering",
+        "destination": "/departments/faculty-of-engineering-and-technology",
+        "permanent": true
+    },
+    {
+        "source": "/under_graduate",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/sports",
+        "destination": "/sports-and-wellness-centre",
+        "permanent": true
+    },
+    {
+        "source": "/iqac/iqacnew",
+        "destination": "/iqac",
+        "permanent": true
+    },
+    {
+        "source": "/arun-diwakar",
+        "destination": "/",
+        "permanent": true
+    },
+    {
+        "source": "/PrincipalsMeet",
+        "destination": "/leadership",
+        "permanent": true
+    },
+    {
+        "source": "/mess",
+        "destination": "/cafeteria-mess",
+        "permanent": true
+    },
+    {
+        "source": "/faith_worship_facility2",
+        "destination": "/student-welfare",
+        "permanent": true
+    },
+    {
+        "source": "/cafeteria",
+        "destination": "/cafeteria-mess",
+        "permanent": true
+    },
+    {
+        "source": "/under_graduate_bio",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/anubhuti-koshle",
+        "destination": "/",
+        "permanent": true
+    },
+    {
+        "source": "/post_graduate_art",
+        "destination": "/departments/faculty-of-arts-humanities",
+        "permanent": true
+    },
+    {
+        "source": "/schedule_aspirants2",
+        "destination": "/kalsee",
+        "permanent": true
+    },
+    {
+        "source": "/kalsee",
+        "destination": "/kalsee",
+        "permanent": true
+    },
+    {
+        "source": "/culture",
+        "destination": "/campuslife",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_and_staff",
+        "destination": "/leadership",
+        "permanent": true
+    },
+    {
+        "source": "/report",
+        "destination": "/iqac",
+        "permanent": true
+    },
+    {
+        "source": "/action",
+        "destination": "/iqac",
+        "permanent": true
+    },
+    {
+        "source": "/pso",
+        "destination": "/iqac",
+        "permanent": true
+    },
+    {
+        "source": "/policy",
+        "destination": "/iqac",
+        "permanent": true
+    },
+    {
+        "source": "/under_graduate_fashion",
+        "destination": "/departments/faculty-of-arts-humanities",
         "permanent": true
     }
 ]
