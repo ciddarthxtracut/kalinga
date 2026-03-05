@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -40,16 +41,7 @@ const nextConfig = {
     ],
     qualities: [75, 100],
   },
-  async redirects() {
-    return [
-      {
-        source: '/about',
-        destination: '/about-us',
-        permanent: true,
-      },
-    ];
-  },
-  // Best practice: short cache for HTML (speed + fresh after deploy), static assets keep Next default long cache.
+  // Redirects and headers handled in middleware/next.config
   async headers() {
     return [
       {
