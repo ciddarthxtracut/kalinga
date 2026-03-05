@@ -121,49 +121,49 @@ export default function ProgramCard({
         {/* Action Buttons */}
         <div className="flex flex-row gap-2 md:gap-3">
 
-          {/* Check Eligibility Button - Dark Red with white arrow in white square */}
-          <a href={href} onClick={(e) => {
-            e.preventDefault();
-            if (program.exploreLinkText || exploreLinkText) onExploreProgramClick(program);
+          {/* Explore Program Button - Dark Red with white arrow in white square */}
+          <a href={href || "#"} onClick={(e) => {
+            if (onExploreProgramClick) {
+              e.preventDefault();
+              onExploreProgramClick(program);
+            }
           }}>
             <GlobalArrowButton
               className="!bg-[var(--dark-orange-red)] !text-[var(--background)] whitespace-nowrap text-xs md:text-sm lg:text-base !h-[38px] md:!h-[40px] !rounded-lg !px-1"
               arrowClassName="!bg-[var(--background)] !px-1"
               arrowIconClassName="!text-[var(--button-red)]"
               textClassName="!text-[12px] md:!text-[14px] !px-2 md:!px-3"
-              onClick={(e) => {
-                e.preventDefault();
-                if (onCheckEligibility) onCheckEligibility(program);
-              }}
             >
               {program.exploreLinkText || exploreLinkText}
             </GlobalArrowButton>
           </a>
 
           {/* Apply Now Button - Dark Red with white arrow in white square */}
-          <a
-            href={applyNowLink}
-            {...(applyNowLink.startsWith('#') ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-            onClick={(e) => {
-              if (applyNowLink.startsWith('#')) {
-                e.preventDefault();
-                const element = document.querySelector(applyNowLink);
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          {!program.hideApplyNow && (
+            <a
+              href={applyNowLink}
+              {...(applyNowLink.startsWith('#') ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+              onClick={(e) => {
+                if (applyNowLink.startsWith('#')) {
+                  e.preventDefault();
+                  const element = document.querySelector(applyNowLink);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
                 }
-              }
-              if (onApplyNow) onApplyNow(program);
-            }}
-          >
-            <GlobalArrowButton
-              className="!bg-[var(--button-red)] !text-[var(--background)] whitespace-nowrap !text-xs md:!text-sm lg:!text-base !h-[38px] md:!h-[40px] !rounded-lg !px-1"
-              arrowClassName="!bg-[var(--background)] !px-1 !text-white"
-              arrowIconClassName="!text-[var(--button-red)]"
-              textClassName="!text-[12px] md:!text-[14px] !px-2 md:!px-3"
+                if (onApplyNow) onApplyNow(program);
+              }}
             >
-              Apply Now
-            </GlobalArrowButton>
-          </a>
+              <GlobalArrowButton
+                className="!bg-[var(--button-red)] !text-[var(--background)] whitespace-nowrap !text-xs md:!text-sm lg:!text-base !h-[38px] md:!h-[40px] !rounded-lg !px-1"
+                arrowClassName="!bg-[var(--background)] !px-1 !text-white"
+                arrowIconClassName="!text-[var(--button-red)]"
+                textClassName="!text-[12px] md:!text-[14px] !px-2 md:!px-3"
+              >
+                Apply Now
+              </GlobalArrowButton>
+            </a>
+          )}
         </div>
       </div>
     </div>

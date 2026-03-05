@@ -16,6 +16,7 @@ export default function ImageListItem({
   className = "",
   textClassName = "text-white ",
   headingClassName = "text-white",
+  titleTextColor = "",
   cardBackgroundColor = "bg-[var(--card-sandal)]",
   cardTitleClassName = "text-[var(--red)]",
   listItemTextClassName = "",
@@ -63,8 +64,8 @@ export default function ImageListItem({
           {/* Image Section */}
           <div
             className={`col-span-1 md:col-span-6 lg:col-span-5 relative ${allowImageOverflow
-                ? 'overflow-visible z-20 flex justify-center md:block'
-                : 'rounded-2xl overflow-hidden min-h-[300px] md:min-h-[450px]'
+              ? 'overflow-visible z-20 flex justify-center md:block'
+              : 'rounded-2xl overflow-hidden min-h-[300px] md:min-h-[450px]'
               } ${reverseLayout ? 'md:order-2' : 'md:order-1'}`}
           >
             {allowImageOverflow ? (
@@ -92,6 +93,7 @@ export default function ImageListItem({
             <SectionHeading
               title={title}
               titleClassName={`!py-2 text-left  ${headingClassName}`}
+              titleTextColor={titleTextColor}
             />
 
             {/* Description */}

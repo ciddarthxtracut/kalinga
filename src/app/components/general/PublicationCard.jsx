@@ -42,24 +42,44 @@ const PublicationCard = ({ data, className = "" }) => {
                         </div>
                     </>
                 ) : (
-                    <>
-                        <h3 className="font-stix text-[#a34439] text-base md:text-lg lg:text-xl font-medium leading-tight font-plus-jakarta-sans">
-                            {data.title}
-                            <div className="w-16 h-px bg-gray-300 my-3"></div>
-                        </h3>
+                    <div className="flex flex-col h-full justify-between w-full overflow-hidden">
+                        <div>
+                            <h3 className="font-stix text-[#a34439] text-base md:text-lg lg:text-xl font-medium leading-tight font-plus-jakarta-sans truncate" title={data.title}>
+                                {data.title}
+                                <div className="w-16 h-px bg-gray-300 my-3"></div>
+                            </h3>
 
-                        <div className="space-y-1">
-                            <p className="font-stix text-lg md:text-xl font-medium text-gray-800">
-                                {data.author ? `By ${data.author}` : data.subtitle}
-                            </p>
-                            <p className="text-xs md:text-sm">
-                                {data.designation}
-                            </p>
-                            <p className="text-xs tracking-tight mt-1">
-                                {data.faculty || data.department}
-                            </p>
+                            <div className="space-y-1">
+                                <p className="font-stix text-lg md:text-xl font-medium text-gray-800 line-clamp-2" title={data.author || data.subtitle}>
+                                    {data.author ? `By ${data.author}` : data.subtitle}
+                                </p>
+                                {data.designation && (
+                                    <p className="text-xs md:text-sm">
+                                        {data.designation}
+                                    </p>
+                                )}
+                                {(data.faculty || data.department) && (
+                                    <p className="text-xs tracking-tight mt-1 truncate w-full" title={data.faculty || data.department}>
+                                        {data.faculty || data.department}
+                                    </p>
+                                )}
+                            </div>
                         </div>
-                    </>
+
+                        {data.exploreLinkText && data.onExplore && (
+                            <div className="mt-4 mt-auto pt-2">
+                                <button
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        data.onExplore(data);
+                                    }}
+                                    className="px-4 py-2 bg-[var(--button-red)] text-white text-sm font-medium rounded-lg hover:bg-[var(--dark-orange-red)] transition-colors w-max"
+                                >
+                                    {data.exploreLinkText}
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 )}
             </div>
         </div>

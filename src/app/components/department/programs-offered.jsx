@@ -61,7 +61,12 @@ export default function ProgramsOffered({
   description = "Explore our diverse academic programs designed to empower your future.",
   backgroundImage = "https://cdn.kalingauniversity.ac.in/aiml/aiml-banner.webp",
   imageAlt = "Students",
-  hideSearch = false
+  hideSearch = false,
+  exploreLabel = "Explore Program",
+  searchPlaceholder = "Search Programs....",
+  backgroundColor = "bg-[var(--dark-blue)]",
+  textColor = "text-white",
+  titleColor = "text-white"
 }) {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -70,15 +75,15 @@ export default function ProgramsOffered({
   }, [programs, searchQuery]);
 
   return (
-    <section className="bg-[var(--dark-blue)] relative mx-2 rounded-xl pt-16">
+    <section className={`${backgroundColor} relative mx-2 rounded-xl pt-16`}>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-15">
           {/* Left Column */}
           <div className="flex flex-col gap-6 order-1 lg:order-1">
             <div >
-              <h2 className="text-white mb-4">{title}</h2>
+              <h2 className={`${titleColor} mb-4`}>{title}</h2>
               <div
-                className="text-white leading-relaxed pr-10 [&_a]:text-white [&_a]:underline [&_a]:font-bold transition-colors"
+                className={`${textColor} leading-relaxed pr-10 [&_a]:text-white [&_a]:underline [&_a]:font-bold transition-colors`}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
             </div>
@@ -100,7 +105,7 @@ export default function ProgramsOffered({
               <div className="relative pb-4 px-3 lg:px-0">
                 <input
                   type="text"
-                  placeholder="Search Programs...."
+                  placeholder={searchPlaceholder}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full bg-[var(--button-red)] text-white placeholder-white px-4 py-5 pr-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50"
@@ -160,10 +165,11 @@ export default function ProgramsOffered({
                           Duration: {program.duration}
                         </p>
                         <Link
-                          href={program.slug ? `/courses/${program.slug}` : "/admissions"}
+                          href={program.slug?.startsWith('http') ? program.slug : (program.slug ? `/courses/${program.slug}` : "/admissions")}
+                          target={program.slug?.startsWith('http') ? "_blank" : "_self"}
                           className="font-[500] flex items-center gap-1 hover:gap-2 transition-all md:ml-4 text-[var(--foreground)] hover:text-[var(--button-red)]/80"
                         >
-                          Explore Program
+                          {program.exploreLabel || exploreLabel}
                           <svg
                             width="16"
                             height="16"

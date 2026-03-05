@@ -61,7 +61,9 @@ export default function ProgramsOffered({
   description = "Explore our diverse academic programs designed to empower your future.",
   backgroundImage = "https://cdn.kalingauniversity.ac.in/aiml/aiml-banner.webp",
   imageAlt = "Students",
-  hideSearch = false
+  hideSearch = false,
+  exploreLabel = "Explore Program",
+  searchPlaceholder = "Search Programs...."
 }) {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -100,7 +102,7 @@ export default function ProgramsOffered({
               <div className="relative pb-4 px-3 lg:px-0">
                 <input
                   type="text"
-                  placeholder="Search Programs...."
+                  placeholder={searchPlaceholder}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full bg-[var(--button-red)] text-white placeholder-white px-4 py-5 pr-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50"
@@ -160,10 +162,11 @@ export default function ProgramsOffered({
                           Duration: {program.duration}
                         </p>
                         <Link
-                          href={program.slug ? `/courses/${program.slug}` : "/admissions"}
+                          href={program.slug?.startsWith('http') ? program.slug : (program.slug ? `/courses/${program.slug}` : "/admissions")}
+                          target={program.slug?.startsWith('http') ? "_blank" : "_self"}
                           className="font-[500] flex items-center gap-1 hover:gap-2 transition-all md:ml-4 text-[var(--foreground)] hover:text-[var(--button-red)]/80"
                         >
-                          Explore Program
+                          {program.exploreLabel || exploreLabel}
                           <svg
                             width="16"
                             height="16"

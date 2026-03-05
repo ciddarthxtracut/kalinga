@@ -1,9 +1,10 @@
-export default function SectionHeading({ 
-  subtitle, 
+export default function SectionHeading({
+  subtitle,
   title,
   subtitleClassName = "",
   titleClassName = " ",
-  subtitleTextColor = "text-[var(--button-red)]"
+  subtitleTextColor = "text-[var(--button-red)]",
+  titleTextColor = "text-[var(--foreground)]"
 }) {
   return (
     <>
@@ -13,7 +14,7 @@ export default function SectionHeading({
         </h5>
       )}
       {title && (
-        <h2 className={`font-stix  mb-2 text-[var(--foreground)]  ${titleClassName}`}>
+        <h2 className={`font-stix  mb-2 ${titleTextColor}  ${titleClassName}`}>
           {title}
         </h2>
       )}

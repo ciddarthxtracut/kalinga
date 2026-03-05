@@ -86,7 +86,9 @@ export default function OurPrograms({
   maxPrograms = null,
   backgroundColor = "bg-white",
   mobileMaxWidth = null,
-  programCardTitleClassName = ""
+  programCardTitleClassName = "",
+  onCheckEligibility: customOnCheckEligibility = null,
+  onExploreProgramClick: customOnExploreProgramClick = null
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -379,6 +381,10 @@ export default function OurPrograms({
 
   // Handle program actions
   const handleCheckEligibility = (program) => {
+    if (customOnCheckEligibility) {
+      customOnCheckEligibility(program);
+      return;
+    }
     // Link to course page eligibility section
     if (program.coursePageUrl) {
       router.push(`${program.coursePageUrl}#eligibility`);
@@ -393,6 +399,10 @@ export default function OurPrograms({
   };
 
   const handleExploreProgram = (program) => {
+    if (customOnExploreProgramClick) {
+      customOnExploreProgramClick(program);
+      return;
+    }
     // Link to course page
     if (program.coursePageUrl) {
       router.push(program.coursePageUrl);
