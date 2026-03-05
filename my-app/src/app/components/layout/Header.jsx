@@ -244,7 +244,7 @@ const Header = () => {
     {
       id: 'Campus life',
       label: 'Campus life',
-      href: '#',
+      href: '/campuslife',
       megaMenu: {
         imageUrl: 'https://cdn.kalingauniversity.ac.in/campus-life/campuslife.webp',
         imageAlt: 'Campus Life at KU',

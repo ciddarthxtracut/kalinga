@@ -371,7 +371,7 @@ export const pageDataMap: Record<string, PageData> = {
     "/organogram": {
         slug: "/organogram",
         title: "Organogram",
-        banner: "https://cdn.kalingauniversity.ac.in/organogram/kalinga-org-banner.webp",
+        banner: "https://cdn.kalingauniversity.ac.in/contact-us/contact-us-banner.webp",
     },
     "/other-committees": {
         slug: "/other-committees",

@@ -66,12 +66,12 @@
     },
     {
         "source": "/science_conference",
-        "destination": "/events",
+        "destination": "/news-and-events",
         "permanent": true
     },
     {
         "source": "/law_national_conference",
-        "destination": "/events",
+        "destination": "/news-and-events",
         "permanent": true
     },
     {
@@ -96,7 +96,7 @@
     },
     {
         "source": "/big-data",
-        "destination": "/events",
+        "destination": "/news-and-events",
         "permanent": true
     },
     {
@@ -116,17 +116,17 @@
     },
     {
         "source": "/reel_competition2022",
-        "destination": "/events",
+        "destination": "/news-and-events",
         "permanent": true
     },
     {
         "source": "/riect22",
-        "destination": "/events",
+        "destination": "/news-and-events",
         "permanent": true
     },
     {
         "source": "/ICETSD-2024",
-        "destination": "/events",
+        "destination": "/news-and-events",
         "permanent": true
     },
     {
@@ -166,12 +166,12 @@
     },
     {
         "source": "/research_convention",
-        "destination": "/events",
+        "destination": "/news-and-events",
         "permanent": true
     },
     {
         "source": "/post_graduate_engineering",
-        "destination": "/departments/faculty-of-engineering-and-technology",
+        "destination": "/departments/faculty-of-technology",
         "permanent": true
     },
     {
@@ -186,7 +186,7 @@
     },
     {
         "source": "/iqac/iqacnew",
-        "destination": "/iqac",
+        "destination": "/internal-quality-assurance-cell",
         "permanent": true
     },
     {
@@ -230,16 +230,6 @@
         "permanent": true
     },
     {
-        "source": "/schedule_aspirants2",
-        "destination": "/kalsee",
-        "permanent": true
-    },
-    {
-        "source": "/kalsee",
-        "destination": "/kalsee",
-        "permanent": true
-    },
-    {
         "source": "/culture",
         "destination": "/campuslife",
         "permanent": true
@@ -251,27 +241,322 @@
     },
     {
         "source": "/report",
-        "destination": "/iqac",
+        "destination": "/internal-quality-assurance-cell",
         "permanent": true
     },
     {
         "source": "/action",
-        "destination": "/iqac",
+        "destination": "/internal-quality-assurance-cell",
         "permanent": true
     },
     {
         "source": "/pso",
-        "destination": "/iqac",
+        "destination": "/internal-quality-assurance-cell",
         "permanent": true
     },
     {
         "source": "/policy",
-        "destination": "/iqac",
+        "destination": "/internal-quality-assurance-cell",
         "permanent": true
     },
     {
         "source": "/under_graduate_fashion",
         "destination": "/departments/faculty-of-arts-humanities",
+        "permanent": true
+    },
+    {
+        "source": "/internships",
+        "destination": "/training-and-placements",
+        "permanent": true
+    },
+    {
+        "source": "/corporate_training_and_consultancy_division",
+        "destination": "/corporate-training-and-consultancy-division",
+        "permanent": true
+    },
+    {
+        "source": "/otherfacilities",
+        "destination": "/campus-facilities",
+        "permanent": true
+    },
+    {
+        "source": "/sport",
+        "destination": "/sports-and-wellness-centre",
+        "permanent": true
+    },
+    {
+        "source": "/post_graduate_sc",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/transport_details",
+        "destination": "/transport-facility",
+        "permanent": true
+    },
+    {
+        "source": "/kalinga_faqs",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/minutes",
+        "destination": "/internal-quality-assurance-cell",
+        "permanent": true
+    },
+    {
+        "source": "/raipur_city",
+        "destination": "/about-raipur",
+        "permanent": true
+    },
+    {
+        "source": "/kalsee_2019",
+        "destination": "/kalsee",
+        "permanent": true
+    },
+    {
+        "source": "/contact_us",
+        "destination": "/contact-us",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_law/1000",
+        "destination": "/departments/faculty-of-law",
+        "permanent": true
+    },
+    {
+        "source": "/iqaccomposition",
+        "destination": "/internal-quality-assurance-cell",
+        "permanent": true
+    },
+    {
+        "source": "/under_graduate_art",
+        "destination": "/departments/faculty-of-arts-humanities",
+        "permanent": true
+    },
+    {
+        "source": "/dr_rajendra_prasad_patel",
+        "destination": "/leadership",
+        "permanent": true
+    },
+    {
+        "source": "/post_graduate_journalism",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/beyond_the_classroom",
+        "destination": "/campuslife",
+        "permanent": true
+    },
+    {
+        "source": "/accommodation",
+        "destination": "/hostel",
+        "permanent": true
+    },
+    {
+        "source": "/dr_ranjeeta_singh",
+        "destination": "/leadership",
+        "permanent": true
+    },
+    {
+        "source": "/events-campus",
+        "destination": "/news-and-events",
+        "permanent": true
+    },
+    {
+        "source": "/under_graduate_science",
+        "destination": "/departments/faculty-of-science",
+        "permanent": true
+    },
+    {
+        "source": "/advantage_kalinga",
+        "destination": "/about-us",
+        "permanent": true
+    },
+    {
+        "source": "/campus",
+        "destination": "/campuslife",
+        "permanent": true
+    },
+    {
+        "source": "/department/education",
+        "destination": "/departments/faculty-of-education",
+        "permanent": true
+    },
+    {
+        "source": "/schedule_aspirants",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/we_wush_the_boundaries_knowledge",
+        "destination": "/academics",
+        "permanent": true
+    },
+    {
+        "source": "/post_graduate_bio",
+        "destination": "/departments/faculty-of-science",
+        "permanent": true
+    },
+    {
+        "source": "/extension-activities",
+        "destination": "/student-clubs",
+        "permanent": true
+    },
+    {
+        "source": "/code_conduct",
+        "destination": "/",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_computer_science.php/1000",
+        "destination": "/departments/faculty-of-science",
+        "permanent": true
+    },
+    {
+        "source": "/kalinga_faqs",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/medical-facility",
+        "destination": "/health-clinic",
+        "permanent": true
+    },
+    {
+        "source": "/gym-facility",
+        "destination": "/campus-facilities",
+        "permanent": true
+    },
+    {
+        "source": "/indoor-games",
+        "destination": "/sports-and-wellness-centre",
+        "permanent": true
+    },
+    {
+        "source": "/e-battery-cycle",
+        "destination": "/campus-facilities",
+        "permanent": true
+    },
+    {
+        "source": "/plagiarism-policy",
+        "destination": "/research",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_management.php/1000",
+        "destination": "/departments/faculty-of-management",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_fashion_and_interior_design.php/1000",
+        "destination": "/departments/faculty-of-science",
+        "permanent": true
+    },
+    {
+        "source": "/extra-curricular",
+        "destination": "/student-clubs",
+        "permanent": true
+    },
+    {
+        "source": "/about_raipur.php/1000",
+        "destination": "/about-raipur",
+        "permanent": true
+    },
+    {
+        "source": "/banking-atm",
+        "destination": "/campus-facilities",
+        "permanent": true
+    },
+    {
+        "source": "/tie-ups",
+        "destination": "/training-and-placements",
+        "permanent": true
+    },
+    {
+        "source": "/student-erp",
+        "destination": "/",
+        "permanent": true
+    },
+    {
+        "source": "/green-campus",
+        "destination": "/campus-life",
+        "permanent": true
+    },
+    {
+        "source": "/training-programs",
+        "destination": "/training-and-placements",
+        "permanent": true
+    },
+    {
+        "source": "/ku/30novwebinar",
+        "destination": "/news-and-events",
+        "permanent": true
+    },
+    {
+        "source": "/ICRAMSM-2025",
+        "destination": "/news-and-events",
+        "permanent": true
+    },
+    {
+        "source": "/PO-PSO-CO/Post_Graduation_Diploma_In_Computer_Applications",
+        "destination": "/departments/faculty-of-information-technology",
+        "permanent": true
+    },
+    {
+        "source": "/e-htp-safety-tank",
+        "destination": "/campus-facilities",
+        "permanent": true
+    },
+    {
+        "source": "/about_kalinga.php/about_raipur",
+        "destination": "/about-raipur",
+        "permanent": true
+    },
+    {
+        "source": "/Faculty-of-Science/programs",
+        "destination": "/departments/faculty-of-science",
+        "permanent": true
+    },
+    {
+        "source": "/research/New-Patents-2022",
+        "destination": "/research",
+        "permanent": true
+    },
+    {
+        "source": "/sexual-harassment-prevention-committee",
+        "destination": "/other-committees",
+        "permanent": true
+    },
+    {
+        "source": "/Sustainable-Initiatives/Constitutional-Obligations",
+        "destination": "/sustainability",
+        "permanent": true
+    },
+    {
+        "source": "/ku-national-2020",
+        "destination": "/news-and-events",
+        "permanent": true
+    },
+    {
+        "source": "/ku-icbt-2020",
+        "destination": "/news-and-events",
+        "permanent": true
+    },
+    {
+        "source": "/department/DSW-2018-19",
+        "destination": "/academics",
+        "permanent": true
+    },
+    {
+        "source": "/IQAC%20Initiative",
+        "destination": "/internal-quality-assurance-cell",
+        "permanent": true
+    },
+    {
+        "source": "/sanitary-napkin-vending-machines",
+        "destination": "/campus-facilities",
         "permanent": true
     }
 ]

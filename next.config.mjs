@@ -41,6 +41,30 @@ const nextConfig = {
     ],
     qualities: [75, 100],
   },
+  async redirects() {
+    const redirectsPath = path.join(__dirname, 'redirects.json');
+    let customRedirects = [];
+    try {
+      const redirectsData = fs.readFileSync(redirectsPath, 'utf8');
+      customRedirects = JSON.parse(redirectsData);
+    } catch (err) {
+      console.error('Error reading redirects.json:', err);
+    }
+
+    return [
+      // Map all .php URLs to non-.php URLs
+      {
+        source: '/:path*.php',
+        destination: '/:path*',
+        permanent: true,
+      },
+      ...customRedirects.map(r => ({
+        source: r.source,
+        destination: r.destination,
+        permanent: r.permanent === undefined ? true : r.permanent
+      }))
+    ];
+  },
   // Redirects and headers handled in middleware/next.config
   async headers() {
     return [

@@ -90,7 +90,7 @@ export default function Footer() {
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/executive-development-program">Executive <br />Development Program</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/csr">CSR @ KU</a></li>
                     <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="kalinga-incubation-foundation">KIF</a></li>
-                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="#">SC & ST Grievance Cell</a></li>
+                    <li><a className="hover:text-white transition-colors lg:whitespace-nowrap break-words" href="/grievance-redressal">SC & ST Grievance Cell</a></li>
 
                   </ul>
                   <ul className="text-white/80 space-y-2 sm:space-y-3">
