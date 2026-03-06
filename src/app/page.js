@@ -29,14 +29,14 @@ export default function Home() {
     {
       id: 1,
       title: "Mansi Majumdar",
-      description: "Department of Zoology",
+      description: "M.Sc. Zoology",
       videoUrl: "https://www.youtube.com/watch?v=JLlMztuYLao",
       thumbnail: "https://i.ytimg.com/vi/JLlMztuYLao/hqdefault.jpg",
     },
     {
       id: 2,
       title: "Shreyanka Raha",
-      description: "Department of Journalism & Mass Communication",
+      description: "BJMC",
       videoUrl: "https://www.youtube.com/watch?v=U-ofFXqFKfU",
       thumbnail: "https://i.ytimg.com/vi/U-ofFXqFKfU/hqdefault.jpg",
     },

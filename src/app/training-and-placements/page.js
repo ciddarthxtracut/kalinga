@@ -517,6 +517,44 @@ export default function Research() {
     },
   ]
 
+  const placementGalleryImages = [
+    // // Training and Placement Cell
+    // { id: 1, image: "https://cdn.kalingauniversity.ac.in/placement/placement-training-cell/pt-glimple-1.webp", title: "Training and Placement Gallery" },
+    // { id: 2, image: "https://cdn.kalingauniversity.ac.in/placement/placement-training-cell/pt-glimple-2.webp", title: "Training and Placement Gallery" },
+    // { id: 3, image: "https://cdn.kalingauniversity.ac.in/placement/placement-training-cell/pt-glimple-3.webp", title: "Training and Placement Gallery" },
+
+    // // Aditya Biotech Lab
+    // { id: 4, image: "https://cdn.kalingauniversity.ac.in/placement/placement-training-cell/pt-glimple-4.webp", title: "Aditya Biotech Lab" },
+    // { id: 5, image: "https://cdn.kalingauniversity.ac.in/placement/placement-training-cell/pt-glimple-5.webp", title: "Aditya Biotech Lab" },
+
+    // International Students / Campus (IDs 6-9)
+    { id: 6, image: "https://cdn.kalingauniversity.ac.in/placement/ind-1.jpeg", title: "Aditya Biotech Lab" },
+    { id: 7, image: "https://cdn.kalingauniversity.ac.in/placement/ind-2.jpeg", title: "Aditya Biotech Lab" },
+    { id: 8, image: "https://cdn.kalingauniversity.ac.in/placement/ind-3.jpeg", title: "Aditya Biotech Lab" },
+    { id: 9, image: "https://cdn.kalingauniversity.ac.in/placement/ind-4.jpg", title: "Automobile Expo Visit" },
+
+    // Automobile Expo Visit
+    { id: 10, image: "https://cdn.kalingauniversity.ac.in/placement/ind-5.jpg", title: "Automobile Expo Visit" },
+    { id: 11, image: "https://cdn.kalingauniversity.ac.in/placement/ind-6.jpg", title: "Automobile Expo Visit" },
+    { id: 12, image: "https://cdn.kalingauniversity.ac.in/placement/ind-7.jpg", title: "Automobile Expo Visit" },
+    { id: 13, image: "https://cdn.kalingauniversity.ac.in/placement/ind-8.jpg", title: "Automobile Expo Visit" },
+    { id: 14, image: "https://cdn.kalingauniversity.ac.in/placement/ind-9.jpg", title: "Automobile Expo Visit" },
+    { id: 15, image: "https://cdn.kalingauniversity.ac.in/placement/ind-10.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+    { id: 16, image: "https://cdn.kalingauniversity.ac.in/placement/ind-11.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+    { id: 17, image: "https://cdn.kalingauniversity.ac.in/placement/ind-12.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+    { id: 18, image: "https://cdn.kalingauniversity.ac.in/placement/ind-13.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+    { id: 19, image: "https://cdn.kalingauniversity.ac.in/placement/ind-14.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+    { id: 20, image: "https://cdn.kalingauniversity.ac.in/placement/ind-15.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+
+    // Bhilai Steel Plant Industrial Visit
+    { id: 21, image: "https://cdn.kalingauniversity.ac.in/placement/ind-16.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+    { id: 22, image: "https://cdn.kalingauniversity.ac.in/placement/ind-17.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+
+    // CIPET Visit
+    { id: 23, image: "https://cdn.kalingauniversity.ac.in/placement/ind-18.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+    { id: 24, image: "https://cdn.kalingauniversity.ac.in/placement/ind-19.jpg", title: "Bhilai Steel Plant Industrial Visit" },
+  ];
+
   const placementColumns = [
     { key: "slNo", label: "S.No", width: "w-16" },
     { key: "name", label: "Name of Student", width: "w-64" },
@@ -570,35 +608,35 @@ export default function Research() {
   ];
 
   const CapacityInitiatives202425Tables = [
-    { id: 61, title: "Capacity Development & Skill Enhancement Initiatives - 2024 - 25" },
+    { id: 61, title: "2024 - 25" },
   ];
 
   const CapacityInitiatives202324Tables = [
-    { id: 62, title: "Capacity Development & Skill Enhancement Initiatives - 2023 - 24" },
+    { id: 62, title: "2023 - 24" },
   ];
 
   const CapacityInitiatives202223Tables = [
-    { id: 63, title: "Capacity Development & Skill Enhancement Initiatives - 2022 - 23" },
+    { id: 63, title: "2022 - 23" },
   ];
 
   const CapacityInitiatives202122Tables = [
-    { id: 64, title: "Capacity Development & Skill Enhancement Initiatives - 2021 - 22" },
+    { id: 64, title: "2021 - 22" },
   ];
 
   const CapacityInitiatives202021Tables = [
-    { id: 65, title: "Capacity Development & Skill Enhancement Initiatives - 2020 - 21" },
+    { id: 65, title: "2020 - 21" },
   ];
 
   const CapacityInitiatives201819Tables = [
-    { id: 67, title: "Capacity Development & Skill Enhancement Initiatives - 2018 - 19" },
+    { id: 67, title: "2018 - 19" },
   ];
 
 
 
 
-  const collaborationTables = [
-    { id: 59, title: "Our Collaborations" },
-  ];
+  // const collaborationTables = [
+  //   { id: 59, title: "Our Collaborations" },
+  // ];
 
   const guidanceForCompetitiveExamsTables = [
     { id: 60, title: "Guidance For Competitive Exams" },
@@ -609,10 +647,10 @@ export default function Research() {
   ];
 
   const internshipTables = [
-    { id: 44, title: "Training & Internship for Session 2024-25" },
-    { id: 43, title: "Training & Internship for Session 2023-24" },
-    { id: 42, title: "Training & Internship for Session 2022-23" },
-    { id: 45, title: "Training & Internship for Session 2021-22" },
+    { id: 44, title: "2024-25" },
+    { id: 43, title: "2023-24" },
+    { id: 42, title: "2022-23" },
+    { id: 45, title: "2021-22" },
   ];
 
   const galleryImages = [
@@ -674,63 +712,7 @@ export default function Research() {
 
   ];
 
-  const annualReportButtons = [
-    {
-      id: 1,
-      text: "Annual Report 2022–23 (Volume I)",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/Annual-Report-2022-23-(Vol-1).pdf",
-    },
-    {
-      id: 2,
-      text: "Annual Report 2022–23 (Volume II)",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/Annual+Report+2022-23+(Vol.+2).pdf",
-    },
-    {
-      id: 3,
-      text: "Annual Report 2021–22 (Volume I)",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/Annual+Report-2021-22+(Vol.+1).pdf",
-    },
-    {
-      id: 4,
-      text: "Annual Report 2021–22 (Volume II)",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/Annual-Report-2021-22-(Vol-2).pdf",
-    },
-    {
-      id: 5,
-      text: "Annual Report 2020–21",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/Annual-Report-2020-21.pdf",
-    },
-    {
-      id: 6,
-      text: "Annual Report 2019–20",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/FINAL+ANNUAL+REPORT+2019-20_09-01-2021.pdf",
-    },
-    {
-      id: 7,
-      text: "Annual Report 2018–19",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/FINAL+ANNUAL+REPORT+2018-19_15-01-2021.pdf",
-    },
-    {
-      id: 8,
-      text: "Annual Report 2017–18",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/FINAL+ANNUAL+REPORT+2017-18_18-01-2021.pdf",
-    },
-    {
-      id: 9,
-      text: "Annual Report 2016–17",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/FINAL+ANNUAL+REPORT_2016-17_18-01-2021.pdf",
-    },
-    {
-      id: 10,
-      text: "Annual Report 2015–16",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/FINAL+ANNUAL+REPORT_2015-16_18-01-2021.pdf",
-    },
-    {
-      id: 11,
-      text: "Annual Report 2014–15",
-      href: "https://cdn.kalingauniversity.ac.in/annual-reports/FINAL+ANNUAL+REPORT_2014-15_18-01-2021.pdf",
-    },
-  ];
+
 
   const DetailsofCareerCounsellingFAQItems = DetailsofCareerCounsellingTables.map(item => ({
     id: item.id,
@@ -765,21 +747,21 @@ export default function Research() {
   }));
 
 
-  const collaborationFAQItems = collaborationTables.map(item => ({
-    id: item.id,
-    question: item.title,
-    component: (
-      <APITable
-        tableId={item.id.toString()}
-        className="py-0"
-        overflowX={true}
-        showTableTitle={false}
-        nested={true}
-        maxHeight="max-h-[600px]"
-        excludeColumns={["Certificate No.", "Certificate No"]}
-      />
-    )
-  }));
+  // const collaborationFAQItems = collaborationTables.map(item => ({
+  //   id: item.id,
+  //   question: item.title,
+  //   component: (
+  //     <APITable
+  //       tableId={item.id.toString()}
+  //       className="py-0"
+  //       overflowX={true}
+  //       showTableTitle={false}
+  //       nested={true}
+  //       maxHeight="max-h-[600px]"
+  //       excludeColumns={["Certificate No.", "Certificate No"]}
+  //     />
+  //   )
+  // }));
 
   const internshipFAQItems = internshipTables.map(item => ({
     id: item.id,
@@ -923,7 +905,7 @@ export default function Research() {
         singleColumn={true}
         milestones={milestones}
         description="Maintaining the track record of providing students with the best job opportunities and rewarding salary packages at top companies."
-        footerText="Trusted by 400+ Global Recruiters"
+        footerText="Trusted by Global Recruiters"
         noContainer={true}
       />
       <MediaCardSlider
@@ -941,7 +923,7 @@ export default function Research() {
         description={[
           "The Career and Corporate Centre of Kalinga University is a hub for career guidance and training, and corporate partnerships. With modern infrastructure and resources, the centre meets industry standards and has even received appreciation from top organisations. The Kalinga University campus placements support cell introduces you to the professional world. We don't just prepare you for the corporate world, but give you a 360-degree training so that you can turn out to be a confident individual who is ready to tackle any challenge in life.",
           "With our personalised training programs, expert-led sessions, and interview preparation, you will be well-prepared to clear any job interview according to your skill set. Our expert mentors go beyond and guide you with skills that companies are looking for in the current job market, and even update the training modules accordingly. Apart from this, we also keep the database of job openings in various companies up-to-date, so that our students don't miss out on any opportunities. With our strong industry connections, we conduct campus drives each year, ensuring that our graduates are placed in leading companies with competitive salary packages.",
-          "<h3 style='font-size: 1.3rem; margin-bottom: 0.5rem;'>Objectives of Training </h3>"
+          "<h3 style='font-size: 1.3rem; margin-bottom: 0.5rem;'>Objectives of Our Training and Placement Cell </h3>"
         ]}
         points={items.map((item) => item.text)}
         hidePointsUntilExpanded={true}
@@ -1106,12 +1088,16 @@ export default function Research() {
 
       <FAQ
         title="Collaborations & Activities"
-        subtitle="Collaboration"
+        subtitle="Our Partners"
         items={[
           {
             id: 1,
             question: "Our Collaborations",
-            component: <APITable tableId="68" nested={true} />
+            component: (
+              <div className="overflow-x-auto w-full">
+                <APITable tableId="68" nested={true} />
+              </div>
+            )
           },
           {
             id: 2,
@@ -1196,7 +1182,7 @@ export default function Research() {
       {/* <QuickLinks title="Entrepreneurship & Startup Support" titleClassName="text-white" links={links2} description="We're here to put your entrepreneurial ideas into action. Here, you will not just dream but build something real that solves people's problems." showReadMore={false} /> */}
       <MediaCardSlider
         categoryTitle=""
-        title="Here From Our Recruiters"
+        title="Hear From Our Recruiters"
         description="Want to know what employers think about Kalinga University and its graduates? Their feedback will give you a detailed understanding of their experience in conducting interviews at our campus, and you’ll also understand how the skills of our students match their requirements."
         videoItems={videoItems2}
         cardBgClass="bg-white"
@@ -1206,51 +1192,23 @@ export default function Research() {
         imageObjectPosition="object-bottom"
       />
       <FAQ
-        items={[...collaborationFAQItems, ...guidanceForCompetitiveExamsFAQItems, ...DetailsofCareerCounsellingFAQItems, ...CapacityInitiatives202425FAQItems, ...CapacityInitiatives202324FAQItems, ...CapacityInitiatives202223FAQItems, ...CapacityInitiatives202122FAQItems, ...CapacityInitiatives202021FAQItems, ...CapacityInitiatives201819FAQItems]}
+        items={[...guidanceForCompetitiveExamsFAQItems, ...DetailsofCareerCounsellingFAQItems]}
         title=""
         showHeading={false}
         variant="default"
         pyClassName="py-8"
       />
 
-      <section className="pt-16 pb-16 bg-white">
-        <div className="container mx-auto px-6">
+      <FAQ
+        items={[...CapacityInitiatives202425FAQItems, ...CapacityInitiatives202324FAQItems, ...CapacityInitiatives202223FAQItems, ...CapacityInitiatives202122FAQItems, ...CapacityInitiatives202021FAQItems, ...CapacityInitiatives201819FAQItems]}
+        title="Capacity Development and Skill Enhancement"
+        showHeading={true}
+        subtitle=""
+        variant="default"
+        pyClassName="py-8 pt-16"
+      />
 
-          {/* ✅ PAGE HEADING */}
-          <div className="mb-10 text-center">
-            <h2 >
-              Annual Reports
-            </h2>
-            <p className="text-[16px] text-[#555] leading-relaxed">
-              Our annual reports will give you a detailed overview of the University’s growth and achievements.
-              These reports show transparency, academic excellence, and overall institutional development.
-            </p>
-          </div>
 
-          {/* ✅ BUTTON GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {annualReportButtons.map((item) => (
-              <FlipbookTrigger key={item.id} pdfUrl={item.href} title={item.text}>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <GlobalArrowButton
-                    className="!w-full h-[60px] justify-between"
-                    arrowClassName="p-[3px] !px-2 mr-2 !py-1"
-                    arrowSize={29}
-                  >
-                    {item.text}
-                  </GlobalArrowButton>
-                </a>
-              </FlipbookTrigger>
-            ))}
-          </div>
-
-        </div>
-      </section>
       <FAQ
         title="Our Successful Placement Record"
         variant="button"
@@ -1350,10 +1308,10 @@ export default function Research() {
         title=""
         showHeading={false}
         variant="default"
-        pyClassName=""
+        pyClassName="pt-15"
       />
-      <Gallery
-        title="Industrial Visit"
+      {/* <Gallery
+        title="Industrial Visits"
         description=""
         images={[
           { id: 1, src: "https://cdn.kalingauniversity.ac.in/placement/placement-training-cell/pt-glimple-1.webp", alt: "Training and Placement Gallery 1" },
@@ -1381,6 +1339,12 @@ export default function Research() {
           { id: 23, src: "https://cdn.kalingauniversity.ac.in/placement/ind-18.jpg", alt: "International Students Banner" },
           { id: 24, src: "https://cdn.kalingauniversity.ac.in/placement/ind-19.jpg", alt: "International Students Banner" },
         ]}
+      /> */}
+      <MediaCardSlider
+        title="Industrial Visits"
+        imageItems={placementGalleryImages}
+        categoryTitle=""
+        id="industrial-visits"
       />
       <CustomGallery
         images={galleryImages}

@@ -68,6 +68,8 @@ const APITable = (props) => {
                     return;
                 }
 
+                console.log(`[APITable Debug] Fetched table ${tableId}, total rows: ${data?.rows?.length}`);
+
                 setTableData(data);
             } catch (err) {
                 console.error('Error loading table data:', err);
@@ -134,7 +136,6 @@ const APITable = (props) => {
     })).filter(col => !excludeColumns.includes(col.label));
 
     const data = tableData.rows
-        .filter(row => row.some(cell => cell !== null && cell !== undefined && String(cell).trim() !== ""))
         .map((row) => {
             const rowObj = {};
             row.forEach((cell, index) => {

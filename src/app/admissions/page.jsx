@@ -136,9 +136,9 @@ export default function Admissions() {
 
   // OrganogramOfKalinga content (second instance - without image)
   const admissionOrganogramContent = {
-    title: "Proposed Fee Structure 2025-26 (For Indian Students)",
+    title: "Proposed Fee Structure (For Indian Students)",
     description: [
-      "Kalinga University offers a transparent fee structure for 2025-26, including tuition, examination, prospectus, caution money, and uniform fees. Flexible payment options and detailed breakdowns for all programs are available.",
+      "Kalinga University offers a transparent fee structure including tuition, examination, prospectus, caution money, and uniform fees. Flexible payment options and detailed breakdowns for all programs are available.",
     ],
     buttonLabel: "Learn More",
     cardBackgroundColor: "bg-[var(--dark-blue)]",

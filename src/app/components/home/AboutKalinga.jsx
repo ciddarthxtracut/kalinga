@@ -111,7 +111,7 @@ const AboutKalinga = () => {
               <div className={`mt-8 md:hidden flex justify-center ${isExpanded ? 'mb-8' : 'mb-0'}`}>
                 <div className="relative w-full max-w-[320px] h-[230px] rounded-lg overflow-hidden shadow-2xl">
                   <Image
-                    src="https://cdn.kalingauniversity.ac.in/Home/about-kalinga.webp"
+                    src="https://cdn.kalingauniversity.ac.in/Home/girl-stand.webp"
                     alt="Students"
                     fill
                     sizes="(max-width: 768px) 320px, 0vw"

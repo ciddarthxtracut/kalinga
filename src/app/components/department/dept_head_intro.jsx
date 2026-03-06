@@ -4,7 +4,7 @@ import Image from "next/image";
 import SectionHeading from "../general/SectionHeading";
 import GlobalArrowButton from '../general/global-arrow_button';
 
-const DEFAULT_IMAGE_SRC = "https://cdn.kalingauniversity.ac.in/IQAC/chart.webp";
+const DEFAULT_IMAGE_SRC = "https://cdn.kalingauniversity.ac.in/IQAC/iqac-new.png";
 const DEFAULT_TITLE = "Mr. Omprakash Dewangan";
 const DEFAULT_SUBTITLE = "Head of Department";
 const DEFAULT_DEPARTMENT = "Faculty of Information Technology";
@@ -22,7 +22,7 @@ function MentorCard({
   contentWrapperClassName = "",
   contactInfo = null,
   showQuotes = true,
-  quoteContainerClassName = "p-14 pl-14",
+  quoteContainerClassName = "p-10 pt-16 md:p-14 md:pl-24",
 }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isQuoteExpanded, setIsQuoteExpanded] = useState(false);
@@ -126,7 +126,7 @@ function MentorCard({
 
           <div className={`bg-[var(--dark-blue)] rounded-xl relative overflow-hidden z-10 ${quoteContainerClassName}`}>
             {showQuotes && (
-              <div className="absolute top-10 left-12">
+              <div className="absolute top-6 left-6 md:top-10 md:left-8">
                 <div className="flex gap-1">
                   <svg width="26" height="41" viewBox="0 0 26 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.2832 40.0727C19.6607 40.0727 20.7877 38.9457 20.7877 37.5682C20.7877 36.6916 20.412 35.9402 19.6607 35.5645C19.5355 35.4393 19.5355 35.4393 19.4102 35.3141C13.1489 31.1816 12.7732 26.2977 13.9002 22.5409H22.5409C23.9184 22.5409 25.0455 21.4139 25.0455 20.0364V2.50455C25.0455 1.12705 23.9184 0 22.5409 0H2.50455C1.12705 0 0 1.12705 0 2.50455V24.795C0 27.9257 1.00182 31.0564 2.88023 33.5609C5.13432 36.5663 9.6425 39.9475 18.2832 40.0727Z" fill="white" />

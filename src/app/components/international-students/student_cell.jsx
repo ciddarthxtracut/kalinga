@@ -123,7 +123,7 @@ export default function StudentCell({
               {buttons && buttons.length > 0 && (
                 <div className="flex flex-wrap gap-4 mt-6">
                   {buttons.map((btn, index) => {
-                    const isPdf = btn.fileUrl && btn.fileUrl.toLowerCase().endsWith(".pdf");
+                    const isPdf = btn.fileUrl && btn.fileUrl.toLowerCase().endsWith(".pdf") && !btn.disableFlipbook;
                     const buttonEl = (
                       <GlobalArrowButton
                         key={btn.id || index}

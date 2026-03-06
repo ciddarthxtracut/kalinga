@@ -9,7 +9,6 @@ import UpcomingConference from "../components/research/upcoming_conference";
 import Gallery from "../components/general/gallery";
 import AdmissionCareer from "../components/general/admission_cta";
 import { fetchNewsEvents, fetchAllDepartments, parseHtmlToText } from '../lib/api';
-
 import MediaCardSlider from "../components/general/media-card-slider";
 import StudentActivities from "../components/department/student_activities";
 

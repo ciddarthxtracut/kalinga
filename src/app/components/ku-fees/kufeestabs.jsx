@@ -131,8 +131,8 @@ const FEES_COMMERCE = {
         },
     ],
     notes: [
-        "MBA Specialisations (Select any Two): Banking & Insurance, Business Analytics, Digital Marketing & E-Commerce, Finance, Healthcare & Hospital Management, Hotel & Hospitality Management, Human Resource Management, Information Technology, International Business, Logistics & Supply Chain Management, Marketing Management, NGO Management.",
-        "BBA Specialisations (Select any One): Airline & Airport Operations Management, Digital Marketing & E-Commerce, Event Management & Public Relations, Family Business & Startups, Finance, Fintech, Hospital Administration, Human Resource Management, Marketing Management, Aviation.",
+        "* MBA Specialisations (select any from mba): Banking & Insurance, Business Analytics, Digital Marketing & E-Commerce, Finance, Healthcare & Hospital Management, Hotel & Hospitality Management, Human Resource Management, Information Technology, International Business, Logistics & Supply Chain Management, Marketing Management, NGO Management.",
+        "BBA Specialisations (select any from bba): Airline & Airport Operations Management, Digital Marketing & E-Commerce, Event Management & Public Relations, Family Business & Startups, Finance, Fintech, Hospital Administration, Human Resource Management, Marketing Management, Aviation.",
     ],
 };
 
@@ -1115,7 +1115,7 @@ const OTHER_CHARGES = {
         { route: "From Mandir Hasaud", fee: "INR 18,000/- Per Year" },
     ],
     scholarship:
-        "Scholarships (General, Merit & Girl Student) are available on Tuition Fees. The above scholarships are not applicable to Pharmacy, Education, and Research Programs.",
+        "Scholarships (General, Merit & Girl Student) are available on Tuition Fees. The scholarships are not applicable to Pharmacy, Education, and Research Programs.",
     // uniformDetails: "Uniform Includes - 2 Trousers, 2 Shirts, 1 Blazer, 1 T-Shirt, 1 Lower, 1 Tie, 1 Bag",
 };
 

@@ -289,7 +289,23 @@ export default function ManagementDepartmentPage() {
         { name: "Prof. Byju John", designation: "Director General" }
     ];
 
-
+    const aboutFaqData = [
+        {
+            id: 1,
+            title: "Board of Studies",
+            columns: [
+                { key: "slNo", label: "S. No.", width: "w-20" },
+                { key: "member", label: "Designation/Nomination", width: "flex-1" }
+            ],
+            data: [
+                { slNo: 1, member: "Dean/HoD, Chairman of the Committee" },
+                { slNo: 2, member: "Industry Expert - Member" },
+                { slNo: 3, member: "Expert from other Academic Institution - Member" },
+                { slNo: 4, member: "Senior Professors from Department - Members" },
+                { slNo: 5, member: "Students and Alumni Representative - Members" }
+            ]
+        },
+    ];
 
     return (
         <>
@@ -328,7 +344,7 @@ export default function ManagementDepartmentPage() {
             />
             <StudentActivities
                 activities={ideathonActivities}
-                title="Management Events & Activities"
+                title="Ideathon- Business Plan Competitions"
             />
             <NewsEventsTabs />
 
@@ -387,12 +403,14 @@ export default function ManagementDepartmentPage() {
                     {
                         id: 1,
                         text: "Management Journal List",
-                        fileUrl: "https://cdn.kalingauniversity.ac.in/departments/Faculty+of+Commerece+and+Management/Management+Journal+List.pdf"
+                        fileUrl: "https://cdn.kalingauniversity.ac.in/departments/Faculty+of+Commerece+and+Management/Management+Journal+List.pdf",
+                        disableFlipbook: true
                     },
                     {
                         id: 2,
                         text: "Commerce & Management Title List",
-                        fileUrl: "https://cdn.kalingauniversity.ac.in/departments/Faculty+of+Commerce+%26+Management+Title+List+1.pdf"
+                        fileUrl: "https://cdn.kalingauniversity.ac.in/departments/Faculty+of+Commerce+%26+Management+Title+List+1.pdf",
+                        disableFlipbook: true
                     }
                 ]}
             />
@@ -479,6 +497,7 @@ export default function ManagementDepartmentPage() {
             />
 
             <Facility />
+            <FAQ variant="table-display" tableSections={aboutFaqData} items={[]} subtitle="" title="" id="governance-structure" />
         </>
     );
 }
@@ -486,19 +505,20 @@ export default function ManagementDepartmentPage() {
 function ResearchPublicationsTabs() {
     const tabs = useMemo(
         () => [
-            { id: "73", label: "Patents (2021)" },
+            { id: "73", label: "Patents (2025)" },
             { id: "74", label: "Patents (2024)" },
             { id: "75", label: "Patents (2023)" },
-            { id: "76", label: "Patents (2021-1)" },
-            { id: "77", label: "Book Chapters (2021)" },
-            { id: "78", label: "Book Chapters (2022)" },
-            { id: "79", label: "Book Chapters (2023)" },
-            { id: "80", label: "Book Chapters (2024)" },
+            { id: "86", label: "Patents (2022)" },
+            { id: "76", label: "Patents (2021)" },
             { id: "81", label: "Book Chapters (2025)" },
-            { id: "82", label: "Research Papers (2022)" },
-            { id: "83", label: "Research Papers (2023)" },
-            { id: "84", label: "Research Papers (2024)" },
+            { id: "80", label: "Book Chapters (2024)" },
+            { id: "79", label: "Book Chapters (2023)" },
+            { id: "78", label: "Book Chapters (2022)" },
+            { id: "77", label: "Book Chapters (2021)" },
             { id: "85", label: "Research Papers (2025)" },
+            { id: "84", label: "Research Papers (2024)" },
+            { id: "83", label: "Research Papers (2023)" },
+            { id: "82", label: "Research Papers (2022)" },
         ],
         []
     );
@@ -518,9 +538,9 @@ function ResearchPublicationsTabs() {
                         titleClassName="text-center !py-2"
                     />
                 </div>
-                <div className="mx-auto max-w-6xl rounded-3xl bg-[var(--dark-blue)] p-4 md:p-6 shadow-xl">
-                    {/* Desktop Tabs */}
-                    <div className="hidden md:flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
+                <div className="mx-auto max-w-6xl rounded-3xl bg-[var(--dark-blue)] p-4 md:p-6 shadow-xl flex flex-col md:flex-row gap-6">
+                    {/* Tabs sidebar (Desktop & Mobile styles combined simply here) */}
+                    <div className="flex flex-col gap-2 w-full md:w-64 shrink-0 overflow-y-auto max-h-[500px] custom-scrollbar pb-4 md:pb-0">
                         {tabs.map((t) => {
                             const isActive = t.id === activeTab;
                             return (
@@ -529,9 +549,9 @@ function ResearchPublicationsTabs() {
                                     type="button"
                                     onClick={() => setActiveTab(t.id)}
                                     className={[
-                                        "whitespace-nowrap rounded-lg border px-4 py-2 text-sm font-medium transition-all duration-200",
+                                        "text-left rounded-lg border px-4 py-3 text-sm font-medium transition-all duration-200",
                                         isActive
-                                            ? "bg-[var(--button-red)] text-white border-white/20 shadow-lg scale-105"
+                                            ? "bg-[var(--button-red)] text-white border-white/20 shadow-lg md:scale-105"
                                             : "bg-white text-[var(--foreground)] border-transparent hover:bg-gray-100",
                                     ].join(" ")}
                                 >
@@ -542,60 +562,30 @@ function ResearchPublicationsTabs() {
                     </div>
 
                     {/* Content area */}
-                    <div className="mt-2 rounded-2xl bg-white p-4 md:p-8 min-h-[400px]">
+                    <div className="rounded-2xl bg-white p-4 md:p-8 min-h-[400px] flex-1 w-full">
                         <style jsx global>{`
-                            .scrollbar-hide::-webkit-scrollbar {
-                                display: none;
+                            .custom-scrollbar::-webkit-scrollbar {
+                                width: 6px;
+                                height: 6px;
                             }
-                            .scrollbar-hide {
-                                -ms-overflow-style: none;
-                                scrollbar-width: none;
+                            .custom-scrollbar::-webkit-scrollbar-track {
+                                background: rgba(255, 255, 255, 0.1);
+                                border-radius: 10px;
+                            }
+                            .custom-scrollbar::-webkit-scrollbar-thumb {
+                                background: rgba(255, 255, 255, 0.3);
+                                border-radius: 10px;
+                            }
+                            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                                background: rgba(255, 255, 255, 0.5);
+                            }
+                            .custom-scrollbar {
+                                scrollbar-width: thin;
+                                scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
                             }
                         `}</style>
-
-                        {/* Mobile Accordion */}
-                        <div className="md:hidden space-y-3">
-                            {tabs.map((t) => {
-                                const isOpen = t.id === activeTab;
-                                return (
-                                    <div key={t.id} className="rounded-xl border border-black/10 overflow-hidden">
-                                        <button
-                                            type="button"
-                                            onClick={() => toggleAccordion(t.id)}
-                                            className={[
-                                                "w-full flex items-center justify-between px-4 py-3 text-left transition-colors",
-                                                isOpen ? "bg-black/5" : "bg-white",
-                                            ].join(" ")}
-                                        >
-                                            <span className="font-plus-jakarta-sans font-semibold text-[var(--foreground)]">{t.label}</span>
-                                            <svg
-                                                width="20"
-                                                height="20"
-                                                viewBox="0 0 24 24"
-                                                className={[
-                                                    "transition-transform",
-                                                    isOpen ? "rotate-180" : "rotate-0",
-                                                ].join(" ")}
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                aria-hidden
-                                            >
-                                                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
-                                        </button>
-                                        {isOpen && (
-                                            <div className="px-3 py-4">
-                                                <APITable tableId={t.id} nested={true} />
-                                            </div>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        {/* Desktop Content */}
-                        <div className="hidden md:block">
-                            <APITable tableId={activeTab} nested={true} />
+                        <div className="h-full">
+                            <APITable tableId={activeTab} nested={true} overflowX={true} />
                         </div>
                     </div>
                 </div>
@@ -685,12 +675,12 @@ function NewsEventsTabs() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10">
                     <SectionHeading
-                        title="Department News & Events"
+                        title="Management Events & Activities"
                         titleClassName="text-center !py-2"
                     />
                 </div>
                 <div className="mx-auto max-w-6xl rounded-3xl bg-[var(--dark-blue)] p-4 md:p-6 shadow-xl">
-                    <div className="hidden md:flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
+                    <div className="hidden md:flex gap-3 overflow-x-auto pb-4 custom-scrollbar">
                         {tabs.map((t) => (
                             <button
                                 key={t.id}

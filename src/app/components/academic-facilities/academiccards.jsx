@@ -96,7 +96,7 @@ function Academiccards() {
             description:
                 "We give every student access to the ERP portal, where they log in and get all sorts of information like the academic curriculum, exam timetable, notices, results, transportation details, and other information.",
             imageSrc:
-                "https://cdn.kalingauniversity.ac.in/academic-facilities/student-erp.webp",
+                "https://cdn.kalingauniversity.ac.in/campus-life/erp-images.webp",
             logoSrc: "",
             subtitle: "DIGITAL SERVICES",
         },

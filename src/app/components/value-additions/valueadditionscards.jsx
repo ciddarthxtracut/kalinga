@@ -61,7 +61,7 @@ function Valueadditioncards() {
                 "https://cdn.kalingauniversity.ac.in/academic-facilities/modernlabrotary.webp",
             logoSrc: "",
             subtitle: "EXPLORE MORE THAN JUST ACADEMICS",
-            link: "/research-facilities",
+            link: "/central-instrumentation-facility",
         },
         {
             title: "CoE",

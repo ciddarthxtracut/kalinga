@@ -207,7 +207,7 @@ export default function ScholarshipsPage() {
     () => ({
       "Social Scholarships": {
         heading: "Social Scholarships",
-        intro: "Applicable on Tuition Fee (as per KU Scholarship Policy 2025–26).",
+        intro: "Applicable on Tuition Fee (as per KU Scholarship Policy).",
         points: [
           "Scholarship to the wards and siblings of Martyred Personnel of the Indian Army / Indian Air Force / Indian Navy / Indian Central & State paramilitary forces / Police / NCC — 50%",
           "Scholarship to the wards of serving and retired personnel of the Indian Army / Indian Air Force / Indian Navy / Indian Central & State paramilitary forces / Police / NCC — 20%",
@@ -233,7 +233,7 @@ export default function ScholarshipsPage() {
       "Entrance Exam Scholarships": {
         heading: "Entrance Exam Scholarships",
         intro:
-          "Applicable for students who scored well in national/state competitive & entrance exams in 2024–25 (Tuition Fee waiver).",
+          "Applicable for students who scored well in national/state competitive & entrance exams (Tuition Fee waiver).",
         points: [
           "Eligible exams include: UGAT, JEE, CAT, XAT, MAT, ATMA, CMAT, LSAT, CLAT, SAT, GMAT, NEET, GATE, NDA, NIFT, UPSC, CGPSC, GPAT, UGAT, other State PSC exams (as mentioned in policy).",
           "80 percentile and above — 50%",
@@ -251,9 +251,9 @@ export default function ScholarshipsPage() {
       "Siblings Scholarships": {
         heading: "Siblings Scholarships",
         intro:
-          "Applicable only for direct blood relations of students currently studying (admitted in 2024–25 or before) in any program of Kalinga University.",
+          "Applicable only for direct blood relations of students currently studying (admitted or before) in any program of Kalinga University.",
         points: [
-          "20% scholarship is offered on Tuition Fee to students taking admission in Academic Session 2025–26.",
+          "20% scholarship is offered on Tuition Fee to students taking admission in Academic Session.",
           "Valid only till completion of the course of the elder sibling (previously admitted current student).",
         ],
       },

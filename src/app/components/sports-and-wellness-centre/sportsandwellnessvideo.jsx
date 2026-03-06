@@ -5,7 +5,7 @@ import Newraipurvideos from "@/app/components/about-raipur/newraipurvideos"; // 
 
 function Sportsandwellnessvideo() {
     const sportsVideos = [
-        { id: 1, title: "Overall Fest Highlight", videoUrl: "https://www.youtube.com/watch?v=r0tBeANR5fQ" },
+        { id: 1, title: "Overall Fest Highlight", videoUrl: "https://youtu.be/Jg5i_Ek1To0?si=ypBCesjPKH7Gp-7Z" },
         { id: 2, title: "Table Tennis", videoUrl: "https://www.youtube.com/watch?v=U1aBugRMjR8" },
         { id: 3, title: "Shot Put", videoUrl: "https://www.youtube.com/watch?v=0ASlPFdyICo" },
         { id: 4, title: "Three Legged Race", videoUrl: "https://www.youtube.com/watch?v=KARK2Fgp0eg" },
@@ -26,9 +26,6 @@ function Sportsandwellnessvideo() {
         { id: 19, title: "Javelin Throw", videoUrl: "https://www.youtube.com/watch?v=oGWV3GLw8gw" },
         { id: 20, title: "Kho Kho", videoUrl: "https://www.youtube.com/watch?v=AB5KLq1KL2s" },
         { id: 21, title: "Hammer Throw", videoUrl: "https://www.youtube.com/watch?v=i6QJqI-kwFM" },
-        { id: 22, title: "General", videoUrl: "https://www.youtube.com/watch?v=N40W5e_8ylM" },
-        { id: 23, title: "General", videoUrl: "https://www.youtube.com/watch?v=jA8c39EbEuw" },
-        { id: 24, title: "Gopinath", videoUrl: "https://www.youtube.com/watch?v=_-JAX7r5dMc" },
     ];
 
     return (

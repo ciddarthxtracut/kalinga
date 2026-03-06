@@ -536,6 +536,41 @@ export const pageDataMap: Record<string, PageData> = {
         title: "Vice-Chancellor",
         banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
     },
+    "/courses/bachelor-of-science-zoology-botany-chemistry": {
+        slug: "/courses/bachelor-of-science-zoology-botany-chemistry",
+        title: "Bachelor of Science in Zoology, Botany, Chemistry",
+        banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
+    },
+    "/courses/bachelor-of-science-physics-chemistry-mathematics": {
+        slug: "/courses/bachelor-of-science-physics-chemistry-mathematics",
+        title: "Bachelor of Science in Physics, Chemistry, Mathematics",
+        banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
+    },
+    "/courses/diploma-in-engineering-in-mechanical": {
+        slug: "/courses/diploma-in-engineering-in-mechanical",
+        title: "Diploma in Mechanical Engineering",
+        banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
+    },
+    "/courses/diploma-in-engineering-in-civil": {
+        slug: "/courses/diploma-in-engineering-in-civil",
+        title: "Diploma in Civil Engineering",
+        banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
+    },
+    "/courses/bachelor-of-technology-in-civil": {
+        slug: "/courses/bachelor-of-technology-in-civil",
+        title: "Bachelor of Technology in Civil Engineering",
+        banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
+    },
+    "/courses/bachelor-of-arts-bachelor-of-law": {
+        slug: "/courses/bachelor-of-arts-bachelor-of-law",
+        title: "Bachelor of Arts and Bachelor of Law",
+        banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
+    },
+    "/courses/master-of-law": {
+        slug: "/courses/master-of-law",
+        title: "Master of Law [Dual Specialisation] ",
+        banner: "https://cdn.kalingauniversity.ac.in/common/kalinga-front-banner02.webp",
+    },
 };
 
 
