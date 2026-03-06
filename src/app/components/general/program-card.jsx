@@ -122,7 +122,7 @@ export default function ProgramCard({
         <div className="flex flex-row gap-2 md:gap-3">
 
           {/* Explore Program Button - Dark Red with white arrow in white square */}
-          <a href={href || "#"} onClick={(e) => {
+          <a href={href || program.coursePageUrl || "#"} onClick={(e) => {
             if (onExploreProgramClick) {
               e.preventDefault();
               onExploreProgramClick(program);
