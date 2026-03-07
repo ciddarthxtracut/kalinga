@@ -865,7 +865,7 @@
         "permanent": true
     },
     {
-        "source": "/ku/bba/",
+        "source": "/ku/bba",
         "destination": "/courses/bachelor-of-business-administration",
         "permanent": true
     },
@@ -905,7 +905,7 @@
         "permanent": true
     },
     {
-        "source": "/National-Moot-Court-Competition/",
+        "source": "/National-Moot-Court-Competition",
         "destination": "/",
         "permanent": true
     },
@@ -982,6 +982,26 @@
     {
         "source": "/libraries",
         "destination": "/library",
+        "permanent": true
+    },
+    {
+        "source": "/research/research-papers-till",
+        "destination": "/research",
+        "permanent": true
+    },
+    {
+        "source": "/Faculty-of-Technology/programs",
+        "destination": "/departments/faculty-of-technology",
+        "permanent": true
+    },
+    {
+        "source": "/placement",
+        "destination": "/training-and-placements",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_pharmacy",
+        "destination": "/departments/faculty-of-pharmacy",
         "permanent": true
     }
 ]
