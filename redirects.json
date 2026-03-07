@@ -601,7 +601,7 @@
     },
     {
         "source": "/doc_veri.php",
-        "destination": "/documents-verification",
+        "destination": "/document-verification",
         "permanent": true
     },
     {
@@ -732,6 +732,121 @@
     {
         "source": "/brochures.php",
         "destination": "/downloads",
+        "permanent": true
+    },
+    {
+        "source": "/kalinga_university_fraud.php",
+        "destination": "/",
+        "permanent": true
+    },
+    {
+        "source": "/Faculty-of-Arts-and-Humanities/Our-Faculties.php",
+        "destination": "/departments/faculty-of-arts-humanities",
+        "permanent": true
+    },
+    {
+        "source": "/photo_gallery.php",
+        "destination": "/news-and-events#events-activities",
+        "permanent": true
+    },
+    {
+        "source": "/ku/mba-5",
+        "destination": "/departments/management",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_education.php",
+        "destination": "/departments/faculty-of-education",
+        "permanent": true
+    },
+    {
+        "source": "/kuhighlights.php",
+        "destination": "/news-and-events",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_computer_science.php",
+        "destination": "/departments/faculty-of-technology",
+        "permanent": true
+    },
+    {
+        "source": "/for_recruiters.php",
+        "destination": "/",
+        "permanent": true
+    },
+    {
+        "source": "/Faculty-of-Technology/Scheme-and-Syllabus.php",
+        "destination": "/departments/faculty-of-technology",
+        "permanent": true
+    },
+    {
+        "source": "/ku/bba/",
+        "destination": "/courses/bachelor-of-business-administration",
+        "permanent": true
+    },
+    {
+        "source": "/hostel-kulanga-uni.php",
+        "destination": "/hostel",
+        "permanent": true
+    },
+    {
+        "source": "/list-of-holiday.php",
+        "destination": "/academic-calendar",
+        "permanent": true
+    },
+    {
+        "source": "/Faculty-of-Law/Faculty-Profile.php",
+        "destination": "/departments/faculty-of-law",
+        "permanent": true
+    },
+    {
+        "source": "/registrar_message.php",
+        "destination": "/registrar",
+        "permanent": true
+    }
+    {
+        "source": "/National-Moot-Court-Competition/",
+        "destination": "/",
+        "permanent": true
+    },
+    {
+        "source": "/faculty_of_management_studies.php",
+        "destination": "/departments/management",
+        "permanent": true
+    },
+    {
+        "source": "/Faculty-of-Science/programs.php",
+        "destination": "/departments/faculty-of-science",
+        "permanent": true
+    },
+    {
+        "source": "/PO-PSO-CO/Bachelor-of-Arts.php",
+        "destination": "/departments/faculty-of-arts-humanities",
+        "permanent": true
+    },
+    {
+        "source": "/Faculty-of-Arts-and-Humanities/programs.php",
+        "destination": "/departments/faculty-of-arts-humanities",
+        "permanent": true
+    },
+    {
+        "source": "/Faculty-of-Science/research.php",
+        "destination": "/departments/faculty-of-science",
+        "permanent": true
+    },
+    {
+        "source": "/research-papers-till.php",
+        "destination": "/research",
+        "permanent": true
+    },
+    {
+        "source": "/hostel_fee.php",
+        "destination": "/hostel",
+        "permanent": true
+    },
+    {
+        "source": "/libraries.php",
+        "destination": "/library",
         "permanent": true
     }
 ]
