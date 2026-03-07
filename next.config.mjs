@@ -52,17 +52,17 @@ const nextConfig = {
     }
 
     return [
+      ...customRedirects.map(r => ({
+        source: r.source,
+        destination: r.destination,
+        permanent: r.permanent === undefined ? true : r.permanent
+      })),
       // Map all .php URLs to non-.php URLs
       {
         source: '/:path*.php',
         destination: '/:path*',
         permanent: true,
-      },
-      ...customRedirects.map(r => ({
-        source: r.source,
-        destination: r.destination,
-        permanent: r.permanent === undefined ? true : r.permanent
-      }))
+      }
     ];
   },
   // Redirects and headers handled in middleware/next.config
@@ -99,6 +99,7 @@ const nextConfig = {
     return config;
   },
   // We're using webpack for the DOMMatrix polyfill
+  // Trigger reload
 };
 
 export default nextConfig;

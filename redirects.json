@@ -20,11 +20,6 @@
         "permanent": true
     },
     {
-        "source": "/downloads_information.php",
-        "destination": "/downloads",
-        "permanent": true
-    },
-    {
         "source": "/contact",
         "destination": "/contact-us",
         "permanent": true
@@ -562,6 +557,46 @@
     {
         "source": "/how_to_reach_campus",
         "destination": "/contact-us",
+        "permanent": true
+    },
+    {
+        "source": "/ku/fee_structure",
+        "destination": "/ku-fees",
+        "permanent": true
+    },
+    {
+        "source": "/academic-facilities-student-erp.php",
+        "destination": "/campus-facilities",
+        "permanent": true
+    },
+    {
+        "source": "/job_openings.php",
+        "destination": "/careers",
+        "permanent": true
+    },
+    {
+        "source": "/downloads_information.php",
+        "destination": "/downloads",
+        "permanent": true
+    },
+    {
+        "source": "/about_kalinga.php",
+        "destination": "/about-us",
+        "permanent": true
+    },
+    {
+        "source": "/ph.d-admissions.php",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/admission_procedure.php",
+        "destination": "/admissions",
+        "permanent": true
+    },
+    {
+        "source": "/ku/cg-fee/",
+        "destination": "/ku-fees",
         "permanent": true
     }
 ]
