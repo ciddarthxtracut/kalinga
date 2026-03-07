@@ -803,7 +803,7 @@
         "source": "/registrar_message.php",
         "destination": "/registrar",
         "permanent": true
-    }
+    },
     {
         "source": "/National-Moot-Court-Competition/",
         "destination": "/",
